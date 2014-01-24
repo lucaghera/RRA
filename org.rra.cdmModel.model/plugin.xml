@@ -39,7 +39,7 @@
       <package
             uri="http://www.rra.org/cdmmodel"
             class="org.rra.cdmModel.CDMModelPackage"
-            genModel="model/cdmModel.genmodel"/>
+            genModel="models/cdmModel.genmodel"/>
    </extension>
 
 </plugin>

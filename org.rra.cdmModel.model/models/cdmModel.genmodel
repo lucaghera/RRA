@@ -6,7 +6,7 @@
     modelName="CDMModel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
     editPluginID="org.rra.cdmModel.model.edit" editorPluginID="org.rra.cdmModel.model.editor"
-    language="English" usedGenPackages="../../org.rra.dataTypesModel.model/model/dataTypesModel.genmodel#//dataTypesModel ../../org.hyperflex.componentmodels.orocos.model/models/orocosComponentModel.genmodel#//orocoscomponentmodel ../../org.hyperflex.componentmodels.ros.model/models/rosComponentModel.genmodel#//roscomponentmodel"
+    language="English" usedGenPackages="../../org.rra.dataTypesModel.model/models/dataTypesModel.genmodel#//dataTypesModel ../../org.hyperflex.componentmodels.orocos.model/models/orocosComponentModel.genmodel#//orocoscomponentmodel ../../org.hyperflex.componentmodels.ros.model/models/rosComponentModel.genmodel#//roscomponentmodel"
     operationReflection="true" importOrganizing="true">
   <foreignModel>cdmModel.ecore</foreignModel>
   <genPackages prefix="CDMModel" basePackage="org.rra" disposableProviderFactory="true"

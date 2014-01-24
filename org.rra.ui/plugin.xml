@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="RRA Views"
+            id="org.rra.ui.views">
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="org.rra.ui.perspectives.RRAPerspective"
+            icon="icons/RRA.gif"
+            id="org.rra.ui.perspective"
+            name="Robotics Runtime Adaptation">
+         <description>
+            Robotics Runtime Adaptation Perspective
+         </description>
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.rra.ui.perspective">
+         <view
+               id="org.eclipse.ui.views.PropertySheet"
+               minimized="false"
+               relationship="stack"
+               relative="org.eclipse.ui.views.ProblemView"
+               showTitle="true">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+   <extension
+         id="org.rra.wizard"
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="org.rra.wizard.category"
+            name="Robotics Runtime Adaptation">
+      </category>
+      <wizard
+            category="org.rra.wizard.category"
+            class="org.rra.ui.wizards.RRAProjectWizard"
+            descriptionImage="icons/RRA.gif"
+            finalPerspective="org.rra.ui.perspective"
+            icon="icons/RRA.gif"
+            id="org.rra.wizard.rra.project"
+            name="Robotics Runtime Adaptation Project"
+            project="true">
+         <description>
+            Robotics Runtime Adaptation Project
+         </description>
+      </wizard>
+   </extension>
+   <extension
+         id="org.rra.ui.natures.RRAProjectNature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="org.rra.ui.natures.RRAProjectNature">
+         </run>
+      </runtime>
+   </extension>
+   <extension
+         point="org.eclipse.ui.ide.projectNatureImages">
+      <image
+            icon="icons/RRA_nature.gif"
+            id="org.rra.ui.natures.RRAProjectNatureImage"
+            natureId="org.rra.ui.natures.RRAProjectNature">
+      </image>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:common.new.menu?after=additions">
+         <separator
+               name="org.rra.menu.new.separatorProjects"
+               visible="true">
+         </separator>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:common.new.menu?after=org.hyperflex.menu.new.separatorProjects">
+         <separator
+               name="org.rra.menu.new.separatorModels"
+               visible="true">
+         </separator>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:common.new.menu?start=org.hyperflex.menu.new.separatorProjects">
+         <command
+               commandId="org.eclipse.ui.newWizard"
+               icon="icons/RRA.gif"
+               label="Robotics Runtime Adaptation Project"
+               style="push">
+            <parameter
+                  name="newWizardId"
+                  value="org.rra.wizard.hyperflex.project">
+            </parameter>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               id="org.rra.menu"
+               label="Robotics Runtime Adaptation">
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="org.rra.m2t.category"
+            name="RRA M2T">
+      </category>
+      <command
+            categoryId="org.rra.m2t.category"
+            id="org.rra.cdmModel.m2t.contextMonitor"
+            name="Generate Context Monitor">
+      </command>
+
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.rra.cdmModel.m2t.handler.ContextMonitorTransformation"
+            commandId="org.rra.cdmModel.m2t.contextMonitor">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.rra.menu">
+         <command
+               commandId="org.rra.cdmModel.m2t.contextMonitor"
+               label="Generate Context Monitor"
+               style="push">
+         </command>
+      </menuContribution>
+      
+   </extension>
+   <extension
+         point="org.eclipse.epsilon.common.dt.tool">
+      <tool
+            class="org.rra.cdmModel.m2t.tools.ContextMonitorTools"
+            defaultName="org.rra.cdmModel.m2t.tools.ContextMonitorTools">
+      </tool>
+   </extension>
+
+</plugin>
