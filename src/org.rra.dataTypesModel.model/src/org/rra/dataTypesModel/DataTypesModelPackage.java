@@ -325,13 +325,13 @@ public interface DataTypesModelPackage extends EPackage {
 	int FUNCTION__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Out</b></em>' reference.
+	 * The feature id for the '<em><b>Output</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUNCTION__OUT = 1;
+	int FUNCTION__OUTPUT = 1;
 
 	/**
 	 * The number of structural features of the '<em>Function</em>' class.
@@ -490,15 +490,15 @@ public interface DataTypesModelPackage extends EPackage {
 	EAttribute getFunction_Name();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.rra.dataTypesModel.Function#getOut <em>Out</em>}'.
+	 * Returns the meta object for the reference '{@link org.rra.dataTypesModel.Function#getOutput <em>Output</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Out</em>'.
-	 * @see org.rra.dataTypesModel.Function#getOut()
+	 * @return the meta object for the reference '<em>Output</em>'.
+	 * @see org.rra.dataTypesModel.Function#getOutput()
 	 * @see #getFunction()
 	 * @generated
 	 */
-	EReference getFunction_Out();
+	EReference getFunction_Output();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -640,12 +640,12 @@ public interface DataTypesModelPackage extends EPackage {
 		EAttribute FUNCTION__NAME = eINSTANCE.getFunction_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Out</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Output</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FUNCTION__OUT = eINSTANCE.getFunction_Out();
+		EReference FUNCTION__OUTPUT = eINSTANCE.getFunction_Output();
 
 	}
 

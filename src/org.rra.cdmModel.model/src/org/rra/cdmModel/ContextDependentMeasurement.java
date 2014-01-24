@@ -42,7 +42,7 @@ import org.rra.dataTypesModel.Function;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.rra.cdmModel.ContextDependentMeasurement#getName <em>Name</em>}</li>
- *   <li>{@link org.rra.cdmModel.ContextDependentMeasurement#getFunction <em>Function</em>}</li>
+ *   <li>{@link org.rra.cdmModel.ContextDependentMeasurement#getCdmFunction <em>Cdm Function</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,29 +78,29 @@ public interface ContextDependentMeasurement extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Function</b></em>' reference.
+	 * Returns the value of the '<em><b>Cdm Function</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Function</em>' reference isn't clear,
+	 * If the meaning of the '<em>Cdm Function</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Function</em>' reference.
-	 * @see #setFunction(Function)
-	 * @see org.rra.cdmModel.CDMModelPackage#getContextDependentMeasurement_Function()
+	 * @return the value of the '<em>Cdm Function</em>' reference.
+	 * @see #setCdmFunction(Function)
+	 * @see org.rra.cdmModel.CDMModelPackage#getContextDependentMeasurement_CdmFunction()
 	 * @model
 	 * @generated
 	 */
-	Function getFunction();
+	Function getCdmFunction();
 
 	/**
-	 * Sets the value of the '{@link org.rra.cdmModel.ContextDependentMeasurement#getFunction <em>Function</em>}' reference.
+	 * Sets the value of the '{@link org.rra.cdmModel.ContextDependentMeasurement#getCdmFunction <em>Cdm Function</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Function</em>' reference.
-	 * @see #getFunction()
+	 * @param value the new value of the '<em>Cdm Function</em>' reference.
+	 * @see #getCdmFunction()
 	 * @generated
 	 */
-	void setFunction(Function value);
+	void setCdmFunction(Function value);
 
 } // ContextDependentMeasurement

@@ -276,7 +276,7 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFunction_Out() {
+	public EReference getFunction_Output() {
 		return (EReference)functionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -326,7 +326,7 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 
 		functionEClass = createEClass(FUNCTION);
 		createEAttribute(functionEClass, FUNCTION__NAME);
-		createEReference(functionEClass, FUNCTION__OUT);
+		createEReference(functionEClass, FUNCTION__OUTPUT);
 	}
 
 	/**
@@ -380,7 +380,7 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 
 		initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFunction_Name(), ecorePackage.getEString(), "name", null, 1, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFunction_Out(), this.getDataType(), null, "out", null, 1, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFunction_Output(), this.getDataType(), null, "output", null, 1, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

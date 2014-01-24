@@ -17,7 +17,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="cdmModel.ecore#//ContextDependentMeasurement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdmModel.ecore#//ContextDependentMeasurement/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdmModel.ecore#//ContextDependentMeasurement/function"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdmModel.ecore#//ContextDependentMeasurement/cdmFunction"/>
     </genClasses>
     <genClasses ecoreClass="cdmModel.ecore#//ROSContextDependentMeasurement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdmModel.ecore#//ROSContextDependentMeasurement/publisher"/>

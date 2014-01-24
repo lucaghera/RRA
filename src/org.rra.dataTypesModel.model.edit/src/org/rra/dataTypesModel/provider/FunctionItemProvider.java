@@ -86,7 +86,7 @@ public class FunctionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addOutPropertyDescriptor(object);
+			addOutputPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -114,19 +114,19 @@ public class FunctionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Out feature.
+	 * This adds a property descriptor for the Output feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOutPropertyDescriptor(Object object) {
+	protected void addOutputPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Function_out_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Function_out_feature", "_UI_Function_type"),
-				 DataTypesModelPackage.Literals.FUNCTION__OUT,
+				 getString("_UI_Function_output_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Function_output_feature", "_UI_Function_type"),
+				 DataTypesModelPackage.Literals.FUNCTION__OUTPUT,
 				 true,
 				 false,
 				 true,

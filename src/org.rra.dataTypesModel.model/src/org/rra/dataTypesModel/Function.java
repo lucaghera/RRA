@@ -41,7 +41,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.rra.dataTypesModel.Function#getName <em>Name</em>}</li>
- *   <li>{@link org.rra.dataTypesModel.Function#getOut <em>Out</em>}</li>
+ *   <li>{@link org.rra.dataTypesModel.Function#getOutput <em>Output</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,29 +77,29 @@ public interface Function extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Out</b></em>' reference.
+	 * Returns the value of the '<em><b>Output</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Out</em>' reference isn't clear,
+	 * If the meaning of the '<em>Output</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Out</em>' reference.
-	 * @see #setOut(DataType)
-	 * @see org.rra.dataTypesModel.DataTypesModelPackage#getFunction_Out()
+	 * @return the value of the '<em>Output</em>' reference.
+	 * @see #setOutput(DataType)
+	 * @see org.rra.dataTypesModel.DataTypesModelPackage#getFunction_Output()
 	 * @model required="true"
 	 * @generated
 	 */
-	DataType getOut();
+	DataType getOutput();
 
 	/**
-	 * Sets the value of the '{@link org.rra.dataTypesModel.Function#getOut <em>Out</em>}' reference.
+	 * Sets the value of the '{@link org.rra.dataTypesModel.Function#getOutput <em>Output</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Out</em>' reference.
-	 * @see #getOut()
+	 * @param value the new value of the '<em>Output</em>' reference.
+	 * @see #getOutput()
 	 * @generated
 	 */
-	void setOut(DataType value);
+	void setOutput(DataType value);
 
 } // Function

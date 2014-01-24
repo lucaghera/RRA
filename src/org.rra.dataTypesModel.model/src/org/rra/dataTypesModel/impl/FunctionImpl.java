@@ -47,7 +47,7 @@ import org.rra.dataTypesModel.Function;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.rra.dataTypesModel.impl.FunctionImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.rra.dataTypesModel.impl.FunctionImpl#getOut <em>Out</em>}</li>
+ *   <li>{@link org.rra.dataTypesModel.impl.FunctionImpl#getOutput <em>Output</em>}</li>
  * </ul>
  * </p>
  *
@@ -75,14 +75,14 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getOut() <em>Out</em>}' reference.
+	 * The cached value of the '{@link #getOutput() <em>Output</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOut()
+	 * @see #getOutput()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType out;
+	protected DataType output;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,16 +129,16 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getOut() {
-		if (out != null && out.eIsProxy()) {
-			InternalEObject oldOut = (InternalEObject)out;
-			out = (DataType)eResolveProxy(oldOut);
-			if (out != oldOut) {
+	public DataType getOutput() {
+		if (output != null && output.eIsProxy()) {
+			InternalEObject oldOutput = (InternalEObject)output;
+			output = (DataType)eResolveProxy(oldOutput);
+			if (output != oldOutput) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataTypesModelPackage.FUNCTION__OUT, oldOut, out));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataTypesModelPackage.FUNCTION__OUTPUT, oldOutput, output));
 			}
 		}
-		return out;
+		return output;
 	}
 
 	/**
@@ -146,8 +146,8 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetOut() {
-		return out;
+	public DataType basicGetOutput() {
+		return output;
 	}
 
 	/**
@@ -155,11 +155,11 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOut(DataType newOut) {
-		DataType oldOut = out;
-		out = newOut;
+	public void setOutput(DataType newOutput) {
+		DataType oldOutput = output;
+		output = newOutput;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataTypesModelPackage.FUNCTION__OUT, oldOut, out));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataTypesModelPackage.FUNCTION__OUTPUT, oldOutput, output));
 	}
 
 	/**
@@ -172,9 +172,9 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 		switch (featureID) {
 			case DataTypesModelPackage.FUNCTION__NAME:
 				return getName();
-			case DataTypesModelPackage.FUNCTION__OUT:
-				if (resolve) return getOut();
-				return basicGetOut();
+			case DataTypesModelPackage.FUNCTION__OUTPUT:
+				if (resolve) return getOutput();
+				return basicGetOutput();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -190,8 +190,8 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 			case DataTypesModelPackage.FUNCTION__NAME:
 				setName((String)newValue);
 				return;
-			case DataTypesModelPackage.FUNCTION__OUT:
-				setOut((DataType)newValue);
+			case DataTypesModelPackage.FUNCTION__OUTPUT:
+				setOutput((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -208,8 +208,8 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 			case DataTypesModelPackage.FUNCTION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case DataTypesModelPackage.FUNCTION__OUT:
-				setOut((DataType)null);
+			case DataTypesModelPackage.FUNCTION__OUTPUT:
+				setOutput((DataType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -225,8 +225,8 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 		switch (featureID) {
 			case DataTypesModelPackage.FUNCTION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case DataTypesModelPackage.FUNCTION__OUT:
-				return out != null;
+			case DataTypesModelPackage.FUNCTION__OUTPUT:
+				return output != null;
 		}
 		return super.eIsSet(featureID);
 	}

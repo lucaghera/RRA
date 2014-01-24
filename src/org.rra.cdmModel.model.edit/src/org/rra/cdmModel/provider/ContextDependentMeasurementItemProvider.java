@@ -86,7 +86,7 @@ public class ContextDependentMeasurementItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addFunctionPropertyDescriptor(object);
+			addCdmFunctionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -114,19 +114,19 @@ public class ContextDependentMeasurementItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Function feature.
+	 * This adds a property descriptor for the Cdm Function feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFunctionPropertyDescriptor(Object object) {
+	protected void addCdmFunctionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContextDependentMeasurement_function_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContextDependentMeasurement_function_feature", "_UI_ContextDependentMeasurement_type"),
-				 CDMModelPackage.Literals.CONTEXT_DEPENDENT_MEASUREMENT__FUNCTION,
+				 getString("_UI_ContextDependentMeasurement_cdmFunction_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContextDependentMeasurement_cdmFunction_feature", "_UI_ContextDependentMeasurement_type"),
+				 CDMModelPackage.Literals.CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION,
 				 true,
 				 false,
 				 true,

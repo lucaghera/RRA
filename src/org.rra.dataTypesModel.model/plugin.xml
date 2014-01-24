@@ -39,7 +39,7 @@
       <package
             uri="http://www.rra.org/datatypesmodel"
             class="org.rra.dataTypesModel.DataTypesModelPackage"
-            genModel="model/dataTypesModel.genmodel"/>
+            genModel="models/dataTypesModel.genmodel"/>
    </extension>
 
 </plugin>

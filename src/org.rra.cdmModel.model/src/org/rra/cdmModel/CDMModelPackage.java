@@ -150,13 +150,13 @@ public interface CDMModelPackage extends EPackage {
 	int CONTEXT_DEPENDENT_MEASUREMENT__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Function</b></em>' reference.
+	 * The feature id for the '<em><b>Cdm Function</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_DEPENDENT_MEASUREMENT__FUNCTION = 1;
+	int CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION = 1;
 
 	/**
 	 * The number of structural features of the '<em>Context Dependent Measurement</em>' class.
@@ -196,13 +196,13 @@ public interface CDMModelPackage extends EPackage {
 	int ROS_CONTEXT_DEPENDENT_MEASUREMENT__NAME = CONTEXT_DEPENDENT_MEASUREMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Function</b></em>' reference.
+	 * The feature id for the '<em><b>Cdm Function</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_CONTEXT_DEPENDENT_MEASUREMENT__FUNCTION = CONTEXT_DEPENDENT_MEASUREMENT__FUNCTION;
+	int ROS_CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION = CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION;
 
 	/**
 	 * The feature id for the '<em><b>Publisher</b></em>' reference.
@@ -251,13 +251,13 @@ public interface CDMModelPackage extends EPackage {
 	int OROCOS_CONTEXT_DEPENDENT_MEASUREMENT__NAME = CONTEXT_DEPENDENT_MEASUREMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Function</b></em>' reference.
+	 * The feature id for the '<em><b>Cdm Function</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OROCOS_CONTEXT_DEPENDENT_MEASUREMENT__FUNCTION = CONTEXT_DEPENDENT_MEASUREMENT__FUNCTION;
+	int OROCOS_CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION = CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION;
 
 	/**
 	 * The feature id for the '<em><b>Output Port</b></em>' reference.
@@ -341,15 +341,15 @@ public interface CDMModelPackage extends EPackage {
 	EAttribute getContextDependentMeasurement_Name();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.rra.cdmModel.ContextDependentMeasurement#getFunction <em>Function</em>}'.
+	 * Returns the meta object for the reference '{@link org.rra.cdmModel.ContextDependentMeasurement#getCdmFunction <em>Cdm Function</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Function</em>'.
-	 * @see org.rra.cdmModel.ContextDependentMeasurement#getFunction()
+	 * @return the meta object for the reference '<em>Cdm Function</em>'.
+	 * @see org.rra.cdmModel.ContextDependentMeasurement#getCdmFunction()
 	 * @see #getContextDependentMeasurement()
 	 * @generated
 	 */
-	EReference getContextDependentMeasurement_Function();
+	EReference getContextDependentMeasurement_CdmFunction();
 
 	/**
 	 * Returns the meta object for class '{@link org.rra.cdmModel.ROSContextDependentMeasurement <em>ROS Context Dependent Measurement</em>}'.
@@ -461,12 +461,12 @@ public interface CDMModelPackage extends EPackage {
 		EAttribute CONTEXT_DEPENDENT_MEASUREMENT__NAME = eINSTANCE.getContextDependentMeasurement_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Function</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Cdm Function</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTEXT_DEPENDENT_MEASUREMENT__FUNCTION = eINSTANCE.getContextDependentMeasurement_Function();
+		EReference CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION = eINSTANCE.getContextDependentMeasurement_CdmFunction();
 
 		/**
 		 * The meta object literal for the '{@link org.rra.cdmModel.impl.ROSContextDependentMeasurementImpl <em>ROS Context Dependent Measurement</em>}' class.
