@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Robotics Runtime Adaptation Toolchain&#xA;&#xA;Copyright (c) 2014&#xA;All rights reserved.&#xA;&#xA;Luca Gherardi&#xA;Instititute for Dynamic Systems and Control&#xA;ETH Zurich&#xA;&#xA;Nico Hochgeschwender&#xA;Department of Computer Science&#xA;Bonn-Rhine-Sieg University of Applied Sciences&#xA;&#xA;***********************************************************************************************&#xA;&#xA;Authors: &#xA;   &lt;A HREF=&quot;mailto:lucagh@ethz.ch&quot;>Luca Gherardi&lt;/A>&#xA;   &lt;A HREF=&quot;mailto:nico.hochgeschwender@h-brs.de&quot;>Nico Hochgeschwender&lt;/A>&#xA;&#xA;&#xA;***********************************************************************************************&#xA;&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#xA;"
+    modelDirectory="/org.rra.dataTypesModel.model/src" modelPluginID="org.rra.dataTypesModel.model"
+    modelName="DataTypesModel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    language="English" operationReflection="true" importOrganizing="true">
+  <foreignModel>dataTypesModel.ecore</foreignModel>
+  <genPackages prefix="DataTypesModel" basePackage="org.rra" disposableProviderFactory="true"
+      ecorePackage="dataTypesModel.ecore#/">
+    <genClasses ecoreClass="dataTypesModel.ecore#//DataTypesModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataTypesModel.ecore#//DataTypesModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataTypesModel.ecore#//DataTypesModel/types"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dataTypesModel.ecore#//DataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataTypesModel.ecore#//DataType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="dataTypesModel.ecore#//PrimitiveDataType"/>
+    <genClasses ecoreClass="dataTypesModel.ecore#//CompositeDataType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataTypesModel.ecore#//CompositeDataType/functions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataTypesModel.ecore#//CompositeDataType/fields"/>
+    </genClasses>
+    <genClasses ecoreClass="dataTypesModel.ecore#//ContainerDataType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataTypesModel.ecore#//ContainerDataType/containedType"/>
+    </genClasses>
+    <genClasses ecoreClass="dataTypesModel.ecore#//Function">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataTypesModel.ecore#//Function/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataTypesModel.ecore#//Function/out"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,6 +1,14 @@
 *.class
 
-# Package Files #
-*.jar
-*.war
-*.ear
+bin/
+
+.settings
+.metadata
+.svn
+.DS_Store
+
+src/org.rra.updatesite/features/
+src/org.rra.updatesite/plugins/
+src/org.rra.updatesite/artifacts.jar
+src/org.rra.updatesite/content.jar
+src/org.rra.updatesite/logs.zip
