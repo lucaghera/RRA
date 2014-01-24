@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cdmModel" nsURI="http://www.rra.org/cdmmodel" nsPrefix="cdmModel">
+  <eClassifiers xsi:type="ecore:EClass" name="ContextDependentMeasurementsModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cdms" lowerBound="1" upperBound="-1"
+        eType="#//ContextDependentMeasurement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextDependentMeasurement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="function" eType="ecore:EClass ../../org.rra.dataTypesModel.model/model/dataTypesModel.ecore#//Function"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSContextDependentMeasurement" eSuperTypes="#//ContextDependentMeasurement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publisher" lowerBound="1"
+        eType="ecore:EClass ../../org.hyperflex.componentmodels.ros.model/models/rosComponentModel.ecore#//NodeMsgProducer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrocosContextDependentMeasurement" eSuperTypes="#//ContextDependentMeasurement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputPort" lowerBound="1"
+        eType="ecore:EClass ../../org.hyperflex.componentmodels.orocos.model/models/orocosComponentModel.ecore#//TCOutputDataPort"/>
+  </eClassifiers>
+</ecore:EPackage>

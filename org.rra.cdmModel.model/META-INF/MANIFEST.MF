@@ -1,15 +1,18 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.rra.dataTypesModel.model.edit;singleton:=true
+Bundle-SymbolicName: org.rra.cdmModel.model;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: org.rra.dataTypesModel.provider.DataTypesModelEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.rra.dataTypesModel.provider
+Export-Package: org.rra.cdmModel,
+ org.rra.cdmModel.impl,
+ org.rra.cdmModel.util
 Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
  org.rra.dataTypesModel.model;visibility:=reexport,
- org.eclipse.emf.edit;visibility:=reexport
+ org.hyperflex.componentmodels.orocos.model;visibility:=reexport,
+ org.hyperflex.componentmodels.ros.model;visibility:=reexport
 Bundle-ActivationPolicy: lazy
