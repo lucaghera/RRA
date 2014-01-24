@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.rra.dataTypesModel.*;
 import org.rra.dataTypesModel.CompositeDataType;
 import org.rra.dataTypesModel.ContainerDataType;
 import org.rra.dataTypesModel.DataTypesModel;
@@ -92,6 +93,7 @@ public class DataTypesModelFactoryImpl extends EFactoryImpl implements DataTypes
 			case DataTypesModelPackage.COMPOSITE_DATA_TYPE: return createCompositeDataType();
 			case DataTypesModelPackage.CONTAINER_DATA_TYPE: return createContainerDataType();
 			case DataTypesModelPackage.FUNCTION: return createFunction();
+			case DataTypesModelPackage.ROS_MSG_DATA_TYPE: return createROSMsgDataType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -145,6 +147,16 @@ public class DataTypesModelFactoryImpl extends EFactoryImpl implements DataTypes
 	public Function createFunction() {
 		FunctionImpl function = new FunctionImpl();
 		return function;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ROSMsgDataType createROSMsgDataType() {
+		ROSMsgDataTypeImpl rosMsgDataType = new ROSMsgDataTypeImpl();
+		return rosMsgDataType;
 	}
 
 	/**

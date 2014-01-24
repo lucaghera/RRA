@@ -216,6 +216,11 @@ public class DataTypesModelItemProvider
 			(createChildParameter
 				(DataTypesModelPackage.Literals.DATA_TYPES_MODEL__TYPES,
 				 DataTypesModelFactory.eINSTANCE.createContainerDataType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DataTypesModelPackage.Literals.DATA_TYPES_MODEL__TYPES,
+				 DataTypesModelFactory.eINSTANCE.createROSMsgDataType()));
 	}
 
 	/**

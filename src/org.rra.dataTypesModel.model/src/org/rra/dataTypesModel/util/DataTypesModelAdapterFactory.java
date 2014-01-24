@@ -34,6 +34,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.rra.dataTypesModel.*;
 import org.rra.dataTypesModel.CompositeDataType;
 import org.rra.dataTypesModel.ContainerDataType;
 import org.rra.dataTypesModel.DataType;
@@ -121,6 +122,10 @@ public class DataTypesModelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseFunction(Function object) {
 				return createFunctionAdapter();
+			}
+			@Override
+			public Adapter caseROSMsgDataType(ROSMsgDataType object) {
+				return createROSMsgDataTypeAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -223,6 +228,20 @@ public class DataTypesModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFunctionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.rra.dataTypesModel.ROSMsgDataType <em>ROS Msg Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.rra.dataTypesModel.ROSMsgDataType
+	 * @generated
+	 */
+	public Adapter createROSMsgDataTypeAdapter() {
 		return null;
 	}
 

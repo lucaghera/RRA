@@ -353,6 +353,53 @@ public interface DataTypesModelPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.ROSMsgDataTypeImpl <em>ROS Msg Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.rra.dataTypesModel.impl.ROSMsgDataTypeImpl
+	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getROSMsgDataType()
+	 * @generated
+	 */
+	int ROS_MSG_DATA_TYPE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_MSG_DATA_TYPE__NAME = DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Msgs package</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_MSG_DATA_TYPE__MSGS_PACKAGE = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>ROS Msg Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_MSG_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>ROS Msg Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_MSG_DATA_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.rra.dataTypesModel.DataTypesModel <em>Data Types Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -501,6 +548,27 @@ public interface DataTypesModelPackage extends EPackage {
 	EReference getFunction_Output();
 
 	/**
+	 * Returns the meta object for class '{@link org.rra.dataTypesModel.ROSMsgDataType <em>ROS Msg Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>ROS Msg Data Type</em>'.
+	 * @see org.rra.dataTypesModel.ROSMsgDataType
+	 * @generated
+	 */
+	EClass getROSMsgDataType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.rra.dataTypesModel.ROSMsgDataType#getMsgs_package <em>Msgs package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Msgs package</em>'.
+	 * @see org.rra.dataTypesModel.ROSMsgDataType#getMsgs_package()
+	 * @see #getROSMsgDataType()
+	 * @generated
+	 */
+	EAttribute getROSMsgDataType_Msgs_package();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -646,6 +714,24 @@ public interface DataTypesModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FUNCTION__OUTPUT = eINSTANCE.getFunction_Output();
+
+		/**
+		 * The meta object literal for the '{@link org.rra.dataTypesModel.impl.ROSMsgDataTypeImpl <em>ROS Msg Data Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.rra.dataTypesModel.impl.ROSMsgDataTypeImpl
+		 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getROSMsgDataType()
+		 * @generated
+		 */
+		EClass ROS_MSG_DATA_TYPE = eINSTANCE.getROSMsgDataType();
+
+		/**
+		 * The meta object literal for the '<em><b>Msgs package</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROS_MSG_DATA_TYPE__MSGS_PACKAGE = eINSTANCE.getROSMsgDataType_Msgs_package();
 
 	}
 

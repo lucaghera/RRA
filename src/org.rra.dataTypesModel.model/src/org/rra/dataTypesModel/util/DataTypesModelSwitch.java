@@ -33,6 +33,7 @@ package org.rra.dataTypesModel.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.rra.dataTypesModel.*;
 import org.rra.dataTypesModel.CompositeDataType;
 import org.rra.dataTypesModel.ContainerDataType;
 import org.rra.dataTypesModel.DataType;
@@ -137,6 +138,13 @@ public class DataTypesModelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case DataTypesModelPackage.ROS_MSG_DATA_TYPE: {
+				ROSMsgDataType rosMsgDataType = (ROSMsgDataType)theEObject;
+				T result = caseROSMsgDataType(rosMsgDataType);
+				if (result == null) result = caseDataType(rosMsgDataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -228,6 +236,21 @@ public class DataTypesModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFunction(Function object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ROS Msg Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ROS Msg Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseROSMsgDataType(ROSMsgDataType object) {
 		return null;
 	}
 

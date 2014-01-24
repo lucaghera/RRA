@@ -193,6 +193,11 @@ public class CompositeDataTypeItemProvider
 			(createChildParameter
 				(DataTypesModelPackage.Literals.COMPOSITE_DATA_TYPE__FIELDS,
 				 DataTypesModelFactory.eINSTANCE.createContainerDataType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DataTypesModelPackage.Literals.COMPOSITE_DATA_TYPE__FIELDS,
+				 DataTypesModelFactory.eINSTANCE.createROSMsgDataType()));
 	}
 
 }

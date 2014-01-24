@@ -27,5 +27,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataTypesModel.ecore#//Function/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataTypesModel.ecore#//Function/output"/>
     </genClasses>
+    <genClasses ecoreClass="dataTypesModel.ecore#//ROSMsgDataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataTypesModel.ecore#//ROSMsgDataType/msgs_package"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

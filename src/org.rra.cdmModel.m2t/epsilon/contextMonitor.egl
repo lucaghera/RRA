@@ -37,11 +37,11 @@ for(cdm in cdmModel.cdms) {
 		if(cdm.cdmFunction.isDefined()){
 			dataType = cdm.cdmFunction.ouput;
 		}else{
-			dataType = publisher.dataType;
+			dataType = cdm.inputDataType;
 		}
 %]
 
-	void [%=cdm.name%]_callback(const [%=dataType%]::ConstPtr& msg){
+	void [%=cdm.name%]_callback(const [%=dataType.msgs_package%]::[%=dataType.name%]::ConstPtr& msg){
 [%
 		if(cdm.cdmFunction.isDefined()){
 %]
@@ -79,10 +79,11 @@ for(cdm in cdmModel.cdms) {
 		if(cdm.cdmFunction.isDefined()){
 			dataType = cdm.cdmFunction.ouput;
 		}else{
-			dataType = publisher.dataType;
+			dataType = cdm.inputDataType;
 		}
 %]
-	ros::Publisher [%=cdm.name%]_pub = nodeHandle.advertise<[%=dataType%]>([%=cdm.name%],1000);
+	ros::Publisher [%=cdm.name%]_pub = 
+		nodeHandle.advertise<[%=dataType.msgs_package%]::[%=dataType.name%]>([%=cdm.name%],1000);
 	ros::Subscriber [%=cdm.name%]_sub = nodeHandle.subscribe([%=publisher.topicName%], 1000, [%=cdm.name%]_callback);
 [%
 	}

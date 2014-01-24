@@ -95,6 +95,15 @@ public interface DataTypesModelFactory extends EFactory {
 	Function createFunction();
 
 	/**
+	 * Returns a new object of class '<em>ROS Msg Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>ROS Msg Data Type</em>'.
+	 * @generated
+	 */
+	ROSMsgDataType createROSMsgDataType();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

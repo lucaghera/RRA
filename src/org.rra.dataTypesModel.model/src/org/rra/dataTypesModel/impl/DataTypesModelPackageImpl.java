@@ -43,6 +43,7 @@ import org.rra.dataTypesModel.DataTypesModelFactory;
 import org.rra.dataTypesModel.DataTypesModelPackage;
 import org.rra.dataTypesModel.Function;
 import org.rra.dataTypesModel.PrimitiveDataType;
+import org.rra.dataTypesModel.ROSMsgDataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -92,6 +93,13 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 	 * @generated
 	 */
 	private EClass functionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rosMsgDataTypeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -285,6 +293,24 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getROSMsgDataType() {
+		return rosMsgDataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getROSMsgDataType_Msgs_package() {
+		return (EAttribute)rosMsgDataTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DataTypesModelFactory getDataTypesModelFactory() {
 		return (DataTypesModelFactory)getEFactoryInstance();
 	}
@@ -327,6 +353,9 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 		functionEClass = createEClass(FUNCTION);
 		createEAttribute(functionEClass, FUNCTION__NAME);
 		createEReference(functionEClass, FUNCTION__OUTPUT);
+
+		rosMsgDataTypeEClass = createEClass(ROS_MSG_DATA_TYPE);
+		createEAttribute(rosMsgDataTypeEClass, ROS_MSG_DATA_TYPE__MSGS_PACKAGE);
 	}
 
 	/**
@@ -360,6 +389,7 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 		primitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
 		compositeDataTypeEClass.getESuperTypes().add(this.getDataType());
 		containerDataTypeEClass.getESuperTypes().add(this.getDataType());
+		rosMsgDataTypeEClass.getESuperTypes().add(this.getDataType());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(dataTypesModelEClass, DataTypesModel.class, "DataTypesModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -381,6 +411,9 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 		initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFunction_Name(), ecorePackage.getEString(), "name", null, 1, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFunction_Output(), this.getDataType(), null, "output", null, 1, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rosMsgDataTypeEClass, ROSMsgDataType.class, "ROSMsgDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getROSMsgDataType_Msgs_package(), ecorePackage.getEString(), "msgs_package", null, 1, 1, ROSMsgDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

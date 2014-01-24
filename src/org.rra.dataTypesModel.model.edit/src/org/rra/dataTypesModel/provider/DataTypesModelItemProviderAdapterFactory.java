@@ -213,6 +213,29 @@ public class DataTypesModelItemProviderAdapterFactory extends DataTypesModelAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.rra.dataTypesModel.ROSMsgDataType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ROSMsgDataTypeItemProvider rosMsgDataTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.rra.dataTypesModel.ROSMsgDataType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createROSMsgDataTypeAdapter() {
+		if (rosMsgDataTypeItemProvider == null) {
+			rosMsgDataTypeItemProvider = new ROSMsgDataTypeItemProvider(this);
+		}
+
+		return rosMsgDataTypeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -316,6 +339,7 @@ public class DataTypesModelItemProviderAdapterFactory extends DataTypesModelAdap
 		if (compositeDataTypeItemProvider != null) compositeDataTypeItemProvider.dispose();
 		if (containerDataTypeItemProvider != null) containerDataTypeItemProvider.dispose();
 		if (functionItemProvider != null) functionItemProvider.dispose();
+		if (rosMsgDataTypeItemProvider != null) rosMsgDataTypeItemProvider.dispose();
 	}
 
 }

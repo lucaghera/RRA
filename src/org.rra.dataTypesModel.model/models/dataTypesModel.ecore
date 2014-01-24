@@ -25,4 +25,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="output" lowerBound="1"
         eType="#//DataType"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ROSMsgDataType" eSuperTypes="#//DataType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="msgs_package" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>
