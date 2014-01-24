@@ -31,9 +31,7 @@
 package org.rra.runtimeFeatureModel.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.hyperflex.featuremodels.provider.FeatureModelEditPlugin;
 
 /**

@@ -32,12 +32,15 @@ package org.rra.dataTypesModel.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.rra.dataTypesModel.*;
+import org.rra.dataTypesModel.CompositeDataType;
+import org.rra.dataTypesModel.ContainerDataType;
+import org.rra.dataTypesModel.DataType;
+import org.rra.dataTypesModel.DataTypesModel;
+import org.rra.dataTypesModel.DataTypesModelPackage;
+import org.rra.dataTypesModel.Function;
+import org.rra.dataTypesModel.PrimitiveDataType;
 
 /**
  * <!-- begin-user-doc -->

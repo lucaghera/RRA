@@ -31,7 +31,6 @@
 package org.rra.dataTypesModel.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.rra.dataTypesModel.DataTypesModelPackage;
 import org.rra.dataTypesModel.PrimitiveDataType;
 
