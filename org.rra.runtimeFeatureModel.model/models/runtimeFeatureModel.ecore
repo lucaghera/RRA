@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="runtimeFeatureModel" nsURI="http://www.rra.org/runtimeFeatureModel"
+    nsPrefix="runtimeFeatureModel">
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeAdaptationAttribute" abstract="true"
+      eSuperTypes="../../org.hyperflex.featuremodels.model/models/featureModel.ecore#//Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="measureUnit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NFRAttribute" eSuperTypes="#//RuntimeAdaptationAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tag" lowerBound="1" eType="#//NFRAttributeTag"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CVAttribute" eSuperTypes="#//RuntimeAdaptationAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CIMAttribute" eSuperTypes="#//RuntimeAdaptationAttribute"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="NFRAttributeTag">
+    <eLiterals name="MIN" literal="MIN"/>
+    <eLiterals name="MAX" value="1" literal="MAX"/>
+    <eLiterals name="AVG" value="2" literal="AVG"/>
+    <eLiterals name="COUNT" value="3" literal="COUNT"/>
+  </eClassifiers>
+</ecore:EPackage>
