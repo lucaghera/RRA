@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.rra.adaptationModel.dsl/src-gen" editDirectory="/org.rra.adaptationModel.dsl.edit/src"
+    editorDirectory="/org.rra.adaptationModel.dsl.editor/src" modelPluginID="org.rra.adaptationModel.dsl"
+    forceOverwrite="true" modelName="AdaptationModelDSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.rra.adaptationModel.dsl.edit"
+    editorPluginID="org.rra.adaptationModel.dsl.editor" runtimeVersion="2.9">
+  <genPackages prefix="AdaptationModelDSL" basePackage="org.rra.adaptationModel" disposableProviderFactory="true"
+      fileExtensions="adaptationModel" ecorePackage="AdaptationModelDSL.ecore#/">
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//AdaptationModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AdaptationModel/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AdaptationModel/rules"/>
+    </genClasses>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//Import/name"/>
+    </genClasses>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//Rule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//Rule/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//Rule/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//Rule/atomicAction"/>
+    </genClasses>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//Condition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//Condition/measurement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//Condition/meas"/>
+    </genClasses>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//MATH_OPERATOR">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//MATH_OPERATOR/measurement"/>
+    </genClasses>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//AVG"/>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//MIN"/>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//MAX"/>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//AtomicAction"/>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//SelectAction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//SelectAction/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//DeselectAction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//DeselectAction/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//ModifyAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//ModifyAttribute/featureAttribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//ModifyAttribute/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

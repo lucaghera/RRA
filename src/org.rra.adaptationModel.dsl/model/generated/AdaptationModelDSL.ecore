@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="adaptationModelDSL" nsURI="http://www.rra.org/adaptationModel/AdaptationModelDSL"
+    nsPrefix="adaptationModelDSL">
+  <eClassifiers xsi:type="ecore:EClass" name="AdaptationModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//Import" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
+        eType="#//Rule" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" upperBound="-1"
+        eType="#//Condition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atomicAction" upperBound="-1"
+        eType="#//AtomicAction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Condition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="measurement" eType="#//Import"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="meas" unique="false" upperBound="-1"
+        eType="#//Import"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MATH_OPERATOR">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="measurement" unique="false"
+        upperBound="-1" eType="#//Import"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AVG" eSuperTypes="#//MATH_OPERATOR"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MIN" eSuperTypes="#//MATH_OPERATOR"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MAX" eSuperTypes="#//MATH_OPERATOR"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AtomicAction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SelectAction" eSuperTypes="#//AtomicAction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="#//Import"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeselectAction" eSuperTypes="#//AtomicAction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="#//Import"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttribute" eSuperTypes="#//AtomicAction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featureAttribute" eType="#//Import"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
