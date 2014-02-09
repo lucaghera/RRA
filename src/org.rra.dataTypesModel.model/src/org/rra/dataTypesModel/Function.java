@@ -41,12 +41,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.rra.dataTypesModel.Function#getName <em>Name</em>}</li>
- *   <li>{@link org.rra.dataTypesModel.Function#getOutput <em>Output</em>}</li>
  * </ul>
  * </p>
  *
  * @see org.rra.dataTypesModel.DataTypesModelPackage#getFunction()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Function extends EObject {
@@ -75,31 +74,5 @@ public interface Function extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Output</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Output</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Output</em>' reference.
-	 * @see #setOutput(DataType)
-	 * @see org.rra.dataTypesModel.DataTypesModelPackage#getFunction_Output()
-	 * @model required="true"
-	 * @generated
-	 */
-	DataType getOutput();
-
-	/**
-	 * Sets the value of the '{@link org.rra.dataTypesModel.Function#getOutput <em>Output</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Output</em>' reference.
-	 * @see #getOutput()
-	 * @generated
-	 */
-	void setOutput(DataType value);
 
 } // Function

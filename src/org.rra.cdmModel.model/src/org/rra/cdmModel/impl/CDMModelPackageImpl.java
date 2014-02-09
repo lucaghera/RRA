@@ -196,24 +196,6 @@ public class CDMModelPackageImpl extends EPackageImpl implements CDMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getContextDependentMeasurement_CdmFunction() {
-		return (EReference)contextDependentMeasurementEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getContextDependentMeasurement_InputDataType() {
-		return (EReference)contextDependentMeasurementEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getROSContextDependentMeasurement() {
 		return rosContextDependentMeasurementEClass;
 	}
@@ -225,6 +207,24 @@ public class CDMModelPackageImpl extends EPackageImpl implements CDMModelPackage
 	 */
 	public EReference getROSContextDependentMeasurement_Publisher() {
 		return (EReference)rosContextDependentMeasurementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getROSContextDependentMeasurement_InputDataType() {
+		return (EReference)rosContextDependentMeasurementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getROSContextDependentMeasurement_CdmFunction() {
+		return (EReference)rosContextDependentMeasurementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -279,11 +279,11 @@ public class CDMModelPackageImpl extends EPackageImpl implements CDMModelPackage
 
 		contextDependentMeasurementEClass = createEClass(CONTEXT_DEPENDENT_MEASUREMENT);
 		createEAttribute(contextDependentMeasurementEClass, CONTEXT_DEPENDENT_MEASUREMENT__NAME);
-		createEReference(contextDependentMeasurementEClass, CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION);
-		createEReference(contextDependentMeasurementEClass, CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE);
 
 		rosContextDependentMeasurementEClass = createEClass(ROS_CONTEXT_DEPENDENT_MEASUREMENT);
 		createEReference(rosContextDependentMeasurementEClass, ROS_CONTEXT_DEPENDENT_MEASUREMENT__PUBLISHER);
+		createEReference(rosContextDependentMeasurementEClass, ROS_CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE);
+		createEReference(rosContextDependentMeasurementEClass, ROS_CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION);
 
 		orocosContextDependentMeasurementEClass = createEClass(OROCOS_CONTEXT_DEPENDENT_MEASUREMENT);
 		createEReference(orocosContextDependentMeasurementEClass, OROCOS_CONTEXT_DEPENDENT_MEASUREMENT__OUTPUT_PORT);
@@ -313,8 +313,8 @@ public class CDMModelPackageImpl extends EPackageImpl implements CDMModelPackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		DataTypesModelPackage theDataTypesModelPackage = (DataTypesModelPackage)EPackage.Registry.INSTANCE.getEPackage(DataTypesModelPackage.eNS_URI);
 		roscomponentmodelPackage theroscomponentmodelPackage = (roscomponentmodelPackage)EPackage.Registry.INSTANCE.getEPackage(roscomponentmodelPackage.eNS_URI);
+		DataTypesModelPackage theDataTypesModelPackage = (DataTypesModelPackage)EPackage.Registry.INSTANCE.getEPackage(DataTypesModelPackage.eNS_URI);
 		orocoscomponentmodelPackage theorocoscomponentmodelPackage = (orocoscomponentmodelPackage)EPackage.Registry.INSTANCE.getEPackage(orocoscomponentmodelPackage.eNS_URI);
 
 		// Create type parameters
@@ -332,11 +332,11 @@ public class CDMModelPackageImpl extends EPackageImpl implements CDMModelPackage
 
 		initEClass(contextDependentMeasurementEClass, ContextDependentMeasurement.class, "ContextDependentMeasurement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContextDependentMeasurement_Name(), ecorePackage.getEString(), "name", null, 1, 1, ContextDependentMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContextDependentMeasurement_CdmFunction(), theDataTypesModelPackage.getFunction(), null, "cdmFunction", null, 0, 1, ContextDependentMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContextDependentMeasurement_InputDataType(), theDataTypesModelPackage.getROSMsgDataType(), null, "inputDataType", null, 0, 1, ContextDependentMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rosContextDependentMeasurementEClass, ROSContextDependentMeasurement.class, "ROSContextDependentMeasurement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getROSContextDependentMeasurement_Publisher(), theroscomponentmodelPackage.getNodeMsgProducer(), null, "publisher", null, 1, 1, ROSContextDependentMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getROSContextDependentMeasurement_InputDataType(), theDataTypesModelPackage.getROSMsgDataType(), null, "inputDataType", null, 0, 1, ROSContextDependentMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getROSContextDependentMeasurement_CdmFunction(), theDataTypesModelPackage.getROSMsgFunction(), null, "cdmFunction", null, 0, 1, ROSContextDependentMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(orocosContextDependentMeasurementEClass, OrocosContextDependentMeasurement.class, "OrocosContextDependentMeasurement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOrocosContextDependentMeasurement_OutputPort(), theorocoscomponentmodelPackage.getTCOutputDataPort(), null, "outputPort", null, 1, 1, OrocosContextDependentMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

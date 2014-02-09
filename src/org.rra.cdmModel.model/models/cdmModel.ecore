@@ -8,12 +8,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ContextDependentMeasurement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cdmFunction" eType="ecore:EClass ../../org.rra.dataTypesModel.model/models/dataTypesModel.ecore#//Function"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inputDataType" eType="ecore:EClass ../../org.rra.dataTypesModel.model/models/dataTypesModel.ecore#//ROSMsgDataType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ROSContextDependentMeasurement" eSuperTypes="#//ContextDependentMeasurement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="publisher" lowerBound="1"
         eType="ecore:EClass ../../org.hyperflex.componentmodels.ros.model/models/rosComponentModel.ecore#//NodeMsgProducer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputDataType" eType="ecore:EClass ../../org.rra.dataTypesModel.model/models/dataTypesModel.ecore#//ROSMsgDataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cdmFunction" eType="ecore:EClass ../../org.rra.dataTypesModel.model/models/dataTypesModel.ecore#//ROSMsgFunction"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OrocosContextDependentMeasurement" eSuperTypes="#//ContextDependentMeasurement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="outputPort" lowerBound="1"

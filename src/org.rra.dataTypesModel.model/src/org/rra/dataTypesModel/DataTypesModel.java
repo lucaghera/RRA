@@ -43,6 +43,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.rra.dataTypesModel.DataTypesModel#getName <em>Name</em>}</li>
  *   <li>{@link org.rra.dataTypesModel.DataTypesModel#getTypes <em>Types</em>}</li>
+ *   <li>{@link org.rra.dataTypesModel.DataTypesModel#getNonMemberFunctions <em>Non Member Functions</em>}</li>
  * </ul>
  * </p>
  *
@@ -92,5 +93,21 @@ public interface DataTypesModel extends EObject {
 	 * @generated
 	 */
 	EList<DataType> getTypes();
+
+	/**
+	 * Returns the value of the '<em><b>Non Member Functions</b></em>' reference list.
+	 * The list contents are of type {@link org.rra.dataTypesModel.NonMemberFunction}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Non Member Functions</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Non Member Functions</em>' reference list.
+	 * @see org.rra.dataTypesModel.DataTypesModelPackage#getDataTypesModel_NonMemberFunctions()
+	 * @model
+	 * @generated
+	 */
+	EList<NonMemberFunction> getNonMemberFunctions();
 
 } // DataTypesModel

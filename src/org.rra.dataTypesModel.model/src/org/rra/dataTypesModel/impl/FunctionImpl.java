@@ -32,10 +32,8 @@ package org.rra.dataTypesModel.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.rra.dataTypesModel.DataType;
 import org.rra.dataTypesModel.DataTypesModelPackage;
 import org.rra.dataTypesModel.Function;
 
@@ -47,13 +45,12 @@ import org.rra.dataTypesModel.Function;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.rra.dataTypesModel.impl.FunctionImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.rra.dataTypesModel.impl.FunctionImpl#getOutput <em>Output</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FunctionImpl extends MinimalEObjectImpl.Container implements Function {
+public abstract class FunctionImpl extends MinimalEObjectImpl.Container implements Function {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -73,16 +70,6 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getOutput() <em>Output</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOutput()
-	 * @generated
-	 * @ordered
-	 */
-	protected DataType output;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,52 +116,11 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getOutput() {
-		if (output != null && output.eIsProxy()) {
-			InternalEObject oldOutput = (InternalEObject)output;
-			output = (DataType)eResolveProxy(oldOutput);
-			if (output != oldOutput) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataTypesModelPackage.FUNCTION__OUTPUT, oldOutput, output));
-			}
-		}
-		return output;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataType basicGetOutput() {
-		return output;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOutput(DataType newOutput) {
-		DataType oldOutput = output;
-		output = newOutput;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataTypesModelPackage.FUNCTION__OUTPUT, oldOutput, output));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DataTypesModelPackage.FUNCTION__NAME:
 				return getName();
-			case DataTypesModelPackage.FUNCTION__OUTPUT:
-				if (resolve) return getOutput();
-				return basicGetOutput();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -189,9 +135,6 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 		switch (featureID) {
 			case DataTypesModelPackage.FUNCTION__NAME:
 				setName((String)newValue);
-				return;
-			case DataTypesModelPackage.FUNCTION__OUTPUT:
-				setOutput((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -208,9 +151,6 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 			case DataTypesModelPackage.FUNCTION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case DataTypesModelPackage.FUNCTION__OUTPUT:
-				setOutput((DataType)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -225,8 +165,6 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
 		switch (featureID) {
 			case DataTypesModelPackage.FUNCTION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case DataTypesModelPackage.FUNCTION__OUTPUT:
-				return output != null;
 		}
 		return super.eIsSet(featureID);
 	}

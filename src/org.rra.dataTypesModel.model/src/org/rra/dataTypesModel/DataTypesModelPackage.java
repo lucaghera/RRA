@@ -113,13 +113,22 @@ public interface DataTypesModelPackage extends EPackage {
 	int DATA_TYPES_MODEL__TYPES = 1;
 
 	/**
+	 * The feature id for the '<em><b>Non Member Functions</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPES_MODEL__NON_MEMBER_FUNCTIONS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Data Types Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPES_MODEL_FEATURE_COUNT = 2;
+	int DATA_TYPES_MODEL_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Data Types Model</em>' class.
@@ -267,43 +276,7 @@ public interface DataTypesModelPackage extends EPackage {
 	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getContainerDataType()
 	 * @generated
 	 */
-	int CONTAINER_DATA_TYPE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER_DATA_TYPE__NAME = DATA_TYPE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Contained Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER_DATA_TYPE__CONTAINED_TYPE = DATA_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Container Data Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Container Data Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINER_DATA_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+	int CONTAINER_DATA_TYPE = 5;
 
 	/**
 	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.FunctionImpl <em>Function</em>}' class.
@@ -313,44 +286,67 @@ public interface DataTypesModelPackage extends EPackage {
 	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getFunction()
 	 * @generated
 	 */
-	int FUNCTION = 5;
+	int FUNCTION = 6;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.MemberFunctionImpl <em>Member Function</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see org.rra.dataTypesModel.impl.MemberFunctionImpl
+	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getMemberFunction()
 	 * @generated
-	 * @ordered
 	 */
-	int FUNCTION__NAME = 0;
+	int MEMBER_FUNCTION = 7;
 
 	/**
-	 * The feature id for the '<em><b>Output</b></em>' reference.
+	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.NonMemberFunctionImpl <em>Non Member Function</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see org.rra.dataTypesModel.impl.NonMemberFunctionImpl
+	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getNonMemberFunction()
 	 * @generated
-	 * @ordered
 	 */
-	int FUNCTION__OUTPUT = 1;
+	int NON_MEMBER_FUNCTION = 8;
 
 	/**
-	 * The number of structural features of the '<em>Function</em>' class.
+	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.ROSMsgFunctionImpl <em>ROS Msg Function</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see org.rra.dataTypesModel.impl.ROSMsgFunctionImpl
+	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getROSMsgFunction()
 	 * @generated
-	 * @ordered
 	 */
-	int FUNCTION_FEATURE_COUNT = 2;
+	int ROS_MSG_FUNCTION = 9;
 
 	/**
-	 * The number of operations of the '<em>Function</em>' class.
+	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.FieldImpl <em>Field</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see org.rra.dataTypesModel.impl.FieldImpl
+	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getField()
 	 * @generated
-	 * @ordered
 	 */
-	int FUNCTION_OPERATION_COUNT = 0;
+	int FIELD = 10;
 
+	/**
+	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.ROSMsgFieldImpl <em>ROS Msg Field</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.rra.dataTypesModel.impl.ROSMsgFieldImpl
+	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getROSMsgField()
+	 * @generated
+	 */
+	int ROS_MSG_FIELD = 11;
+
+	/**
+	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.CompositeTypeFieldImpl <em>Composite Type Field</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.rra.dataTypesModel.impl.CompositeTypeFieldImpl
+	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getCompositeTypeField()
+	 * @generated
+	 */
+	int COMPOSITE_TYPE_FIELD = 12;
 
 	/**
 	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.ROSMsgDataTypeImpl <em>ROS Msg Data Type</em>}' class.
@@ -360,7 +356,7 @@ public interface DataTypesModelPackage extends EPackage {
 	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getROSMsgDataType()
 	 * @generated
 	 */
-	int ROS_MSG_DATA_TYPE = 6;
+	int ROS_MSG_DATA_TYPE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -381,13 +377,31 @@ public interface DataTypesModelPackage extends EPackage {
 	int ROS_MSG_DATA_TYPE__MSGS_PACKAGE = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Functions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_MSG_DATA_TYPE__FUNCTIONS = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_MSG_DATA_TYPE__FIELDS = DATA_TYPE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>ROS Msg Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_MSG_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+	int ROS_MSG_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>ROS Msg Data Type</em>' class.
@@ -397,6 +411,294 @@ public interface DataTypesModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROS_MSG_DATA_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_DATA_TYPE__NAME = DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Template</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_DATA_TYPE__TEMPLATE = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Container Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Container Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_DATA_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Function</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Function</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMBER_FUNCTION__NAME = FUNCTION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Return Value</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMBER_FUNCTION__RETURN_VALUE = FUNCTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Member Function</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMBER_FUNCTION_FEATURE_COUNT = FUNCTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Member Function</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMBER_FUNCTION_OPERATION_COUNT = FUNCTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NON_MEMBER_FUNCTION__NAME = FUNCTION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Return Value</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NON_MEMBER_FUNCTION__RETURN_VALUE = FUNCTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Input Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NON_MEMBER_FUNCTION__INPUT_PARAMETER = FUNCTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Non Member Function</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NON_MEMBER_FUNCTION_FEATURE_COUNT = FUNCTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Non Member Function</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NON_MEMBER_FUNCTION_OPERATION_COUNT = FUNCTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_MSG_FUNCTION__NAME = FUNCTION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Input Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_MSG_FUNCTION__INPUT_PARAMETER = FUNCTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Output Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_MSG_FUNCTION__OUTPUT_PARAMETER = FUNCTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>ROS Msg Function</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_MSG_FUNCTION_FEATURE_COUNT = FUNCTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>ROS Msg Function</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_MSG_FUNCTION_OPERATION_COUNT = FUNCTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Field</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Field</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_MSG_FIELD__NAME = FIELD__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_MSG_FIELD__TYPE = FIELD_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>ROS Msg Field</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_MSG_FIELD_FEATURE_COUNT = FIELD_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>ROS Msg Field</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_MSG_FIELD_OPERATION_COUNT = FIELD_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_TYPE_FIELD__NAME = FIELD__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_TYPE_FIELD__TYPE = FIELD_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Composite Type Field</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_TYPE_FIELD_FEATURE_COUNT = FIELD_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Composite Type Field</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_TYPE_FIELD_OPERATION_COUNT = FIELD_OPERATION_COUNT + 0;
 
 
 	/**
@@ -430,6 +732,17 @@ public interface DataTypesModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDataTypesModel_Types();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.rra.dataTypesModel.DataTypesModel#getNonMemberFunctions <em>Non Member Functions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Non Member Functions</em>'.
+	 * @see org.rra.dataTypesModel.DataTypesModel#getNonMemberFunctions()
+	 * @see #getDataTypesModel()
+	 * @generated
+	 */
+	EReference getDataTypesModel_NonMemberFunctions();
 
 	/**
 	 * Returns the meta object for class '{@link org.rra.dataTypesModel.DataType <em>Data Type</em>}'.
@@ -505,15 +818,15 @@ public interface DataTypesModelPackage extends EPackage {
 	EClass getContainerDataType();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.rra.dataTypesModel.ContainerDataType#getContainedType <em>Contained Type</em>}'.
+	 * Returns the meta object for the reference '{@link org.rra.dataTypesModel.ContainerDataType#getTemplate <em>Template</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Contained Type</em>'.
-	 * @see org.rra.dataTypesModel.ContainerDataType#getContainedType()
+	 * @return the meta object for the reference '<em>Template</em>'.
+	 * @see org.rra.dataTypesModel.ContainerDataType#getTemplate()
 	 * @see #getContainerDataType()
 	 * @generated
 	 */
-	EReference getContainerDataType_ContainedType();
+	EReference getContainerDataType_Template();
 
 	/**
 	 * Returns the meta object for class '{@link org.rra.dataTypesModel.Function <em>Function</em>}'.
@@ -537,15 +850,152 @@ public interface DataTypesModelPackage extends EPackage {
 	EAttribute getFunction_Name();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.rra.dataTypesModel.Function#getOutput <em>Output</em>}'.
+	 * Returns the meta object for class '{@link org.rra.dataTypesModel.MemberFunction <em>Member Function</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Output</em>'.
-	 * @see org.rra.dataTypesModel.Function#getOutput()
-	 * @see #getFunction()
+	 * @return the meta object for class '<em>Member Function</em>'.
+	 * @see org.rra.dataTypesModel.MemberFunction
 	 * @generated
 	 */
-	EReference getFunction_Output();
+	EClass getMemberFunction();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.rra.dataTypesModel.MemberFunction#getReturnValue <em>Return Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Return Value</em>'.
+	 * @see org.rra.dataTypesModel.MemberFunction#getReturnValue()
+	 * @see #getMemberFunction()
+	 * @generated
+	 */
+	EReference getMemberFunction_ReturnValue();
+
+	/**
+	 * Returns the meta object for class '{@link org.rra.dataTypesModel.NonMemberFunction <em>Non Member Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Non Member Function</em>'.
+	 * @see org.rra.dataTypesModel.NonMemberFunction
+	 * @generated
+	 */
+	EClass getNonMemberFunction();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.rra.dataTypesModel.NonMemberFunction#getReturnValue <em>Return Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Return Value</em>'.
+	 * @see org.rra.dataTypesModel.NonMemberFunction#getReturnValue()
+	 * @see #getNonMemberFunction()
+	 * @generated
+	 */
+	EReference getNonMemberFunction_ReturnValue();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.rra.dataTypesModel.NonMemberFunction#getInputParameter <em>Input Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Input Parameter</em>'.
+	 * @see org.rra.dataTypesModel.NonMemberFunction#getInputParameter()
+	 * @see #getNonMemberFunction()
+	 * @generated
+	 */
+	EReference getNonMemberFunction_InputParameter();
+
+	/**
+	 * Returns the meta object for class '{@link org.rra.dataTypesModel.ROSMsgFunction <em>ROS Msg Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>ROS Msg Function</em>'.
+	 * @see org.rra.dataTypesModel.ROSMsgFunction
+	 * @generated
+	 */
+	EClass getROSMsgFunction();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.rra.dataTypesModel.ROSMsgFunction#getInputParameter <em>Input Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Input Parameter</em>'.
+	 * @see org.rra.dataTypesModel.ROSMsgFunction#getInputParameter()
+	 * @see #getROSMsgFunction()
+	 * @generated
+	 */
+	EReference getROSMsgFunction_InputParameter();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.rra.dataTypesModel.ROSMsgFunction#getOutputParameter <em>Output Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Output Parameter</em>'.
+	 * @see org.rra.dataTypesModel.ROSMsgFunction#getOutputParameter()
+	 * @see #getROSMsgFunction()
+	 * @generated
+	 */
+	EReference getROSMsgFunction_OutputParameter();
+
+	/**
+	 * Returns the meta object for class '{@link org.rra.dataTypesModel.Field <em>Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Field</em>'.
+	 * @see org.rra.dataTypesModel.Field
+	 * @generated
+	 */
+	EClass getField();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.rra.dataTypesModel.Field#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.rra.dataTypesModel.Field#getName()
+	 * @see #getField()
+	 * @generated
+	 */
+	EAttribute getField_Name();
+
+	/**
+	 * Returns the meta object for class '{@link org.rra.dataTypesModel.ROSMsgField <em>ROS Msg Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>ROS Msg Field</em>'.
+	 * @see org.rra.dataTypesModel.ROSMsgField
+	 * @generated
+	 */
+	EClass getROSMsgField();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.rra.dataTypesModel.ROSMsgField#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see org.rra.dataTypesModel.ROSMsgField#getType()
+	 * @see #getROSMsgField()
+	 * @generated
+	 */
+	EReference getROSMsgField_Type();
+
+	/**
+	 * Returns the meta object for class '{@link org.rra.dataTypesModel.CompositeTypeField <em>Composite Type Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Composite Type Field</em>'.
+	 * @see org.rra.dataTypesModel.CompositeTypeField
+	 * @generated
+	 */
+	EClass getCompositeTypeField();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.rra.dataTypesModel.CompositeTypeField#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see org.rra.dataTypesModel.CompositeTypeField#getType()
+	 * @see #getCompositeTypeField()
+	 * @generated
+	 */
+	EReference getCompositeTypeField_Type();
 
 	/**
 	 * Returns the meta object for class '{@link org.rra.dataTypesModel.ROSMsgDataType <em>ROS Msg Data Type</em>}'.
@@ -567,6 +1017,28 @@ public interface DataTypesModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getROSMsgDataType_Msgs_package();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.rra.dataTypesModel.ROSMsgDataType#getFunctions <em>Functions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Functions</em>'.
+	 * @see org.rra.dataTypesModel.ROSMsgDataType#getFunctions()
+	 * @see #getROSMsgDataType()
+	 * @generated
+	 */
+	EReference getROSMsgDataType_Functions();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.rra.dataTypesModel.ROSMsgDataType#getFields <em>Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Fields</em>'.
+	 * @see org.rra.dataTypesModel.ROSMsgDataType#getFields()
+	 * @see #getROSMsgDataType()
+	 * @generated
+	 */
+	EReference getROSMsgDataType_Fields();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -616,6 +1088,14 @@ public interface DataTypesModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_TYPES_MODEL__TYPES = eINSTANCE.getDataTypesModel_Types();
+
+		/**
+		 * The meta object literal for the '<em><b>Non Member Functions</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_TYPES_MODEL__NON_MEMBER_FUNCTIONS = eINSTANCE.getDataTypesModel_NonMemberFunctions();
 
 		/**
 		 * The meta object literal for the '{@link org.rra.dataTypesModel.impl.DataTypeImpl <em>Data Type</em>}' class.
@@ -682,12 +1162,12 @@ public interface DataTypesModelPackage extends EPackage {
 		EClass CONTAINER_DATA_TYPE = eINSTANCE.getContainerDataType();
 
 		/**
-		 * The meta object literal for the '<em><b>Contained Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Template</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTAINER_DATA_TYPE__CONTAINED_TYPE = eINSTANCE.getContainerDataType_ContainedType();
+		EReference CONTAINER_DATA_TYPE__TEMPLATE = eINSTANCE.getContainerDataType_Template();
 
 		/**
 		 * The meta object literal for the '{@link org.rra.dataTypesModel.impl.FunctionImpl <em>Function</em>}' class.
@@ -708,12 +1188,128 @@ public interface DataTypesModelPackage extends EPackage {
 		EAttribute FUNCTION__NAME = eINSTANCE.getFunction_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Output</b></em>' reference feature.
+		 * The meta object literal for the '{@link org.rra.dataTypesModel.impl.MemberFunctionImpl <em>Member Function</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.rra.dataTypesModel.impl.MemberFunctionImpl
+		 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getMemberFunction()
+		 * @generated
+		 */
+		EClass MEMBER_FUNCTION = eINSTANCE.getMemberFunction();
+
+		/**
+		 * The meta object literal for the '<em><b>Return Value</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FUNCTION__OUTPUT = eINSTANCE.getFunction_Output();
+		EReference MEMBER_FUNCTION__RETURN_VALUE = eINSTANCE.getMemberFunction_ReturnValue();
+
+		/**
+		 * The meta object literal for the '{@link org.rra.dataTypesModel.impl.NonMemberFunctionImpl <em>Non Member Function</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.rra.dataTypesModel.impl.NonMemberFunctionImpl
+		 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getNonMemberFunction()
+		 * @generated
+		 */
+		EClass NON_MEMBER_FUNCTION = eINSTANCE.getNonMemberFunction();
+
+		/**
+		 * The meta object literal for the '<em><b>Return Value</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NON_MEMBER_FUNCTION__RETURN_VALUE = eINSTANCE.getNonMemberFunction_ReturnValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Input Parameter</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NON_MEMBER_FUNCTION__INPUT_PARAMETER = eINSTANCE.getNonMemberFunction_InputParameter();
+
+		/**
+		 * The meta object literal for the '{@link org.rra.dataTypesModel.impl.ROSMsgFunctionImpl <em>ROS Msg Function</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.rra.dataTypesModel.impl.ROSMsgFunctionImpl
+		 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getROSMsgFunction()
+		 * @generated
+		 */
+		EClass ROS_MSG_FUNCTION = eINSTANCE.getROSMsgFunction();
+
+		/**
+		 * The meta object literal for the '<em><b>Input Parameter</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_MSG_FUNCTION__INPUT_PARAMETER = eINSTANCE.getROSMsgFunction_InputParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Output Parameter</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_MSG_FUNCTION__OUTPUT_PARAMETER = eINSTANCE.getROSMsgFunction_OutputParameter();
+
+		/**
+		 * The meta object literal for the '{@link org.rra.dataTypesModel.impl.FieldImpl <em>Field</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.rra.dataTypesModel.impl.FieldImpl
+		 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getField()
+		 * @generated
+		 */
+		EClass FIELD = eINSTANCE.getField();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIELD__NAME = eINSTANCE.getField_Name();
+
+		/**
+		 * The meta object literal for the '{@link org.rra.dataTypesModel.impl.ROSMsgFieldImpl <em>ROS Msg Field</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.rra.dataTypesModel.impl.ROSMsgFieldImpl
+		 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getROSMsgField()
+		 * @generated
+		 */
+		EClass ROS_MSG_FIELD = eINSTANCE.getROSMsgField();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_MSG_FIELD__TYPE = eINSTANCE.getROSMsgField_Type();
+
+		/**
+		 * The meta object literal for the '{@link org.rra.dataTypesModel.impl.CompositeTypeFieldImpl <em>Composite Type Field</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.rra.dataTypesModel.impl.CompositeTypeFieldImpl
+		 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getCompositeTypeField()
+		 * @generated
+		 */
+		EClass COMPOSITE_TYPE_FIELD = eINSTANCE.getCompositeTypeField();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPOSITE_TYPE_FIELD__TYPE = eINSTANCE.getCompositeTypeField_Type();
 
 		/**
 		 * The meta object literal for the '{@link org.rra.dataTypesModel.impl.ROSMsgDataTypeImpl <em>ROS Msg Data Type</em>}' class.
@@ -732,6 +1328,22 @@ public interface DataTypesModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROS_MSG_DATA_TYPE__MSGS_PACKAGE = eINSTANCE.getROSMsgDataType_Msgs_package();
+
+		/**
+		 * The meta object literal for the '<em><b>Functions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_MSG_DATA_TYPE__FUNCTIONS = eINSTANCE.getROSMsgDataType_Functions();
+
+		/**
+		 * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROS_MSG_DATA_TYPE__FIELDS = eINSTANCE.getROSMsgDataType_Fields();
 
 	}
 

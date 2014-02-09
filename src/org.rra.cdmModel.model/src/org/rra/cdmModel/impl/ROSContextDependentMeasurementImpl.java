@@ -37,6 +37,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.hyperflex.roscomponentmodel.NodeMsgProducer;
 import org.rra.cdmModel.CDMModelPackage;
 import org.rra.cdmModel.ROSContextDependentMeasurement;
+import org.rra.dataTypesModel.ROSMsgDataType;
+import org.rra.dataTypesModel.ROSMsgFunction;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,6 +48,8 @@ import org.rra.cdmModel.ROSContextDependentMeasurement;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.rra.cdmModel.impl.ROSContextDependentMeasurementImpl#getPublisher <em>Publisher</em>}</li>
+ *   <li>{@link org.rra.cdmModel.impl.ROSContextDependentMeasurementImpl#getInputDataType <em>Input Data Type</em>}</li>
+ *   <li>{@link org.rra.cdmModel.impl.ROSContextDependentMeasurementImpl#getCdmFunction <em>Cdm Function</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,6 +65,25 @@ public class ROSContextDependentMeasurementImpl extends ContextDependentMeasurem
 	 * @ordered
 	 */
 	protected NodeMsgProducer publisher;
+
+	/**
+	 * The cached value of the '{@link #getInputDataType() <em>Input Data Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputDataType()
+	 * @generated
+	 * @ordered
+	 */
+	protected ROSMsgDataType inputDataType;
+	/**
+	 * The cached value of the '{@link #getCdmFunction() <em>Cdm Function</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCdmFunction()
+	 * @generated
+	 * @ordered
+	 */
+	protected ROSMsgFunction cdmFunction;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,12 +147,94 @@ public class ROSContextDependentMeasurementImpl extends ContextDependentMeasurem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ROSMsgDataType getInputDataType() {
+		if (inputDataType != null && inputDataType.eIsProxy()) {
+			InternalEObject oldInputDataType = (InternalEObject)inputDataType;
+			inputDataType = (ROSMsgDataType)eResolveProxy(oldInputDataType);
+			if (inputDataType != oldInputDataType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE, oldInputDataType, inputDataType));
+			}
+		}
+		return inputDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ROSMsgDataType basicGetInputDataType() {
+		return inputDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInputDataType(ROSMsgDataType newInputDataType) {
+		ROSMsgDataType oldInputDataType = inputDataType;
+		inputDataType = newInputDataType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE, oldInputDataType, inputDataType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ROSMsgFunction getCdmFunction() {
+		if (cdmFunction != null && cdmFunction.eIsProxy()) {
+			InternalEObject oldCdmFunction = (InternalEObject)cdmFunction;
+			cdmFunction = (ROSMsgFunction)eResolveProxy(oldCdmFunction);
+			if (cdmFunction != oldCdmFunction) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION, oldCdmFunction, cdmFunction));
+			}
+		}
+		return cdmFunction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ROSMsgFunction basicGetCdmFunction() {
+		return cdmFunction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCdmFunction(ROSMsgFunction newCdmFunction) {
+		ROSMsgFunction oldCdmFunction = cdmFunction;
+		cdmFunction = newCdmFunction;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION, oldCdmFunction, cdmFunction));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__PUBLISHER:
 				if (resolve) return getPublisher();
 				return basicGetPublisher();
+			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE:
+				if (resolve) return getInputDataType();
+				return basicGetInputDataType();
+			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION:
+				if (resolve) return getCdmFunction();
+				return basicGetCdmFunction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -144,6 +249,12 @@ public class ROSContextDependentMeasurementImpl extends ContextDependentMeasurem
 		switch (featureID) {
 			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__PUBLISHER:
 				setPublisher((NodeMsgProducer)newValue);
+				return;
+			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE:
+				setInputDataType((ROSMsgDataType)newValue);
+				return;
+			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION:
+				setCdmFunction((ROSMsgFunction)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -160,6 +271,12 @@ public class ROSContextDependentMeasurementImpl extends ContextDependentMeasurem
 			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__PUBLISHER:
 				setPublisher((NodeMsgProducer)null);
 				return;
+			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE:
+				setInputDataType((ROSMsgDataType)null);
+				return;
+			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION:
+				setCdmFunction((ROSMsgFunction)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -174,6 +291,10 @@ public class ROSContextDependentMeasurementImpl extends ContextDependentMeasurem
 		switch (featureID) {
 			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__PUBLISHER:
 				return publisher != null;
+			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE:
+				return inputDataType != null;
+			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION:
+				return cdmFunction != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -190,26 +190,118 @@ public class DataTypesModelItemProviderAdapterFactory extends DataTypesModelAdap
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.rra.dataTypesModel.Function} instances.
+	 * This keeps track of the one adapter used for all {@link org.rra.dataTypesModel.MemberFunction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FunctionItemProvider functionItemProvider;
+	protected MemberFunctionItemProvider memberFunctionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.rra.dataTypesModel.Function}.
+	 * This creates an adapter for a {@link org.rra.dataTypesModel.MemberFunction}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createFunctionAdapter() {
-		if (functionItemProvider == null) {
-			functionItemProvider = new FunctionItemProvider(this);
+	public Adapter createMemberFunctionAdapter() {
+		if (memberFunctionItemProvider == null) {
+			memberFunctionItemProvider = new MemberFunctionItemProvider(this);
 		}
 
-		return functionItemProvider;
+		return memberFunctionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.rra.dataTypesModel.NonMemberFunction} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NonMemberFunctionItemProvider nonMemberFunctionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.rra.dataTypesModel.NonMemberFunction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNonMemberFunctionAdapter() {
+		if (nonMemberFunctionItemProvider == null) {
+			nonMemberFunctionItemProvider = new NonMemberFunctionItemProvider(this);
+		}
+
+		return nonMemberFunctionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.rra.dataTypesModel.ROSMsgFunction} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ROSMsgFunctionItemProvider rosMsgFunctionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.rra.dataTypesModel.ROSMsgFunction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createROSMsgFunctionAdapter() {
+		if (rosMsgFunctionItemProvider == null) {
+			rosMsgFunctionItemProvider = new ROSMsgFunctionItemProvider(this);
+		}
+
+		return rosMsgFunctionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.rra.dataTypesModel.ROSMsgField} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ROSMsgFieldItemProvider rosMsgFieldItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.rra.dataTypesModel.ROSMsgField}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createROSMsgFieldAdapter() {
+		if (rosMsgFieldItemProvider == null) {
+			rosMsgFieldItemProvider = new ROSMsgFieldItemProvider(this);
+		}
+
+		return rosMsgFieldItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.rra.dataTypesModel.CompositeTypeField} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CompositeTypeFieldItemProvider compositeTypeFieldItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.rra.dataTypesModel.CompositeTypeField}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCompositeTypeFieldAdapter() {
+		if (compositeTypeFieldItemProvider == null) {
+			compositeTypeFieldItemProvider = new CompositeTypeFieldItemProvider(this);
+		}
+
+		return compositeTypeFieldItemProvider;
 	}
 
 	/**
@@ -337,9 +429,13 @@ public class DataTypesModelItemProviderAdapterFactory extends DataTypesModelAdap
 		if (dataTypesModelItemProvider != null) dataTypesModelItemProvider.dispose();
 		if (primitiveDataTypeItemProvider != null) primitiveDataTypeItemProvider.dispose();
 		if (compositeDataTypeItemProvider != null) compositeDataTypeItemProvider.dispose();
-		if (containerDataTypeItemProvider != null) containerDataTypeItemProvider.dispose();
-		if (functionItemProvider != null) functionItemProvider.dispose();
 		if (rosMsgDataTypeItemProvider != null) rosMsgDataTypeItemProvider.dispose();
+		if (containerDataTypeItemProvider != null) containerDataTypeItemProvider.dispose();
+		if (memberFunctionItemProvider != null) memberFunctionItemProvider.dispose();
+		if (nonMemberFunctionItemProvider != null) nonMemberFunctionItemProvider.dispose();
+		if (rosMsgFunctionItemProvider != null) rosMsgFunctionItemProvider.dispose();
+		if (rosMsgFieldItemProvider != null) rosMsgFieldItemProvider.dispose();
+		if (compositeTypeFieldItemProvider != null) compositeTypeFieldItemProvider.dispose();
 	}
 
 }

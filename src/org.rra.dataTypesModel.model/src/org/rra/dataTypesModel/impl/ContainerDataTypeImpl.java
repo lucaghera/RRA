@@ -45,7 +45,7 @@ import org.rra.dataTypesModel.DataTypesModelPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.rra.dataTypesModel.impl.ContainerDataTypeImpl#getContainedType <em>Contained Type</em>}</li>
+ *   <li>{@link org.rra.dataTypesModel.impl.ContainerDataTypeImpl#getTemplate <em>Template</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,15 +53,14 @@ import org.rra.dataTypesModel.DataTypesModelPackage;
  */
 public class ContainerDataTypeImpl extends DataTypeImpl implements ContainerDataType {
 	/**
-	 * The cached value of the '{@link #getContainedType() <em>Contained Type</em>}' reference.
+	 * The cached value of the '{@link #getTemplate() <em>Template</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContainedType()
+	 * @see #getTemplate()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType containedType;
-
+	protected DataType template;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -86,16 +85,16 @@ public class ContainerDataTypeImpl extends DataTypeImpl implements ContainerData
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getContainedType() {
-		if (containedType != null && containedType.eIsProxy()) {
-			InternalEObject oldContainedType = (InternalEObject)containedType;
-			containedType = (DataType)eResolveProxy(oldContainedType);
-			if (containedType != oldContainedType) {
+	public DataType getTemplate() {
+		if (template != null && template.eIsProxy()) {
+			InternalEObject oldTemplate = (InternalEObject)template;
+			template = (DataType)eResolveProxy(oldTemplate);
+			if (template != oldTemplate) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataTypesModelPackage.CONTAINER_DATA_TYPE__CONTAINED_TYPE, oldContainedType, containedType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataTypesModelPackage.CONTAINER_DATA_TYPE__TEMPLATE, oldTemplate, template));
 			}
 		}
-		return containedType;
+		return template;
 	}
 
 	/**
@@ -103,8 +102,8 @@ public class ContainerDataTypeImpl extends DataTypeImpl implements ContainerData
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetContainedType() {
-		return containedType;
+	public DataType basicGetTemplate() {
+		return template;
 	}
 
 	/**
@@ -112,11 +111,11 @@ public class ContainerDataTypeImpl extends DataTypeImpl implements ContainerData
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContainedType(DataType newContainedType) {
-		DataType oldContainedType = containedType;
-		containedType = newContainedType;
+	public void setTemplate(DataType newTemplate) {
+		DataType oldTemplate = template;
+		template = newTemplate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataTypesModelPackage.CONTAINER_DATA_TYPE__CONTAINED_TYPE, oldContainedType, containedType));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataTypesModelPackage.CONTAINER_DATA_TYPE__TEMPLATE, oldTemplate, template));
 	}
 
 	/**
@@ -127,9 +126,9 @@ public class ContainerDataTypeImpl extends DataTypeImpl implements ContainerData
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DataTypesModelPackage.CONTAINER_DATA_TYPE__CONTAINED_TYPE:
-				if (resolve) return getContainedType();
-				return basicGetContainedType();
+			case DataTypesModelPackage.CONTAINER_DATA_TYPE__TEMPLATE:
+				if (resolve) return getTemplate();
+				return basicGetTemplate();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -142,8 +141,8 @@ public class ContainerDataTypeImpl extends DataTypeImpl implements ContainerData
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DataTypesModelPackage.CONTAINER_DATA_TYPE__CONTAINED_TYPE:
-				setContainedType((DataType)newValue);
+			case DataTypesModelPackage.CONTAINER_DATA_TYPE__TEMPLATE:
+				setTemplate((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -157,8 +156,8 @@ public class ContainerDataTypeImpl extends DataTypeImpl implements ContainerData
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DataTypesModelPackage.CONTAINER_DATA_TYPE__CONTAINED_TYPE:
-				setContainedType((DataType)null);
+			case DataTypesModelPackage.CONTAINER_DATA_TYPE__TEMPLATE:
+				setTemplate((DataType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -172,8 +171,8 @@ public class ContainerDataTypeImpl extends DataTypeImpl implements ContainerData
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DataTypesModelPackage.CONTAINER_DATA_TYPE__CONTAINED_TYPE:
-				return containedType != null;
+			case DataTypesModelPackage.CONTAINER_DATA_TYPE__TEMPLATE:
+				return template != null;
 		}
 		return super.eIsSet(featureID);
 	}

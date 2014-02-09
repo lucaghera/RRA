@@ -82,6 +82,8 @@ public class ROSContextDependentMeasurementItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPublisherPropertyDescriptor(object);
+			addInputDataTypePropertyDescriptor(object);
+			addCdmFunctionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -100,6 +102,50 @@ public class ROSContextDependentMeasurementItemProvider
 				 getString("_UI_ROSContextDependentMeasurement_publisher_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ROSContextDependentMeasurement_publisher_feature", "_UI_ROSContextDependentMeasurement_type"),
 				 CDMModelPackage.Literals.ROS_CONTEXT_DEPENDENT_MEASUREMENT__PUBLISHER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Input Data Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInputDataTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ROSContextDependentMeasurement_inputDataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ROSContextDependentMeasurement_inputDataType_feature", "_UI_ROSContextDependentMeasurement_type"),
+				 CDMModelPackage.Literals.ROS_CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Cdm Function feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCdmFunctionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ROSContextDependentMeasurement_cdmFunction_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ROSContextDependentMeasurement_cdmFunction_feature", "_UI_ROSContextDependentMeasurement_type"),
+				 CDMModelPackage.Literals.ROS_CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION,
 				 true,
 				 false,
 				 true,

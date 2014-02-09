@@ -81,25 +81,25 @@ public class ContainerDataTypeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addContainedTypePropertyDescriptor(object);
+			addTemplatePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Contained Type feature.
+	 * This adds a property descriptor for the Template feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContainedTypePropertyDescriptor(Object object) {
+	protected void addTemplatePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContainerDataType_containedType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainerDataType_containedType_feature", "_UI_ContainerDataType_type"),
-				 DataTypesModelPackage.Literals.CONTAINER_DATA_TYPE__CONTAINED_TYPE,
+				 getString("_UI_ContainerDataType_template_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContainerDataType_template_feature", "_UI_ContainerDataType_type"),
+				 DataTypesModelPackage.Literals.CONTAINER_DATA_TYPE__TEMPLATE,
 				 true,
 				 false,
 				 true,

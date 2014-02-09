@@ -88,6 +88,7 @@ public class DataTypesModelItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addNonMemberFunctionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -110,6 +111,28 @@ public class DataTypesModelItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Non Member Functions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNonMemberFunctionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataTypesModel_nonMemberFunctions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataTypesModel_nonMemberFunctions_feature", "_UI_DataTypesModel_type"),
+				 DataTypesModelPackage.Literals.DATA_TYPES_MODEL__NON_MEMBER_FUNCTIONS,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -215,12 +238,12 @@ public class DataTypesModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(DataTypesModelPackage.Literals.DATA_TYPES_MODEL__TYPES,
-				 DataTypesModelFactory.eINSTANCE.createContainerDataType()));
+				 DataTypesModelFactory.eINSTANCE.createROSMsgDataType()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(DataTypesModelPackage.Literals.DATA_TYPES_MODEL__TYPES,
-				 DataTypesModelFactory.eINSTANCE.createROSMsgDataType()));
+				 DataTypesModelFactory.eINSTANCE.createContainerDataType()));
 	}
 
 	/**

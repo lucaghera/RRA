@@ -31,7 +31,6 @@
 package org.rra.dataTypesModel.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -39,7 +38,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.rra.dataTypesModel.CompositeDataType;
-import org.rra.dataTypesModel.DataType;
+import org.rra.dataTypesModel.CompositeTypeField;
 import org.rra.dataTypesModel.DataTypesModelPackage;
 import org.rra.dataTypesModel.Function;
 
@@ -76,7 +75,7 @@ public class CompositeDataTypeImpl extends DataTypeImpl implements CompositeData
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DataType> fields;
+	protected EList<CompositeTypeField> fields;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,9 +113,9 @@ public class CompositeDataTypeImpl extends DataTypeImpl implements CompositeData
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<DataType> getFields() {
+	public EList<CompositeTypeField> getFields() {
 		if (fields == null) {
-			fields = new EObjectContainmentEList<DataType>(DataType.class, this, DataTypesModelPackage.COMPOSITE_DATA_TYPE__FIELDS);
+			fields = new EObjectContainmentEList<CompositeTypeField>(CompositeTypeField.class, this, DataTypesModelPackage.COMPOSITE_DATA_TYPE__FIELDS);
 		}
 		return fields;
 	}
@@ -168,7 +167,7 @@ public class CompositeDataTypeImpl extends DataTypeImpl implements CompositeData
 				return;
 			case DataTypesModelPackage.COMPOSITE_DATA_TYPE__FIELDS:
 				getFields().clear();
-				getFields().addAll((Collection<? extends DataType>)newValue);
+				getFields().addAll((Collection<? extends CompositeTypeField>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -40,10 +40,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.rra.dataTypesModel.DataType;
 import org.rra.dataTypesModel.DataTypesModel;
 import org.rra.dataTypesModel.DataTypesModelPackage;
+import org.rra.dataTypesModel.NonMemberFunction;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,6 +56,7 @@ import org.rra.dataTypesModel.DataTypesModelPackage;
  * <ul>
  *   <li>{@link org.rra.dataTypesModel.impl.DataTypesModelImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.rra.dataTypesModel.impl.DataTypesModelImpl#getTypes <em>Types</em>}</li>
+ *   <li>{@link org.rra.dataTypesModel.impl.DataTypesModelImpl#getNonMemberFunctions <em>Non Member Functions</em>}</li>
  * </ul>
  * </p>
  *
@@ -89,6 +92,16 @@ public class DataTypesModelImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected EList<DataType> types;
+
+	/**
+	 * The cached value of the '{@link #getNonMemberFunctions() <em>Non Member Functions</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNonMemberFunctions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<NonMemberFunction> nonMemberFunctions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,6 +160,18 @@ public class DataTypesModelImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<NonMemberFunction> getNonMemberFunctions() {
+		if (nonMemberFunctions == null) {
+			nonMemberFunctions = new EObjectResolvingEList<NonMemberFunction>(NonMemberFunction.class, this, DataTypesModelPackage.DATA_TYPES_MODEL__NON_MEMBER_FUNCTIONS);
+		}
+		return nonMemberFunctions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -168,6 +193,8 @@ public class DataTypesModelImpl extends MinimalEObjectImpl.Container implements 
 				return getName();
 			case DataTypesModelPackage.DATA_TYPES_MODEL__TYPES:
 				return getTypes();
+			case DataTypesModelPackage.DATA_TYPES_MODEL__NON_MEMBER_FUNCTIONS:
+				return getNonMemberFunctions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -188,6 +215,10 @@ public class DataTypesModelImpl extends MinimalEObjectImpl.Container implements 
 				getTypes().clear();
 				getTypes().addAll((Collection<? extends DataType>)newValue);
 				return;
+			case DataTypesModelPackage.DATA_TYPES_MODEL__NON_MEMBER_FUNCTIONS:
+				getNonMemberFunctions().clear();
+				getNonMemberFunctions().addAll((Collection<? extends NonMemberFunction>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -206,6 +237,9 @@ public class DataTypesModelImpl extends MinimalEObjectImpl.Container implements 
 			case DataTypesModelPackage.DATA_TYPES_MODEL__TYPES:
 				getTypes().clear();
 				return;
+			case DataTypesModelPackage.DATA_TYPES_MODEL__NON_MEMBER_FUNCTIONS:
+				getNonMemberFunctions().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -222,6 +256,8 @@ public class DataTypesModelImpl extends MinimalEObjectImpl.Container implements 
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case DataTypesModelPackage.DATA_TYPES_MODEL__TYPES:
 				return types != null && !types.isEmpty();
+			case DataTypesModelPackage.DATA_TYPES_MODEL__NON_MEMBER_FUNCTIONS:
+				return nonMemberFunctions != null && !nonMemberFunctions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

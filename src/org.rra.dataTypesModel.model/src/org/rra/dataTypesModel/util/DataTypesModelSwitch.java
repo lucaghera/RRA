@@ -125,6 +125,13 @@ public class DataTypesModelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case DataTypesModelPackage.ROS_MSG_DATA_TYPE: {
+				ROSMsgDataType rosMsgDataType = (ROSMsgDataType)theEObject;
+				T result = caseROSMsgDataType(rosMsgDataType);
+				if (result == null) result = caseDataType(rosMsgDataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case DataTypesModelPackage.CONTAINER_DATA_TYPE: {
 				ContainerDataType containerDataType = (ContainerDataType)theEObject;
 				T result = caseContainerDataType(containerDataType);
@@ -138,10 +145,44 @@ public class DataTypesModelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DataTypesModelPackage.ROS_MSG_DATA_TYPE: {
-				ROSMsgDataType rosMsgDataType = (ROSMsgDataType)theEObject;
-				T result = caseROSMsgDataType(rosMsgDataType);
-				if (result == null) result = caseDataType(rosMsgDataType);
+			case DataTypesModelPackage.MEMBER_FUNCTION: {
+				MemberFunction memberFunction = (MemberFunction)theEObject;
+				T result = caseMemberFunction(memberFunction);
+				if (result == null) result = caseFunction(memberFunction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DataTypesModelPackage.NON_MEMBER_FUNCTION: {
+				NonMemberFunction nonMemberFunction = (NonMemberFunction)theEObject;
+				T result = caseNonMemberFunction(nonMemberFunction);
+				if (result == null) result = caseFunction(nonMemberFunction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DataTypesModelPackage.ROS_MSG_FUNCTION: {
+				ROSMsgFunction rosMsgFunction = (ROSMsgFunction)theEObject;
+				T result = caseROSMsgFunction(rosMsgFunction);
+				if (result == null) result = caseFunction(rosMsgFunction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DataTypesModelPackage.FIELD: {
+				Field field = (Field)theEObject;
+				T result = caseField(field);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DataTypesModelPackage.ROS_MSG_FIELD: {
+				ROSMsgField rosMsgField = (ROSMsgField)theEObject;
+				T result = caseROSMsgField(rosMsgField);
+				if (result == null) result = caseField(rosMsgField);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DataTypesModelPackage.COMPOSITE_TYPE_FIELD: {
+				CompositeTypeField compositeTypeField = (CompositeTypeField)theEObject;
+				T result = caseCompositeTypeField(compositeTypeField);
+				if (result == null) result = caseField(compositeTypeField);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -236,6 +277,96 @@ public class DataTypesModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFunction(Function object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Member Function</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Member Function</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMemberFunction(MemberFunction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Non Member Function</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Non Member Function</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNonMemberFunction(NonMemberFunction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ROS Msg Function</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ROS Msg Function</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseROSMsgFunction(ROSMsgFunction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Field</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Field</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseField(Field object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ROS Msg Field</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ROS Msg Field</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseROSMsgField(ROSMsgField object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Composite Type Field</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Composite Type Field</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCompositeTypeField(CompositeTypeField object) {
 		return null;
 	}
 

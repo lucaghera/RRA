@@ -39,7 +39,7 @@ package org.rra.dataTypesModel;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.rra.dataTypesModel.ContainerDataType#getContainedType <em>Contained Type</em>}</li>
+ *   <li>{@link org.rra.dataTypesModel.ContainerDataType#getTemplate <em>Template</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,29 +49,29 @@ package org.rra.dataTypesModel;
  */
 public interface ContainerDataType extends DataType {
 	/**
-	 * Returns the value of the '<em><b>Contained Type</b></em>' reference.
+	 * Returns the value of the '<em><b>Template</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Contained Type</em>' reference isn't clear,
+	 * If the meaning of the '<em>Template</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contained Type</em>' reference.
-	 * @see #setContainedType(DataType)
-	 * @see org.rra.dataTypesModel.DataTypesModelPackage#getContainerDataType_ContainedType()
+	 * @return the value of the '<em>Template</em>' reference.
+	 * @see #setTemplate(DataType)
+	 * @see org.rra.dataTypesModel.DataTypesModelPackage#getContainerDataType_Template()
 	 * @model required="true"
 	 * @generated
 	 */
-	DataType getContainedType();
+	DataType getTemplate();
 
 	/**
-	 * Sets the value of the '{@link org.rra.dataTypesModel.ContainerDataType#getContainedType <em>Contained Type</em>}' reference.
+	 * Sets the value of the '{@link org.rra.dataTypesModel.ContainerDataType#getTemplate <em>Template</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contained Type</em>' reference.
-	 * @see #getContainedType()
+	 * @param value the new value of the '<em>Template</em>' reference.
+	 * @see #getTemplate()
 	 * @generated
 	 */
-	void setContainedType(DataType value);
+	void setTemplate(DataType value);
 
 } // ContainerDataType

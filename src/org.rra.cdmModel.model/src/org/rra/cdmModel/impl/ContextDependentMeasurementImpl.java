@@ -32,13 +32,10 @@ package org.rra.cdmModel.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.rra.cdmModel.CDMModelPackage;
 import org.rra.cdmModel.ContextDependentMeasurement;
-import org.rra.dataTypesModel.Function;
-import org.rra.dataTypesModel.ROSMsgDataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,8 +45,6 @@ import org.rra.dataTypesModel.ROSMsgDataType;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.rra.cdmModel.impl.ContextDependentMeasurementImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.rra.cdmModel.impl.ContextDependentMeasurementImpl#getCdmFunction <em>Cdm Function</em>}</li>
- *   <li>{@link org.rra.cdmModel.impl.ContextDependentMeasurementImpl#getInputDataType <em>Input Data Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -75,26 +70,6 @@ public abstract class ContextDependentMeasurementImpl extends MinimalEObjectImpl
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getCdmFunction() <em>Cdm Function</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCdmFunction()
-	 * @generated
-	 * @ordered
-	 */
-	protected Function cdmFunction;
-
-	/**
-	 * The cached value of the '{@link #getInputDataType() <em>Input Data Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInputDataType()
-	 * @generated
-	 * @ordered
-	 */
-	protected ROSMsgDataType inputDataType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,93 +116,11 @@ public abstract class ContextDependentMeasurementImpl extends MinimalEObjectImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Function getCdmFunction() {
-		if (cdmFunction != null && cdmFunction.eIsProxy()) {
-			InternalEObject oldCdmFunction = (InternalEObject)cdmFunction;
-			cdmFunction = (Function)eResolveProxy(oldCdmFunction);
-			if (cdmFunction != oldCdmFunction) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION, oldCdmFunction, cdmFunction));
-			}
-		}
-		return cdmFunction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Function basicGetCdmFunction() {
-		return cdmFunction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCdmFunction(Function newCdmFunction) {
-		Function oldCdmFunction = cdmFunction;
-		cdmFunction = newCdmFunction;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION, oldCdmFunction, cdmFunction));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ROSMsgDataType getInputDataType() {
-		if (inputDataType != null && inputDataType.eIsProxy()) {
-			InternalEObject oldInputDataType = (InternalEObject)inputDataType;
-			inputDataType = (ROSMsgDataType)eResolveProxy(oldInputDataType);
-			if (inputDataType != oldInputDataType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE, oldInputDataType, inputDataType));
-			}
-		}
-		return inputDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ROSMsgDataType basicGetInputDataType() {
-		return inputDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setInputDataType(ROSMsgDataType newInputDataType) {
-		ROSMsgDataType oldInputDataType = inputDataType;
-		inputDataType = newInputDataType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE, oldInputDataType, inputDataType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENT__NAME:
 				return getName();
-			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION:
-				if (resolve) return getCdmFunction();
-				return basicGetCdmFunction();
-			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE:
-				if (resolve) return getInputDataType();
-				return basicGetInputDataType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -242,12 +135,6 @@ public abstract class ContextDependentMeasurementImpl extends MinimalEObjectImpl
 		switch (featureID) {
 			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENT__NAME:
 				setName((String)newValue);
-				return;
-			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION:
-				setCdmFunction((Function)newValue);
-				return;
-			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE:
-				setInputDataType((ROSMsgDataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -264,12 +151,6 @@ public abstract class ContextDependentMeasurementImpl extends MinimalEObjectImpl
 			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION:
-				setCdmFunction((Function)null);
-				return;
-			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE:
-				setInputDataType((ROSMsgDataType)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -284,10 +165,6 @@ public abstract class ContextDependentMeasurementImpl extends MinimalEObjectImpl
 		switch (featureID) {
 			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION:
-				return cdmFunction != null;
-			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE:
-				return inputDataType != null;
 		}
 		return super.eIsSet(featureID);
 	}

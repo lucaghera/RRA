@@ -68,7 +68,7 @@ public interface CompositeDataType extends DataType {
 
 	/**
 	 * Returns the value of the '<em><b>Fields</b></em>' containment reference list.
-	 * The list contents are of type {@link org.rra.dataTypesModel.DataType}.
+	 * The list contents are of type {@link org.rra.dataTypesModel.CompositeTypeField}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fields</em>' containment reference list isn't clear,
@@ -80,6 +80,6 @@ public interface CompositeDataType extends DataType {
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<DataType> getFields();
+	EList<CompositeTypeField> getFields();
 
 } // CompositeDataType

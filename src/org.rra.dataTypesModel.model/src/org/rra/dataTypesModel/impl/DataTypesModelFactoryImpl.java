@@ -36,13 +36,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.rra.dataTypesModel.*;
-import org.rra.dataTypesModel.CompositeDataType;
-import org.rra.dataTypesModel.ContainerDataType;
-import org.rra.dataTypesModel.DataTypesModel;
-import org.rra.dataTypesModel.DataTypesModelFactory;
-import org.rra.dataTypesModel.DataTypesModelPackage;
-import org.rra.dataTypesModel.Function;
-import org.rra.dataTypesModel.PrimitiveDataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -91,9 +84,13 @@ public class DataTypesModelFactoryImpl extends EFactoryImpl implements DataTypes
 			case DataTypesModelPackage.DATA_TYPES_MODEL: return createDataTypesModel();
 			case DataTypesModelPackage.PRIMITIVE_DATA_TYPE: return createPrimitiveDataType();
 			case DataTypesModelPackage.COMPOSITE_DATA_TYPE: return createCompositeDataType();
-			case DataTypesModelPackage.CONTAINER_DATA_TYPE: return createContainerDataType();
-			case DataTypesModelPackage.FUNCTION: return createFunction();
 			case DataTypesModelPackage.ROS_MSG_DATA_TYPE: return createROSMsgDataType();
+			case DataTypesModelPackage.CONTAINER_DATA_TYPE: return createContainerDataType();
+			case DataTypesModelPackage.MEMBER_FUNCTION: return createMemberFunction();
+			case DataTypesModelPackage.NON_MEMBER_FUNCTION: return createNonMemberFunction();
+			case DataTypesModelPackage.ROS_MSG_FUNCTION: return createROSMsgFunction();
+			case DataTypesModelPackage.ROS_MSG_FIELD: return createROSMsgField();
+			case DataTypesModelPackage.COMPOSITE_TYPE_FIELD: return createCompositeTypeField();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -144,9 +141,49 @@ public class DataTypesModelFactoryImpl extends EFactoryImpl implements DataTypes
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Function createFunction() {
-		FunctionImpl function = new FunctionImpl();
-		return function;
+	public MemberFunction createMemberFunction() {
+		MemberFunctionImpl memberFunction = new MemberFunctionImpl();
+		return memberFunction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NonMemberFunction createNonMemberFunction() {
+		NonMemberFunctionImpl nonMemberFunction = new NonMemberFunctionImpl();
+		return nonMemberFunction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ROSMsgFunction createROSMsgFunction() {
+		ROSMsgFunctionImpl rosMsgFunction = new ROSMsgFunctionImpl();
+		return rosMsgFunction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ROSMsgField createROSMsgField() {
+		ROSMsgFieldImpl rosMsgField = new ROSMsgFieldImpl();
+		return rosMsgField;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CompositeTypeField createCompositeTypeField() {
+		CompositeTypeFieldImpl compositeTypeField = new CompositeTypeFieldImpl();
+		return compositeTypeField;
 	}
 
 	/**

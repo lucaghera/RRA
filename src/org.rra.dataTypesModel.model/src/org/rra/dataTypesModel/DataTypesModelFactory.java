@@ -86,13 +86,49 @@ public interface DataTypesModelFactory extends EFactory {
 	ContainerDataType createContainerDataType();
 
 	/**
-	 * Returns a new object of class '<em>Function</em>'.
+	 * Returns a new object of class '<em>Member Function</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Function</em>'.
+	 * @return a new object of class '<em>Member Function</em>'.
 	 * @generated
 	 */
-	Function createFunction();
+	MemberFunction createMemberFunction();
+
+	/**
+	 * Returns a new object of class '<em>Non Member Function</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Non Member Function</em>'.
+	 * @generated
+	 */
+	NonMemberFunction createNonMemberFunction();
+
+	/**
+	 * Returns a new object of class '<em>ROS Msg Function</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>ROS Msg Function</em>'.
+	 * @generated
+	 */
+	ROSMsgFunction createROSMsgFunction();
+
+	/**
+	 * Returns a new object of class '<em>ROS Msg Field</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>ROS Msg Field</em>'.
+	 * @generated
+	 */
+	ROSMsgField createROSMsgField();
+
+	/**
+	 * Returns a new object of class '<em>Composite Type Field</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Composite Type Field</em>'.
+	 * @generated
+	 */
+	CompositeTypeField createCompositeTypeField();
 
 	/**
 	 * Returns a new object of class '<em>ROS Msg Data Type</em>'.

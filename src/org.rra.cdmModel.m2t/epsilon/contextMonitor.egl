@@ -37,12 +37,10 @@ for(cdm in cdmModel.cdms) {
 #include "[%=cdm.inputDataType.msgs_package%]/[%=cdm.inputDataType.name%].h"
 [%
 	}
-	if(cdm.cdmFunction.isDefined()){
-		if(cdm.cdmFunction.ouput.isTypeOf(ROSMsgDataType)){
+	if(cdm.cdmFunction.isDefined()){	
 %]
-#include "[%=cdm.cdmFunction.ouput.msgs_package%]/[%=cdm.cdmFunction.ouput.name%].h"
+#include "[%=cdm.cdmFunction.ouputParameter.msgs_package%]/[%=cdm.cdmFunction.ouputParameter.name%].h"
 [%		
-		}
 	}
 }
 
@@ -62,25 +60,25 @@ for(cdm in cdmModel.cdms) {
 		var dataType : DataType;
 		var publisher : NodeMsgProducer := cdm.publisher;
 		if(cdm.cdmFunction.isDefined()){
-			dataType = cdm.cdmFunction.ouput;
+			dataType = cdm.cdmFunction.ouputParameter;
 		}else{
 			dataType = cdm.inputDataType;
 		}
 %]
 
-void [%=cdm.name%]_callback(const [%=dataType.msgs_package%]::[%=dataType.name%]::ConstPtr& msg){
+void [%=cdm.name%]_callback(const [%=dataType.msgs_package%]::[%=dataType.name%]::ConstPtr& input){
 
 	[%=dataType.msgs_package%]::[%=dataType.name%] output;
 		
 [%
 		if(cdm.cdmFunction.isDefined()){
 %]
-	output.data = msg->data.[%=cdm.cdmFunction.name%]();
+	[%=cdm.cdmFunction.name%](input, output);
 	
 [%
 		}else{
 %]
-	output.data = msg->data;
+	output = input;
 [%	
 	}
 %]

@@ -116,6 +116,10 @@ public class DataTypesModelAdapterFactory extends AdapterFactoryImpl {
 				return createCompositeDataTypeAdapter();
 			}
 			@Override
+			public Adapter caseROSMsgDataType(ROSMsgDataType object) {
+				return createROSMsgDataTypeAdapter();
+			}
+			@Override
 			public Adapter caseContainerDataType(ContainerDataType object) {
 				return createContainerDataTypeAdapter();
 			}
@@ -124,8 +128,28 @@ public class DataTypesModelAdapterFactory extends AdapterFactoryImpl {
 				return createFunctionAdapter();
 			}
 			@Override
-			public Adapter caseROSMsgDataType(ROSMsgDataType object) {
-				return createROSMsgDataTypeAdapter();
+			public Adapter caseMemberFunction(MemberFunction object) {
+				return createMemberFunctionAdapter();
+			}
+			@Override
+			public Adapter caseNonMemberFunction(NonMemberFunction object) {
+				return createNonMemberFunctionAdapter();
+			}
+			@Override
+			public Adapter caseROSMsgFunction(ROSMsgFunction object) {
+				return createROSMsgFunctionAdapter();
+			}
+			@Override
+			public Adapter caseField(Field object) {
+				return createFieldAdapter();
+			}
+			@Override
+			public Adapter caseROSMsgField(ROSMsgField object) {
+				return createROSMsgFieldAdapter();
+			}
+			@Override
+			public Adapter caseCompositeTypeField(CompositeTypeField object) {
+				return createCompositeTypeFieldAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -228,6 +252,90 @@ public class DataTypesModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFunctionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.rra.dataTypesModel.MemberFunction <em>Member Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.rra.dataTypesModel.MemberFunction
+	 * @generated
+	 */
+	public Adapter createMemberFunctionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.rra.dataTypesModel.NonMemberFunction <em>Non Member Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.rra.dataTypesModel.NonMemberFunction
+	 * @generated
+	 */
+	public Adapter createNonMemberFunctionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.rra.dataTypesModel.ROSMsgFunction <em>ROS Msg Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.rra.dataTypesModel.ROSMsgFunction
+	 * @generated
+	 */
+	public Adapter createROSMsgFunctionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.rra.dataTypesModel.Field <em>Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.rra.dataTypesModel.Field
+	 * @generated
+	 */
+	public Adapter createFieldAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.rra.dataTypesModel.ROSMsgField <em>ROS Msg Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.rra.dataTypesModel.ROSMsgField
+	 * @generated
+	 */
+	public Adapter createROSMsgFieldAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.rra.dataTypesModel.CompositeTypeField <em>Composite Type Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.rra.dataTypesModel.CompositeTypeField
+	 * @generated
+	 */
+	public Adapter createCompositeTypeFieldAdapter() {
 		return null;
 	}
 

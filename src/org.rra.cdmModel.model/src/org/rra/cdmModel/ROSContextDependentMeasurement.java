@@ -31,6 +31,8 @@
 package org.rra.cdmModel;
 
 import org.hyperflex.roscomponentmodel.NodeMsgProducer;
+import org.rra.dataTypesModel.ROSMsgDataType;
+import org.rra.dataTypesModel.ROSMsgFunction;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,6 +43,8 @@ import org.hyperflex.roscomponentmodel.NodeMsgProducer;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.rra.cdmModel.ROSContextDependentMeasurement#getPublisher <em>Publisher</em>}</li>
+ *   <li>{@link org.rra.cdmModel.ROSContextDependentMeasurement#getInputDataType <em>Input Data Type</em>}</li>
+ *   <li>{@link org.rra.cdmModel.ROSContextDependentMeasurement#getCdmFunction <em>Cdm Function</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,5 +78,57 @@ public interface ROSContextDependentMeasurement extends ContextDependentMeasurem
 	 * @generated
 	 */
 	void setPublisher(NodeMsgProducer value);
+
+	/**
+	 * Returns the value of the '<em><b>Input Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Input Data Type</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Input Data Type</em>' reference.
+	 * @see #setInputDataType(ROSMsgDataType)
+	 * @see org.rra.cdmModel.CDMModelPackage#getROSContextDependentMeasurement_InputDataType()
+	 * @model
+	 * @generated
+	 */
+	ROSMsgDataType getInputDataType();
+
+	/**
+	 * Sets the value of the '{@link org.rra.cdmModel.ROSContextDependentMeasurement#getInputDataType <em>Input Data Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Input Data Type</em>' reference.
+	 * @see #getInputDataType()
+	 * @generated
+	 */
+	void setInputDataType(ROSMsgDataType value);
+
+	/**
+	 * Returns the value of the '<em><b>Cdm Function</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cdm Function</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cdm Function</em>' reference.
+	 * @see #setCdmFunction(ROSMsgFunction)
+	 * @see org.rra.cdmModel.CDMModelPackage#getROSContextDependentMeasurement_CdmFunction()
+	 * @model
+	 * @generated
+	 */
+	ROSMsgFunction getCdmFunction();
+
+	/**
+	 * Sets the value of the '{@link org.rra.cdmModel.ROSContextDependentMeasurement#getCdmFunction <em>Cdm Function</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Cdm Function</em>' reference.
+	 * @see #getCdmFunction()
+	 * @generated
+	 */
+	void setCdmFunction(ROSMsgFunction value);
 
 } // ROSContextDependentMeasurement

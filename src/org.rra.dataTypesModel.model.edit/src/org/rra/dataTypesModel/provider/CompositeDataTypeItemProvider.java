@@ -177,27 +177,22 @@ public class CompositeDataTypeItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(DataTypesModelPackage.Literals.COMPOSITE_DATA_TYPE__FUNCTIONS,
-				 DataTypesModelFactory.eINSTANCE.createFunction()));
+				 DataTypesModelFactory.eINSTANCE.createMemberFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DataTypesModelPackage.Literals.COMPOSITE_DATA_TYPE__FUNCTIONS,
+				 DataTypesModelFactory.eINSTANCE.createNonMemberFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DataTypesModelPackage.Literals.COMPOSITE_DATA_TYPE__FUNCTIONS,
+				 DataTypesModelFactory.eINSTANCE.createROSMsgFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(DataTypesModelPackage.Literals.COMPOSITE_DATA_TYPE__FIELDS,
-				 DataTypesModelFactory.eINSTANCE.createPrimitiveDataType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DataTypesModelPackage.Literals.COMPOSITE_DATA_TYPE__FIELDS,
-				 DataTypesModelFactory.eINSTANCE.createCompositeDataType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DataTypesModelPackage.Literals.COMPOSITE_DATA_TYPE__FIELDS,
-				 DataTypesModelFactory.eINSTANCE.createContainerDataType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DataTypesModelPackage.Literals.COMPOSITE_DATA_TYPE__FIELDS,
-				 DataTypesModelFactory.eINSTANCE.createROSMsgDataType()));
+				 DataTypesModelFactory.eINSTANCE.createCompositeTypeField()));
 	}
 
 }
