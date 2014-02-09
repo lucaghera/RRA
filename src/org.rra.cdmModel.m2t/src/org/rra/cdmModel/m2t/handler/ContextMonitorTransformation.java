@@ -46,7 +46,7 @@ import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.PlatformUI;
-import org.hyperflex.componentmodels.m2t.EGLTransformer;
+import org.hyperflex.m2t.EGLTransformer;
 import org.rra.cdmModel.m2t.Activator;
 
 public class ContextMonitorTransformation extends AbstractHandler {
