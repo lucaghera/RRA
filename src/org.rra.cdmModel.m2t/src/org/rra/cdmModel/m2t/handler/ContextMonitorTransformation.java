@@ -83,9 +83,9 @@ public class ContextMonitorTransformation extends AbstractHandler {
 		if(sourcefile == null)
 			return null;
 		
-	    
+		
 		URL url = Platform.getBundle(Activator.PLUGIN_ID).getEntry("epsilon/main.egl");
-	    String fileURL = "";
+		String fileURL = "";
 		try {
 			fileURL = FileLocator.toFileURL(url).toString();
 		} catch (IOException e) {
@@ -99,7 +99,7 @@ public class ContextMonitorTransformation extends AbstractHandler {
 		eglTransformParameter.setEglTransform(fileURL);
 		eglTransformParameter.setPluginID(Activator.PLUGIN_ID);
 		eglTransformParameter.setSourceMetaModelURI("http://www.rra.org/cdmmodel");
-		eglTransformParameter.setSourceModelFilePath(sourcefile.getLocation().removeFileExtension().toOSString());
+		eglTransformParameter.setSourceModelFilePath(sourcefile.getLocation().toOSString());
 		eglTransformParameter.setSourceName("Source");
 		eglTransformParameter.setSourceReadOnLoad(true);
 		eglTransformParameter.setSourceStoreOnDisposal(false);
@@ -108,12 +108,9 @@ public class ContextMonitorTransformation extends AbstractHandler {
 		
 		//get transform service
 		
-		
 		//do transform
 		EGLTransformer transformer = new EGLTransformer(eglTransformParameter);
 		transformer.transform();
-		
-		
 		
 		return null;
 	}

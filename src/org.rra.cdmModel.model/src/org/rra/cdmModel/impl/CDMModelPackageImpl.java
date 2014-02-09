@@ -205,6 +205,15 @@ public class CDMModelPackageImpl extends EPackageImpl implements CDMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getContextDependentMeasurement_InputDataType() {
+		return (EReference)contextDependentMeasurementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getROSContextDependentMeasurement() {
 		return rosContextDependentMeasurementEClass;
 	}
@@ -271,6 +280,7 @@ public class CDMModelPackageImpl extends EPackageImpl implements CDMModelPackage
 		contextDependentMeasurementEClass = createEClass(CONTEXT_DEPENDENT_MEASUREMENT);
 		createEAttribute(contextDependentMeasurementEClass, CONTEXT_DEPENDENT_MEASUREMENT__NAME);
 		createEReference(contextDependentMeasurementEClass, CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION);
+		createEReference(contextDependentMeasurementEClass, CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE);
 
 		rosContextDependentMeasurementEClass = createEClass(ROS_CONTEXT_DEPENDENT_MEASUREMENT);
 		createEReference(rosContextDependentMeasurementEClass, ROS_CONTEXT_DEPENDENT_MEASUREMENT__PUBLISHER);
@@ -323,6 +333,7 @@ public class CDMModelPackageImpl extends EPackageImpl implements CDMModelPackage
 		initEClass(contextDependentMeasurementEClass, ContextDependentMeasurement.class, "ContextDependentMeasurement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContextDependentMeasurement_Name(), ecorePackage.getEString(), "name", null, 1, 1, ContextDependentMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContextDependentMeasurement_CdmFunction(), theDataTypesModelPackage.getFunction(), null, "cdmFunction", null, 0, 1, ContextDependentMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContextDependentMeasurement_InputDataType(), theDataTypesModelPackage.getROSMsgDataType(), null, "inputDataType", null, 0, 1, ContextDependentMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rosContextDependentMeasurementEClass, ROSContextDependentMeasurement.class, "ROSContextDependentMeasurement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getROSContextDependentMeasurement_Publisher(), theroscomponentmodelPackage.getNodeMsgProducer(), null, "publisher", null, 1, 1, ROSContextDependentMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

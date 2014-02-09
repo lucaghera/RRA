@@ -87,6 +87,7 @@ public class ContextDependentMeasurementItemProvider
 
 			addNamePropertyDescriptor(object);
 			addCdmFunctionPropertyDescriptor(object);
+			addInputDataTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -127,6 +128,28 @@ public class ContextDependentMeasurementItemProvider
 				 getString("_UI_ContextDependentMeasurement_cdmFunction_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ContextDependentMeasurement_cdmFunction_feature", "_UI_ContextDependentMeasurement_type"),
 				 CDMModelPackage.Literals.CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Input Data Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInputDataTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContextDependentMeasurement_inputDataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContextDependentMeasurement_inputDataType_feature", "_UI_ContextDependentMeasurement_type"),
+				 CDMModelPackage.Literals.CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE,
 				 true,
 				 false,
 				 true,

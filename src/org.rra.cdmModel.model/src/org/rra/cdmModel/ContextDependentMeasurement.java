@@ -32,6 +32,7 @@ package org.rra.cdmModel;
 
 import org.eclipse.emf.ecore.EObject;
 import org.rra.dataTypesModel.Function;
+import org.rra.dataTypesModel.ROSMsgDataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,6 +44,7 @@ import org.rra.dataTypesModel.Function;
  * <ul>
  *   <li>{@link org.rra.cdmModel.ContextDependentMeasurement#getName <em>Name</em>}</li>
  *   <li>{@link org.rra.cdmModel.ContextDependentMeasurement#getCdmFunction <em>Cdm Function</em>}</li>
+ *   <li>{@link org.rra.cdmModel.ContextDependentMeasurement#getInputDataType <em>Input Data Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -102,5 +104,31 @@ public interface ContextDependentMeasurement extends EObject {
 	 * @generated
 	 */
 	void setCdmFunction(Function value);
+
+	/**
+	 * Returns the value of the '<em><b>Input Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Input Data Type</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Input Data Type</em>' reference.
+	 * @see #setInputDataType(ROSMsgDataType)
+	 * @see org.rra.cdmModel.CDMModelPackage#getContextDependentMeasurement_InputDataType()
+	 * @model
+	 * @generated
+	 */
+	ROSMsgDataType getInputDataType();
+
+	/**
+	 * Sets the value of the '{@link org.rra.cdmModel.ContextDependentMeasurement#getInputDataType <em>Input Data Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Input Data Type</em>' reference.
+	 * @see #getInputDataType()
+	 * @generated
+	 */
+	void setInputDataType(ROSMsgDataType value);
 
 } // ContextDependentMeasurement

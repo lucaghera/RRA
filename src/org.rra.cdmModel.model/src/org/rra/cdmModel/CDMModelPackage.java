@@ -159,13 +159,22 @@ public interface CDMModelPackage extends EPackage {
 	int CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION = 1;
 
 	/**
+	 * The feature id for the '<em><b>Input Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE = 2;
+
+	/**
 	 * The number of structural features of the '<em>Context Dependent Measurement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_DEPENDENT_MEASUREMENT_FEATURE_COUNT = 2;
+	int CONTEXT_DEPENDENT_MEASUREMENT_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Context Dependent Measurement</em>' class.
@@ -203,6 +212,15 @@ public interface CDMModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROS_CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION = CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION;
+
+	/**
+	 * The feature id for the '<em><b>Input Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE = CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Publisher</b></em>' reference.
@@ -258,6 +276,15 @@ public interface CDMModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int OROCOS_CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION = CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION;
+
+	/**
+	 * The feature id for the '<em><b>Input Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OROCOS_CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE = CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Output Port</b></em>' reference.
@@ -350,6 +377,17 @@ public interface CDMModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getContextDependentMeasurement_CdmFunction();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.rra.cdmModel.ContextDependentMeasurement#getInputDataType <em>Input Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Input Data Type</em>'.
+	 * @see org.rra.cdmModel.ContextDependentMeasurement#getInputDataType()
+	 * @see #getContextDependentMeasurement()
+	 * @generated
+	 */
+	EReference getContextDependentMeasurement_InputDataType();
 
 	/**
 	 * Returns the meta object for class '{@link org.rra.cdmModel.ROSContextDependentMeasurement <em>ROS Context Dependent Measurement</em>}'.
@@ -467,6 +505,14 @@ public interface CDMModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION = eINSTANCE.getContextDependentMeasurement_CdmFunction();
+
+		/**
+		 * The meta object literal for the '<em><b>Input Data Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE = eINSTANCE.getContextDependentMeasurement_InputDataType();
 
 		/**
 		 * The meta object literal for the '{@link org.rra.cdmModel.impl.ROSContextDependentMeasurementImpl <em>ROS Context Dependent Measurement</em>}' class.

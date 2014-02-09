@@ -31,13 +31,12 @@
 [%
 	
 	var cdmModel : ContextDependentMeasurementsModel := ContextDependentMeasurementsModel.allInstances().at(0);
-	//var composite : Composite := system.composite;
 	
-	//launch File
+	// context monitor
 	var launchTemplate := TemplateFactory.load('contextMonitor.egl');
 	launchTemplate.populate('cdmModel', cdmModel);
-	var fileName := mainComposite.name + '.cpp';
-	launchTemplate.generate(fileName);
+	var fileName := cdmModel.name + '.cpp';
+	launchTemplate.generate('contextMonitor.cpp');
 	
 	//manifest
 	//var manifestTemplate := TemplateFactory.load('manifest.egl');

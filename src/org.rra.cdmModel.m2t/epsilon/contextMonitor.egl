@@ -29,6 +29,33 @@
  * 
  *]
 
+#include "ros/ros.h"
+[%
+for(cdm in cdmModel.cdms) {
+	if(cdm.inputDataType.isTypeOf(ROSMsgDataType)){
+%]
+#include "[%=cdm.inputDataType.msgs_package%]/[%=cdm.inputDataType.name%].h"
+[%
+	}
+	if(cdm.cdmFunction.isDefined()){
+		if(cdm.cdmFunction.ouput.isTypeOf(ROSMsgDataType)){
+%]
+#include "[%=cdm.cdmFunction.ouput.msgs_package%]/[%=cdm.cdmFunction.ouput.name%].h"
+[%		
+		}
+	}
+}
+
+for(cdm in cdmModel.cdms) {
+%]
+// [%=cdm.name%] publisher and subscriber
+ros::Publisher [%=cdm.name%]_pub;
+ros::Subscriber [%=cdm.name%]_sub;
+
+[%
+}
+%]
+
 [%
 for(cdm in cdmModel.cdms) {
 	if(cdm.isTypeOf(ROSContextDependentMeasurement)){
@@ -41,29 +68,29 @@ for(cdm in cdmModel.cdms) {
 		}
 %]
 
-	void [%=cdm.name%]_callback(const [%=dataType.msgs_package%]::[%=dataType.name%]::ConstPtr& msg){
+void [%=cdm.name%]_callback(const [%=dataType.msgs_package%]::[%=dataType.name%]::ConstPtr& msg){
+
+	[%=dataType.msgs_package%]::[%=dataType.name%] output;
+		
 [%
 		if(cdm.cdmFunction.isDefined()){
 %]
-		[%=cdm.name%]_pub.publish(msg.[%=cdm.cdmFunction.name%]());
+	output.data = msg->data.[%=cdm.cdmFunction.name%]();
+	
 [%
 		}else{
 %]
-		[%=cdm.name%]_pub.publish(msg);
+	output.data = msg->data;
 [%	
-		}
-%]
-	
 	}
+%]
+	[%=cdm.name%]_pub.publish(output);
+	
+}
 [%
 	}
 }
 %]
-
-#include "ros/ros.h"
-#include "std_msgs/String.h"
-
-#include <sstream> 
 
 int main(int argc, char** argv){
 
@@ -82,9 +109,8 @@ for(cdm in cdmModel.cdms) {
 			dataType = cdm.inputDataType;
 		}
 %]
-	ros::Publisher [%=cdm.name%]_pub = 
-		nodeHandle.advertise<[%=dataType.msgs_package%]::[%=dataType.name%]>([%=cdm.name%],1000);
-	ros::Subscriber [%=cdm.name%]_sub = nodeHandle.subscribe([%=publisher.topicName%], 1000, [%=cdm.name%]_callback);
+	[%=cdm.name%]_pub = nodeHandle.advertise<[%=dataType.msgs_package%]::[%=dataType.name%]>("[%=cdm.name%]",1000);
+	[%=cdm.name%]_sub = nodeHandle.subscribe("[%=publisher.topicName%]", 1000, [%=cdm.name%]_callback);
 [%
 	}
 }
