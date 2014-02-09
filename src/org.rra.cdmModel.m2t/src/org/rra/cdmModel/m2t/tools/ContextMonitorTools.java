@@ -33,6 +33,7 @@ package org.rra.cdmModel.m2t.tools;
 
 
 import java.util.ArrayList;
+import java.util.TreeSet;
 
 import org.eclipse.emf.ecore.EObject;
 import org.hyperflex.roscomponentmodel.AbstractComponent;
@@ -42,6 +43,10 @@ import org.hyperflex.roscomponentmodel.MsgInterface;
 import org.hyperflex.roscomponentmodel.Node;
 import org.hyperflex.roscomponentmodel.NodeMsgInterface;
 import org.hyperflex.roscomponentmodel.Topic;
+import org.rra.cdmModel.ContextDependentMeasurement;
+import org.rra.cdmModel.ContextDependentMeasurementsModel;
+import org.rra.cdmModel.ROSContextDependentMeasurement;
+import org.rra.dataTypesModel.ROSMsgDataType;
 
 
 
@@ -51,114 +56,47 @@ public class ContextMonitorTools {
 
 	}
 
-	/**
-	 * Returns the root of the model starting from one of the composites
-	 * @generated NOT
-	 */
-	public org.hyperflex.roscomponentmodel.System getSystem(Composite composite){
-
-		Composite tmpComposite = composite;
-		while(tmpComposite.eContainer() instanceof Composite){
-
-			tmpComposite = (Composite)tmpComposite.eContainer();
-
-		}
-
-		return (org.hyperflex.roscomponentmodel.System)tmpComposite.eContainer();
-
-	}
-
-	/**
+		/**
 	 * Returns the list of all the nodes of a certain composite
 	 * (directly and inderectly contained)
 	 * @generated NOT
 	 */
-	public ArrayList<Node> getAllNodes(Composite composite){
+	public ArrayList<String> getIncludes(ContextDependentMeasurementsModel cdmModel){
 
-		ArrayList<Node> result = new  ArrayList<Node>();
+		ArrayList<String> includes = new ArrayList<String>();
 
-		for(AbstractComponent component : composite.getComponents()){
-			if(component instanceof Node){
-				result.add((Node)component);
-			}else if(component instanceof Composite){
-				result.addAll(getAllCompositeNodes((Composite)component));
-			}
-		}
-
-		return result;
-
-	}
-
-	public ArrayList<Node> getAllCompositeNodes(Composite composite){ 
-		ArrayList<Node> result = new  ArrayList<Node>();
-
-		for(AbstractComponent component : composite.getComponents()){
-			if(component instanceof Node){
-				result.add((Node)component);
-			}else if(component instanceof Composite){
-				result.addAll(getAllNodes((Composite)component));
-			}
-		}
-
-		return result;
-
-	}
-
-	public String getActualTopicName(NodeMsgInterface msgInterface){
-		
-		return getActualTopicName((MsgInterface)msgInterface);
-	
-	}
-	
-	private String getActualTopicName(MsgInterface msgInterface){
-		
-		EObject tmp = msgInterface.eContainer().eContainer();
-		Composite composite;
-		if(tmp instanceof Composite){
-			composite = (Composite)tmp;
-		}else{
-			return "";
-		}
-		
-		for(Topic topic : composite.getTopics()){
+		for(ContextDependentMeasurement cdm : cdmModel.getCdms()){
 			
-			if(msgInterface.getConnection() != null && msgInterface.getConnection().equals(topic)){
+			String include;
+			if(cdm instanceof ROSContextDependentMeasurement){
+				ROSContextDependentMeasurement ROSCdm = (ROSContextDependentMeasurement)cdm;
 				
-				// check if the topic is exposed
-				for(CompositeMsgInterface compositeMsgInterface : composite.getMsgConsumers()){
+				include = ROSCdm.getInputDataType().getMsgs_package() + "/" 
+						+ ROSCdm.getInputDataType().getName() + ".h";
+				if(includes.contains(include) == false){
+					includes.add(include);
+				}
+				
+				if(ROSCdm.getCdmFunction() != null){
 					
-					if(compositeMsgInterface.getExposed() != null && compositeMsgInterface.getExposed().equals(topic)){
-						String name = getActualTopicName(compositeMsgInterface);
-						if(name.equals("")){
-							return topic.getName();
-						}
-						return name;
-						
+					include = ROSCdm.getCdmFunction().getOutputParameter().getMsgs_package()
+							+ "/"  + ROSCdm.getCdmFunction().getOutputParameter().getName()
+							+ ".h";
+					if(includes.contains(include) == false){
+						includes.add(include);
 					}
 					
 				}
 				
-				for(CompositeMsgInterface compositeMsgInterface : composite.getMsgProducers()){
-					
-					if(compositeMsgInterface.getExposed() != null && compositeMsgInterface.getExposed().equals(topic)){
-						String name = getActualTopicName(compositeMsgInterface);
-						if(name.equals("")){
-							return topic.getName();
-						}
-						return name;
-					}
-					
-				}
-				// a msg interface can be connected to one topic, not more.
-				// hence we can return the name
-				return topic.getName();				
-				
 			}
 			
+			
 		}
-		
-		return "";
-		
+
+		return includes;
+
 	}
+
+	
 
 }

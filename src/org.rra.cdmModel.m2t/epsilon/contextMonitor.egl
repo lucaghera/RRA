@@ -31,25 +31,22 @@
 
 #include "ros/ros.h"
 [%
-for(cdm in cdmModel.cdms) {
-	if(cdm.inputDataType.isTypeOf(ROSMsgDataType)){
+var cdmHelper = new Native("org.rra.cdmModel.m2t.tools.ContextMonitorTools");
+var includes : Sequence := cdmHelper.getIncludes(cdmModel);
+
+for(include in includes) {
 %]
-#include "[%=cdm.inputDataType.msgs_package%]/[%=cdm.inputDataType.name%].h"
+#include "[%=include%]"
 [%
-	}
-	if(cdm.cdmFunction.isDefined()){	
-%]
-#include "[%=cdm.cdmFunction.ouputParameter.msgs_package%]/[%=cdm.cdmFunction.ouputParameter.name%].h"
-[%		
-	}
 }
+
 
 for(cdm in cdmModel.cdms) {
 %]
+
 // [%=cdm.name%] publisher and subscriber
 ros::Publisher [%=cdm.name%]_pub;
 ros::Subscriber [%=cdm.name%]_sub;
-
 [%
 }
 %]
@@ -60,7 +57,7 @@ for(cdm in cdmModel.cdms) {
 		var dataType : DataType;
 		var publisher : NodeMsgProducer := cdm.publisher;
 		if(cdm.cdmFunction.isDefined()){
-			dataType = cdm.cdmFunction.ouputParameter;
+			dataType = cdm.cdmFunction.outputParameter;
 		}else{
 			dataType = cdm.inputDataType;
 		}
@@ -69,12 +66,10 @@ for(cdm in cdmModel.cdms) {
 void [%=cdm.name%]_callback(const [%=dataType.msgs_package%]::[%=dataType.name%]::ConstPtr& input){
 
 	[%=dataType.msgs_package%]::[%=dataType.name%] output;
-		
 [%
 		if(cdm.cdmFunction.isDefined()){
 %]
 	[%=cdm.cdmFunction.name%](input, output);
-	
 [%
 		}else{
 %]
@@ -82,8 +77,7 @@ void [%=cdm.name%]_callback(const [%=dataType.msgs_package%]::[%=dataType.name%]
 [%	
 	}
 %]
-	[%=cdm.name%]_pub.publish(output);
-	
+	[%=cdm.name%]_pub.publish(output);	
 }
 [%
 	}
@@ -102,7 +96,7 @@ for(cdm in cdmModel.cdms) {
 		var dataType : DataType;
 		var publisher : NodeMsgProducer := cdm.publisher;
 		if(cdm.cdmFunction.isDefined()){
-			dataType = cdm.cdmFunction.ouput;
+			dataType = cdm.cdmFunction.outputParameter;
 		}else{
 			dataType = cdm.inputDataType;
 		}
