@@ -21,10 +21,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ROSMsgDataType" eSuperTypes="#//DataType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="msgs_package" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="functions" upperBound="-1"
-        eType="#//ROSMsgDataType" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" lowerBound="1"
         upperBound="-1" eType="#//ROSMsgField" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functions" upperBound="-1"
+        eType="#//ROSMsgFunction" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ContainerDataType" eSuperTypes="#//DataType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="template" lowerBound="1"

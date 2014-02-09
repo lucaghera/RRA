@@ -486,7 +486,7 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 	 * @generated
 	 */
 	public EReference getROSMsgDataType_Functions() {
-		return (EReference)rosMsgDataTypeEClass.getEStructuralFeatures().get(1);
+		return (EReference)rosMsgDataTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -495,7 +495,7 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 	 * @generated
 	 */
 	public EReference getROSMsgDataType_Fields() {
-		return (EReference)rosMsgDataTypeEClass.getEStructuralFeatures().get(2);
+		return (EReference)rosMsgDataTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -542,8 +542,8 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 
 		rosMsgDataTypeEClass = createEClass(ROS_MSG_DATA_TYPE);
 		createEAttribute(rosMsgDataTypeEClass, ROS_MSG_DATA_TYPE__MSGS_PACKAGE);
-		createEReference(rosMsgDataTypeEClass, ROS_MSG_DATA_TYPE__FUNCTIONS);
 		createEReference(rosMsgDataTypeEClass, ROS_MSG_DATA_TYPE__FIELDS);
+		createEReference(rosMsgDataTypeEClass, ROS_MSG_DATA_TYPE__FUNCTIONS);
 
 		containerDataTypeEClass = createEClass(CONTAINER_DATA_TYPE);
 		createEReference(containerDataTypeEClass, CONTAINER_DATA_TYPE__TEMPLATE);
@@ -627,8 +627,8 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 
 		initEClass(rosMsgDataTypeEClass, ROSMsgDataType.class, "ROSMsgDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getROSMsgDataType_Msgs_package(), ecorePackage.getEString(), "msgs_package", null, 1, 1, ROSMsgDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getROSMsgDataType_Functions(), this.getROSMsgDataType(), null, "functions", null, 0, -1, ROSMsgDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getROSMsgDataType_Fields(), this.getROSMsgField(), null, "fields", null, 1, -1, ROSMsgDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getROSMsgDataType_Functions(), this.getROSMsgFunction(), null, "functions", null, 0, -1, ROSMsgDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(containerDataTypeEClass, ContainerDataType.class, "ContainerDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getContainerDataType_Template(), this.getDataType(), null, "template", null, 1, 1, ContainerDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

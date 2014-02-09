@@ -377,22 +377,22 @@ public interface DataTypesModelPackage extends EPackage {
 	int ROS_MSG_DATA_TYPE__MSGS_PACKAGE = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Functions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROS_MSG_DATA_TYPE__FUNCTIONS = DATA_TYPE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_MSG_DATA_TYPE__FIELDS = DATA_TYPE_FEATURE_COUNT + 2;
+	int ROS_MSG_DATA_TYPE__FIELDS = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Functions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROS_MSG_DATA_TYPE__FUNCTIONS = DATA_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>ROS Msg Data Type</em>' class.

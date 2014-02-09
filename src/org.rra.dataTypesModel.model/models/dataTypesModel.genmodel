@@ -23,8 +23,8 @@
     </genClasses>
     <genClasses ecoreClass="dataTypesModel.ecore#//ROSMsgDataType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataTypesModel.ecore#//ROSMsgDataType/msgs_package"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataTypesModel.ecore#//ROSMsgDataType/functions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataTypesModel.ecore#//ROSMsgDataType/fields"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataTypesModel.ecore#//ROSMsgDataType/functions"/>
     </genClasses>
     <genClasses ecoreClass="dataTypesModel.ecore#//ContainerDataType">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataTypesModel.ecore#//ContainerDataType/template"/>

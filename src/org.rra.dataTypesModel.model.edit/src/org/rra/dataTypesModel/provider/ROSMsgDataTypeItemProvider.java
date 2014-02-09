@@ -126,8 +126,8 @@ public class ROSMsgDataTypeItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DataTypesModelPackage.Literals.ROS_MSG_DATA_TYPE__FUNCTIONS);
 			childrenFeatures.add(DataTypesModelPackage.Literals.ROS_MSG_DATA_TYPE__FIELDS);
+			childrenFeatures.add(DataTypesModelPackage.Literals.ROS_MSG_DATA_TYPE__FUNCTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -185,8 +185,8 @@ public class ROSMsgDataTypeItemProvider
 			case DataTypesModelPackage.ROS_MSG_DATA_TYPE__MSGS_PACKAGE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case DataTypesModelPackage.ROS_MSG_DATA_TYPE__FUNCTIONS:
 			case DataTypesModelPackage.ROS_MSG_DATA_TYPE__FIELDS:
+			case DataTypesModelPackage.ROS_MSG_DATA_TYPE__FUNCTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -206,13 +206,13 @@ public class ROSMsgDataTypeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(DataTypesModelPackage.Literals.ROS_MSG_DATA_TYPE__FUNCTIONS,
-				 DataTypesModelFactory.eINSTANCE.createROSMsgDataType()));
+				(DataTypesModelPackage.Literals.ROS_MSG_DATA_TYPE__FIELDS,
+				 DataTypesModelFactory.eINSTANCE.createROSMsgField()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(DataTypesModelPackage.Literals.ROS_MSG_DATA_TYPE__FIELDS,
-				 DataTypesModelFactory.eINSTANCE.createROSMsgField()));
+				(DataTypesModelPackage.Literals.ROS_MSG_DATA_TYPE__FUNCTIONS,
+				 DataTypesModelFactory.eINSTANCE.createROSMsgFunction()));
 	}
 
 }
