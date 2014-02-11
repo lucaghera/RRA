@@ -16,13 +16,17 @@ Workflow {
     	scanClassPath = true
     	platformUri = "${runtimeProject}/.."
     	// The following two lines can be removed, if Xbase is not used.
+    	
     	registerGeneratedEPackage = "org.eclipse.xtext.xbase.XbasePackage"
     	registerGenModelFile = "platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel"
     	registerGeneratedEPackage = "org.rra.cdmModel.CDMModelPackage"
+    	registerEcoreFile = "platform:/resource/org.rra.cdmModel.model/models/cdmModel.ecore"
     	registerGenModelFile = "platform:/resource/org.rra.cdmModel.model/models/cdmModel.genmodel"
     	registerGeneratedEPackage = "org.rra.dataTypesModel.DataTypesModelPackage"
+    	registerEcoreFile = "platform:/resource/org.rra.dataTypesModel.model/models/dataTypesModel.ecore"
     	registerGenModelFile = "platform:/resource/org.rra.dataTypesModel.model/models/dataTypesModel.genmodel"
     	registerGeneratedEPackage = "org.rra.runtimeFeatureModel.RuntimeFeatureModelPackage"
+    	registerEcoreFile = "platform:/resource/org.rra.runtimeFeatureModel.model/models/runtimeFeatureModel.ecore"
     	registerGenModelFile = "platform:/resource/org.rra.runtimeFeatureModel.model/models/runtimeFeatureModel.genmodel"
     }
     
