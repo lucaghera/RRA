@@ -3,8 +3,8 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 //import "platform:/resource/org.rra.cdmModel.model/models/cdmModel.ecore" as cdmModel
 import "http://www.rra.org/cdmmodel" as cdmModel
 import "http://www.rra.org/datatypesmodel" as dtModel
-//import "http://www.hyperflex.org/featureModel" as featureModel
-import "platform:/resource/org.hyperflex.featuremodels.model/models/featureModel.ecore" as featuremModel
+import "http://www.hyperflex.org/featuremodels" as featureModel
+//import "platform:/resource/org.hyperflex.featuremodels.model/models/featureModel.ecore" as featuremModel
 import "http://www.rra.org/runtimeFeatureModel" as rtFeatureModel
 
 generate adaptationModelDSL "http://www.rra.org/adaptationModel/AdaptationModelDSL"
@@ -96,7 +96,7 @@ AtomicAction:
 ;
 
 QueryAction:
-	'select feature' 'with' MATH_OPERATOR 'attribute' STRING 'from feature' feature=[ featuremModel::Feature ] 
+	'select feature' 'with' MATH_OPERATOR 'attribute' STRING 'from feature' feature=[ featureModel::Feature ] 
 ;
 
 //QueryAction:
@@ -106,11 +106,11 @@ QueryAction:
 //;
 
 SelectAction:
-	'select feature' feature=[featuremModel::Feature]	
+	'select feature' feature=[featureModel::Feature]	
 ;
 
 DeselectAction:
-	'deselect feature' feature=[featuremModel::Feature]
+	'deselect feature' feature=[featureModel::Feature]
 ;
 
 ModifyAttribute:

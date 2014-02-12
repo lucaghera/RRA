@@ -525,10 +525,10 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final RuleCall cFeatureFeatureIDTerminalRuleCall_6_0_1 = (RuleCall)cFeatureFeatureCrossReference_6_0.eContents().get(1);
 		
 		//QueryAction:
-		//	"select feature" "with" MATH_OPERATOR "attribute" STRING "from feature" feature=[featuremModel::Feature];
+		//	"select feature" "with" MATH_OPERATOR "attribute" STRING "from feature" feature=[featureModel::Feature];
 		public ParserRule getRule() { return rule; }
 
-		//"select feature" "with" MATH_OPERATOR "attribute" STRING "from feature" feature=[featuremModel::Feature]
+		//"select feature" "with" MATH_OPERATOR "attribute" STRING "from feature" feature=[featureModel::Feature]
 		public Group getGroup() { return cGroup; }
 
 		//"select feature"
@@ -549,10 +549,10 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		//"from feature"
 		public Keyword getFromFeatureKeyword_5() { return cFromFeatureKeyword_5; }
 
-		//feature=[featuremModel::Feature]
+		//feature=[featureModel::Feature]
 		public Assignment getFeatureAssignment_6() { return cFeatureAssignment_6; }
 
-		//[featuremModel::Feature]
+		//[featureModel::Feature]
 		public CrossReference getFeatureFeatureCrossReference_6_0() { return cFeatureFeatureCrossReference_6_0; }
 
 		//ID
@@ -573,19 +573,19 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		////(LOGICAL_OPERATOR SELECT WHERE mathOp+=MATH_OPERATOR FROM feature+=[Import])*
 		////;
 		//SelectAction:
-		//	"select feature" feature=[featuremModel::Feature];
+		//	"select feature" feature=[featureModel::Feature];
 		public ParserRule getRule() { return rule; }
 
-		//"select feature" feature=[featuremModel::Feature]
+		//"select feature" feature=[featureModel::Feature]
 		public Group getGroup() { return cGroup; }
 
 		//"select feature"
 		public Keyword getSelectFeatureKeyword_0() { return cSelectFeatureKeyword_0; }
 
-		//feature=[featuremModel::Feature]
+		//feature=[featureModel::Feature]
 		public Assignment getFeatureAssignment_1() { return cFeatureAssignment_1; }
 
-		//[featuremModel::Feature]
+		//[featureModel::Feature]
 		public CrossReference getFeatureFeatureCrossReference_1_0() { return cFeatureFeatureCrossReference_1_0; }
 
 		//ID
@@ -601,19 +601,19 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final RuleCall cFeatureFeatureIDTerminalRuleCall_1_0_1 = (RuleCall)cFeatureFeatureCrossReference_1_0.eContents().get(1);
 		
 		//DeselectAction:
-		//	"deselect feature" feature=[featuremModel::Feature];
+		//	"deselect feature" feature=[featureModel::Feature];
 		public ParserRule getRule() { return rule; }
 
-		//"deselect feature" feature=[featuremModel::Feature]
+		//"deselect feature" feature=[featureModel::Feature]
 		public Group getGroup() { return cGroup; }
 
 		//"deselect feature"
 		public Keyword getDeselectFeatureKeyword_0() { return cDeselectFeatureKeyword_0; }
 
-		//feature=[featuremModel::Feature]
+		//feature=[featureModel::Feature]
 		public Assignment getFeatureAssignment_1() { return cFeatureAssignment_1; }
 
-		//[featuremModel::Feature]
+		//[featureModel::Feature]
 		public CrossReference getFeatureFeatureCrossReference_1_0() { return cFeatureFeatureCrossReference_1_0; }
 
 		//ID
@@ -943,7 +943,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//QueryAction:
-	//	"select feature" "with" MATH_OPERATOR "attribute" STRING "from feature" feature=[featuremModel::Feature];
+	//	"select feature" "with" MATH_OPERATOR "attribute" STRING "from feature" feature=[featureModel::Feature];
 	public QueryActionElements getQueryActionAccess() {
 		return (pQueryAction != null) ? pQueryAction : (pQueryAction = new QueryActionElements());
 	}
@@ -958,7 +958,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	////(LOGICAL_OPERATOR SELECT WHERE mathOp+=MATH_OPERATOR FROM feature+=[Import])*
 	////;
 	//SelectAction:
-	//	"select feature" feature=[featuremModel::Feature];
+	//	"select feature" feature=[featureModel::Feature];
 	public SelectActionElements getSelectActionAccess() {
 		return (pSelectAction != null) ? pSelectAction : (pSelectAction = new SelectActionElements());
 	}
@@ -968,7 +968,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//DeselectAction:
-	//	"deselect feature" feature=[featuremModel::Feature];
+	//	"deselect feature" feature=[featureModel::Feature];
 	public DeselectActionElements getDeselectActionAccess() {
 		return (pDeselectAction != null) ? pDeselectAction : (pDeselectAction = new DeselectActionElements());
 	}
