@@ -34,5 +34,5 @@ package org.rra.adaptationAPI;
  */
 
 public interface ComponentProperty {
-
+	// Key, Value?
 }
