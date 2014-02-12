@@ -6,21 +6,21 @@ import org.hyperflex.featuremodels.Feature;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Select Action</b></em>'.
+ * A representation of the model object '<em><b>Query Action</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.SelectAction#getFeature <em>Feature</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.QueryAction#getFeature <em>Feature</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getSelectAction()
+ * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getQueryAction()
  * @model
  * @generated
  */
-public interface SelectAction extends AtomicAction
+public interface QueryAction extends AtomicAction
 {
   /**
    * Returns the value of the '<em><b>Feature</b></em>' reference.
@@ -32,14 +32,14 @@ public interface SelectAction extends AtomicAction
    * <!-- end-user-doc -->
    * @return the value of the '<em>Feature</em>' reference.
    * @see #setFeature(Feature)
-   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getSelectAction_Feature()
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getQueryAction_Feature()
    * @model
    * @generated
    */
   Feature getFeature();
 
   /**
-   * Sets the value of the '{@link org.rra.adaptationModel.adaptationModelDSL.SelectAction#getFeature <em>Feature</em>}' reference.
+   * Sets the value of the '{@link org.rra.adaptationModel.adaptationModelDSL.QueryAction#getFeature <em>Feature</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Feature</em>' reference.
@@ -48,4 +48,4 @@ public interface SelectAction extends AtomicAction
    */
   void setFeature(Feature value);
 
-} // SelectAction
+} // QueryAction

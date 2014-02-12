@@ -3,6 +3,8 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 //import "platform:/resource/org.rra.cdmModel.model/models/cdmModel.ecore" as cdmModel
 import "http://www.rra.org/cdmmodel" as cdmModel
 import "http://www.rra.org/datatypesmodel" as dtModel
+//import "http://www.hyperflex.org/featureModel" as featureModel
+import "platform:/resource/org.hyperflex.featuremodels.model/models/featureModel.ecore" as featuremModel
 import "http://www.rra.org/runtimeFeatureModel" as rtFeatureModel
 
 generate adaptationModelDSL "http://www.rra.org/adaptationModel/AdaptationModelDSL"
@@ -11,28 +13,29 @@ AdaptationModel:
 	(imports+=Import*)    
  	(rules+=Rule*);
 
-terminal VALUE returns ecore::EString: '"' ('0'..'9' | 'a'..'z' | '0'..'9' '.' '0'..'9')+'"';
+//terminal VALUE returns ecore::EString: '"' ('0'..'9' | 'a'..'z' | '0'..'9' '.' '0'..'9')+'"';
 
-terminal AND             returns ecore::EString: 'AND';
-terminal OR              returns ecore::EString:  'OR' ;
-terminal IF              returns ecore::EString: 'if';
-terminal ELSE            returns ecore::EString: 'else';
-terminal THEN            returns ecore::EString: 'then';
-terminal RULE_TERMINAL   returns ecore::EString: 'rule';
-terminal SELECT          returns ecore::EString: 'select feature';
-terminal DESELECT        returns ecore::EString: 'deselect feature';
-terminal CHANGE          returns ecore::EString: 'change feature attribute';
-terminal WITH            returns ecore::EString: 'with';
-terminal IMPORT_TERMINAL returns ecore::EString: 'import';
-terminal AS              returns ecore::EString: 'as';
-terminal SMALLER		 returns ecore::EString: '<';
-terminal BIGGER			 returns ecore::EString: '>';
-terminal EQUAL		     returns ecore::EString: '==';
+//terminal AND             returns ecore::EString: 'AND';
+//terminal OR              returns ecore::EString:  'OR' ;
+//terminal IF              returns ecore::EString: 'if';
+//terminal ELSE            returns ecore::EString: 'else';
+//terminal THEN            returns ecore::EString: 'then';
+//terminal RULE_TERMINAL   returns ecore::EString: 'rule';
+//terminal SELECT          returns ecore::EString: 'select feature';
+//terminal DESELECT        returns ecore::EString: 'deselect feature';
+//terminal CHANGE          returns ecore::EString: 'change feature attribute';
+//terminal WITH            returns ecore::EString: 'with';
+//terminal IMPORT_TERMINAL returns ecore::EString: 'import';
+//terminal AS              returns ecore::EString: 'as';
+//terminal SMALLER		 returns ecore::EString: '<';
+//terminal BIGGER			 returns ecore::EString: '>';
+//terminal EQUAL		     returns ecore::EString: '==';
+//terminal NOT_EQUAL		returns ecore::EString: '<>'
 //terminal SELECT_WHERE    returns ecore::EString: 'select feature * where';
 //terminal FROM 		   returns ecore::EString: 'from';
 
 Import:
-	IMPORT_TERMINAL importURI=STRING AS name=ID
+	'import' importURI=STRING //AS name=ID
 ;
 
 QualifiedNameWithWildcard:
@@ -44,26 +47,36 @@ QualifiedName:
 ;	
 	
 Rule:
-	RULE_TERMINAL name=ID ':' 
-	IF condition+=Condition 
-	THEN (atomicAction+=AtomicAction+) 
-	(ELSE (IF condition+=Condition THEN)* atomicAction+=AtomicAction+)*
+	'rule' name=ID ':' 
+	'if' condition+=Condition 
+	'then' (atomicAction+=AtomicAction+) 
+	('else' ('if' condition+=Condition 'then')* atomicAction+=AtomicAction+)*
 ;
 
 Condition:
-	measurement=[ cdmModel::ContextDependentMeasurement ] OPERATOR VALUE (LOGICAL_OPERATOR meas+=[Import] OPERATOR VALUE)*  
+	measurementComparison+=MeasurementComparison  
 ;
 
+MeasurementComparison:
+	measurement=[ cdmModel::ContextDependentMeasurement|QualifiedName ] OPERATOR STRING LOGICAL_OPERATOR?
+;
+
+//Condition:
+//	measurement=[ cdmModel::ContextDependentMeasurement|QualifiedName ] OPERATOR STRING 
+//	(LOGICAL_OPERATOR meas+=[Import] OPERATOR STRING)*  
+//;
+
+
 OPERATOR:
-	SMALLER | BIGGER | EQUAL	
+	'<' | '>' | '==' | '<>'	
 ;
 
 LOGICAL_OPERATOR:
-	AND | OR 
+	'AND' | 'OR' 
 ;
 
 MATH_OPERATOR:
-	MAX | MIN | AVG
+	'max' | 'min' | 'avg' | 'count'
 ;
 
 AVG:
@@ -79,7 +92,11 @@ MAX:
 ;
 
 AtomicAction:
-	SelectAction | DeselectAction | ModifyAttribute //| QueryAction
+	SelectAction | DeselectAction | ModifyAttribute | QueryAction
+;
+
+QueryAction:
+	'select feature' 'with' MATH_OPERATOR 'attribute' STRING 'from feature' feature=[ featuremModel::Feature ] 
 ;
 
 //QueryAction:
@@ -89,13 +106,26 @@ AtomicAction:
 //;
 
 SelectAction:
-	SELECT feature=[Import]	
+	'select feature' feature=[featuremModel::Feature]	
 ;
 
 DeselectAction:
-	DESELECT feature=[Import]
+	'deselect feature' feature=[featuremModel::Feature]
 ;
 
 ModifyAttribute:
-	CHANGE featureAttribute=[Import] WITH value=VALUE 
+	"set attribute" featureAttribute=[rtFeatureModel::CVAttribute] 'with value' attributeValue+=AttributeValue 
+;
+
+AttributeValue:
+	
+	StringAttributeValue | NFRAttributeValue
+;
+
+StringAttributeValue:
+	value=STRING	
+;
+
+NFRAttributeValue:
+	 value=[ rtFeatureModel::NFRAttribute|QualifiedName ]
 ;

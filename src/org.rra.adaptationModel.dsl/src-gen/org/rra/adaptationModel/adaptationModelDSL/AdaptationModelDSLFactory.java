@@ -59,13 +59,13 @@ public interface AdaptationModelDSLFactory extends EFactory
   Condition createCondition();
 
   /**
-   * Returns a new object of class '<em>MATH OPERATOR</em>'.
+   * Returns a new object of class '<em>Measurement Comparison</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>MATH OPERATOR</em>'.
+   * @return a new object of class '<em>Measurement Comparison</em>'.
    * @generated
    */
-  MATH_OPERATOR createMATH_OPERATOR();
+  MeasurementComparison createMeasurementComparison();
 
   /**
    * Returns a new object of class '<em>AVG</em>'.
@@ -104,6 +104,15 @@ public interface AdaptationModelDSLFactory extends EFactory
   AtomicAction createAtomicAction();
 
   /**
+   * Returns a new object of class '<em>Query Action</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Query Action</em>'.
+   * @generated
+   */
+  QueryAction createQueryAction();
+
+  /**
    * Returns a new object of class '<em>Select Action</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -129,6 +138,33 @@ public interface AdaptationModelDSLFactory extends EFactory
    * @generated
    */
   ModifyAttribute createModifyAttribute();
+
+  /**
+   * Returns a new object of class '<em>Attribute Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Attribute Value</em>'.
+   * @generated
+   */
+  AttributeValue createAttributeValue();
+
+  /**
+   * Returns a new object of class '<em>String Attribute Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Attribute Value</em>'.
+   * @generated
+   */
+  StringAttributeValue createStringAttributeValue();
+
+  /**
+   * Returns a new object of class '<em>NFR Attribute Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>NFR Attribute Value</em>'.
+   * @generated
+   */
+  NFRAttributeValue createNFRAttributeValue();
 
   /**
    * Returns the package supported by this factory.

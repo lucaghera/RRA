@@ -9,42 +9,42 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.hyperflex.featuremodels.Feature;
-
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
-import org.rra.adaptationModel.adaptationModelDSL.SelectAction;
+import org.rra.adaptationModel.adaptationModelDSL.NFRAttributeValue;
+
+import org.rra.runtimeFeatureModel.NFRAttribute;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Select Action</b></em>'.
+ * An implementation of the model object '<em><b>NFR Attribute Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.SelectActionImpl#getFeature <em>Feature</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.NFRAttributeValueImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SelectActionImpl extends AtomicActionImpl implements SelectAction
+public class NFRAttributeValueImpl extends AttributeValueImpl implements NFRAttributeValue
 {
   /**
-   * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFeature()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected Feature feature;
+  protected NFRAttribute value;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SelectActionImpl()
+  protected NFRAttributeValueImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
   @Override
   protected EClass eStaticClass()
   {
-    return AdaptationModelDSLPackage.Literals.SELECT_ACTION;
+    return AdaptationModelDSLPackage.Literals.NFR_ATTRIBUTE_VALUE;
   }
 
   /**
@@ -65,19 +65,19 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
    * <!-- end-user-doc -->
    * @generated
    */
-  public Feature getFeature()
+  public NFRAttribute getValue()
   {
-    if (feature != null && feature.eIsProxy())
+    if (value != null && value.eIsProxy())
     {
-      InternalEObject oldFeature = (InternalEObject)feature;
-      feature = (Feature)eResolveProxy(oldFeature);
-      if (feature != oldFeature)
+      InternalEObject oldValue = (InternalEObject)value;
+      value = (NFRAttribute)eResolveProxy(oldValue);
+      if (value != oldValue)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AdaptationModelDSLPackage.SELECT_ACTION__FEATURE, oldFeature, feature));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AdaptationModelDSLPackage.NFR_ATTRIBUTE_VALUE__VALUE, oldValue, value));
       }
     }
-    return feature;
+    return value;
   }
 
   /**
@@ -85,9 +85,9 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
    * <!-- end-user-doc -->
    * @generated
    */
-  public Feature basicGetFeature()
+  public NFRAttribute basicGetValue()
   {
-    return feature;
+    return value;
   }
 
   /**
@@ -95,12 +95,12 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFeature(Feature newFeature)
+  public void setValue(NFRAttribute newValue)
   {
-    Feature oldFeature = feature;
-    feature = newFeature;
+    NFRAttribute oldValue = value;
+    value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.SELECT_ACTION__FEATURE, oldFeature, feature));
+      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.NFR_ATTRIBUTE_VALUE__VALUE, oldValue, value));
   }
 
   /**
@@ -113,9 +113,9 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.SELECT_ACTION__FEATURE:
-        if (resolve) return getFeature();
-        return basicGetFeature();
+      case AdaptationModelDSLPackage.NFR_ATTRIBUTE_VALUE__VALUE:
+        if (resolve) return getValue();
+        return basicGetValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -130,8 +130,8 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.SELECT_ACTION__FEATURE:
-        setFeature((Feature)newValue);
+      case AdaptationModelDSLPackage.NFR_ATTRIBUTE_VALUE__VALUE:
+        setValue((NFRAttribute)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -147,8 +147,8 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.SELECT_ACTION__FEATURE:
-        setFeature((Feature)null);
+      case AdaptationModelDSLPackage.NFR_ATTRIBUTE_VALUE__VALUE:
+        setValue((NFRAttribute)null);
         return;
     }
     super.eUnset(featureID);
@@ -164,10 +164,10 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.SELECT_ACTION__FEATURE:
-        return feature != null;
+      case AdaptationModelDSLPackage.NFR_ATTRIBUTE_VALUE__VALUE:
+        return value != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //SelectActionImpl
+} //NFRAttributeValueImpl

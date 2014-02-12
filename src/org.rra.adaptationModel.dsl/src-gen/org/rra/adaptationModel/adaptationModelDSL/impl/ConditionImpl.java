@@ -4,21 +4,21 @@ package org.rra.adaptationModel.adaptationModelDSL.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
 import org.rra.adaptationModel.adaptationModelDSL.Condition;
-import org.rra.adaptationModel.adaptationModelDSL.Import;
+import org.rra.adaptationModel.adaptationModelDSL.MeasurementComparison;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,8 +27,7 @@ import org.rra.adaptationModel.adaptationModelDSL.Import;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.ConditionImpl#getMeasurement <em>Measurement</em>}</li>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.ConditionImpl#getMeas <em>Meas</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.ConditionImpl#getMeasurementComparison <em>Measurement Comparison</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,24 +36,14 @@ import org.rra.adaptationModel.adaptationModelDSL.Import;
 public class ConditionImpl extends MinimalEObjectImpl.Container implements Condition
 {
   /**
-   * The cached value of the '{@link #getMeasurement() <em>Measurement</em>}' reference.
+   * The cached value of the '{@link #getMeasurementComparison() <em>Measurement Comparison</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMeasurement()
+   * @see #getMeasurementComparison()
    * @generated
    * @ordered
    */
-  protected Import measurement;
-
-  /**
-   * The cached value of the '{@link #getMeas() <em>Meas</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMeas()
-   * @generated
-   * @ordered
-   */
-  protected EList<Import> meas;
+  protected EList<MeasurementComparison> measurementComparison;
 
   /**
    * <!-- begin-user-doc -->
@@ -82,19 +71,13 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * <!-- end-user-doc -->
    * @generated
    */
-  public Import getMeasurement()
+  public EList<MeasurementComparison> getMeasurementComparison()
   {
-    if (measurement != null && measurement.eIsProxy())
+    if (measurementComparison == null)
     {
-      InternalEObject oldMeasurement = (InternalEObject)measurement;
-      measurement = (Import)eResolveProxy(oldMeasurement);
-      if (measurement != oldMeasurement)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AdaptationModelDSLPackage.CONDITION__MEASUREMENT, oldMeasurement, measurement));
-      }
+      measurementComparison = new EObjectContainmentEList<MeasurementComparison>(MeasurementComparison.class, this, AdaptationModelDSLPackage.CONDITION__MEASUREMENT_COMPARISON);
     }
-    return measurement;
+    return measurementComparison;
   }
 
   /**
@@ -102,36 +85,15 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * <!-- end-user-doc -->
    * @generated
    */
-  public Import basicGetMeasurement()
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    return measurement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setMeasurement(Import newMeasurement)
-  {
-    Import oldMeasurement = measurement;
-    measurement = newMeasurement;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.CONDITION__MEASUREMENT, oldMeasurement, measurement));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Import> getMeas()
-  {
-    if (meas == null)
+    switch (featureID)
     {
-      meas = new EObjectResolvingEList<Import>(Import.class, this, AdaptationModelDSLPackage.CONDITION__MEAS);
+      case AdaptationModelDSLPackage.CONDITION__MEASUREMENT_COMPARISON:
+        return ((InternalEList<?>)getMeasurementComparison()).basicRemove(otherEnd, msgs);
     }
-    return meas;
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -144,11 +106,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.CONDITION__MEASUREMENT:
-        if (resolve) return getMeasurement();
-        return basicGetMeasurement();
-      case AdaptationModelDSLPackage.CONDITION__MEAS:
-        return getMeas();
+      case AdaptationModelDSLPackage.CONDITION__MEASUREMENT_COMPARISON:
+        return getMeasurementComparison();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -164,12 +123,9 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.CONDITION__MEASUREMENT:
-        setMeasurement((Import)newValue);
-        return;
-      case AdaptationModelDSLPackage.CONDITION__MEAS:
-        getMeas().clear();
-        getMeas().addAll((Collection<? extends Import>)newValue);
+      case AdaptationModelDSLPackage.CONDITION__MEASUREMENT_COMPARISON:
+        getMeasurementComparison().clear();
+        getMeasurementComparison().addAll((Collection<? extends MeasurementComparison>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -185,11 +141,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.CONDITION__MEASUREMENT:
-        setMeasurement((Import)null);
-        return;
-      case AdaptationModelDSLPackage.CONDITION__MEAS:
-        getMeas().clear();
+      case AdaptationModelDSLPackage.CONDITION__MEASUREMENT_COMPARISON:
+        getMeasurementComparison().clear();
         return;
     }
     super.eUnset(featureID);
@@ -205,10 +158,8 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.CONDITION__MEASUREMENT:
-        return measurement != null;
-      case AdaptationModelDSLPackage.CONDITION__MEAS:
-        return meas != null && !meas.isEmpty();
+      case AdaptationModelDSLPackage.CONDITION__MEASUREMENT_COMPARISON:
+        return measurementComparison != null && !measurementComparison.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -12,22 +12,22 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.hyperflex.featuremodels.Feature;
 
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
-import org.rra.adaptationModel.adaptationModelDSL.SelectAction;
+import org.rra.adaptationModel.adaptationModelDSL.QueryAction;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Select Action</b></em>'.
+ * An implementation of the model object '<em><b>Query Action</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.SelectActionImpl#getFeature <em>Feature</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.QueryActionImpl#getFeature <em>Feature</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SelectActionImpl extends AtomicActionImpl implements SelectAction
+public class QueryActionImpl extends AtomicActionImpl implements QueryAction
 {
   /**
    * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
@@ -44,7 +44,7 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SelectActionImpl()
+  protected QueryActionImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
   @Override
   protected EClass eStaticClass()
   {
-    return AdaptationModelDSLPackage.Literals.SELECT_ACTION;
+    return AdaptationModelDSLPackage.Literals.QUERY_ACTION;
   }
 
   /**
@@ -74,7 +74,7 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
       if (feature != oldFeature)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AdaptationModelDSLPackage.SELECT_ACTION__FEATURE, oldFeature, feature));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AdaptationModelDSLPackage.QUERY_ACTION__FEATURE, oldFeature, feature));
       }
     }
     return feature;
@@ -100,7 +100,7 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
     Feature oldFeature = feature;
     feature = newFeature;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.SELECT_ACTION__FEATURE, oldFeature, feature));
+      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.QUERY_ACTION__FEATURE, oldFeature, feature));
   }
 
   /**
@@ -113,7 +113,7 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.SELECT_ACTION__FEATURE:
+      case AdaptationModelDSLPackage.QUERY_ACTION__FEATURE:
         if (resolve) return getFeature();
         return basicGetFeature();
     }
@@ -130,7 +130,7 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.SELECT_ACTION__FEATURE:
+      case AdaptationModelDSLPackage.QUERY_ACTION__FEATURE:
         setFeature((Feature)newValue);
         return;
     }
@@ -147,7 +147,7 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.SELECT_ACTION__FEATURE:
+      case AdaptationModelDSLPackage.QUERY_ACTION__FEATURE:
         setFeature((Feature)null);
         return;
     }
@@ -164,10 +164,10 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.SELECT_ACTION__FEATURE:
+      case AdaptationModelDSLPackage.QUERY_ACTION__FEATURE:
         return feature != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //SelectActionImpl
+} //QueryActionImpl

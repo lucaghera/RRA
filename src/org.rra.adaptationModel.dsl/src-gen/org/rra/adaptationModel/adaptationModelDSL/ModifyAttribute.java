@@ -2,6 +2,9 @@
  */
 package org.rra.adaptationModel.adaptationModelDSL;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.rra.runtimeFeatureModel.CVAttribute;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,7 +15,7 @@ package org.rra.adaptationModel.adaptationModelDSL;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.ModifyAttribute#getFeatureAttribute <em>Feature Attribute</em>}</li>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.ModifyAttribute#getValue <em>Value</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.ModifyAttribute#getAttributeValue <em>Attribute Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,12 +34,12 @@ public interface ModifyAttribute extends AtomicAction
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Feature Attribute</em>' reference.
-   * @see #setFeatureAttribute(Import)
+   * @see #setFeatureAttribute(CVAttribute)
    * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getModifyAttribute_FeatureAttribute()
    * @model
    * @generated
    */
-  Import getFeatureAttribute();
+  CVAttribute getFeatureAttribute();
 
   /**
    * Sets the value of the '{@link org.rra.adaptationModel.adaptationModelDSL.ModifyAttribute#getFeatureAttribute <em>Feature Attribute</em>}' reference.
@@ -46,32 +49,22 @@ public interface ModifyAttribute extends AtomicAction
    * @see #getFeatureAttribute()
    * @generated
    */
-  void setFeatureAttribute(Import value);
+  void setFeatureAttribute(CVAttribute value);
 
   /**
-   * Returns the value of the '<em><b>Value</b></em>' attribute.
+   * Returns the value of the '<em><b>Attribute Value</b></em>' containment reference list.
+   * The list contents are of type {@link org.rra.adaptationModel.adaptationModelDSL.AttributeValue}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Value</em>' attribute isn't clear,
+   * If the meaning of the '<em>Attribute Value</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(String)
-   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getModifyAttribute_Value()
-   * @model
+   * @return the value of the '<em>Attribute Value</em>' containment reference list.
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getModifyAttribute_AttributeValue()
+   * @model containment="true"
    * @generated
    */
-  String getValue();
-
-  /**
-   * Sets the value of the '{@link org.rra.adaptationModel.adaptationModelDSL.ModifyAttribute#getValue <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value</em>' attribute.
-   * @see #getValue()
-   * @generated
-   */
-  void setValue(String value);
+  EList<AttributeValue> getAttributeValue();
 
 } // ModifyAttribute

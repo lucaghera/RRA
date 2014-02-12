@@ -5,46 +5,53 @@ package org.rra.adaptationModel.adaptationModelDSL.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.hyperflex.featuremodels.Feature;
-
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
-import org.rra.adaptationModel.adaptationModelDSL.SelectAction;
+import org.rra.adaptationModel.adaptationModelDSL.StringAttributeValue;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Select Action</b></em>'.
+ * An implementation of the model object '<em><b>String Attribute Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.SelectActionImpl#getFeature <em>Feature</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.StringAttributeValueImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SelectActionImpl extends AtomicActionImpl implements SelectAction
+public class StringAttributeValueImpl extends AttributeValueImpl implements StringAttributeValue
 {
   /**
-   * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFeature()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected Feature feature;
+  protected static final String VALUE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected String value = VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SelectActionImpl()
+  protected StringAttributeValueImpl()
   {
     super();
   }
@@ -57,7 +64,7 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
   @Override
   protected EClass eStaticClass()
   {
-    return AdaptationModelDSLPackage.Literals.SELECT_ACTION;
+    return AdaptationModelDSLPackage.Literals.STRING_ATTRIBUTE_VALUE;
   }
 
   /**
@@ -65,19 +72,9 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
    * <!-- end-user-doc -->
    * @generated
    */
-  public Feature getFeature()
+  public String getValue()
   {
-    if (feature != null && feature.eIsProxy())
-    {
-      InternalEObject oldFeature = (InternalEObject)feature;
-      feature = (Feature)eResolveProxy(oldFeature);
-      if (feature != oldFeature)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AdaptationModelDSLPackage.SELECT_ACTION__FEATURE, oldFeature, feature));
-      }
-    }
-    return feature;
+    return value;
   }
 
   /**
@@ -85,22 +82,12 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
    * <!-- end-user-doc -->
    * @generated
    */
-  public Feature basicGetFeature()
+  public void setValue(String newValue)
   {
-    return feature;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFeature(Feature newFeature)
-  {
-    Feature oldFeature = feature;
-    feature = newFeature;
+    String oldValue = value;
+    value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.SELECT_ACTION__FEATURE, oldFeature, feature));
+      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.STRING_ATTRIBUTE_VALUE__VALUE, oldValue, value));
   }
 
   /**
@@ -113,9 +100,8 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.SELECT_ACTION__FEATURE:
-        if (resolve) return getFeature();
-        return basicGetFeature();
+      case AdaptationModelDSLPackage.STRING_ATTRIBUTE_VALUE__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -130,8 +116,8 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.SELECT_ACTION__FEATURE:
-        setFeature((Feature)newValue);
+      case AdaptationModelDSLPackage.STRING_ATTRIBUTE_VALUE__VALUE:
+        setValue((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -147,8 +133,8 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.SELECT_ACTION__FEATURE:
-        setFeature((Feature)null);
+      case AdaptationModelDSLPackage.STRING_ATTRIBUTE_VALUE__VALUE:
+        setValue(VALUE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -164,10 +150,27 @@ public class SelectActionImpl extends AtomicActionImpl implements SelectAction
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.SELECT_ACTION__FEATURE:
-        return feature != null;
+      case AdaptationModelDSLPackage.STRING_ATTRIBUTE_VALUE__VALUE:
+        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
     return super.eIsSet(featureID);
   }
 
-} //SelectActionImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (value: ");
+    result.append(value);
+    result.append(')');
+    return result.toString();
+  }
+
+} //StringAttributeValueImpl

@@ -19,7 +19,7 @@ import org.rra.adaptationModel.adaptationModelDSL.Import;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.ImportImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.ImportImpl#getImportURI <em>Import URI</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,24 +28,24 @@ import org.rra.adaptationModel.adaptationModelDSL.Import;
 public class ImportImpl extends MinimalEObjectImpl.Container implements Import
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getImportURI() <em>Import URI</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getImportURI()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String IMPORT_URI_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getImportURI() <em>Import URI</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getImportURI()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String importURI = IMPORT_URI_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,9 +73,9 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public String getImportURI()
   {
-    return name;
+    return importURI;
   }
 
   /**
@@ -83,12 +83,12 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public void setImportURI(String newImportURI)
   {
-    String oldName = name;
-    name = newName;
+    String oldImportURI = importURI;
+    importURI = newImportURI;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.IMPORT__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.IMPORT__IMPORT_URI, oldImportURI, importURI));
   }
 
   /**
@@ -101,8 +101,8 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.IMPORT__NAME:
-        return getName();
+      case AdaptationModelDSLPackage.IMPORT__IMPORT_URI:
+        return getImportURI();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +117,8 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.IMPORT__NAME:
-        setName((String)newValue);
+      case AdaptationModelDSLPackage.IMPORT__IMPORT_URI:
+        setImportURI((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +134,8 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.IMPORT__NAME:
-        setName(NAME_EDEFAULT);
+      case AdaptationModelDSLPackage.IMPORT__IMPORT_URI:
+        setImportURI(IMPORT_URI_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +151,8 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.IMPORT__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AdaptationModelDSLPackage.IMPORT__IMPORT_URI:
+        return IMPORT_URI_EDEFAULT == null ? importURI != null : !IMPORT_URI_EDEFAULT.equals(importURI);
     }
     return super.eIsSet(featureID);
   }
@@ -168,8 +168,8 @@ public class ImportImpl extends MinimalEObjectImpl.Container implements Import
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (importURI: ");
+    result.append(importURI);
     result.append(')');
     return result.toString();
   }

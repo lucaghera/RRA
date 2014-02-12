@@ -95,9 +95,9 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
         return createConditionAdapter();
       }
       @Override
-      public Adapter caseMATH_OPERATOR(MATH_OPERATOR object)
+      public Adapter caseMeasurementComparison(MeasurementComparison object)
       {
-        return createMATH_OPERATORAdapter();
+        return createMeasurementComparisonAdapter();
       }
       @Override
       public Adapter caseAVG(AVG object)
@@ -120,6 +120,11 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
         return createAtomicActionAdapter();
       }
       @Override
+      public Adapter caseQueryAction(QueryAction object)
+      {
+        return createQueryActionAdapter();
+      }
+      @Override
       public Adapter caseSelectAction(SelectAction object)
       {
         return createSelectActionAdapter();
@@ -133,6 +138,21 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseModifyAttribute(ModifyAttribute object)
       {
         return createModifyAttributeAdapter();
+      }
+      @Override
+      public Adapter caseAttributeValue(AttributeValue object)
+      {
+        return createAttributeValueAdapter();
+      }
+      @Override
+      public Adapter caseStringAttributeValue(StringAttributeValue object)
+      {
+        return createStringAttributeValueAdapter();
+      }
+      @Override
+      public Adapter caseNFRAttributeValue(NFRAttributeValue object)
+      {
+        return createNFRAttributeValueAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -217,16 +237,16 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.MATH_OPERATOR <em>MATH OPERATOR</em>}'.
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.MeasurementComparison <em>Measurement Comparison</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.rra.adaptationModel.adaptationModelDSL.MATH_OPERATOR
+   * @see org.rra.adaptationModel.adaptationModelDSL.MeasurementComparison
    * @generated
    */
-  public Adapter createMATH_OPERATORAdapter()
+  public Adapter createMeasurementComparisonAdapter()
   {
     return null;
   }
@@ -292,6 +312,21 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.QueryAction <em>Query Action</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.rra.adaptationModel.adaptationModelDSL.QueryAction
+   * @generated
+   */
+  public Adapter createQueryActionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.SelectAction <em>Select Action</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -332,6 +367,51 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModifyAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.AttributeValue <em>Attribute Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.rra.adaptationModel.adaptationModelDSL.AttributeValue
+   * @generated
+   */
+  public Adapter createAttributeValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.StringAttributeValue <em>String Attribute Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.rra.adaptationModel.adaptationModelDSL.StringAttributeValue
+   * @generated
+   */
+  public Adapter createStringAttributeValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.NFRAttributeValue <em>NFR Attribute Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.rra.adaptationModel.adaptationModelDSL.NFRAttributeValue
+   * @generated
+   */
+  public Adapter createNFRAttributeValueAdapter()
   {
     return null;
   }

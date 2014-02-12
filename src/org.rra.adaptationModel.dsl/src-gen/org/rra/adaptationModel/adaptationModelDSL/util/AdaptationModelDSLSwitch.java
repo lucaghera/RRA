@@ -100,10 +100,10 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AdaptationModelDSLPackage.MATH_OPERATOR:
+      case AdaptationModelDSLPackage.MEASUREMENT_COMPARISON:
       {
-        MATH_OPERATOR matH_OPERATOR = (MATH_OPERATOR)theEObject;
-        T result = caseMATH_OPERATOR(matH_OPERATOR);
+        MeasurementComparison measurementComparison = (MeasurementComparison)theEObject;
+        T result = caseMeasurementComparison(measurementComparison);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -111,7 +111,6 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
       {
         AVG avg = (AVG)theEObject;
         T result = caseAVG(avg);
-        if (result == null) result = caseMATH_OPERATOR(avg);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -119,7 +118,6 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
       {
         MIN min = (MIN)theEObject;
         T result = caseMIN(min);
-        if (result == null) result = caseMATH_OPERATOR(min);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -127,7 +125,6 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
       {
         MAX max = (MAX)theEObject;
         T result = caseMAX(max);
-        if (result == null) result = caseMATH_OPERATOR(max);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -135,6 +132,14 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
       {
         AtomicAction atomicAction = (AtomicAction)theEObject;
         T result = caseAtomicAction(atomicAction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AdaptationModelDSLPackage.QUERY_ACTION:
+      {
+        QueryAction queryAction = (QueryAction)theEObject;
+        T result = caseQueryAction(queryAction);
+        if (result == null) result = caseAtomicAction(queryAction);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -159,6 +164,29 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
         ModifyAttribute modifyAttribute = (ModifyAttribute)theEObject;
         T result = caseModifyAttribute(modifyAttribute);
         if (result == null) result = caseAtomicAction(modifyAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AdaptationModelDSLPackage.ATTRIBUTE_VALUE:
+      {
+        AttributeValue attributeValue = (AttributeValue)theEObject;
+        T result = caseAttributeValue(attributeValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AdaptationModelDSLPackage.STRING_ATTRIBUTE_VALUE:
+      {
+        StringAttributeValue stringAttributeValue = (StringAttributeValue)theEObject;
+        T result = caseStringAttributeValue(stringAttributeValue);
+        if (result == null) result = caseAttributeValue(stringAttributeValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AdaptationModelDSLPackage.NFR_ATTRIBUTE_VALUE:
+      {
+        NFRAttributeValue nfrAttributeValue = (NFRAttributeValue)theEObject;
+        T result = caseNFRAttributeValue(nfrAttributeValue);
+        if (result == null) result = caseAttributeValue(nfrAttributeValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -231,17 +259,17 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>MATH OPERATOR</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Measurement Comparison</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>MATH OPERATOR</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Measurement Comparison</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseMATH_OPERATOR(MATH_OPERATOR object)
+  public T caseMeasurementComparison(MeasurementComparison object)
   {
     return null;
   }
@@ -311,6 +339,22 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Query Action</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Query Action</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQueryAction(QueryAction object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Select Action</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -354,6 +398,54 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseModifyAttribute(ModifyAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Attribute Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Attribute Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAttributeValue(AttributeValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Attribute Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Attribute Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringAttributeValue(StringAttributeValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>NFR Attribute Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>NFR Attribute Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNFRAttributeValue(NFRAttributeValue object)
   {
     return null;
   }

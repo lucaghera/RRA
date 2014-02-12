@@ -9,9 +9,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.hyperflex.featuremodels.Feature;
+
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
 import org.rra.adaptationModel.adaptationModelDSL.DeselectAction;
-import org.rra.adaptationModel.adaptationModelDSL.Import;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +37,7 @@ public class DeselectActionImpl extends AtomicActionImpl implements DeselectActi
    * @generated
    * @ordered
    */
-  protected Import feature;
+  protected Feature feature;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,12 +65,12 @@ public class DeselectActionImpl extends AtomicActionImpl implements DeselectActi
    * <!-- end-user-doc -->
    * @generated
    */
-  public Import getFeature()
+  public Feature getFeature()
   {
     if (feature != null && feature.eIsProxy())
     {
       InternalEObject oldFeature = (InternalEObject)feature;
-      feature = (Import)eResolveProxy(oldFeature);
+      feature = (Feature)eResolveProxy(oldFeature);
       if (feature != oldFeature)
       {
         if (eNotificationRequired())
@@ -84,7 +85,7 @@ public class DeselectActionImpl extends AtomicActionImpl implements DeselectActi
    * <!-- end-user-doc -->
    * @generated
    */
-  public Import basicGetFeature()
+  public Feature basicGetFeature()
   {
     return feature;
   }
@@ -94,9 +95,9 @@ public class DeselectActionImpl extends AtomicActionImpl implements DeselectActi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFeature(Import newFeature)
+  public void setFeature(Feature newFeature)
   {
-    Import oldFeature = feature;
+    Feature oldFeature = feature;
     feature = newFeature;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.DESELECT_ACTION__FEATURE, oldFeature, feature));
@@ -130,7 +131,7 @@ public class DeselectActionImpl extends AtomicActionImpl implements DeselectActi
     switch (featureID)
     {
       case AdaptationModelDSLPackage.DESELECT_ACTION__FEATURE:
-        setFeature((Import)newValue);
+        setFeature((Feature)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -147,7 +148,7 @@ public class DeselectActionImpl extends AtomicActionImpl implements DeselectActi
     switch (featureID)
     {
       case AdaptationModelDSLPackage.DESELECT_ACTION__FEATURE:
-        setFeature((Import)null);
+        setFeature((Feature)null);
         return;
     }
     super.eUnset(featureID);

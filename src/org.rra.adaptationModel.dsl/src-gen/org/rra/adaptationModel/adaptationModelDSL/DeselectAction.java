@@ -2,6 +2,7 @@
  */
 package org.rra.adaptationModel.adaptationModelDSL;
 
+import org.hyperflex.featuremodels.Feature;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,12 +31,12 @@ public interface DeselectAction extends AtomicAction
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Feature</em>' reference.
-   * @see #setFeature(Import)
+   * @see #setFeature(Feature)
    * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getDeselectAction_Feature()
    * @model
    * @generated
    */
-  Import getFeature();
+  Feature getFeature();
 
   /**
    * Sets the value of the '{@link org.rra.adaptationModel.adaptationModelDSL.DeselectAction#getFeature <em>Feature</em>}' reference.
@@ -45,6 +46,6 @@ public interface DeselectAction extends AtomicAction
    * @see #getFeature()
    * @generated
    */
-  void setFeature(Import value);
+  void setFeature(Feature value);
 
 } // DeselectAction

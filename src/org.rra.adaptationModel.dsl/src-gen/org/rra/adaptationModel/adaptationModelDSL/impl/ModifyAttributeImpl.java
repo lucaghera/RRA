@@ -2,16 +2,26 @@
  */
 package org.rra.adaptationModel.adaptationModelDSL.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
-import org.rra.adaptationModel.adaptationModelDSL.Import;
+import org.rra.adaptationModel.adaptationModelDSL.AttributeValue;
 import org.rra.adaptationModel.adaptationModelDSL.ModifyAttribute;
+
+import org.rra.runtimeFeatureModel.CVAttribute;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +31,7 @@ import org.rra.adaptationModel.adaptationModelDSL.ModifyAttribute;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.ModifyAttributeImpl#getFeatureAttribute <em>Feature Attribute</em>}</li>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.ModifyAttributeImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.ModifyAttributeImpl#getAttributeValue <em>Attribute Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,27 +47,17 @@ public class ModifyAttributeImpl extends AtomicActionImpl implements ModifyAttri
    * @generated
    * @ordered
    */
-  protected Import featureAttribute;
+  protected CVAttribute featureAttribute;
 
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getAttributeValue() <em>Attribute Value</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getAttributeValue()
    * @generated
    * @ordered
    */
-  protected static final String VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
-  protected String value = VALUE_EDEFAULT;
+  protected EList<AttributeValue> attributeValue;
 
   /**
    * <!-- begin-user-doc -->
@@ -85,12 +85,12 @@ public class ModifyAttributeImpl extends AtomicActionImpl implements ModifyAttri
    * <!-- end-user-doc -->
    * @generated
    */
-  public Import getFeatureAttribute()
+  public CVAttribute getFeatureAttribute()
   {
     if (featureAttribute != null && featureAttribute.eIsProxy())
     {
       InternalEObject oldFeatureAttribute = (InternalEObject)featureAttribute;
-      featureAttribute = (Import)eResolveProxy(oldFeatureAttribute);
+      featureAttribute = (CVAttribute)eResolveProxy(oldFeatureAttribute);
       if (featureAttribute != oldFeatureAttribute)
       {
         if (eNotificationRequired())
@@ -105,7 +105,7 @@ public class ModifyAttributeImpl extends AtomicActionImpl implements ModifyAttri
    * <!-- end-user-doc -->
    * @generated
    */
-  public Import basicGetFeatureAttribute()
+  public CVAttribute basicGetFeatureAttribute()
   {
     return featureAttribute;
   }
@@ -115,9 +115,9 @@ public class ModifyAttributeImpl extends AtomicActionImpl implements ModifyAttri
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFeatureAttribute(Import newFeatureAttribute)
+  public void setFeatureAttribute(CVAttribute newFeatureAttribute)
   {
-    Import oldFeatureAttribute = featureAttribute;
+    CVAttribute oldFeatureAttribute = featureAttribute;
     featureAttribute = newFeatureAttribute;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.MODIFY_ATTRIBUTE__FEATURE_ATTRIBUTE, oldFeatureAttribute, featureAttribute));
@@ -128,9 +128,13 @@ public class ModifyAttributeImpl extends AtomicActionImpl implements ModifyAttri
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getValue()
+  public EList<AttributeValue> getAttributeValue()
   {
-    return value;
+    if (attributeValue == null)
+    {
+      attributeValue = new EObjectContainmentEList<AttributeValue>(AttributeValue.class, this, AdaptationModelDSLPackage.MODIFY_ATTRIBUTE__ATTRIBUTE_VALUE);
+    }
+    return attributeValue;
   }
 
   /**
@@ -138,12 +142,15 @@ public class ModifyAttributeImpl extends AtomicActionImpl implements ModifyAttri
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(String newValue)
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    String oldValue = value;
-    value = newValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.MODIFY_ATTRIBUTE__VALUE, oldValue, value));
+    switch (featureID)
+    {
+      case AdaptationModelDSLPackage.MODIFY_ATTRIBUTE__ATTRIBUTE_VALUE:
+        return ((InternalEList<?>)getAttributeValue()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -159,8 +166,8 @@ public class ModifyAttributeImpl extends AtomicActionImpl implements ModifyAttri
       case AdaptationModelDSLPackage.MODIFY_ATTRIBUTE__FEATURE_ATTRIBUTE:
         if (resolve) return getFeatureAttribute();
         return basicGetFeatureAttribute();
-      case AdaptationModelDSLPackage.MODIFY_ATTRIBUTE__VALUE:
-        return getValue();
+      case AdaptationModelDSLPackage.MODIFY_ATTRIBUTE__ATTRIBUTE_VALUE:
+        return getAttributeValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -170,16 +177,18 @@ public class ModifyAttributeImpl extends AtomicActionImpl implements ModifyAttri
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case AdaptationModelDSLPackage.MODIFY_ATTRIBUTE__FEATURE_ATTRIBUTE:
-        setFeatureAttribute((Import)newValue);
+        setFeatureAttribute((CVAttribute)newValue);
         return;
-      case AdaptationModelDSLPackage.MODIFY_ATTRIBUTE__VALUE:
-        setValue((String)newValue);
+      case AdaptationModelDSLPackage.MODIFY_ATTRIBUTE__ATTRIBUTE_VALUE:
+        getAttributeValue().clear();
+        getAttributeValue().addAll((Collection<? extends AttributeValue>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -196,10 +205,10 @@ public class ModifyAttributeImpl extends AtomicActionImpl implements ModifyAttri
     switch (featureID)
     {
       case AdaptationModelDSLPackage.MODIFY_ATTRIBUTE__FEATURE_ATTRIBUTE:
-        setFeatureAttribute((Import)null);
+        setFeatureAttribute((CVAttribute)null);
         return;
-      case AdaptationModelDSLPackage.MODIFY_ATTRIBUTE__VALUE:
-        setValue(VALUE_EDEFAULT);
+      case AdaptationModelDSLPackage.MODIFY_ATTRIBUTE__ATTRIBUTE_VALUE:
+        getAttributeValue().clear();
         return;
     }
     super.eUnset(featureID);
@@ -217,27 +226,10 @@ public class ModifyAttributeImpl extends AtomicActionImpl implements ModifyAttri
     {
       case AdaptationModelDSLPackage.MODIFY_ATTRIBUTE__FEATURE_ATTRIBUTE:
         return featureAttribute != null;
-      case AdaptationModelDSLPackage.MODIFY_ATTRIBUTE__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+      case AdaptationModelDSLPackage.MODIFY_ATTRIBUTE__ATTRIBUTE_VALUE:
+        return attributeValue != null && !attributeValue.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (value: ");
-    result.append(value);
-    result.append(')');
-    return result.toString();
   }
 
 } //ModifyAttributeImpl

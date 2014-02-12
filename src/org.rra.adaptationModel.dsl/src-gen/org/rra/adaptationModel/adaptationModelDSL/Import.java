@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.Import#getName <em>Name</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.Import#getImportURI <em>Import URI</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,29 +23,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface Import extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Import URI</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Import URI</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getImport_Name()
+   * @return the value of the '<em>Import URI</em>' attribute.
+   * @see #setImportURI(String)
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getImport_ImportURI()
    * @model
    * @generated
    */
-  String getName();
+  String getImportURI();
 
   /**
-   * Sets the value of the '{@link org.rra.adaptationModel.adaptationModelDSL.Import#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.rra.adaptationModel.adaptationModelDSL.Import#getImportURI <em>Import URI</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Import URI</em>' attribute.
+   * @see #getImportURI()
    * @generated
    */
-  void setName(String value);
+  void setImportURI(String value);
 
 } // Import

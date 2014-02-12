@@ -68,14 +68,18 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
       case AdaptationModelDSLPackage.IMPORT: return createImport();
       case AdaptationModelDSLPackage.RULE: return createRule();
       case AdaptationModelDSLPackage.CONDITION: return createCondition();
-      case AdaptationModelDSLPackage.MATH_OPERATOR: return createMATH_OPERATOR();
+      case AdaptationModelDSLPackage.MEASUREMENT_COMPARISON: return createMeasurementComparison();
       case AdaptationModelDSLPackage.AVG: return createAVG();
       case AdaptationModelDSLPackage.MIN: return createMIN();
       case AdaptationModelDSLPackage.MAX: return createMAX();
       case AdaptationModelDSLPackage.ATOMIC_ACTION: return createAtomicAction();
+      case AdaptationModelDSLPackage.QUERY_ACTION: return createQueryAction();
       case AdaptationModelDSLPackage.SELECT_ACTION: return createSelectAction();
       case AdaptationModelDSLPackage.DESELECT_ACTION: return createDeselectAction();
       case AdaptationModelDSLPackage.MODIFY_ATTRIBUTE: return createModifyAttribute();
+      case AdaptationModelDSLPackage.ATTRIBUTE_VALUE: return createAttributeValue();
+      case AdaptationModelDSLPackage.STRING_ATTRIBUTE_VALUE: return createStringAttributeValue();
+      case AdaptationModelDSLPackage.NFR_ATTRIBUTE_VALUE: return createNFRAttributeValue();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -130,10 +134,10 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public MATH_OPERATOR createMATH_OPERATOR()
+  public MeasurementComparison createMeasurementComparison()
   {
-    MATH_OPERATORImpl matH_OPERATOR = new MATH_OPERATORImpl();
-    return matH_OPERATOR;
+    MeasurementComparisonImpl measurementComparison = new MeasurementComparisonImpl();
+    return measurementComparison;
   }
 
   /**
@@ -185,6 +189,17 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
+  public QueryAction createQueryAction()
+  {
+    QueryActionImpl queryAction = new QueryActionImpl();
+    return queryAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public SelectAction createSelectAction()
   {
     SelectActionImpl selectAction = new SelectActionImpl();
@@ -211,6 +226,39 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
   {
     ModifyAttributeImpl modifyAttribute = new ModifyAttributeImpl();
     return modifyAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AttributeValue createAttributeValue()
+  {
+    AttributeValueImpl attributeValue = new AttributeValueImpl();
+    return attributeValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringAttributeValue createStringAttributeValue()
+  {
+    StringAttributeValueImpl stringAttributeValue = new StringAttributeValueImpl();
+    return stringAttributeValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NFRAttributeValue createNFRAttributeValue()
+  {
+    NFRAttributeValueImpl nfrAttributeValue = new NFRAttributeValueImpl();
+    return nfrAttributeValue;
   }
 
   /**

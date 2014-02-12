@@ -49,35 +49,48 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	public class ImportElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Import");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cIMPORT_TERMINALTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final RuleCall cQualifiedNameWithWildcardParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final RuleCall cASTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cImportURIAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cImportURISTRINGTerminalRuleCall_1_0 = (RuleCall)cImportURIAssignment_1.eContents().get(0);
 		
+		////terminal VALUE returns ecore::EString: '"' ('0'..'9' | 'a'..'z' | '0'..'9' '.' '0'..'9')+'"';
+		////terminal AND             returns ecore::EString: 'AND';
+		////terminal OR              returns ecore::EString:  'OR' ;
+		////terminal IF              returns ecore::EString: 'if';
+		////terminal ELSE            returns ecore::EString: 'else';
+		////terminal THEN            returns ecore::EString: 'then';
+		////terminal RULE_TERMINAL   returns ecore::EString: 'rule';
+		////terminal SELECT          returns ecore::EString: 'select feature';
+		////terminal DESELECT        returns ecore::EString: 'deselect feature';
+		////terminal CHANGE          returns ecore::EString: 'change feature attribute';
+		////terminal WITH            returns ecore::EString: 'with';
+		////terminal IMPORT_TERMINAL returns ecore::EString: 'import';
+		////terminal AS              returns ecore::EString: 'as';
+		////terminal SMALLER		 returns ecore::EString: '<';
+		////terminal BIGGER			 returns ecore::EString: '>';
+		////terminal EQUAL		     returns ecore::EString: '==';
+		////terminal NOT_EQUAL		returns ecore::EString: '<>'
 		////terminal SELECT_WHERE    returns ecore::EString: 'select feature * where';
 		////terminal FROM 		   returns ecore::EString: 'from';
 		//Import:
-		//	IMPORT_TERMINAL QualifiedNameWithWildcard AS name=ID;
+		//	"import" importURI= //AS name=ID
+		//	STRING;
 		public ParserRule getRule() { return rule; }
 
-		//IMPORT_TERMINAL QualifiedNameWithWildcard AS name=ID
+		//"import" importURI= //AS name=ID
+		//STRING
 		public Group getGroup() { return cGroup; }
 
-		//IMPORT_TERMINAL
-		public RuleCall getIMPORT_TERMINALTerminalRuleCall_0() { return cIMPORT_TERMINALTerminalRuleCall_0; }
+		//"import"
+		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 
-		//QualifiedNameWithWildcard
-		public RuleCall getQualifiedNameWithWildcardParserRuleCall_1() { return cQualifiedNameWithWildcardParserRuleCall_1; }
+		//importURI= //AS name=ID
+		//STRING
+		public Assignment getImportURIAssignment_1() { return cImportURIAssignment_1; }
 
-		//AS
-		public RuleCall getASTerminalRuleCall_2() { return cASTerminalRuleCall_2; }
-
-		//name=ID
-		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
+		////AS name=ID
+		//STRING
+		public RuleCall getImportURISTRINGTerminalRuleCall_1_0() { return cImportURISTRINGTerminalRuleCall_1_0; }
 	}
 
 	public class QualifiedNameWithWildcardElements extends AbstractParserRuleElementFinder {
@@ -131,37 +144,37 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	public class RuleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Rule");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cRULE_TERMINALTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cRuleKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final RuleCall cIFTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final Keyword cIfKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cConditionAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cConditionConditionParserRuleCall_4_0 = (RuleCall)cConditionAssignment_4.eContents().get(0);
-		private final RuleCall cTHENTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+		private final Keyword cThenKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cAtomicActionAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cAtomicActionAtomicActionParserRuleCall_6_0 = (RuleCall)cAtomicActionAssignment_6.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final RuleCall cELSETerminalRuleCall_7_0 = (RuleCall)cGroup_7.eContents().get(0);
+		private final Keyword cElseKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Group cGroup_7_1 = (Group)cGroup_7.eContents().get(1);
-		private final RuleCall cIFTerminalRuleCall_7_1_0 = (RuleCall)cGroup_7_1.eContents().get(0);
+		private final Keyword cIfKeyword_7_1_0 = (Keyword)cGroup_7_1.eContents().get(0);
 		private final Assignment cConditionAssignment_7_1_1 = (Assignment)cGroup_7_1.eContents().get(1);
 		private final RuleCall cConditionConditionParserRuleCall_7_1_1_0 = (RuleCall)cConditionAssignment_7_1_1.eContents().get(0);
-		private final RuleCall cTHENTerminalRuleCall_7_1_2 = (RuleCall)cGroup_7_1.eContents().get(2);
+		private final Keyword cThenKeyword_7_1_2 = (Keyword)cGroup_7_1.eContents().get(2);
 		private final Assignment cAtomicActionAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
 		private final RuleCall cAtomicActionAtomicActionParserRuleCall_7_2_0 = (RuleCall)cAtomicActionAssignment_7_2.eContents().get(0);
 		
 		//Rule:
-		//	RULE_TERMINAL name=ID ":" IF condition+=Condition THEN atomicAction+=AtomicAction+ (ELSE (IF condition+=Condition
-		//	THEN)* atomicAction+=AtomicAction+)*;
+		//	"rule" name=ID ":" "if" condition+=Condition "then" atomicAction+=AtomicAction+ ("else" ("if" condition+=Condition
+		//	"then")* atomicAction+=AtomicAction+)*;
 		public ParserRule getRule() { return rule; }
 
-		//RULE_TERMINAL name=ID ":" IF condition+=Condition THEN atomicAction+=AtomicAction+ (ELSE (IF condition+=Condition THEN)*
-		//atomicAction+=AtomicAction+)*
+		//"rule" name=ID ":" "if" condition+=Condition "then" atomicAction+=AtomicAction+ ("else" ("if" condition+=Condition
+		//"then")* atomicAction+=AtomicAction+)*
 		public Group getGroup() { return cGroup; }
 
-		//RULE_TERMINAL
-		public RuleCall getRULE_TERMINALTerminalRuleCall_0() { return cRULE_TERMINALTerminalRuleCall_0; }
+		//"rule"
+		public Keyword getRuleKeyword_0() { return cRuleKeyword_0; }
 
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -172,8 +185,8 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		//":"
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
-		//IF
-		public RuleCall getIFTerminalRuleCall_3() { return cIFTerminalRuleCall_3; }
+		//"if"
+		public Keyword getIfKeyword_3() { return cIfKeyword_3; }
 
 		//condition+=Condition
 		public Assignment getConditionAssignment_4() { return cConditionAssignment_4; }
@@ -181,8 +194,8 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		//Condition
 		public RuleCall getConditionConditionParserRuleCall_4_0() { return cConditionConditionParserRuleCall_4_0; }
 
-		//THEN
-		public RuleCall getTHENTerminalRuleCall_5() { return cTHENTerminalRuleCall_5; }
+		//"then"
+		public Keyword getThenKeyword_5() { return cThenKeyword_5; }
 
 		//atomicAction+=AtomicAction+
 		public Assignment getAtomicActionAssignment_6() { return cAtomicActionAssignment_6; }
@@ -190,17 +203,17 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		//AtomicAction
 		public RuleCall getAtomicActionAtomicActionParserRuleCall_6_0() { return cAtomicActionAtomicActionParserRuleCall_6_0; }
 
-		//(ELSE (IF condition+=Condition THEN)* atomicAction+=AtomicAction+)*
+		//("else" ("if" condition+=Condition "then")* atomicAction+=AtomicAction+)*
 		public Group getGroup_7() { return cGroup_7; }
 
-		//ELSE
-		public RuleCall getELSETerminalRuleCall_7_0() { return cELSETerminalRuleCall_7_0; }
+		//"else"
+		public Keyword getElseKeyword_7_0() { return cElseKeyword_7_0; }
 
-		//(IF condition+=Condition THEN)*
+		//("if" condition+=Condition "then")*
 		public Group getGroup_7_1() { return cGroup_7_1; }
 
-		//IF
-		public RuleCall getIFTerminalRuleCall_7_1_0() { return cIFTerminalRuleCall_7_1_0; }
+		//"if"
+		public Keyword getIfKeyword_7_1_0() { return cIfKeyword_7_1_0; }
 
 		//condition+=Condition
 		public Assignment getConditionAssignment_7_1_1() { return cConditionAssignment_7_1_1; }
@@ -208,8 +221,8 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		//Condition
 		public RuleCall getConditionConditionParserRuleCall_7_1_1_0() { return cConditionConditionParserRuleCall_7_1_1_0; }
 
-		//THEN
-		public RuleCall getTHENTerminalRuleCall_7_1_2() { return cTHENTerminalRuleCall_7_1_2; }
+		//"then"
+		public Keyword getThenKeyword_7_1_2() { return cThenKeyword_7_1_2; }
 
 		//atomicAction+=AtomicAction+
 		public Assignment getAtomicActionAssignment_7_2() { return cAtomicActionAssignment_7_2; }
@@ -220,130 +233,134 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 
 	public class ConditionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Condition");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cMeasurementAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cMeasurementImportCrossReference_0_0 = (CrossReference)cMeasurementAssignment_0.eContents().get(0);
-		private final RuleCall cMeasurementImportIDTerminalRuleCall_0_0_1 = (RuleCall)cMeasurementImportCrossReference_0_0.eContents().get(1);
-		private final RuleCall cOPERATORParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final RuleCall cVALUETerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final RuleCall cLOGICAL_OPERATORParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
-		private final Assignment cMeasAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final CrossReference cMeasImportCrossReference_3_1_0 = (CrossReference)cMeasAssignment_3_1.eContents().get(0);
-		private final RuleCall cMeasImportIDTerminalRuleCall_3_1_0_1 = (RuleCall)cMeasImportCrossReference_3_1_0.eContents().get(1);
-		private final RuleCall cOPERATORParserRuleCall_3_2 = (RuleCall)cGroup_3.eContents().get(2);
-		private final RuleCall cVALUETerminalRuleCall_3_3 = (RuleCall)cGroup_3.eContents().get(3);
+		private final Assignment cMeasurementComparisonAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cMeasurementComparisonMeasurementComparisonParserRuleCall_0 = (RuleCall)cMeasurementComparisonAssignment.eContents().get(0);
 		
 		//Condition:
-		//	measurement=[Import] OPERATOR VALUE (LOGICAL_OPERATOR meas+=[Import] OPERATOR VALUE)*;
+		//	measurementComparison+=MeasurementComparison;
 		public ParserRule getRule() { return rule; }
 
-		//measurement=[Import] OPERATOR VALUE (LOGICAL_OPERATOR meas+=[Import] OPERATOR VALUE)*
+		//measurementComparison+=MeasurementComparison
+		public Assignment getMeasurementComparisonAssignment() { return cMeasurementComparisonAssignment; }
+
+		//MeasurementComparison
+		public RuleCall getMeasurementComparisonMeasurementComparisonParserRuleCall_0() { return cMeasurementComparisonMeasurementComparisonParserRuleCall_0; }
+	}
+
+	public class MeasurementComparisonElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MeasurementComparison");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cMeasurementAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cMeasurementContextDependentMeasurementCrossReference_0_0 = (CrossReference)cMeasurementAssignment_0.eContents().get(0);
+		private final RuleCall cMeasurementContextDependentMeasurementQualifiedNameParserRuleCall_0_0_1 = (RuleCall)cMeasurementContextDependentMeasurementCrossReference_0_0.eContents().get(1);
+		private final RuleCall cOPERATORParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cSTRINGTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final RuleCall cLOGICAL_OPERATORParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		
+		//MeasurementComparison:
+		//	measurement=[cdmModel::ContextDependentMeasurement|QualifiedName] OPERATOR STRING LOGICAL_OPERATOR?;
+		public ParserRule getRule() { return rule; }
+
+		//measurement=[cdmModel::ContextDependentMeasurement|QualifiedName] OPERATOR STRING LOGICAL_OPERATOR?
 		public Group getGroup() { return cGroup; }
 
-		//measurement=[Import]
+		//measurement=[cdmModel::ContextDependentMeasurement|QualifiedName]
 		public Assignment getMeasurementAssignment_0() { return cMeasurementAssignment_0; }
 
-		//[Import]
-		public CrossReference getMeasurementImportCrossReference_0_0() { return cMeasurementImportCrossReference_0_0; }
+		//[cdmModel::ContextDependentMeasurement|QualifiedName]
+		public CrossReference getMeasurementContextDependentMeasurementCrossReference_0_0() { return cMeasurementContextDependentMeasurementCrossReference_0_0; }
 
-		//ID
-		public RuleCall getMeasurementImportIDTerminalRuleCall_0_0_1() { return cMeasurementImportIDTerminalRuleCall_0_0_1; }
+		//QualifiedName
+		public RuleCall getMeasurementContextDependentMeasurementQualifiedNameParserRuleCall_0_0_1() { return cMeasurementContextDependentMeasurementQualifiedNameParserRuleCall_0_0_1; }
 
 		//OPERATOR
 		public RuleCall getOPERATORParserRuleCall_1() { return cOPERATORParserRuleCall_1; }
 
-		//VALUE
-		public RuleCall getVALUETerminalRuleCall_2() { return cVALUETerminalRuleCall_2; }
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_2() { return cSTRINGTerminalRuleCall_2; }
 
-		//(LOGICAL_OPERATOR meas+=[Import] OPERATOR VALUE)*
-		public Group getGroup_3() { return cGroup_3; }
-
-		//LOGICAL_OPERATOR
-		public RuleCall getLOGICAL_OPERATORParserRuleCall_3_0() { return cLOGICAL_OPERATORParserRuleCall_3_0; }
-
-		//meas+=[Import]
-		public Assignment getMeasAssignment_3_1() { return cMeasAssignment_3_1; }
-
-		//[Import]
-		public CrossReference getMeasImportCrossReference_3_1_0() { return cMeasImportCrossReference_3_1_0; }
-
-		//ID
-		public RuleCall getMeasImportIDTerminalRuleCall_3_1_0_1() { return cMeasImportIDTerminalRuleCall_3_1_0_1; }
-
-		//OPERATOR
-		public RuleCall getOPERATORParserRuleCall_3_2() { return cOPERATORParserRuleCall_3_2; }
-
-		//VALUE
-		public RuleCall getVALUETerminalRuleCall_3_3() { return cVALUETerminalRuleCall_3_3; }
+		//LOGICAL_OPERATOR?
+		public RuleCall getLOGICAL_OPERATORParserRuleCall_3() { return cLOGICAL_OPERATORParserRuleCall_3; }
 	}
 
 	public class OPERATORElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OPERATOR");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSMALLERTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cBIGGERTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cEQUALTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final Keyword cLessThanSignKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cGreaterThanSignKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cEqualsSignEqualsSignKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cLessThanSignGreaterThanSignKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
 		
+		////Condition:
+		////	measurement=[ cdmModel::ContextDependentMeasurement|QualifiedName ] OPERATOR STRING 
+		////	(LOGICAL_OPERATOR meas+=[Import] OPERATOR STRING)*  
+		////;
 		//OPERATOR:
-		//	SMALLER | BIGGER | EQUAL;
+		//	"<" | ">" | "==" | "<>";
 		public ParserRule getRule() { return rule; }
 
-		//SMALLER | BIGGER | EQUAL
+		//"<" | ">" | "==" | "<>"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//SMALLER
-		public RuleCall getSMALLERTerminalRuleCall_0() { return cSMALLERTerminalRuleCall_0; }
+		//"<"
+		public Keyword getLessThanSignKeyword_0() { return cLessThanSignKeyword_0; }
 
-		//BIGGER
-		public RuleCall getBIGGERTerminalRuleCall_1() { return cBIGGERTerminalRuleCall_1; }
+		//">"
+		public Keyword getGreaterThanSignKeyword_1() { return cGreaterThanSignKeyword_1; }
 
-		//EQUAL
-		public RuleCall getEQUALTerminalRuleCall_2() { return cEQUALTerminalRuleCall_2; }
+		//"=="
+		public Keyword getEqualsSignEqualsSignKeyword_2() { return cEqualsSignEqualsSignKeyword_2; }
+
+		//"<>"
+		public Keyword getLessThanSignGreaterThanSignKeyword_3() { return cLessThanSignGreaterThanSignKeyword_3; }
 	}
 
 	public class LOGICAL_OPERATORElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LOGICAL_OPERATOR");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cANDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cORTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Keyword cANDKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cORKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
 		//LOGICAL_OPERATOR:
-		//	AND | OR;
+		//	"AND" | "OR";
 		public ParserRule getRule() { return rule; }
 
-		//AND | OR
+		//"AND" | "OR"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//AND
-		public RuleCall getANDTerminalRuleCall_0() { return cANDTerminalRuleCall_0; }
+		//"AND"
+		public Keyword getANDKeyword_0() { return cANDKeyword_0; }
 
-		//OR
-		public RuleCall getORTerminalRuleCall_1() { return cORTerminalRuleCall_1; }
+		//"OR"
+		public Keyword getORKeyword_1() { return cORKeyword_1; }
 	}
 
 	public class MATH_OPERATORElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MATH_OPERATOR");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cMAXParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cMINParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cAVGParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final Keyword cMaxKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cMinKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cAvgKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cCountKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
 		
 		//MATH_OPERATOR:
-		//	MAX | MIN | AVG;
+		//	"max" | "min" | "avg" | "count";
 		public ParserRule getRule() { return rule; }
 
-		//MAX | MIN | AVG
+		//"max" | "min" | "avg" | "count"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//MAX
-		public RuleCall getMAXParserRuleCall_0() { return cMAXParserRuleCall_0; }
+		//"max"
+		public Keyword getMaxKeyword_0() { return cMaxKeyword_0; }
 
-		//MIN
-		public RuleCall getMINParserRuleCall_1() { return cMINParserRuleCall_1; }
+		//"min"
+		public Keyword getMinKeyword_1() { return cMinKeyword_1; }
 
-		//AVG
-		public RuleCall getAVGParserRuleCall_2() { return cAVGParserRuleCall_2; }
+		//"avg"
+		public Keyword getAvgKeyword_2() { return cAvgKeyword_2; }
+
+		//"count"
+		public Keyword getCountKeyword_3() { return cCountKeyword_3; }
 	}
 
 	public class AVGElements extends AbstractParserRuleElementFinder {
@@ -472,14 +489,13 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final RuleCall cSelectActionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cDeselectActionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cModifyAttributeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cQueryActionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//AtomicAction:
-		//	SelectAction | DeselectAction | //| QueryAction
-		//	ModifyAttribute;
+		//	SelectAction | DeselectAction | ModifyAttribute | QueryAction;
 		public ParserRule getRule() { return rule; }
 
-		//SelectAction | DeselectAction | //| QueryAction
-		//ModifyAttribute
+		//SelectAction | DeselectAction | ModifyAttribute | QueryAction
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//SelectAction
@@ -488,18 +504,68 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		//DeselectAction
 		public RuleCall getDeselectActionParserRuleCall_1() { return cDeselectActionParserRuleCall_1; }
 
-		////| QueryAction
 		//ModifyAttribute
 		public RuleCall getModifyAttributeParserRuleCall_2() { return cModifyAttributeParserRuleCall_2; }
+
+		//QueryAction
+		public RuleCall getQueryActionParserRuleCall_3() { return cQueryActionParserRuleCall_3; }
+	}
+
+	public class QueryActionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QueryAction");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSelectFeatureKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cWithKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final RuleCall cMATH_OPERATORParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Keyword cAttributeKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cSTRINGTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Keyword cFromFeatureKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cFeatureAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final CrossReference cFeatureFeatureCrossReference_6_0 = (CrossReference)cFeatureAssignment_6.eContents().get(0);
+		private final RuleCall cFeatureFeatureIDTerminalRuleCall_6_0_1 = (RuleCall)cFeatureFeatureCrossReference_6_0.eContents().get(1);
+		
+		//QueryAction:
+		//	"select feature" "with" MATH_OPERATOR "attribute" STRING "from feature" feature=[featuremModel::Feature];
+		public ParserRule getRule() { return rule; }
+
+		//"select feature" "with" MATH_OPERATOR "attribute" STRING "from feature" feature=[featuremModel::Feature]
+		public Group getGroup() { return cGroup; }
+
+		//"select feature"
+		public Keyword getSelectFeatureKeyword_0() { return cSelectFeatureKeyword_0; }
+
+		//"with"
+		public Keyword getWithKeyword_1() { return cWithKeyword_1; }
+
+		//MATH_OPERATOR
+		public RuleCall getMATH_OPERATORParserRuleCall_2() { return cMATH_OPERATORParserRuleCall_2; }
+
+		//"attribute"
+		public Keyword getAttributeKeyword_3() { return cAttributeKeyword_3; }
+
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_4() { return cSTRINGTerminalRuleCall_4; }
+
+		//"from feature"
+		public Keyword getFromFeatureKeyword_5() { return cFromFeatureKeyword_5; }
+
+		//feature=[featuremModel::Feature]
+		public Assignment getFeatureAssignment_6() { return cFeatureAssignment_6; }
+
+		//[featuremModel::Feature]
+		public CrossReference getFeatureFeatureCrossReference_6_0() { return cFeatureFeatureCrossReference_6_0; }
+
+		//ID
+		public RuleCall getFeatureFeatureIDTerminalRuleCall_6_0_1() { return cFeatureFeatureIDTerminalRuleCall_6_0_1; }
 	}
 
 	public class SelectActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SelectAction");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cSELECTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cSelectFeatureKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cFeatureAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cFeatureImportCrossReference_1_0 = (CrossReference)cFeatureAssignment_1.eContents().get(0);
-		private final RuleCall cFeatureImportIDTerminalRuleCall_1_0_1 = (RuleCall)cFeatureImportCrossReference_1_0.eContents().get(1);
+		private final CrossReference cFeatureFeatureCrossReference_1_0 = (CrossReference)cFeatureAssignment_1.eContents().get(0);
+		private final RuleCall cFeatureFeatureIDTerminalRuleCall_1_0_1 = (RuleCall)cFeatureFeatureCrossReference_1_0.eContents().get(1);
 		
 		////QueryAction:
 		////SELECT_WHERE MATH_OPERATOR  
@@ -507,116 +573,157 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		////(LOGICAL_OPERATOR SELECT WHERE mathOp+=MATH_OPERATOR FROM feature+=[Import])*
 		////;
 		//SelectAction:
-		//	SELECT feature=[Import];
+		//	"select feature" feature=[featuremModel::Feature];
 		public ParserRule getRule() { return rule; }
 
-		//SELECT feature=[Import]
+		//"select feature" feature=[featuremModel::Feature]
 		public Group getGroup() { return cGroup; }
 
-		//SELECT
-		public RuleCall getSELECTTerminalRuleCall_0() { return cSELECTTerminalRuleCall_0; }
+		//"select feature"
+		public Keyword getSelectFeatureKeyword_0() { return cSelectFeatureKeyword_0; }
 
-		//feature=[Import]
+		//feature=[featuremModel::Feature]
 		public Assignment getFeatureAssignment_1() { return cFeatureAssignment_1; }
 
-		//[Import]
-		public CrossReference getFeatureImportCrossReference_1_0() { return cFeatureImportCrossReference_1_0; }
+		//[featuremModel::Feature]
+		public CrossReference getFeatureFeatureCrossReference_1_0() { return cFeatureFeatureCrossReference_1_0; }
 
 		//ID
-		public RuleCall getFeatureImportIDTerminalRuleCall_1_0_1() { return cFeatureImportIDTerminalRuleCall_1_0_1; }
+		public RuleCall getFeatureFeatureIDTerminalRuleCall_1_0_1() { return cFeatureFeatureIDTerminalRuleCall_1_0_1; }
 	}
 
 	public class DeselectActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DeselectAction");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cDESELECTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cDeselectFeatureKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cFeatureAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cFeatureImportCrossReference_1_0 = (CrossReference)cFeatureAssignment_1.eContents().get(0);
-		private final RuleCall cFeatureImportIDTerminalRuleCall_1_0_1 = (RuleCall)cFeatureImportCrossReference_1_0.eContents().get(1);
+		private final CrossReference cFeatureFeatureCrossReference_1_0 = (CrossReference)cFeatureAssignment_1.eContents().get(0);
+		private final RuleCall cFeatureFeatureIDTerminalRuleCall_1_0_1 = (RuleCall)cFeatureFeatureCrossReference_1_0.eContents().get(1);
 		
 		//DeselectAction:
-		//	DESELECT feature=[Import];
+		//	"deselect feature" feature=[featuremModel::Feature];
 		public ParserRule getRule() { return rule; }
 
-		//DESELECT feature=[Import]
+		//"deselect feature" feature=[featuremModel::Feature]
 		public Group getGroup() { return cGroup; }
 
-		//DESELECT
-		public RuleCall getDESELECTTerminalRuleCall_0() { return cDESELECTTerminalRuleCall_0; }
+		//"deselect feature"
+		public Keyword getDeselectFeatureKeyword_0() { return cDeselectFeatureKeyword_0; }
 
-		//feature=[Import]
+		//feature=[featuremModel::Feature]
 		public Assignment getFeatureAssignment_1() { return cFeatureAssignment_1; }
 
-		//[Import]
-		public CrossReference getFeatureImportCrossReference_1_0() { return cFeatureImportCrossReference_1_0; }
+		//[featuremModel::Feature]
+		public CrossReference getFeatureFeatureCrossReference_1_0() { return cFeatureFeatureCrossReference_1_0; }
 
 		//ID
-		public RuleCall getFeatureImportIDTerminalRuleCall_1_0_1() { return cFeatureImportIDTerminalRuleCall_1_0_1; }
+		public RuleCall getFeatureFeatureIDTerminalRuleCall_1_0_1() { return cFeatureFeatureIDTerminalRuleCall_1_0_1; }
 	}
 
 	public class ModifyAttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ModifyAttribute");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cCHANGETerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cSetAttributeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cFeatureAttributeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cFeatureAttributeImportCrossReference_1_0 = (CrossReference)cFeatureAttributeAssignment_1.eContents().get(0);
-		private final RuleCall cFeatureAttributeImportIDTerminalRuleCall_1_0_1 = (RuleCall)cFeatureAttributeImportCrossReference_1_0.eContents().get(1);
-		private final RuleCall cWITHTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cValueVALUETerminalRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
+		private final CrossReference cFeatureAttributeCVAttributeCrossReference_1_0 = (CrossReference)cFeatureAttributeAssignment_1.eContents().get(0);
+		private final RuleCall cFeatureAttributeCVAttributeIDTerminalRuleCall_1_0_1 = (RuleCall)cFeatureAttributeCVAttributeCrossReference_1_0.eContents().get(1);
+		private final Keyword cWithValueKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cAttributeValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cAttributeValueAttributeValueParserRuleCall_3_0 = (RuleCall)cAttributeValueAssignment_3.eContents().get(0);
 		
 		//ModifyAttribute:
-		//	CHANGE featureAttribute=[Import] WITH value=VALUE;
+		//	"set attribute" featureAttribute=[rtFeatureModel::CVAttribute] "with value" attributeValue+=AttributeValue;
 		public ParserRule getRule() { return rule; }
 
-		//CHANGE featureAttribute=[Import] WITH value=VALUE
+		//"set attribute" featureAttribute=[rtFeatureModel::CVAttribute] "with value" attributeValue+=AttributeValue
 		public Group getGroup() { return cGroup; }
 
-		//CHANGE
-		public RuleCall getCHANGETerminalRuleCall_0() { return cCHANGETerminalRuleCall_0; }
+		//"set attribute"
+		public Keyword getSetAttributeKeyword_0() { return cSetAttributeKeyword_0; }
 
-		//featureAttribute=[Import]
+		//featureAttribute=[rtFeatureModel::CVAttribute]
 		public Assignment getFeatureAttributeAssignment_1() { return cFeatureAttributeAssignment_1; }
 
-		//[Import]
-		public CrossReference getFeatureAttributeImportCrossReference_1_0() { return cFeatureAttributeImportCrossReference_1_0; }
+		//[rtFeatureModel::CVAttribute]
+		public CrossReference getFeatureAttributeCVAttributeCrossReference_1_0() { return cFeatureAttributeCVAttributeCrossReference_1_0; }
 
 		//ID
-		public RuleCall getFeatureAttributeImportIDTerminalRuleCall_1_0_1() { return cFeatureAttributeImportIDTerminalRuleCall_1_0_1; }
+		public RuleCall getFeatureAttributeCVAttributeIDTerminalRuleCall_1_0_1() { return cFeatureAttributeCVAttributeIDTerminalRuleCall_1_0_1; }
 
-		//WITH
-		public RuleCall getWITHTerminalRuleCall_2() { return cWITHTerminalRuleCall_2; }
+		//"with value"
+		public Keyword getWithValueKeyword_2() { return cWithValueKeyword_2; }
 
-		//value=VALUE
-		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
+		//attributeValue+=AttributeValue
+		public Assignment getAttributeValueAssignment_3() { return cAttributeValueAssignment_3; }
 
-		//VALUE
-		public RuleCall getValueVALUETerminalRuleCall_3_0() { return cValueVALUETerminalRuleCall_3_0; }
+		//AttributeValue
+		public RuleCall getAttributeValueAttributeValueParserRuleCall_3_0() { return cAttributeValueAttributeValueParserRuleCall_3_0; }
+	}
+
+	public class AttributeValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AttributeValue");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cStringAttributeValueParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cNFRAttributeValueParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//AttributeValue:
+		//	StringAttributeValue | NFRAttributeValue;
+		public ParserRule getRule() { return rule; }
+
+		//StringAttributeValue | NFRAttributeValue
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//StringAttributeValue
+		public RuleCall getStringAttributeValueParserRuleCall_0() { return cStringAttributeValueParserRuleCall_0; }
+
+		//NFRAttributeValue
+		public RuleCall getNFRAttributeValueParserRuleCall_1() { return cNFRAttributeValueParserRuleCall_1; }
+	}
+
+	public class StringAttributeValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StringAttributeValue");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//StringAttributeValue:
+		//	value=STRING;
+		public ParserRule getRule() { return rule; }
+
+		//value=STRING
+		public Assignment getValueAssignment() { return cValueAssignment; }
+
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_0() { return cValueSTRINGTerminalRuleCall_0; }
+	}
+
+	public class NFRAttributeValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NFRAttributeValue");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cValueNFRAttributeCrossReference_0 = (CrossReference)cValueAssignment.eContents().get(0);
+		private final RuleCall cValueNFRAttributeQualifiedNameParserRuleCall_0_1 = (RuleCall)cValueNFRAttributeCrossReference_0.eContents().get(1);
+		
+		//NFRAttributeValue:
+		//	value=[rtFeatureModel::NFRAttribute|QualifiedName];
+		public ParserRule getRule() { return rule; }
+
+		//value=[rtFeatureModel::NFRAttribute|QualifiedName]
+		public Assignment getValueAssignment() { return cValueAssignment; }
+
+		//[rtFeatureModel::NFRAttribute|QualifiedName]
+		public CrossReference getValueNFRAttributeCrossReference_0() { return cValueNFRAttributeCrossReference_0; }
+
+		//QualifiedName
+		public RuleCall getValueNFRAttributeQualifiedNameParserRuleCall_0_1() { return cValueNFRAttributeQualifiedNameParserRuleCall_0_1; }
 	}
 	
 	
 	private AdaptationModelElements pAdaptationModel;
-	private TerminalRule tVALUE;
-	private TerminalRule tAND;
-	private TerminalRule tOR;
-	private TerminalRule tIF;
-	private TerminalRule tELSE;
-	private TerminalRule tTHEN;
-	private TerminalRule tRULE_TERMINAL;
-	private TerminalRule tSELECT;
-	private TerminalRule tDESELECT;
-	private TerminalRule tCHANGE;
-	private TerminalRule tWITH;
-	private TerminalRule tIMPORT_TERMINAL;
-	private TerminalRule tAS;
-	private TerminalRule tSMALLER;
-	private TerminalRule tBIGGER;
-	private TerminalRule tEQUAL;
 	private ImportElements pImport;
 	private QualifiedNameWithWildcardElements pQualifiedNameWithWildcard;
 	private QualifiedNameElements pQualifiedName;
 	private RuleElements pRule;
 	private ConditionElements pCondition;
+	private MeasurementComparisonElements pMeasurementComparison;
 	private OPERATORElements pOPERATOR;
 	private LOGICAL_OPERATORElements pLOGICAL_OPERATOR;
 	private MATH_OPERATORElements pMATH_OPERATOR;
@@ -624,9 +731,13 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	private MINElements pMIN;
 	private MAXElements pMAX;
 	private AtomicActionElements pAtomicAction;
+	private QueryActionElements pQueryAction;
 	private SelectActionElements pSelectAction;
 	private DeselectActionElements pDeselectAction;
 	private ModifyAttributeElements pModifyAttribute;
+	private AttributeValueElements pAttributeValue;
+	private StringAttributeValueElements pStringAttributeValue;
+	private NFRAttributeValueElements pNFRAttributeValue;
 	
 	private final Grammar grammar;
 
@@ -676,106 +787,28 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		return getAdaptationModelAccess().getRule();
 	}
 
-	//terminal VALUE:
-	//	"\"" ("0".."9" | "a".."z" | "0".."9" "." "0".."9")+ "\"";
-	public TerminalRule getVALUERule() {
-		return (tVALUE != null) ? tVALUE : (tVALUE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "VALUE"));
-	} 
-
-	//terminal AND:
-	//	"AND";
-	public TerminalRule getANDRule() {
-		return (tAND != null) ? tAND : (tAND = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "AND"));
-	} 
-
-	//terminal OR:
-	//	"OR";
-	public TerminalRule getORRule() {
-		return (tOR != null) ? tOR : (tOR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "OR"));
-	} 
-
-	//terminal IF:
-	//	"if";
-	public TerminalRule getIFRule() {
-		return (tIF != null) ? tIF : (tIF = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "IF"));
-	} 
-
-	//terminal ELSE:
-	//	"else";
-	public TerminalRule getELSERule() {
-		return (tELSE != null) ? tELSE : (tELSE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ELSE"));
-	} 
-
-	//terminal THEN:
-	//	"then";
-	public TerminalRule getTHENRule() {
-		return (tTHEN != null) ? tTHEN : (tTHEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "THEN"));
-	} 
-
-	//terminal RULE_TERMINAL:
-	//	"rule";
-	public TerminalRule getRULE_TERMINALRule() {
-		return (tRULE_TERMINAL != null) ? tRULE_TERMINAL : (tRULE_TERMINAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "RULE_TERMINAL"));
-	} 
-
-	//terminal SELECT:
-	//	"select feature";
-	public TerminalRule getSELECTRule() {
-		return (tSELECT != null) ? tSELECT : (tSELECT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SELECT"));
-	} 
-
-	//terminal DESELECT:
-	//	"deselect feature";
-	public TerminalRule getDESELECTRule() {
-		return (tDESELECT != null) ? tDESELECT : (tDESELECT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DESELECT"));
-	} 
-
-	//terminal CHANGE:
-	//	"change feature attribute";
-	public TerminalRule getCHANGERule() {
-		return (tCHANGE != null) ? tCHANGE : (tCHANGE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "CHANGE"));
-	} 
-
-	//terminal WITH:
-	//	"with";
-	public TerminalRule getWITHRule() {
-		return (tWITH != null) ? tWITH : (tWITH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WITH"));
-	} 
-
-	//terminal IMPORT_TERMINAL:
-	//	"import";
-	public TerminalRule getIMPORT_TERMINALRule() {
-		return (tIMPORT_TERMINAL != null) ? tIMPORT_TERMINAL : (tIMPORT_TERMINAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "IMPORT_TERMINAL"));
-	} 
-
-	//terminal AS:
-	//	"as";
-	public TerminalRule getASRule() {
-		return (tAS != null) ? tAS : (tAS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "AS"));
-	} 
-
-	//terminal SMALLER:
-	//	"<";
-	public TerminalRule getSMALLERRule() {
-		return (tSMALLER != null) ? tSMALLER : (tSMALLER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SMALLER"));
-	} 
-
-	//terminal BIGGER:
-	//	">";
-	public TerminalRule getBIGGERRule() {
-		return (tBIGGER != null) ? tBIGGER : (tBIGGER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BIGGER"));
-	} 
-
-	//terminal EQUAL:
-	//	"==";
-	public TerminalRule getEQUALRule() {
-		return (tEQUAL != null) ? tEQUAL : (tEQUAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "EQUAL"));
-	} 
-
+	////terminal VALUE returns ecore::EString: '"' ('0'..'9' | 'a'..'z' | '0'..'9' '.' '0'..'9')+'"';
+	////terminal AND             returns ecore::EString: 'AND';
+	////terminal OR              returns ecore::EString:  'OR' ;
+	////terminal IF              returns ecore::EString: 'if';
+	////terminal ELSE            returns ecore::EString: 'else';
+	////terminal THEN            returns ecore::EString: 'then';
+	////terminal RULE_TERMINAL   returns ecore::EString: 'rule';
+	////terminal SELECT          returns ecore::EString: 'select feature';
+	////terminal DESELECT        returns ecore::EString: 'deselect feature';
+	////terminal CHANGE          returns ecore::EString: 'change feature attribute';
+	////terminal WITH            returns ecore::EString: 'with';
+	////terminal IMPORT_TERMINAL returns ecore::EString: 'import';
+	////terminal AS              returns ecore::EString: 'as';
+	////terminal SMALLER		 returns ecore::EString: '<';
+	////terminal BIGGER			 returns ecore::EString: '>';
+	////terminal EQUAL		     returns ecore::EString: '==';
+	////terminal NOT_EQUAL		returns ecore::EString: '<>'
 	////terminal SELECT_WHERE    returns ecore::EString: 'select feature * where';
 	////terminal FROM 		   returns ecore::EString: 'from';
 	//Import:
-	//	IMPORT_TERMINAL QualifiedNameWithWildcard AS name=ID;
+	//	"import" importURI= //AS name=ID
+	//	STRING;
 	public ImportElements getImportAccess() {
 		return (pImport != null) ? pImport : (pImport = new ImportElements());
 	}
@@ -805,8 +838,8 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//Rule:
-	//	RULE_TERMINAL name=ID ":" IF condition+=Condition THEN atomicAction+=AtomicAction+ (ELSE (IF condition+=Condition
-	//	THEN)* atomicAction+=AtomicAction+)*;
+	//	"rule" name=ID ":" "if" condition+=Condition "then" atomicAction+=AtomicAction+ ("else" ("if" condition+=Condition
+	//	"then")* atomicAction+=AtomicAction+)*;
 	public RuleElements getRuleAccess() {
 		return (pRule != null) ? pRule : (pRule = new RuleElements());
 	}
@@ -816,7 +849,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//Condition:
-	//	measurement=[Import] OPERATOR VALUE (LOGICAL_OPERATOR meas+=[Import] OPERATOR VALUE)*;
+	//	measurementComparison+=MeasurementComparison;
 	public ConditionElements getConditionAccess() {
 		return (pCondition != null) ? pCondition : (pCondition = new ConditionElements());
 	}
@@ -825,8 +858,22 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		return getConditionAccess().getRule();
 	}
 
+	//MeasurementComparison:
+	//	measurement=[cdmModel::ContextDependentMeasurement|QualifiedName] OPERATOR STRING LOGICAL_OPERATOR?;
+	public MeasurementComparisonElements getMeasurementComparisonAccess() {
+		return (pMeasurementComparison != null) ? pMeasurementComparison : (pMeasurementComparison = new MeasurementComparisonElements());
+	}
+	
+	public ParserRule getMeasurementComparisonRule() {
+		return getMeasurementComparisonAccess().getRule();
+	}
+
+	////Condition:
+	////	measurement=[ cdmModel::ContextDependentMeasurement|QualifiedName ] OPERATOR STRING 
+	////	(LOGICAL_OPERATOR meas+=[Import] OPERATOR STRING)*  
+	////;
 	//OPERATOR:
-	//	SMALLER | BIGGER | EQUAL;
+	//	"<" | ">" | "==" | "<>";
 	public OPERATORElements getOPERATORAccess() {
 		return (pOPERATOR != null) ? pOPERATOR : (pOPERATOR = new OPERATORElements());
 	}
@@ -836,7 +883,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//LOGICAL_OPERATOR:
-	//	AND | OR;
+	//	"AND" | "OR";
 	public LOGICAL_OPERATORElements getLOGICAL_OPERATORAccess() {
 		return (pLOGICAL_OPERATOR != null) ? pLOGICAL_OPERATOR : (pLOGICAL_OPERATOR = new LOGICAL_OPERATORElements());
 	}
@@ -846,7 +893,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//MATH_OPERATOR:
-	//	MAX | MIN | AVG;
+	//	"max" | "min" | "avg" | "count";
 	public MATH_OPERATORElements getMATH_OPERATORAccess() {
 		return (pMATH_OPERATOR != null) ? pMATH_OPERATOR : (pMATH_OPERATOR = new MATH_OPERATORElements());
 	}
@@ -886,8 +933,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//AtomicAction:
-	//	SelectAction | DeselectAction | //| QueryAction
-	//	ModifyAttribute;
+	//	SelectAction | DeselectAction | ModifyAttribute | QueryAction;
 	public AtomicActionElements getAtomicActionAccess() {
 		return (pAtomicAction != null) ? pAtomicAction : (pAtomicAction = new AtomicActionElements());
 	}
@@ -896,13 +942,23 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		return getAtomicActionAccess().getRule();
 	}
 
+	//QueryAction:
+	//	"select feature" "with" MATH_OPERATOR "attribute" STRING "from feature" feature=[featuremModel::Feature];
+	public QueryActionElements getQueryActionAccess() {
+		return (pQueryAction != null) ? pQueryAction : (pQueryAction = new QueryActionElements());
+	}
+	
+	public ParserRule getQueryActionRule() {
+		return getQueryActionAccess().getRule();
+	}
+
 	////QueryAction:
 	////SELECT_WHERE MATH_OPERATOR  
 	////FROM feature+=[Import] 
 	////(LOGICAL_OPERATOR SELECT WHERE mathOp+=MATH_OPERATOR FROM feature+=[Import])*
 	////;
 	//SelectAction:
-	//	SELECT feature=[Import];
+	//	"select feature" feature=[featuremModel::Feature];
 	public SelectActionElements getSelectActionAccess() {
 		return (pSelectAction != null) ? pSelectAction : (pSelectAction = new SelectActionElements());
 	}
@@ -912,7 +968,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//DeselectAction:
-	//	DESELECT feature=[Import];
+	//	"deselect feature" feature=[featuremModel::Feature];
 	public DeselectActionElements getDeselectActionAccess() {
 		return (pDeselectAction != null) ? pDeselectAction : (pDeselectAction = new DeselectActionElements());
 	}
@@ -922,13 +978,43 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//ModifyAttribute:
-	//	CHANGE featureAttribute=[Import] WITH value=VALUE;
+	//	"set attribute" featureAttribute=[rtFeatureModel::CVAttribute] "with value" attributeValue+=AttributeValue;
 	public ModifyAttributeElements getModifyAttributeAccess() {
 		return (pModifyAttribute != null) ? pModifyAttribute : (pModifyAttribute = new ModifyAttributeElements());
 	}
 	
 	public ParserRule getModifyAttributeRule() {
 		return getModifyAttributeAccess().getRule();
+	}
+
+	//AttributeValue:
+	//	StringAttributeValue | NFRAttributeValue;
+	public AttributeValueElements getAttributeValueAccess() {
+		return (pAttributeValue != null) ? pAttributeValue : (pAttributeValue = new AttributeValueElements());
+	}
+	
+	public ParserRule getAttributeValueRule() {
+		return getAttributeValueAccess().getRule();
+	}
+
+	//StringAttributeValue:
+	//	value=STRING;
+	public StringAttributeValueElements getStringAttributeValueAccess() {
+		return (pStringAttributeValue != null) ? pStringAttributeValue : (pStringAttributeValue = new StringAttributeValueElements());
+	}
+	
+	public ParserRule getStringAttributeValueRule() {
+		return getStringAttributeValueAccess().getRule();
+	}
+
+	//NFRAttributeValue:
+	//	value=[rtFeatureModel::NFRAttribute|QualifiedName];
+	public NFRAttributeValueElements getNFRAttributeValueAccess() {
+		return (pNFRAttributeValue != null) ? pNFRAttributeValue : (pNFRAttributeValue = new NFRAttributeValueElements());
+	}
+	
+	public ParserRule getNFRAttributeValueRule() {
+		return getNFRAttributeValueAccess().getRule();
 	}
 
 	//terminal ID:
