@@ -1,10 +1,10 @@
-package org.rra.cdmmodel.xtext.ui;
+package org.rra.featureModel.xtext.ui;
 
 import org.apache.log4j.Logger;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.shared.SharedStateModule;
 import org.osgi.framework.BundleContext;
-import org.rra.cdmmodel.xtext.utils.CDMModelRuntimeModule;
+import org.rra.featureModel.xtext.utils.FeatureModelRuntimeModule;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -17,7 +17,7 @@ public class Activator extends AbstractUIPlugin {
 
 	private static final Logger logger = Logger.getLogger(Activator.class);
 	// The plug-in ID
-	public static final String PLUGIN_ID = "org.rra.cdmModel.xtext.ui"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "org.rra.featureModel.xtext.ui"; //$NON-NLS-1$
 
 	// The shared instance
 	private static Activator plugin;
@@ -35,10 +35,9 @@ public class Activator extends AbstractUIPlugin {
     }
  
     private void initializeEcoreInjector() {
-    	System.out.println("is Running ************************");
-        injector = Guice.createInjector(
-                Modules.override(Modules.override(new CDMModelRuntimeModule())
-                .with(new CDMModelUiModule(plugin)))
+    	injector = Guice.createInjector(
+                Modules.override(Modules.override(new FeatureModelRuntimeModule())
+                .with(new FeatureModelUiModule(plugin)))
                 .with(new SharedStateModule()));
     }
 	

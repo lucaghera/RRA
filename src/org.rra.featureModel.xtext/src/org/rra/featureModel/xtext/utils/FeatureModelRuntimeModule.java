@@ -1,30 +1,29 @@
-package org.rra.cdmmodel.xtext.utils;
+package org.rra.featureModel.xtext.utils;
 
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.resource.IDefaultResourceDescriptionStrategy;
 import org.eclipse.xtext.resource.generic.AbstractGenericResourceRuntimeModule;
 
-public class CDMModelRuntimeModule extends AbstractGenericResourceRuntimeModule{
+public class FeatureModelRuntimeModule extends AbstractGenericResourceRuntimeModule{
 	
 	
     @Override
     protected String getLanguageName() {
-        return "org.rra.cdmModel.presentation.CDMModelEditorID";
+        return "org.hyperflex.featuremodels.presentation.featuremodelsEditor";
     }
  
     @Override
     protected String getFileExtensions() {
-    	System.out.println("------------- cdmmodel");
-        return "cdmmodel";
+    	return "featuremodel";
     }
  
     public Class<? extends IDefaultResourceDescriptionStrategy> bindIDefaultResourceDescriptionStrategy() {
-        return CDMModelResourceDescriptionStrategy.class;
+        return FeatureModelResourceDescriptionStrategy.class;
     }
  
     @Override
     public Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
-        return CDMModelQualifiedNameProvider.class;
+        return FeatureModelQualifiedNameProvider.class;
     }
 
 }

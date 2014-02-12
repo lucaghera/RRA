@@ -79,6 +79,13 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass matH_OPERATOREClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass avgEClass = null;
 
   /**
@@ -353,9 +360,9 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAVG()
+  public EClass getMATH_OPERATOR()
   {
-    return avgEClass;
+    return matH_OPERATOREClass;
   }
 
   /**
@@ -363,9 +370,29 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAVG_Measurement()
+  public EReference getMATH_OPERATOR_Feature()
   {
-    return (EReference)avgEClass.getEStructuralFeatures().get(0);
+    return (EReference)matH_OPERATOREClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMATH_OPERATOR_Measurement()
+  {
+    return (EReference)matH_OPERATOREClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAVG()
+  {
+    return avgEClass;
   }
 
   /**
@@ -383,29 +410,9 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMIN_Measurement()
-  {
-    return (EReference)minEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getMAX()
   {
     return maxEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getMAX_Measurement()
-  {
-    return (EReference)maxEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -426,16 +433,6 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
   public EClass getQueryAction()
   {
     return queryActionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getQueryAction_Feature()
-  {
-    return (EReference)queryActionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -606,19 +603,19 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
     measurementComparisonEClass = createEClass(MEASUREMENT_COMPARISON);
     createEReference(measurementComparisonEClass, MEASUREMENT_COMPARISON__MEASUREMENT);
 
+    matH_OPERATOREClass = createEClass(MATH_OPERATOR);
+    createEReference(matH_OPERATOREClass, MATH_OPERATOR__FEATURE);
+    createEReference(matH_OPERATOREClass, MATH_OPERATOR__MEASUREMENT);
+
     avgEClass = createEClass(AVG);
-    createEReference(avgEClass, AVG__MEASUREMENT);
 
     minEClass = createEClass(MIN);
-    createEReference(minEClass, MIN__MEASUREMENT);
 
     maxEClass = createEClass(MAX);
-    createEReference(maxEClass, MAX__MEASUREMENT);
 
     atomicActionEClass = createEClass(ATOMIC_ACTION);
 
     queryActionEClass = createEClass(QUERY_ACTION);
-    createEReference(queryActionEClass, QUERY_ACTION__FEATURE);
 
     selectActionEClass = createEClass(SELECT_ACTION);
     createEReference(selectActionEClass, SELECT_ACTION__FEATURE);
@@ -673,6 +670,10 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    matH_OPERATOREClass.getESuperTypes().add(this.getQueryAction());
+    avgEClass.getESuperTypes().add(this.getMATH_OPERATOR());
+    minEClass.getESuperTypes().add(this.getMATH_OPERATOR());
+    maxEClass.getESuperTypes().add(this.getMATH_OPERATOR());
     queryActionEClass.getESuperTypes().add(this.getAtomicAction());
     selectActionEClass.getESuperTypes().add(this.getAtomicAction());
     deselectActionEClass.getESuperTypes().add(this.getAtomicAction());
@@ -699,19 +700,19 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
     initEClass(measurementComparisonEClass, MeasurementComparison.class, "MeasurementComparison", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMeasurementComparison_Measurement(), theCDMModelPackage.getContextDependentMeasurement(), null, "measurement", null, 0, 1, MeasurementComparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(matH_OPERATOREClass, org.rra.adaptationModel.adaptationModelDSL.MATH_OPERATOR.class, "MATH_OPERATOR", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMATH_OPERATOR_Feature(), thefeaturemodelsPackage.getFeature(), null, "feature", null, 0, 1, org.rra.adaptationModel.adaptationModelDSL.MATH_OPERATOR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMATH_OPERATOR_Measurement(), theCDMModelPackage.getContextDependentMeasurement(), null, "measurement", null, 0, -1, org.rra.adaptationModel.adaptationModelDSL.MATH_OPERATOR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(avgEClass, org.rra.adaptationModel.adaptationModelDSL.AVG.class, "AVG", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAVG_Measurement(), this.getImport(), null, "measurement", null, 0, -1, org.rra.adaptationModel.adaptationModelDSL.AVG.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(minEClass, org.rra.adaptationModel.adaptationModelDSL.MIN.class, "MIN", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMIN_Measurement(), this.getImport(), null, "measurement", null, 0, -1, org.rra.adaptationModel.adaptationModelDSL.MIN.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(maxEClass, org.rra.adaptationModel.adaptationModelDSL.MAX.class, "MAX", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMAX_Measurement(), this.getImport(), null, "measurement", null, 0, -1, org.rra.adaptationModel.adaptationModelDSL.MAX.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(atomicActionEClass, AtomicAction.class, "AtomicAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(queryActionEClass, QueryAction.class, "QueryAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getQueryAction_Feature(), thefeaturemodelsPackage.getFeature(), null, "feature", null, 0, 1, QueryAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(selectActionEClass, SelectAction.class, "SelectAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSelectAction_Feature(), thefeaturemodelsPackage.getFeature(), null, "feature", null, 0, 1, SelectAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

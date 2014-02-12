@@ -1,4 +1,4 @@
-package org.rra.cdmmodel.xtext.ui;
+package org.rra.cdmModel.xtext.ui;
 
 import java.util.Collections;
 

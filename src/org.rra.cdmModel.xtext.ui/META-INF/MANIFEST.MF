@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.rra.cdmModel.xtext.ui
 Bundle-SymbolicName: org.rra.cdmModel.xtext.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: org.rra.cdmmodel.xtext.ui.Activator
+Bundle-Activator: org.rra.cdmModel.xtext.ui.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.rra.cdmModel.model.editor;bundle-version="1.0.0",

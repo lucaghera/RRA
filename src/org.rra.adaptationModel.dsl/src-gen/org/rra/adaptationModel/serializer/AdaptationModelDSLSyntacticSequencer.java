@@ -31,8 +31,6 @@ public class AdaptationModelDSLSyntacticSequencer extends AbstractSyntacticSeque
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if(ruleCall.getRule() == grammarAccess.getLOGICAL_OPERATORRule())
 			return getLOGICAL_OPERATORToken(semanticObject, ruleCall, node);
-		else if(ruleCall.getRule() == grammarAccess.getMATH_OPERATORRule())
-			return getMATH_OPERATORToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getOPERATORRule())
 			return getOPERATORToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getSTRINGRule())
@@ -49,17 +47,6 @@ public class AdaptationModelDSLSyntacticSequencer extends AbstractSyntacticSeque
 		if (node != null)
 			return getTokenText(node);
 		return "AND";
-	}
-	
-	/**
-	 * MATH_OPERATOR:
-	 * 	'max' | 'min' | 'avg' | 'count'
-	 * ;
-	 */
-	protected String getMATH_OPERATORToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "max";
 	}
 	
 	/**

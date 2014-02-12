@@ -338,29 +338,25 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	public class MATH_OPERATORElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MATH_OPERATOR");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cMaxKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cMinKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cAvgKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cCountKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final RuleCall cMAXParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cMINParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cAVGParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//MATH_OPERATOR:
-		//	"max" | "min" | "avg" | "count";
+		//	MAX | MIN | AVG;
 		public ParserRule getRule() { return rule; }
 
-		//"max" | "min" | "avg" | "count"
+		//MAX | MIN | AVG
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"max"
-		public Keyword getMaxKeyword_0() { return cMaxKeyword_0; }
+		//MAX
+		public RuleCall getMAXParserRuleCall_0() { return cMAXParserRuleCall_0; }
 
-		//"min"
-		public Keyword getMinKeyword_1() { return cMinKeyword_1; }
+		//MIN
+		public RuleCall getMINParserRuleCall_1() { return cMINParserRuleCall_1; }
 
-		//"avg"
-		public Keyword getAvgKeyword_2() { return cAvgKeyword_2; }
-
-		//"count"
-		public Keyword getCountKeyword_3() { return cCountKeyword_3; }
+		//AVG
+		public RuleCall getAVGParserRuleCall_2() { return cAVGParserRuleCall_2; }
 	}
 
 	public class AVGElements extends AbstractParserRuleElementFinder {
@@ -369,32 +365,32 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cAVGKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Assignment cMeasurementAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final CrossReference cMeasurementImportCrossReference_1_0_0 = (CrossReference)cMeasurementAssignment_1_0.eContents().get(0);
-		private final RuleCall cMeasurementImportIDTerminalRuleCall_1_0_0_1 = (RuleCall)cMeasurementImportCrossReference_1_0_0.eContents().get(1);
+		private final CrossReference cMeasurementContextDependentMeasurementCrossReference_1_0_0 = (CrossReference)cMeasurementAssignment_1_0.eContents().get(0);
+		private final RuleCall cMeasurementContextDependentMeasurementQualifiedNameParserRuleCall_1_0_0_1 = (RuleCall)cMeasurementContextDependentMeasurementCrossReference_1_0_0.eContents().get(1);
 		private final Keyword cCommaKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//AVG:
-		//	"AVG (" (measurement+=[Import] ",")+ ")";
+		//	"AVG (" (measurement+=[cdmModel::ContextDependentMeasurement|QualifiedName] ",")+ ")";
 		public ParserRule getRule() { return rule; }
 
-		//"AVG (" (measurement+=[Import] ",")+ ")"
+		//"AVG (" (measurement+=[cdmModel::ContextDependentMeasurement|QualifiedName] ",")+ ")"
 		public Group getGroup() { return cGroup; }
 
 		//"AVG ("
 		public Keyword getAVGKeyword_0() { return cAVGKeyword_0; }
 
-		//(measurement+=[Import] ",")+
+		//(measurement+=[cdmModel::ContextDependentMeasurement|QualifiedName] ",")+
 		public Group getGroup_1() { return cGroup_1; }
 
-		//measurement+=[Import]
+		//measurement+=[cdmModel::ContextDependentMeasurement|QualifiedName]
 		public Assignment getMeasurementAssignment_1_0() { return cMeasurementAssignment_1_0; }
 
-		//[Import]
-		public CrossReference getMeasurementImportCrossReference_1_0_0() { return cMeasurementImportCrossReference_1_0_0; }
+		//[cdmModel::ContextDependentMeasurement|QualifiedName]
+		public CrossReference getMeasurementContextDependentMeasurementCrossReference_1_0_0() { return cMeasurementContextDependentMeasurementCrossReference_1_0_0; }
 
-		//ID
-		public RuleCall getMeasurementImportIDTerminalRuleCall_1_0_0_1() { return cMeasurementImportIDTerminalRuleCall_1_0_0_1; }
+		//QualifiedName
+		public RuleCall getMeasurementContextDependentMeasurementQualifiedNameParserRuleCall_1_0_0_1() { return cMeasurementContextDependentMeasurementQualifiedNameParserRuleCall_1_0_0_1; }
 
 		//","
 		public Keyword getCommaKeyword_1_1() { return cCommaKeyword_1_1; }
@@ -409,32 +405,32 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cMINKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Assignment cMeasurementAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final CrossReference cMeasurementImportCrossReference_1_0_0 = (CrossReference)cMeasurementAssignment_1_0.eContents().get(0);
-		private final RuleCall cMeasurementImportIDTerminalRuleCall_1_0_0_1 = (RuleCall)cMeasurementImportCrossReference_1_0_0.eContents().get(1);
+		private final CrossReference cMeasurementContextDependentMeasurementCrossReference_1_0_0 = (CrossReference)cMeasurementAssignment_1_0.eContents().get(0);
+		private final RuleCall cMeasurementContextDependentMeasurementQualifiedNameParserRuleCall_1_0_0_1 = (RuleCall)cMeasurementContextDependentMeasurementCrossReference_1_0_0.eContents().get(1);
 		private final Keyword cCommaKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//MIN:
-		//	"MIN (" (measurement+=[Import] ",")+ ")";
+		//	"MIN (" (measurement+=[cdmModel::ContextDependentMeasurement|QualifiedName] ",")+ ")";
 		public ParserRule getRule() { return rule; }
 
-		//"MIN (" (measurement+=[Import] ",")+ ")"
+		//"MIN (" (measurement+=[cdmModel::ContextDependentMeasurement|QualifiedName] ",")+ ")"
 		public Group getGroup() { return cGroup; }
 
 		//"MIN ("
 		public Keyword getMINKeyword_0() { return cMINKeyword_0; }
 
-		//(measurement+=[Import] ",")+
+		//(measurement+=[cdmModel::ContextDependentMeasurement|QualifiedName] ",")+
 		public Group getGroup_1() { return cGroup_1; }
 
-		//measurement+=[Import]
+		//measurement+=[cdmModel::ContextDependentMeasurement|QualifiedName]
 		public Assignment getMeasurementAssignment_1_0() { return cMeasurementAssignment_1_0; }
 
-		//[Import]
-		public CrossReference getMeasurementImportCrossReference_1_0_0() { return cMeasurementImportCrossReference_1_0_0; }
+		//[cdmModel::ContextDependentMeasurement|QualifiedName]
+		public CrossReference getMeasurementContextDependentMeasurementCrossReference_1_0_0() { return cMeasurementContextDependentMeasurementCrossReference_1_0_0; }
 
-		//ID
-		public RuleCall getMeasurementImportIDTerminalRuleCall_1_0_0_1() { return cMeasurementImportIDTerminalRuleCall_1_0_0_1; }
+		//QualifiedName
+		public RuleCall getMeasurementContextDependentMeasurementQualifiedNameParserRuleCall_1_0_0_1() { return cMeasurementContextDependentMeasurementQualifiedNameParserRuleCall_1_0_0_1; }
 
 		//","
 		public Keyword getCommaKeyword_1_1() { return cCommaKeyword_1_1; }
@@ -449,32 +445,32 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cMAXKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Assignment cMeasurementAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final CrossReference cMeasurementImportCrossReference_1_0_0 = (CrossReference)cMeasurementAssignment_1_0.eContents().get(0);
-		private final RuleCall cMeasurementImportIDTerminalRuleCall_1_0_0_1 = (RuleCall)cMeasurementImportCrossReference_1_0_0.eContents().get(1);
+		private final CrossReference cMeasurementContextDependentMeasurementCrossReference_1_0_0 = (CrossReference)cMeasurementAssignment_1_0.eContents().get(0);
+		private final RuleCall cMeasurementContextDependentMeasurementQualifiedNameParserRuleCall_1_0_0_1 = (RuleCall)cMeasurementContextDependentMeasurementCrossReference_1_0_0.eContents().get(1);
 		private final Keyword cCommaKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//MAX:
-		//	"MAX (" (measurement+=[Import] ",")+ ")";
+		//	"MAX (" (measurement+=[cdmModel::ContextDependentMeasurement|QualifiedName] ",")+ ")";
 		public ParserRule getRule() { return rule; }
 
-		//"MAX (" (measurement+=[Import] ",")+ ")"
+		//"MAX (" (measurement+=[cdmModel::ContextDependentMeasurement|QualifiedName] ",")+ ")"
 		public Group getGroup() { return cGroup; }
 
 		//"MAX ("
 		public Keyword getMAXKeyword_0() { return cMAXKeyword_0; }
 
-		//(measurement+=[Import] ",")+
+		//(measurement+=[cdmModel::ContextDependentMeasurement|QualifiedName] ",")+
 		public Group getGroup_1() { return cGroup_1; }
 
-		//measurement+=[Import]
+		//measurement+=[cdmModel::ContextDependentMeasurement|QualifiedName]
 		public Assignment getMeasurementAssignment_1_0() { return cMeasurementAssignment_1_0; }
 
-		//[Import]
-		public CrossReference getMeasurementImportCrossReference_1_0_0() { return cMeasurementImportCrossReference_1_0_0; }
+		//[cdmModel::ContextDependentMeasurement|QualifiedName]
+		public CrossReference getMeasurementContextDependentMeasurementCrossReference_1_0_0() { return cMeasurementContextDependentMeasurementCrossReference_1_0_0; }
 
-		//ID
-		public RuleCall getMeasurementImportIDTerminalRuleCall_1_0_0_1() { return cMeasurementImportIDTerminalRuleCall_1_0_0_1; }
+		//QualifiedName
+		public RuleCall getMeasurementContextDependentMeasurementQualifiedNameParserRuleCall_1_0_0_1() { return cMeasurementContextDependentMeasurementQualifiedNameParserRuleCall_1_0_0_1; }
 
 		//","
 		public Keyword getCommaKeyword_1_1() { return cCommaKeyword_1_1; }
@@ -522,13 +518,13 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cFromFeatureKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cFeatureAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final CrossReference cFeatureFeatureCrossReference_6_0 = (CrossReference)cFeatureAssignment_6.eContents().get(0);
-		private final RuleCall cFeatureFeatureIDTerminalRuleCall_6_0_1 = (RuleCall)cFeatureFeatureCrossReference_6_0.eContents().get(1);
+		private final RuleCall cFeatureFeatureQualifiedNameParserRuleCall_6_0_1 = (RuleCall)cFeatureFeatureCrossReference_6_0.eContents().get(1);
 		
 		//QueryAction:
-		//	"select feature" "with" MATH_OPERATOR "attribute" STRING "from feature" feature=[featureModel::Feature];
+		//	"select feature" "with" MATH_OPERATOR "attribute" STRING "from feature" feature=[featureModel::Feature|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
-		//"select feature" "with" MATH_OPERATOR "attribute" STRING "from feature" feature=[featureModel::Feature]
+		//"select feature" "with" MATH_OPERATOR "attribute" STRING "from feature" feature=[featureModel::Feature|QualifiedName]
 		public Group getGroup() { return cGroup; }
 
 		//"select feature"
@@ -549,23 +545,23 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		//"from feature"
 		public Keyword getFromFeatureKeyword_5() { return cFromFeatureKeyword_5; }
 
-		//feature=[featureModel::Feature]
+		//feature=[featureModel::Feature|QualifiedName]
 		public Assignment getFeatureAssignment_6() { return cFeatureAssignment_6; }
 
-		//[featureModel::Feature]
+		//[featureModel::Feature|QualifiedName]
 		public CrossReference getFeatureFeatureCrossReference_6_0() { return cFeatureFeatureCrossReference_6_0; }
 
-		//ID
-		public RuleCall getFeatureFeatureIDTerminalRuleCall_6_0_1() { return cFeatureFeatureIDTerminalRuleCall_6_0_1; }
+		//QualifiedName
+		public RuleCall getFeatureFeatureQualifiedNameParserRuleCall_6_0_1() { return cFeatureFeatureQualifiedNameParserRuleCall_6_0_1; }
 	}
 
 	public class SelectActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SelectAction");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSelectFeatureKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cActivateFeatureKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cFeatureAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cFeatureFeatureCrossReference_1_0 = (CrossReference)cFeatureAssignment_1.eContents().get(0);
-		private final RuleCall cFeatureFeatureIDTerminalRuleCall_1_0_1 = (RuleCall)cFeatureFeatureCrossReference_1_0.eContents().get(1);
+		private final RuleCall cFeatureFeatureQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cFeatureFeatureCrossReference_1_0.eContents().get(1);
 		
 		////QueryAction:
 		////SELECT_WHERE MATH_OPERATOR  
@@ -573,51 +569,51 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		////(LOGICAL_OPERATOR SELECT WHERE mathOp+=MATH_OPERATOR FROM feature+=[Import])*
 		////;
 		//SelectAction:
-		//	"select feature" feature=[featureModel::Feature];
+		//	"activate feature" feature=[featureModel::Feature|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
-		//"select feature" feature=[featureModel::Feature]
+		//"activate feature" feature=[featureModel::Feature|QualifiedName]
 		public Group getGroup() { return cGroup; }
 
-		//"select feature"
-		public Keyword getSelectFeatureKeyword_0() { return cSelectFeatureKeyword_0; }
+		//"activate feature"
+		public Keyword getActivateFeatureKeyword_0() { return cActivateFeatureKeyword_0; }
 
-		//feature=[featureModel::Feature]
+		//feature=[featureModel::Feature|QualifiedName]
 		public Assignment getFeatureAssignment_1() { return cFeatureAssignment_1; }
 
-		//[featureModel::Feature]
+		//[featureModel::Feature|QualifiedName]
 		public CrossReference getFeatureFeatureCrossReference_1_0() { return cFeatureFeatureCrossReference_1_0; }
 
-		//ID
-		public RuleCall getFeatureFeatureIDTerminalRuleCall_1_0_1() { return cFeatureFeatureIDTerminalRuleCall_1_0_1; }
+		//QualifiedName
+		public RuleCall getFeatureFeatureQualifiedNameParserRuleCall_1_0_1() { return cFeatureFeatureQualifiedNameParserRuleCall_1_0_1; }
 	}
 
 	public class DeselectActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DeselectAction");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cDeselectFeatureKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cDeactivateFeatureKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cFeatureAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cFeatureFeatureCrossReference_1_0 = (CrossReference)cFeatureAssignment_1.eContents().get(0);
-		private final RuleCall cFeatureFeatureIDTerminalRuleCall_1_0_1 = (RuleCall)cFeatureFeatureCrossReference_1_0.eContents().get(1);
+		private final RuleCall cFeatureFeatureQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cFeatureFeatureCrossReference_1_0.eContents().get(1);
 		
 		//DeselectAction:
-		//	"deselect feature" feature=[featureModel::Feature];
+		//	"deactivate feature" feature=[featureModel::Feature|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
-		//"deselect feature" feature=[featureModel::Feature]
+		//"deactivate feature" feature=[featureModel::Feature|QualifiedName]
 		public Group getGroup() { return cGroup; }
 
-		//"deselect feature"
-		public Keyword getDeselectFeatureKeyword_0() { return cDeselectFeatureKeyword_0; }
+		//"deactivate feature"
+		public Keyword getDeactivateFeatureKeyword_0() { return cDeactivateFeatureKeyword_0; }
 
-		//feature=[featureModel::Feature]
+		//feature=[featureModel::Feature|QualifiedName]
 		public Assignment getFeatureAssignment_1() { return cFeatureAssignment_1; }
 
-		//[featureModel::Feature]
+		//[featureModel::Feature|QualifiedName]
 		public CrossReference getFeatureFeatureCrossReference_1_0() { return cFeatureFeatureCrossReference_1_0; }
 
-		//ID
-		public RuleCall getFeatureFeatureIDTerminalRuleCall_1_0_1() { return cFeatureFeatureIDTerminalRuleCall_1_0_1; }
+		//QualifiedName
+		public RuleCall getFeatureFeatureQualifiedNameParserRuleCall_1_0_1() { return cFeatureFeatureQualifiedNameParserRuleCall_1_0_1; }
 	}
 
 	public class ModifyAttributeElements extends AbstractParserRuleElementFinder {
@@ -626,29 +622,30 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cSetAttributeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cFeatureAttributeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cFeatureAttributeCVAttributeCrossReference_1_0 = (CrossReference)cFeatureAttributeAssignment_1.eContents().get(0);
-		private final RuleCall cFeatureAttributeCVAttributeIDTerminalRuleCall_1_0_1 = (RuleCall)cFeatureAttributeCVAttributeCrossReference_1_0.eContents().get(1);
+		private final RuleCall cFeatureAttributeCVAttributeQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cFeatureAttributeCVAttributeCrossReference_1_0.eContents().get(1);
 		private final Keyword cWithValueKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cAttributeValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cAttributeValueAttributeValueParserRuleCall_3_0 = (RuleCall)cAttributeValueAssignment_3.eContents().get(0);
 		
 		//ModifyAttribute:
-		//	"set attribute" featureAttribute=[rtFeatureModel::CVAttribute] "with value" attributeValue+=AttributeValue;
+		//	"set attribute" featureAttribute=[rtFeatureModel::CVAttribute|QualifiedName] "with value"
+		//	attributeValue+=AttributeValue;
 		public ParserRule getRule() { return rule; }
 
-		//"set attribute" featureAttribute=[rtFeatureModel::CVAttribute] "with value" attributeValue+=AttributeValue
+		//"set attribute" featureAttribute=[rtFeatureModel::CVAttribute|QualifiedName] "with value" attributeValue+=AttributeValue
 		public Group getGroup() { return cGroup; }
 
 		//"set attribute"
 		public Keyword getSetAttributeKeyword_0() { return cSetAttributeKeyword_0; }
 
-		//featureAttribute=[rtFeatureModel::CVAttribute]
+		//featureAttribute=[rtFeatureModel::CVAttribute|QualifiedName]
 		public Assignment getFeatureAttributeAssignment_1() { return cFeatureAttributeAssignment_1; }
 
-		//[rtFeatureModel::CVAttribute]
+		//[rtFeatureModel::CVAttribute|QualifiedName]
 		public CrossReference getFeatureAttributeCVAttributeCrossReference_1_0() { return cFeatureAttributeCVAttributeCrossReference_1_0; }
 
-		//ID
-		public RuleCall getFeatureAttributeCVAttributeIDTerminalRuleCall_1_0_1() { return cFeatureAttributeCVAttributeIDTerminalRuleCall_1_0_1; }
+		//QualifiedName
+		public RuleCall getFeatureAttributeCVAttributeQualifiedNameParserRuleCall_1_0_1() { return cFeatureAttributeCVAttributeQualifiedNameParserRuleCall_1_0_1; }
 
 		//"with value"
 		public Keyword getWithValueKeyword_2() { return cWithValueKeyword_2; }
@@ -893,7 +890,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//MATH_OPERATOR:
-	//	"max" | "min" | "avg" | "count";
+	//	MAX | MIN | AVG;
 	public MATH_OPERATORElements getMATH_OPERATORAccess() {
 		return (pMATH_OPERATOR != null) ? pMATH_OPERATOR : (pMATH_OPERATOR = new MATH_OPERATORElements());
 	}
@@ -903,7 +900,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//AVG:
-	//	"AVG (" (measurement+=[Import] ",")+ ")";
+	//	"AVG (" (measurement+=[cdmModel::ContextDependentMeasurement|QualifiedName] ",")+ ")";
 	public AVGElements getAVGAccess() {
 		return (pAVG != null) ? pAVG : (pAVG = new AVGElements());
 	}
@@ -913,7 +910,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//MIN:
-	//	"MIN (" (measurement+=[Import] ",")+ ")";
+	//	"MIN (" (measurement+=[cdmModel::ContextDependentMeasurement|QualifiedName] ",")+ ")";
 	public MINElements getMINAccess() {
 		return (pMIN != null) ? pMIN : (pMIN = new MINElements());
 	}
@@ -923,7 +920,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//MAX:
-	//	"MAX (" (measurement+=[Import] ",")+ ")";
+	//	"MAX (" (measurement+=[cdmModel::ContextDependentMeasurement|QualifiedName] ",")+ ")";
 	public MAXElements getMAXAccess() {
 		return (pMAX != null) ? pMAX : (pMAX = new MAXElements());
 	}
@@ -943,7 +940,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//QueryAction:
-	//	"select feature" "with" MATH_OPERATOR "attribute" STRING "from feature" feature=[featureModel::Feature];
+	//	"select feature" "with" MATH_OPERATOR "attribute" STRING "from feature" feature=[featureModel::Feature|QualifiedName];
 	public QueryActionElements getQueryActionAccess() {
 		return (pQueryAction != null) ? pQueryAction : (pQueryAction = new QueryActionElements());
 	}
@@ -958,7 +955,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	////(LOGICAL_OPERATOR SELECT WHERE mathOp+=MATH_OPERATOR FROM feature+=[Import])*
 	////;
 	//SelectAction:
-	//	"select feature" feature=[featureModel::Feature];
+	//	"activate feature" feature=[featureModel::Feature|QualifiedName];
 	public SelectActionElements getSelectActionAccess() {
 		return (pSelectAction != null) ? pSelectAction : (pSelectAction = new SelectActionElements());
 	}
@@ -968,7 +965,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//DeselectAction:
-	//	"deselect feature" feature=[featureModel::Feature];
+	//	"deactivate feature" feature=[featureModel::Feature|QualifiedName];
 	public DeselectActionElements getDeselectActionAccess() {
 		return (pDeselectAction != null) ? pDeselectAction : (pDeselectAction = new DeselectActionElements());
 	}
@@ -978,7 +975,8 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//ModifyAttribute:
-	//	"set attribute" featureAttribute=[rtFeatureModel::CVAttribute] "with value" attributeValue+=AttributeValue;
+	//	"set attribute" featureAttribute=[rtFeatureModel::CVAttribute|QualifiedName] "with value"
+	//	attributeValue+=AttributeValue;
 	public ModifyAttributeElements getModifyAttributeAccess() {
 		return (pModifyAttribute != null) ? pModifyAttribute : (pModifyAttribute = new ModifyAttributeElements());
 	}

@@ -25,22 +25,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="MeasurementComparison">
     <eStructuralFeatures xsi:type="ecore:EReference" name="measurement" eType="ecore:EClass ../../../org.rra.cdmModel.model/models/cdmModel.ecore#//ContextDependentMeasurement"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AVG">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="measurement" unique="false"
-        upperBound="-1" eType="#//Import"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MIN">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="measurement" unique="false"
-        upperBound="-1" eType="#//Import"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MAX">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="measurement" unique="false"
-        upperBound="-1" eType="#//Import"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AtomicAction"/>
-  <eClassifiers xsi:type="ecore:EClass" name="QueryAction" eSuperTypes="#//AtomicAction">
+  <eClassifiers xsi:type="ecore:EClass" name="MATH_OPERATOR" eSuperTypes="#//QueryAction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="ecore:EClass ../../../org.hyperflex.featuremodels.model/models/featureModel.ecore#//Feature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="measurement" unique="false"
+        upperBound="-1" eType="ecore:EClass ../../../org.rra.cdmModel.model/models/cdmModel.ecore#//ContextDependentMeasurement"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AVG" eSuperTypes="#//MATH_OPERATOR"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MIN" eSuperTypes="#//MATH_OPERATOR"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MAX" eSuperTypes="#//MATH_OPERATOR"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AtomicAction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="QueryAction" eSuperTypes="#//AtomicAction"/>
   <eClassifiers xsi:type="ecore:EClass" name="SelectAction" eSuperTypes="#//AtomicAction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="ecore:EClass ../../../org.hyperflex.featuremodels.model/models/featureModel.ecore#//Feature"/>
   </eClassifiers>

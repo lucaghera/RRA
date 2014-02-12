@@ -523,54 +523,194 @@ ruleLOGICAL_OPERATOR returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRu
 
 
 // Entry rule entryRuleMATH_OPERATOR
-entryRuleMATH_OPERATOR returns [String current=null] 
+entryRuleMATH_OPERATOR returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getMATH_OPERATORRule()); } 
+	{ newCompositeNode(grammarAccess.getMATH_OPERATORRule()); }
 	 iv_ruleMATH_OPERATOR=ruleMATH_OPERATOR 
-	 { $current=$iv_ruleMATH_OPERATOR.current.getText(); }  
+	 { $current=$iv_ruleMATH_OPERATOR.current; } 
 	 EOF 
 ;
 
 // Rule MATH_OPERATOR
-ruleMATH_OPERATOR returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+ruleMATH_OPERATOR returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (
-	kw='max' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getMATH_OPERATORAccess().getMaxKeyword_0()); 
+    { 
+        newCompositeNode(grammarAccess.getMATH_OPERATORAccess().getMAXParserRuleCall_0()); 
+    }
+    this_MAX_0=ruleMAX
+    { 
+        $current = $this_MAX_0.current; 
+        afterParserOrEnumRuleCall();
     }
 
     |
-	kw='min' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getMATH_OPERATORAccess().getMinKeyword_1()); 
+    { 
+        newCompositeNode(grammarAccess.getMATH_OPERATORAccess().getMINParserRuleCall_1()); 
+    }
+    this_MIN_1=ruleMIN
+    { 
+        $current = $this_MIN_1.current; 
+        afterParserOrEnumRuleCall();
     }
 
     |
-	kw='avg' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getMATH_OPERATORAccess().getAvgKeyword_2()); 
+    { 
+        newCompositeNode(grammarAccess.getMATH_OPERATORAccess().getAVGParserRuleCall_2()); 
     }
-
-    |
-	kw='count' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getMATH_OPERATORAccess().getCountKeyword_3()); 
+    this_AVG_2=ruleAVG
+    { 
+        $current = $this_AVG_2.current; 
+        afterParserOrEnumRuleCall();
     }
 )
-    ;
+;
 
 
 
 
 
+// Entry rule entryRuleAVG
+entryRuleAVG returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getAVGRule()); }
+	 iv_ruleAVG=ruleAVG 
+	 { $current=$iv_ruleAVG.current; } 
+	 EOF 
+;
 
+// Rule AVG
+ruleAVG returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='AVG (' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getAVGAccess().getAVGKeyword_0());
+    }
+((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAVGRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getAVGAccess().getMeasurementContextDependentMeasurementCrossReference_1_0_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_2=',' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getAVGAccess().getCommaKeyword_1_1());
+    }
+)+	otherlv_3=')' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getAVGAccess().getRightParenthesisKeyword_2());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleMIN
+entryRuleMIN returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getMINRule()); }
+	 iv_ruleMIN=ruleMIN 
+	 { $current=$iv_ruleMIN.current; } 
+	 EOF 
+;
+
+// Rule MIN
+ruleMIN returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='MIN (' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getMINAccess().getMINKeyword_0());
+    }
+((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMINRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getMINAccess().getMeasurementContextDependentMeasurementCrossReference_1_0_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_2=',' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getMINAccess().getCommaKeyword_1_1());
+    }
+)+	otherlv_3=')' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getMINAccess().getRightParenthesisKeyword_2());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleMAX
+entryRuleMAX returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getMAXRule()); }
+	 iv_ruleMAX=ruleMAX 
+	 { $current=$iv_ruleMAX.current; } 
+	 EOF 
+;
+
+// Rule MAX
+ruleMAX returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='MAX (' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getMAXAccess().getMAXKeyword_0());
+    }
+((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMAXRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getMAXAccess().getMeasurementContextDependentMeasurementCrossReference_1_0_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_2=',' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getMAXAccess().getCommaKeyword_1_1());
+    }
+)+	otherlv_3=')' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getMAXAccess().getRightParenthesisKeyword_2());
+    }
+)
+;
 
 
 
@@ -662,8 +802,9 @@ ruleQueryAction returns [EObject current=null]
     { 
         newCompositeNode(grammarAccess.getQueryActionAccess().getMATH_OPERATORParserRuleCall_2()); 
     }
-ruleMATH_OPERATOR
+    this_MATH_OPERATOR_2=ruleMATH_OPERATOR
     { 
+        $current = $this_MATH_OPERATOR_2.current; 
         afterParserOrEnumRuleCall();
     }
 	otherlv_3='attribute' 
@@ -685,10 +826,12 @@ this_STRING_4=RULE_STRING
 	            $current = createModelElement(grammarAccess.getQueryActionRule());
 	        }
         }
-	otherlv_6=RULE_ID
-	{
-		newLeafNode(otherlv_6, grammarAccess.getQueryActionAccess().getFeatureFeatureCrossReference_6_0()); 
-	}
+		{ 
+	        newCompositeNode(grammarAccess.getQueryActionAccess().getFeatureFeatureCrossReference_6_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
 ))
@@ -712,9 +855,9 @@ ruleSelectAction returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='select feature' 
+(	otherlv_0='activate feature' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getSelectActionAccess().getSelectFeatureKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getSelectActionAccess().getActivateFeatureKeyword_0());
     }
 (
 (
@@ -723,10 +866,12 @@ ruleSelectAction returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getSelectActionRule());
 	        }
         }
-	otherlv_1=RULE_ID
-	{
-		newLeafNode(otherlv_1, grammarAccess.getSelectActionAccess().getFeatureFeatureCrossReference_1_0()); 
-	}
+		{ 
+	        newCompositeNode(grammarAccess.getSelectActionAccess().getFeatureFeatureCrossReference_1_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
 ))
@@ -750,9 +895,9 @@ ruleDeselectAction returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='deselect feature' 
+(	otherlv_0='deactivate feature' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getDeselectActionAccess().getDeselectFeatureKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getDeselectActionAccess().getDeactivateFeatureKeyword_0());
     }
 (
 (
@@ -761,10 +906,12 @@ ruleDeselectAction returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getDeselectActionRule());
 	        }
         }
-	otherlv_1=RULE_ID
-	{
-		newLeafNode(otherlv_1, grammarAccess.getDeselectActionAccess().getFeatureFeatureCrossReference_1_0()); 
-	}
+		{ 
+	        newCompositeNode(grammarAccess.getDeselectActionAccess().getFeatureFeatureCrossReference_1_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
 ))
@@ -799,10 +946,12 @@ ruleModifyAttribute returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getModifyAttributeRule());
 	        }
         }
-	otherlv_1=RULE_ID
-	{
-		newLeafNode(otherlv_1, grammarAccess.getModifyAttributeAccess().getFeatureAttributeCVAttributeCrossReference_1_0()); 
-	}
+		{ 
+	        newCompositeNode(grammarAccess.getModifyAttributeAccess().getFeatureAttributeCVAttributeCrossReference_1_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
 )	otherlv_2='with value' 

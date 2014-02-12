@@ -25,19 +25,15 @@
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//MeasurementComparison">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//MeasurementComparison/measurement"/>
     </genClasses>
-    <genClasses ecoreClass="AdaptationModelDSL.ecore#//AVG">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AVG/measurement"/>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//MATH_OPERATOR">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//MATH_OPERATOR/feature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//MATH_OPERATOR/measurement"/>
     </genClasses>
-    <genClasses ecoreClass="AdaptationModelDSL.ecore#//MIN">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//MIN/measurement"/>
-    </genClasses>
-    <genClasses ecoreClass="AdaptationModelDSL.ecore#//MAX">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//MAX/measurement"/>
-    </genClasses>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//AVG"/>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//MIN"/>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//MAX"/>
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//AtomicAction"/>
-    <genClasses ecoreClass="AdaptationModelDSL.ecore#//QueryAction">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//QueryAction/feature"/>
-    </genClasses>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//QueryAction"/>
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//SelectAction">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//SelectAction/feature"/>
     </genClasses>

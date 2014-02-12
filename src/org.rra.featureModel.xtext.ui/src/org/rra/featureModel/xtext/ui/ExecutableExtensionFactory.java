@@ -1,4 +1,4 @@
-package org.rra.cdmmodel.xtext.ui;
+package org.rra.featureModel.xtext.ui;
 
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;

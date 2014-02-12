@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'.'", "'rule'", "':'", "'if'", "'then'", "'else'", "'<'", "'>'", "'=='", "'<>'", "'AND'", "'OR'", "'max'", "'min'", "'avg'", "'count'", "'select feature'", "'with'", "'attribute'", "'from feature'", "'deselect feature'", "'set attribute'", "'with value'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'.'", "'rule'", "':'", "'if'", "'then'", "'else'", "'<'", "'>'", "'=='", "'<>'", "'AND'", "'OR'", "'AVG ('", "','", "')'", "'MIN ('", "'MAX ('", "'select feature'", "'with'", "'attribute'", "'from feature'", "'activate feature'", "'deactivate feature'", "'set attribute'", "'with value'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -47,7 +47,9 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
     public static final int T__16=16;
     public static final int T__34=34;
     public static final int T__15=15;
+    public static final int T__35=35;
     public static final int T__18=18;
+    public static final int T__36=36;
     public static final int T__17=17;
     public static final int T__12=12;
     public static final int T__11=11;
@@ -634,7 +636,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==28||(LA4_0>=32 && LA4_0<=33)) ) {
+                if ( (LA4_0==29||(LA4_0>=33 && LA4_0<=35)) ) {
                     alt4=1;
                 }
 
@@ -770,7 +772,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
             	        int alt6=2;
             	        int LA6_0 = input.LA(1);
 
-            	        if ( (LA6_0==28||(LA6_0>=32 && LA6_0<=33)) ) {
+            	        if ( (LA6_0==29||(LA6_0>=33 && LA6_0<=35)) ) {
             	            alt6=1;
             	        }
 
@@ -1340,11 +1342,11 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleMATH_OPERATOR"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:526:1: entryRuleMATH_OPERATOR returns [String current=null] : iv_ruleMATH_OPERATOR= ruleMATH_OPERATOR EOF ;
-    public final String entryRuleMATH_OPERATOR() throws RecognitionException {
-        String current = null;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:526:1: entryRuleMATH_OPERATOR returns [EObject current=null] : iv_ruleMATH_OPERATOR= ruleMATH_OPERATOR EOF ;
+    public final EObject entryRuleMATH_OPERATOR() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleMATH_OPERATOR = null;
+        EObject iv_ruleMATH_OPERATOR = null;
 
 
         try {
@@ -1352,13 +1354,13 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
             // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:528:2: iv_ruleMATH_OPERATOR= ruleMATH_OPERATOR EOF
             {
              newCompositeNode(grammarAccess.getMATH_OPERATORRule()); 
-            pushFollow(FOLLOW_ruleMATH_OPERATOR_in_entryRuleMATH_OPERATOR1183);
+            pushFollow(FOLLOW_ruleMATH_OPERATOR_in_entryRuleMATH_OPERATOR1182);
             iv_ruleMATH_OPERATOR=ruleMATH_OPERATOR();
 
             state._fsp--;
 
-             current =iv_ruleMATH_OPERATOR.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMATH_OPERATOR1194); 
+             current =iv_ruleMATH_OPERATOR; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMATH_OPERATOR1192); 
 
             }
 
@@ -1376,39 +1378,39 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleMATH_OPERATOR"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:535:1: ruleMATH_OPERATOR returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'max' | kw= 'min' | kw= 'avg' | kw= 'count' ) ;
-    public final AntlrDatatypeRuleToken ruleMATH_OPERATOR() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:535:1: ruleMATH_OPERATOR returns [EObject current=null] : (this_MAX_0= ruleMAX | this_MIN_1= ruleMIN | this_AVG_2= ruleAVG ) ;
+    public final EObject ruleMATH_OPERATOR() throws RecognitionException {
+        EObject current = null;
 
-        Token kw=null;
+        EObject this_MAX_0 = null;
+
+        EObject this_MIN_1 = null;
+
+        EObject this_AVG_2 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:538:28: ( (kw= 'max' | kw= 'min' | kw= 'avg' | kw= 'count' ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:539:1: (kw= 'max' | kw= 'min' | kw= 'avg' | kw= 'count' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:538:28: ( (this_MAX_0= ruleMAX | this_MIN_1= ruleMIN | this_AVG_2= ruleAVG ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:539:1: (this_MAX_0= ruleMAX | this_MIN_1= ruleMIN | this_AVG_2= ruleAVG )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:539:1: (kw= 'max' | kw= 'min' | kw= 'avg' | kw= 'count' )
-            int alt11=4;
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:539:1: (this_MAX_0= ruleMAX | this_MIN_1= ruleMIN | this_AVG_2= ruleAVG )
+            int alt11=3;
             switch ( input.LA(1) ) {
-            case 24:
+            case 28:
                 {
                 alt11=1;
                 }
                 break;
-            case 25:
+            case 27:
                 {
                 alt11=2;
                 }
                 break;
-            case 26:
+            case 24:
                 {
                 alt11=3;
-                }
-                break;
-            case 27:
-                {
-                alt11=4;
                 }
                 break;
             default:
@@ -1420,45 +1422,55 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
             switch (alt11) {
                 case 1 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:540:2: kw= 'max'
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:540:5: this_MAX_0= ruleMAX
                     {
-                    kw=(Token)match(input,24,FOLLOW_24_in_ruleMATH_OPERATOR1232); 
+                     
+                            newCompositeNode(grammarAccess.getMATH_OPERATORAccess().getMAXParserRuleCall_0()); 
+                        
+                    pushFollow(FOLLOW_ruleMAX_in_ruleMATH_OPERATOR1239);
+                    this_MAX_0=ruleMAX();
 
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getMATH_OPERATORAccess().getMaxKeyword_0()); 
+                    state._fsp--;
+
+                     
+                            current = this_MAX_0; 
+                            afterParserOrEnumRuleCall();
                         
 
                     }
                     break;
                 case 2 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:547:2: kw= 'min'
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:550:5: this_MIN_1= ruleMIN
                     {
-                    kw=(Token)match(input,25,FOLLOW_25_in_ruleMATH_OPERATOR1251); 
+                     
+                            newCompositeNode(grammarAccess.getMATH_OPERATORAccess().getMINParserRuleCall_1()); 
+                        
+                    pushFollow(FOLLOW_ruleMIN_in_ruleMATH_OPERATOR1266);
+                    this_MIN_1=ruleMIN();
 
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getMATH_OPERATORAccess().getMinKeyword_1()); 
+                    state._fsp--;
+
+                     
+                            current = this_MIN_1; 
+                            afterParserOrEnumRuleCall();
                         
 
                     }
                     break;
                 case 3 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:554:2: kw= 'avg'
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:560:5: this_AVG_2= ruleAVG
                     {
-                    kw=(Token)match(input,26,FOLLOW_26_in_ruleMATH_OPERATOR1270); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getMATH_OPERATORAccess().getAvgKeyword_2()); 
+                     
+                            newCompositeNode(grammarAccess.getMATH_OPERATORAccess().getAVGParserRuleCall_2()); 
                         
+                    pushFollow(FOLLOW_ruleAVG_in_ruleMATH_OPERATOR1293);
+                    this_AVG_2=ruleAVG();
 
-                    }
-                    break;
-                case 4 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:561:2: kw= 'count'
-                    {
-                    kw=(Token)match(input,27,FOLLOW_27_in_ruleMATH_OPERATOR1289); 
+                    state._fsp--;
 
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getMATH_OPERATORAccess().getCountKeyword_3()); 
+                     
+                            current = this_AVG_2; 
+                            afterParserOrEnumRuleCall();
                         
 
                     }
@@ -1483,8 +1495,437 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
     // $ANTLR end "ruleMATH_OPERATOR"
 
 
+    // $ANTLR start "entryRuleAVG"
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:576:1: entryRuleAVG returns [EObject current=null] : iv_ruleAVG= ruleAVG EOF ;
+    public final EObject entryRuleAVG() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleAVG = null;
+
+
+        try {
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:577:2: (iv_ruleAVG= ruleAVG EOF )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:578:2: iv_ruleAVG= ruleAVG EOF
+            {
+             newCompositeNode(grammarAccess.getAVGRule()); 
+            pushFollow(FOLLOW_ruleAVG_in_entryRuleAVG1328);
+            iv_ruleAVG=ruleAVG();
+
+            state._fsp--;
+
+             current =iv_ruleAVG; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAVG1338); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleAVG"
+
+
+    // $ANTLR start "ruleAVG"
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:585:1: ruleAVG returns [EObject current=null] : (otherlv_0= 'AVG (' ( ( ( ruleQualifiedName ) ) otherlv_2= ',' )+ otherlv_3= ')' ) ;
+    public final EObject ruleAVG() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+
+         enterRule(); 
+            
+        try {
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:588:28: ( (otherlv_0= 'AVG (' ( ( ( ruleQualifiedName ) ) otherlv_2= ',' )+ otherlv_3= ')' ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:589:1: (otherlv_0= 'AVG (' ( ( ( ruleQualifiedName ) ) otherlv_2= ',' )+ otherlv_3= ')' )
+            {
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:589:1: (otherlv_0= 'AVG (' ( ( ( ruleQualifiedName ) ) otherlv_2= ',' )+ otherlv_3= ')' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:589:3: otherlv_0= 'AVG (' ( ( ( ruleQualifiedName ) ) otherlv_2= ',' )+ otherlv_3= ')'
+            {
+            otherlv_0=(Token)match(input,24,FOLLOW_24_in_ruleAVG1375); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getAVGAccess().getAVGKeyword_0());
+                
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:593:1: ( ( ( ruleQualifiedName ) ) otherlv_2= ',' )+
+            int cnt12=0;
+            loop12:
+            do {
+                int alt12=2;
+                int LA12_0 = input.LA(1);
+
+                if ( (LA12_0==RULE_ID) ) {
+                    alt12=1;
+                }
+
+
+                switch (alt12) {
+            	case 1 :
+            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:593:2: ( ( ruleQualifiedName ) ) otherlv_2= ','
+            	    {
+            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:593:2: ( ( ruleQualifiedName ) )
+            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:594:1: ( ruleQualifiedName )
+            	    {
+            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:594:1: ( ruleQualifiedName )
+            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:595:3: ruleQualifiedName
+            	    {
+
+            	    			if (current==null) {
+            	    	            current = createModelElement(grammarAccess.getAVGRule());
+            	    	        }
+            	            
+            	     
+            	    	        newCompositeNode(grammarAccess.getAVGAccess().getMeasurementContextDependentMeasurementCrossReference_1_0_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleQualifiedName_in_ruleAVG1399);
+            	    ruleQualifiedName();
+
+            	    state._fsp--;
+
+            	     
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+
+            	    otherlv_2=(Token)match(input,25,FOLLOW_25_in_ruleAVG1411); 
+
+            	        	newLeafNode(otherlv_2, grammarAccess.getAVGAccess().getCommaKeyword_1_1());
+            	        
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt12 >= 1 ) break loop12;
+                        EarlyExitException eee =
+                            new EarlyExitException(12, input);
+                        throw eee;
+                }
+                cnt12++;
+            } while (true);
+
+            otherlv_3=(Token)match(input,26,FOLLOW_26_in_ruleAVG1425); 
+
+                	newLeafNode(otherlv_3, grammarAccess.getAVGAccess().getRightParenthesisKeyword_2());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleAVG"
+
+
+    // $ANTLR start "entryRuleMIN"
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:624:1: entryRuleMIN returns [EObject current=null] : iv_ruleMIN= ruleMIN EOF ;
+    public final EObject entryRuleMIN() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMIN = null;
+
+
+        try {
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:625:2: (iv_ruleMIN= ruleMIN EOF )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:626:2: iv_ruleMIN= ruleMIN EOF
+            {
+             newCompositeNode(grammarAccess.getMINRule()); 
+            pushFollow(FOLLOW_ruleMIN_in_entryRuleMIN1461);
+            iv_ruleMIN=ruleMIN();
+
+            state._fsp--;
+
+             current =iv_ruleMIN; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMIN1471); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMIN"
+
+
+    // $ANTLR start "ruleMIN"
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:633:1: ruleMIN returns [EObject current=null] : (otherlv_0= 'MIN (' ( ( ( ruleQualifiedName ) ) otherlv_2= ',' )+ otherlv_3= ')' ) ;
+    public final EObject ruleMIN() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+
+         enterRule(); 
+            
+        try {
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:636:28: ( (otherlv_0= 'MIN (' ( ( ( ruleQualifiedName ) ) otherlv_2= ',' )+ otherlv_3= ')' ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:637:1: (otherlv_0= 'MIN (' ( ( ( ruleQualifiedName ) ) otherlv_2= ',' )+ otherlv_3= ')' )
+            {
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:637:1: (otherlv_0= 'MIN (' ( ( ( ruleQualifiedName ) ) otherlv_2= ',' )+ otherlv_3= ')' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:637:3: otherlv_0= 'MIN (' ( ( ( ruleQualifiedName ) ) otherlv_2= ',' )+ otherlv_3= ')'
+            {
+            otherlv_0=(Token)match(input,27,FOLLOW_27_in_ruleMIN1508); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getMINAccess().getMINKeyword_0());
+                
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:641:1: ( ( ( ruleQualifiedName ) ) otherlv_2= ',' )+
+            int cnt13=0;
+            loop13:
+            do {
+                int alt13=2;
+                int LA13_0 = input.LA(1);
+
+                if ( (LA13_0==RULE_ID) ) {
+                    alt13=1;
+                }
+
+
+                switch (alt13) {
+            	case 1 :
+            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:641:2: ( ( ruleQualifiedName ) ) otherlv_2= ','
+            	    {
+            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:641:2: ( ( ruleQualifiedName ) )
+            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:642:1: ( ruleQualifiedName )
+            	    {
+            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:642:1: ( ruleQualifiedName )
+            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:643:3: ruleQualifiedName
+            	    {
+
+            	    			if (current==null) {
+            	    	            current = createModelElement(grammarAccess.getMINRule());
+            	    	        }
+            	            
+            	     
+            	    	        newCompositeNode(grammarAccess.getMINAccess().getMeasurementContextDependentMeasurementCrossReference_1_0_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleQualifiedName_in_ruleMIN1532);
+            	    ruleQualifiedName();
+
+            	    state._fsp--;
+
+            	     
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+
+            	    otherlv_2=(Token)match(input,25,FOLLOW_25_in_ruleMIN1544); 
+
+            	        	newLeafNode(otherlv_2, grammarAccess.getMINAccess().getCommaKeyword_1_1());
+            	        
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt13 >= 1 ) break loop13;
+                        EarlyExitException eee =
+                            new EarlyExitException(13, input);
+                        throw eee;
+                }
+                cnt13++;
+            } while (true);
+
+            otherlv_3=(Token)match(input,26,FOLLOW_26_in_ruleMIN1558); 
+
+                	newLeafNode(otherlv_3, grammarAccess.getMINAccess().getRightParenthesisKeyword_2());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMIN"
+
+
+    // $ANTLR start "entryRuleMAX"
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:672:1: entryRuleMAX returns [EObject current=null] : iv_ruleMAX= ruleMAX EOF ;
+    public final EObject entryRuleMAX() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMAX = null;
+
+
+        try {
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:673:2: (iv_ruleMAX= ruleMAX EOF )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:674:2: iv_ruleMAX= ruleMAX EOF
+            {
+             newCompositeNode(grammarAccess.getMAXRule()); 
+            pushFollow(FOLLOW_ruleMAX_in_entryRuleMAX1594);
+            iv_ruleMAX=ruleMAX();
+
+            state._fsp--;
+
+             current =iv_ruleMAX; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMAX1604); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMAX"
+
+
+    // $ANTLR start "ruleMAX"
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:681:1: ruleMAX returns [EObject current=null] : (otherlv_0= 'MAX (' ( ( ( ruleQualifiedName ) ) otherlv_2= ',' )+ otherlv_3= ')' ) ;
+    public final EObject ruleMAX() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+
+         enterRule(); 
+            
+        try {
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:684:28: ( (otherlv_0= 'MAX (' ( ( ( ruleQualifiedName ) ) otherlv_2= ',' )+ otherlv_3= ')' ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:685:1: (otherlv_0= 'MAX (' ( ( ( ruleQualifiedName ) ) otherlv_2= ',' )+ otherlv_3= ')' )
+            {
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:685:1: (otherlv_0= 'MAX (' ( ( ( ruleQualifiedName ) ) otherlv_2= ',' )+ otherlv_3= ')' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:685:3: otherlv_0= 'MAX (' ( ( ( ruleQualifiedName ) ) otherlv_2= ',' )+ otherlv_3= ')'
+            {
+            otherlv_0=(Token)match(input,28,FOLLOW_28_in_ruleMAX1641); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getMAXAccess().getMAXKeyword_0());
+                
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:689:1: ( ( ( ruleQualifiedName ) ) otherlv_2= ',' )+
+            int cnt14=0;
+            loop14:
+            do {
+                int alt14=2;
+                int LA14_0 = input.LA(1);
+
+                if ( (LA14_0==RULE_ID) ) {
+                    alt14=1;
+                }
+
+
+                switch (alt14) {
+            	case 1 :
+            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:689:2: ( ( ruleQualifiedName ) ) otherlv_2= ','
+            	    {
+            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:689:2: ( ( ruleQualifiedName ) )
+            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:690:1: ( ruleQualifiedName )
+            	    {
+            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:690:1: ( ruleQualifiedName )
+            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:691:3: ruleQualifiedName
+            	    {
+
+            	    			if (current==null) {
+            	    	            current = createModelElement(grammarAccess.getMAXRule());
+            	    	        }
+            	            
+            	     
+            	    	        newCompositeNode(grammarAccess.getMAXAccess().getMeasurementContextDependentMeasurementCrossReference_1_0_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleQualifiedName_in_ruleMAX1665);
+            	    ruleQualifiedName();
+
+            	    state._fsp--;
+
+            	     
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+
+            	    otherlv_2=(Token)match(input,25,FOLLOW_25_in_ruleMAX1677); 
+
+            	        	newLeafNode(otherlv_2, grammarAccess.getMAXAccess().getCommaKeyword_1_1());
+            	        
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt14 >= 1 ) break loop14;
+                        EarlyExitException eee =
+                            new EarlyExitException(14, input);
+                        throw eee;
+                }
+                cnt14++;
+            } while (true);
+
+            otherlv_3=(Token)match(input,26,FOLLOW_26_in_ruleMAX1691); 
+
+                	newLeafNode(otherlv_3, grammarAccess.getMAXAccess().getRightParenthesisKeyword_2());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMAX"
+
+
     // $ANTLR start "entryRuleAtomicAction"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:580:1: entryRuleAtomicAction returns [EObject current=null] : iv_ruleAtomicAction= ruleAtomicAction EOF ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:720:1: entryRuleAtomicAction returns [EObject current=null] : iv_ruleAtomicAction= ruleAtomicAction EOF ;
     public final EObject entryRuleAtomicAction() throws RecognitionException {
         EObject current = null;
 
@@ -1492,17 +1933,17 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:581:2: (iv_ruleAtomicAction= ruleAtomicAction EOF )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:582:2: iv_ruleAtomicAction= ruleAtomicAction EOF
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:721:2: (iv_ruleAtomicAction= ruleAtomicAction EOF )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:722:2: iv_ruleAtomicAction= ruleAtomicAction EOF
             {
              newCompositeNode(grammarAccess.getAtomicActionRule()); 
-            pushFollow(FOLLOW_ruleAtomicAction_in_entryRuleAtomicAction1335);
+            pushFollow(FOLLOW_ruleAtomicAction_in_entryRuleAtomicAction1727);
             iv_ruleAtomicAction=ruleAtomicAction();
 
             state._fsp--;
 
              current =iv_ruleAtomicAction; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAtomicAction1345); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAtomicAction1737); 
 
             }
 
@@ -1520,7 +1961,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleAtomicAction"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:589:1: ruleAtomicAction returns [EObject current=null] : (this_SelectAction_0= ruleSelectAction | this_DeselectAction_1= ruleDeselectAction | this_ModifyAttribute_2= ruleModifyAttribute | this_QueryAction_3= ruleQueryAction ) ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:729:1: ruleAtomicAction returns [EObject current=null] : (this_SelectAction_0= ruleSelectAction | this_DeselectAction_1= ruleDeselectAction | this_ModifyAttribute_2= ruleModifyAttribute | this_QueryAction_3= ruleQueryAction ) ;
     public final EObject ruleAtomicAction() throws RecognitionException {
         EObject current = null;
 
@@ -1536,55 +1977,47 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:592:28: ( (this_SelectAction_0= ruleSelectAction | this_DeselectAction_1= ruleDeselectAction | this_ModifyAttribute_2= ruleModifyAttribute | this_QueryAction_3= ruleQueryAction ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:593:1: (this_SelectAction_0= ruleSelectAction | this_DeselectAction_1= ruleDeselectAction | this_ModifyAttribute_2= ruleModifyAttribute | this_QueryAction_3= ruleQueryAction )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:732:28: ( (this_SelectAction_0= ruleSelectAction | this_DeselectAction_1= ruleDeselectAction | this_ModifyAttribute_2= ruleModifyAttribute | this_QueryAction_3= ruleQueryAction ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:733:1: (this_SelectAction_0= ruleSelectAction | this_DeselectAction_1= ruleDeselectAction | this_ModifyAttribute_2= ruleModifyAttribute | this_QueryAction_3= ruleQueryAction )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:593:1: (this_SelectAction_0= ruleSelectAction | this_DeselectAction_1= ruleDeselectAction | this_ModifyAttribute_2= ruleModifyAttribute | this_QueryAction_3= ruleQueryAction )
-            int alt12=4;
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:733:1: (this_SelectAction_0= ruleSelectAction | this_DeselectAction_1= ruleDeselectAction | this_ModifyAttribute_2= ruleModifyAttribute | this_QueryAction_3= ruleQueryAction )
+            int alt15=4;
             switch ( input.LA(1) ) {
-            case 28:
-                {
-                int LA12_1 = input.LA(2);
-
-                if ( (LA12_1==RULE_ID) ) {
-                    alt12=1;
-                }
-                else if ( (LA12_1==29) ) {
-                    alt12=4;
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 12, 1, input);
-
-                    throw nvae;
-                }
-                }
-                break;
-            case 32:
-                {
-                alt12=2;
-                }
-                break;
             case 33:
                 {
-                alt12=3;
+                alt15=1;
+                }
+                break;
+            case 34:
+                {
+                alt15=2;
+                }
+                break;
+            case 35:
+                {
+                alt15=3;
+                }
+                break;
+            case 29:
+                {
+                alt15=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
+                    new NoViableAltException("", 15, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt12) {
+            switch (alt15) {
                 case 1 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:594:5: this_SelectAction_0= ruleSelectAction
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:734:5: this_SelectAction_0= ruleSelectAction
                     {
                      
                             newCompositeNode(grammarAccess.getAtomicActionAccess().getSelectActionParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleSelectAction_in_ruleAtomicAction1392);
+                    pushFollow(FOLLOW_ruleSelectAction_in_ruleAtomicAction1784);
                     this_SelectAction_0=ruleSelectAction();
 
                     state._fsp--;
@@ -1597,12 +2030,12 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:604:5: this_DeselectAction_1= ruleDeselectAction
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:744:5: this_DeselectAction_1= ruleDeselectAction
                     {
                      
                             newCompositeNode(grammarAccess.getAtomicActionAccess().getDeselectActionParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleDeselectAction_in_ruleAtomicAction1419);
+                    pushFollow(FOLLOW_ruleDeselectAction_in_ruleAtomicAction1811);
                     this_DeselectAction_1=ruleDeselectAction();
 
                     state._fsp--;
@@ -1615,12 +2048,12 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 3 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:614:5: this_ModifyAttribute_2= ruleModifyAttribute
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:754:5: this_ModifyAttribute_2= ruleModifyAttribute
                     {
                      
                             newCompositeNode(grammarAccess.getAtomicActionAccess().getModifyAttributeParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleModifyAttribute_in_ruleAtomicAction1446);
+                    pushFollow(FOLLOW_ruleModifyAttribute_in_ruleAtomicAction1838);
                     this_ModifyAttribute_2=ruleModifyAttribute();
 
                     state._fsp--;
@@ -1633,12 +2066,12 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 4 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:624:5: this_QueryAction_3= ruleQueryAction
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:764:5: this_QueryAction_3= ruleQueryAction
                     {
                      
                             newCompositeNode(grammarAccess.getAtomicActionAccess().getQueryActionParserRuleCall_3()); 
                         
-                    pushFollow(FOLLOW_ruleQueryAction_in_ruleAtomicAction1473);
+                    pushFollow(FOLLOW_ruleQueryAction_in_ruleAtomicAction1865);
                     this_QueryAction_3=ruleQueryAction();
 
                     state._fsp--;
@@ -1671,7 +2104,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleQueryAction"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:640:1: entryRuleQueryAction returns [EObject current=null] : iv_ruleQueryAction= ruleQueryAction EOF ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:780:1: entryRuleQueryAction returns [EObject current=null] : iv_ruleQueryAction= ruleQueryAction EOF ;
     public final EObject entryRuleQueryAction() throws RecognitionException {
         EObject current = null;
 
@@ -1679,17 +2112,17 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:641:2: (iv_ruleQueryAction= ruleQueryAction EOF )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:642:2: iv_ruleQueryAction= ruleQueryAction EOF
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:781:2: (iv_ruleQueryAction= ruleQueryAction EOF )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:782:2: iv_ruleQueryAction= ruleQueryAction EOF
             {
              newCompositeNode(grammarAccess.getQueryActionRule()); 
-            pushFollow(FOLLOW_ruleQueryAction_in_entryRuleQueryAction1508);
+            pushFollow(FOLLOW_ruleQueryAction_in_entryRuleQueryAction1900);
             iv_ruleQueryAction=ruleQueryAction();
 
             state._fsp--;
 
              current =iv_ruleQueryAction; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryAction1518); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryAction1910); 
 
             }
 
@@ -1707,7 +2140,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleQueryAction"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:649:1: ruleQueryAction returns [EObject current=null] : (otherlv_0= 'select feature' otherlv_1= 'with' ruleMATH_OPERATOR otherlv_3= 'attribute' this_STRING_4= RULE_STRING otherlv_5= 'from feature' ( (otherlv_6= RULE_ID ) ) ) ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:789:1: ruleQueryAction returns [EObject current=null] : (otherlv_0= 'select feature' otherlv_1= 'with' this_MATH_OPERATOR_2= ruleMATH_OPERATOR otherlv_3= 'attribute' this_STRING_4= RULE_STRING otherlv_5= 'from feature' ( ( ruleQualifiedName ) ) ) ;
     public final EObject ruleQueryAction() throws RecognitionException {
         EObject current = null;
 
@@ -1716,63 +2149,72 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
         Token otherlv_3=null;
         Token this_STRING_4=null;
         Token otherlv_5=null;
-        Token otherlv_6=null;
+        EObject this_MATH_OPERATOR_2 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:652:28: ( (otherlv_0= 'select feature' otherlv_1= 'with' ruleMATH_OPERATOR otherlv_3= 'attribute' this_STRING_4= RULE_STRING otherlv_5= 'from feature' ( (otherlv_6= RULE_ID ) ) ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:653:1: (otherlv_0= 'select feature' otherlv_1= 'with' ruleMATH_OPERATOR otherlv_3= 'attribute' this_STRING_4= RULE_STRING otherlv_5= 'from feature' ( (otherlv_6= RULE_ID ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:792:28: ( (otherlv_0= 'select feature' otherlv_1= 'with' this_MATH_OPERATOR_2= ruleMATH_OPERATOR otherlv_3= 'attribute' this_STRING_4= RULE_STRING otherlv_5= 'from feature' ( ( ruleQualifiedName ) ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:793:1: (otherlv_0= 'select feature' otherlv_1= 'with' this_MATH_OPERATOR_2= ruleMATH_OPERATOR otherlv_3= 'attribute' this_STRING_4= RULE_STRING otherlv_5= 'from feature' ( ( ruleQualifiedName ) ) )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:653:1: (otherlv_0= 'select feature' otherlv_1= 'with' ruleMATH_OPERATOR otherlv_3= 'attribute' this_STRING_4= RULE_STRING otherlv_5= 'from feature' ( (otherlv_6= RULE_ID ) ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:653:3: otherlv_0= 'select feature' otherlv_1= 'with' ruleMATH_OPERATOR otherlv_3= 'attribute' this_STRING_4= RULE_STRING otherlv_5= 'from feature' ( (otherlv_6= RULE_ID ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:793:1: (otherlv_0= 'select feature' otherlv_1= 'with' this_MATH_OPERATOR_2= ruleMATH_OPERATOR otherlv_3= 'attribute' this_STRING_4= RULE_STRING otherlv_5= 'from feature' ( ( ruleQualifiedName ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:793:3: otherlv_0= 'select feature' otherlv_1= 'with' this_MATH_OPERATOR_2= ruleMATH_OPERATOR otherlv_3= 'attribute' this_STRING_4= RULE_STRING otherlv_5= 'from feature' ( ( ruleQualifiedName ) )
             {
-            otherlv_0=(Token)match(input,28,FOLLOW_28_in_ruleQueryAction1555); 
+            otherlv_0=(Token)match(input,29,FOLLOW_29_in_ruleQueryAction1947); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getQueryActionAccess().getSelectFeatureKeyword_0());
                 
-            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleQueryAction1567); 
+            otherlv_1=(Token)match(input,30,FOLLOW_30_in_ruleQueryAction1959); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getQueryActionAccess().getWithKeyword_1());
                 
              
                     newCompositeNode(grammarAccess.getQueryActionAccess().getMATH_OPERATORParserRuleCall_2()); 
                 
-            pushFollow(FOLLOW_ruleMATH_OPERATOR_in_ruleQueryAction1583);
-            ruleMATH_OPERATOR();
+            pushFollow(FOLLOW_ruleMATH_OPERATOR_in_ruleQueryAction1981);
+            this_MATH_OPERATOR_2=ruleMATH_OPERATOR();
 
             state._fsp--;
 
              
+                    current = this_MATH_OPERATOR_2; 
                     afterParserOrEnumRuleCall();
                 
-            otherlv_3=(Token)match(input,30,FOLLOW_30_in_ruleQueryAction1594); 
+            otherlv_3=(Token)match(input,31,FOLLOW_31_in_ruleQueryAction1992); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getQueryActionAccess().getAttributeKeyword_3());
                 
-            this_STRING_4=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleQueryAction1605); 
+            this_STRING_4=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleQueryAction2003); 
              
                 newLeafNode(this_STRING_4, grammarAccess.getQueryActionAccess().getSTRINGTerminalRuleCall_4()); 
                 
-            otherlv_5=(Token)match(input,31,FOLLOW_31_in_ruleQueryAction1616); 
+            otherlv_5=(Token)match(input,32,FOLLOW_32_in_ruleQueryAction2014); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getQueryActionAccess().getFromFeatureKeyword_5());
                 
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:681:1: ( (otherlv_6= RULE_ID ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:682:1: (otherlv_6= RULE_ID )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:822:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:823:1: ( ruleQualifiedName )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:682:1: (otherlv_6= RULE_ID )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:683:3: otherlv_6= RULE_ID
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:823:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:824:3: ruleQualifiedName
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getQueryActionRule());
             	        }
                     
-            otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQueryAction1636); 
+             
+            	        newCompositeNode(grammarAccess.getQueryActionAccess().getFeatureFeatureCrossReference_6_0()); 
+            	    
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleQueryAction2037);
+            ruleQualifiedName();
 
-            		newLeafNode(otherlv_6, grammarAccess.getQueryActionAccess().getFeatureFeatureCrossReference_6_0()); 
-            	
+            state._fsp--;
+
+             
+            	        afterParserOrEnumRuleCall();
+            	    
 
             }
 
@@ -1800,7 +2242,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleSelectAction"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:702:1: entryRuleSelectAction returns [EObject current=null] : iv_ruleSelectAction= ruleSelectAction EOF ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:845:1: entryRuleSelectAction returns [EObject current=null] : iv_ruleSelectAction= ruleSelectAction EOF ;
     public final EObject entryRuleSelectAction() throws RecognitionException {
         EObject current = null;
 
@@ -1808,17 +2250,17 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:703:2: (iv_ruleSelectAction= ruleSelectAction EOF )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:704:2: iv_ruleSelectAction= ruleSelectAction EOF
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:846:2: (iv_ruleSelectAction= ruleSelectAction EOF )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:847:2: iv_ruleSelectAction= ruleSelectAction EOF
             {
              newCompositeNode(grammarAccess.getSelectActionRule()); 
-            pushFollow(FOLLOW_ruleSelectAction_in_entryRuleSelectAction1672);
+            pushFollow(FOLLOW_ruleSelectAction_in_entryRuleSelectAction2073);
             iv_ruleSelectAction=ruleSelectAction();
 
             state._fsp--;
 
              current =iv_ruleSelectAction; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectAction1682); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSelectAction2083); 
 
             }
 
@@ -1836,41 +2278,47 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleSelectAction"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:711:1: ruleSelectAction returns [EObject current=null] : (otherlv_0= 'select feature' ( (otherlv_1= RULE_ID ) ) ) ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:854:1: ruleSelectAction returns [EObject current=null] : (otherlv_0= 'activate feature' ( ( ruleQualifiedName ) ) ) ;
     public final EObject ruleSelectAction() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
 
          enterRule(); 
             
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:714:28: ( (otherlv_0= 'select feature' ( (otherlv_1= RULE_ID ) ) ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:715:1: (otherlv_0= 'select feature' ( (otherlv_1= RULE_ID ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:857:28: ( (otherlv_0= 'activate feature' ( ( ruleQualifiedName ) ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:858:1: (otherlv_0= 'activate feature' ( ( ruleQualifiedName ) ) )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:715:1: (otherlv_0= 'select feature' ( (otherlv_1= RULE_ID ) ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:715:3: otherlv_0= 'select feature' ( (otherlv_1= RULE_ID ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:858:1: (otherlv_0= 'activate feature' ( ( ruleQualifiedName ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:858:3: otherlv_0= 'activate feature' ( ( ruleQualifiedName ) )
             {
-            otherlv_0=(Token)match(input,28,FOLLOW_28_in_ruleSelectAction1719); 
+            otherlv_0=(Token)match(input,33,FOLLOW_33_in_ruleSelectAction2120); 
 
-                	newLeafNode(otherlv_0, grammarAccess.getSelectActionAccess().getSelectFeatureKeyword_0());
+                	newLeafNode(otherlv_0, grammarAccess.getSelectActionAccess().getActivateFeatureKeyword_0());
                 
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:719:1: ( (otherlv_1= RULE_ID ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:720:1: (otherlv_1= RULE_ID )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:862:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:863:1: ( ruleQualifiedName )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:720:1: (otherlv_1= RULE_ID )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:721:3: otherlv_1= RULE_ID
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:863:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:864:3: ruleQualifiedName
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getSelectActionRule());
             	        }
                     
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSelectAction1739); 
+             
+            	        newCompositeNode(grammarAccess.getSelectActionAccess().getFeatureFeatureCrossReference_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleSelectAction2143);
+            ruleQualifiedName();
 
-            		newLeafNode(otherlv_1, grammarAccess.getSelectActionAccess().getFeatureFeatureCrossReference_1_0()); 
-            	
+            state._fsp--;
+
+             
+            	        afterParserOrEnumRuleCall();
+            	    
 
             }
 
@@ -1898,7 +2346,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleDeselectAction"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:740:1: entryRuleDeselectAction returns [EObject current=null] : iv_ruleDeselectAction= ruleDeselectAction EOF ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:885:1: entryRuleDeselectAction returns [EObject current=null] : iv_ruleDeselectAction= ruleDeselectAction EOF ;
     public final EObject entryRuleDeselectAction() throws RecognitionException {
         EObject current = null;
 
@@ -1906,17 +2354,17 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:741:2: (iv_ruleDeselectAction= ruleDeselectAction EOF )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:742:2: iv_ruleDeselectAction= ruleDeselectAction EOF
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:886:2: (iv_ruleDeselectAction= ruleDeselectAction EOF )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:887:2: iv_ruleDeselectAction= ruleDeselectAction EOF
             {
              newCompositeNode(grammarAccess.getDeselectActionRule()); 
-            pushFollow(FOLLOW_ruleDeselectAction_in_entryRuleDeselectAction1775);
+            pushFollow(FOLLOW_ruleDeselectAction_in_entryRuleDeselectAction2179);
             iv_ruleDeselectAction=ruleDeselectAction();
 
             state._fsp--;
 
              current =iv_ruleDeselectAction; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDeselectAction1785); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDeselectAction2189); 
 
             }
 
@@ -1934,41 +2382,47 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleDeselectAction"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:749:1: ruleDeselectAction returns [EObject current=null] : (otherlv_0= 'deselect feature' ( (otherlv_1= RULE_ID ) ) ) ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:894:1: ruleDeselectAction returns [EObject current=null] : (otherlv_0= 'deactivate feature' ( ( ruleQualifiedName ) ) ) ;
     public final EObject ruleDeselectAction() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
 
          enterRule(); 
             
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:752:28: ( (otherlv_0= 'deselect feature' ( (otherlv_1= RULE_ID ) ) ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:753:1: (otherlv_0= 'deselect feature' ( (otherlv_1= RULE_ID ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:897:28: ( (otherlv_0= 'deactivate feature' ( ( ruleQualifiedName ) ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:898:1: (otherlv_0= 'deactivate feature' ( ( ruleQualifiedName ) ) )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:753:1: (otherlv_0= 'deselect feature' ( (otherlv_1= RULE_ID ) ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:753:3: otherlv_0= 'deselect feature' ( (otherlv_1= RULE_ID ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:898:1: (otherlv_0= 'deactivate feature' ( ( ruleQualifiedName ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:898:3: otherlv_0= 'deactivate feature' ( ( ruleQualifiedName ) )
             {
-            otherlv_0=(Token)match(input,32,FOLLOW_32_in_ruleDeselectAction1822); 
+            otherlv_0=(Token)match(input,34,FOLLOW_34_in_ruleDeselectAction2226); 
 
-                	newLeafNode(otherlv_0, grammarAccess.getDeselectActionAccess().getDeselectFeatureKeyword_0());
+                	newLeafNode(otherlv_0, grammarAccess.getDeselectActionAccess().getDeactivateFeatureKeyword_0());
                 
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:757:1: ( (otherlv_1= RULE_ID ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:758:1: (otherlv_1= RULE_ID )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:902:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:903:1: ( ruleQualifiedName )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:758:1: (otherlv_1= RULE_ID )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:759:3: otherlv_1= RULE_ID
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:903:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:904:3: ruleQualifiedName
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getDeselectActionRule());
             	        }
                     
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDeselectAction1842); 
+             
+            	        newCompositeNode(grammarAccess.getDeselectActionAccess().getFeatureFeatureCrossReference_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleDeselectAction2249);
+            ruleQualifiedName();
 
-            		newLeafNode(otherlv_1, grammarAccess.getDeselectActionAccess().getFeatureFeatureCrossReference_1_0()); 
-            	
+            state._fsp--;
+
+             
+            	        afterParserOrEnumRuleCall();
+            	    
 
             }
 
@@ -1996,7 +2450,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleModifyAttribute"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:778:1: entryRuleModifyAttribute returns [EObject current=null] : iv_ruleModifyAttribute= ruleModifyAttribute EOF ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:925:1: entryRuleModifyAttribute returns [EObject current=null] : iv_ruleModifyAttribute= ruleModifyAttribute EOF ;
     public final EObject entryRuleModifyAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -2004,17 +2458,17 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:779:2: (iv_ruleModifyAttribute= ruleModifyAttribute EOF )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:780:2: iv_ruleModifyAttribute= ruleModifyAttribute EOF
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:926:2: (iv_ruleModifyAttribute= ruleModifyAttribute EOF )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:927:2: iv_ruleModifyAttribute= ruleModifyAttribute EOF
             {
              newCompositeNode(grammarAccess.getModifyAttributeRule()); 
-            pushFollow(FOLLOW_ruleModifyAttribute_in_entryRuleModifyAttribute1878);
+            pushFollow(FOLLOW_ruleModifyAttribute_in_entryRuleModifyAttribute2285);
             iv_ruleModifyAttribute=ruleModifyAttribute();
 
             state._fsp--;
 
              current =iv_ruleModifyAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleModifyAttribute1888); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleModifyAttribute2295); 
 
             }
 
@@ -2032,12 +2486,11 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleModifyAttribute"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:787:1: ruleModifyAttribute returns [EObject current=null] : (otherlv_0= 'set attribute' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'with value' ( (lv_attributeValue_3_0= ruleAttributeValue ) ) ) ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:934:1: ruleModifyAttribute returns [EObject current=null] : (otherlv_0= 'set attribute' ( ( ruleQualifiedName ) ) otherlv_2= 'with value' ( (lv_attributeValue_3_0= ruleAttributeValue ) ) ) ;
     public final EObject ruleModifyAttribute() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
         Token otherlv_2=null;
         EObject lv_attributeValue_3_0 = null;
 
@@ -2045,51 +2498,58 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:790:28: ( (otherlv_0= 'set attribute' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'with value' ( (lv_attributeValue_3_0= ruleAttributeValue ) ) ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:791:1: (otherlv_0= 'set attribute' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'with value' ( (lv_attributeValue_3_0= ruleAttributeValue ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:937:28: ( (otherlv_0= 'set attribute' ( ( ruleQualifiedName ) ) otherlv_2= 'with value' ( (lv_attributeValue_3_0= ruleAttributeValue ) ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:938:1: (otherlv_0= 'set attribute' ( ( ruleQualifiedName ) ) otherlv_2= 'with value' ( (lv_attributeValue_3_0= ruleAttributeValue ) ) )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:791:1: (otherlv_0= 'set attribute' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'with value' ( (lv_attributeValue_3_0= ruleAttributeValue ) ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:791:3: otherlv_0= 'set attribute' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'with value' ( (lv_attributeValue_3_0= ruleAttributeValue ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:938:1: (otherlv_0= 'set attribute' ( ( ruleQualifiedName ) ) otherlv_2= 'with value' ( (lv_attributeValue_3_0= ruleAttributeValue ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:938:3: otherlv_0= 'set attribute' ( ( ruleQualifiedName ) ) otherlv_2= 'with value' ( (lv_attributeValue_3_0= ruleAttributeValue ) )
             {
-            otherlv_0=(Token)match(input,33,FOLLOW_33_in_ruleModifyAttribute1925); 
+            otherlv_0=(Token)match(input,35,FOLLOW_35_in_ruleModifyAttribute2332); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getModifyAttributeAccess().getSetAttributeKeyword_0());
                 
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:795:1: ( (otherlv_1= RULE_ID ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:796:1: (otherlv_1= RULE_ID )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:942:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:943:1: ( ruleQualifiedName )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:796:1: (otherlv_1= RULE_ID )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:797:3: otherlv_1= RULE_ID
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:943:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:944:3: ruleQualifiedName
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getModifyAttributeRule());
             	        }
                     
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleModifyAttribute1945); 
+             
+            	        newCompositeNode(grammarAccess.getModifyAttributeAccess().getFeatureAttributeCVAttributeCrossReference_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleModifyAttribute2355);
+            ruleQualifiedName();
 
-            		newLeafNode(otherlv_1, grammarAccess.getModifyAttributeAccess().getFeatureAttributeCVAttributeCrossReference_1_0()); 
-            	
+            state._fsp--;
+
+             
+            	        afterParserOrEnumRuleCall();
+            	    
 
             }
 
 
             }
 
-            otherlv_2=(Token)match(input,34,FOLLOW_34_in_ruleModifyAttribute1957); 
+            otherlv_2=(Token)match(input,36,FOLLOW_36_in_ruleModifyAttribute2367); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getModifyAttributeAccess().getWithValueKeyword_2());
                 
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:812:1: ( (lv_attributeValue_3_0= ruleAttributeValue ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:813:1: (lv_attributeValue_3_0= ruleAttributeValue )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:961:1: ( (lv_attributeValue_3_0= ruleAttributeValue ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:962:1: (lv_attributeValue_3_0= ruleAttributeValue )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:813:1: (lv_attributeValue_3_0= ruleAttributeValue )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:814:3: lv_attributeValue_3_0= ruleAttributeValue
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:962:1: (lv_attributeValue_3_0= ruleAttributeValue )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:963:3: lv_attributeValue_3_0= ruleAttributeValue
             {
              
             	        newCompositeNode(grammarAccess.getModifyAttributeAccess().getAttributeValueAttributeValueParserRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleAttributeValue_in_ruleModifyAttribute1978);
+            pushFollow(FOLLOW_ruleAttributeValue_in_ruleModifyAttribute2388);
             lv_attributeValue_3_0=ruleAttributeValue();
 
             state._fsp--;
@@ -2132,7 +2592,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleAttributeValue"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:838:1: entryRuleAttributeValue returns [EObject current=null] : iv_ruleAttributeValue= ruleAttributeValue EOF ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:987:1: entryRuleAttributeValue returns [EObject current=null] : iv_ruleAttributeValue= ruleAttributeValue EOF ;
     public final EObject entryRuleAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -2140,17 +2600,17 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:839:2: (iv_ruleAttributeValue= ruleAttributeValue EOF )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:840:2: iv_ruleAttributeValue= ruleAttributeValue EOF
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:988:2: (iv_ruleAttributeValue= ruleAttributeValue EOF )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:989:2: iv_ruleAttributeValue= ruleAttributeValue EOF
             {
              newCompositeNode(grammarAccess.getAttributeValueRule()); 
-            pushFollow(FOLLOW_ruleAttributeValue_in_entryRuleAttributeValue2014);
+            pushFollow(FOLLOW_ruleAttributeValue_in_entryRuleAttributeValue2424);
             iv_ruleAttributeValue=ruleAttributeValue();
 
             state._fsp--;
 
              current =iv_ruleAttributeValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAttributeValue2024); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAttributeValue2434); 
 
             }
 
@@ -2168,7 +2628,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleAttributeValue"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:847:1: ruleAttributeValue returns [EObject current=null] : (this_StringAttributeValue_0= ruleStringAttributeValue | this_NFRAttributeValue_1= ruleNFRAttributeValue ) ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:996:1: ruleAttributeValue returns [EObject current=null] : (this_StringAttributeValue_0= ruleStringAttributeValue | this_NFRAttributeValue_1= ruleNFRAttributeValue ) ;
     public final EObject ruleAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -2180,33 +2640,33 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:850:28: ( (this_StringAttributeValue_0= ruleStringAttributeValue | this_NFRAttributeValue_1= ruleNFRAttributeValue ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:851:1: (this_StringAttributeValue_0= ruleStringAttributeValue | this_NFRAttributeValue_1= ruleNFRAttributeValue )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:999:28: ( (this_StringAttributeValue_0= ruleStringAttributeValue | this_NFRAttributeValue_1= ruleNFRAttributeValue ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1000:1: (this_StringAttributeValue_0= ruleStringAttributeValue | this_NFRAttributeValue_1= ruleNFRAttributeValue )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:851:1: (this_StringAttributeValue_0= ruleStringAttributeValue | this_NFRAttributeValue_1= ruleNFRAttributeValue )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1000:1: (this_StringAttributeValue_0= ruleStringAttributeValue | this_NFRAttributeValue_1= ruleNFRAttributeValue )
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA13_0==RULE_STRING) ) {
-                alt13=1;
+            if ( (LA16_0==RULE_STRING) ) {
+                alt16=1;
             }
-            else if ( (LA13_0==RULE_ID) ) {
-                alt13=2;
+            else if ( (LA16_0==RULE_ID) ) {
+                alt16=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 16, 0, input);
 
                 throw nvae;
             }
-            switch (alt13) {
+            switch (alt16) {
                 case 1 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:852:5: this_StringAttributeValue_0= ruleStringAttributeValue
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1001:5: this_StringAttributeValue_0= ruleStringAttributeValue
                     {
                      
                             newCompositeNode(grammarAccess.getAttributeValueAccess().getStringAttributeValueParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleStringAttributeValue_in_ruleAttributeValue2071);
+                    pushFollow(FOLLOW_ruleStringAttributeValue_in_ruleAttributeValue2481);
                     this_StringAttributeValue_0=ruleStringAttributeValue();
 
                     state._fsp--;
@@ -2219,12 +2679,12 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:862:5: this_NFRAttributeValue_1= ruleNFRAttributeValue
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1011:5: this_NFRAttributeValue_1= ruleNFRAttributeValue
                     {
                      
                             newCompositeNode(grammarAccess.getAttributeValueAccess().getNFRAttributeValueParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleNFRAttributeValue_in_ruleAttributeValue2098);
+                    pushFollow(FOLLOW_ruleNFRAttributeValue_in_ruleAttributeValue2508);
                     this_NFRAttributeValue_1=ruleNFRAttributeValue();
 
                     state._fsp--;
@@ -2257,7 +2717,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleStringAttributeValue"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:878:1: entryRuleStringAttributeValue returns [EObject current=null] : iv_ruleStringAttributeValue= ruleStringAttributeValue EOF ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1027:1: entryRuleStringAttributeValue returns [EObject current=null] : iv_ruleStringAttributeValue= ruleStringAttributeValue EOF ;
     public final EObject entryRuleStringAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -2265,17 +2725,17 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:879:2: (iv_ruleStringAttributeValue= ruleStringAttributeValue EOF )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:880:2: iv_ruleStringAttributeValue= ruleStringAttributeValue EOF
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1028:2: (iv_ruleStringAttributeValue= ruleStringAttributeValue EOF )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1029:2: iv_ruleStringAttributeValue= ruleStringAttributeValue EOF
             {
              newCompositeNode(grammarAccess.getStringAttributeValueRule()); 
-            pushFollow(FOLLOW_ruleStringAttributeValue_in_entryRuleStringAttributeValue2133);
+            pushFollow(FOLLOW_ruleStringAttributeValue_in_entryRuleStringAttributeValue2543);
             iv_ruleStringAttributeValue=ruleStringAttributeValue();
 
             state._fsp--;
 
              current =iv_ruleStringAttributeValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStringAttributeValue2143); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStringAttributeValue2553); 
 
             }
 
@@ -2293,7 +2753,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleStringAttributeValue"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:887:1: ruleStringAttributeValue returns [EObject current=null] : ( (lv_value_0_0= RULE_STRING ) ) ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1036:1: ruleStringAttributeValue returns [EObject current=null] : ( (lv_value_0_0= RULE_STRING ) ) ;
     public final EObject ruleStringAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -2302,16 +2762,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:890:28: ( ( (lv_value_0_0= RULE_STRING ) ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:891:1: ( (lv_value_0_0= RULE_STRING ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1039:28: ( ( (lv_value_0_0= RULE_STRING ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1040:1: ( (lv_value_0_0= RULE_STRING ) )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:891:1: ( (lv_value_0_0= RULE_STRING ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:892:1: (lv_value_0_0= RULE_STRING )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1040:1: ( (lv_value_0_0= RULE_STRING ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1041:1: (lv_value_0_0= RULE_STRING )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:892:1: (lv_value_0_0= RULE_STRING )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:893:3: lv_value_0_0= RULE_STRING
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1041:1: (lv_value_0_0= RULE_STRING )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1042:3: lv_value_0_0= RULE_STRING
             {
-            lv_value_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringAttributeValue2184); 
+            lv_value_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringAttributeValue2594); 
 
             			newLeafNode(lv_value_0_0, grammarAccess.getStringAttributeValueAccess().getValueSTRINGTerminalRuleCall_0()); 
             		
@@ -2349,7 +2809,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleNFRAttributeValue"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:917:1: entryRuleNFRAttributeValue returns [EObject current=null] : iv_ruleNFRAttributeValue= ruleNFRAttributeValue EOF ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1066:1: entryRuleNFRAttributeValue returns [EObject current=null] : iv_ruleNFRAttributeValue= ruleNFRAttributeValue EOF ;
     public final EObject entryRuleNFRAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -2357,17 +2817,17 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:918:2: (iv_ruleNFRAttributeValue= ruleNFRAttributeValue EOF )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:919:2: iv_ruleNFRAttributeValue= ruleNFRAttributeValue EOF
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1067:2: (iv_ruleNFRAttributeValue= ruleNFRAttributeValue EOF )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1068:2: iv_ruleNFRAttributeValue= ruleNFRAttributeValue EOF
             {
              newCompositeNode(grammarAccess.getNFRAttributeValueRule()); 
-            pushFollow(FOLLOW_ruleNFRAttributeValue_in_entryRuleNFRAttributeValue2224);
+            pushFollow(FOLLOW_ruleNFRAttributeValue_in_entryRuleNFRAttributeValue2634);
             iv_ruleNFRAttributeValue=ruleNFRAttributeValue();
 
             state._fsp--;
 
              current =iv_ruleNFRAttributeValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNFRAttributeValue2234); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNFRAttributeValue2644); 
 
             }
 
@@ -2385,21 +2845,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleNFRAttributeValue"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:926:1: ruleNFRAttributeValue returns [EObject current=null] : ( ( ruleQualifiedName ) ) ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1075:1: ruleNFRAttributeValue returns [EObject current=null] : ( ( ruleQualifiedName ) ) ;
     public final EObject ruleNFRAttributeValue() throws RecognitionException {
         EObject current = null;
 
          enterRule(); 
             
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:929:28: ( ( ( ruleQualifiedName ) ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:930:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1078:28: ( ( ( ruleQualifiedName ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1079:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:930:1: ( ( ruleQualifiedName ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:931:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1079:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1080:1: ( ruleQualifiedName )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:931:1: ( ruleQualifiedName )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:932:3: ruleQualifiedName
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1080:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1081:3: ruleQualifiedName
             {
 
             			if (current==null) {
@@ -2409,7 +2869,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
              
             	        newCompositeNode(grammarAccess.getNFRAttributeValueAccess().getValueNFRAttributeCrossReference_0()); 
             	    
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleNFRAttributeValue2281);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleNFRAttributeValue2691);
             ruleQualifiedName();
 
             state._fsp--;
@@ -2464,13 +2924,13 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
     public static final BitSet FOLLOW_14_in_ruleRule511 = new BitSet(new long[]{0x0000000000008000L});
     public static final BitSet FOLLOW_15_in_ruleRule523 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleCondition_in_ruleRule544 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleRule556 = new BitSet(new long[]{0x0000000310000000L});
-    public static final BitSet FOLLOW_ruleAtomicAction_in_ruleRule577 = new BitSet(new long[]{0x0000000310020002L});
-    public static final BitSet FOLLOW_17_in_ruleRule591 = new BitSet(new long[]{0x0000000310008000L});
+    public static final BitSet FOLLOW_16_in_ruleRule556 = new BitSet(new long[]{0x0000000E20000000L});
+    public static final BitSet FOLLOW_ruleAtomicAction_in_ruleRule577 = new BitSet(new long[]{0x0000000E20020002L});
+    public static final BitSet FOLLOW_17_in_ruleRule591 = new BitSet(new long[]{0x0000000E20008000L});
     public static final BitSet FOLLOW_15_in_ruleRule604 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleCondition_in_ruleRule625 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleRule637 = new BitSet(new long[]{0x0000000310008000L});
-    public static final BitSet FOLLOW_ruleAtomicAction_in_ruleRule660 = new BitSet(new long[]{0x0000000310020002L});
+    public static final BitSet FOLLOW_16_in_ruleRule637 = new BitSet(new long[]{0x0000000E20008000L});
+    public static final BitSet FOLLOW_ruleAtomicAction_in_ruleRule660 = new BitSet(new long[]{0x0000000E20020002L});
     public static final BitSet FOLLOW_ruleCondition_in_entryRuleCondition699 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCondition709 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMeasurementComparison_in_ruleCondition754 = new BitSet(new long[]{0x0000000000000002L});
@@ -2490,50 +2950,67 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
     public static final BitSet FOLLOW_EOF_in_entryRuleLOGICAL_OPERATOR1085 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_22_in_ruleLOGICAL_OPERATOR1123 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_23_in_ruleLOGICAL_OPERATOR1142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMATH_OPERATOR_in_entryRuleMATH_OPERATOR1183 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMATH_OPERATOR1194 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleMATH_OPERATOR1232 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleMATH_OPERATOR1251 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleMATH_OPERATOR1270 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleMATH_OPERATOR1289 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomicAction_in_entryRuleAtomicAction1335 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAtomicAction1345 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectAction_in_ruleAtomicAction1392 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDeselectAction_in_ruleAtomicAction1419 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleModifyAttribute_in_ruleAtomicAction1446 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQueryAction_in_ruleAtomicAction1473 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQueryAction_in_entryRuleQueryAction1508 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQueryAction1518 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleQueryAction1555 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleQueryAction1567 = new BitSet(new long[]{0x000000000F000000L});
-    public static final BitSet FOLLOW_ruleMATH_OPERATOR_in_ruleQueryAction1583 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_30_in_ruleQueryAction1594 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleQueryAction1605 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31_in_ruleQueryAction1616 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQueryAction1636 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelectAction_in_entryRuleSelectAction1672 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSelectAction1682 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleSelectAction1719 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleSelectAction1739 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDeselectAction_in_entryRuleDeselectAction1775 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDeselectAction1785 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_ruleDeselectAction1822 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDeselectAction1842 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleModifyAttribute_in_entryRuleModifyAttribute1878 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleModifyAttribute1888 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_ruleModifyAttribute1925 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleModifyAttribute1945 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleModifyAttribute1957 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_ruleAttributeValue_in_ruleModifyAttribute1978 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributeValue_in_entryRuleAttributeValue2014 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAttributeValue2024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringAttributeValue_in_ruleAttributeValue2071 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNFRAttributeValue_in_ruleAttributeValue2098 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringAttributeValue_in_entryRuleStringAttributeValue2133 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStringAttributeValue2143 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringAttributeValue2184 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNFRAttributeValue_in_entryRuleNFRAttributeValue2224 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNFRAttributeValue2234 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleNFRAttributeValue2281 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMATH_OPERATOR_in_entryRuleMATH_OPERATOR1182 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMATH_OPERATOR1192 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMAX_in_ruleMATH_OPERATOR1239 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMIN_in_ruleMATH_OPERATOR1266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAVG_in_ruleMATH_OPERATOR1293 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAVG_in_entryRuleAVG1328 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAVG1338 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleAVG1375 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleAVG1399 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleAVG1411 = new BitSet(new long[]{0x0000000004000020L});
+    public static final BitSet FOLLOW_26_in_ruleAVG1425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMIN_in_entryRuleMIN1461 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMIN1471 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleMIN1508 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleMIN1532 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleMIN1544 = new BitSet(new long[]{0x0000000004000020L});
+    public static final BitSet FOLLOW_26_in_ruleMIN1558 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMAX_in_entryRuleMAX1594 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMAX1604 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_ruleMAX1641 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleMAX1665 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleMAX1677 = new BitSet(new long[]{0x0000000004000020L});
+    public static final BitSet FOLLOW_26_in_ruleMAX1691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtomicAction_in_entryRuleAtomicAction1727 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAtomicAction1737 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectAction_in_ruleAtomicAction1784 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDeselectAction_in_ruleAtomicAction1811 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleModifyAttribute_in_ruleAtomicAction1838 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQueryAction_in_ruleAtomicAction1865 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQueryAction_in_entryRuleQueryAction1900 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQueryAction1910 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_ruleQueryAction1947 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_ruleQueryAction1959 = new BitSet(new long[]{0x0000000019000000L});
+    public static final BitSet FOLLOW_ruleMATH_OPERATOR_in_ruleQueryAction1981 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_31_in_ruleQueryAction1992 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleQueryAction2003 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_ruleQueryAction2014 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleQueryAction2037 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelectAction_in_entryRuleSelectAction2073 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSelectAction2083 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_ruleSelectAction2120 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleSelectAction2143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDeselectAction_in_entryRuleDeselectAction2179 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDeselectAction2189 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_ruleDeselectAction2226 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleDeselectAction2249 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleModifyAttribute_in_entryRuleModifyAttribute2285 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleModifyAttribute2295 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_ruleModifyAttribute2332 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleModifyAttribute2355 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_36_in_ruleModifyAttribute2367 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_ruleAttributeValue_in_ruleModifyAttribute2388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributeValue_in_entryRuleAttributeValue2424 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAttributeValue2434 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringAttributeValue_in_ruleAttributeValue2481 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNFRAttributeValue_in_ruleAttributeValue2508 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringAttributeValue_in_entryRuleStringAttributeValue2543 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStringAttributeValue2553 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringAttributeValue2594 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNFRAttributeValue_in_entryRuleNFRAttributeValue2634 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNFRAttributeValue2644 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleNFRAttributeValue2691 = new BitSet(new long[]{0x0000000000000002L});
 
 }

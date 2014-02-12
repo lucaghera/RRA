@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.rra.featureModel.xtext
+Bundle-SymbolicName: org.rra.featureModel.xtext
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.xtext;bundle-version="2.5.1",
+ org.hyperflex.featuremodels.model;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.rra.featureModel.xtext.utils

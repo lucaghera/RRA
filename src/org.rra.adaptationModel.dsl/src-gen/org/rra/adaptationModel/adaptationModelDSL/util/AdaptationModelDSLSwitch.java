@@ -107,10 +107,22 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AdaptationModelDSLPackage.MATH_OPERATOR:
+      {
+        MATH_OPERATOR matH_OPERATOR = (MATH_OPERATOR)theEObject;
+        T result = caseMATH_OPERATOR(matH_OPERATOR);
+        if (result == null) result = caseQueryAction(matH_OPERATOR);
+        if (result == null) result = caseAtomicAction(matH_OPERATOR);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AdaptationModelDSLPackage.AVG:
       {
         AVG avg = (AVG)theEObject;
         T result = caseAVG(avg);
+        if (result == null) result = caseMATH_OPERATOR(avg);
+        if (result == null) result = caseQueryAction(avg);
+        if (result == null) result = caseAtomicAction(avg);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -118,6 +130,9 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
       {
         MIN min = (MIN)theEObject;
         T result = caseMIN(min);
+        if (result == null) result = caseMATH_OPERATOR(min);
+        if (result == null) result = caseQueryAction(min);
+        if (result == null) result = caseAtomicAction(min);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -125,6 +140,9 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
       {
         MAX max = (MAX)theEObject;
         T result = caseMAX(max);
+        if (result == null) result = caseMATH_OPERATOR(max);
+        if (result == null) result = caseQueryAction(max);
+        if (result == null) result = caseAtomicAction(max);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -270,6 +288,22 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseMeasurementComparison(MeasurementComparison object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>MATH OPERATOR</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>MATH OPERATOR</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMATH_OPERATOR(MATH_OPERATOR object)
   {
     return null;
   }

@@ -68,6 +68,15 @@ public interface AdaptationModelDSLFactory extends EFactory
   MeasurementComparison createMeasurementComparison();
 
   /**
+   * Returns a new object of class '<em>MATH OPERATOR</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>MATH OPERATOR</em>'.
+   * @generated
+   */
+  MATH_OPERATOR createMATH_OPERATOR();
+
+  /**
    * Returns a new object of class '<em>AVG</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -1,4 +1,4 @@
-package org.rra.cdmmodel.xtext.utils;
+package org.rra.cdmModel.xtext.utils;
 
 import org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider;
 

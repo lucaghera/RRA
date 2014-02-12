@@ -24,7 +24,6 @@ import org.rra.adaptationModel.adaptationModelDSL.MIN;
 import org.rra.adaptationModel.adaptationModelDSL.MeasurementComparison;
 import org.rra.adaptationModel.adaptationModelDSL.ModifyAttribute;
 import org.rra.adaptationModel.adaptationModelDSL.NFRAttributeValue;
-import org.rra.adaptationModel.adaptationModelDSL.QueryAction;
 import org.rra.adaptationModel.adaptationModelDSL.Rule;
 import org.rra.adaptationModel.adaptationModelDSL.SelectAction;
 import org.rra.adaptationModel.adaptationModelDSL.StringAttributeValue;
@@ -39,8 +38,14 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == AdaptationModelDSLPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case AdaptationModelDSLPackage.AVG:
-				if(context == grammarAccess.getAVGRule()) {
+				if(context == grammarAccess.getAVGRule() ||
+				   context == grammarAccess.getMATH_OPERATORRule()) {
 					sequence_AVG(context, (AVG) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getAtomicActionRule() ||
+				   context == grammarAccess.getQueryActionRule()) {
+					sequence_AVG_QueryAction(context, (AVG) semanticObject); 
 					return; 
 				}
 				else break;
@@ -70,14 +75,26 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 				}
 				else break;
 			case AdaptationModelDSLPackage.MAX:
-				if(context == grammarAccess.getMAXRule()) {
+				if(context == grammarAccess.getMATH_OPERATORRule() ||
+				   context == grammarAccess.getMAXRule()) {
 					sequence_MAX(context, (MAX) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getAtomicActionRule() ||
+				   context == grammarAccess.getQueryActionRule()) {
+					sequence_MAX_QueryAction(context, (MAX) semanticObject); 
 					return; 
 				}
 				else break;
 			case AdaptationModelDSLPackage.MIN:
-				if(context == grammarAccess.getMINRule()) {
+				if(context == grammarAccess.getMATH_OPERATORRule() ||
+				   context == grammarAccess.getMINRule()) {
 					sequence_MIN(context, (MIN) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getAtomicActionRule() ||
+				   context == grammarAccess.getQueryActionRule()) {
+					sequence_MIN_QueryAction(context, (MIN) semanticObject); 
 					return; 
 				}
 				else break;
@@ -98,13 +115,6 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 				if(context == grammarAccess.getAttributeValueRule() ||
 				   context == grammarAccess.getNFRAttributeValueRule()) {
 					sequence_NFRAttributeValue(context, (NFRAttributeValue) semanticObject); 
-					return; 
-				}
-				else break;
-			case AdaptationModelDSLPackage.QUERY_ACTION:
-				if(context == grammarAccess.getAtomicActionRule() ||
-				   context == grammarAccess.getQueryActionRule()) {
-					sequence_QueryAction(context, (QueryAction) semanticObject); 
 					return; 
 				}
 				else break;
@@ -134,9 +144,18 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Constraint:
-	 *     measurement+=[Import|ID]+
+	 *     measurement+=[ContextDependentMeasurement|QualifiedName]+
 	 */
 	protected void sequence_AVG(EObject context, AVG semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (measurement+=[ContextDependentMeasurement|QualifiedName]+ feature=[Feature|QualifiedName])
+	 */
+	protected void sequence_AVG_QueryAction(EObject context, AVG semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -161,7 +180,7 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Constraint:
-	 *     feature=[Feature|ID]
+	 *     feature=[Feature|QualifiedName]
 	 */
 	protected void sequence_DeselectAction(EObject context, DeselectAction semanticObject) {
 		if(errorAcceptor != null) {
@@ -170,7 +189,7 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDeselectActionAccess().getFeatureFeatureIDTerminalRuleCall_1_0_1(), semanticObject.getFeature());
+		feeder.accept(grammarAccess.getDeselectActionAccess().getFeatureFeatureQualifiedNameParserRuleCall_1_0_1(), semanticObject.getFeature());
 		feeder.finish();
 	}
 	
@@ -193,7 +212,7 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Constraint:
-	 *     measurement+=[Import|ID]+
+	 *     measurement+=[ContextDependentMeasurement|QualifiedName]+
 	 */
 	protected void sequence_MAX(EObject context, MAX semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -202,9 +221,27 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Constraint:
-	 *     measurement+=[Import|ID]+
+	 *     (measurement+=[ContextDependentMeasurement|QualifiedName]+ feature=[Feature|QualifiedName])
+	 */
+	protected void sequence_MAX_QueryAction(EObject context, MAX semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     measurement+=[ContextDependentMeasurement|QualifiedName]+
 	 */
 	protected void sequence_MIN(EObject context, MIN semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (measurement+=[ContextDependentMeasurement|QualifiedName]+ feature=[Feature|QualifiedName])
+	 */
+	protected void sequence_MIN_QueryAction(EObject context, MIN semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -227,7 +264,7 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Constraint:
-	 *     (featureAttribute=[CVAttribute|ID] attributeValue+=AttributeValue)
+	 *     (featureAttribute=[CVAttribute|QualifiedName] attributeValue+=AttributeValue)
 	 */
 	protected void sequence_ModifyAttribute(EObject context, ModifyAttribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -252,22 +289,6 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Constraint:
-	 *     feature=[Feature|ID]
-	 */
-	protected void sequence_QueryAction(EObject context, QueryAction semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AdaptationModelDSLPackage.Literals.QUERY_ACTION__FEATURE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AdaptationModelDSLPackage.Literals.QUERY_ACTION__FEATURE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getQueryActionAccess().getFeatureFeatureIDTerminalRuleCall_6_0_1(), semanticObject.getFeature());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (name=ID condition+=Condition atomicAction+=AtomicAction+ (condition+=Condition* atomicAction+=AtomicAction+)*)
 	 */
 	protected void sequence_Rule(EObject context, Rule semanticObject) {
@@ -277,7 +298,7 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Constraint:
-	 *     feature=[Feature|ID]
+	 *     feature=[Feature|QualifiedName]
 	 */
 	protected void sequence_SelectAction(EObject context, SelectAction semanticObject) {
 		if(errorAcceptor != null) {
@@ -286,7 +307,7 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getSelectActionAccess().getFeatureFeatureIDTerminalRuleCall_1_0_1(), semanticObject.getFeature());
+		feeder.accept(grammarAccess.getSelectActionAccess().getFeatureFeatureQualifiedNameParserRuleCall_1_0_1(), semanticObject.getFeature());
 		feeder.finish();
 	}
 	

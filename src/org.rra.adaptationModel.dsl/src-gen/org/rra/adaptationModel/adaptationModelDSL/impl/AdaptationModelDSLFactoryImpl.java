@@ -69,6 +69,7 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
       case AdaptationModelDSLPackage.RULE: return createRule();
       case AdaptationModelDSLPackage.CONDITION: return createCondition();
       case AdaptationModelDSLPackage.MEASUREMENT_COMPARISON: return createMeasurementComparison();
+      case AdaptationModelDSLPackage.MATH_OPERATOR: return createMATH_OPERATOR();
       case AdaptationModelDSLPackage.AVG: return createAVG();
       case AdaptationModelDSLPackage.MIN: return createMIN();
       case AdaptationModelDSLPackage.MAX: return createMAX();
@@ -138,6 +139,17 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
   {
     MeasurementComparisonImpl measurementComparison = new MeasurementComparisonImpl();
     return measurementComparison;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MATH_OPERATOR createMATH_OPERATOR()
+  {
+    MATH_OPERATORImpl matH_OPERATOR = new MATH_OPERATORImpl();
+    return matH_OPERATOR;
   }
 
   /**
