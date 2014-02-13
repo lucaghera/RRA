@@ -12,5 +12,6 @@ Export-Package: org.rra.runtimeFeatureModel,
  org.rra.runtimeFeatureModel.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
+ org.rra.dataTypesModel.model;visibility:=reexport,
  org.hyperflex.featuremodels.model;visibility:=reexport
 Bundle-ActivationPolicy: lazy

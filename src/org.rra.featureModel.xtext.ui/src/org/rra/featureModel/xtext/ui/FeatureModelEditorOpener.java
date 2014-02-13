@@ -14,10 +14,10 @@ public class FeatureModelEditorOpener extends LanguageSpecificURIEditorOpener {
     @Override
     protected void selectAndReveal(IEditorPart openEditor, URI uri,
             EReference crossReference, int indexInList, boolean select) {
-    	featuremodelsEditor cdmModelEditor = (featuremodelsEditor) openEditor.getAdapter(featuremodelsEditor.class);
-        if (cdmModelEditor != null) {
-            EObject eObject = cdmModelEditor.getEditingDomain().getResourceSet().getEObject(uri, true);
-            cdmModelEditor.setSelectionToViewer(Collections.singletonList(eObject));
+    	featuremodelsEditor featureModelEditor = (featuremodelsEditor) openEditor.getAdapter(featuremodelsEditor.class);
+        if (featureModelEditor != null) {
+            EObject eObject = featureModelEditor.getEditingDomain().getResourceSet().getEObject(uri, true);
+            featureModelEditor.setSelectionToViewer(Collections.singletonList(eObject));
         }
     }
  

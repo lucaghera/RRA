@@ -81,7 +81,7 @@ public class ROSContextDependentMeasurementItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPublisherPropertyDescriptor(object);
+			addTopicPropertyDescriptor(object);
 			addInputDataTypePropertyDescriptor(object);
 			addCdmFunctionPropertyDescriptor(object);
 		}
@@ -89,19 +89,19 @@ public class ROSContextDependentMeasurementItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Publisher feature.
+	 * This adds a property descriptor for the Topic feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPublisherPropertyDescriptor(Object object) {
+	protected void addTopicPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ROSContextDependentMeasurement_publisher_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ROSContextDependentMeasurement_publisher_feature", "_UI_ROSContextDependentMeasurement_type"),
-				 CDMModelPackage.Literals.ROS_CONTEXT_DEPENDENT_MEASUREMENT__PUBLISHER,
+				 getString("_UI_ROSContextDependentMeasurement_topic_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ROSContextDependentMeasurement_topic_feature", "_UI_ROSContextDependentMeasurement_type"),
+				 CDMModelPackage.Literals.ROS_CONTEXT_DEPENDENT_MEASUREMENT__TOPIC,
 				 true,
 				 false,
 				 true,

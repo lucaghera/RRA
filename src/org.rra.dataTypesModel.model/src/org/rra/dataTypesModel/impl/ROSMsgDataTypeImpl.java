@@ -32,20 +32,16 @@ package org.rra.dataTypesModel.impl;
 
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.rra.dataTypesModel.DataTypesModelPackage;
 import org.rra.dataTypesModel.ROSMsgDataType;
 import org.rra.dataTypesModel.ROSMsgField;
-import org.rra.dataTypesModel.ROSMsgFunction;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,7 +52,6 @@ import org.rra.dataTypesModel.ROSMsgFunction;
  * <ul>
  *   <li>{@link org.rra.dataTypesModel.impl.ROSMsgDataTypeImpl#getMsgs_package <em>Msgs package</em>}</li>
  *   <li>{@link org.rra.dataTypesModel.impl.ROSMsgDataTypeImpl#getFields <em>Fields</em>}</li>
- *   <li>{@link org.rra.dataTypesModel.impl.ROSMsgDataTypeImpl#getFunctions <em>Functions</em>}</li>
  * </ul>
  * </p>
  *
@@ -92,16 +87,6 @@ public class ROSMsgDataTypeImpl extends DataTypeImpl implements ROSMsgDataType {
 	 * @ordered
 	 */
 	protected EList<ROSMsgField> fields;
-
-	/**
-	 * The cached value of the '{@link #getFunctions() <em>Functions</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFunctions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ROSMsgFunction> functions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,18 +133,6 @@ public class ROSMsgDataTypeImpl extends DataTypeImpl implements ROSMsgDataType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ROSMsgFunction> getFunctions() {
-		if (functions == null) {
-			functions = new EObjectContainmentEList<ROSMsgFunction>(ROSMsgFunction.class, this, DataTypesModelPackage.ROS_MSG_DATA_TYPE__FUNCTIONS);
-		}
-		return functions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<ROSMsgField> getFields() {
 		if (fields == null) {
 			fields = new EObjectContainmentEList<ROSMsgField>(ROSMsgField.class, this, DataTypesModelPackage.ROS_MSG_DATA_TYPE__FIELDS);
@@ -177,8 +150,6 @@ public class ROSMsgDataTypeImpl extends DataTypeImpl implements ROSMsgDataType {
 		switch (featureID) {
 			case DataTypesModelPackage.ROS_MSG_DATA_TYPE__FIELDS:
 				return ((InternalEList<?>)getFields()).basicRemove(otherEnd, msgs);
-			case DataTypesModelPackage.ROS_MSG_DATA_TYPE__FUNCTIONS:
-				return ((InternalEList<?>)getFunctions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -195,8 +166,6 @@ public class ROSMsgDataTypeImpl extends DataTypeImpl implements ROSMsgDataType {
 				return getMsgs_package();
 			case DataTypesModelPackage.ROS_MSG_DATA_TYPE__FIELDS:
 				return getFields();
-			case DataTypesModelPackage.ROS_MSG_DATA_TYPE__FUNCTIONS:
-				return getFunctions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -217,10 +186,6 @@ public class ROSMsgDataTypeImpl extends DataTypeImpl implements ROSMsgDataType {
 				getFields().clear();
 				getFields().addAll((Collection<? extends ROSMsgField>)newValue);
 				return;
-			case DataTypesModelPackage.ROS_MSG_DATA_TYPE__FUNCTIONS:
-				getFunctions().clear();
-				getFunctions().addAll((Collection<? extends ROSMsgFunction>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -239,9 +204,6 @@ public class ROSMsgDataTypeImpl extends DataTypeImpl implements ROSMsgDataType {
 			case DataTypesModelPackage.ROS_MSG_DATA_TYPE__FIELDS:
 				getFields().clear();
 				return;
-			case DataTypesModelPackage.ROS_MSG_DATA_TYPE__FUNCTIONS:
-				getFunctions().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -258,8 +220,6 @@ public class ROSMsgDataTypeImpl extends DataTypeImpl implements ROSMsgDataType {
 				return MSGS_PACKAGE_EDEFAULT == null ? msgs_package != null : !MSGS_PACKAGE_EDEFAULT.equals(msgs_package);
 			case DataTypesModelPackage.ROS_MSG_DATA_TYPE__FIELDS:
 				return fields != null && !fields.isEmpty();
-			case DataTypesModelPackage.ROS_MSG_DATA_TYPE__FUNCTIONS:
-				return functions != null && !functions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

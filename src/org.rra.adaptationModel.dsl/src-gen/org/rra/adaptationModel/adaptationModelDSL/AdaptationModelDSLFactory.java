@@ -50,6 +50,24 @@ public interface AdaptationModelDSLFactory extends EFactory
   Rule createRule();
 
   /**
+   * Returns a new object of class '<em>Rule With Priority</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rule With Priority</em>'.
+   * @generated
+   */
+  RuleWithPriority createRuleWithPriority();
+
+  /**
+   * Returns a new object of class '<em>Rule Set</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rule Set</em>'.
+   * @generated
+   */
+  RuleSet createRuleSet();
+
+  /**
    * Returns a new object of class '<em>Condition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -66,42 +84,6 @@ public interface AdaptationModelDSLFactory extends EFactory
    * @generated
    */
   MeasurementComparison createMeasurementComparison();
-
-  /**
-   * Returns a new object of class '<em>MATH OPERATOR</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>MATH OPERATOR</em>'.
-   * @generated
-   */
-  MATH_OPERATOR createMATH_OPERATOR();
-
-  /**
-   * Returns a new object of class '<em>AVG</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>AVG</em>'.
-   * @generated
-   */
-  AVG createAVG();
-
-  /**
-   * Returns a new object of class '<em>MIN</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>MIN</em>'.
-   * @generated
-   */
-  MIN createMIN();
-
-  /**
-   * Returns a new object of class '<em>MAX</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>MAX</em>'.
-   * @generated
-   */
-  MAX createMAX();
 
   /**
    * Returns a new object of class '<em>Atomic Action</em>'.

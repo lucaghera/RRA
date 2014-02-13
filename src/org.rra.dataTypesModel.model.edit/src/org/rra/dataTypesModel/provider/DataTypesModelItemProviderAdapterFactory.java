@@ -328,6 +328,52 @@ public class DataTypesModelItemProviderAdapterFactory extends DataTypesModelAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.rra.dataTypesModel.Enumerator} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnumeratorItemProvider enumeratorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.rra.dataTypesModel.Enumerator}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnumeratorAdapter() {
+		if (enumeratorItemProvider == null) {
+			enumeratorItemProvider = new EnumeratorItemProvider(this);
+		}
+
+		return enumeratorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.rra.dataTypesModel.EnumElement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnumElementItemProvider enumElementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.rra.dataTypesModel.EnumElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnumElementAdapter() {
+		if (enumElementItemProvider == null) {
+			enumElementItemProvider = new EnumElementItemProvider(this);
+		}
+
+		return enumElementItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -430,6 +476,8 @@ public class DataTypesModelItemProviderAdapterFactory extends DataTypesModelAdap
 		if (primitiveDataTypeItemProvider != null) primitiveDataTypeItemProvider.dispose();
 		if (compositeDataTypeItemProvider != null) compositeDataTypeItemProvider.dispose();
 		if (rosMsgDataTypeItemProvider != null) rosMsgDataTypeItemProvider.dispose();
+		if (enumeratorItemProvider != null) enumeratorItemProvider.dispose();
+		if (enumElementItemProvider != null) enumElementItemProvider.dispose();
 		if (containerDataTypeItemProvider != null) containerDataTypeItemProvider.dispose();
 		if (memberFunctionItemProvider != null) memberFunctionItemProvider.dispose();
 		if (nonMemberFunctionItemProvider != null) nonMemberFunctionItemProvider.dispose();

@@ -42,6 +42,8 @@ import org.rra.dataTypesModel.DataType;
 import org.rra.dataTypesModel.DataTypesModel;
 import org.rra.dataTypesModel.DataTypesModelFactory;
 import org.rra.dataTypesModel.DataTypesModelPackage;
+import org.rra.dataTypesModel.EnumElement;
+import org.rra.dataTypesModel.Enumerator;
 import org.rra.dataTypesModel.Field;
 import org.rra.dataTypesModel.Function;
 import org.rra.dataTypesModel.MemberFunction;
@@ -150,6 +152,20 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 	private EClass rosMsgDataTypeEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass enumeratorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass enumElementEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -244,6 +260,15 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 	 */
 	public EReference getDataTypesModel_NonMemberFunctions() {
 		return (EReference)dataTypesModelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDataTypesModel_RosMsgFunctions() {
+		return (EReference)dataTypesModelEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -485,8 +510,35 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getROSMsgDataType_Functions() {
-		return (EReference)rosMsgDataTypeEClass.getEStructuralFeatures().get(2);
+	public EClass getEnumerator() {
+		return enumeratorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEnumerator_Elements() {
+		return (EReference)enumeratorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEnumElement() {
+		return enumElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEnumElement_Name() {
+		return (EAttribute)enumElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -530,6 +582,7 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 		createEAttribute(dataTypesModelEClass, DATA_TYPES_MODEL__NAME);
 		createEReference(dataTypesModelEClass, DATA_TYPES_MODEL__TYPES);
 		createEReference(dataTypesModelEClass, DATA_TYPES_MODEL__NON_MEMBER_FUNCTIONS);
+		createEReference(dataTypesModelEClass, DATA_TYPES_MODEL__ROS_MSG_FUNCTIONS);
 
 		dataTypeEClass = createEClass(DATA_TYPE);
 		createEAttribute(dataTypeEClass, DATA_TYPE__NAME);
@@ -543,7 +596,12 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 		rosMsgDataTypeEClass = createEClass(ROS_MSG_DATA_TYPE);
 		createEAttribute(rosMsgDataTypeEClass, ROS_MSG_DATA_TYPE__MSGS_PACKAGE);
 		createEReference(rosMsgDataTypeEClass, ROS_MSG_DATA_TYPE__FIELDS);
-		createEReference(rosMsgDataTypeEClass, ROS_MSG_DATA_TYPE__FUNCTIONS);
+
+		enumeratorEClass = createEClass(ENUMERATOR);
+		createEReference(enumeratorEClass, ENUMERATOR__ELEMENTS);
+
+		enumElementEClass = createEClass(ENUM_ELEMENT);
+		createEAttribute(enumElementEClass, ENUM_ELEMENT__NAME);
 
 		containerDataTypeEClass = createEClass(CONTAINER_DATA_TYPE);
 		createEReference(containerDataTypeEClass, CONTAINER_DATA_TYPE__TEMPLATE);
@@ -603,6 +661,7 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 		primitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
 		compositeDataTypeEClass.getESuperTypes().add(this.getDataType());
 		rosMsgDataTypeEClass.getESuperTypes().add(this.getDataType());
+		enumeratorEClass.getESuperTypes().add(this.getDataType());
 		containerDataTypeEClass.getESuperTypes().add(this.getDataType());
 		memberFunctionEClass.getESuperTypes().add(this.getFunction());
 		nonMemberFunctionEClass.getESuperTypes().add(this.getFunction());
@@ -615,6 +674,7 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 		initEAttribute(getDataTypesModel_Name(), ecorePackage.getEString(), "name", null, 1, 1, DataTypesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataTypesModel_Types(), this.getDataType(), null, "types", null, 1, -1, DataTypesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataTypesModel_NonMemberFunctions(), this.getNonMemberFunction(), null, "nonMemberFunctions", null, 0, -1, DataTypesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataTypesModel_RosMsgFunctions(), this.getROSMsgFunction(), null, "rosMsgFunctions", null, 0, -1, DataTypesModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataType_Name(), ecorePackage.getEString(), "name", null, 1, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -628,7 +688,12 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 		initEClass(rosMsgDataTypeEClass, ROSMsgDataType.class, "ROSMsgDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getROSMsgDataType_Msgs_package(), ecorePackage.getEString(), "msgs_package", null, 1, 1, ROSMsgDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getROSMsgDataType_Fields(), this.getROSMsgField(), null, "fields", null, 1, -1, ROSMsgDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getROSMsgDataType_Functions(), this.getROSMsgFunction(), null, "functions", null, 0, -1, ROSMsgDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(enumeratorEClass, Enumerator.class, "Enumerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEnumerator_Elements(), this.getEnumElement(), null, "elements", null, 1, -1, Enumerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(enumElementEClass, EnumElement.class, "EnumElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEnumElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, EnumElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(containerDataTypeEClass, ContainerDataType.class, "ContainerDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getContainerDataType_Template(), this.getDataType(), null, "template", null, 1, 1, ContainerDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

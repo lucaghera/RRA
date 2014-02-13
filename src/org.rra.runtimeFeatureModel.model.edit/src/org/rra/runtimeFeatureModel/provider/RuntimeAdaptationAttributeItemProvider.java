@@ -86,6 +86,8 @@ public class RuntimeAdaptationAttributeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addMeasureUnitPropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
+			addDataTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -108,6 +110,50 @@ public class RuntimeAdaptationAttributeItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RuntimeAdaptationAttribute_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RuntimeAdaptationAttribute_value_feature", "_UI_RuntimeAdaptationAttribute_type"),
+				 RuntimeFeatureModelPackage.Literals.RUNTIME_ADAPTATION_ATTRIBUTE__VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Data Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDataTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RuntimeAdaptationAttribute_dataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RuntimeAdaptationAttribute_dataType_feature", "_UI_RuntimeAdaptationAttribute_type"),
+				 RuntimeFeatureModelPackage.Literals.RUNTIME_ADAPTATION_ATTRIBUTE__DATA_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -139,6 +185,7 @@ public class RuntimeAdaptationAttributeItemProvider
 
 		switch (notification.getFeatureID(RuntimeAdaptationAttribute.class)) {
 			case RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE__MEASURE_UNIT:
+			case RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

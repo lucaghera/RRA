@@ -44,6 +44,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.rra.dataTypesModel.DataTypesModel#getName <em>Name</em>}</li>
  *   <li>{@link org.rra.dataTypesModel.DataTypesModel#getTypes <em>Types</em>}</li>
  *   <li>{@link org.rra.dataTypesModel.DataTypesModel#getNonMemberFunctions <em>Non Member Functions</em>}</li>
+ *   <li>{@link org.rra.dataTypesModel.DataTypesModel#getRosMsgFunctions <em>Ros Msg Functions</em>}</li>
  * </ul>
  * </p>
  *
@@ -109,5 +110,21 @@ public interface DataTypesModel extends EObject {
 	 * @generated
 	 */
 	EList<NonMemberFunction> getNonMemberFunctions();
+
+	/**
+	 * Returns the value of the '<em><b>Ros Msg Functions</b></em>' containment reference list.
+	 * The list contents are of type {@link org.rra.dataTypesModel.ROSMsgFunction}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ros Msg Functions</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ros Msg Functions</em>' containment reference list.
+	 * @see org.rra.dataTypesModel.DataTypesModelPackage#getDataTypesModel_RosMsgFunctions()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ROSMsgFunction> getRosMsgFunctions();
 
 } // DataTypesModel

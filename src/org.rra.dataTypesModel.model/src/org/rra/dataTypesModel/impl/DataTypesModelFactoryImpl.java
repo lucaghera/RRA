@@ -85,6 +85,8 @@ public class DataTypesModelFactoryImpl extends EFactoryImpl implements DataTypes
 			case DataTypesModelPackage.PRIMITIVE_DATA_TYPE: return createPrimitiveDataType();
 			case DataTypesModelPackage.COMPOSITE_DATA_TYPE: return createCompositeDataType();
 			case DataTypesModelPackage.ROS_MSG_DATA_TYPE: return createROSMsgDataType();
+			case DataTypesModelPackage.ENUMERATOR: return createEnumerator();
+			case DataTypesModelPackage.ENUM_ELEMENT: return createEnumElement();
 			case DataTypesModelPackage.CONTAINER_DATA_TYPE: return createContainerDataType();
 			case DataTypesModelPackage.MEMBER_FUNCTION: return createMemberFunction();
 			case DataTypesModelPackage.NON_MEMBER_FUNCTION: return createNonMemberFunction();
@@ -194,6 +196,26 @@ public class DataTypesModelFactoryImpl extends EFactoryImpl implements DataTypes
 	public ROSMsgDataType createROSMsgDataType() {
 		ROSMsgDataTypeImpl rosMsgDataType = new ROSMsgDataTypeImpl();
 		return rosMsgDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumerator createEnumerator() {
+		EnumeratorImpl enumerator = new EnumeratorImpl();
+		return enumerator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EnumElement createEnumElement() {
+		EnumElementImpl enumElement = new EnumElementImpl();
+		return enumElement;
 	}
 
 	/**

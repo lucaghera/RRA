@@ -187,13 +187,13 @@ public interface CDMModelPackage extends EPackage {
 	int ROS_CONTEXT_DEPENDENT_MEASUREMENT__NAME = CONTEXT_DEPENDENT_MEASUREMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Publisher</b></em>' reference.
+	 * The feature id for the '<em><b>Topic</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_CONTEXT_DEPENDENT_MEASUREMENT__PUBLISHER = CONTEXT_DEPENDENT_MEASUREMENT_FEATURE_COUNT + 0;
+	int ROS_CONTEXT_DEPENDENT_MEASUREMENT__TOPIC = CONTEXT_DEPENDENT_MEASUREMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Input Data Type</b></em>' reference.
@@ -342,15 +342,15 @@ public interface CDMModelPackage extends EPackage {
 	EClass getROSContextDependentMeasurement();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.rra.cdmModel.ROSContextDependentMeasurement#getPublisher <em>Publisher</em>}'.
+	 * Returns the meta object for the reference '{@link org.rra.cdmModel.ROSContextDependentMeasurement#getTopic <em>Topic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Publisher</em>'.
-	 * @see org.rra.cdmModel.ROSContextDependentMeasurement#getPublisher()
+	 * @return the meta object for the reference '<em>Topic</em>'.
+	 * @see org.rra.cdmModel.ROSContextDependentMeasurement#getTopic()
 	 * @see #getROSContextDependentMeasurement()
 	 * @generated
 	 */
-	EReference getROSContextDependentMeasurement_Publisher();
+	EReference getROSContextDependentMeasurement_Topic();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.rra.cdmModel.ROSContextDependentMeasurement#getInputDataType <em>Input Data Type</em>}'.
@@ -473,12 +473,12 @@ public interface CDMModelPackage extends EPackage {
 		EClass ROS_CONTEXT_DEPENDENT_MEASUREMENT = eINSTANCE.getROSContextDependentMeasurement();
 
 		/**
-		 * The meta object literal for the '<em><b>Publisher</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Topic</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROS_CONTEXT_DEPENDENT_MEASUREMENT__PUBLISHER = eINSTANCE.getROSContextDependentMeasurement_Publisher();
+		EReference ROS_CONTEXT_DEPENDENT_MEASUREMENT__TOPIC = eINSTANCE.getROSContextDependentMeasurement_Topic();
 
 		/**
 		 * The meta object literal for the '<em><b>Input Data Type</b></em>' reference feature.

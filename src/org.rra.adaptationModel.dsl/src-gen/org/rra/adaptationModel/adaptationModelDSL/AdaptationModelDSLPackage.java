@@ -85,13 +85,22 @@ public interface AdaptationModelDSLPackage extends EPackage
   int ADAPTATION_MODEL__RULES = 1;
 
   /**
+   * The feature id for the '<em><b>Rule Sets</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADAPTATION_MODEL__RULE_SETS = 2;
+
+  /**
    * The number of structural features of the '<em>Adaptation Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ADAPTATION_MODEL_FEATURE_COUNT = 2;
+  int ADAPTATION_MODEL_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.ImportImpl <em>Import</em>}' class.
@@ -168,6 +177,80 @@ public interface AdaptationModelDSLPackage extends EPackage
   int RULE_FEATURE_COUNT = 3;
 
   /**
+   * The meta object id for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.RuleWithPriorityImpl <em>Rule With Priority</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.rra.adaptationModel.adaptationModelDSL.impl.RuleWithPriorityImpl
+   * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getRuleWithPriority()
+   * @generated
+   */
+  int RULE_WITH_PRIORITY = 3;
+
+  /**
+   * The feature id for the '<em><b>Priority Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_WITH_PRIORITY__PRIORITY_VALUE = 0;
+
+  /**
+   * The feature id for the '<em><b>Rule</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_WITH_PRIORITY__RULE = 1;
+
+  /**
+   * The number of structural features of the '<em>Rule With Priority</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_WITH_PRIORITY_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.RuleSetImpl <em>Rule Set</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.rra.adaptationModel.adaptationModelDSL.impl.RuleSetImpl
+   * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getRuleSet()
+   * @generated
+   */
+  int RULE_SET = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_SET__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Rules</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_SET__RULES = 1;
+
+  /**
+   * The number of structural features of the '<em>Rule Set</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_SET_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.ConditionImpl <em>Condition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -175,7 +258,7 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getCondition()
    * @generated
    */
-  int CONDITION = 3;
+  int CONDITION = 5;
 
   /**
    * The feature id for the '<em><b>Measurement Comparison</b></em>' containment reference list.
@@ -203,7 +286,7 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getMeasurementComparison()
    * @generated
    */
-  int MEASUREMENT_COMPARISON = 4;
+  int MEASUREMENT_COMPARISON = 6;
 
   /**
    * The feature id for the '<em><b>Measurement</b></em>' reference.
@@ -215,13 +298,22 @@ public interface AdaptationModelDSLPackage extends EPackage
   int MEASUREMENT_COMPARISON__MEASUREMENT = 0;
 
   /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MEASUREMENT_COMPARISON__VALUE = 1;
+
+  /**
    * The number of structural features of the '<em>Measurement Comparison</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MEASUREMENT_COMPARISON_FEATURE_COUNT = 1;
+  int MEASUREMENT_COMPARISON_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.AtomicActionImpl <em>Atomic Action</em>}' class.
@@ -231,7 +323,7 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getAtomicAction()
    * @generated
    */
-  int ATOMIC_ACTION = 9;
+  int ATOMIC_ACTION = 7;
 
   /**
    * The number of structural features of the '<em>Atomic Action</em>' class.
@@ -250,7 +342,25 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getQueryAction()
    * @generated
    */
-  int QUERY_ACTION = 10;
+  int QUERY_ACTION = 8;
+
+  /**
+   * The feature id for the '<em><b>Feature</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERY_ACTION__FEATURE = ATOMIC_ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERY_ACTION__VALUE = ATOMIC_ACTION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Query Action</em>' class.
@@ -259,155 +369,7 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUERY_ACTION_FEATURE_COUNT = ATOMIC_ACTION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.MATH_OPERATORImpl <em>MATH OPERATOR</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.rra.adaptationModel.adaptationModelDSL.impl.MATH_OPERATORImpl
-   * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getMATH_OPERATOR()
-   * @generated
-   */
-  int MATH_OPERATOR = 5;
-
-  /**
-   * The feature id for the '<em><b>Feature</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MATH_OPERATOR__FEATURE = QUERY_ACTION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Measurement</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MATH_OPERATOR__MEASUREMENT = QUERY_ACTION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>MATH OPERATOR</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MATH_OPERATOR_FEATURE_COUNT = QUERY_ACTION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.AVGImpl <em>AVG</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.rra.adaptationModel.adaptationModelDSL.impl.AVGImpl
-   * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getAVG()
-   * @generated
-   */
-  int AVG = 6;
-
-  /**
-   * The feature id for the '<em><b>Feature</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AVG__FEATURE = MATH_OPERATOR__FEATURE;
-
-  /**
-   * The feature id for the '<em><b>Measurement</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AVG__MEASUREMENT = MATH_OPERATOR__MEASUREMENT;
-
-  /**
-   * The number of structural features of the '<em>AVG</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AVG_FEATURE_COUNT = MATH_OPERATOR_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.MINImpl <em>MIN</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.rra.adaptationModel.adaptationModelDSL.impl.MINImpl
-   * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getMIN()
-   * @generated
-   */
-  int MIN = 7;
-
-  /**
-   * The feature id for the '<em><b>Feature</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MIN__FEATURE = MATH_OPERATOR__FEATURE;
-
-  /**
-   * The feature id for the '<em><b>Measurement</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MIN__MEASUREMENT = MATH_OPERATOR__MEASUREMENT;
-
-  /**
-   * The number of structural features of the '<em>MIN</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MIN_FEATURE_COUNT = MATH_OPERATOR_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.MAXImpl <em>MAX</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.rra.adaptationModel.adaptationModelDSL.impl.MAXImpl
-   * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getMAX()
-   * @generated
-   */
-  int MAX = 8;
-
-  /**
-   * The feature id for the '<em><b>Feature</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAX__FEATURE = MATH_OPERATOR__FEATURE;
-
-  /**
-   * The feature id for the '<em><b>Measurement</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAX__MEASUREMENT = MATH_OPERATOR__MEASUREMENT;
-
-  /**
-   * The number of structural features of the '<em>MAX</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAX_FEATURE_COUNT = MATH_OPERATOR_FEATURE_COUNT + 0;
+  int QUERY_ACTION_FEATURE_COUNT = ATOMIC_ACTION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.SelectActionImpl <em>Select Action</em>}' class.
@@ -417,7 +379,7 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getSelectAction()
    * @generated
    */
-  int SELECT_ACTION = 11;
+  int SELECT_ACTION = 9;
 
   /**
    * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -445,7 +407,7 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getDeselectAction()
    * @generated
    */
-  int DESELECT_ACTION = 12;
+  int DESELECT_ACTION = 10;
 
   /**
    * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -473,7 +435,7 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getModifyAttribute()
    * @generated
    */
-  int MODIFY_ATTRIBUTE = 13;
+  int MODIFY_ATTRIBUTE = 11;
 
   /**
    * The feature id for the '<em><b>Feature Attribute</b></em>' reference.
@@ -510,7 +472,7 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getAttributeValue()
    * @generated
    */
-  int ATTRIBUTE_VALUE = 14;
+  int ATTRIBUTE_VALUE = 12;
 
   /**
    * The number of structural features of the '<em>Attribute Value</em>' class.
@@ -529,7 +491,7 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getStringAttributeValue()
    * @generated
    */
-  int STRING_ATTRIBUTE_VALUE = 15;
+  int STRING_ATTRIBUTE_VALUE = 13;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -557,7 +519,7 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getNFRAttributeValue()
    * @generated
    */
-  int NFR_ATTRIBUTE_VALUE = 16;
+  int NFR_ATTRIBUTE_VALUE = 14;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' reference.
@@ -609,6 +571,17 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @generated
    */
   EReference getAdaptationModel_Rules();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getRuleSets <em>Rule Sets</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Rule Sets</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getRuleSets()
+   * @see #getAdaptationModel()
+   * @generated
+   */
+  EReference getAdaptationModel_RuleSets();
 
   /**
    * Returns the meta object for class '{@link org.rra.adaptationModel.adaptationModelDSL.Import <em>Import</em>}'.
@@ -675,6 +648,70 @@ public interface AdaptationModelDSLPackage extends EPackage
   EReference getRule_AtomicAction();
 
   /**
+   * Returns the meta object for class '{@link org.rra.adaptationModel.adaptationModelDSL.RuleWithPriority <em>Rule With Priority</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rule With Priority</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.RuleWithPriority
+   * @generated
+   */
+  EClass getRuleWithPriority();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.rra.adaptationModel.adaptationModelDSL.RuleWithPriority#getPriorityValue <em>Priority Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Priority Value</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.RuleWithPriority#getPriorityValue()
+   * @see #getRuleWithPriority()
+   * @generated
+   */
+  EAttribute getRuleWithPriority_PriorityValue();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.rra.adaptationModel.adaptationModelDSL.RuleWithPriority#getRule <em>Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Rule</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.RuleWithPriority#getRule()
+   * @see #getRuleWithPriority()
+   * @generated
+   */
+  EReference getRuleWithPriority_Rule();
+
+  /**
+   * Returns the meta object for class '{@link org.rra.adaptationModel.adaptationModelDSL.RuleSet <em>Rule Set</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rule Set</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.RuleSet
+   * @generated
+   */
+  EClass getRuleSet();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.rra.adaptationModel.adaptationModelDSL.RuleSet#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.RuleSet#getName()
+   * @see #getRuleSet()
+   * @generated
+   */
+  EAttribute getRuleSet_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.rra.adaptationModel.adaptationModelDSL.RuleSet#getRules <em>Rules</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Rules</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.RuleSet#getRules()
+   * @see #getRuleSet()
+   * @generated
+   */
+  EReference getRuleSet_Rules();
+
+  /**
    * Returns the meta object for class '{@link org.rra.adaptationModel.adaptationModelDSL.Condition <em>Condition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -717,66 +754,15 @@ public interface AdaptationModelDSLPackage extends EPackage
   EReference getMeasurementComparison_Measurement();
 
   /**
-   * Returns the meta object for class '{@link org.rra.adaptationModel.adaptationModelDSL.MATH_OPERATOR <em>MATH OPERATOR</em>}'.
+   * Returns the meta object for the attribute '{@link org.rra.adaptationModel.adaptationModelDSL.MeasurementComparison#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>MATH OPERATOR</em>'.
-   * @see org.rra.adaptationModel.adaptationModelDSL.MATH_OPERATOR
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.MeasurementComparison#getValue()
+   * @see #getMeasurementComparison()
    * @generated
    */
-  EClass getMATH_OPERATOR();
-
-  /**
-   * Returns the meta object for the reference '{@link org.rra.adaptationModel.adaptationModelDSL.MATH_OPERATOR#getFeature <em>Feature</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Feature</em>'.
-   * @see org.rra.adaptationModel.adaptationModelDSL.MATH_OPERATOR#getFeature()
-   * @see #getMATH_OPERATOR()
-   * @generated
-   */
-  EReference getMATH_OPERATOR_Feature();
-
-  /**
-   * Returns the meta object for the reference list '{@link org.rra.adaptationModel.adaptationModelDSL.MATH_OPERATOR#getMeasurement <em>Measurement</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Measurement</em>'.
-   * @see org.rra.adaptationModel.adaptationModelDSL.MATH_OPERATOR#getMeasurement()
-   * @see #getMATH_OPERATOR()
-   * @generated
-   */
-  EReference getMATH_OPERATOR_Measurement();
-
-  /**
-   * Returns the meta object for class '{@link org.rra.adaptationModel.adaptationModelDSL.AVG <em>AVG</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>AVG</em>'.
-   * @see org.rra.adaptationModel.adaptationModelDSL.AVG
-   * @generated
-   */
-  EClass getAVG();
-
-  /**
-   * Returns the meta object for class '{@link org.rra.adaptationModel.adaptationModelDSL.MIN <em>MIN</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>MIN</em>'.
-   * @see org.rra.adaptationModel.adaptationModelDSL.MIN
-   * @generated
-   */
-  EClass getMIN();
-
-  /**
-   * Returns the meta object for class '{@link org.rra.adaptationModel.adaptationModelDSL.MAX <em>MAX</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>MAX</em>'.
-   * @see org.rra.adaptationModel.adaptationModelDSL.MAX
-   * @generated
-   */
-  EClass getMAX();
+  EAttribute getMeasurementComparison_Value();
 
   /**
    * Returns the meta object for class '{@link org.rra.adaptationModel.adaptationModelDSL.AtomicAction <em>Atomic Action</em>}'.
@@ -797,6 +783,28 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @generated
    */
   EClass getQueryAction();
+
+  /**
+   * Returns the meta object for the reference '{@link org.rra.adaptationModel.adaptationModelDSL.QueryAction#getFeature <em>Feature</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Feature</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.QueryAction#getFeature()
+   * @see #getQueryAction()
+   * @generated
+   */
+  EReference getQueryAction_Feature();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.rra.adaptationModel.adaptationModelDSL.QueryAction#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.QueryAction#getValue()
+   * @see #getQueryAction()
+   * @generated
+   */
+  EAttribute getQueryAction_Value();
 
   /**
    * Returns the meta object for class '{@link org.rra.adaptationModel.adaptationModelDSL.SelectAction <em>Select Action</em>}'.
@@ -974,6 +982,14 @@ public interface AdaptationModelDSLPackage extends EPackage
     EReference ADAPTATION_MODEL__RULES = eINSTANCE.getAdaptationModel_Rules();
 
     /**
+     * The meta object literal for the '<em><b>Rule Sets</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADAPTATION_MODEL__RULE_SETS = eINSTANCE.getAdaptationModel_RuleSets();
+
+    /**
      * The meta object literal for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.ImportImpl <em>Import</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1026,6 +1042,58 @@ public interface AdaptationModelDSLPackage extends EPackage
     EReference RULE__ATOMIC_ACTION = eINSTANCE.getRule_AtomicAction();
 
     /**
+     * The meta object literal for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.RuleWithPriorityImpl <em>Rule With Priority</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.rra.adaptationModel.adaptationModelDSL.impl.RuleWithPriorityImpl
+     * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getRuleWithPriority()
+     * @generated
+     */
+    EClass RULE_WITH_PRIORITY = eINSTANCE.getRuleWithPriority();
+
+    /**
+     * The meta object literal for the '<em><b>Priority Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULE_WITH_PRIORITY__PRIORITY_VALUE = eINSTANCE.getRuleWithPriority_PriorityValue();
+
+    /**
+     * The meta object literal for the '<em><b>Rule</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RULE_WITH_PRIORITY__RULE = eINSTANCE.getRuleWithPriority_Rule();
+
+    /**
+     * The meta object literal for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.RuleSetImpl <em>Rule Set</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.rra.adaptationModel.adaptationModelDSL.impl.RuleSetImpl
+     * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getRuleSet()
+     * @generated
+     */
+    EClass RULE_SET = eINSTANCE.getRuleSet();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULE_SET__NAME = eINSTANCE.getRuleSet_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RULE_SET__RULES = eINSTANCE.getRuleSet_Rules();
+
+    /**
      * The meta object literal for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.ConditionImpl <em>Condition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1062,60 +1130,12 @@ public interface AdaptationModelDSLPackage extends EPackage
     EReference MEASUREMENT_COMPARISON__MEASUREMENT = eINSTANCE.getMeasurementComparison_Measurement();
 
     /**
-     * The meta object literal for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.MATH_OPERATORImpl <em>MATH OPERATOR</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.rra.adaptationModel.adaptationModelDSL.impl.MATH_OPERATORImpl
-     * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getMATH_OPERATOR()
-     * @generated
-     */
-    EClass MATH_OPERATOR = eINSTANCE.getMATH_OPERATOR();
-
-    /**
-     * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MATH_OPERATOR__FEATURE = eINSTANCE.getMATH_OPERATOR_Feature();
-
-    /**
-     * The meta object literal for the '<em><b>Measurement</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MATH_OPERATOR__MEASUREMENT = eINSTANCE.getMATH_OPERATOR_Measurement();
-
-    /**
-     * The meta object literal for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.AVGImpl <em>AVG</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.rra.adaptationModel.adaptationModelDSL.impl.AVGImpl
-     * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getAVG()
-     * @generated
-     */
-    EClass AVG = eINSTANCE.getAVG();
-
-    /**
-     * The meta object literal for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.MINImpl <em>MIN</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.rra.adaptationModel.adaptationModelDSL.impl.MINImpl
-     * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getMIN()
-     * @generated
-     */
-    EClass MIN = eINSTANCE.getMIN();
-
-    /**
-     * The meta object literal for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.MAXImpl <em>MAX</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.rra.adaptationModel.adaptationModelDSL.impl.MAXImpl
-     * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getMAX()
-     * @generated
-     */
-    EClass MAX = eINSTANCE.getMAX();
+    EAttribute MEASUREMENT_COMPARISON__VALUE = eINSTANCE.getMeasurementComparison_Value();
 
     /**
      * The meta object literal for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.AtomicActionImpl <em>Atomic Action</em>}' class.
@@ -1136,6 +1156,22 @@ public interface AdaptationModelDSLPackage extends EPackage
      * @generated
      */
     EClass QUERY_ACTION = eINSTANCE.getQueryAction();
+
+    /**
+     * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference QUERY_ACTION__FEATURE = eINSTANCE.getQueryAction_Feature();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute QUERY_ACTION__VALUE = eINSTANCE.getQueryAction_Value();
 
     /**
      * The meta object literal for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.SelectActionImpl <em>Select Action</em>}' class.

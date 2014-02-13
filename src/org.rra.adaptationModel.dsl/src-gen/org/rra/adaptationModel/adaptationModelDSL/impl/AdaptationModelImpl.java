@@ -20,6 +20,7 @@ import org.rra.adaptationModel.adaptationModelDSL.AdaptationModel;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
 import org.rra.adaptationModel.adaptationModelDSL.Import;
 import org.rra.adaptationModel.adaptationModelDSL.Rule;
+import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +31,7 @@ import org.rra.adaptationModel.adaptationModelDSL.Rule;
  * <ul>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getRules <em>Rules</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getRuleSets <em>Rule Sets</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,6 +58,16 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
    * @ordered
    */
   protected EList<Rule> rules;
+
+  /**
+   * The cached value of the '{@link #getRuleSets() <em>Rule Sets</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRuleSets()
+   * @generated
+   * @ordered
+   */
+  protected EList<RuleSet> ruleSets;
 
   /**
    * <!-- begin-user-doc -->
@@ -111,6 +123,20 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<RuleSet> getRuleSets()
+  {
+    if (ruleSets == null)
+    {
+      ruleSets = new EObjectContainmentEList<RuleSet>(RuleSet.class, this, AdaptationModelDSLPackage.ADAPTATION_MODEL__RULE_SETS);
+    }
+    return ruleSets;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -120,6 +146,8 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
         return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULES:
         return ((InternalEList<?>)getRules()).basicRemove(otherEnd, msgs);
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULE_SETS:
+        return ((InternalEList<?>)getRuleSets()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -138,6 +166,8 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
         return getImports();
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULES:
         return getRules();
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULE_SETS:
+        return getRuleSets();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -161,6 +191,10 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
         getRules().clear();
         getRules().addAll((Collection<? extends Rule>)newValue);
         return;
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULE_SETS:
+        getRuleSets().clear();
+        getRuleSets().addAll((Collection<? extends RuleSet>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -181,6 +215,9 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULES:
         getRules().clear();
         return;
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULE_SETS:
+        getRuleSets().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -199,6 +236,8 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
         return imports != null && !imports.isEmpty();
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULES:
         return rules != null && !rules.isEmpty();
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULE_SETS:
+        return ruleSets != null && !ruleSets.isEmpty();
     }
     return super.eIsSet(featureID);
   }

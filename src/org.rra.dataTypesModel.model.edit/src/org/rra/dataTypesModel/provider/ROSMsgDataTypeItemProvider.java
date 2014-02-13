@@ -127,7 +127,6 @@ public class ROSMsgDataTypeItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DataTypesModelPackage.Literals.ROS_MSG_DATA_TYPE__FIELDS);
-			childrenFeatures.add(DataTypesModelPackage.Literals.ROS_MSG_DATA_TYPE__FUNCTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -186,7 +185,6 @@ public class ROSMsgDataTypeItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case DataTypesModelPackage.ROS_MSG_DATA_TYPE__FIELDS:
-			case DataTypesModelPackage.ROS_MSG_DATA_TYPE__FUNCTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -208,11 +206,6 @@ public class ROSMsgDataTypeItemProvider
 			(createChildParameter
 				(DataTypesModelPackage.Literals.ROS_MSG_DATA_TYPE__FIELDS,
 				 DataTypesModelFactory.eINSTANCE.createROSMsgField()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DataTypesModelPackage.Literals.ROS_MSG_DATA_TYPE__FUNCTIONS,
-				 DataTypesModelFactory.eINSTANCE.createROSMsgFunction()));
 	}
 
 }

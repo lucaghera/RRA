@@ -90,6 +90,16 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
         return createRuleAdapter();
       }
       @Override
+      public Adapter caseRuleWithPriority(RuleWithPriority object)
+      {
+        return createRuleWithPriorityAdapter();
+      }
+      @Override
+      public Adapter caseRuleSet(RuleSet object)
+      {
+        return createRuleSetAdapter();
+      }
+      @Override
       public Adapter caseCondition(Condition object)
       {
         return createConditionAdapter();
@@ -98,26 +108,6 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseMeasurementComparison(MeasurementComparison object)
       {
         return createMeasurementComparisonAdapter();
-      }
-      @Override
-      public Adapter caseMATH_OPERATOR(MATH_OPERATOR object)
-      {
-        return createMATH_OPERATORAdapter();
-      }
-      @Override
-      public Adapter caseAVG(AVG object)
-      {
-        return createAVGAdapter();
-      }
-      @Override
-      public Adapter caseMIN(MIN object)
-      {
-        return createMINAdapter();
-      }
-      @Override
-      public Adapter caseMAX(MAX object)
-      {
-        return createMAXAdapter();
       }
       @Override
       public Adapter caseAtomicAction(AtomicAction object)
@@ -227,6 +217,36 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.RuleWithPriority <em>Rule With Priority</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.rra.adaptationModel.adaptationModelDSL.RuleWithPriority
+   * @generated
+   */
+  public Adapter createRuleWithPriorityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.RuleSet <em>Rule Set</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.rra.adaptationModel.adaptationModelDSL.RuleSet
+   * @generated
+   */
+  public Adapter createRuleSetAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.Condition <em>Condition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -252,66 +272,6 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMeasurementComparisonAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.MATH_OPERATOR <em>MATH OPERATOR</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.rra.adaptationModel.adaptationModelDSL.MATH_OPERATOR
-   * @generated
-   */
-  public Adapter createMATH_OPERATORAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.AVG <em>AVG</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.rra.adaptationModel.adaptationModelDSL.AVG
-   * @generated
-   */
-  public Adapter createAVGAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.MIN <em>MIN</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.rra.adaptationModel.adaptationModelDSL.MIN
-   * @generated
-   */
-  public Adapter createMINAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.MAX <em>MAX</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.rra.adaptationModel.adaptationModelDSL.MAX
-   * @generated
-   */
-  public Adapter createMAXAdapter()
   {
     return null;
   }

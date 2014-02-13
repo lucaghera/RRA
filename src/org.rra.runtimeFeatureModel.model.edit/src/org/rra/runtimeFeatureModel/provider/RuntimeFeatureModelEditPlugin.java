@@ -33,6 +33,7 @@ package org.rra.runtimeFeatureModel.provider;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.hyperflex.featuremodels.provider.FeatureModelEditPlugin;
+import org.rra.dataTypesModel.provider.DataTypesModelEditPlugin;
 
 /**
  * This is the central singleton for the RuntimeFeatureModel edit plugin.
@@ -66,6 +67,7 @@ public final class RuntimeFeatureModelEditPlugin extends EMFPlugin {
 	public RuntimeFeatureModelEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     DataTypesModelEditPlugin.INSTANCE,
 		     FeatureModelEditPlugin.INSTANCE,
 		   });
 	}

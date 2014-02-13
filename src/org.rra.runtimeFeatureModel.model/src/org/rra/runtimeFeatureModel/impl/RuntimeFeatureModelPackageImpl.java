@@ -34,13 +34,16 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.hyperflex.featuremodels.featuremodelsPackage;
+import org.rra.dataTypesModel.DataTypesModelPackage;
 import org.rra.runtimeFeatureModel.CIMAttribute;
 import org.rra.runtimeFeatureModel.CVAttribute;
 import org.rra.runtimeFeatureModel.NFRAttribute;
 import org.rra.runtimeFeatureModel.NFRAttributeTag;
 import org.rra.runtimeFeatureModel.RuntimeAdaptationAttribute;
+import org.rra.runtimeFeatureModel.RuntimeAdaptationAttributeTypes;
 import org.rra.runtimeFeatureModel.RuntimeFeatureModelFactory;
 import org.rra.runtimeFeatureModel.RuntimeFeatureModelPackage;
 
@@ -85,6 +88,13 @@ public class RuntimeFeatureModelPackageImpl extends EPackageImpl implements Runt
 	 * @generated
 	 */
 	private EEnum nfrAttributeTagEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum runtimeAdaptationAttributeTypesEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -133,6 +143,7 @@ public class RuntimeFeatureModelPackageImpl extends EPackageImpl implements Runt
 		isInited = true;
 
 		// Initialize simple dependencies
+		DataTypesModelPackage.eINSTANCE.eClass();
 		featuremodelsPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -166,6 +177,24 @@ public class RuntimeFeatureModelPackageImpl extends EPackageImpl implements Runt
 	 */
 	public EAttribute getRuntimeAdaptationAttribute_MeasureUnit() {
 		return (EAttribute)runtimeAdaptationAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRuntimeAdaptationAttribute_Value() {
+		return (EAttribute)runtimeAdaptationAttributeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRuntimeAdaptationAttribute_DataType() {
+		return (EReference)runtimeAdaptationAttributeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -236,6 +265,15 @@ public class RuntimeFeatureModelPackageImpl extends EPackageImpl implements Runt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getRuntimeAdaptationAttributeTypes() {
+		return runtimeAdaptationAttributeTypesEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RuntimeFeatureModelFactory getRuntimeFeatureModelFactory() {
 		return (RuntimeFeatureModelFactory)getEFactoryInstance();
 	}
@@ -261,6 +299,8 @@ public class RuntimeFeatureModelPackageImpl extends EPackageImpl implements Runt
 		// Create classes and their features
 		runtimeAdaptationAttributeEClass = createEClass(RUNTIME_ADAPTATION_ATTRIBUTE);
 		createEAttribute(runtimeAdaptationAttributeEClass, RUNTIME_ADAPTATION_ATTRIBUTE__MEASURE_UNIT);
+		createEAttribute(runtimeAdaptationAttributeEClass, RUNTIME_ADAPTATION_ATTRIBUTE__VALUE);
+		createEReference(runtimeAdaptationAttributeEClass, RUNTIME_ADAPTATION_ATTRIBUTE__DATA_TYPE);
 
 		nfrAttributeEClass = createEClass(NFR_ATTRIBUTE);
 		createEAttribute(nfrAttributeEClass, NFR_ATTRIBUTE__TAG);
@@ -273,6 +313,7 @@ public class RuntimeFeatureModelPackageImpl extends EPackageImpl implements Runt
 
 		// Create enums
 		nfrAttributeTagEEnum = createEEnum(NFR_ATTRIBUTE_TAG);
+		runtimeAdaptationAttributeTypesEEnum = createEEnum(RUNTIME_ADAPTATION_ATTRIBUTE_TYPES);
 	}
 
 	/**
@@ -300,6 +341,7 @@ public class RuntimeFeatureModelPackageImpl extends EPackageImpl implements Runt
 
 		// Obtain other dependent packages
 		featuremodelsPackage thefeaturemodelsPackage = (featuremodelsPackage)EPackage.Registry.INSTANCE.getEPackage(featuremodelsPackage.eNS_URI);
+		DataTypesModelPackage theDataTypesModelPackage = (DataTypesModelPackage)EPackage.Registry.INSTANCE.getEPackage(DataTypesModelPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -314,6 +356,8 @@ public class RuntimeFeatureModelPackageImpl extends EPackageImpl implements Runt
 		// Initialize classes, features, and operations; add parameters
 		initEClass(runtimeAdaptationAttributeEClass, RuntimeAdaptationAttribute.class, "RuntimeAdaptationAttribute", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRuntimeAdaptationAttribute_MeasureUnit(), ecorePackage.getEString(), "measureUnit", null, 0, 1, RuntimeAdaptationAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRuntimeAdaptationAttribute_Value(), ecorePackage.getEString(), "value", null, 0, 1, RuntimeAdaptationAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuntimeAdaptationAttribute_DataType(), theDataTypesModelPackage.getDataType(), null, "dataType", null, 1, 1, RuntimeAdaptationAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nfrAttributeEClass, NFRAttribute.class, "NFRAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNFRAttribute_Tag(), this.getNFRAttributeTag(), "tag", null, 1, 1, NFRAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -330,6 +374,11 @@ public class RuntimeFeatureModelPackageImpl extends EPackageImpl implements Runt
 		addEEnumLiteral(nfrAttributeTagEEnum, NFRAttributeTag.MAX);
 		addEEnumLiteral(nfrAttributeTagEEnum, NFRAttributeTag.AVG);
 		addEEnumLiteral(nfrAttributeTagEEnum, NFRAttributeTag.COUNT);
+
+		initEEnum(runtimeAdaptationAttributeTypesEEnum, RuntimeAdaptationAttributeTypes.class, "RuntimeAdaptationAttributeTypes");
+		addEEnumLiteral(runtimeAdaptationAttributeTypesEEnum, RuntimeAdaptationAttributeTypes.INTEGER);
+		addEEnumLiteral(runtimeAdaptationAttributeTypesEEnum, RuntimeAdaptationAttributeTypes.DOUBLE);
+		addEEnumLiteral(runtimeAdaptationAttributeTypesEEnum, RuntimeAdaptationAttributeTypes.STRING);
 
 		// Create resource
 		createResource(eNS_URI);

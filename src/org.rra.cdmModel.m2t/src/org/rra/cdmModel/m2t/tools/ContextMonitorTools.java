@@ -33,20 +33,11 @@ package org.rra.cdmModel.m2t.tools;
 
 
 import java.util.ArrayList;
-import java.util.TreeSet;
 
-import org.eclipse.emf.ecore.EObject;
-import org.hyperflex.roscomponentmodel.AbstractComponent;
-import org.hyperflex.roscomponentmodel.Composite;
-import org.hyperflex.roscomponentmodel.CompositeMsgInterface;
-import org.hyperflex.roscomponentmodel.MsgInterface;
-import org.hyperflex.roscomponentmodel.Node;
-import org.hyperflex.roscomponentmodel.NodeMsgInterface;
-import org.hyperflex.roscomponentmodel.Topic;
 import org.rra.cdmModel.ContextDependentMeasurement;
 import org.rra.cdmModel.ContextDependentMeasurementsModel;
 import org.rra.cdmModel.ROSContextDependentMeasurement;
-import org.rra.dataTypesModel.ROSMsgDataType;
+import org.rra.dataTypesModel.ROSMsgFunction;
 
 
 
@@ -94,6 +85,30 @@ public class ContextMonitorTools {
 		}
 
 		return includes;
+
+	}
+	
+	public ArrayList<ROSMsgFunction> getRosMsgFunctions(ContextDependentMeasurementsModel cdmModel){
+
+		ArrayList<ROSMsgFunction> functions = new ArrayList<ROSMsgFunction>();
+
+		for(ContextDependentMeasurement cdm : cdmModel.getCdms()){
+			
+			if(cdm instanceof ROSContextDependentMeasurement){
+				ROSContextDependentMeasurement ROSCdm = (ROSContextDependentMeasurement)cdm;
+				
+				if(ROSCdm.getCdmFunction() != null){
+					
+					functions.add(ROSCdm.getCdmFunction());
+					
+				}
+				
+			}
+			
+			
+		}
+
+		return functions;
 
 	}
 

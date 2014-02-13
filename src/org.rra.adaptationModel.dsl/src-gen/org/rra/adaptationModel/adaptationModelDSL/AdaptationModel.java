@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getImports <em>Imports</em>}</li>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getRules <em>Rules</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getRuleSets <em>Rule Sets</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,5 +57,21 @@ public interface AdaptationModel extends EObject
    * @generated
    */
   EList<Rule> getRules();
+
+  /**
+   * Returns the value of the '<em><b>Rule Sets</b></em>' containment reference list.
+   * The list contents are of type {@link org.rra.adaptationModel.adaptationModelDSL.RuleSet}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Rule Sets</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Rule Sets</em>' containment reference list.
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getAdaptationModel_RuleSets()
+   * @model containment="true"
+   * @generated
+   */
+  EList<RuleSet> getRuleSets();
 
 } // AdaptationModel

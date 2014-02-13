@@ -150,6 +150,7 @@ public class DataTypesModelItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DataTypesModelPackage.Literals.DATA_TYPES_MODEL__TYPES);
+			childrenFeatures.add(DataTypesModelPackage.Literals.DATA_TYPES_MODEL__ROS_MSG_FUNCTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -208,6 +209,7 @@ public class DataTypesModelItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case DataTypesModelPackage.DATA_TYPES_MODEL__TYPES:
+			case DataTypesModelPackage.DATA_TYPES_MODEL__ROS_MSG_FUNCTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -243,7 +245,17 @@ public class DataTypesModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(DataTypesModelPackage.Literals.DATA_TYPES_MODEL__TYPES,
+				 DataTypesModelFactory.eINSTANCE.createEnumerator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DataTypesModelPackage.Literals.DATA_TYPES_MODEL__TYPES,
 				 DataTypesModelFactory.eINSTANCE.createContainerDataType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DataTypesModelPackage.Literals.DATA_TYPES_MODEL__ROS_MSG_FUNCTIONS,
+				 DataTypesModelFactory.eINSTANCE.createROSMsgFunction()));
 	}
 
 	/**

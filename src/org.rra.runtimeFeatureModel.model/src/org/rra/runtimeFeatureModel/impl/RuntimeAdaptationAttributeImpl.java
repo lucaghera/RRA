@@ -32,8 +32,10 @@ package org.rra.runtimeFeatureModel.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.hyperflex.featuremodels.impl.AttributeImpl;
+import org.rra.dataTypesModel.DataType;
 import org.rra.runtimeFeatureModel.RuntimeAdaptationAttribute;
 import org.rra.runtimeFeatureModel.RuntimeFeatureModelPackage;
 
@@ -45,6 +47,8 @@ import org.rra.runtimeFeatureModel.RuntimeFeatureModelPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.rra.runtimeFeatureModel.impl.RuntimeAdaptationAttributeImpl#getMeasureUnit <em>Measure Unit</em>}</li>
+ *   <li>{@link org.rra.runtimeFeatureModel.impl.RuntimeAdaptationAttributeImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.rra.runtimeFeatureModel.impl.RuntimeAdaptationAttributeImpl#getDataType <em>Data Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,6 +74,36 @@ public abstract class RuntimeAdaptationAttributeImpl extends AttributeImpl imple
 	 * @ordered
 	 */
 	protected String measureUnit = MEASURE_UNIT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALUE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String value = VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataType()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataType dataType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,11 +150,75 @@ public abstract class RuntimeAdaptationAttributeImpl extends AttributeImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValue(String newValue) {
+		String oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE__VALUE, oldValue, value));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataType getDataType() {
+		if (dataType != null && dataType.eIsProxy()) {
+			InternalEObject oldDataType = (InternalEObject)dataType;
+			dataType = (DataType)eResolveProxy(oldDataType);
+			if (dataType != oldDataType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE__DATA_TYPE, oldDataType, dataType));
+			}
+		}
+		return dataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataType basicGetDataType() {
+		return dataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDataType(DataType newDataType) {
+		DataType oldDataType = dataType;
+		dataType = newDataType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE__DATA_TYPE, oldDataType, dataType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE__MEASURE_UNIT:
 				return getMeasureUnit();
+			case RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE__VALUE:
+				return getValue();
+			case RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE__DATA_TYPE:
+				if (resolve) return getDataType();
+				return basicGetDataType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -135,6 +233,12 @@ public abstract class RuntimeAdaptationAttributeImpl extends AttributeImpl imple
 		switch (featureID) {
 			case RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE__MEASURE_UNIT:
 				setMeasureUnit((String)newValue);
+				return;
+			case RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE__VALUE:
+				setValue((String)newValue);
+				return;
+			case RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE__DATA_TYPE:
+				setDataType((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -151,6 +255,12 @@ public abstract class RuntimeAdaptationAttributeImpl extends AttributeImpl imple
 			case RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE__MEASURE_UNIT:
 				setMeasureUnit(MEASURE_UNIT_EDEFAULT);
 				return;
+			case RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE__VALUE:
+				setValue(VALUE_EDEFAULT);
+				return;
+			case RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE__DATA_TYPE:
+				setDataType((DataType)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -165,6 +275,10 @@ public abstract class RuntimeAdaptationAttributeImpl extends AttributeImpl imple
 		switch (featureID) {
 			case RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE__MEASURE_UNIT:
 				return MEASURE_UNIT_EDEFAULT == null ? measureUnit != null : !MEASURE_UNIT_EDEFAULT.equals(measureUnit);
+			case RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+			case RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE__DATA_TYPE:
+				return dataType != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -181,6 +295,8 @@ public abstract class RuntimeAdaptationAttributeImpl extends AttributeImpl imple
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (measureUnit: ");
 		result.append(measureUnit);
+		result.append(", value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

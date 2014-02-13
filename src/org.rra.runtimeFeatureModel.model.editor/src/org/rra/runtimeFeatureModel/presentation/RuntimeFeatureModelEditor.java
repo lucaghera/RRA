@@ -146,6 +146,7 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.hyperflex.featuremodels.provider.featuremodelsItemProviderAdapterFactory;
+import org.rra.dataTypesModel.provider.DataTypesModelItemProviderAdapterFactory;
 import org.rra.runtimeFeatureModel.provider.RuntimeFeatureModelItemProviderAdapterFactory;
 
 
@@ -692,6 +693,7 @@ public class RuntimeFeatureModelEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new RuntimeFeatureModelItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new DataTypesModelItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new featuremodelsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 

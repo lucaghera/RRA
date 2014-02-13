@@ -46,6 +46,7 @@ import org.rra.dataTypesModel.DataType;
 import org.rra.dataTypesModel.DataTypesModel;
 import org.rra.dataTypesModel.DataTypesModelPackage;
 import org.rra.dataTypesModel.NonMemberFunction;
+import org.rra.dataTypesModel.ROSMsgFunction;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,6 +58,7 @@ import org.rra.dataTypesModel.NonMemberFunction;
  *   <li>{@link org.rra.dataTypesModel.impl.DataTypesModelImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.rra.dataTypesModel.impl.DataTypesModelImpl#getTypes <em>Types</em>}</li>
  *   <li>{@link org.rra.dataTypesModel.impl.DataTypesModelImpl#getNonMemberFunctions <em>Non Member Functions</em>}</li>
+ *   <li>{@link org.rra.dataTypesModel.impl.DataTypesModelImpl#getRosMsgFunctions <em>Ros Msg Functions</em>}</li>
  * </ul>
  * </p>
  *
@@ -102,6 +104,16 @@ public class DataTypesModelImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected EList<NonMemberFunction> nonMemberFunctions;
+
+	/**
+	 * The cached value of the '{@link #getRosMsgFunctions() <em>Ros Msg Functions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRosMsgFunctions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ROSMsgFunction> rosMsgFunctions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,11 +184,25 @@ public class DataTypesModelImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ROSMsgFunction> getRosMsgFunctions() {
+		if (rosMsgFunctions == null) {
+			rosMsgFunctions = new EObjectContainmentEList<ROSMsgFunction>(ROSMsgFunction.class, this, DataTypesModelPackage.DATA_TYPES_MODEL__ROS_MSG_FUNCTIONS);
+		}
+		return rosMsgFunctions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case DataTypesModelPackage.DATA_TYPES_MODEL__TYPES:
 				return ((InternalEList<?>)getTypes()).basicRemove(otherEnd, msgs);
+			case DataTypesModelPackage.DATA_TYPES_MODEL__ROS_MSG_FUNCTIONS:
+				return ((InternalEList<?>)getRosMsgFunctions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -195,6 +221,8 @@ public class DataTypesModelImpl extends MinimalEObjectImpl.Container implements 
 				return getTypes();
 			case DataTypesModelPackage.DATA_TYPES_MODEL__NON_MEMBER_FUNCTIONS:
 				return getNonMemberFunctions();
+			case DataTypesModelPackage.DATA_TYPES_MODEL__ROS_MSG_FUNCTIONS:
+				return getRosMsgFunctions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -219,6 +247,10 @@ public class DataTypesModelImpl extends MinimalEObjectImpl.Container implements 
 				getNonMemberFunctions().clear();
 				getNonMemberFunctions().addAll((Collection<? extends NonMemberFunction>)newValue);
 				return;
+			case DataTypesModelPackage.DATA_TYPES_MODEL__ROS_MSG_FUNCTIONS:
+				getRosMsgFunctions().clear();
+				getRosMsgFunctions().addAll((Collection<? extends ROSMsgFunction>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -240,6 +272,9 @@ public class DataTypesModelImpl extends MinimalEObjectImpl.Container implements 
 			case DataTypesModelPackage.DATA_TYPES_MODEL__NON_MEMBER_FUNCTIONS:
 				getNonMemberFunctions().clear();
 				return;
+			case DataTypesModelPackage.DATA_TYPES_MODEL__ROS_MSG_FUNCTIONS:
+				getRosMsgFunctions().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -258,6 +293,8 @@ public class DataTypesModelImpl extends MinimalEObjectImpl.Container implements 
 				return types != null && !types.isEmpty();
 			case DataTypesModelPackage.DATA_TYPES_MODEL__NON_MEMBER_FUNCTIONS:
 				return nonMemberFunctions != null && !nonMemberFunctions.isEmpty();
+			case DataTypesModelPackage.DATA_TYPES_MODEL__ROS_MSG_FUNCTIONS:
+				return rosMsgFunctions != null && !rosMsgFunctions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

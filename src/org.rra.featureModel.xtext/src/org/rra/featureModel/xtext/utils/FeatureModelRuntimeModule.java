@@ -9,7 +9,7 @@ public class FeatureModelRuntimeModule extends AbstractGenericResourceRuntimeMod
 	
     @Override
     protected String getLanguageName() {
-        return "org.hyperflex.featuremodels.presentation.featuremodelsEditor";
+        return "org.hyperflex.featuremodels.presentation.featuremodelsEditorID";
     }
  
     @Override

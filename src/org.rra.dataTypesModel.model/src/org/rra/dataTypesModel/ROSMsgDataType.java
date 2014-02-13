@@ -43,7 +43,6 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.rra.dataTypesModel.ROSMsgDataType#getMsgs_package <em>Msgs package</em>}</li>
  *   <li>{@link org.rra.dataTypesModel.ROSMsgDataType#getFields <em>Fields</em>}</li>
- *   <li>{@link org.rra.dataTypesModel.ROSMsgDataType#getFunctions <em>Functions</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,22 +76,6 @@ public interface ROSMsgDataType extends DataType {
 	 * @generated
 	 */
 	void setMsgs_package(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Functions</b></em>' containment reference list.
-	 * The list contents are of type {@link org.rra.dataTypesModel.ROSMsgFunction}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Functions</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Functions</em>' containment reference list.
-	 * @see org.rra.dataTypesModel.DataTypesModelPackage#getROSMsgDataType_Functions()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<ROSMsgFunction> getFunctions();
 
 	/**
 	 * Returns the value of the '<em><b>Fields</b></em>' containment reference list.

@@ -30,7 +30,7 @@
  */
 package org.rra.cdmModel;
 
-import org.hyperflex.roscomponentmodel.NodeMsgProducer;
+import org.hyperflex.roscomponentmodel.Topic;
 import org.rra.dataTypesModel.ROSMsgDataType;
 import org.rra.dataTypesModel.ROSMsgFunction;
 
@@ -42,7 +42,7 @@ import org.rra.dataTypesModel.ROSMsgFunction;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.rra.cdmModel.ROSContextDependentMeasurement#getPublisher <em>Publisher</em>}</li>
+ *   <li>{@link org.rra.cdmModel.ROSContextDependentMeasurement#getTopic <em>Topic</em>}</li>
  *   <li>{@link org.rra.cdmModel.ROSContextDependentMeasurement#getInputDataType <em>Input Data Type</em>}</li>
  *   <li>{@link org.rra.cdmModel.ROSContextDependentMeasurement#getCdmFunction <em>Cdm Function</em>}</li>
  * </ul>
@@ -54,30 +54,30 @@ import org.rra.dataTypesModel.ROSMsgFunction;
  */
 public interface ROSContextDependentMeasurement extends ContextDependentMeasurement {
 	/**
-	 * Returns the value of the '<em><b>Publisher</b></em>' reference.
+	 * Returns the value of the '<em><b>Topic</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Publisher</em>' reference isn't clear,
+	 * If the meaning of the '<em>Topic</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Publisher</em>' reference.
-	 * @see #setPublisher(NodeMsgProducer)
-	 * @see org.rra.cdmModel.CDMModelPackage#getROSContextDependentMeasurement_Publisher()
+	 * @return the value of the '<em>Topic</em>' reference.
+	 * @see #setTopic(Topic)
+	 * @see org.rra.cdmModel.CDMModelPackage#getROSContextDependentMeasurement_Topic()
 	 * @model required="true"
 	 * @generated
 	 */
-	NodeMsgProducer getPublisher();
+	Topic getTopic();
 
 	/**
-	 * Sets the value of the '{@link org.rra.cdmModel.ROSContextDependentMeasurement#getPublisher <em>Publisher</em>}' reference.
+	 * Sets the value of the '{@link org.rra.cdmModel.ROSContextDependentMeasurement#getTopic <em>Topic</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Publisher</em>' reference.
-	 * @see #getPublisher()
+	 * @param value the new value of the '<em>Topic</em>' reference.
+	 * @see #getTopic()
 	 * @generated
 	 */
-	void setPublisher(NodeMsgProducer value);
+	void setTopic(Topic value);
 
 	/**
 	 * Returns the value of the '<em><b>Input Data Type</b></em>' reference.

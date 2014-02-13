@@ -55,11 +55,12 @@ ros::Subscriber [%=cdm.name%]_sub;
 for(cdm in cdmModel.cdms) {
 	if(cdm.isTypeOf(ROSContextDependentMeasurement)){
 		var dataType : DataType;
-		var publisher : NodeMsgProducer := cdm.publisher;
+		//var topic : Topic := cdm.topic;
 		if(cdm.cdmFunction.isDefined()){
 			dataType = cdm.cdmFunction.outputParameter;
 		}else{
 			dataType = cdm.inputDataType;
+			//dataType = topic.dataType;
 		}
 %]
 
@@ -78,11 +79,30 @@ void [%=cdm.name%]_callback(const [%=dataType.msgs_package%]::[%=dataType.name%]
 	}
 %]
 	[%=cdm.name%]_pub.publish(output);	
+
 }
 [%
 	}
 }
+
+var functions : Sequence := cdmHelper.getRosMsgFunctions(cdmModel);
+
+for(fun in functions) {
 %]
+void [%=fun.name%](const [%=fun.inputParameter.msgs_package%]::[%=fun.inputParameter.name%]::ConstPtr& input,
+					 [%=fun.outputParameter.msgs_package%]::[%=fun.outputParameter.name%]& output){
+
+	// Write your code between the following commnets
+	[%=out.startPreserve("/*", "*/", "user implementation of function", true)%]
+	[%=out.stopPreserve()%]
+
+}
+[%
+}
+
+%]
+
+
 
 int main(int argc, char** argv){
 
@@ -94,15 +114,16 @@ int main(int argc, char** argv){
 for(cdm in cdmModel.cdms) {
 	if(cdm.isTypeOf(ROSContextDependentMeasurement)){
 		var dataType : DataType;
-		var publisher : NodeMsgProducer := cdm.publisher;
+		var topic : Topic := cdm.topic;
 		if(cdm.cdmFunction.isDefined()){
 			dataType = cdm.cdmFunction.outputParameter;
 		}else{
 			dataType = cdm.inputDataType;
+			//dataType = topic.dataType;
 		}
 %]
 	[%=cdm.name%]_pub = nodeHandle.advertise<[%=dataType.msgs_package%]::[%=dataType.name%]>("[%=cdm.name%]",1000);
-	[%=cdm.name%]_sub = nodeHandle.subscribe("[%=publisher.topicName%]", 1000, [%=cdm.name%]_callback);
+	[%=cdm.name%]_sub = nodeHandle.subscribe("[%=topic.name%]", 1000, [%=cdm.name%]_callback);
 [%
 	}
 }

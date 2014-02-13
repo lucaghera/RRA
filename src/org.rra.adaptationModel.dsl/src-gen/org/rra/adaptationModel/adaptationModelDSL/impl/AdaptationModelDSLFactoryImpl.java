@@ -67,12 +67,10 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
       case AdaptationModelDSLPackage.ADAPTATION_MODEL: return createAdaptationModel();
       case AdaptationModelDSLPackage.IMPORT: return createImport();
       case AdaptationModelDSLPackage.RULE: return createRule();
+      case AdaptationModelDSLPackage.RULE_WITH_PRIORITY: return createRuleWithPriority();
+      case AdaptationModelDSLPackage.RULE_SET: return createRuleSet();
       case AdaptationModelDSLPackage.CONDITION: return createCondition();
       case AdaptationModelDSLPackage.MEASUREMENT_COMPARISON: return createMeasurementComparison();
-      case AdaptationModelDSLPackage.MATH_OPERATOR: return createMATH_OPERATOR();
-      case AdaptationModelDSLPackage.AVG: return createAVG();
-      case AdaptationModelDSLPackage.MIN: return createMIN();
-      case AdaptationModelDSLPackage.MAX: return createMAX();
       case AdaptationModelDSLPackage.ATOMIC_ACTION: return createAtomicAction();
       case AdaptationModelDSLPackage.QUERY_ACTION: return createQueryAction();
       case AdaptationModelDSLPackage.SELECT_ACTION: return createSelectAction();
@@ -124,6 +122,28 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
+  public RuleWithPriority createRuleWithPriority()
+  {
+    RuleWithPriorityImpl ruleWithPriority = new RuleWithPriorityImpl();
+    return ruleWithPriority;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RuleSet createRuleSet()
+  {
+    RuleSetImpl ruleSet = new RuleSetImpl();
+    return ruleSet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Condition createCondition()
   {
     ConditionImpl condition = new ConditionImpl();
@@ -139,50 +159,6 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
   {
     MeasurementComparisonImpl measurementComparison = new MeasurementComparisonImpl();
     return measurementComparison;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public MATH_OPERATOR createMATH_OPERATOR()
-  {
-    MATH_OPERATORImpl matH_OPERATOR = new MATH_OPERATORImpl();
-    return matH_OPERATOR;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AVG createAVG()
-  {
-    AVGImpl avg = new AVGImpl();
-    return avg;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public MIN createMIN()
-  {
-    MINImpl min = new MINImpl();
-    return min;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public MAX createMAX()
-  {
-    MAXImpl max = new MAXImpl();
-    return max;
   }
 
   /**

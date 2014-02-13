@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.rra.runtimeFeatureModel.*;
 import org.rra.runtimeFeatureModel.CIMAttribute;
 import org.rra.runtimeFeatureModel.CVAttribute;
 import org.rra.runtimeFeatureModel.NFRAttribute;
@@ -105,6 +106,8 @@ public class RuntimeFeatureModelFactoryImpl extends EFactoryImpl implements Runt
 		switch (eDataType.getClassifierID()) {
 			case RuntimeFeatureModelPackage.NFR_ATTRIBUTE_TAG:
 				return createNFRAttributeTagFromString(eDataType, initialValue);
+			case RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE_TYPES:
+				return createRuntimeAdaptationAttributeTypesFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -120,6 +123,8 @@ public class RuntimeFeatureModelFactoryImpl extends EFactoryImpl implements Runt
 		switch (eDataType.getClassifierID()) {
 			case RuntimeFeatureModelPackage.NFR_ATTRIBUTE_TAG:
 				return convertNFRAttributeTagToString(eDataType, instanceValue);
+			case RuntimeFeatureModelPackage.RUNTIME_ADAPTATION_ATTRIBUTE_TYPES:
+				return convertRuntimeAdaptationAttributeTypesToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -172,6 +177,26 @@ public class RuntimeFeatureModelFactoryImpl extends EFactoryImpl implements Runt
 	 * @generated
 	 */
 	public String convertNFRAttributeTagToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeAdaptationAttributeTypes createRuntimeAdaptationAttributeTypesFromString(EDataType eDataType, String initialValue) {
+		RuntimeAdaptationAttributeTypes result = RuntimeAdaptationAttributeTypes.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRuntimeAdaptationAttributeTypesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

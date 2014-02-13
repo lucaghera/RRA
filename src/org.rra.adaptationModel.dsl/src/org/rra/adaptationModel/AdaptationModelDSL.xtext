@@ -11,7 +11,8 @@ generate adaptationModelDSL "http://www.rra.org/adaptationModel/AdaptationModelD
 
 AdaptationModel:
 	(imports+=Import*)    
- 	(rules+=Rule*);
+ 	(rules+=Rule*)
+ 	(ruleSets+=RuleSet*);
 
 //terminal VALUE returns ecore::EString: '"' ('0'..'9' | 'a'..'z' | '0'..'9' '.' '0'..'9')+'"';
 
@@ -48,17 +49,25 @@ QualifiedName:
 	
 Rule:
 	'rule' name=ID ':' 
-	'if' condition+=Condition 
-	'then' (atomicAction+=AtomicAction+) 
-	('else' ('if' condition+=Condition 'then')* atomicAction+=AtomicAction+)*
+	('if' '(' condition+=Condition+ ')')? (atomicAction+=AtomicAction+) 
+	('else' ('if' '(' condition+=Condition ')' )* atomicAction+=AtomicAction+)* ';'
+;
+
+RuleWithPriority:
+	'priority' priorityValue=INT  rule+=Rule
+;
+
+RuleSet:
+	
+	'rule_set' name=ID '{' rules+=RuleWithPriority* '};'
 ;
 
 Condition:
-	measurementComparison+=MeasurementComparison  
+	measurementComparison+=MeasurementComparison 
 ;
 
 MeasurementComparison:
-	measurement=[ cdmModel::ContextDependentMeasurement|QualifiedName ] OPERATOR STRING LOGICAL_OPERATOR?
+	measurement=[ cdmModel::ContextDependentMeasurement|QualifiedName ] OPERATOR value=STRING LOGICAL_OPERATOR?
 ;
 
 //Condition:
@@ -75,28 +84,34 @@ LOGICAL_OPERATOR:
 	'AND' | 'OR' 
 ;
 
-MATH_OPERATOR:
-	MAX | MIN | AVG 
-;
-
-AVG:
-	'AVG (' (measurement+=[ cdmModel::ContextDependentMeasurement|QualifiedName ] ',')+ ')' 
-;
-
-MIN:
-	'MIN (' (measurement+=[ cdmModel::ContextDependentMeasurement|QualifiedName ] ',')+ ')'
-;
-
-MAX:
-	'MAX (' (measurement+=[ cdmModel::ContextDependentMeasurement|QualifiedName ] ',')+ ')'
-;
+//MATH_OPERATOR:
+//	MAX | MIN | AVG 
+//;
+//
+//AVG:
+//	'AVG (' (measurement+=[ cdmModel::ContextDependentMeasurement|QualifiedName ] ',')+ ')' 
+//;
+//
+//MIN:
+//	'MIN (' (measurement+=[ cdmModel::ContextDependentMeasurement|QualifiedName ] ',')+ ')'
+//;
+//
+//MAX:
+//	'MAX (' (measurement+=[ cdmModel::ContextDependentMeasurement|QualifiedName ] ',')+ ')'
+//;
 
 AtomicAction:
-	SelectAction | DeselectAction | ModifyAttribute | QueryAction
+	(SelectAction | DeselectAction | ModifyAttribute | QueryAction) 'AND'?
 ;
 
 QueryAction:
-	'select feature' 'with' MATH_OPERATOR 'attribute' STRING 'from feature' feature=[ featureModel::Feature|QualifiedName ] 
+	'select_feature_*' 
+	'from_variants_of_feature' '(' feature=[ featureModel::Feature|QualifiedName ] ')'
+	'where_attribue' QueryOperator '(' value=STRING ')'  
+;
+
+QueryOperator:
+	'max' | 'min'
 ;
 
 //QueryAction:
@@ -106,15 +121,16 @@ QueryAction:
 //;
 
 SelectAction:
-	'activate feature' feature=[featureModel::Feature|QualifiedName ]	
+	'activate_feature' '(' feature=[featureModel::Feature|QualifiedName ] ')'	
 ;
 
 DeselectAction:
-	'deactivate feature' feature=[featureModel::Feature|QualifiedName ]
+	'deactivate_feature' '(' feature=[featureModel::Feature|QualifiedName ] ')'
 ;
 
 ModifyAttribute:
-	"set attribute" featureAttribute=[rtFeatureModel::CVAttribute|QualifiedName ] 'with value' attributeValue+=AttributeValue 
+	'set_attribute' '(' featureAttribute=[rtFeatureModel::CVAttribute|QualifiedName ] ')' 
+	'with_value' '(' attributeValue+=AttributeValue ')' 
 ;
 
 AttributeValue:

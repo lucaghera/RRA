@@ -120,6 +120,14 @@ public class DataTypesModelAdapterFactory extends AdapterFactoryImpl {
 				return createROSMsgDataTypeAdapter();
 			}
 			@Override
+			public Adapter caseEnumerator(Enumerator object) {
+				return createEnumeratorAdapter();
+			}
+			@Override
+			public Adapter caseEnumElement(EnumElement object) {
+				return createEnumElementAdapter();
+			}
+			@Override
 			public Adapter caseContainerDataType(ContainerDataType object) {
 				return createContainerDataTypeAdapter();
 			}
@@ -350,6 +358,34 @@ public class DataTypesModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createROSMsgDataTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.rra.dataTypesModel.Enumerator <em>Enumerator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.rra.dataTypesModel.Enumerator
+	 * @generated
+	 */
+	public Adapter createEnumeratorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.rra.dataTypesModel.EnumElement <em>Enum Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.rra.dataTypesModel.EnumElement
+	 * @generated
+	 */
+	public Adapter createEnumElementAdapter() {
 		return null;
 	}
 

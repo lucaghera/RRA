@@ -132,6 +132,19 @@ public class DataTypesModelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case DataTypesModelPackage.ENUMERATOR: {
+				Enumerator enumerator = (Enumerator)theEObject;
+				T result = caseEnumerator(enumerator);
+				if (result == null) result = caseDataType(enumerator);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DataTypesModelPackage.ENUM_ELEMENT: {
+				EnumElement enumElement = (EnumElement)theEObject;
+				T result = caseEnumElement(enumElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case DataTypesModelPackage.CONTAINER_DATA_TYPE: {
 				ContainerDataType containerDataType = (ContainerDataType)theEObject;
 				T result = caseContainerDataType(containerDataType);
@@ -382,6 +395,36 @@ public class DataTypesModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseROSMsgDataType(ROSMsgDataType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Enumerator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Enumerator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnumerator(Enumerator object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Enum Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Enum Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnumElement(EnumElement object) {
 		return null;
 	}
 

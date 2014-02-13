@@ -12,6 +12,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataTypesModel.ecore#//DataTypesModel/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataTypesModel.ecore#//DataTypesModel/types"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataTypesModel.ecore#//DataTypesModel/nonMemberFunctions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataTypesModel.ecore#//DataTypesModel/rosMsgFunctions"/>
     </genClasses>
     <genClasses image="false" ecoreClass="dataTypesModel.ecore#//DataType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataTypesModel.ecore#//DataType/name"/>
@@ -24,7 +25,12 @@
     <genClasses ecoreClass="dataTypesModel.ecore#//ROSMsgDataType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataTypesModel.ecore#//ROSMsgDataType/msgs_package"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataTypesModel.ecore#//ROSMsgDataType/fields"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataTypesModel.ecore#//ROSMsgDataType/functions"/>
+    </genClasses>
+    <genClasses ecoreClass="dataTypesModel.ecore#//Enumerator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataTypesModel.ecore#//Enumerator/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="dataTypesModel.ecore#//EnumElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataTypesModel.ecore#//EnumElement/name"/>
     </genClasses>
     <genClasses ecoreClass="dataTypesModel.ecore#//ContainerDataType">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataTypesModel.ecore#//ContainerDataType/template"/>

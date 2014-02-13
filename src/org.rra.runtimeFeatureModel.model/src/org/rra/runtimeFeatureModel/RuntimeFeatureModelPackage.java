@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.hyperflex.featuremodels.featuremodelsPackage;
 
 /**
@@ -114,13 +115,31 @@ public interface RuntimeFeatureModelPackage extends EPackage {
 	int RUNTIME_ADAPTATION_ATTRIBUTE__MEASURE_UNIT = featuremodelsPackage.ATTRIBUTE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ADAPTATION_ATTRIBUTE__VALUE = featuremodelsPackage.ATTRIBUTE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_ADAPTATION_ATTRIBUTE__DATA_TYPE = featuremodelsPackage.ATTRIBUTE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Runtime Adaptation Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_ADAPTATION_ATTRIBUTE_FEATURE_COUNT = featuremodelsPackage.ATTRIBUTE_FEATURE_COUNT + 1;
+	int RUNTIME_ADAPTATION_ATTRIBUTE_FEATURE_COUNT = featuremodelsPackage.ATTRIBUTE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Runtime Adaptation Attribute</em>' class.
@@ -158,6 +177,24 @@ public interface RuntimeFeatureModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int NFR_ATTRIBUTE__MEASURE_UNIT = RUNTIME_ADAPTATION_ATTRIBUTE__MEASURE_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NFR_ATTRIBUTE__VALUE = RUNTIME_ADAPTATION_ATTRIBUTE__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NFR_ATTRIBUTE__DATA_TYPE = RUNTIME_ADAPTATION_ATTRIBUTE__DATA_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute.
@@ -213,6 +250,24 @@ public interface RuntimeFeatureModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int CV_ATTRIBUTE__MEASURE_UNIT = RUNTIME_ADAPTATION_ATTRIBUTE__MEASURE_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CV_ATTRIBUTE__VALUE = RUNTIME_ADAPTATION_ATTRIBUTE__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CV_ATTRIBUTE__DATA_TYPE = RUNTIME_ADAPTATION_ATTRIBUTE__DATA_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
@@ -279,6 +334,24 @@ public interface RuntimeFeatureModelPackage extends EPackage {
 	int CIM_ATTRIBUTE__MEASURE_UNIT = RUNTIME_ADAPTATION_ATTRIBUTE__MEASURE_UNIT;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CIM_ATTRIBUTE__VALUE = RUNTIME_ADAPTATION_ATTRIBUTE__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CIM_ATTRIBUTE__DATA_TYPE = RUNTIME_ADAPTATION_ATTRIBUTE__DATA_TYPE;
+
+	/**
 	 * The number of structural features of the '<em>CIM Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -308,6 +381,17 @@ public interface RuntimeFeatureModelPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.rra.runtimeFeatureModel.RuntimeAdaptationAttributeTypes <em>Runtime Adaptation Attribute Types</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.rra.runtimeFeatureModel.RuntimeAdaptationAttributeTypes
+	 * @see org.rra.runtimeFeatureModel.impl.RuntimeFeatureModelPackageImpl#getRuntimeAdaptationAttributeTypes()
+	 * @generated
+	 */
+	int RUNTIME_ADAPTATION_ATTRIBUTE_TYPES = 5;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.rra.runtimeFeatureModel.RuntimeAdaptationAttribute <em>Runtime Adaptation Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -327,6 +411,28 @@ public interface RuntimeFeatureModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRuntimeAdaptationAttribute_MeasureUnit();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.rra.runtimeFeatureModel.RuntimeAdaptationAttribute#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.rra.runtimeFeatureModel.RuntimeAdaptationAttribute#getValue()
+	 * @see #getRuntimeAdaptationAttribute()
+	 * @generated
+	 */
+	EAttribute getRuntimeAdaptationAttribute_Value();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.rra.runtimeFeatureModel.RuntimeAdaptationAttribute#getDataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Data Type</em>'.
+	 * @see org.rra.runtimeFeatureModel.RuntimeAdaptationAttribute#getDataType()
+	 * @see #getRuntimeAdaptationAttribute()
+	 * @generated
+	 */
+	EReference getRuntimeAdaptationAttribute_DataType();
 
 	/**
 	 * Returns the meta object for class '{@link org.rra.runtimeFeatureModel.NFRAttribute <em>NFR Attribute</em>}'.
@@ -402,6 +508,16 @@ public interface RuntimeFeatureModelPackage extends EPackage {
 	EEnum getNFRAttributeTag();
 
 	/**
+	 * Returns the meta object for enum '{@link org.rra.runtimeFeatureModel.RuntimeAdaptationAttributeTypes <em>Runtime Adaptation Attribute Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Runtime Adaptation Attribute Types</em>'.
+	 * @see org.rra.runtimeFeatureModel.RuntimeAdaptationAttributeTypes
+	 * @generated
+	 */
+	EEnum getRuntimeAdaptationAttributeTypes();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -441,6 +557,22 @@ public interface RuntimeFeatureModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute RUNTIME_ADAPTATION_ATTRIBUTE__MEASURE_UNIT = eINSTANCE.getRuntimeAdaptationAttribute_MeasureUnit();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RUNTIME_ADAPTATION_ATTRIBUTE__VALUE = eINSTANCE.getRuntimeAdaptationAttribute_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RUNTIME_ADAPTATION_ATTRIBUTE__DATA_TYPE = eINSTANCE.getRuntimeAdaptationAttribute_DataType();
 
 		/**
 		 * The meta object literal for the '{@link org.rra.runtimeFeatureModel.impl.NFRAttributeImpl <em>NFR Attribute</em>}' class.
@@ -505,6 +637,16 @@ public interface RuntimeFeatureModelPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum NFR_ATTRIBUTE_TAG = eINSTANCE.getNFRAttributeTag();
+
+		/**
+		 * The meta object literal for the '{@link org.rra.runtimeFeatureModel.RuntimeAdaptationAttributeTypes <em>Runtime Adaptation Attribute Types</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.rra.runtimeFeatureModel.RuntimeAdaptationAttributeTypes
+		 * @see org.rra.runtimeFeatureModel.impl.RuntimeFeatureModelPackageImpl#getRuntimeAdaptationAttributeTypes()
+		 * @generated
+		 */
+		EEnum RUNTIME_ADAPTATION_ATTRIBUTE_TYPES = eINSTANCE.getRuntimeAdaptationAttributeTypes();
 
 	}
 

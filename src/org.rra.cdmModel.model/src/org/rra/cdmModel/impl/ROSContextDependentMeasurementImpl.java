@@ -34,7 +34,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.hyperflex.roscomponentmodel.NodeMsgProducer;
+import org.hyperflex.roscomponentmodel.Topic;
 import org.rra.cdmModel.CDMModelPackage;
 import org.rra.cdmModel.ROSContextDependentMeasurement;
 import org.rra.dataTypesModel.ROSMsgDataType;
@@ -47,7 +47,7 @@ import org.rra.dataTypesModel.ROSMsgFunction;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.rra.cdmModel.impl.ROSContextDependentMeasurementImpl#getPublisher <em>Publisher</em>}</li>
+ *   <li>{@link org.rra.cdmModel.impl.ROSContextDependentMeasurementImpl#getTopic <em>Topic</em>}</li>
  *   <li>{@link org.rra.cdmModel.impl.ROSContextDependentMeasurementImpl#getInputDataType <em>Input Data Type</em>}</li>
  *   <li>{@link org.rra.cdmModel.impl.ROSContextDependentMeasurementImpl#getCdmFunction <em>Cdm Function</em>}</li>
  * </ul>
@@ -57,14 +57,14 @@ import org.rra.dataTypesModel.ROSMsgFunction;
  */
 public class ROSContextDependentMeasurementImpl extends ContextDependentMeasurementImpl implements ROSContextDependentMeasurement {
 	/**
-	 * The cached value of the '{@link #getPublisher() <em>Publisher</em>}' reference.
+	 * The cached value of the '{@link #getTopic() <em>Topic</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPublisher()
+	 * @see #getTopic()
 	 * @generated
 	 * @ordered
 	 */
-	protected NodeMsgProducer publisher;
+	protected Topic topic;
 
 	/**
 	 * The cached value of the '{@link #getInputDataType() <em>Input Data Type</em>}' reference.
@@ -109,16 +109,16 @@ public class ROSContextDependentMeasurementImpl extends ContextDependentMeasurem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NodeMsgProducer getPublisher() {
-		if (publisher != null && publisher.eIsProxy()) {
-			InternalEObject oldPublisher = (InternalEObject)publisher;
-			publisher = (NodeMsgProducer)eResolveProxy(oldPublisher);
-			if (publisher != oldPublisher) {
+	public Topic getTopic() {
+		if (topic != null && topic.eIsProxy()) {
+			InternalEObject oldTopic = (InternalEObject)topic;
+			topic = (Topic)eResolveProxy(oldTopic);
+			if (topic != oldTopic) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__PUBLISHER, oldPublisher, publisher));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__TOPIC, oldTopic, topic));
 			}
 		}
-		return publisher;
+		return topic;
 	}
 
 	/**
@@ -126,8 +126,8 @@ public class ROSContextDependentMeasurementImpl extends ContextDependentMeasurem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NodeMsgProducer basicGetPublisher() {
-		return publisher;
+	public Topic basicGetTopic() {
+		return topic;
 	}
 
 	/**
@@ -135,11 +135,11 @@ public class ROSContextDependentMeasurementImpl extends ContextDependentMeasurem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPublisher(NodeMsgProducer newPublisher) {
-		NodeMsgProducer oldPublisher = publisher;
-		publisher = newPublisher;
+	public void setTopic(Topic newTopic) {
+		Topic oldTopic = topic;
+		topic = newTopic;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__PUBLISHER, oldPublisher, publisher));
+			eNotify(new ENotificationImpl(this, Notification.SET, CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__TOPIC, oldTopic, topic));
 	}
 
 	/**
@@ -226,9 +226,9 @@ public class ROSContextDependentMeasurementImpl extends ContextDependentMeasurem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__PUBLISHER:
-				if (resolve) return getPublisher();
-				return basicGetPublisher();
+			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__TOPIC:
+				if (resolve) return getTopic();
+				return basicGetTopic();
 			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE:
 				if (resolve) return getInputDataType();
 				return basicGetInputDataType();
@@ -247,8 +247,8 @@ public class ROSContextDependentMeasurementImpl extends ContextDependentMeasurem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__PUBLISHER:
-				setPublisher((NodeMsgProducer)newValue);
+			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__TOPIC:
+				setTopic((Topic)newValue);
 				return;
 			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE:
 				setInputDataType((ROSMsgDataType)newValue);
@@ -268,8 +268,8 @@ public class ROSContextDependentMeasurementImpl extends ContextDependentMeasurem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__PUBLISHER:
-				setPublisher((NodeMsgProducer)null);
+			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__TOPIC:
+				setTopic((Topic)null);
 				return;
 			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE:
 				setInputDataType((ROSMsgDataType)null);
@@ -289,8 +289,8 @@ public class ROSContextDependentMeasurementImpl extends ContextDependentMeasurem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__PUBLISHER:
-				return publisher != null;
+			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__TOPIC:
+				return topic != null;
 			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__INPUT_DATA_TYPE:
 				return inputDataType != null;
 			case CDMModelPackage.ROS_CONTEXT_DEPENDENT_MEASUREMENT__CDM_FUNCTION:

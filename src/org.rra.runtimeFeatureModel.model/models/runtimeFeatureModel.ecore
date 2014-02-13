@@ -5,6 +5,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeAdaptationAttribute" abstract="true"
       eSuperTypes="../../org.hyperflex.featuremodels.model/models/featureModel.ecore#//Attribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="measureUnit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" lowerBound="1"
+        eType="ecore:EClass ../../org.rra.dataTypesModel.model/models/dataTypesModel.ecore#//DataType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NFRAttribute" eSuperTypes="#//RuntimeAdaptationAttribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tag" lowerBound="1" eType="#//NFRAttributeTag"/>
@@ -21,5 +24,10 @@
     <eLiterals name="MAX" value="1" literal="MAX"/>
     <eLiterals name="AVG" value="2" literal="AVG"/>
     <eLiterals name="COUNT" value="3" literal="COUNT"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RuntimeAdaptationAttributeTypes">
+    <eLiterals name="INTEGER" literal="INTEGER"/>
+    <eLiterals name="DOUBLE" value="1" literal="DOUBLE"/>
+    <eLiterals name="STRING" value="2" literal="STRING"/>
   </eClassifiers>
 </ecore:EPackage>

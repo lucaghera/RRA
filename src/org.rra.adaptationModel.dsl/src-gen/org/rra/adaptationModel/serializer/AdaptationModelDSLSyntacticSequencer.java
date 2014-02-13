@@ -17,14 +17,16 @@ import org.rra.adaptationModel.services.AdaptationModelDSLGrammarAccess;
 public class AdaptationModelDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected AdaptationModelDSLGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_AtomicAction_ANDKeyword_1_q;
 	protected AbstractElementAlias match_MeasurementComparison_LOGICAL_OPERATORParserRuleCall_3_q;
-	protected AbstractElementAlias match_Rule_ElseKeyword_7_0_q;
+	protected AbstractElementAlias match_Rule_ElseKeyword_5_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (AdaptationModelDSLGrammarAccess) access;
+		match_AtomicAction_ANDKeyword_1_q = new TokenAlias(false, true, grammarAccess.getAtomicActionAccess().getANDKeyword_1());
 		match_MeasurementComparison_LOGICAL_OPERATORParserRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getMeasurementComparisonAccess().getLOGICAL_OPERATORParserRuleCall_3());
-		match_Rule_ElseKeyword_7_0_q = new TokenAlias(false, true, grammarAccess.getRuleAccess().getElseKeyword_7_0());
+		match_Rule_ElseKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getRuleAccess().getElseKeyword_5_0());
 	}
 	
 	@Override
@@ -33,8 +35,8 @@ public class AdaptationModelDSLSyntacticSequencer extends AbstractSyntacticSeque
 			return getLOGICAL_OPERATORToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getOPERATORRule())
 			return getOPERATORToken(semanticObject, ruleCall, node);
-		else if(ruleCall.getRule() == grammarAccess.getSTRINGRule())
-			return getSTRINGToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getQueryOperatorRule())
+			return getQueryOperatorToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
@@ -61,15 +63,14 @@ public class AdaptationModelDSLSyntacticSequencer extends AbstractSyntacticSeque
 	}
 	
 	/**
-	 * terminal STRING	: 
-	 * 			'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
-	 * 			"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'"
-	 * 		;
+	 * QueryOperator:
+	 * 	'max' | 'min'
+	 * ;
 	 */
-	protected String getSTRINGToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+	protected String getQueryOperatorToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
-		return "\"\"";
+		return "max";
 	}
 	
 	@Override
@@ -78,14 +79,24 @@ public class AdaptationModelDSLSyntacticSequencer extends AbstractSyntacticSeque
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_MeasurementComparison_LOGICAL_OPERATORParserRuleCall_3_q.equals(syntax))
+			if(match_AtomicAction_ANDKeyword_1_q.equals(syntax))
+				emit_AtomicAction_ANDKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_MeasurementComparison_LOGICAL_OPERATORParserRuleCall_3_q.equals(syntax))
 				emit_MeasurementComparison_LOGICAL_OPERATORParserRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Rule_ElseKeyword_7_0_q.equals(syntax))
-				emit_Rule_ElseKeyword_7_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Rule_ElseKeyword_5_0_q.equals(syntax))
+				emit_Rule_ElseKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Syntax:
+	 *     'AND'?
+	 */
+	protected void emit_AtomicAction_ANDKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Syntax:
 	 *     LOGICAL_OPERATOR?
@@ -98,7 +109,7 @@ public class AdaptationModelDSLSyntacticSequencer extends AbstractSyntacticSeque
 	 * Syntax:
 	 *     'else'?
 	 */
-	protected void emit_Rule_ElseKeyword_7_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Rule_ElseKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

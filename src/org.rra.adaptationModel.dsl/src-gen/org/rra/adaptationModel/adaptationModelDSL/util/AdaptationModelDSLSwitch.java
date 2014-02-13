@@ -93,6 +93,20 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AdaptationModelDSLPackage.RULE_WITH_PRIORITY:
+      {
+        RuleWithPriority ruleWithPriority = (RuleWithPriority)theEObject;
+        T result = caseRuleWithPriority(ruleWithPriority);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AdaptationModelDSLPackage.RULE_SET:
+      {
+        RuleSet ruleSet = (RuleSet)theEObject;
+        T result = caseRuleSet(ruleSet);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AdaptationModelDSLPackage.CONDITION:
       {
         Condition condition = (Condition)theEObject;
@@ -104,45 +118,6 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
       {
         MeasurementComparison measurementComparison = (MeasurementComparison)theEObject;
         T result = caseMeasurementComparison(measurementComparison);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AdaptationModelDSLPackage.MATH_OPERATOR:
-      {
-        MATH_OPERATOR matH_OPERATOR = (MATH_OPERATOR)theEObject;
-        T result = caseMATH_OPERATOR(matH_OPERATOR);
-        if (result == null) result = caseQueryAction(matH_OPERATOR);
-        if (result == null) result = caseAtomicAction(matH_OPERATOR);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AdaptationModelDSLPackage.AVG:
-      {
-        AVG avg = (AVG)theEObject;
-        T result = caseAVG(avg);
-        if (result == null) result = caseMATH_OPERATOR(avg);
-        if (result == null) result = caseQueryAction(avg);
-        if (result == null) result = caseAtomicAction(avg);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AdaptationModelDSLPackage.MIN:
-      {
-        MIN min = (MIN)theEObject;
-        T result = caseMIN(min);
-        if (result == null) result = caseMATH_OPERATOR(min);
-        if (result == null) result = caseQueryAction(min);
-        if (result == null) result = caseAtomicAction(min);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AdaptationModelDSLPackage.MAX:
-      {
-        MAX max = (MAX)theEObject;
-        T result = caseMAX(max);
-        if (result == null) result = caseMATH_OPERATOR(max);
-        if (result == null) result = caseQueryAction(max);
-        if (result == null) result = caseAtomicAction(max);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -261,6 +236,38 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Rule With Priority</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Rule With Priority</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRuleWithPriority(RuleWithPriority object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Rule Set</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Rule Set</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRuleSet(RuleSet object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Condition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -288,70 +295,6 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseMeasurementComparison(MeasurementComparison object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>MATH OPERATOR</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>MATH OPERATOR</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMATH_OPERATOR(MATH_OPERATOR object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>AVG</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>AVG</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAVG(AVG object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>MIN</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>MIN</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMIN(MIN object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>MAX</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>MAX</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMAX(MAX object)
   {
     return null;
   }

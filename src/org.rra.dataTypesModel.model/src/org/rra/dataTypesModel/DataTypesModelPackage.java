@@ -122,13 +122,22 @@ public interface DataTypesModelPackage extends EPackage {
 	int DATA_TYPES_MODEL__NON_MEMBER_FUNCTIONS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Ros Msg Functions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPES_MODEL__ROS_MSG_FUNCTIONS = 3;
+
+	/**
 	 * The number of structural features of the '<em>Data Types Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPES_MODEL_FEATURE_COUNT = 3;
+	int DATA_TYPES_MODEL_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Data Types Model</em>' class.
@@ -276,7 +285,7 @@ public interface DataTypesModelPackage extends EPackage {
 	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getContainerDataType()
 	 * @generated
 	 */
-	int CONTAINER_DATA_TYPE = 5;
+	int CONTAINER_DATA_TYPE = 7;
 
 	/**
 	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.FunctionImpl <em>Function</em>}' class.
@@ -286,7 +295,7 @@ public interface DataTypesModelPackage extends EPackage {
 	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getFunction()
 	 * @generated
 	 */
-	int FUNCTION = 6;
+	int FUNCTION = 8;
 
 	/**
 	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.MemberFunctionImpl <em>Member Function</em>}' class.
@@ -296,7 +305,7 @@ public interface DataTypesModelPackage extends EPackage {
 	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getMemberFunction()
 	 * @generated
 	 */
-	int MEMBER_FUNCTION = 7;
+	int MEMBER_FUNCTION = 9;
 
 	/**
 	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.NonMemberFunctionImpl <em>Non Member Function</em>}' class.
@@ -306,7 +315,7 @@ public interface DataTypesModelPackage extends EPackage {
 	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getNonMemberFunction()
 	 * @generated
 	 */
-	int NON_MEMBER_FUNCTION = 8;
+	int NON_MEMBER_FUNCTION = 10;
 
 	/**
 	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.ROSMsgFunctionImpl <em>ROS Msg Function</em>}' class.
@@ -316,7 +325,7 @@ public interface DataTypesModelPackage extends EPackage {
 	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getROSMsgFunction()
 	 * @generated
 	 */
-	int ROS_MSG_FUNCTION = 9;
+	int ROS_MSG_FUNCTION = 11;
 
 	/**
 	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.FieldImpl <em>Field</em>}' class.
@@ -326,7 +335,7 @@ public interface DataTypesModelPackage extends EPackage {
 	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getField()
 	 * @generated
 	 */
-	int FIELD = 10;
+	int FIELD = 12;
 
 	/**
 	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.ROSMsgFieldImpl <em>ROS Msg Field</em>}' class.
@@ -336,7 +345,7 @@ public interface DataTypesModelPackage extends EPackage {
 	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getROSMsgField()
 	 * @generated
 	 */
-	int ROS_MSG_FIELD = 11;
+	int ROS_MSG_FIELD = 13;
 
 	/**
 	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.CompositeTypeFieldImpl <em>Composite Type Field</em>}' class.
@@ -346,7 +355,7 @@ public interface DataTypesModelPackage extends EPackage {
 	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getCompositeTypeField()
 	 * @generated
 	 */
-	int COMPOSITE_TYPE_FIELD = 12;
+	int COMPOSITE_TYPE_FIELD = 14;
 
 	/**
 	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.ROSMsgDataTypeImpl <em>ROS Msg Data Type</em>}' class.
@@ -386,22 +395,13 @@ public interface DataTypesModelPackage extends EPackage {
 	int ROS_MSG_DATA_TYPE__FIELDS = DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Functions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROS_MSG_DATA_TYPE__FUNCTIONS = DATA_TYPE_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>ROS Msg Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROS_MSG_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 3;
+	int ROS_MSG_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>ROS Msg Data Type</em>' class.
@@ -411,6 +411,89 @@ public interface DataTypesModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROS_MSG_DATA_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.EnumeratorImpl <em>Enumerator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.rra.dataTypesModel.impl.EnumeratorImpl
+	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getEnumerator()
+	 * @generated
+	 */
+	int ENUMERATOR = 5;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATOR__NAME = DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATOR__ELEMENTS = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Enumerator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATOR_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Enumerator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATOR_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.rra.dataTypesModel.impl.EnumElementImpl <em>Enum Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.rra.dataTypesModel.impl.EnumElementImpl
+	 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getEnumElement()
+	 * @generated
+	 */
+	int ENUM_ELEMENT = 6;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUM_ELEMENT__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Enum Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUM_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Enum Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUM_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -745,6 +828,17 @@ public interface DataTypesModelPackage extends EPackage {
 	EReference getDataTypesModel_NonMemberFunctions();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.rra.dataTypesModel.DataTypesModel#getRosMsgFunctions <em>Ros Msg Functions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ros Msg Functions</em>'.
+	 * @see org.rra.dataTypesModel.DataTypesModel#getRosMsgFunctions()
+	 * @see #getDataTypesModel()
+	 * @generated
+	 */
+	EReference getDataTypesModel_RosMsgFunctions();
+
+	/**
 	 * Returns the meta object for class '{@link org.rra.dataTypesModel.DataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1019,15 +1113,46 @@ public interface DataTypesModelPackage extends EPackage {
 	EAttribute getROSMsgDataType_Msgs_package();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.rra.dataTypesModel.ROSMsgDataType#getFunctions <em>Functions</em>}'.
+	 * Returns the meta object for class '{@link org.rra.dataTypesModel.Enumerator <em>Enumerator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Functions</em>'.
-	 * @see org.rra.dataTypesModel.ROSMsgDataType#getFunctions()
-	 * @see #getROSMsgDataType()
+	 * @return the meta object for class '<em>Enumerator</em>'.
+	 * @see org.rra.dataTypesModel.Enumerator
 	 * @generated
 	 */
-	EReference getROSMsgDataType_Functions();
+	EClass getEnumerator();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.rra.dataTypesModel.Enumerator#getElements <em>Elements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Elements</em>'.
+	 * @see org.rra.dataTypesModel.Enumerator#getElements()
+	 * @see #getEnumerator()
+	 * @generated
+	 */
+	EReference getEnumerator_Elements();
+
+	/**
+	 * Returns the meta object for class '{@link org.rra.dataTypesModel.EnumElement <em>Enum Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Enum Element</em>'.
+	 * @see org.rra.dataTypesModel.EnumElement
+	 * @generated
+	 */
+	EClass getEnumElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.rra.dataTypesModel.EnumElement#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.rra.dataTypesModel.EnumElement#getName()
+	 * @see #getEnumElement()
+	 * @generated
+	 */
+	EAttribute getEnumElement_Name();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.rra.dataTypesModel.ROSMsgDataType#getFields <em>Fields</em>}'.
@@ -1096,6 +1221,14 @@ public interface DataTypesModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_TYPES_MODEL__NON_MEMBER_FUNCTIONS = eINSTANCE.getDataTypesModel_NonMemberFunctions();
+
+		/**
+		 * The meta object literal for the '<em><b>Ros Msg Functions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_TYPES_MODEL__ROS_MSG_FUNCTIONS = eINSTANCE.getDataTypesModel_RosMsgFunctions();
 
 		/**
 		 * The meta object literal for the '{@link org.rra.dataTypesModel.impl.DataTypeImpl <em>Data Type</em>}' class.
@@ -1330,12 +1463,40 @@ public interface DataTypesModelPackage extends EPackage {
 		EAttribute ROS_MSG_DATA_TYPE__MSGS_PACKAGE = eINSTANCE.getROSMsgDataType_Msgs_package();
 
 		/**
-		 * The meta object literal for the '<em><b>Functions</b></em>' containment reference list feature.
+		 * The meta object literal for the '{@link org.rra.dataTypesModel.impl.EnumeratorImpl <em>Enumerator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.rra.dataTypesModel.impl.EnumeratorImpl
+		 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getEnumerator()
+		 * @generated
+		 */
+		EClass ENUMERATOR = eINSTANCE.getEnumerator();
+
+		/**
+		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROS_MSG_DATA_TYPE__FUNCTIONS = eINSTANCE.getROSMsgDataType_Functions();
+		EReference ENUMERATOR__ELEMENTS = eINSTANCE.getEnumerator_Elements();
+
+		/**
+		 * The meta object literal for the '{@link org.rra.dataTypesModel.impl.EnumElementImpl <em>Enum Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.rra.dataTypesModel.impl.EnumElementImpl
+		 * @see org.rra.dataTypesModel.impl.DataTypesModelPackageImpl#getEnumElement()
+		 * @generated
+		 */
+		EClass ENUM_ELEMENT = eINSTANCE.getEnumElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENUM_ELEMENT__NAME = eINSTANCE.getEnumElement_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
