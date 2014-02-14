@@ -52,39 +52,6 @@ ros::Subscriber [%=cdm.name%]_sub;
 %]
 
 [%
-for(cdm in cdmModel.cdms) {
-	if(cdm.isTypeOf(ROSContextDependentMeasurement)){
-		var dataType : DataType;
-		//var topic : Topic := cdm.topic;
-		if(cdm.cdmFunction.isDefined()){
-			dataType = cdm.cdmFunction.outputParameter;
-		}else{
-			dataType = cdm.inputDataType;
-			//dataType = topic.dataType;
-		}
-%]
-
-void [%=cdm.name%]_callback(const [%=dataType.msgs_package%]::[%=dataType.name%]::ConstPtr& input){
-
-	[%=dataType.msgs_package%]::[%=dataType.name%] output;
-[%
-		if(cdm.cdmFunction.isDefined()){
-%]
-	[%=cdm.cdmFunction.name%](input, output);
-[%
-		}else{
-%]
-	output = input;
-[%	
-	}
-%]
-	[%=cdm.name%]_pub.publish(output);	
-
-}
-[%
-	}
-}
-
 var functions : Sequence := cdmHelper.getRosMsgFunctions(cdmModel);
 
 for(fun in functions) {
@@ -100,6 +67,40 @@ void [%=fun.name%](const [%=fun.inputParameter.msgs_package%]::[%=fun.inputParam
 [%
 }
 
+for(cdm in cdmModel.cdms) {
+	if(cdm.isTypeOf(ROSContextDependentMeasurement)){
+		var inputDataType : DataType := cdm.inputDataType;
+		//var inputDataType : DataType := cdm.topic.dataType;
+		var outputDataType : DataType;
+		
+		if(cdm.cdmFunction.isDefined()){
+			outputDataType = cdm.cdmFunction.outputParameter;
+		}else{
+			outputDataType = cdm.inputDataType;
+		}
+%]
+
+void [%=cdm.name%]_callback(const [%=inputDataType.msgs_package%]::[%=inputDataType.name%]::ConstPtr& input){
+
+	[%=outputDataType.msgs_package%]::[%=outputDataType.name%] output;
+[%
+		if(cdm.cdmFunction.isDefined()){
+%]
+	[%=cdm.cdmFunction.name%](input, output);
+[%
+		}else{
+%]
+	output.data = input->data;
+[%	
+	}
+%]
+	[%=cdm.name%]_pub.publish(output);	
+
+}
+[%
+	}
+}
+
 %]
 
 
@@ -113,17 +114,15 @@ int main(int argc, char** argv){
 [%
 for(cdm in cdmModel.cdms) {
 	if(cdm.isTypeOf(ROSContextDependentMeasurement)){
-		var dataType : DataType;
-		var topic : Topic := cdm.topic;
+		var outputDataType : DataType;
 		if(cdm.cdmFunction.isDefined()){
-			dataType = cdm.cdmFunction.outputParameter;
+			outputDataType = cdm.cdmFunction.outputParameter;
 		}else{
-			dataType = cdm.inputDataType;
-			//dataType = topic.dataType;
+			outputDataType = cdm.inputDataType;
 		}
 %]
-	[%=cdm.name%]_pub = nodeHandle.advertise<[%=dataType.msgs_package%]::[%=dataType.name%]>("[%=cdm.name%]",1000);
-	[%=cdm.name%]_sub = nodeHandle.subscribe("[%=topic.name%]", 1000, [%=cdm.name%]_callback);
+	[%=cdm.name%]_pub = nodeHandle.advertise<[%=outputDataType.msgs_package%]::[%=outputDataType.name%]>("[%=cdm.name%]",1000);
+	[%=cdm.name%]_sub = nodeHandle.subscribe("[%=cdm.topic.name%]", 1000, [%=cdm.name%]_callback);
 [%
 	}
 }
