@@ -30,12 +30,12 @@
  *]
 [%
 	
-	var cdmModel : ContextDependentMeasurementsModel := ContextDependentMeasurementsModel.allInstances().at(0);
+	var adaptationModel : AdaptationModel := AdaptationModel.allInstances().at(0);
 	
 	// context monitor
-	var launchTemplate := TemplateFactory.load('contextMonitor.egl');
-	launchTemplate.populate('cdmModel', cdmModel);
-	var fileName := cdmModel.name + '.cpp';
+	var launchTemplate := TemplateFactory.load('adaptationEngine.egl');
+	launchTemplate.populate('adaptationModel', adaptationModel);
+	var fileName := 'adaptationModel.cpp';
 	launchTemplate.generate(fileName);
 	
 	//manifest

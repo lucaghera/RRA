@@ -1,4 +1,4 @@
-[*
+/**
  * Robotics Runtime Adaptation Toolchain
  * 
  * Copyright (c) 2014
@@ -27,20 +27,41 @@
  * http://www.eclipse.org/legal/epl-v10.html
  * 
  * 
- *]
-[%
+ */
+package org.rra.adaptationModel.m2t.tools;
+
+
+
+import java.util.ArrayList;
+
+import org.rra.adaptationModel.adaptationModelDSL.AdaptationModel;
+import org.rra.adaptationModel.adaptationModelDSL.Rule;
+
+
+
+public class AdaptationEngineTools {
+
+	public AdaptationEngineTools() {	
+
+	}
+
+		/**
+	 * Returns the list of all the nodes of a certain composite
+	 * (directly and inderectly contained)
+	 * @generated NOT
+	 */
+	public ArrayList<Rule> getRules(AdaptationModel adaptationModel){
+
+		ArrayList<Rule> rules = new ArrayList<Rule>();
+
+		
+
+		return rules;
+
+	}
 	
-	var cdmModel : ContextDependentMeasurementsModel := ContextDependentMeasurementsModel.allInstances().at(0);
 	
-	// context monitor
-	var launchTemplate := TemplateFactory.load('contextMonitor.egl');
-	launchTemplate.populate('cdmModel', cdmModel);
-	var fileName := cdmModel.name + '.cpp';
-	launchTemplate.generate(fileName);
+
 	
-	//manifest
-	//var manifestTemplate := TemplateFactory.load('manifest.egl');
-	//manifestTemplate.populate('mainComposite', mainComposite);
-	//manifestTemplate.generate('manifest.xml');
-	
-%]
+
+}

@@ -28,19 +28,15 @@
  * 
  * 
  *]
+
+#include "ros/ros.h"
 [%
-	
-	var cdmModel : ContextDependentMeasurementsModel := ContextDependentMeasurementsModel.allInstances().at(0);
-	
-	// context monitor
-	var launchTemplate := TemplateFactory.load('contextMonitor.egl');
-	launchTemplate.populate('cdmModel', cdmModel);
-	var fileName := cdmModel.name + '.cpp';
-	launchTemplate.generate(fileName);
-	
-	//manifest
-	//var manifestTemplate := TemplateFactory.load('manifest.egl');
-	//manifestTemplate.populate('mainComposite', mainComposite);
-	//manifestTemplate.generate('manifest.xml');
-	
+var amHelper = new Native("org.rra.adaptationModel.m2t.tools.AdaptationEngineTools");
+var rules : Sequence := amHelper.getRules(adaptationModel);
+
+for(rule in adaptationModel.rules) {
+%]
+rule "[%=rule.name%]"
+[%
+}
 %]
