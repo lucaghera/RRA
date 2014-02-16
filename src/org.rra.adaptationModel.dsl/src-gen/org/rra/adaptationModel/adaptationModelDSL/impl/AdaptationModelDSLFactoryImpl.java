@@ -65,6 +65,7 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
     switch (eClass.getClassifierID())
     {
       case AdaptationModelDSLPackage.ADAPTATION_MODEL: return createAdaptationModel();
+      case AdaptationModelDSLPackage.ADAPTATION_RULE: return createAdaptationRule();
       case AdaptationModelDSLPackage.IMPORT: return createImport();
       case AdaptationModelDSLPackage.RULE: return createRule();
       case AdaptationModelDSLPackage.RULE_WITH_PRIORITY: return createRuleWithPriority();
@@ -93,6 +94,17 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
   {
     AdaptationModelImpl adaptationModel = new AdaptationModelImpl();
     return adaptationModel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AdaptationRule createAdaptationRule()
+  {
+    AdaptationRuleImpl adaptationRule = new AdaptationRuleImpl();
+    return adaptationRule;
   }
 
   /**

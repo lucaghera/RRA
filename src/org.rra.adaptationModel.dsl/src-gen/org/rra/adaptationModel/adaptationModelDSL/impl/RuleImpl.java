@@ -4,16 +4,12 @@ package org.rra.adaptationModel.adaptationModelDSL.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,7 +26,6 @@ import org.rra.adaptationModel.adaptationModelDSL.Rule;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.RuleImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.RuleImpl#getCondition <em>Condition</em>}</li>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.RuleImpl#getAtomicAction <em>Atomic Action</em>}</li>
  * </ul>
@@ -38,28 +33,8 @@ import org.rra.adaptationModel.adaptationModelDSL.Rule;
  *
  * @generated
  */
-public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
+public class RuleImpl extends AdaptationRuleImpl implements Rule
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -99,29 +74,6 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
   protected EClass eStaticClass()
   {
     return AdaptationModelDSLPackage.Literals.RULE;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.RULE__NAME, oldName, name));
   }
 
   /**
@@ -180,8 +132,6 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.RULE__NAME:
-        return getName();
       case AdaptationModelDSLPackage.RULE__CONDITION:
         return getCondition();
       case AdaptationModelDSLPackage.RULE__ATOMIC_ACTION:
@@ -201,9 +151,6 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.RULE__NAME:
-        setName((String)newValue);
-        return;
       case AdaptationModelDSLPackage.RULE__CONDITION:
         getCondition().clear();
         getCondition().addAll((Collection<? extends Condition>)newValue);
@@ -226,9 +173,6 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.RULE__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case AdaptationModelDSLPackage.RULE__CONDITION:
         getCondition().clear();
         return;
@@ -249,31 +193,12 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.RULE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AdaptationModelDSLPackage.RULE__CONDITION:
         return condition != null && !condition.isEmpty();
       case AdaptationModelDSLPackage.RULE__ATOMIC_ACTION:
         return atomicAction != null && !atomicAction.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //RuleImpl

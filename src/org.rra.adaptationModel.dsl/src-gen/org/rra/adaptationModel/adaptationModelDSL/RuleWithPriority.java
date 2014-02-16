@@ -2,8 +2,6 @@
  */
 package org.rra.adaptationModel.adaptationModelDSL;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -52,19 +50,29 @@ public interface RuleWithPriority extends EObject
   void setPriorityValue(int value);
 
   /**
-   * Returns the value of the '<em><b>Rule</b></em>' containment reference list.
-   * The list contents are of type {@link org.rra.adaptationModel.adaptationModelDSL.Rule}.
+   * Returns the value of the '<em><b>Rule</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Rule</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Rule</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Rule</em>' containment reference list.
+   * @return the value of the '<em>Rule</em>' containment reference.
+   * @see #setRule(Rule)
    * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getRuleWithPriority_Rule()
    * @model containment="true"
    * @generated
    */
-  EList<Rule> getRule();
+  Rule getRule();
+
+  /**
+   * Sets the value of the '{@link org.rra.adaptationModel.adaptationModelDSL.RuleWithPriority#getRule <em>Rule</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Rule</em>' containment reference.
+   * @see #getRule()
+   * @generated
+   */
+  void setRule(Rule value);
 
 } // RuleWithPriority

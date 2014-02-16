@@ -95,43 +95,117 @@ ruleAdaptationModel returns [EObject current=null]
 	    }
 
 )
-)*(
+)*	otherlv_1='name' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getAdaptationModelAccess().getNameKeyword_1());
+    }
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAdaptationModelAccess().getRulesRuleParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getAdaptationModelAccess().getNameQualifiedNameParserRuleCall_2_0()); 
 	    }
-		lv_rules_1_0=ruleRule		{
+		lv_name_2_0=ruleQualifiedName		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAdaptationModelRule());
 	        }
-       		add(
+       		set(
        			$current, 
-       			"rules",
-        		lv_rules_1_0, 
-        		"Rule");
+       			"name",
+        		lv_name_2_0, 
+        		"QualifiedName");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*(
+)	otherlv_3=';' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getAdaptationModelAccess().getSemicolonKeyword_3());
+    }
+	otherlv_4='frequency' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getAdaptationModelAccess().getFrequencyKeyword_4());
+    }
+(
+(
+		lv_frequency_5_0=RULE_INT
+		{
+			newLeafNode(lv_frequency_5_0, grammarAccess.getAdaptationModelAccess().getFrequencyINTTerminalRuleCall_5_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAdaptationModelRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"frequency",
+        		lv_frequency_5_0, 
+        		"INT");
+	    }
+
+)
+)	otherlv_6=';' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getAdaptationModelAccess().getSemicolonKeyword_6());
+    }
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAdaptationModelAccess().getRuleSetsRuleSetParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getAdaptationModelAccess().getAdaptationRulesAdaptationRuleParserRuleCall_7_0()); 
 	    }
-		lv_ruleSets_2_0=ruleRuleSet		{
+		lv_adaptationRules_7_0=ruleAdaptationRule		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAdaptationModelRule());
 	        }
        		add(
        			$current, 
-       			"ruleSets",
-        		lv_ruleSets_2_0, 
-        		"RuleSet");
+       			"adaptationRules",
+        		lv_adaptationRules_7_0, 
+        		"AdaptationRule");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )*)
+;
+
+
+
+
+
+// Entry rule entryRuleAdaptationRule
+entryRuleAdaptationRule returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getAdaptationRuleRule()); }
+	 iv_ruleAdaptationRule=ruleAdaptationRule 
+	 { $current=$iv_ruleAdaptationRule.current; } 
+	 EOF 
+;
+
+// Rule AdaptationRule
+ruleAdaptationRule returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getAdaptationRuleAccess().getRuleParserRuleCall_0()); 
+    }
+    this_Rule_0=ruleRule
+    { 
+        $current = $this_Rule_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getAdaptationRuleAccess().getRuleSetParserRuleCall_1()); 
+    }
+    this_RuleSet_1=ruleRuleSet
+    { 
+        $current = $this_RuleSet_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
 ;
 
 
@@ -174,7 +248,11 @@ ruleImport returns [EObject current=null]
 	    }
 
 )
-))
+)	otherlv_2=';' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getImportAccess().getSemicolonKeyword_2());
+    }
+)
 ;
 
 
@@ -420,7 +498,7 @@ ruleRuleWithPriority returns [EObject current=null]
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRuleWithPriorityRule());
 	        }
-       		add(
+       		set(
        			$current, 
        			"rule",
         		lv_rule_2_0, 

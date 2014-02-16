@@ -2,21 +2,14 @@
  */
 package org.rra.adaptationModel.adaptationModelDSL.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
 import org.rra.adaptationModel.adaptationModelDSL.Rule;
@@ -59,14 +52,14 @@ public class RuleWithPriorityImpl extends MinimalEObjectImpl.Container implement
   protected int priorityValue = PRIORITY_VALUE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getRule() <em>Rule</em>}' containment reference list.
+   * The cached value of the '{@link #getRule() <em>Rule</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getRule()
    * @generated
    * @ordered
    */
-  protected EList<Rule> rule;
+  protected Rule rule;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,13 +110,47 @@ public class RuleWithPriorityImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Rule> getRule()
+  public Rule getRule()
   {
-    if (rule == null)
-    {
-      rule = new EObjectContainmentEList<Rule>(Rule.class, this, AdaptationModelDSLPackage.RULE_WITH_PRIORITY__RULE);
-    }
     return rule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRule(Rule newRule, NotificationChain msgs)
+  {
+    Rule oldRule = rule;
+    rule = newRule;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.RULE_WITH_PRIORITY__RULE, oldRule, newRule);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRule(Rule newRule)
+  {
+    if (newRule != rule)
+    {
+      NotificationChain msgs = null;
+      if (rule != null)
+        msgs = ((InternalEObject)rule).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AdaptationModelDSLPackage.RULE_WITH_PRIORITY__RULE, null, msgs);
+      if (newRule != null)
+        msgs = ((InternalEObject)newRule).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AdaptationModelDSLPackage.RULE_WITH_PRIORITY__RULE, null, msgs);
+      msgs = basicSetRule(newRule, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.RULE_WITH_PRIORITY__RULE, newRule, newRule));
   }
 
   /**
@@ -137,7 +164,7 @@ public class RuleWithPriorityImpl extends MinimalEObjectImpl.Container implement
     switch (featureID)
     {
       case AdaptationModelDSLPackage.RULE_WITH_PRIORITY__RULE:
-        return ((InternalEList<?>)getRule()).basicRemove(otherEnd, msgs);
+        return basicSetRule(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -165,7 +192,6 @@ public class RuleWithPriorityImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -175,8 +201,7 @@ public class RuleWithPriorityImpl extends MinimalEObjectImpl.Container implement
         setPriorityValue((Integer)newValue);
         return;
       case AdaptationModelDSLPackage.RULE_WITH_PRIORITY__RULE:
-        getRule().clear();
-        getRule().addAll((Collection<? extends Rule>)newValue);
+        setRule((Rule)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -196,7 +221,7 @@ public class RuleWithPriorityImpl extends MinimalEObjectImpl.Container implement
         setPriorityValue(PRIORITY_VALUE_EDEFAULT);
         return;
       case AdaptationModelDSLPackage.RULE_WITH_PRIORITY__RULE:
-        getRule().clear();
+        setRule((Rule)null);
         return;
     }
     super.eUnset(featureID);
@@ -215,7 +240,7 @@ public class RuleWithPriorityImpl extends MinimalEObjectImpl.Container implement
       case AdaptationModelDSLPackage.RULE_WITH_PRIORITY__PRIORITY_VALUE:
         return priorityValue != PRIORITY_VALUE_EDEFAULT;
       case AdaptationModelDSLPackage.RULE_WITH_PRIORITY__RULE:
-        return rule != null && !rule.isEmpty();
+        return rule != null;
     }
     return super.eIsSet(featureID);
   }

@@ -4,6 +4,7 @@ package org.rra.adaptationModel.adaptationModelDSL.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -18,9 +20,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModel;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
+import org.rra.adaptationModel.adaptationModelDSL.AdaptationRule;
 import org.rra.adaptationModel.adaptationModelDSL.Import;
-import org.rra.adaptationModel.adaptationModelDSL.Rule;
-import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,8 +31,9 @@ import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getImports <em>Imports</em>}</li>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getRules <em>Rules</em>}</li>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getRuleSets <em>Rule Sets</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getFrequency <em>Frequency</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getAdaptationRules <em>Adaptation Rules</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,24 +52,54 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
   protected EList<Import> imports;
 
   /**
-   * The cached value of the '{@link #getRules() <em>Rules</em>}' containment reference list.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRules()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<Rule> rules;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getRuleSets() <em>Rule Sets</em>}' containment reference list.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRuleSets()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<RuleSet> ruleSets;
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getFrequency() <em>Frequency</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFrequency()
+   * @generated
+   * @ordered
+   */
+  protected static final int FREQUENCY_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getFrequency() <em>Frequency</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFrequency()
+   * @generated
+   * @ordered
+   */
+  protected int frequency = FREQUENCY_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAdaptationRules() <em>Adaptation Rules</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAdaptationRules()
+   * @generated
+   * @ordered
+   */
+  protected EList<AdaptationRule> adaptationRules;
 
   /**
    * <!-- begin-user-doc -->
@@ -109,13 +141,9 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Rule> getRules()
+  public String getName()
   {
-    if (rules == null)
-    {
-      rules = new EObjectContainmentEList<Rule>(Rule.class, this, AdaptationModelDSLPackage.ADAPTATION_MODEL__RULES);
-    }
-    return rules;
+    return name;
   }
 
   /**
@@ -123,13 +151,49 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<RuleSet> getRuleSets()
+  public void setName(String newName)
   {
-    if (ruleSets == null)
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.ADAPTATION_MODEL__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getFrequency()
+  {
+    return frequency;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFrequency(int newFrequency)
+  {
+    int oldFrequency = frequency;
+    frequency = newFrequency;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.ADAPTATION_MODEL__FREQUENCY, oldFrequency, frequency));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<AdaptationRule> getAdaptationRules()
+  {
+    if (adaptationRules == null)
     {
-      ruleSets = new EObjectContainmentEList<RuleSet>(RuleSet.class, this, AdaptationModelDSLPackage.ADAPTATION_MODEL__RULE_SETS);
+      adaptationRules = new EObjectContainmentEList<AdaptationRule>(AdaptationRule.class, this, AdaptationModelDSLPackage.ADAPTATION_MODEL__ADAPTATION_RULES);
     }
-    return ruleSets;
+    return adaptationRules;
   }
 
   /**
@@ -144,10 +208,8 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
     {
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__IMPORTS:
         return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
-      case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULES:
-        return ((InternalEList<?>)getRules()).basicRemove(otherEnd, msgs);
-      case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULE_SETS:
-        return ((InternalEList<?>)getRuleSets()).basicRemove(otherEnd, msgs);
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__ADAPTATION_RULES:
+        return ((InternalEList<?>)getAdaptationRules()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -164,10 +226,12 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
     {
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__IMPORTS:
         return getImports();
-      case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULES:
-        return getRules();
-      case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULE_SETS:
-        return getRuleSets();
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__NAME:
+        return getName();
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__FREQUENCY:
+        return getFrequency();
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__ADAPTATION_RULES:
+        return getAdaptationRules();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -187,13 +251,15 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
         getImports().clear();
         getImports().addAll((Collection<? extends Import>)newValue);
         return;
-      case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULES:
-        getRules().clear();
-        getRules().addAll((Collection<? extends Rule>)newValue);
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__NAME:
+        setName((String)newValue);
         return;
-      case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULE_SETS:
-        getRuleSets().clear();
-        getRuleSets().addAll((Collection<? extends RuleSet>)newValue);
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__FREQUENCY:
+        setFrequency((Integer)newValue);
+        return;
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__ADAPTATION_RULES:
+        getAdaptationRules().clear();
+        getAdaptationRules().addAll((Collection<? extends AdaptationRule>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -212,11 +278,14 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__IMPORTS:
         getImports().clear();
         return;
-      case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULES:
-        getRules().clear();
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__NAME:
+        setName(NAME_EDEFAULT);
         return;
-      case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULE_SETS:
-        getRuleSets().clear();
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__FREQUENCY:
+        setFrequency(FREQUENCY_EDEFAULT);
+        return;
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__ADAPTATION_RULES:
+        getAdaptationRules().clear();
         return;
     }
     super.eUnset(featureID);
@@ -234,12 +303,33 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
     {
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__IMPORTS:
         return imports != null && !imports.isEmpty();
-      case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULES:
-        return rules != null && !rules.isEmpty();
-      case AdaptationModelDSLPackage.ADAPTATION_MODEL__RULE_SETS:
-        return ruleSets != null && !ruleSets.isEmpty();
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__FREQUENCY:
+        return frequency != FREQUENCY_EDEFAULT;
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__ADAPTATION_RULES:
+        return adaptationRules != null && !adaptationRules.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", frequency: ");
+    result.append(frequency);
+    result.append(')');
+    return result.toString();
   }
 
 } //AdaptationModelImpl

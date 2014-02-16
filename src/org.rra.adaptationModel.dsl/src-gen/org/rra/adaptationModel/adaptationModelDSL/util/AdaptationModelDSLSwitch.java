@@ -79,6 +79,13 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AdaptationModelDSLPackage.ADAPTATION_RULE:
+      {
+        AdaptationRule adaptationRule = (AdaptationRule)theEObject;
+        T result = caseAdaptationRule(adaptationRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AdaptationModelDSLPackage.IMPORT:
       {
         Import import_ = (Import)theEObject;
@@ -90,6 +97,7 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
       {
         Rule rule = (Rule)theEObject;
         T result = caseRule(rule);
+        if (result == null) result = caseAdaptationRule(rule);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -104,6 +112,7 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
       {
         RuleSet ruleSet = (RuleSet)theEObject;
         T result = caseRuleSet(ruleSet);
+        if (result == null) result = caseAdaptationRule(ruleSet);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -199,6 +208,22 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAdaptationModel(AdaptationModel object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Adaptation Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Adaptation Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAdaptationRule(AdaptationRule object)
   {
     return null;
   }

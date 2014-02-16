@@ -14,6 +14,7 @@ import org.hyperflex.featuremodels.featuremodelsPackage;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModel;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLFactory;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
+import org.rra.adaptationModel.adaptationModelDSL.AdaptationRule;
 import org.rra.adaptationModel.adaptationModelDSL.AtomicAction;
 import org.rra.adaptationModel.adaptationModelDSL.AttributeValue;
 import org.rra.adaptationModel.adaptationModelDSL.Condition;
@@ -47,6 +48,13 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * @generated
    */
   private EClass adaptationModelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass adaptationRuleEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -238,9 +246,9 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAdaptationModel_Rules()
+  public EAttribute getAdaptationModel_Name()
   {
-    return (EReference)adaptationModelEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)adaptationModelEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -248,9 +256,39 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAdaptationModel_RuleSets()
+  public EAttribute getAdaptationModel_Frequency()
   {
-    return (EReference)adaptationModelEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)adaptationModelEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAdaptationModel_AdaptationRules()
+  {
+    return (EReference)adaptationModelEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAdaptationRule()
+  {
+    return adaptationRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAdaptationRule_Name()
+  {
+    return (EAttribute)adaptationRuleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -288,19 +326,9 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRule_Name()
-  {
-    return (EAttribute)ruleEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getRule_Condition()
   {
-    return (EReference)ruleEClass.getEStructuralFeatures().get(1);
+    return (EReference)ruleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -310,7 +338,7 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    */
   public EReference getRule_AtomicAction()
   {
-    return (EReference)ruleEClass.getEStructuralFeatures().get(2);
+    return (EReference)ruleEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -358,19 +386,9 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRuleSet_Name()
-  {
-    return (EAttribute)ruleSetEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getRuleSet_Rules()
   {
-    return (EReference)ruleSetEClass.getEStructuralFeatures().get(1);
+    return (EReference)ruleSetEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -615,14 +633,17 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
     // Create classes and their features
     adaptationModelEClass = createEClass(ADAPTATION_MODEL);
     createEReference(adaptationModelEClass, ADAPTATION_MODEL__IMPORTS);
-    createEReference(adaptationModelEClass, ADAPTATION_MODEL__RULES);
-    createEReference(adaptationModelEClass, ADAPTATION_MODEL__RULE_SETS);
+    createEAttribute(adaptationModelEClass, ADAPTATION_MODEL__NAME);
+    createEAttribute(adaptationModelEClass, ADAPTATION_MODEL__FREQUENCY);
+    createEReference(adaptationModelEClass, ADAPTATION_MODEL__ADAPTATION_RULES);
+
+    adaptationRuleEClass = createEClass(ADAPTATION_RULE);
+    createEAttribute(adaptationRuleEClass, ADAPTATION_RULE__NAME);
 
     importEClass = createEClass(IMPORT);
     createEAttribute(importEClass, IMPORT__IMPORT_URI);
 
     ruleEClass = createEClass(RULE);
-    createEAttribute(ruleEClass, RULE__NAME);
     createEReference(ruleEClass, RULE__CONDITION);
     createEReference(ruleEClass, RULE__ATOMIC_ACTION);
 
@@ -631,7 +652,6 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
     createEReference(ruleWithPriorityEClass, RULE_WITH_PRIORITY__RULE);
 
     ruleSetEClass = createEClass(RULE_SET);
-    createEAttribute(ruleSetEClass, RULE_SET__NAME);
     createEReference(ruleSetEClass, RULE_SET__RULES);
 
     conditionEClass = createEClass(CONDITION);
@@ -700,6 +720,8 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    ruleEClass.getESuperTypes().add(this.getAdaptationRule());
+    ruleSetEClass.getESuperTypes().add(this.getAdaptationRule());
     queryActionEClass.getESuperTypes().add(this.getAtomicAction());
     selectActionEClass.getESuperTypes().add(this.getAtomicAction());
     deselectActionEClass.getESuperTypes().add(this.getAtomicAction());
@@ -710,23 +732,25 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
     // Initialize classes and features; add operations and parameters
     initEClass(adaptationModelEClass, AdaptationModel.class, "AdaptationModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAdaptationModel_Imports(), this.getImport(), null, "imports", null, 0, -1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAdaptationModel_Rules(), this.getRule(), null, "rules", null, 0, -1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAdaptationModel_RuleSets(), this.getRuleSet(), null, "ruleSets", null, 0, -1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAdaptationModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAdaptationModel_Frequency(), ecorePackage.getEInt(), "frequency", null, 0, 1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAdaptationModel_AdaptationRules(), this.getAdaptationRule(), null, "adaptationRules", null, 0, -1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(adaptationRuleEClass, AdaptationRule.class, "AdaptationRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAdaptationRule_Name(), ecorePackage.getEString(), "name", null, 0, 1, AdaptationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getImport_ImportURI(), ecorePackage.getEString(), "importURI", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRule_Name(), ecorePackage.getEString(), "name", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRule_Condition(), this.getCondition(), null, "condition", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRule_AtomicAction(), this.getAtomicAction(), null, "atomicAction", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ruleWithPriorityEClass, RuleWithPriority.class, "RuleWithPriority", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRuleWithPriority_PriorityValue(), ecorePackage.getEInt(), "priorityValue", null, 0, 1, RuleWithPriority.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRuleWithPriority_Rule(), this.getRule(), null, "rule", null, 0, -1, RuleWithPriority.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRuleWithPriority_Rule(), this.getRule(), null, "rule", null, 0, 1, RuleWithPriority.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ruleSetEClass, RuleSet.class, "RuleSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRuleSet_Name(), ecorePackage.getEString(), "name", null, 0, 1, RuleSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRuleSet_Rules(), this.getRuleWithPriority(), null, "rules", null, 0, -1, RuleSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

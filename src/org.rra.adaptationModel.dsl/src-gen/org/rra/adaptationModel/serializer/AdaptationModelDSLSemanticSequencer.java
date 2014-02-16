@@ -90,13 +90,15 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 				}
 				else break;
 			case AdaptationModelDSLPackage.RULE:
-				if(context == grammarAccess.getRuleRule()) {
+				if(context == grammarAccess.getAdaptationRuleRule() ||
+				   context == grammarAccess.getRuleRule()) {
 					sequence_Rule(context, (Rule) semanticObject); 
 					return; 
 				}
 				else break;
 			case AdaptationModelDSLPackage.RULE_SET:
-				if(context == grammarAccess.getRuleSetRule()) {
+				if(context == grammarAccess.getAdaptationRuleRule() ||
+				   context == grammarAccess.getRuleSetRule()) {
 					sequence_RuleSet(context, (RuleSet) semanticObject); 
 					return; 
 				}
@@ -127,7 +129,7 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Constraint:
-	 *     (imports+=Import* rules+=Rule* ruleSets+=RuleSet*)
+	 *     (imports+=Import* name=QualifiedName frequency=INT adaptationRules+=AdaptationRule*)
 	 */
 	protected void sequence_AdaptationModel(EObject context, AdaptationModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -249,10 +251,20 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Constraint:
-	 *     (priorityValue=INT rule+=Rule)
+	 *     (priorityValue=INT rule=Rule)
 	 */
 	protected void sequence_RuleWithPriority(EObject context, RuleWithPriority semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AdaptationModelDSLPackage.Literals.RULE_WITH_PRIORITY__PRIORITY_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AdaptationModelDSLPackage.Literals.RULE_WITH_PRIORITY__PRIORITY_VALUE));
+			if(transientValues.isValueTransient(semanticObject, AdaptationModelDSLPackage.Literals.RULE_WITH_PRIORITY__RULE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AdaptationModelDSLPackage.Literals.RULE_WITH_PRIORITY__RULE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getRuleWithPriorityAccess().getPriorityValueINTTerminalRuleCall_1_0(), semanticObject.getPriorityValue());
+		feeder.accept(grammarAccess.getRuleWithPriorityAccess().getRuleRuleParserRuleCall_2_0(), semanticObject.getRule());
+		feeder.finish();
 	}
 	
 	

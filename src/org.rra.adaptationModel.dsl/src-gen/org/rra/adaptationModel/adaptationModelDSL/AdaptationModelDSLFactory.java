@@ -32,6 +32,15 @@ public interface AdaptationModelDSLFactory extends EFactory
   AdaptationModel createAdaptationModel();
 
   /**
+   * Returns a new object of class '<em>Adaptation Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Adaptation Rule</em>'.
+   * @generated
+   */
+  AdaptationRule createAdaptationRule();
+
+  /**
    * Returns a new object of class '<em>Import</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -9,14 +9,17 @@
       fileExtensions="adaptationModel" ecorePackage="AdaptationModelDSL.ecore#/">
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//AdaptationModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AdaptationModel/imports"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AdaptationModel/rules"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AdaptationModel/ruleSets"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//AdaptationModel/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//AdaptationModel/frequency"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AdaptationModel/adaptationRules"/>
+    </genClasses>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//AdaptationRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//AdaptationRule/name"/>
     </genClasses>
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//Import">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//Import/importURI"/>
     </genClasses>
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//Rule">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//Rule/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//Rule/condition"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//Rule/atomicAction"/>
     </genClasses>
@@ -25,7 +28,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//RuleWithPriority/rule"/>
     </genClasses>
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//RuleSet">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//RuleSet/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//RuleSet/rules"/>
     </genClasses>
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//Condition">

@@ -10,9 +10,22 @@ import "http://www.rra.org/runtimeFeatureModel" as rtFeatureModel
 generate adaptationModelDSL "http://www.rra.org/adaptationModel/AdaptationModelDSL"
 
 AdaptationModel:
-	(imports+=Import*)    
- 	(rules+=Rule*)
- 	(ruleSets+=RuleSet*);
+	(imports+=Import*)
+	'name' name=QualifiedName ';' 
+	'frequency' frequency=INT ';' 
+	(adaptationRules+=AdaptationRule*)
+// 	(rules+=Rule*)
+// 	(ruleSets+=RuleSet*);
+;
+
+//terminal NUMBER returns ecore::EBigDecimal:
+//    (('0'..'9')+ ('.' ('0'..'9')*)? | '.' ('0'..'9')+)
+//    (('e' | 'E') ('+' | '-')? ('0'..'9')+)?
+//;
+ 	
+AdaptationRule:
+ 	Rule | RuleSet
+;
 
 //terminal VALUE returns ecore::EString: '"' ('0'..'9' | 'a'..'z' | '0'..'9' '.' '0'..'9')+'"';
 
@@ -36,7 +49,7 @@ AdaptationModel:
 //terminal FROM 		   returns ecore::EString: 'from';
 
 Import:
-	'import' importURI=STRING //AS name=ID
+	'import' importURI=STRING ';' //AS name=ID
 ;
 
 QualifiedNameWithWildcard:
@@ -54,7 +67,7 @@ Rule:
 ;
 
 RuleWithPriority:
-	'priority' priorityValue=INT  rule+=Rule
+	'priority' priorityValue=INT  rule=Rule
 ;
 
 RuleSet:

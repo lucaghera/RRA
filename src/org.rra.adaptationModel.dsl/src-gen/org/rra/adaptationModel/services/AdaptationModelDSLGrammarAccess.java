@@ -23,16 +23,24 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cImportsAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cImportsImportParserRuleCall_0_0 = (RuleCall)cImportsAssignment_0.eContents().get(0);
-		private final Assignment cRulesAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cRulesRuleParserRuleCall_1_0 = (RuleCall)cRulesAssignment_1.eContents().get(0);
-		private final Assignment cRuleSetsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cRuleSetsRuleSetParserRuleCall_2_0 = (RuleCall)cRuleSetsAssignment_2.eContents().get(0);
+		private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameQualifiedNameParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cFrequencyKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cFrequencyAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cFrequencyINTTerminalRuleCall_5_0 = (RuleCall)cFrequencyAssignment_5.eContents().get(0);
+		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cAdaptationRulesAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cAdaptationRulesAdaptationRuleParserRuleCall_7_0 = (RuleCall)cAdaptationRulesAssignment_7.eContents().get(0);
 		
+		//// 	(rules+=Rule*)
+		//// 	(ruleSets+=RuleSet*);
 		//AdaptationModel:
-		//	imports+=Import* rules+=Rule* ruleSets+=RuleSet*;
+		//	imports+=Import* "name" name=QualifiedName ";" "frequency" frequency=INT ";" adaptationRules+=AdaptationRule*;
 		public ParserRule getRule() { return rule; }
 
-		//imports+=Import* rules+=Rule* ruleSets+=RuleSet*
+		//imports+=Import* "name" name=QualifiedName ";" "frequency" frequency=INT ";" adaptationRules+=AdaptationRule*
 		public Group getGroup() { return cGroup; }
 
 		//imports+=Import*
@@ -41,17 +49,59 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		//Import
 		public RuleCall getImportsImportParserRuleCall_0_0() { return cImportsImportParserRuleCall_0_0; }
 
-		//rules+=Rule*
-		public Assignment getRulesAssignment_1() { return cRulesAssignment_1; }
+		//"name"
+		public Keyword getNameKeyword_1() { return cNameKeyword_1; }
+
+		//name=QualifiedName
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_2_0() { return cNameQualifiedNameParserRuleCall_2_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
+
+		//"frequency"
+		public Keyword getFrequencyKeyword_4() { return cFrequencyKeyword_4; }
+
+		//frequency=INT
+		public Assignment getFrequencyAssignment_5() { return cFrequencyAssignment_5; }
+
+		//INT
+		public RuleCall getFrequencyINTTerminalRuleCall_5_0() { return cFrequencyINTTerminalRuleCall_5_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
+
+		//adaptationRules+=AdaptationRule*
+		public Assignment getAdaptationRulesAssignment_7() { return cAdaptationRulesAssignment_7; }
+
+		//AdaptationRule
+		public RuleCall getAdaptationRulesAdaptationRuleParserRuleCall_7_0() { return cAdaptationRulesAdaptationRuleParserRuleCall_7_0; }
+	}
+
+	public class AdaptationRuleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AdaptationRule");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cRuleParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cRuleSetParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		////terminal NUMBER returns ecore::EBigDecimal:
+		////    (('0'..'9')+ ('.' ('0'..'9')*)? | '.' ('0'..'9')+)
+		////    (('e' | 'E') ('+' | '-')? ('0'..'9')+)?
+		////;
+		//AdaptationRule:
+		//	Rule | RuleSet;
+		public ParserRule getRule() { return rule; }
+
+		//Rule | RuleSet
+		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Rule
-		public RuleCall getRulesRuleParserRuleCall_1_0() { return cRulesRuleParserRuleCall_1_0; }
-
-		//ruleSets+=RuleSet*
-		public Assignment getRuleSetsAssignment_2() { return cRuleSetsAssignment_2; }
+		public RuleCall getRuleParserRuleCall_0() { return cRuleParserRuleCall_0; }
 
 		//RuleSet
-		public RuleCall getRuleSetsRuleSetParserRuleCall_2_0() { return cRuleSetsRuleSetParserRuleCall_2_0; }
+		public RuleCall getRuleSetParserRuleCall_1() { return cRuleSetParserRuleCall_1; }
 	}
 
 	public class ImportElements extends AbstractParserRuleElementFinder {
@@ -60,6 +110,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cImportURIAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cImportURISTRINGTerminalRuleCall_1_0 = (RuleCall)cImportURIAssignment_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		////terminal VALUE returns ecore::EString: '"' ('0'..'9' | 'a'..'z' | '0'..'9' '.' '0'..'9')+'"';
 		////terminal AND             returns ecore::EString: 'AND';
@@ -81,24 +132,26 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		////terminal SELECT_WHERE    returns ecore::EString: 'select feature * where';
 		////terminal FROM 		   returns ecore::EString: 'from';
 		//Import:
-		//	"import" importURI= //AS name=ID
-		//	STRING;
+		//	"import" importURI=STRING //AS name=ID
+		//	";";
 		public ParserRule getRule() { return rule; }
 
-		//"import" importURI= //AS name=ID
-		//STRING
+		//"import" importURI=STRING //AS name=ID
+		//";"
 		public Group getGroup() { return cGroup; }
 
 		//"import"
 		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 
-		//importURI= //AS name=ID
-		//STRING
+		//importURI=STRING
 		public Assignment getImportURIAssignment_1() { return cImportURIAssignment_1; }
 
-		////AS name=ID
 		//STRING
 		public RuleCall getImportURISTRINGTerminalRuleCall_1_0() { return cImportURISTRINGTerminalRuleCall_1_0; }
+
+		////AS name=ID
+		//";"
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 	}
 
 	public class QualifiedNameWithWildcardElements extends AbstractParserRuleElementFinder {
@@ -265,10 +318,10 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final RuleCall cRuleRuleParserRuleCall_2_0 = (RuleCall)cRuleAssignment_2.eContents().get(0);
 		
 		//RuleWithPriority:
-		//	"priority" priorityValue=INT rule+=Rule;
+		//	"priority" priorityValue=INT rule=Rule;
 		public ParserRule getRule() { return rule; }
 
-		//"priority" priorityValue=INT rule+=Rule
+		//"priority" priorityValue=INT rule=Rule
 		public Group getGroup() { return cGroup; }
 
 		//"priority"
@@ -280,7 +333,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		//INT
 		public RuleCall getPriorityValueINTTerminalRuleCall_1_0() { return cPriorityValueINTTerminalRuleCall_1_0; }
 
-		//rule+=Rule
+		//rule=Rule
 		public Assignment getRuleAssignment_2() { return cRuleAssignment_2; }
 
 		//Rule
@@ -765,6 +818,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	
 	
 	private AdaptationModelElements pAdaptationModel;
+	private AdaptationRuleElements pAdaptationRule;
 	private ImportElements pImport;
 	private QualifiedNameWithWildcardElements pQualifiedNameWithWildcard;
 	private QualifiedNameElements pQualifiedName;
@@ -823,14 +877,30 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	
+	//// 	(rules+=Rule*)
+	//// 	(ruleSets+=RuleSet*);
 	//AdaptationModel:
-	//	imports+=Import* rules+=Rule* ruleSets+=RuleSet*;
+	//	imports+=Import* "name" name=QualifiedName ";" "frequency" frequency=INT ";" adaptationRules+=AdaptationRule*;
 	public AdaptationModelElements getAdaptationModelAccess() {
 		return (pAdaptationModel != null) ? pAdaptationModel : (pAdaptationModel = new AdaptationModelElements());
 	}
 	
 	public ParserRule getAdaptationModelRule() {
 		return getAdaptationModelAccess().getRule();
+	}
+
+	////terminal NUMBER returns ecore::EBigDecimal:
+	////    (('0'..'9')+ ('.' ('0'..'9')*)? | '.' ('0'..'9')+)
+	////    (('e' | 'E') ('+' | '-')? ('0'..'9')+)?
+	////;
+	//AdaptationRule:
+	//	Rule | RuleSet;
+	public AdaptationRuleElements getAdaptationRuleAccess() {
+		return (pAdaptationRule != null) ? pAdaptationRule : (pAdaptationRule = new AdaptationRuleElements());
+	}
+	
+	public ParserRule getAdaptationRuleRule() {
+		return getAdaptationRuleAccess().getRule();
 	}
 
 	////terminal VALUE returns ecore::EString: '"' ('0'..'9' | 'a'..'z' | '0'..'9' '.' '0'..'9')+'"';
@@ -853,8 +923,8 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	////terminal SELECT_WHERE    returns ecore::EString: 'select feature * where';
 	////terminal FROM 		   returns ecore::EString: 'from';
 	//Import:
-	//	"import" importURI= //AS name=ID
-	//	STRING;
+	//	"import" importURI=STRING //AS name=ID
+	//	";";
 	public ImportElements getImportAccess() {
 		return (pImport != null) ? pImport : (pImport = new ImportElements());
 	}
@@ -895,7 +965,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//RuleWithPriority:
-	//	"priority" priorityValue=INT rule+=Rule;
+	//	"priority" priorityValue=INT rule=Rule;
 	public RuleWithPriorityElements getRuleWithPriorityAccess() {
 		return (pRuleWithPriority != null) ? pRuleWithPriority : (pRuleWithPriority = new RuleWithPriorityElements());
 	}

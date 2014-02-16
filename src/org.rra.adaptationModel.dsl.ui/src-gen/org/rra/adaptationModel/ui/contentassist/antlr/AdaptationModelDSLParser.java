@@ -37,6 +37,7 @@ public class AdaptationModelDSLParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getAdaptationRuleAccess().getAlternatives(), "rule__AdaptationRule__Alternatives");
 					put(grammarAccess.getOPERATORAccess().getAlternatives(), "rule__OPERATOR__Alternatives");
 					put(grammarAccess.getLOGICAL_OPERATORAccess().getAlternatives(), "rule__LOGICAL_OPERATOR__Alternatives");
 					put(grammarAccess.getAtomicActionAccess().getAlternatives_0(), "rule__AtomicAction__Alternatives_0");
@@ -60,8 +61,9 @@ public class AdaptationModelDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDeselectActionAccess().getGroup(), "rule__DeselectAction__Group__0");
 					put(grammarAccess.getModifyAttributeAccess().getGroup(), "rule__ModifyAttribute__Group__0");
 					put(grammarAccess.getAdaptationModelAccess().getImportsAssignment_0(), "rule__AdaptationModel__ImportsAssignment_0");
-					put(grammarAccess.getAdaptationModelAccess().getRulesAssignment_1(), "rule__AdaptationModel__RulesAssignment_1");
-					put(grammarAccess.getAdaptationModelAccess().getRuleSetsAssignment_2(), "rule__AdaptationModel__RuleSetsAssignment_2");
+					put(grammarAccess.getAdaptationModelAccess().getNameAssignment_2(), "rule__AdaptationModel__NameAssignment_2");
+					put(grammarAccess.getAdaptationModelAccess().getFrequencyAssignment_5(), "rule__AdaptationModel__FrequencyAssignment_5");
+					put(grammarAccess.getAdaptationModelAccess().getAdaptationRulesAssignment_7(), "rule__AdaptationModel__AdaptationRulesAssignment_7");
 					put(grammarAccess.getImportAccess().getImportURIAssignment_1(), "rule__Import__ImportURIAssignment_1");
 					put(grammarAccess.getRuleAccess().getNameAssignment_1(), "rule__Rule__NameAssignment_1");
 					put(grammarAccess.getRuleAccess().getConditionAssignment_3_2(), "rule__Rule__ConditionAssignment_3_2");

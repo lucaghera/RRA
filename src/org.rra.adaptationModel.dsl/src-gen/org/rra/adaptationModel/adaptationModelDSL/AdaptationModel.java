@@ -15,8 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getImports <em>Imports</em>}</li>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getRules <em>Rules</em>}</li>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getRuleSets <em>Rule Sets</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getName <em>Name</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getFrequency <em>Frequency</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getAdaptationRules <em>Adaptation Rules</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,35 +44,71 @@ public interface AdaptationModel extends EObject
   EList<Import> getImports();
 
   /**
-   * Returns the value of the '<em><b>Rules</b></em>' containment reference list.
-   * The list contents are of type {@link org.rra.adaptationModel.adaptationModelDSL.Rule}.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Rules</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Rules</em>' containment reference list.
-   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getAdaptationModel_Rules()
-   * @model containment="true"
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getAdaptationModel_Name()
+   * @model
    * @generated
    */
-  EList<Rule> getRules();
+  String getName();
 
   /**
-   * Returns the value of the '<em><b>Rule Sets</b></em>' containment reference list.
-   * The list contents are of type {@link org.rra.adaptationModel.adaptationModelDSL.RuleSet}.
+   * Sets the value of the '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Frequency</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Rule Sets</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Frequency</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Rule Sets</em>' containment reference list.
-   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getAdaptationModel_RuleSets()
+   * @return the value of the '<em>Frequency</em>' attribute.
+   * @see #setFrequency(int)
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getAdaptationModel_Frequency()
+   * @model
+   * @generated
+   */
+  int getFrequency();
+
+  /**
+   * Sets the value of the '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getFrequency <em>Frequency</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Frequency</em>' attribute.
+   * @see #getFrequency()
+   * @generated
+   */
+  void setFrequency(int value);
+
+  /**
+   * Returns the value of the '<em><b>Adaptation Rules</b></em>' containment reference list.
+   * The list contents are of type {@link org.rra.adaptationModel.adaptationModelDSL.AdaptationRule}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Adaptation Rules</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Adaptation Rules</em>' containment reference list.
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getAdaptationModel_AdaptationRules()
    * @model containment="true"
    * @generated
    */
-  EList<RuleSet> getRuleSets();
+  EList<AdaptationRule> getAdaptationRules();
 
 } // AdaptationModel

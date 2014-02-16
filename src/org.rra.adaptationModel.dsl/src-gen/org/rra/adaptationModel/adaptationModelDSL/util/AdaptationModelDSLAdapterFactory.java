@@ -80,6 +80,11 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
         return createAdaptationModelAdapter();
       }
       @Override
+      public Adapter caseAdaptationRule(AdaptationRule object)
+      {
+        return createAdaptationRuleAdapter();
+      }
+      @Override
       public Adapter caseImport(Import object)
       {
         return createImportAdapter();
@@ -182,6 +187,21 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAdaptationModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationRule <em>Adaptation Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationRule
+   * @generated
+   */
+  public Adapter createAdaptationRuleAdapter()
   {
     return null;
   }
