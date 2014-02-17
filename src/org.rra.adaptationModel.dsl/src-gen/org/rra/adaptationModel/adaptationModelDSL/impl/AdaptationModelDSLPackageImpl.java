@@ -16,17 +16,18 @@ import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLFactory;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationRule;
 import org.rra.adaptationModel.adaptationModelDSL.AtomicAction;
+import org.rra.adaptationModel.adaptationModelDSL.AtomicActionWithPriority;
+import org.rra.adaptationModel.adaptationModelDSL.AtomicRule;
 import org.rra.adaptationModel.adaptationModelDSL.AttributeValue;
 import org.rra.adaptationModel.adaptationModelDSL.Condition;
+import org.rra.adaptationModel.adaptationModelDSL.ConditionAction;
 import org.rra.adaptationModel.adaptationModelDSL.DeselectAction;
 import org.rra.adaptationModel.adaptationModelDSL.Import;
 import org.rra.adaptationModel.adaptationModelDSL.MeasurementComparison;
 import org.rra.adaptationModel.adaptationModelDSL.ModifyAttribute;
 import org.rra.adaptationModel.adaptationModelDSL.NFRAttributeValue;
 import org.rra.adaptationModel.adaptationModelDSL.QueryAction;
-import org.rra.adaptationModel.adaptationModelDSL.Rule;
 import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
-import org.rra.adaptationModel.adaptationModelDSL.RuleWithPriority;
 import org.rra.adaptationModel.adaptationModelDSL.SelectAction;
 import org.rra.adaptationModel.adaptationModelDSL.StringAttributeValue;
 
@@ -54,13 +55,6 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass adaptationRuleEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass importEClass = null;
 
   /**
@@ -68,14 +62,14 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass ruleEClass = null;
+  private EClass adaptationRuleEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass ruleWithPriorityEClass = null;
+  private EClass atomicRuleEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -83,6 +77,27 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * @generated
    */
   private EClass ruleSetEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass atomicActionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass conditionActionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass atomicActionWithPriorityEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,13 +112,6 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * @generated
    */
   private EClass measurementComparisonEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass atomicActionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -276,26 +284,6 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAdaptationRule()
-  {
-    return adaptationRuleEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getAdaptationRule_Name()
-  {
-    return (EAttribute)adaptationRuleEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getImport()
   {
     return importEClass;
@@ -316,9 +304,9 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRule()
+  public EClass getAdaptationRule()
   {
-    return ruleEClass;
+    return adaptationRuleEClass;
   }
 
   /**
@@ -326,9 +314,9 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRule_Condition()
+  public EAttribute getAdaptationRule_Name()
   {
-    return (EReference)ruleEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)adaptationRuleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -336,9 +324,9 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRule_AtomicAction()
+  public EClass getAtomicRule()
   {
-    return (EReference)ruleEClass.getEStructuralFeatures().get(1);
+    return atomicRuleEClass;
   }
 
   /**
@@ -346,29 +334,9 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRuleWithPriority()
+  public EReference getAtomicRule_ConditionAction()
   {
-    return ruleWithPriorityEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getRuleWithPriority_PriorityValue()
-  {
-    return (EAttribute)ruleWithPriorityEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRuleWithPriority_Rule()
-  {
-    return (EReference)ruleWithPriorityEClass.getEStructuralFeatures().get(1);
+    return (EReference)atomicRuleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -386,9 +354,99 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRuleSet_Rules()
+  public EReference getRuleSet_Condition()
   {
     return (EReference)ruleSetEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRuleSet_Actions()
+  {
+    return (EReference)ruleSetEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAtomicAction()
+  {
+    return atomicActionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getConditionAction()
+  {
+    return conditionActionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getConditionAction_Condition()
+  {
+    return (EReference)conditionActionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getConditionAction_AtomicActions()
+  {
+    return (EReference)conditionActionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getConditionAction_Else()
+  {
+    return (EReference)conditionActionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAtomicActionWithPriority()
+  {
+    return atomicActionWithPriorityEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAtomicActionWithPriority_PriorityValue()
+  {
+    return (EAttribute)atomicActionWithPriorityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAtomicActionWithPriority_AtomicAction()
+  {
+    return (EReference)atomicActionWithPriorityEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -436,7 +494,7 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMeasurementComparison_Value()
+  public EAttribute getMeasurementComparison_Operator()
   {
     return (EAttribute)measurementComparisonEClass.getEStructuralFeatures().get(1);
   }
@@ -446,9 +504,29 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAtomicAction()
+  public EAttribute getMeasurementComparison_Value()
   {
-    return atomicActionEClass;
+    return (EAttribute)measurementComparisonEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMeasurementComparison_LogicalOp()
+  {
+    return (EAttribute)measurementComparisonEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMeasurementComparison_SecondTerm()
+  {
+    return (EReference)measurementComparisonEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -637,31 +715,39 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
     createEAttribute(adaptationModelEClass, ADAPTATION_MODEL__FREQUENCY);
     createEReference(adaptationModelEClass, ADAPTATION_MODEL__ADAPTATION_RULES);
 
-    adaptationRuleEClass = createEClass(ADAPTATION_RULE);
-    createEAttribute(adaptationRuleEClass, ADAPTATION_RULE__NAME);
-
     importEClass = createEClass(IMPORT);
     createEAttribute(importEClass, IMPORT__IMPORT_URI);
 
-    ruleEClass = createEClass(RULE);
-    createEReference(ruleEClass, RULE__CONDITION);
-    createEReference(ruleEClass, RULE__ATOMIC_ACTION);
+    adaptationRuleEClass = createEClass(ADAPTATION_RULE);
+    createEAttribute(adaptationRuleEClass, ADAPTATION_RULE__NAME);
 
-    ruleWithPriorityEClass = createEClass(RULE_WITH_PRIORITY);
-    createEAttribute(ruleWithPriorityEClass, RULE_WITH_PRIORITY__PRIORITY_VALUE);
-    createEReference(ruleWithPriorityEClass, RULE_WITH_PRIORITY__RULE);
+    atomicRuleEClass = createEClass(ATOMIC_RULE);
+    createEReference(atomicRuleEClass, ATOMIC_RULE__CONDITION_ACTION);
 
     ruleSetEClass = createEClass(RULE_SET);
-    createEReference(ruleSetEClass, RULE_SET__RULES);
+    createEReference(ruleSetEClass, RULE_SET__CONDITION);
+    createEReference(ruleSetEClass, RULE_SET__ACTIONS);
+
+    atomicActionEClass = createEClass(ATOMIC_ACTION);
+
+    conditionActionEClass = createEClass(CONDITION_ACTION);
+    createEReference(conditionActionEClass, CONDITION_ACTION__CONDITION);
+    createEReference(conditionActionEClass, CONDITION_ACTION__ATOMIC_ACTIONS);
+    createEReference(conditionActionEClass, CONDITION_ACTION__ELSE);
+
+    atomicActionWithPriorityEClass = createEClass(ATOMIC_ACTION_WITH_PRIORITY);
+    createEAttribute(atomicActionWithPriorityEClass, ATOMIC_ACTION_WITH_PRIORITY__PRIORITY_VALUE);
+    createEReference(atomicActionWithPriorityEClass, ATOMIC_ACTION_WITH_PRIORITY__ATOMIC_ACTION);
 
     conditionEClass = createEClass(CONDITION);
     createEReference(conditionEClass, CONDITION__MEASUREMENT_COMPARISON);
 
     measurementComparisonEClass = createEClass(MEASUREMENT_COMPARISON);
     createEReference(measurementComparisonEClass, MEASUREMENT_COMPARISON__MEASUREMENT);
+    createEAttribute(measurementComparisonEClass, MEASUREMENT_COMPARISON__OPERATOR);
     createEAttribute(measurementComparisonEClass, MEASUREMENT_COMPARISON__VALUE);
-
-    atomicActionEClass = createEClass(ATOMIC_ACTION);
+    createEAttribute(measurementComparisonEClass, MEASUREMENT_COMPARISON__LOGICAL_OP);
+    createEReference(measurementComparisonEClass, MEASUREMENT_COMPARISON__SECOND_TERM);
 
     queryActionEClass = createEClass(QUERY_ACTION);
     createEReference(queryActionEClass, QUERY_ACTION__FEATURE);
@@ -720,7 +806,7 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    ruleEClass.getESuperTypes().add(this.getAdaptationRule());
+    atomicRuleEClass.getESuperTypes().add(this.getAdaptationRule());
     ruleSetEClass.getESuperTypes().add(this.getAdaptationRule());
     queryActionEClass.getESuperTypes().add(this.getAtomicAction());
     selectActionEClass.getESuperTypes().add(this.getAtomicAction());
@@ -736,31 +822,39 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
     initEAttribute(getAdaptationModel_Frequency(), ecorePackage.getEInt(), "frequency", null, 0, 1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAdaptationModel_AdaptationRules(), this.getAdaptationRule(), null, "adaptationRules", null, 0, -1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(adaptationRuleEClass, AdaptationRule.class, "AdaptationRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAdaptationRule_Name(), ecorePackage.getEString(), "name", null, 0, 1, AdaptationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getImport_ImportURI(), ecorePackage.getEString(), "importURI", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRule_Condition(), this.getCondition(), null, "condition", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRule_AtomicAction(), this.getAtomicAction(), null, "atomicAction", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(adaptationRuleEClass, AdaptationRule.class, "AdaptationRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAdaptationRule_Name(), ecorePackage.getEString(), "name", null, 0, 1, AdaptationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(ruleWithPriorityEClass, RuleWithPriority.class, "RuleWithPriority", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRuleWithPriority_PriorityValue(), ecorePackage.getEInt(), "priorityValue", null, 0, 1, RuleWithPriority.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRuleWithPriority_Rule(), this.getRule(), null, "rule", null, 0, 1, RuleWithPriority.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(atomicRuleEClass, AtomicRule.class, "AtomicRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAtomicRule_ConditionAction(), this.getConditionAction(), null, "conditionAction", null, 0, -1, AtomicRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ruleSetEClass, RuleSet.class, "RuleSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRuleSet_Rules(), this.getRuleWithPriority(), null, "rules", null, 0, -1, RuleSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRuleSet_Condition(), this.getCondition(), null, "condition", null, 0, -1, RuleSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRuleSet_Actions(), this.getAtomicActionWithPriority(), null, "actions", null, 0, -1, RuleSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(atomicActionEClass, AtomicAction.class, "AtomicAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(conditionActionEClass, ConditionAction.class, "ConditionAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getConditionAction_Condition(), this.getCondition(), null, "condition", null, 0, -1, ConditionAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConditionAction_AtomicActions(), this.getAtomicAction(), null, "atomicActions", null, 0, -1, ConditionAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConditionAction_Else(), this.getConditionAction(), null, "else", null, 0, 1, ConditionAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(atomicActionWithPriorityEClass, AtomicActionWithPriority.class, "AtomicActionWithPriority", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAtomicActionWithPriority_PriorityValue(), ecorePackage.getEInt(), "priorityValue", null, 0, 1, AtomicActionWithPriority.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAtomicActionWithPriority_AtomicAction(), this.getAtomicAction(), null, "atomicAction", null, 0, -1, AtomicActionWithPriority.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCondition_MeasurementComparison(), this.getMeasurementComparison(), null, "measurementComparison", null, 0, -1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCondition_MeasurementComparison(), this.getMeasurementComparison(), null, "measurementComparison", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(measurementComparisonEClass, MeasurementComparison.class, "MeasurementComparison", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMeasurementComparison_Measurement(), theCDMModelPackage.getContextDependentMeasurement(), null, "measurement", null, 0, 1, MeasurementComparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMeasurementComparison_Operator(), ecorePackage.getEString(), "operator", null, 0, 1, MeasurementComparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMeasurementComparison_Value(), ecorePackage.getEString(), "value", null, 0, 1, MeasurementComparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(atomicActionEClass, AtomicAction.class, "AtomicAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMeasurementComparison_LogicalOp(), ecorePackage.getEString(), "logicalOp", null, 0, 1, MeasurementComparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMeasurementComparison_SecondTerm(), this.getMeasurementComparison(), null, "secondTerm", null, 0, 1, MeasurementComparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(queryActionEClass, QueryAction.class, "QueryAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getQueryAction_Feature(), thefeaturemodelsPackage.getFeature(), null, "feature", null, 0, 1, QueryAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

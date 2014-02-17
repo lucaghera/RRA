@@ -32,15 +32,6 @@ public interface AdaptationModelDSLFactory extends EFactory
   AdaptationModel createAdaptationModel();
 
   /**
-   * Returns a new object of class '<em>Adaptation Rule</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Adaptation Rule</em>'.
-   * @generated
-   */
-  AdaptationRule createAdaptationRule();
-
-  /**
    * Returns a new object of class '<em>Import</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -50,22 +41,22 @@ public interface AdaptationModelDSLFactory extends EFactory
   Import createImport();
 
   /**
-   * Returns a new object of class '<em>Rule</em>'.
+   * Returns a new object of class '<em>Adaptation Rule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Rule</em>'.
+   * @return a new object of class '<em>Adaptation Rule</em>'.
    * @generated
    */
-  Rule createRule();
+  AdaptationRule createAdaptationRule();
 
   /**
-   * Returns a new object of class '<em>Rule With Priority</em>'.
+   * Returns a new object of class '<em>Atomic Rule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Rule With Priority</em>'.
+   * @return a new object of class '<em>Atomic Rule</em>'.
    * @generated
    */
-  RuleWithPriority createRuleWithPriority();
+  AtomicRule createAtomicRule();
 
   /**
    * Returns a new object of class '<em>Rule Set</em>'.
@@ -75,6 +66,33 @@ public interface AdaptationModelDSLFactory extends EFactory
    * @generated
    */
   RuleSet createRuleSet();
+
+  /**
+   * Returns a new object of class '<em>Atomic Action</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Atomic Action</em>'.
+   * @generated
+   */
+  AtomicAction createAtomicAction();
+
+  /**
+   * Returns a new object of class '<em>Condition Action</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Condition Action</em>'.
+   * @generated
+   */
+  ConditionAction createConditionAction();
+
+  /**
+   * Returns a new object of class '<em>Atomic Action With Priority</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Atomic Action With Priority</em>'.
+   * @generated
+   */
+  AtomicActionWithPriority createAtomicActionWithPriority();
 
   /**
    * Returns a new object of class '<em>Condition</em>'.
@@ -93,15 +111,6 @@ public interface AdaptationModelDSLFactory extends EFactory
    * @generated
    */
   MeasurementComparison createMeasurementComparison();
-
-  /**
-   * Returns a new object of class '<em>Atomic Action</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Atomic Action</em>'.
-   * @generated
-   */
-  AtomicAction createAtomicAction();
 
   /**
    * Returns a new object of class '<em>Query Action</em>'.

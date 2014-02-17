@@ -65,14 +65,15 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
     switch (eClass.getClassifierID())
     {
       case AdaptationModelDSLPackage.ADAPTATION_MODEL: return createAdaptationModel();
-      case AdaptationModelDSLPackage.ADAPTATION_RULE: return createAdaptationRule();
       case AdaptationModelDSLPackage.IMPORT: return createImport();
-      case AdaptationModelDSLPackage.RULE: return createRule();
-      case AdaptationModelDSLPackage.RULE_WITH_PRIORITY: return createRuleWithPriority();
+      case AdaptationModelDSLPackage.ADAPTATION_RULE: return createAdaptationRule();
+      case AdaptationModelDSLPackage.ATOMIC_RULE: return createAtomicRule();
       case AdaptationModelDSLPackage.RULE_SET: return createRuleSet();
+      case AdaptationModelDSLPackage.ATOMIC_ACTION: return createAtomicAction();
+      case AdaptationModelDSLPackage.CONDITION_ACTION: return createConditionAction();
+      case AdaptationModelDSLPackage.ATOMIC_ACTION_WITH_PRIORITY: return createAtomicActionWithPriority();
       case AdaptationModelDSLPackage.CONDITION: return createCondition();
       case AdaptationModelDSLPackage.MEASUREMENT_COMPARISON: return createMeasurementComparison();
-      case AdaptationModelDSLPackage.ATOMIC_ACTION: return createAtomicAction();
       case AdaptationModelDSLPackage.QUERY_ACTION: return createQueryAction();
       case AdaptationModelDSLPackage.SELECT_ACTION: return createSelectAction();
       case AdaptationModelDSLPackage.DESELECT_ACTION: return createDeselectAction();
@@ -101,17 +102,6 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public AdaptationRule createAdaptationRule()
-  {
-    AdaptationRuleImpl adaptationRule = new AdaptationRuleImpl();
-    return adaptationRule;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Import createImport()
   {
     ImportImpl import_ = new ImportImpl();
@@ -123,10 +113,10 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public Rule createRule()
+  public AdaptationRule createAdaptationRule()
   {
-    RuleImpl rule = new RuleImpl();
-    return rule;
+    AdaptationRuleImpl adaptationRule = new AdaptationRuleImpl();
+    return adaptationRule;
   }
 
   /**
@@ -134,10 +124,10 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public RuleWithPriority createRuleWithPriority()
+  public AtomicRule createAtomicRule()
   {
-    RuleWithPriorityImpl ruleWithPriority = new RuleWithPriorityImpl();
-    return ruleWithPriority;
+    AtomicRuleImpl atomicRule = new AtomicRuleImpl();
+    return atomicRule;
   }
 
   /**
@@ -149,6 +139,39 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
   {
     RuleSetImpl ruleSet = new RuleSetImpl();
     return ruleSet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AtomicAction createAtomicAction()
+  {
+    AtomicActionImpl atomicAction = new AtomicActionImpl();
+    return atomicAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ConditionAction createConditionAction()
+  {
+    ConditionActionImpl conditionAction = new ConditionActionImpl();
+    return conditionAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AtomicActionWithPriority createAtomicActionWithPriority()
+  {
+    AtomicActionWithPriorityImpl atomicActionWithPriority = new AtomicActionWithPriorityImpl();
+    return atomicActionWithPriority;
   }
 
   /**
@@ -171,17 +194,6 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
   {
     MeasurementComparisonImpl measurementComparison = new MeasurementComparisonImpl();
     return measurementComparison;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AtomicAction createAtomicAction()
-  {
-    AtomicActionImpl atomicAction = new AtomicActionImpl();
-    return atomicAction;
   }
 
   /**

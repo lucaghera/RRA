@@ -7,6 +7,7 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -18,48 +19,22 @@ public class AdaptationModelDSLSyntacticSequencer extends AbstractSyntacticSeque
 
 	protected AdaptationModelDSLGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_AtomicAction_ANDKeyword_1_q;
-	protected AbstractElementAlias match_MeasurementComparison_LOGICAL_OPERATORParserRuleCall_3_q;
-	protected AbstractElementAlias match_Rule_ElseKeyword_5_0_q;
+	protected AbstractElementAlias match_ConditionAction_ElseKeyword_2_0_q;
+	protected AbstractElementAlias match_RuleSet___RightCurlyBracketKeyword_7_4_ElseKeyword_7_0_LeftCurlyBracketKeyword_7_2__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (AdaptationModelDSLGrammarAccess) access;
 		match_AtomicAction_ANDKeyword_1_q = new TokenAlias(false, true, grammarAccess.getAtomicActionAccess().getANDKeyword_1());
-		match_MeasurementComparison_LOGICAL_OPERATORParserRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getMeasurementComparisonAccess().getLOGICAL_OPERATORParserRuleCall_3());
-		match_Rule_ElseKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getRuleAccess().getElseKeyword_5_0());
+		match_ConditionAction_ElseKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getConditionActionAccess().getElseKeyword_2_0());
+		match_RuleSet___RightCurlyBracketKeyword_7_4_ElseKeyword_7_0_LeftCurlyBracketKeyword_7_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRuleSetAccess().getRightCurlyBracketKeyword_7_4()), new TokenAlias(false, false, grammarAccess.getRuleSetAccess().getElseKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getRuleSetAccess().getLeftCurlyBracketKeyword_7_2()));
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if(ruleCall.getRule() == grammarAccess.getLOGICAL_OPERATORRule())
-			return getLOGICAL_OPERATORToken(semanticObject, ruleCall, node);
-		else if(ruleCall.getRule() == grammarAccess.getOPERATORRule())
-			return getOPERATORToken(semanticObject, ruleCall, node);
-		else if(ruleCall.getRule() == grammarAccess.getQueryOperatorRule())
+		if(ruleCall.getRule() == grammarAccess.getQueryOperatorRule())
 			return getQueryOperatorToken(semanticObject, ruleCall, node);
 		return "";
-	}
-	
-	/**
-	 * LOGICAL_OPERATOR:
-	 * 	'AND' | 'OR' 
-	 * ;
-	 */
-	protected String getLOGICAL_OPERATORToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "AND";
-	}
-	
-	/**
-	 * OPERATOR:
-	 * 	'<' | '>' | '==' | '<>'	
-	 * ;
-	 */
-	protected String getOPERATORToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "<";
 	}
 	
 	/**
@@ -81,10 +56,10 @@ public class AdaptationModelDSLSyntacticSequencer extends AbstractSyntacticSeque
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if(match_AtomicAction_ANDKeyword_1_q.equals(syntax))
 				emit_AtomicAction_ANDKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_MeasurementComparison_LOGICAL_OPERATORParserRuleCall_3_q.equals(syntax))
-				emit_MeasurementComparison_LOGICAL_OPERATORParserRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Rule_ElseKeyword_5_0_q.equals(syntax))
-				emit_Rule_ElseKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_ConditionAction_ElseKeyword_2_0_q.equals(syntax))
+				emit_ConditionAction_ElseKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_RuleSet___RightCurlyBracketKeyword_7_4_ElseKeyword_7_0_LeftCurlyBracketKeyword_7_2__q.equals(syntax))
+				emit_RuleSet___RightCurlyBracketKeyword_7_4_ElseKeyword_7_0_LeftCurlyBracketKeyword_7_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -99,17 +74,17 @@ public class AdaptationModelDSLSyntacticSequencer extends AbstractSyntacticSeque
 	
 	/**
 	 * Syntax:
-	 *     LOGICAL_OPERATOR?
+	 *     'else'?
 	 */
-	protected void emit_MeasurementComparison_LOGICAL_OPERATORParserRuleCall_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ConditionAction_ElseKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Syntax:
-	 *     'else'?
+	 *     ('}' 'else' '{')?
 	 */
-	protected void emit_Rule_ElseKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_RuleSet___RightCurlyBracketKeyword_7_4_ElseKeyword_7_0_LeftCurlyBracketKeyword_7_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

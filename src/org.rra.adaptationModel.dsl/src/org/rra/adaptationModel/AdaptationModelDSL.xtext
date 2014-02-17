@@ -23,9 +23,7 @@ AdaptationModel:
 //    (('e' | 'E') ('+' | '-')? ('0'..'9')+)?
 //;
  	
-AdaptationRule:
- 	Rule | RuleSet
-;
+
 
 //terminal VALUE returns ecore::EString: '"' ('0'..'9' | 'a'..'z' | '0'..'9' '.' '0'..'9')+'"';
 
@@ -59,28 +57,66 @@ QualifiedNameWithWildcard:
 QualifiedName:
 	ID ('.' ID)*
 ;	
-	
-Rule:
-	'rule' name=ID ':' 
-	('if' '(' condition+=Condition+ ')')? (atomicAction+=AtomicAction+) 
-	('else' ('if' '(' condition+=Condition ')' )* atomicAction+=AtomicAction+)* ';'
-;
 
-RuleWithPriority:
-	'priority' priorityValue=INT  rule=Rule
+AdaptationRule:
+ 	AtomicRule | RuleSet
+;
+	
+// It's necessary that condition and action are part of the same element
+	
+//AtomicRule:
+//	'rule' name=ID ':' 
+//	('if' '(' condition+=Condition+ ')')? (atomicAction+=AtomicAction+) 
+//	('else' ('if' '(' condition+=Condition ')' )* atomicAction+=AtomicAction+)* ';'
+//;
+
+AtomicRule:
+	'rule' name=ID ':' 
+	conditionAction+=ConditionAction ';'
+//	('else' conditionAction+=ConditionAction)* ';'
 ;
 
 RuleSet:
 	
-	'rule_set' name=ID '{' rules+=RuleWithPriority* '};'
+	'rule_set' name=ID ':'
+	('if' '(' condition+=Condition+ ')')? '{'  actions+=AtomicActionWithPriority+ '}'
+	('else' ('if' '(' condition+=Condition ')' )* '{'  actions+=AtomicActionWithPriority+ '}' )*  ';'
 ;
 
+AtomicAction:
+	(SelectAction | DeselectAction | ModifyAttribute | QueryAction) 'AND'?
+;
+
+//ConditionAction :
+//	('if('condition+=Condition+ ')')? '{' atomicActions+=AtomicAction+ '}'
+//;
+
+// If is optional. Be sure that it is not possible to write something like
+// - action else condition action
+// - if condition action else action else action
+ConditionAction:
+	('if' '(' condition+=Condition+ ')')? atomicActions+=AtomicAction+
+	('else' (else=ConditionAction) ?)?
+;
+
+AtomicActionWithPriority:
+	'priority' priorityValue=INT '{' atomicAction+=AtomicAction* '}'
+;
+
+//Condition:
+//		measurementComparison+=MeasurementComparison 
+//;
 Condition:
-	measurementComparison+=MeasurementComparison 
+		measurementComparison=MeasurementComparison 
 ;
 
+// Find a better name for secondTerm
+// Find a way of using parenthesis for priority between operators
+// Replace the content of Condition with the content of this term.
 MeasurementComparison:
-	measurement=[ cdmModel::ContextDependentMeasurement|QualifiedName ] OPERATOR value=STRING LOGICAL_OPERATOR?
+	measurement=[ cdmModel::ContextDependentMeasurement|QualifiedName ] 
+	operator=OPERATOR value=STRING 
+	( logicalOp=LOGICAL_OPERATOR secondTerm=MeasurementComparison )?
 ;
 
 //Condition:
@@ -113,9 +149,7 @@ LOGICAL_OPERATOR:
 //	'MAX (' (measurement+=[ cdmModel::ContextDependentMeasurement|QualifiedName ] ',')+ ')'
 //;
 
-AtomicAction:
-	(SelectAction | DeselectAction | ModifyAttribute | QueryAction) 'AND'?
-;
+
 
 QueryAction:
 	'select_feature_*' 

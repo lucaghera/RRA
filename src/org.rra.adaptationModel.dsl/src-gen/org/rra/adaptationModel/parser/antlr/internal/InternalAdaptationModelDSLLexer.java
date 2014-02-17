@@ -213,10 +213,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:18:7: ( 'if' )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:18:9: 'if'
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:18:7: ( 'rule_set' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:18:9: 'rule_set'
             {
-            match("if"); 
+            match("rule_set"); 
 
 
             }
@@ -234,10 +234,11 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:19:7: ( '(' )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:19:9: '('
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:19:7: ( 'if' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:19:9: 'if'
             {
-            match('('); 
+            match("if"); 
+
 
             }
 
@@ -254,10 +255,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:20:7: ( ')' )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:20:9: ')'
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:20:7: ( '(' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:20:9: '('
             {
-            match(')'); 
+            match('('); 
 
             }
 
@@ -274,11 +275,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:21:7: ( 'else' )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:21:9: 'else'
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:21:7: ( ')' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:21:9: ')'
             {
-            match("else"); 
-
+            match(')'); 
 
             }
 
@@ -295,11 +295,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:22:7: ( 'priority' )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:22:9: 'priority'
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:22:7: ( '{' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:22:9: '{'
             {
-            match("priority"); 
-
+            match('{'); 
 
             }
 
@@ -316,11 +315,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:23:7: ( 'rule_set' )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:23:9: 'rule_set'
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:23:7: ( '}' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:23:9: '}'
             {
-            match("rule_set"); 
-
+            match('}'); 
 
             }
 
@@ -337,10 +335,11 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:24:7: ( '{' )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:24:9: '{'
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:24:7: ( 'else' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:24:9: 'else'
             {
-            match('{'); 
+            match("else"); 
+
 
             }
 
@@ -357,10 +356,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:25:7: ( '};' )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:25:9: '};'
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:25:7: ( 'AND' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:25:9: 'AND'
             {
-            match("};"); 
+            match("AND"); 
 
 
             }
@@ -378,10 +377,11 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:26:7: ( '<' )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:26:9: '<'
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:26:7: ( 'priority' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:26:9: 'priority'
             {
-            match('<'); 
+            match("priority"); 
+
 
             }
 
@@ -398,10 +398,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:27:7: ( '>' )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:27:9: '>'
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:27:7: ( '<' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:27:9: '<'
             {
-            match('>'); 
+            match('<'); 
 
             }
 
@@ -418,11 +418,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:28:7: ( '==' )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:28:9: '=='
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:28:7: ( '>' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:28:9: '>'
             {
-            match("=="); 
-
+            match('>'); 
 
             }
 
@@ -439,10 +438,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:29:7: ( '<>' )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:29:9: '<>'
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:29:7: ( '==' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:29:9: '=='
             {
-            match("<>"); 
+            match("=="); 
 
 
             }
@@ -460,10 +459,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:30:7: ( 'AND' )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:30:9: 'AND'
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:30:7: ( '<>' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:30:9: '<>'
             {
-            match("AND"); 
+            match("<>"); 
 
 
             }
@@ -691,10 +690,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1254:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1254:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1407:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1407:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1254:11: ( '^' )?
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1407:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -703,7 +702,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1254:11: '^'
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1407:11: '^'
                     {
                     match('^'); 
 
@@ -721,7 +720,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1254:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1407:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -770,10 +769,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1256:10: ( ( '0' .. '9' )+ )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1256:12: ( '0' .. '9' )+
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1409:10: ( ( '0' .. '9' )+ )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1409:12: ( '0' .. '9' )+
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1256:12: ( '0' .. '9' )+
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1409:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -787,7 +786,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1256:13: '0' .. '9'
+            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1409:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -819,10 +818,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1258:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1258:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1411:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1411:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1258:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1411:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -840,10 +839,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1258:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1411:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1258:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1411:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -859,7 +858,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1258:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1411:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -875,7 +874,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1258:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1411:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -900,10 +899,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1258:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1411:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1258:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1411:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -919,7 +918,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1258:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1411:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -935,7 +934,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1258:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1411:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -978,12 +977,12 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1260:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1260:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1413:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1413:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1260:24: ( options {greedy=false; } : . )*
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1413:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1008,7 +1007,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1260:52: .
+            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1413:52: .
             	    {
             	    matchAny(); 
 
@@ -1038,12 +1037,12 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1262:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1262:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1415:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1415:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1262:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1415:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1056,7 +1055,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1262:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1415:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1076,7 +1075,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1262:40: ( ( '\\r' )? '\\n' )?
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1415:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1085,9 +1084,9 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1262:41: ( '\\r' )? '\\n'
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1415:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1262:41: ( '\\r' )?
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1415:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1096,7 +1095,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1262:41: '\\r'
+                            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1415:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1128,10 +1127,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1264:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1264:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1417:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1417:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1264:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1417:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1185,8 +1184,8 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1266:16: ( . )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1266:18: .
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1419:16: ( . )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1419:18: .
             {
             matchAny(); 
 
@@ -1472,71 +1471,71 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\41\1\uffff\2\41\1\uffff\1\41\3\uffff\2\41\1\uffff\1\37"+
-        "\1\60\1\uffff\1\37\7\41\1\37\2\uffff\3\37\2\uffff\1\41\2\uffff\2"+
-        "\41\1\105\1\uffff\1\41\3\uffff\2\41\6\uffff\1\41\1\112\7\41\5\uffff"+
-        "\4\41\1\uffff\3\41\1\132\1\uffff\4\41\1\137\1\140\2\41\1\143\3\41"+
-        "\1\150\1\151\1\41\1\uffff\4\41\2\uffff\2\41\1\uffff\4\41\2\uffff"+
-        "\11\41\1\176\12\41\1\uffff\12\41\1\u0093\1\u0094\6\41\1\u009b\1"+
-        "\41\2\uffff\6\41\1\uffff\4\41\1\u00a7\6\41\1\uffff\12\41\1\u00b8"+
-        "\5\41\1\uffff\1\u00be\4\41\1\uffff\3\41\1\uffff\1\u00c6\2\41\1\uffff"+
-        "\2\41\1\u00cb\1\41\1\uffff\4\41\1\u00d1\1\uffff";
+        "\1\uffff\1\41\1\uffff\2\41\1\uffff\1\41\5\uffff\3\41\1\61\1\uffff"+
+        "\1\37\6\41\1\37\2\uffff\3\37\2\uffff\1\41\2\uffff\2\41\1\105\1\uffff"+
+        "\1\41\5\uffff\3\41\4\uffff\1\112\7\41\5\uffff\4\41\1\uffff\2\41"+
+        "\1\131\1\41\1\uffff\4\41\1\137\1\140\2\41\1\143\3\41\1\150\1\151"+
+        "\1\uffff\5\41\2\uffff\2\41\1\uffff\4\41\2\uffff\11\41\1\176\12\41"+
+        "\1\uffff\12\41\1\u0093\1\u0094\6\41\1\u009b\1\41\2\uffff\6\41\1"+
+        "\uffff\4\41\1\u00a7\6\41\1\uffff\12\41\1\u00b8\5\41\1\uffff\1\u00be"+
+        "\4\41\1\uffff\3\41\1\uffff\1\u00c6\2\41\1\uffff\2\41\1\u00cb\1\41"+
+        "\1\uffff\4\41\1\u00d1\1\uffff";
     static final String DFA12_eofS =
         "\u00d2\uffff";
     static final String DFA12_minS =
-        "\1\0\1\141\1\uffff\1\162\1\146\1\uffff\1\165\3\uffff\1\154\1\162"+
-        "\1\uffff\1\73\1\76\1\uffff\1\75\1\116\1\122\1\145\1\150\1\141\1"+
-        "\143\1\145\1\101\2\uffff\2\0\1\52\2\uffff\1\155\2\uffff\1\145\1"+
-        "\160\1\60\1\uffff\1\154\3\uffff\1\163\1\151\6\uffff\1\104\1\60\1"+
-        "\154\1\145\1\164\1\170\1\156\1\164\1\141\5\uffff\1\145\1\161\1\155"+
-        "\1\157\1\uffff\2\145\1\157\1\60\1\uffff\1\145\1\137\1\162\1\150"+
-        "\2\60\1\151\1\143\1\60\1\165\1\137\1\162\2\60\1\162\1\uffff\1\143"+
-        "\1\141\1\145\1\137\2\uffff\1\166\1\164\1\uffff\1\145\1\166\1\164"+
-        "\1\163\2\uffff\1\151\2\164\1\137\1\166\1\141\1\151\1\156\1\141\1"+
-        "\60\1\145\1\164\1\137\1\164\2\141\1\164\1\166\1\143\1\162\1\uffff"+
-        "\1\164\1\171\1\146\1\162\1\164\1\154\1\145\1\141\1\171\1\151\2\60"+
-        "\1\145\1\151\1\164\1\165\1\137\1\164\1\60\1\141\2\uffff\1\141\1"+
-        "\142\1\162\1\145\1\146\1\145\1\uffff\1\156\1\164\1\165\1\151\1\60"+
-        "\1\145\1\137\1\164\1\165\1\164\1\142\1\uffff\1\141\1\146\1\163\1"+
-        "\162\1\145\1\165\1\164\1\145\1\137\1\145\1\60\1\145\1\165\1\141"+
-        "\1\157\1\137\1\uffff\1\60\1\162\1\164\1\146\1\52\1\uffff\1\145\1"+
-        "\165\1\137\1\uffff\1\60\1\162\1\146\1\uffff\2\145\1\60\1\141\1\uffff"+
-        "\1\164\1\165\1\162\1\145\1\60\1\uffff";
+        "\1\0\1\141\1\uffff\1\162\1\146\1\uffff\1\165\5\uffff\1\154\1\116"+
+        "\1\162\1\76\1\uffff\1\75\1\122\1\145\1\150\1\141\1\143\1\145\1\101"+
+        "\2\uffff\2\0\1\52\2\uffff\1\155\2\uffff\1\145\1\160\1\60\1\uffff"+
+        "\1\154\5\uffff\1\163\1\104\1\151\4\uffff\1\60\1\154\1\145\1\164"+
+        "\1\170\1\156\1\164\1\141\5\uffff\1\145\1\161\1\155\1\157\1\uffff"+
+        "\2\145\1\60\1\157\1\uffff\1\145\1\137\1\162\1\150\2\60\1\151\1\143"+
+        "\1\60\1\165\1\137\1\162\2\60\1\uffff\1\162\1\143\1\141\1\145\1\137"+
+        "\2\uffff\1\166\1\164\1\uffff\1\145\1\166\1\164\1\163\2\uffff\1\151"+
+        "\2\164\1\137\1\166\1\141\1\151\1\156\1\141\1\60\1\145\1\164\1\137"+
+        "\1\164\2\141\1\164\1\166\1\143\1\162\1\uffff\1\164\1\171\1\146\1"+
+        "\162\1\164\1\154\1\145\1\141\1\171\1\151\2\60\1\145\1\151\1\164"+
+        "\1\165\1\137\1\164\1\60\1\141\2\uffff\1\141\1\142\1\162\1\145\1"+
+        "\146\1\145\1\uffff\1\156\1\164\1\165\1\151\1\60\1\145\1\137\1\164"+
+        "\1\165\1\164\1\142\1\uffff\1\141\1\146\1\163\1\162\1\145\1\165\1"+
+        "\164\1\145\1\137\1\145\1\60\1\145\1\165\1\141\1\157\1\137\1\uffff"+
+        "\1\60\1\162\1\164\1\146\1\52\1\uffff\1\145\1\165\1\137\1\uffff\1"+
+        "\60\1\162\1\146\1\uffff\2\145\1\60\1\141\1\uffff\1\164\1\165\1\162"+
+        "\1\145\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\141\1\uffff\1\162\1\155\1\uffff\1\165\3\uffff\1\154\1"+
-        "\162\1\uffff\1\73\1\76\1\uffff\1\75\1\116\1\122\1\145\2\151\1\143"+
-        "\1\145\1\172\2\uffff\2\uffff\1\57\2\uffff\1\155\2\uffff\1\157\1"+
-        "\160\1\172\1\uffff\1\154\3\uffff\1\163\1\151\6\uffff\1\104\1\172"+
-        "\1\164\1\145\1\164\1\170\1\156\1\164\1\141\5\uffff\1\145\1\161\1"+
-        "\155\1\157\1\uffff\2\145\1\157\1\172\1\uffff\1\145\1\137\1\162\1"+
-        "\150\2\172\1\151\1\143\1\172\1\165\1\137\1\162\2\172\1\162\1\uffff"+
-        "\1\143\1\141\1\145\1\137\2\uffff\1\166\1\164\1\uffff\1\145\1\166"+
-        "\1\164\1\163\2\uffff\1\151\2\164\1\137\1\166\1\141\1\151\1\156\1"+
-        "\141\1\172\1\145\1\164\1\137\1\164\2\141\1\164\1\166\1\143\1\162"+
-        "\1\uffff\1\164\1\171\1\146\1\162\1\164\1\154\1\145\1\141\1\171\1"+
-        "\151\2\172\1\145\1\151\1\164\1\165\1\137\1\164\1\172\1\141\2\uffff"+
-        "\1\141\1\142\1\162\1\145\1\146\1\145\1\uffff\1\156\1\164\1\165\1"+
-        "\151\1\172\1\145\1\137\1\164\1\165\1\164\1\142\1\uffff\1\141\1\146"+
-        "\1\163\1\162\1\145\1\165\1\164\1\145\1\137\1\145\1\172\1\145\1\165"+
-        "\1\141\1\157\1\137\1\uffff\1\172\1\162\1\164\1\146\1\52\1\uffff"+
-        "\1\145\1\165\1\137\1\uffff\1\172\1\162\1\146\1\uffff\2\145\1\172"+
-        "\1\141\1\uffff\1\164\1\165\1\162\1\145\1\172\1\uffff";
+        "\1\uffff\1\141\1\uffff\1\162\1\155\1\uffff\1\165\5\uffff\1\154\1"+
+        "\116\1\162\1\76\1\uffff\1\75\1\122\1\145\2\151\1\143\1\145\1\172"+
+        "\2\uffff\2\uffff\1\57\2\uffff\1\155\2\uffff\1\157\1\160\1\172\1"+
+        "\uffff\1\154\5\uffff\1\163\1\104\1\151\4\uffff\1\172\1\164\1\145"+
+        "\1\164\1\170\1\156\1\164\1\141\5\uffff\1\145\1\161\1\155\1\157\1"+
+        "\uffff\2\145\1\172\1\157\1\uffff\1\145\1\137\1\162\1\150\2\172\1"+
+        "\151\1\143\1\172\1\165\1\137\1\162\2\172\1\uffff\1\162\1\143\1\141"+
+        "\1\145\1\137\2\uffff\1\166\1\164\1\uffff\1\145\1\166\1\164\1\163"+
+        "\2\uffff\1\151\2\164\1\137\1\166\1\141\1\151\1\156\1\141\1\172\1"+
+        "\145\1\164\1\137\1\164\2\141\1\164\1\166\1\143\1\162\1\uffff\1\164"+
+        "\1\171\1\146\1\162\1\164\1\154\1\145\1\141\1\171\1\151\2\172\1\145"+
+        "\1\151\1\164\1\165\1\137\1\164\1\172\1\141\2\uffff\1\141\1\142\1"+
+        "\162\1\145\1\146\1\145\1\uffff\1\156\1\164\1\165\1\151\1\172\1\145"+
+        "\1\137\1\164\1\165\1\164\1\142\1\uffff\1\141\1\146\1\163\1\162\1"+
+        "\145\1\165\1\164\1\145\1\137\1\145\1\172\1\145\1\165\1\141\1\157"+
+        "\1\137\1\uffff\1\172\1\162\1\164\1\146\1\52\1\uffff\1\145\1\165"+
+        "\1\137\1\uffff\1\172\1\162\1\146\1\uffff\2\145\1\172\1\141\1\uffff"+
+        "\1\164\1\165\1\162\1\145\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\2\uffff\1\2\2\uffff\1\5\1\uffff\1\7\1\11\1\12\2\uffff\1\16\2\uffff"+
-        "\1\21\11\uffff\1\37\1\40\3\uffff\1\44\1\45\1\uffff\1\37\1\2\3\uffff"+
-        "\1\5\1\uffff\1\7\1\11\1\12\2\uffff\1\16\1\17\1\23\1\20\1\21\1\22"+
-        "\11\uffff\1\40\1\41\1\42\1\43\1\44\4\uffff\1\10\4\uffff\1\25\17"+
-        "\uffff\1\24\4\uffff\1\31\1\32\2\uffff\1\1\4\uffff\1\6\1\13\24\uffff"+
-        "\1\4\24\uffff\1\15\1\14\6\uffff\1\3\13\uffff\1\36\20\uffff\1\35"+
+        "\2\uffff\1\2\2\uffff\1\5\1\uffff\1\7\1\12\1\13\1\14\1\15\4\uffff"+
+        "\1\22\10\uffff\1\37\1\40\3\uffff\1\44\1\45\1\uffff\1\37\1\2\3\uffff"+
+        "\1\5\1\uffff\1\7\1\12\1\13\1\14\1\15\3\uffff\1\24\1\21\1\22\1\23"+
+        "\10\uffff\1\40\1\41\1\42\1\43\1\44\4\uffff\1\11\4\uffff\1\25\16"+
+        "\uffff\1\17\5\uffff\1\31\1\32\2\uffff\1\1\4\uffff\1\6\1\16\24\uffff"+
+        "\1\4\24\uffff\1\10\1\20\6\uffff\1\3\13\uffff\1\36\20\uffff\1\35"+
         "\5\uffff\1\30\3\uffff\1\26\3\uffff\1\33\4\uffff\1\34\5\uffff\1\27";
     static final String DFA12_specialS =
-        "\1\0\32\uffff\1\2\1\1\u00b5\uffff}>";
+        "\1\1\32\uffff\1\2\1\0\u00b5\uffff}>";
     static final String[] DFA12_transitionS = {
             "\11\37\2\36\2\37\1\36\22\37\1\36\1\37\1\33\4\37\1\34\1\10\1"+
-            "\11\4\37\1\5\1\35\12\32\1\7\1\2\1\16\1\20\1\17\2\37\1\21\15"+
-            "\31\1\22\13\31\3\37\1\30\1\31\1\37\1\26\2\31\1\27\1\12\1\3\2"+
-            "\31\1\4\3\31\1\25\1\1\1\31\1\13\1\31\1\6\1\23\3\31\1\24\3\31"+
-            "\1\14\1\37\1\15\uff82\37",
+            "\11\4\37\1\5\1\35\12\32\1\7\1\2\1\17\1\21\1\20\2\37\1\15\15"+
+            "\31\1\22\13\31\3\37\1\30\1\31\1\37\1\26\2\31\1\27\1\14\1\3\2"+
+            "\31\1\4\3\31\1\25\1\1\1\31\1\16\1\31\1\6\1\23\3\31\1\24\3\31"+
+            "\1\12\1\37\1\13\uff82\37",
             "\1\40",
             "",
             "\1\43",
@@ -1546,13 +1545,13 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
             "",
             "",
             "",
-            "\1\53",
-            "\1\54",
             "",
+            "",
+            "\1\55",
             "\1\56",
             "\1\57",
+            "\1\60",
             "",
-            "\1\62",
             "\1\63",
             "\1\64",
             "\1\65",
@@ -1579,15 +1578,15 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
             "",
             "",
             "",
+            "",
+            "",
             "\1\107",
             "\1\110",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\111",
+            "",
+            "",
+            "",
+            "",
             "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "\1\113\7\uffff\1\114",
             "\1\115",
@@ -1608,8 +1607,8 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
             "",
             "\1\127",
             "\1\130",
-            "\1\131",
             "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\1\132",
             "",
             "\1\133",
             "\1\134",
@@ -1625,8 +1624,8 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
             "\1\146",
             "\12\41\7\uffff\32\41\4\uffff\1\147\1\uffff\32\41",
             "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
-            "\1\152",
             "",
+            "\1\152",
             "\1\153",
             "\1\154",
             "\1\155",
@@ -1785,6 +1784,16 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA12_28 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_28>='\u0000' && LA12_28<='\uFFFF')) ) {s = 61;}
+
+                        else s = 31;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -1806,21 +1815,21 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
 
                         else if ( (LA12_0==')') ) {s = 9;}
 
-                        else if ( (LA12_0=='e') ) {s = 10;}
+                        else if ( (LA12_0=='{') ) {s = 10;}
 
-                        else if ( (LA12_0=='p') ) {s = 11;}
+                        else if ( (LA12_0=='}') ) {s = 11;}
 
-                        else if ( (LA12_0=='{') ) {s = 12;}
+                        else if ( (LA12_0=='e') ) {s = 12;}
 
-                        else if ( (LA12_0=='}') ) {s = 13;}
+                        else if ( (LA12_0=='A') ) {s = 13;}
 
-                        else if ( (LA12_0=='<') ) {s = 14;}
+                        else if ( (LA12_0=='p') ) {s = 14;}
 
-                        else if ( (LA12_0=='>') ) {s = 15;}
+                        else if ( (LA12_0=='<') ) {s = 15;}
 
-                        else if ( (LA12_0=='=') ) {s = 16;}
+                        else if ( (LA12_0=='>') ) {s = 16;}
 
-                        else if ( (LA12_0=='A') ) {s = 17;}
+                        else if ( (LA12_0=='=') ) {s = 17;}
 
                         else if ( (LA12_0=='O') ) {s = 18;}
 
@@ -1849,16 +1858,6 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
                         else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 30;}
 
                         else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='*' && LA12_0<='-')||(LA12_0>='?' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 31;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA12_28 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_28>='\u0000' && LA12_28<='\uFFFF')) ) {s = 61;}
-
-                        else s = 31;
 
                         if ( s>=0 ) return s;
                         break;

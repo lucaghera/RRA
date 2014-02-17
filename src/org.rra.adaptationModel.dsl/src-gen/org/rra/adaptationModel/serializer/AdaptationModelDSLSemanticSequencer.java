@@ -15,16 +15,17 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModel;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
+import org.rra.adaptationModel.adaptationModelDSL.AtomicActionWithPriority;
+import org.rra.adaptationModel.adaptationModelDSL.AtomicRule;
 import org.rra.adaptationModel.adaptationModelDSL.Condition;
+import org.rra.adaptationModel.adaptationModelDSL.ConditionAction;
 import org.rra.adaptationModel.adaptationModelDSL.DeselectAction;
 import org.rra.adaptationModel.adaptationModelDSL.Import;
 import org.rra.adaptationModel.adaptationModelDSL.MeasurementComparison;
 import org.rra.adaptationModel.adaptationModelDSL.ModifyAttribute;
 import org.rra.adaptationModel.adaptationModelDSL.NFRAttributeValue;
 import org.rra.adaptationModel.adaptationModelDSL.QueryAction;
-import org.rra.adaptationModel.adaptationModelDSL.Rule;
 import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
-import org.rra.adaptationModel.adaptationModelDSL.RuleWithPriority;
 import org.rra.adaptationModel.adaptationModelDSL.SelectAction;
 import org.rra.adaptationModel.adaptationModelDSL.StringAttributeValue;
 import org.rra.adaptationModel.services.AdaptationModelDSLGrammarAccess;
@@ -43,9 +44,28 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 					return; 
 				}
 				else break;
+			case AdaptationModelDSLPackage.ATOMIC_ACTION_WITH_PRIORITY:
+				if(context == grammarAccess.getAtomicActionWithPriorityRule()) {
+					sequence_AtomicActionWithPriority(context, (AtomicActionWithPriority) semanticObject); 
+					return; 
+				}
+				else break;
+			case AdaptationModelDSLPackage.ATOMIC_RULE:
+				if(context == grammarAccess.getAdaptationRuleRule() ||
+				   context == grammarAccess.getAtomicRuleRule()) {
+					sequence_AtomicRule(context, (AtomicRule) semanticObject); 
+					return; 
+				}
+				else break;
 			case AdaptationModelDSLPackage.CONDITION:
 				if(context == grammarAccess.getConditionRule()) {
 					sequence_Condition(context, (Condition) semanticObject); 
+					return; 
+				}
+				else break;
+			case AdaptationModelDSLPackage.CONDITION_ACTION:
+				if(context == grammarAccess.getConditionActionRule()) {
+					sequence_ConditionAction(context, (ConditionAction) semanticObject); 
 					return; 
 				}
 				else break;
@@ -89,23 +109,10 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 					return; 
 				}
 				else break;
-			case AdaptationModelDSLPackage.RULE:
-				if(context == grammarAccess.getAdaptationRuleRule() ||
-				   context == grammarAccess.getRuleRule()) {
-					sequence_Rule(context, (Rule) semanticObject); 
-					return; 
-				}
-				else break;
 			case AdaptationModelDSLPackage.RULE_SET:
 				if(context == grammarAccess.getAdaptationRuleRule() ||
 				   context == grammarAccess.getRuleSetRule()) {
 					sequence_RuleSet(context, (RuleSet) semanticObject); 
-					return; 
-				}
-				else break;
-			case AdaptationModelDSLPackage.RULE_WITH_PRIORITY:
-				if(context == grammarAccess.getRuleWithPriorityRule()) {
-					sequence_RuleWithPriority(context, (RuleWithPriority) semanticObject); 
 					return; 
 				}
 				else break;
@@ -138,10 +145,44 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Constraint:
-	 *     measurementComparison+=MeasurementComparison
+	 *     (priorityValue=INT atomicAction+=AtomicAction*)
+	 */
+	protected void sequence_AtomicActionWithPriority(EObject context, AtomicActionWithPriority semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID conditionAction+=ConditionAction)
+	 */
+	protected void sequence_AtomicRule(EObject context, AtomicRule semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (condition+=Condition* atomicActions+=AtomicAction+ else=ConditionAction?)
+	 */
+	protected void sequence_ConditionAction(EObject context, ConditionAction semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     measurementComparison=MeasurementComparison
 	 */
 	protected void sequence_Condition(EObject context, Condition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AdaptationModelDSLPackage.Literals.CONDITION__MEASUREMENT_COMPARISON) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AdaptationModelDSLPackage.Literals.CONDITION__MEASUREMENT_COMPARISON));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getConditionAccess().getMeasurementComparisonMeasurementComparisonParserRuleCall_0(), semanticObject.getMeasurementComparison());
+		feeder.finish();
 	}
 	
 	
@@ -179,20 +220,15 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Constraint:
-	 *     (measurement=[ContextDependentMeasurement|QualifiedName] value=STRING)
+	 *     (
+	 *         measurement=[ContextDependentMeasurement|QualifiedName] 
+	 *         operator=OPERATOR 
+	 *         value=STRING 
+	 *         (logicalOp=LOGICAL_OPERATOR secondTerm=MeasurementComparison)?
+	 *     )
 	 */
 	protected void sequence_MeasurementComparison(EObject context, MeasurementComparison semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AdaptationModelDSLPackage.Literals.MEASUREMENT_COMPARISON__MEASUREMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AdaptationModelDSLPackage.Literals.MEASUREMENT_COMPARISON__MEASUREMENT));
-			if(transientValues.isValueTransient(semanticObject, AdaptationModelDSLPackage.Literals.MEASUREMENT_COMPARISON__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AdaptationModelDSLPackage.Literals.MEASUREMENT_COMPARISON__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getMeasurementComparisonAccess().getMeasurementContextDependentMeasurementQualifiedNameParserRuleCall_0_0_1(), semanticObject.getMeasurement());
-		feeder.accept(grammarAccess.getMeasurementComparisonAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -242,37 +278,9 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Constraint:
-	 *     (name=ID rules+=RuleWithPriority*)
+	 *     (name=ID condition+=Condition* actions+=AtomicActionWithPriority+ (condition+=Condition* actions+=AtomicActionWithPriority+)*)
 	 */
 	protected void sequence_RuleSet(EObject context, RuleSet semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (priorityValue=INT rule=Rule)
-	 */
-	protected void sequence_RuleWithPriority(EObject context, RuleWithPriority semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AdaptationModelDSLPackage.Literals.RULE_WITH_PRIORITY__PRIORITY_VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AdaptationModelDSLPackage.Literals.RULE_WITH_PRIORITY__PRIORITY_VALUE));
-			if(transientValues.isValueTransient(semanticObject, AdaptationModelDSLPackage.Literals.RULE_WITH_PRIORITY__RULE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AdaptationModelDSLPackage.Literals.RULE_WITH_PRIORITY__RULE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getRuleWithPriorityAccess().getPriorityValueINTTerminalRuleCall_1_0(), semanticObject.getPriorityValue());
-		feeder.accept(grammarAccess.getRuleWithPriorityAccess().getRuleRuleParserRuleCall_2_0(), semanticObject.getRule());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=ID condition+=Condition* atomicAction+=AtomicAction+ (condition+=Condition* atomicAction+=AtomicAction+)*)
-	 */
-	protected void sequence_Rule(EObject context, Rule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

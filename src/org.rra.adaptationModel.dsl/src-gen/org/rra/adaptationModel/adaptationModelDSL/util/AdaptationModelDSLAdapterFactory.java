@@ -80,29 +80,39 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
         return createAdaptationModelAdapter();
       }
       @Override
-      public Adapter caseAdaptationRule(AdaptationRule object)
-      {
-        return createAdaptationRuleAdapter();
-      }
-      @Override
       public Adapter caseImport(Import object)
       {
         return createImportAdapter();
       }
       @Override
-      public Adapter caseRule(Rule object)
+      public Adapter caseAdaptationRule(AdaptationRule object)
       {
-        return createRuleAdapter();
+        return createAdaptationRuleAdapter();
       }
       @Override
-      public Adapter caseRuleWithPriority(RuleWithPriority object)
+      public Adapter caseAtomicRule(AtomicRule object)
       {
-        return createRuleWithPriorityAdapter();
+        return createAtomicRuleAdapter();
       }
       @Override
       public Adapter caseRuleSet(RuleSet object)
       {
         return createRuleSetAdapter();
+      }
+      @Override
+      public Adapter caseAtomicAction(AtomicAction object)
+      {
+        return createAtomicActionAdapter();
+      }
+      @Override
+      public Adapter caseConditionAction(ConditionAction object)
+      {
+        return createConditionActionAdapter();
+      }
+      @Override
+      public Adapter caseAtomicActionWithPriority(AtomicActionWithPriority object)
+      {
+        return createAtomicActionWithPriorityAdapter();
       }
       @Override
       public Adapter caseCondition(Condition object)
@@ -113,11 +123,6 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseMeasurementComparison(MeasurementComparison object)
       {
         return createMeasurementComparisonAdapter();
-      }
-      @Override
-      public Adapter caseAtomicAction(AtomicAction object)
-      {
-        return createAtomicActionAdapter();
       }
       @Override
       public Adapter caseQueryAction(QueryAction object)
@@ -192,21 +197,6 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationRule <em>Adaptation Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationRule
-   * @generated
-   */
-  public Adapter createAdaptationRuleAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.Import <em>Import</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -222,31 +212,31 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.Rule <em>Rule</em>}'.
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationRule <em>Adaptation Rule</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.rra.adaptationModel.adaptationModelDSL.Rule
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationRule
    * @generated
    */
-  public Adapter createRuleAdapter()
+  public Adapter createAdaptationRuleAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.RuleWithPriority <em>Rule With Priority</em>}'.
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.AtomicRule <em>Atomic Rule</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.rra.adaptationModel.adaptationModelDSL.RuleWithPriority
+   * @see org.rra.adaptationModel.adaptationModelDSL.AtomicRule
    * @generated
    */
-  public Adapter createRuleWithPriorityAdapter()
+  public Adapter createAtomicRuleAdapter()
   {
     return null;
   }
@@ -262,6 +252,51 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRuleSetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.AtomicAction <em>Atomic Action</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.rra.adaptationModel.adaptationModelDSL.AtomicAction
+   * @generated
+   */
+  public Adapter createAtomicActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.ConditionAction <em>Condition Action</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.rra.adaptationModel.adaptationModelDSL.ConditionAction
+   * @generated
+   */
+  public Adapter createConditionActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.AtomicActionWithPriority <em>Atomic Action With Priority</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.rra.adaptationModel.adaptationModelDSL.AtomicActionWithPriority
+   * @generated
+   */
+  public Adapter createAtomicActionWithPriorityAdapter()
   {
     return null;
   }
@@ -292,21 +327,6 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMeasurementComparisonAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.AtomicAction <em>Atomic Action</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.rra.adaptationModel.adaptationModelDSL.AtomicAction
-   * @generated
-   */
-  public Adapter createAtomicActionAdapter()
   {
     return null;
   }
