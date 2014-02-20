@@ -33,6 +33,6 @@ package org.rra.adaptationAPI;
  *
  */
 
-public interface ComponentProperty {
+public abstract class ComponentProperty {
 	// Key, Value?
 }

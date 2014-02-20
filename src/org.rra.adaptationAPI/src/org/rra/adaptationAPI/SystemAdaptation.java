@@ -32,15 +32,10 @@ package org.rra.adaptationAPI;
  * @author nicoh
  *
  */
-public interface SystemAdaptation {
-
-	public void startComponent(Component c) throws AdaptationException;
-
-	public void stopComponent(Component c) throws AdaptationException;
-	
-	public void removeComponent(Component c) throws AdaptationException;
-
-	public void addComponent(Component c) throws AdaptationException;
-	
-	public void connectComponent(Component src, Component sink, Connection conn) throws AdaptationException;
+public abstract class SystemAdaptation {
+	public abstract void startComponent(Component c) throws AdaptationException;
+	public abstract void stopComponent(Component c) throws AdaptationException;
+	public abstract void removeComponent(Component c) throws AdaptationException;
+	public abstract void addComponent(Component c) throws AdaptationException;
+	public abstract void connectComponent(Component src, Component sink, Connection conn) throws AdaptationException;
 }

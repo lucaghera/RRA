@@ -35,7 +35,10 @@ import java.util.List;
  *
  */
 
-public interface System {
-	public List<Component>  getAllComponents()  throws AdaptationException;
-	public List<Connection> getAllConnections() throws AdaptationException;
+public abstract class System {
+	public abstract List<Component>  getAllComponents()  throws AdaptationException;
+	public abstract List<Connection> getAllConnections() throws AdaptationException;
+	public abstract List<Component> getComponents() throws AdaptationException; 
+	public abstract void setComponents(List<Component> components) throws AdaptationException;
+	public abstract void addComponent(Component c) throws AdaptationException;
 }
