@@ -32,6 +32,5 @@ package org.rra.adaptationAPI;
  * @author nicoh
  *
  */
-public interface Connection {
-
+public abstract class Connection {
 }

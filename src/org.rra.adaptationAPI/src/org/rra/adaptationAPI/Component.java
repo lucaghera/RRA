@@ -36,5 +36,7 @@ import java.util.List;
  */
 
 public interface Component {
-	public List<ComponentProperty> getComponentProperties();
+	public abstract List<ComponentProperty> getComponentProperties();
+	public abstract String getComponentName();
+	public abstract void setComponentName(String componentName);
 }
