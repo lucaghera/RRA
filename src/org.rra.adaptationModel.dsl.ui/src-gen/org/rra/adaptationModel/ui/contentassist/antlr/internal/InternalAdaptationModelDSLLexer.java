@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalAdaptationModelDSLLexer extends Lexer {
+    public static final int T__40=40;
     public static final int RULE_ID=4;
     public static final int T__29=29;
     public static final int T__28=28;
@@ -27,8 +28,8 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
     public static final int EOF=-1;
     public static final int RULE_SL_COMMENT=8;
     public static final int RULE_ML_COMMENT=7;
-    public static final int T__30=30;
     public static final int T__19=19;
+    public static final int T__30=30;
     public static final int T__31=31;
     public static final int T__32=32;
     public static final int RULE_STRING=6;
@@ -234,10 +235,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:19:7: ( 'name' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:19:9: 'name'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:19:7: ( 'is' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:19:9: 'is'
             {
-            match("name"); 
+            match("is"); 
 
 
             }
@@ -255,10 +256,11 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:20:7: ( ';' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:20:9: ';'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:20:7: ( 'name' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:20:9: 'name'
             {
-            match(';'); 
+            match("name"); 
+
 
             }
 
@@ -275,11 +277,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:21:7: ( 'frequency' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:21:9: 'frequency'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:21:7: ( ';' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:21:9: ';'
             {
-            match("frequency"); 
-
+            match(';'); 
 
             }
 
@@ -296,10 +297,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:22:7: ( 'import' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:22:9: 'import'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:22:7: ( 'frequency' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:22:9: 'frequency'
             {
-            match("import"); 
+            match("frequency"); 
 
 
             }
@@ -317,10 +318,11 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:23:7: ( '.' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:23:9: '.'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:23:7: ( 'import' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:23:9: 'import'
             {
-            match('.'); 
+            match("import"); 
+
 
             }
 
@@ -337,11 +339,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:24:7: ( 'rule' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:24:9: 'rule'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:24:7: ( '.' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:24:9: '.'
             {
-            match("rule"); 
-
+            match('.'); 
 
             }
 
@@ -358,10 +359,11 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:25:7: ( '{' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:25:9: '{'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:25:7: ( 'rule' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:25:9: 'rule'
             {
-            match('{'); 
+            match("rule"); 
+
 
             }
 
@@ -378,10 +380,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:26:7: ( '}' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:26:9: '}'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:26:7: ( '{' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:26:9: '{'
             {
-            match('}'); 
+            match('{'); 
 
             }
 
@@ -398,11 +400,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:27:7: ( 'rule_set' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:27:9: 'rule_set'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:27:7: ( '}' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:27:9: '}'
             {
-            match("rule_set"); 
-
+            match('}'); 
 
             }
 
@@ -419,10 +420,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:28:7: ( 'priority' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:28:9: 'priority'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:28:7: ( 'rule_set' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:28:9: 'rule_set'
             {
-            match("priority"); 
+            match("rule_set"); 
 
 
             }
@@ -440,10 +441,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:29:7: ( 'if' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:29:9: 'if'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:29:7: ( 'priority' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:29:9: 'priority'
             {
-            match("if"); 
+            match("priority"); 
 
 
             }
@@ -461,10 +462,11 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:30:7: ( '(' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:30:9: '('
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:30:7: ( 'if' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:30:9: 'if'
             {
-            match('('); 
+            match("if"); 
+
 
             }
 
@@ -481,10 +483,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:31:7: ( ')' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:31:9: ')'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:31:7: ( '(' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:31:9: '('
             {
-            match(')'); 
+            match('('); 
 
             }
 
@@ -501,11 +503,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:32:7: ( 'else' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:32:9: 'else'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:32:7: ( ')' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:32:9: ')'
             {
-            match("else"); 
-
+            match(')'); 
 
             }
 
@@ -522,10 +523,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:33:7: ( 'activate_feature' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:33:9: 'activate_feature'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:33:7: ( 'else' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:33:9: 'else'
             {
-            match("activate_feature"); 
+            match("else"); 
 
 
             }
@@ -543,10 +544,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:34:7: ( 'deactivate_feature' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:34:9: 'deactivate_feature'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:34:7: ( 'activate_feature' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:34:9: 'activate_feature'
             {
-            match("deactivate_feature"); 
+            match("activate_feature"); 
 
 
             }
@@ -564,10 +565,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:35:7: ( 'set_attribute' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:35:9: 'set_attribute'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:35:7: ( 'deactivate_feature' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:35:9: 'deactivate_feature'
             {
-            match("set_attribute"); 
+            match("deactivate_feature"); 
 
 
             }
@@ -585,10 +586,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:36:7: ( 'with_value' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:36:9: 'with_value'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:36:7: ( 'set_attribute' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:36:9: 'set_attribute'
             {
-            match("with_value"); 
+            match("set_attribute"); 
 
 
             }
@@ -606,10 +607,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:37:7: ( 'select_feature_*' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:37:9: 'select_feature_*'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:37:7: ( 'with_value' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:37:9: 'with_value'
             {
-            match("select_feature_*"); 
+            match("with_value"); 
 
 
             }
@@ -627,10 +628,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:38:7: ( 'from_variants_of_feature' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:38:9: 'from_variants_of_feature'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:38:7: ( 'select_feature_*' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:38:9: 'select_feature_*'
             {
-            match("from_variants_of_feature"); 
+            match("select_feature_*"); 
 
 
             }
@@ -648,10 +649,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:39:7: ( 'where_attribue' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:39:9: 'where_attribue'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:39:7: ( 'from_variants_of_feature' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:39:9: 'from_variants_of_feature'
             {
-            match("where_attribue"); 
+            match("from_variants_of_feature"); 
 
 
             }
@@ -664,15 +665,36 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
     }
     // $ANTLR end "T__39"
 
+    // $ANTLR start "T__40"
+    public final void mT__40() throws RecognitionException {
+        try {
+            int _type = T__40;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:40:7: ( 'where_attribue' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:40:9: 'where_attribue'
+            {
+            match("where_attribue"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__40"
+
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3875:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3875:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3883:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3883:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3875:11: ( '^' )?
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3883:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -681,7 +703,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3875:11: '^'
+                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3883:11: '^'
                     {
                     match('^'); 
 
@@ -699,7 +721,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3875:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3883:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -748,10 +770,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3877:10: ( ( '0' .. '9' )+ )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3877:12: ( '0' .. '9' )+
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3885:10: ( ( '0' .. '9' )+ )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3885:12: ( '0' .. '9' )+
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3877:12: ( '0' .. '9' )+
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3885:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -765,7 +787,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3877:13: '0' .. '9'
+            	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3885:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -797,10 +819,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3879:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3879:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3887:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3887:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3879:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3887:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -818,10 +840,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3879:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3887:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3879:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3887:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -837,7 +859,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3879:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3887:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -853,7 +875,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3879:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3887:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -878,10 +900,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3879:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3887:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3879:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3887:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -897,7 +919,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3879:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3887:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -913,7 +935,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3879:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3887:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -956,12 +978,12 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3881:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3881:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3889:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3889:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3881:24: ( options {greedy=false; } : . )*
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3889:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -986,7 +1008,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3881:52: .
+            	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3889:52: .
             	    {
             	    matchAny(); 
 
@@ -1016,12 +1038,12 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3883:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3883:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3891:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3891:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3883:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3891:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1034,7 +1056,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3883:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3891:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1054,7 +1076,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3883:40: ( ( '\\r' )? '\\n' )?
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3891:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1063,9 +1085,9 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3883:41: ( '\\r' )? '\\n'
+                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3891:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3883:41: ( '\\r' )?
+                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3891:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1074,7 +1096,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3883:41: '\\r'
+                            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3891:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1106,10 +1128,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3885:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3885:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3893:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3893:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3885:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3893:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1163,8 +1185,8 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3887:16: ( . )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3887:18: .
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3895:16: ( . )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3895:18: .
             {
             matchAny(); 
 
@@ -1179,8 +1201,8 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=36;
+        // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=37;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -1387,49 +1409,56 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
                 }
                 break;
             case 30 :
-                // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1:184: RULE_ID
+                // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1:184: T__40
+                {
+                mT__40(); 
+
+                }
+                break;
+            case 31 :
+                // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1:190: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 31 :
-                // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1:192: RULE_INT
+            case 32 :
+                // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1:198: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 32 :
-                // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1:201: RULE_STRING
+            case 33 :
+                // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1:207: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 33 :
-                // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1:213: RULE_ML_COMMENT
+            case 34 :
+                // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1:219: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 34 :
-                // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1:229: RULE_SL_COMMENT
+            case 35 :
+                // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1:235: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 35 :
-                // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1:245: RULE_WS
+            case 36 :
+                // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1:251: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 36 :
-                // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1:253: RULE_ANY_OTHER
+            case 37 :
+                // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1:259: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1443,71 +1472,72 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\40\1\uffff\1\36\4\44\1\uffff\2\44\1\uffff\1\44\2\uffff"+
-        "\1\44\2\uffff\5\44\1\36\2\uffff\3\36\6\uffff\1\44\1\uffff\1\100"+
-        "\3\44\1\uffff\2\44\1\107\1\uffff\1\44\2\uffff\1\44\2\uffff\6\44"+
-        "\5\uffff\1\121\1\uffff\1\122\1\123\4\44\1\uffff\11\44\3\uffff\1"+
-        "\141\3\44\1\146\1\44\1\150\6\44\1\uffff\4\44\1\uffff\1\44\1\uffff"+
-        "\10\44\1\174\12\44\1\uffff\12\44\1\u0091\1\u0092\6\44\1\u0099\1"+
-        "\44\2\uffff\6\44\1\uffff\5\44\1\u00a6\6\44\1\uffff\12\44\1\u00b7"+
-        "\5\44\1\uffff\1\44\1\u00be\4\44\1\uffff\1\44\1\u00c4\1\44\1\uffff"+
-        "\1\44\1\uffff\2\44\1\u00c9\1\44\1\uffff\4\44\1\u00cf\1\uffff";
+        "\1\uffff\1\40\1\uffff\1\36\5\44\1\uffff\1\44\1\uffff\1\44\2\uffff"+
+        "\1\44\2\uffff\5\44\1\36\2\uffff\3\36\6\uffff\1\44\1\uffff\1\101"+
+        "\2\44\1\104\1\44\1\106\1\44\1\uffff\1\44\1\uffff\1\44\2\uffff\1"+
+        "\44\2\uffff\6\44\5\uffff\1\123\1\uffff\1\124\1\125\1\uffff\1\44"+
+        "\1\uffff\14\44\3\uffff\1\44\1\144\2\44\1\150\1\44\1\152\7\44\1\uffff"+
+        "\3\44\1\uffff\1\44\1\uffff\6\44\1\174\12\44\1\uffff\14\44\1\u0093"+
+        "\1\u0094\6\44\1\u009b\1\44\2\uffff\6\44\1\uffff\5\44\1\u00a8\6\44"+
+        "\1\uffff\12\44\1\u00b9\5\44\1\uffff\1\44\1\u00c0\4\44\1\uffff\1"+
+        "\44\1\u00c6\1\44\1\uffff\1\44\1\uffff\2\44\1\u00cb\1\44\1\uffff"+
+        "\4\44\1\u00d1\1\uffff";
     static final String DFA12_eofS =
-        "\u00d0\uffff";
+        "\u00d2\uffff";
     static final String DFA12_minS =
-        "\1\0\1\76\1\uffff\1\75\1\116\1\122\2\141\1\uffff\1\162\1\146\1\uffff"+
-        "\1\165\2\uffff\1\162\2\uffff\1\154\1\143\2\145\1\150\1\101\2\uffff"+
-        "\2\0\1\52\6\uffff\1\104\1\uffff\1\60\1\170\1\156\1\155\1\uffff\1"+
-        "\145\1\160\1\60\1\uffff\1\154\2\uffff\1\151\2\uffff\1\163\1\164"+
-        "\1\141\1\154\1\164\1\145\5\uffff\1\60\1\uffff\2\60\1\145\1\161\1"+
-        "\155\1\157\1\uffff\1\145\1\157\1\145\1\151\1\143\1\137\1\145\1\150"+
-        "\1\162\3\uffff\1\60\1\165\1\137\1\162\1\60\1\162\1\60\1\166\1\164"+
-        "\1\141\1\143\1\137\1\145\1\uffff\1\145\1\166\1\164\1\163\1\uffff"+
-        "\1\151\1\uffff\1\141\1\151\2\164\1\166\1\137\1\156\1\141\1\60\1"+
-        "\145\2\164\1\166\1\164\1\137\2\141\1\143\1\162\1\uffff\1\164\1\171"+
-        "\1\145\1\141\1\162\1\146\1\154\1\164\1\171\1\151\2\60\1\137\1\164"+
-        "\1\151\1\145\1\165\1\164\1\60\1\141\2\uffff\1\146\1\145\1\142\1"+
-        "\141\1\145\1\162\1\uffff\1\156\1\145\1\137\1\165\1\164\1\60\1\151"+
-        "\1\164\1\141\1\146\1\164\1\165\1\uffff\1\142\1\163\1\164\2\145\1"+
-        "\162\1\165\1\137\1\165\1\141\1\60\2\145\1\157\1\162\1\164\1\uffff"+
-        "\1\137\1\60\1\146\1\145\1\165\1\52\1\uffff\1\137\1\60\1\162\1\uffff"+
-        "\1\146\1\uffff\2\145\1\60\1\141\1\uffff\1\164\1\165\1\162\1\145"+
-        "\1\60\1\uffff";
-    static final String DFA12_maxS =
-        "\1\uffff\1\76\1\uffff\1\75\1\116\1\122\1\151\1\141\1\uffff\1\162"+
-        "\1\155\1\uffff\1\165\2\uffff\1\162\2\uffff\1\154\1\143\2\145\1\151"+
-        "\1\172\2\uffff\2\uffff\1\57\6\uffff\1\104\1\uffff\1\172\1\170\1"+
-        "\156\1\155\1\uffff\1\157\1\160\1\172\1\uffff\1\154\2\uffff\1\151"+
-        "\2\uffff\1\163\1\164\1\141\2\164\1\145\5\uffff\1\172\1\uffff\2\172"+
-        "\1\145\1\161\1\155\1\157\1\uffff\1\145\1\157\1\145\1\151\1\143\1"+
-        "\137\1\145\1\150\1\162\3\uffff\1\172\1\165\1\137\1\162\1\172\1\162"+
-        "\1\172\1\166\1\164\1\141\1\143\1\137\1\145\1\uffff\1\145\1\166\1"+
-        "\164\1\163\1\uffff\1\151\1\uffff\1\141\1\151\2\164\1\166\1\137\1"+
-        "\156\1\141\1\172\1\145\2\164\1\166\1\164\1\137\2\141\1\143\1\162"+
-        "\1\uffff\1\164\1\171\1\145\1\141\1\162\1\146\1\154\1\164\1\171\1"+
-        "\151\2\172\1\137\1\164\1\151\1\145\1\165\1\164\1\172\1\141\2\uffff"+
+        "\1\0\1\76\1\uffff\1\75\1\116\1\122\1\141\1\146\1\141\1\uffff\1\162"+
+        "\1\uffff\1\165\2\uffff\1\162\2\uffff\1\154\1\143\2\145\1\150\1\101"+
+        "\2\uffff\2\0\1\52\6\uffff\1\104\1\uffff\1\60\1\170\1\156\1\60\1"+
+        "\160\1\60\1\155\1\uffff\1\145\1\uffff\1\154\2\uffff\1\151\2\uffff"+
+        "\1\163\1\164\1\141\1\154\1\164\1\145\5\uffff\1\60\1\uffff\2\60\1"+
+        "\uffff\1\157\1\uffff\1\145\1\161\1\155\1\145\1\157\1\145\1\151\1"+
+        "\143\1\137\1\145\1\150\1\162\3\uffff\1\162\1\60\1\165\1\137\1\60"+
+        "\1\162\1\60\1\166\1\164\1\141\1\143\1\137\1\145\1\164\1\uffff\1"+
+        "\145\1\166\1\163\1\uffff\1\151\1\uffff\1\141\1\151\2\164\1\166\1"+
+        "\137\1\60\1\156\1\141\1\145\2\164\1\166\1\164\1\137\2\141\1\uffff"+
+        "\1\143\1\162\1\164\1\171\1\145\1\141\1\162\1\146\1\154\1\164\1\171"+
+        "\1\151\2\60\1\137\1\164\1\151\1\145\1\165\1\164\1\60\1\141\2\uffff"+
         "\1\146\1\145\1\142\1\141\1\145\1\162\1\uffff\1\156\1\145\1\137\1"+
-        "\165\1\164\1\172\1\151\1\164\1\141\1\146\1\164\1\165\1\uffff\1\142"+
-        "\1\163\1\164\2\145\1\162\1\165\1\137\1\165\1\141\1\172\2\145\1\157"+
-        "\1\162\1\164\1\uffff\1\137\1\172\1\146\1\145\1\165\1\52\1\uffff"+
-        "\1\137\1\172\1\162\1\uffff\1\146\1\uffff\2\145\1\172\1\141\1\uffff"+
-        "\1\164\1\165\1\162\1\145\1\172\1\uffff";
+        "\165\1\164\1\60\1\151\1\164\1\141\1\146\1\164\1\165\1\uffff\1\142"+
+        "\1\163\1\164\2\145\1\162\1\165\1\137\1\165\1\141\1\60\2\145\1\157"+
+        "\1\162\1\164\1\uffff\1\137\1\60\1\146\1\145\1\165\1\52\1\uffff\1"+
+        "\137\1\60\1\162\1\uffff\1\146\1\uffff\2\145\1\60\1\141\1\uffff\1"+
+        "\164\1\165\1\162\1\145\1\60\1\uffff";
+    static final String DFA12_maxS =
+        "\1\uffff\1\76\1\uffff\1\75\1\116\1\122\1\151\1\163\1\141\1\uffff"+
+        "\1\162\1\uffff\1\165\2\uffff\1\162\2\uffff\1\154\1\143\2\145\1\151"+
+        "\1\172\2\uffff\2\uffff\1\57\6\uffff\1\104\1\uffff\1\172\1\170\1"+
+        "\156\1\172\1\160\1\172\1\155\1\uffff\1\157\1\uffff\1\154\2\uffff"+
+        "\1\151\2\uffff\1\163\1\164\1\141\2\164\1\145\5\uffff\1\172\1\uffff"+
+        "\2\172\1\uffff\1\157\1\uffff\1\145\1\161\1\155\1\145\1\157\1\145"+
+        "\1\151\1\143\1\137\1\145\1\150\1\162\3\uffff\1\162\1\172\1\165\1"+
+        "\137\1\172\1\162\1\172\1\166\1\164\1\141\1\143\1\137\1\145\1\164"+
+        "\1\uffff\1\145\1\166\1\163\1\uffff\1\151\1\uffff\1\141\1\151\2\164"+
+        "\1\166\1\137\1\172\1\156\1\141\1\145\2\164\1\166\1\164\1\137\2\141"+
+        "\1\uffff\1\143\1\162\1\164\1\171\1\145\1\141\1\162\1\146\1\154\1"+
+        "\164\1\171\1\151\2\172\1\137\1\164\1\151\1\145\1\165\1\164\1\172"+
+        "\1\141\2\uffff\1\146\1\145\1\142\1\141\1\145\1\162\1\uffff\1\156"+
+        "\1\145\1\137\1\165\1\164\1\172\1\151\1\164\1\141\1\146\1\164\1\165"+
+        "\1\uffff\1\142\1\163\1\164\2\145\1\162\1\165\1\137\1\165\1\141\1"+
+        "\172\2\145\1\157\1\162\1\164\1\uffff\1\137\1\172\1\146\1\145\1\165"+
+        "\1\52\1\uffff\1\137\1\172\1\162\1\uffff\1\146\1\uffff\2\145\1\172"+
+        "\1\141\1\uffff\1\164\1\165\1\162\1\145\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\2\uffff\1\2\5\uffff\1\12\2\uffff\1\15\1\uffff\1\17\1\20\1\uffff"+
-        "\1\24\1\25\6\uffff\1\36\1\37\3\uffff\1\43\1\44\1\4\1\1\1\2\1\3\1"+
-        "\uffff\1\36\4\uffff\1\12\3\uffff\1\15\1\uffff\1\17\1\20\1\uffff"+
-        "\1\24\1\25\6\uffff\1\37\1\40\1\41\1\42\1\43\1\uffff\1\6\6\uffff"+
-        "\1\23\11\uffff\1\5\1\7\1\10\15\uffff\1\11\4\uffff\1\16\1\uffff\1"+
-        "\26\23\uffff\1\14\24\uffff\1\21\1\22\6\uffff\1\13\14\uffff\1\32"+
-        "\20\uffff\1\31\6\uffff\1\35\3\uffff\1\33\1\uffff\1\27\4\uffff\1"+
-        "\30\5\uffff\1\34";
+        "\2\uffff\1\2\6\uffff\1\13\1\uffff\1\16\1\uffff\1\20\1\21\1\uffff"+
+        "\1\25\1\26\6\uffff\1\37\1\40\3\uffff\1\44\1\45\1\4\1\1\1\2\1\3\1"+
+        "\uffff\1\37\7\uffff\1\13\1\uffff\1\16\1\uffff\1\20\1\21\1\uffff"+
+        "\1\25\1\26\6\uffff\1\40\1\41\1\42\1\43\1\44\1\uffff\1\6\2\uffff"+
+        "\1\11\1\uffff\1\24\14\uffff\1\5\1\7\1\10\16\uffff\1\12\3\uffff\1"+
+        "\17\1\uffff\1\27\21\uffff\1\15\26\uffff\1\22\1\23\6\uffff\1\14\14"+
+        "\uffff\1\33\20\uffff\1\32\6\uffff\1\36\3\uffff\1\34\1\uffff\1\30"+
+        "\4\uffff\1\31\5\uffff\1\35";
     static final String DFA12_specialS =
-        "\1\1\31\uffff\1\2\1\0\u00b4\uffff}>";
+        "\1\1\31\uffff\1\2\1\0\u00b6\uffff}>";
     static final String[] DFA12_transitionS = {
             "\11\36\2\35\2\36\1\35\22\36\1\35\1\36\1\32\4\36\1\33\1\20\1"+
-            "\21\4\36\1\13\1\34\12\31\1\36\1\10\1\1\1\3\1\2\2\36\1\4\15\30"+
-            "\1\5\13\30\3\36\1\27\1\30\1\36\1\23\2\30\1\24\1\22\1\11\2\30"+
-            "\1\12\3\30\1\6\1\7\1\30\1\17\1\30\1\14\1\25\3\30\1\26\3\30\1"+
+            "\21\4\36\1\13\1\34\12\31\1\36\1\11\1\1\1\3\1\2\2\36\1\4\15\30"+
+            "\1\5\13\30\3\36\1\27\1\30\1\36\1\23\2\30\1\24\1\22\1\12\2\30"+
+            "\1\7\3\30\1\6\1\10\1\30\1\17\1\30\1\14\1\25\3\30\1\26\3\30\1"+
             "\15\1\36\1\16\uff82\36",
             "\1\37",
             "",
@@ -1515,57 +1545,58 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
             "\1\43",
             "\1\45",
             "\1\46\7\uffff\1\47",
-            "\1\50",
+            "\1\52\6\uffff\1\51\5\uffff\1\50",
+            "\1\53",
             "",
-            "\1\52",
-            "\1\54\6\uffff\1\53",
+            "\1\55",
             "",
-            "\1\56",
-            "",
-            "",
-            "\1\61",
+            "\1\57",
             "",
             "",
-            "\1\64",
+            "\1\62",
+            "",
+            "",
             "\1\65",
             "\1\66",
             "\1\67",
-            "\1\71\1\70",
+            "\1\70",
+            "\1\72\1\71",
             "\32\44\4\uffff\1\44\1\uffff\32\44",
             "",
             "",
-            "\0\73",
-            "\0\73",
-            "\1\74\4\uffff\1\75",
+            "\0\74",
+            "\0\74",
+            "\1\75\4\uffff\1\76",
             "",
             "",
             "",
             "",
             "",
             "",
-            "\1\77",
+            "\1\100",
             "",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
-            "\1\101",
             "\1\102",
             "\1\103",
-            "",
-            "\1\104\11\uffff\1\105",
-            "\1\106",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\105",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\107",
             "",
-            "\1\110",
-            "",
-            "",
-            "\1\111",
-            "",
+            "\1\110\11\uffff\1\111",
             "",
             "\1\112",
+            "",
+            "",
             "\1\113",
+            "",
+            "",
             "\1\114",
-            "\1\116\7\uffff\1\115",
-            "\1\117",
-            "\1\120",
+            "\1\115",
+            "\1\116",
+            "\1\120\7\uffff\1\117",
+            "\1\121",
+            "\1\122",
             "",
             "",
             "",
@@ -1575,11 +1606,10 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
             "",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
-            "\1\124",
-            "\1\125",
+            "",
             "\1\126",
-            "\1\127",
             "",
+            "\1\127",
             "\1\130",
             "\1\131",
             "\1\132",
@@ -1589,32 +1619,32 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
             "\1\136",
             "\1\137",
             "\1\140",
-            "",
-            "",
-            "",
-            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\141",
             "\1\142",
+            "",
+            "",
+            "",
             "\1\143",
-            "\1\144",
-            "\12\44\7\uffff\32\44\4\uffff\1\145\1\uffff\32\44",
-            "\1\147",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\145",
+            "\1\146",
+            "\12\44\7\uffff\32\44\4\uffff\1\147\1\uffff\32\44",
             "\1\151",
-            "\1\152",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\153",
             "\1\154",
             "\1\155",
             "\1\156",
-            "",
             "\1\157",
             "\1\160",
             "\1\161",
+            "",
             "\1\162",
-            "",
             "\1\163",
-            "",
             "\1\164",
+            "",
             "\1\165",
+            "",
             "\1\166",
             "\1\167",
             "\1\170",
@@ -1643,40 +1673,40 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
             "\1\u008e",
             "\1\u008f",
             "\1\u0090",
+            "\1\u0091",
+            "\1\u0092",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
-            "\1\u0093",
-            "\1\u0094",
             "\1\u0095",
             "\1\u0096",
             "\1\u0097",
             "\1\u0098",
-            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\u0099",
             "\1\u009a",
-            "",
-            "",
-            "\1\u009b",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\u009c",
+            "",
+            "",
             "\1\u009d",
             "\1\u009e",
             "\1\u009f",
             "\1\u00a0",
-            "",
             "\1\u00a1",
             "\1\u00a2",
+            "",
             "\1\u00a3",
             "\1\u00a4",
             "\1\u00a5",
-            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\u00a6",
             "\1\u00a7",
-            "\1\u00a8",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\u00a9",
             "\1\u00aa",
             "\1\u00ab",
             "\1\u00ac",
-            "",
             "\1\u00ad",
             "\1\u00ae",
+            "",
             "\1\u00af",
             "\1\u00b0",
             "\1\u00b1",
@@ -1685,35 +1715,37 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
             "\1\u00b4",
             "\1\u00b5",
             "\1\u00b6",
-            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\u00b7",
             "\1\u00b8",
-            "\1\u00b9",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\u00ba",
             "\1\u00bb",
             "\1\u00bc",
-            "",
             "\1\u00bd",
-            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\u00be",
+            "",
             "\1\u00bf",
-            "\1\u00c0",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\u00c1",
             "\1\u00c2",
-            "",
             "\1\u00c3",
-            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\u00c4",
+            "",
             "\1\u00c5",
-            "",
-            "\1\u00c6",
-            "",
-            "\1\u00c7",
-            "\1\u00c8",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
-            "\1\u00ca",
+            "\1\u00c7",
             "",
-            "\1\u00cb",
+            "\1\u00c8",
+            "",
+            "\1\u00c9",
+            "\1\u00ca",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\u00cc",
+            "",
             "\1\u00cd",
             "\1\u00ce",
+            "\1\u00cf",
+            "\1\u00d0",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             ""
     };
@@ -1748,7 +1780,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
@@ -1758,7 +1790,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
                         int LA12_27 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_27>='\u0000' && LA12_27<='\uFFFF')) ) {s = 59;}
+                        if ( ((LA12_27>='\u0000' && LA12_27<='\uFFFF')) ) {s = 60;}
 
                         else s = 30;
 
@@ -1780,13 +1812,13 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
 
                         else if ( (LA12_0=='m') ) {s = 6;}
 
-                        else if ( (LA12_0=='n') ) {s = 7;}
+                        else if ( (LA12_0=='i') ) {s = 7;}
 
-                        else if ( (LA12_0==';') ) {s = 8;}
+                        else if ( (LA12_0=='n') ) {s = 8;}
 
-                        else if ( (LA12_0=='f') ) {s = 9;}
+                        else if ( (LA12_0==';') ) {s = 9;}
 
-                        else if ( (LA12_0=='i') ) {s = 10;}
+                        else if ( (LA12_0=='f') ) {s = 10;}
 
                         else if ( (LA12_0=='.') ) {s = 11;}
 
@@ -1834,7 +1866,7 @@ public class InternalAdaptationModelDSLLexer extends Lexer {
                         int LA12_26 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_26>='\u0000' && LA12_26<='\uFFFF')) ) {s = 59;}
+                        if ( ((LA12_26>='\u0000' && LA12_26<='\uFFFF')) ) {s = 60;}
 
                         else s = 30;
 

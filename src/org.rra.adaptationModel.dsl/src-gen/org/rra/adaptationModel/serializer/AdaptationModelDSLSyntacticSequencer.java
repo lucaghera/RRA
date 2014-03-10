@@ -30,7 +30,7 @@ public class AdaptationModelDSLSyntacticSequencer extends AbstractSyntacticSeque
 	
 	/**
 	 * QueryOperator:
-	 * 	'max' | 'min'
+	 * 	'max' | 'min' | 'is'
 	 * ;
 	 */
 	protected String getQueryOperatorToken(EObject semanticObject, RuleCall ruleCall, INode node) {

@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Feature Model Constraints
+Bundle-SymbolicName: org.rra.adaptationEngine.api
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .,lib/mvel2-2.0.19.jar
+Bundle-Activator: org.rra.adaptationEngine.api.utils.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.hyperflex.featuremodels.model;bundle-version="1.0.0",
+ org.rra.adaptationModel.dsl;bundle-version="1.0.0",
+ org.rra.cdmModel.model;bundle-version="1.0.0",
+ org.rra.dataTypesModel.model;bundle-version="1.0.0",
+ org.rra.runtimeFeatureModel.model;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.rra.adaptationEngine.api
+Bundle-Vendor: Luca Gherardi

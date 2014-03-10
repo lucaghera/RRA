@@ -35,7 +35,8 @@ package org.rra.adaptationModel.m2t.tools;
 import java.util.ArrayList;
 
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModel;
-import org.rra.adaptationModel.adaptationModelDSL.Rule;
+import org.rra.adaptationModel.adaptationModelDSL.AdaptationRule;
+import org.rra.adaptationModel.adaptationModelDSL.AtomicRule;
 
 
 
@@ -50,13 +51,19 @@ public class AdaptationEngineTools {
 	 * (directly and inderectly contained)
 	 * @generated NOT
 	 */
-	public ArrayList<Rule> getRules(AdaptationModel adaptationModel){
+	public ArrayList<AtomicRule> getAtomicRules(AdaptationModel adaptationModel){
 
-		ArrayList<Rule> rules = new ArrayList<Rule>();
+		ArrayList<AtomicRule> atomicRules = new ArrayList<AtomicRule>();
 
-		
+		for(AdaptationRule rule : adaptationModel.getAdaptationRules()){
+			
+			if(rule instanceof AtomicRule){
+				atomicRules.add((AtomicRule)rule);
+			}
+			
+		}
 
-		return rules;
+		return atomicRules;
 
 	}
 	

@@ -842,6 +842,14 @@ rule__QueryOperator__Alternatives
 { after(grammarAccess.getQueryOperatorAccess().getMinKeyword_1()); }
 )
 
+    |(
+{ before(grammarAccess.getQueryOperatorAccess().getIsKeyword_2()); }
+
+	'is' 
+
+{ after(grammarAccess.getQueryOperatorAccess().getIsKeyword_2()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);

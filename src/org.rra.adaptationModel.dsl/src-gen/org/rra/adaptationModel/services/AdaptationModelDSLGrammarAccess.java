@@ -256,12 +256,6 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		////RuleSet:
-		////	
-		////	'rule_set' name=ID ':'
-		////	('if' '(' condition+=Condition+ ')')? '{'  actions+=AtomicActionWithPriority+ '}'
-		////	('else' ('if' '(' condition+=Condition ')' )* '{'  actions+=AtomicActionWithPriority+ '}' )*  ';'
-		////;
 		//RuleSet:
 		//	"rule_set" name=ID "{" atomicRules+=AtomicRuleWithPriority+ "}" ";";
 		public ParserRule getRule() { return rule; }
@@ -508,12 +502,6 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final Assignment cSecondTermAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cSecondTermConditionParserRuleCall_3_1_0 = (RuleCall)cSecondTermAssignment_3_1.eContents().get(0);
 		
-		////AtomicActionWithPriority:
-		////	'priority' priorityValue=INT '{' atomicAction=AtomicAction '}'
-		////;
-		////RuleBodyWithPriority:
-		////	'priority' priorityValue=INT '{' ruleBody=RuleBody '}'
-		////;
 		//// Find a better name for secondTerm
 		//// Find a way for using parenthesis for priority between operators
 		//// Find a way of expressing complex conditions, with operators priorities
@@ -812,12 +800,13 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Keyword cMaxKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cMinKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cIsKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		
 		//QueryOperator:
-		//	"max" | "min";
+		//	"max" | "min" | "is";
 		public ParserRule getRule() { return rule; }
 
-		//"max" | "min"
+		//"max" | "min" | "is"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"max"
@@ -825,6 +814,9 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 
 		//"min"
 		public Keyword getMinKeyword_1() { return cMinKeyword_1; }
+
+		//"is"
+		public Keyword getIsKeyword_2() { return cIsKeyword_2; }
 	}
 
 	public class AttributeValueElements extends AbstractParserRuleElementFinder {
@@ -1030,12 +1022,6 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		return getAtomicRuleAccess().getRule();
 	}
 
-	////RuleSet:
-	////	
-	////	'rule_set' name=ID ':'
-	////	('if' '(' condition+=Condition+ ')')? '{'  actions+=AtomicActionWithPriority+ '}'
-	////	('else' ('if' '(' condition+=Condition ')' )* '{'  actions+=AtomicActionWithPriority+ '}' )*  ';'
-	////;
 	//RuleSet:
 	//	"rule_set" name=ID "{" atomicRules+=AtomicRuleWithPriority+ "}" ";";
 	public RuleSetElements getRuleSetAccess() {
@@ -1097,12 +1083,6 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		return getConditionActionAccess().getRule();
 	}
 
-	////AtomicActionWithPriority:
-	////	'priority' priorityValue=INT '{' atomicAction=AtomicAction '}'
-	////;
-	////RuleBodyWithPriority:
-	////	'priority' priorityValue=INT '{' ruleBody=RuleBody '}'
-	////;
 	//// Find a better name for secondTerm
 	//// Find a way for using parenthesis for priority between operators
 	//// Find a way of expressing complex conditions, with operators priorities
@@ -1180,7 +1160,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//QueryOperator:
-	//	"max" | "min";
+	//	"max" | "min" | "is";
 	public QueryOperatorElements getQueryOperatorAccess() {
 		return (pQueryOperator != null) ? pQueryOperator : (pQueryOperator = new QueryOperatorElements());
 	}

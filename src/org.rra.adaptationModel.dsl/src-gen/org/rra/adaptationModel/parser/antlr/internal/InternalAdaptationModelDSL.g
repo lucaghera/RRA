@@ -1272,6 +1272,13 @@ ruleQueryOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleT
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getQueryOperatorAccess().getMinKeyword_1()); 
     }
+
+    |
+	kw='is' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getQueryOperatorAccess().getIsKeyword_2()); 
+    }
 )
     ;
 

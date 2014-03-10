@@ -65,13 +65,6 @@ AtomicRule:
 	ruleBody=RuleBody '}' ';'
 ;
 
-//RuleSet:
-//	
-//	'rule_set' name=ID ':'
-//	('if' '(' condition+=Condition+ ')')? '{'  actions+=AtomicActionWithPriority+ '}'
-//	('else' ('if' '(' condition+=Condition ')' )* '{'  actions+=AtomicActionWithPriority+ '}' )*  ';'
-//;
-
 RuleSet:
 	
 	'rule_set' name=ID '{' 
@@ -102,14 +95,6 @@ ConditionAction:
 	('if' '(' condition=Condition ')') atomicAction=AtomicAction
 	('else' (else=RuleBody) )?
 ;
-
-//AtomicActionWithPriority:
-//	'priority' priorityValue=INT '{' atomicAction=AtomicAction '}'
-//;
-
-//RuleBodyWithPriority:
-//	'priority' priorityValue=INT '{' ruleBody=RuleBody '}'
-//;
 
 // Find a better name for secondTerm
 // Find a way for using parenthesis for priority between operators
