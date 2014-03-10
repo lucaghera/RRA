@@ -100,9 +100,24 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
         return createRuleSetAdapter();
       }
       @Override
+      public Adapter caseAtomicRuleWithPriority(AtomicRuleWithPriority object)
+      {
+        return createAtomicRuleWithPriorityAdapter();
+      }
+      @Override
       public Adapter caseAtomicAction(AtomicAction object)
       {
         return createAtomicActionAdapter();
+      }
+      @Override
+      public Adapter caseRuleBody(RuleBody object)
+      {
+        return createRuleBodyAdapter();
+      }
+      @Override
+      public Adapter casePureAction(PureAction object)
+      {
+        return createPureActionAdapter();
       }
       @Override
       public Adapter caseConditionAction(ConditionAction object)
@@ -110,39 +125,29 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
         return createConditionActionAdapter();
       }
       @Override
-      public Adapter caseAtomicActionWithPriority(AtomicActionWithPriority object)
-      {
-        return createAtomicActionWithPriorityAdapter();
-      }
-      @Override
       public Adapter caseCondition(Condition object)
       {
         return createConditionAdapter();
       }
       @Override
-      public Adapter caseMeasurementComparison(MeasurementComparison object)
+      public Adapter caseAtomicActionSelectFeature(AtomicActionSelectFeature object)
       {
-        return createMeasurementComparisonAdapter();
+        return createAtomicActionSelectFeatureAdapter();
       }
       @Override
-      public Adapter caseQueryAction(QueryAction object)
+      public Adapter caseAtomicActionDeselectFeature(AtomicActionDeselectFeature object)
       {
-        return createQueryActionAdapter();
+        return createAtomicActionDeselectFeatureAdapter();
       }
       @Override
-      public Adapter caseSelectAction(SelectAction object)
+      public Adapter caseAtomicActionModifyAttribute(AtomicActionModifyAttribute object)
       {
-        return createSelectActionAdapter();
+        return createAtomicActionModifyAttributeAdapter();
       }
       @Override
-      public Adapter caseDeselectAction(DeselectAction object)
+      public Adapter caseAtomicActionQuery(AtomicActionQuery object)
       {
-        return createDeselectActionAdapter();
-      }
-      @Override
-      public Adapter caseModifyAttribute(ModifyAttribute object)
-      {
-        return createModifyAttributeAdapter();
+        return createAtomicActionQueryAdapter();
       }
       @Override
       public Adapter caseAttributeValue(AttributeValue object)
@@ -257,6 +262,21 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.AtomicRuleWithPriority <em>Atomic Rule With Priority</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.rra.adaptationModel.adaptationModelDSL.AtomicRuleWithPriority
+   * @generated
+   */
+  public Adapter createAtomicRuleWithPriorityAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.AtomicAction <em>Atomic Action</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -267,6 +287,36 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAtomicActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.RuleBody <em>Rule Body</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.rra.adaptationModel.adaptationModelDSL.RuleBody
+   * @generated
+   */
+  public Adapter createRuleBodyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.PureAction <em>Pure Action</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.rra.adaptationModel.adaptationModelDSL.PureAction
+   * @generated
+   */
+  public Adapter createPureActionAdapter()
   {
     return null;
   }
@@ -287,21 +337,6 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.AtomicActionWithPriority <em>Atomic Action With Priority</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.rra.adaptationModel.adaptationModelDSL.AtomicActionWithPriority
-   * @generated
-   */
-  public Adapter createAtomicActionWithPriorityAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.Condition <em>Condition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -317,76 +352,61 @@ public class AdaptationModelDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.MeasurementComparison <em>Measurement Comparison</em>}'.
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.AtomicActionSelectFeature <em>Atomic Action Select Feature</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.rra.adaptationModel.adaptationModelDSL.MeasurementComparison
+   * @see org.rra.adaptationModel.adaptationModelDSL.AtomicActionSelectFeature
    * @generated
    */
-  public Adapter createMeasurementComparisonAdapter()
+  public Adapter createAtomicActionSelectFeatureAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.QueryAction <em>Query Action</em>}'.
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.AtomicActionDeselectFeature <em>Atomic Action Deselect Feature</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.rra.adaptationModel.adaptationModelDSL.QueryAction
+   * @see org.rra.adaptationModel.adaptationModelDSL.AtomicActionDeselectFeature
    * @generated
    */
-  public Adapter createQueryActionAdapter()
+  public Adapter createAtomicActionDeselectFeatureAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.SelectAction <em>Select Action</em>}'.
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.AtomicActionModifyAttribute <em>Atomic Action Modify Attribute</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.rra.adaptationModel.adaptationModelDSL.SelectAction
+   * @see org.rra.adaptationModel.adaptationModelDSL.AtomicActionModifyAttribute
    * @generated
    */
-  public Adapter createSelectActionAdapter()
+  public Adapter createAtomicActionModifyAttributeAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.DeselectAction <em>Deselect Action</em>}'.
+   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.AtomicActionQuery <em>Atomic Action Query</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.rra.adaptationModel.adaptationModelDSL.DeselectAction
+   * @see org.rra.adaptationModel.adaptationModelDSL.AtomicActionQuery
    * @generated
    */
-  public Adapter createDeselectActionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.rra.adaptationModel.adaptationModelDSL.ModifyAttribute <em>Modify Attribute</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.rra.adaptationModel.adaptationModelDSL.ModifyAttribute
-   * @generated
-   */
-  public Adapter createModifyAttributeAdapter()
+  public Adapter createAtomicActionQueryAdapter()
   {
     return null;
   }

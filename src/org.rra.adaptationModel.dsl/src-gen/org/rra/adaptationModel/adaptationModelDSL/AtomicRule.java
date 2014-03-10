@@ -2,7 +2,6 @@
  */
 package org.rra.adaptationModel.adaptationModelDSL;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,7 +11,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AtomicRule#getConditionAction <em>Condition Action</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AtomicRule#getRuleBody <em>Rule Body</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,19 +22,29 @@ import org.eclipse.emf.common.util.EList;
 public interface AtomicRule extends AdaptationRule
 {
   /**
-   * Returns the value of the '<em><b>Condition Action</b></em>' containment reference list.
-   * The list contents are of type {@link org.rra.adaptationModel.adaptationModelDSL.ConditionAction}.
+   * Returns the value of the '<em><b>Rule Body</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Condition Action</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Rule Body</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Condition Action</em>' containment reference list.
-   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getAtomicRule_ConditionAction()
+   * @return the value of the '<em>Rule Body</em>' containment reference.
+   * @see #setRuleBody(RuleBody)
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getAtomicRule_RuleBody()
    * @model containment="true"
    * @generated
    */
-  EList<ConditionAction> getConditionAction();
+  RuleBody getRuleBody();
+
+  /**
+   * Sets the value of the '{@link org.rra.adaptationModel.adaptationModelDSL.AtomicRule#getRuleBody <em>Rule Body</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Rule Body</em>' containment reference.
+   * @see #getRuleBody()
+   * @generated
+   */
+  void setRuleBody(RuleBody value);
 
 } // AtomicRule

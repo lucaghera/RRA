@@ -2,21 +2,17 @@
  */
 package org.rra.adaptationModel.adaptationModelDSL.impl;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
 import org.rra.adaptationModel.adaptationModelDSL.AtomicRule;
-import org.rra.adaptationModel.adaptationModelDSL.ConditionAction;
+import org.rra.adaptationModel.adaptationModelDSL.RuleBody;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +21,7 @@ import org.rra.adaptationModel.adaptationModelDSL.ConditionAction;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AtomicRuleImpl#getConditionAction <em>Condition Action</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AtomicRuleImpl#getRuleBody <em>Rule Body</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,14 +30,14 @@ import org.rra.adaptationModel.adaptationModelDSL.ConditionAction;
 public class AtomicRuleImpl extends AdaptationRuleImpl implements AtomicRule
 {
   /**
-   * The cached value of the '{@link #getConditionAction() <em>Condition Action</em>}' containment reference list.
+   * The cached value of the '{@link #getRuleBody() <em>Rule Body</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConditionAction()
+   * @see #getRuleBody()
    * @generated
    * @ordered
    */
-  protected EList<ConditionAction> conditionAction;
+  protected RuleBody ruleBody;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,13 +65,47 @@ public class AtomicRuleImpl extends AdaptationRuleImpl implements AtomicRule
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ConditionAction> getConditionAction()
+  public RuleBody getRuleBody()
   {
-    if (conditionAction == null)
+    return ruleBody;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRuleBody(RuleBody newRuleBody, NotificationChain msgs)
+  {
+    RuleBody oldRuleBody = ruleBody;
+    ruleBody = newRuleBody;
+    if (eNotificationRequired())
     {
-      conditionAction = new EObjectContainmentEList<ConditionAction>(ConditionAction.class, this, AdaptationModelDSLPackage.ATOMIC_RULE__CONDITION_ACTION);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.ATOMIC_RULE__RULE_BODY, oldRuleBody, newRuleBody);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return conditionAction;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRuleBody(RuleBody newRuleBody)
+  {
+    if (newRuleBody != ruleBody)
+    {
+      NotificationChain msgs = null;
+      if (ruleBody != null)
+        msgs = ((InternalEObject)ruleBody).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AdaptationModelDSLPackage.ATOMIC_RULE__RULE_BODY, null, msgs);
+      if (newRuleBody != null)
+        msgs = ((InternalEObject)newRuleBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AdaptationModelDSLPackage.ATOMIC_RULE__RULE_BODY, null, msgs);
+      msgs = basicSetRuleBody(newRuleBody, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.ATOMIC_RULE__RULE_BODY, newRuleBody, newRuleBody));
   }
 
   /**
@@ -88,8 +118,8 @@ public class AtomicRuleImpl extends AdaptationRuleImpl implements AtomicRule
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.ATOMIC_RULE__CONDITION_ACTION:
-        return ((InternalEList<?>)getConditionAction()).basicRemove(otherEnd, msgs);
+      case AdaptationModelDSLPackage.ATOMIC_RULE__RULE_BODY:
+        return basicSetRuleBody(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -104,8 +134,8 @@ public class AtomicRuleImpl extends AdaptationRuleImpl implements AtomicRule
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.ATOMIC_RULE__CONDITION_ACTION:
-        return getConditionAction();
+      case AdaptationModelDSLPackage.ATOMIC_RULE__RULE_BODY:
+        return getRuleBody();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -115,15 +145,13 @@ public class AtomicRuleImpl extends AdaptationRuleImpl implements AtomicRule
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.ATOMIC_RULE__CONDITION_ACTION:
-        getConditionAction().clear();
-        getConditionAction().addAll((Collection<? extends ConditionAction>)newValue);
+      case AdaptationModelDSLPackage.ATOMIC_RULE__RULE_BODY:
+        setRuleBody((RuleBody)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,8 +167,8 @@ public class AtomicRuleImpl extends AdaptationRuleImpl implements AtomicRule
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.ATOMIC_RULE__CONDITION_ACTION:
-        getConditionAction().clear();
+      case AdaptationModelDSLPackage.ATOMIC_RULE__RULE_BODY:
+        setRuleBody((RuleBody)null);
         return;
     }
     super.eUnset(featureID);
@@ -156,8 +184,8 @@ public class AtomicRuleImpl extends AdaptationRuleImpl implements AtomicRule
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.ATOMIC_RULE__CONDITION_ACTION:
-        return conditionAction != null && !conditionAction.isEmpty();
+      case AdaptationModelDSLPackage.ATOMIC_RULE__RULE_BODY:
+        return ruleBody != null;
     }
     return super.eIsSet(featureID);
   }

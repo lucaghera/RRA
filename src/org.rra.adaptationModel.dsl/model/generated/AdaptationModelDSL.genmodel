@@ -20,45 +20,47 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//AdaptationRule/name"/>
     </genClasses>
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//AtomicRule">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AtomicRule/conditionAction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AtomicRule/ruleBody"/>
     </genClasses>
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//RuleSet">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//RuleSet/condition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//RuleSet/actions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//RuleSet/atomicRules"/>
     </genClasses>
-    <genClasses ecoreClass="AdaptationModelDSL.ecore#//AtomicAction"/>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//AtomicRuleWithPriority">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//AtomicRuleWithPriority/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//AtomicRuleWithPriority/priorityValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AtomicRuleWithPriority/ruleBody"/>
+    </genClasses>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//AtomicAction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AtomicAction/secondAction"/>
+    </genClasses>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//RuleBody">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//RuleBody/atomicAction"/>
+    </genClasses>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//PureAction"/>
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//ConditionAction">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//ConditionAction/condition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//ConditionAction/atomicActions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//ConditionAction/else"/>
     </genClasses>
-    <genClasses ecoreClass="AdaptationModelDSL.ecore#//AtomicActionWithPriority">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//AtomicActionWithPriority/priorityValue"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AtomicActionWithPriority/atomicAction"/>
-    </genClasses>
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//Condition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//Condition/measurementComparison"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//Condition/measurement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//Condition/operator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//Condition/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//Condition/logicalOp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//Condition/secondTerm"/>
     </genClasses>
-    <genClasses ecoreClass="AdaptationModelDSL.ecore#//MeasurementComparison">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//MeasurementComparison/measurement"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//MeasurementComparison/operator"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//MeasurementComparison/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//MeasurementComparison/logicalOp"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//MeasurementComparison/secondTerm"/>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//AtomicActionSelectFeature">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AtomicActionSelectFeature/feature"/>
     </genClasses>
-    <genClasses ecoreClass="AdaptationModelDSL.ecore#//QueryAction">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//QueryAction/feature"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//QueryAction/value"/>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//AtomicActionDeselectFeature">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AtomicActionDeselectFeature/feature"/>
     </genClasses>
-    <genClasses ecoreClass="AdaptationModelDSL.ecore#//SelectAction">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//SelectAction/feature"/>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//AtomicActionModifyAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AtomicActionModifyAttribute/featureAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AtomicActionModifyAttribute/attributeValue"/>
     </genClasses>
-    <genClasses ecoreClass="AdaptationModelDSL.ecore#//DeselectAction">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//DeselectAction/feature"/>
-    </genClasses>
-    <genClasses ecoreClass="AdaptationModelDSL.ecore#//ModifyAttribute">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//ModifyAttribute/featureAttribute"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//ModifyAttribute/attributeValue"/>
+    <genClasses ecoreClass="AdaptationModelDSL.ecore#//AtomicActionQuery">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AtomicActionQuery/feature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//AtomicActionQuery/value"/>
     </genClasses>
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//AttributeValue"/>
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//StringAttributeValue">

@@ -14,8 +14,6 @@ AdaptationModel:
 	'name' name=QualifiedName ';' 
 	'frequency' frequency=INT ';' 
 	(adaptationRules+=AdaptationRule*)
-// 	(rules+=Rule*)
-// 	(ruleSets+=RuleSet*);
 ;
 
 //terminal NUMBER returns ecore::EBigDecimal:
@@ -61,69 +59,66 @@ QualifiedName:
 AdaptationRule:
  	AtomicRule | RuleSet
 ;
-	
-// It's necessary that condition and action are part of the same element
-	
-//AtomicRule:
-//	'rule' name=ID ':' 
-//	('if' '(' condition+=Condition+ ')')? (atomicAction+=AtomicAction+) 
-//	('else' ('if' '(' condition+=Condition ')' )* atomicAction+=AtomicAction+)* ';'
-//;
 
 AtomicRule:
-	'rule' name=ID ':' 
-	conditionAction+=ConditionAction ';'
-//	('else' conditionAction+=ConditionAction)* ';'
+	'rule' name=ID '{' 
+	ruleBody=RuleBody '}' ';'
 ;
+
+//RuleSet:
+//	
+//	'rule_set' name=ID ':'
+//	('if' '(' condition+=Condition+ ')')? '{'  actions+=AtomicActionWithPriority+ '}'
+//	('else' ('if' '(' condition+=Condition ')' )* '{'  actions+=AtomicActionWithPriority+ '}' )*  ';'
+//;
 
 RuleSet:
 	
-	'rule_set' name=ID ':'
-	('if' '(' condition+=Condition+ ')')? '{'  actions+=AtomicActionWithPriority+ '}'
-	('else' ('if' '(' condition+=Condition ')' )* '{'  actions+=AtomicActionWithPriority+ '}' )*  ';'
+	'rule_set' name=ID '{' 
+	atomicRules+=AtomicRuleWithPriority+
+	'}'';'
+;
+
+AtomicRuleWithPriority:
+	'rule' name=ID 'priority' priorityValue=INT '{'
+	ruleBody=RuleBody '}'
 ;
 
 AtomicAction:
-	(SelectAction | DeselectAction | ModifyAttribute | QueryAction) 'AND'?
+	(AtomicActionSelectFeature | AtomicActionDeselectFeature | 
+		AtomicActionModifyAttribute | AtomicActionQuery ) 
+	('AND' secondAction=AtomicAction)?
 ;
 
-//ConditionAction :
-//	('if('condition+=Condition+ ')')? '{' atomicActions+=AtomicAction+ '}'
-//;
+RuleBody:
+	PureAction | ConditionAction
+;
 
-// If is optional. Be sure that it is not possible to write something like
-// - action else condition action
-// - if condition action else action else action
+PureAction:
+	atomicAction=AtomicAction
+;
+
 ConditionAction:
-	('if' '(' condition+=Condition+ ')')? atomicActions+=AtomicAction+
-	('else' (else=ConditionAction) ?)?
+	('if' '(' condition=Condition ')') atomicAction=AtomicAction
+	('else' (else=RuleBody) )?
 ;
 
-AtomicActionWithPriority:
-	'priority' priorityValue=INT '{' atomicAction+=AtomicAction* '}'
-;
-
-//Condition:
-//		measurementComparison+=MeasurementComparison 
+//AtomicActionWithPriority:
+//	'priority' priorityValue=INT '{' atomicAction=AtomicAction '}'
 //;
-Condition:
-		measurementComparison=MeasurementComparison 
-;
+
+//RuleBodyWithPriority:
+//	'priority' priorityValue=INT '{' ruleBody=RuleBody '}'
+//;
 
 // Find a better name for secondTerm
-// Find a way of using parenthesis for priority between operators
-// Replace the content of Condition with the content of this term.
-MeasurementComparison:
+// Find a way for using parenthesis for priority between operators
+// Find a way of expressing complex conditions, with operators priorities
+Condition:
 	measurement=[ cdmModel::ContextDependentMeasurement|QualifiedName ] 
 	operator=OPERATOR value=STRING 
-	( logicalOp=LOGICAL_OPERATOR secondTerm=MeasurementComparison )?
+	( logicalOp=LOGICAL_OPERATOR secondTerm=Condition )? 
 ;
-
-//Condition:
-//	measurement=[ cdmModel::ContextDependentMeasurement|QualifiedName ] OPERATOR STRING 
-//	(LOGICAL_OPERATOR meas+=[Import] OPERATOR STRING)*  
-//;
-
 
 OPERATOR:
 	'<' | '>' | '==' | '<>'	
@@ -133,55 +128,30 @@ LOGICAL_OPERATOR:
 	'AND' | 'OR' 
 ;
 
-//MATH_OPERATOR:
-//	MAX | MIN | AVG 
-//;
-//
-//AVG:
-//	'AVG (' (measurement+=[ cdmModel::ContextDependentMeasurement|QualifiedName ] ',')+ ')' 
-//;
-//
-//MIN:
-//	'MIN (' (measurement+=[ cdmModel::ContextDependentMeasurement|QualifiedName ] ',')+ ')'
-//;
-//
-//MAX:
-//	'MAX (' (measurement+=[ cdmModel::ContextDependentMeasurement|QualifiedName ] ',')+ ')'
-//;
+AtomicActionSelectFeature:
+	'activate_feature' '(' feature=[featureModel::Feature|QualifiedName ] ')'	
+;
 
+AtomicActionDeselectFeature:
+	'deactivate_feature' '(' feature=[featureModel::Feature|QualifiedName ] ')'
+;
 
+AtomicActionModifyAttribute:
+	'set_attribute' '(' featureAttribute=[rtFeatureModel::CVAttribute|QualifiedName ] ')' 
+	'with_value' '(' attributeValue+=AttributeValue ')' 
+;
 
-QueryAction:
+AtomicActionQuery:
 	'select_feature_*' 
 	'from_variants_of_feature' '(' feature=[ featureModel::Feature|QualifiedName ] ')'
 	'where_attribue' QueryOperator '(' value=STRING ')'  
 ;
 
 QueryOperator:
-	'max' | 'min'
-;
-
-//QueryAction:
-	//SELECT_WHERE MATH_OPERATOR  
-	//FROM feature+=[Import] 
-	//(LOGICAL_OPERATOR SELECT WHERE mathOp+=MATH_OPERATOR FROM feature+=[Import])*
-//;
-
-SelectAction:
-	'activate_feature' '(' feature=[featureModel::Feature|QualifiedName ] ')'	
-;
-
-DeselectAction:
-	'deactivate_feature' '(' feature=[featureModel::Feature|QualifiedName ] ')'
-;
-
-ModifyAttribute:
-	'set_attribute' '(' featureAttribute=[rtFeatureModel::CVAttribute|QualifiedName ] ')' 
-	'with_value' '(' attributeValue+=AttributeValue ')' 
+	'max' | 'min' | 'is'
 ;
 
 AttributeValue:
-	
 	StringAttributeValue | NFRAttributeValue
 ;
 

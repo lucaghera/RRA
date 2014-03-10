@@ -12,8 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.RuleSet#getCondition <em>Condition</em>}</li>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.RuleSet#getActions <em>Actions</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.RuleSet#getAtomicRules <em>Atomic Rules</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,35 +23,19 @@ import org.eclipse.emf.common.util.EList;
 public interface RuleSet extends AdaptationRule
 {
   /**
-   * Returns the value of the '<em><b>Condition</b></em>' containment reference list.
-   * The list contents are of type {@link org.rra.adaptationModel.adaptationModelDSL.Condition}.
+   * Returns the value of the '<em><b>Atomic Rules</b></em>' containment reference list.
+   * The list contents are of type {@link org.rra.adaptationModel.adaptationModelDSL.AtomicRuleWithPriority}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Condition</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Atomic Rules</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Condition</em>' containment reference list.
-   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getRuleSet_Condition()
+   * @return the value of the '<em>Atomic Rules</em>' containment reference list.
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getRuleSet_AtomicRules()
    * @model containment="true"
    * @generated
    */
-  EList<Condition> getCondition();
-
-  /**
-   * Returns the value of the '<em><b>Actions</b></em>' containment reference list.
-   * The list contents are of type {@link org.rra.adaptationModel.adaptationModelDSL.AtomicActionWithPriority}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Actions</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Actions</em>' containment reference list.
-   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getRuleSet_Actions()
-   * @model containment="true"
-   * @generated
-   */
-  EList<AtomicActionWithPriority> getActions();
+  EList<AtomicRuleWithPriority> getAtomicRules();
 
 } // RuleSet

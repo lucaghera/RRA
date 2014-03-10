@@ -17,55 +17,56 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AtomicRule" eSuperTypes="#//AdaptationRule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionAction" upperBound="-1"
-        eType="#//ConditionAction" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RuleSet" eSuperTypes="#//AdaptationRule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" upperBound="-1"
-        eType="#//Condition" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
-        eType="#//AtomicActionWithPriority" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AtomicAction"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ConditionAction">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" upperBound="-1"
-        eType="#//Condition" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="atomicActions" upperBound="-1"
-        eType="#//AtomicAction" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="else" eType="#//ConditionAction"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ruleBody" eType="#//RuleBody"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AtomicActionWithPriority">
+  <eClassifiers xsi:type="ecore:EClass" name="RuleSet" eSuperTypes="#//AdaptationRule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atomicRules" upperBound="-1"
+        eType="#//AtomicRuleWithPriority" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AtomicRuleWithPriority">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priorityValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="atomicAction" upperBound="-1"
-        eType="#//AtomicAction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ruleBody" eType="#//RuleBody"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AtomicAction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="secondAction" eType="#//AtomicAction"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuleBody">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atomicAction" eType="#//AtomicAction"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PureAction" eSuperTypes="#//RuleBody"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionAction" eSuperTypes="#//RuleBody">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//Condition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="else" eType="#//RuleBody"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Condition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="measurementComparison"
-        eType="#//MeasurementComparison" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MeasurementComparison">
     <eStructuralFeatures xsi:type="ecore:EReference" name="measurement" eType="ecore:EClass ../../../org.rra.cdmModel.model/models/cdmModel.ecore#//ContextDependentMeasurement"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="logicalOp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="secondTerm" eType="#//MeasurementComparison"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="secondTerm" eType="#//Condition"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="QueryAction" eSuperTypes="#//AtomicAction">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="ecore:EClass ../../../org.hyperflex.featuremodels.model/models/featureModel.ecore#//Feature"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectAction" eSuperTypes="#//AtomicAction">
+  <eClassifiers xsi:type="ecore:EClass" name="AtomicActionSelectFeature" eSuperTypes="#//AtomicAction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="ecore:EClass ../../../org.hyperflex.featuremodels.model/models/featureModel.ecore#//Feature"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DeselectAction" eSuperTypes="#//AtomicAction">
+  <eClassifiers xsi:type="ecore:EClass" name="AtomicActionDeselectFeature" eSuperTypes="#//AtomicAction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="ecore:EClass ../../../org.hyperflex.featuremodels.model/models/featureModel.ecore#//Feature"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ModifyAttribute" eSuperTypes="#//AtomicAction">
+  <eClassifiers xsi:type="ecore:EClass" name="AtomicActionModifyAttribute" eSuperTypes="#//AtomicAction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="featureAttribute" eType="ecore:EClass ../../../org.rra.runtimeFeatureModel.model/models/runtimeFeatureModel.ecore#//CVAttribute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributeValue" upperBound="-1"
         eType="#//AttributeValue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AtomicActionQuery" eSuperTypes="#//AtomicAction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="ecore:EClass ../../../org.hyperflex.featuremodels.model/models/featureModel.ecore#//Feature"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="StringAttributeValue" eSuperTypes="#//AttributeValue">

@@ -15,8 +15,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
-import org.rra.adaptationModel.adaptationModelDSL.AtomicActionWithPriority;
-import org.rra.adaptationModel.adaptationModelDSL.Condition;
+import org.rra.adaptationModel.adaptationModelDSL.AtomicRuleWithPriority;
 import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
 
 /**
@@ -26,8 +25,7 @@ import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.RuleSetImpl#getCondition <em>Condition</em>}</li>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.RuleSetImpl#getActions <em>Actions</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.RuleSetImpl#getAtomicRules <em>Atomic Rules</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,24 +34,14 @@ import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
 public class RuleSetImpl extends AdaptationRuleImpl implements RuleSet
 {
   /**
-   * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference list.
+   * The cached value of the '{@link #getAtomicRules() <em>Atomic Rules</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCondition()
+   * @see #getAtomicRules()
    * @generated
    * @ordered
    */
-  protected EList<Condition> condition;
-
-  /**
-   * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getActions()
-   * @generated
-   * @ordered
-   */
-  protected EList<AtomicActionWithPriority> actions;
+  protected EList<AtomicRuleWithPriority> atomicRules;
 
   /**
    * <!-- begin-user-doc -->
@@ -81,27 +69,13 @@ public class RuleSetImpl extends AdaptationRuleImpl implements RuleSet
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Condition> getCondition()
+  public EList<AtomicRuleWithPriority> getAtomicRules()
   {
-    if (condition == null)
+    if (atomicRules == null)
     {
-      condition = new EObjectContainmentEList<Condition>(Condition.class, this, AdaptationModelDSLPackage.RULE_SET__CONDITION);
+      atomicRules = new EObjectContainmentEList<AtomicRuleWithPriority>(AtomicRuleWithPriority.class, this, AdaptationModelDSLPackage.RULE_SET__ATOMIC_RULES);
     }
-    return condition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<AtomicActionWithPriority> getActions()
-  {
-    if (actions == null)
-    {
-      actions = new EObjectContainmentEList<AtomicActionWithPriority>(AtomicActionWithPriority.class, this, AdaptationModelDSLPackage.RULE_SET__ACTIONS);
-    }
-    return actions;
+    return atomicRules;
   }
 
   /**
@@ -114,10 +88,8 @@ public class RuleSetImpl extends AdaptationRuleImpl implements RuleSet
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.RULE_SET__CONDITION:
-        return ((InternalEList<?>)getCondition()).basicRemove(otherEnd, msgs);
-      case AdaptationModelDSLPackage.RULE_SET__ACTIONS:
-        return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
+      case AdaptationModelDSLPackage.RULE_SET__ATOMIC_RULES:
+        return ((InternalEList<?>)getAtomicRules()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -132,10 +104,8 @@ public class RuleSetImpl extends AdaptationRuleImpl implements RuleSet
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.RULE_SET__CONDITION:
-        return getCondition();
-      case AdaptationModelDSLPackage.RULE_SET__ACTIONS:
-        return getActions();
+      case AdaptationModelDSLPackage.RULE_SET__ATOMIC_RULES:
+        return getAtomicRules();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -151,13 +121,9 @@ public class RuleSetImpl extends AdaptationRuleImpl implements RuleSet
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.RULE_SET__CONDITION:
-        getCondition().clear();
-        getCondition().addAll((Collection<? extends Condition>)newValue);
-        return;
-      case AdaptationModelDSLPackage.RULE_SET__ACTIONS:
-        getActions().clear();
-        getActions().addAll((Collection<? extends AtomicActionWithPriority>)newValue);
+      case AdaptationModelDSLPackage.RULE_SET__ATOMIC_RULES:
+        getAtomicRules().clear();
+        getAtomicRules().addAll((Collection<? extends AtomicRuleWithPriority>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -173,11 +139,8 @@ public class RuleSetImpl extends AdaptationRuleImpl implements RuleSet
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.RULE_SET__CONDITION:
-        getCondition().clear();
-        return;
-      case AdaptationModelDSLPackage.RULE_SET__ACTIONS:
-        getActions().clear();
+      case AdaptationModelDSLPackage.RULE_SET__ATOMIC_RULES:
+        getAtomicRules().clear();
         return;
     }
     super.eUnset(featureID);
@@ -193,10 +156,8 @@ public class RuleSetImpl extends AdaptationRuleImpl implements RuleSet
   {
     switch (featureID)
     {
-      case AdaptationModelDSLPackage.RULE_SET__CONDITION:
-        return condition != null && !condition.isEmpty();
-      case AdaptationModelDSLPackage.RULE_SET__ACTIONS:
-        return actions != null && !actions.isEmpty();
+      case AdaptationModelDSLPackage.RULE_SET__ATOMIC_RULES:
+        return atomicRules != null && !atomicRules.isEmpty();
     }
     return super.eIsSet(featureID);
   }

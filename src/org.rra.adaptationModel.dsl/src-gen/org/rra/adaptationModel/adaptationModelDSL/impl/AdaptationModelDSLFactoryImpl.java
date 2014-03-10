@@ -69,15 +69,16 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
       case AdaptationModelDSLPackage.ADAPTATION_RULE: return createAdaptationRule();
       case AdaptationModelDSLPackage.ATOMIC_RULE: return createAtomicRule();
       case AdaptationModelDSLPackage.RULE_SET: return createRuleSet();
+      case AdaptationModelDSLPackage.ATOMIC_RULE_WITH_PRIORITY: return createAtomicRuleWithPriority();
       case AdaptationModelDSLPackage.ATOMIC_ACTION: return createAtomicAction();
+      case AdaptationModelDSLPackage.RULE_BODY: return createRuleBody();
+      case AdaptationModelDSLPackage.PURE_ACTION: return createPureAction();
       case AdaptationModelDSLPackage.CONDITION_ACTION: return createConditionAction();
-      case AdaptationModelDSLPackage.ATOMIC_ACTION_WITH_PRIORITY: return createAtomicActionWithPriority();
       case AdaptationModelDSLPackage.CONDITION: return createCondition();
-      case AdaptationModelDSLPackage.MEASUREMENT_COMPARISON: return createMeasurementComparison();
-      case AdaptationModelDSLPackage.QUERY_ACTION: return createQueryAction();
-      case AdaptationModelDSLPackage.SELECT_ACTION: return createSelectAction();
-      case AdaptationModelDSLPackage.DESELECT_ACTION: return createDeselectAction();
-      case AdaptationModelDSLPackage.MODIFY_ATTRIBUTE: return createModifyAttribute();
+      case AdaptationModelDSLPackage.ATOMIC_ACTION_SELECT_FEATURE: return createAtomicActionSelectFeature();
+      case AdaptationModelDSLPackage.ATOMIC_ACTION_DESELECT_FEATURE: return createAtomicActionDeselectFeature();
+      case AdaptationModelDSLPackage.ATOMIC_ACTION_MODIFY_ATTRIBUTE: return createAtomicActionModifyAttribute();
+      case AdaptationModelDSLPackage.ATOMIC_ACTION_QUERY: return createAtomicActionQuery();
       case AdaptationModelDSLPackage.ATTRIBUTE_VALUE: return createAttributeValue();
       case AdaptationModelDSLPackage.STRING_ATTRIBUTE_VALUE: return createStringAttributeValue();
       case AdaptationModelDSLPackage.NFR_ATTRIBUTE_VALUE: return createNFRAttributeValue();
@@ -146,10 +147,43 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
+  public AtomicRuleWithPriority createAtomicRuleWithPriority()
+  {
+    AtomicRuleWithPriorityImpl atomicRuleWithPriority = new AtomicRuleWithPriorityImpl();
+    return atomicRuleWithPriority;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public AtomicAction createAtomicAction()
   {
     AtomicActionImpl atomicAction = new AtomicActionImpl();
     return atomicAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RuleBody createRuleBody()
+  {
+    RuleBodyImpl ruleBody = new RuleBodyImpl();
+    return ruleBody;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PureAction createPureAction()
+  {
+    PureActionImpl pureAction = new PureActionImpl();
+    return pureAction;
   }
 
   /**
@@ -168,17 +202,6 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public AtomicActionWithPriority createAtomicActionWithPriority()
-  {
-    AtomicActionWithPriorityImpl atomicActionWithPriority = new AtomicActionWithPriorityImpl();
-    return atomicActionWithPriority;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Condition createCondition()
   {
     ConditionImpl condition = new ConditionImpl();
@@ -190,10 +213,10 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public MeasurementComparison createMeasurementComparison()
+  public AtomicActionSelectFeature createAtomicActionSelectFeature()
   {
-    MeasurementComparisonImpl measurementComparison = new MeasurementComparisonImpl();
-    return measurementComparison;
+    AtomicActionSelectFeatureImpl atomicActionSelectFeature = new AtomicActionSelectFeatureImpl();
+    return atomicActionSelectFeature;
   }
 
   /**
@@ -201,10 +224,10 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public QueryAction createQueryAction()
+  public AtomicActionDeselectFeature createAtomicActionDeselectFeature()
   {
-    QueryActionImpl queryAction = new QueryActionImpl();
-    return queryAction;
+    AtomicActionDeselectFeatureImpl atomicActionDeselectFeature = new AtomicActionDeselectFeatureImpl();
+    return atomicActionDeselectFeature;
   }
 
   /**
@@ -212,10 +235,10 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public SelectAction createSelectAction()
+  public AtomicActionModifyAttribute createAtomicActionModifyAttribute()
   {
-    SelectActionImpl selectAction = new SelectActionImpl();
-    return selectAction;
+    AtomicActionModifyAttributeImpl atomicActionModifyAttribute = new AtomicActionModifyAttributeImpl();
+    return atomicActionModifyAttribute;
   }
 
   /**
@@ -223,21 +246,10 @@ public class AdaptationModelDSLFactoryImpl extends EFactoryImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public DeselectAction createDeselectAction()
+  public AtomicActionQuery createAtomicActionQuery()
   {
-    DeselectActionImpl deselectAction = new DeselectActionImpl();
-    return deselectAction;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ModifyAttribute createModifyAttribute()
-  {
-    ModifyAttributeImpl modifyAttribute = new ModifyAttributeImpl();
-    return modifyAttribute;
+    AtomicActionQueryImpl atomicActionQuery = new AtomicActionQueryImpl();
+    return atomicActionQuery;
   }
 
   /**

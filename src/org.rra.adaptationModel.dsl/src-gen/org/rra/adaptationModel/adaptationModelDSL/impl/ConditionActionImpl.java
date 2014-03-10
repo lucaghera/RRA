@@ -2,26 +2,18 @@
  */
 package org.rra.adaptationModel.adaptationModelDSL.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
-import org.rra.adaptationModel.adaptationModelDSL.AtomicAction;
 import org.rra.adaptationModel.adaptationModelDSL.Condition;
 import org.rra.adaptationModel.adaptationModelDSL.ConditionAction;
+import org.rra.adaptationModel.adaptationModelDSL.RuleBody;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,34 +23,23 @@ import org.rra.adaptationModel.adaptationModelDSL.ConditionAction;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.ConditionActionImpl#getCondition <em>Condition</em>}</li>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.ConditionActionImpl#getAtomicActions <em>Atomic Actions</em>}</li>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.ConditionActionImpl#getElse <em>Else</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ConditionActionImpl extends MinimalEObjectImpl.Container implements ConditionAction
+public class ConditionActionImpl extends RuleBodyImpl implements ConditionAction
 {
   /**
-   * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference list.
+   * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getCondition()
    * @generated
    * @ordered
    */
-  protected EList<Condition> condition;
-
-  /**
-   * The cached value of the '{@link #getAtomicActions() <em>Atomic Actions</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAtomicActions()
-   * @generated
-   * @ordered
-   */
-  protected EList<AtomicAction> atomicActions;
+  protected Condition condition;
 
   /**
    * The cached value of the '{@link #getElse() <em>Else</em>}' containment reference.
@@ -68,7 +49,7 @@ public class ConditionActionImpl extends MinimalEObjectImpl.Container implements
    * @generated
    * @ordered
    */
-  protected ConditionAction else_;
+  protected RuleBody else_;
 
   /**
    * <!-- begin-user-doc -->
@@ -96,12 +77,8 @@ public class ConditionActionImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Condition> getCondition()
+  public Condition getCondition()
   {
-    if (condition == null)
-    {
-      condition = new EObjectContainmentEList<Condition>(Condition.class, this, AdaptationModelDSLPackage.CONDITION_ACTION__CONDITION);
-    }
     return condition;
   }
 
@@ -110,13 +87,16 @@ public class ConditionActionImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<AtomicAction> getAtomicActions()
+  public NotificationChain basicSetCondition(Condition newCondition, NotificationChain msgs)
   {
-    if (atomicActions == null)
+    Condition oldCondition = condition;
+    condition = newCondition;
+    if (eNotificationRequired())
     {
-      atomicActions = new EObjectContainmentEList<AtomicAction>(AtomicAction.class, this, AdaptationModelDSLPackage.CONDITION_ACTION__ATOMIC_ACTIONS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.CONDITION_ACTION__CONDITION, oldCondition, newCondition);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return atomicActions;
+    return msgs;
   }
 
   /**
@@ -124,7 +104,28 @@ public class ConditionActionImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public ConditionAction getElse()
+  public void setCondition(Condition newCondition)
+  {
+    if (newCondition != condition)
+    {
+      NotificationChain msgs = null;
+      if (condition != null)
+        msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AdaptationModelDSLPackage.CONDITION_ACTION__CONDITION, null, msgs);
+      if (newCondition != null)
+        msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AdaptationModelDSLPackage.CONDITION_ACTION__CONDITION, null, msgs);
+      msgs = basicSetCondition(newCondition, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.CONDITION_ACTION__CONDITION, newCondition, newCondition));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RuleBody getElse()
   {
     return else_;
   }
@@ -134,9 +135,9 @@ public class ConditionActionImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetElse(ConditionAction newElse, NotificationChain msgs)
+  public NotificationChain basicSetElse(RuleBody newElse, NotificationChain msgs)
   {
-    ConditionAction oldElse = else_;
+    RuleBody oldElse = else_;
     else_ = newElse;
     if (eNotificationRequired())
     {
@@ -151,7 +152,7 @@ public class ConditionActionImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setElse(ConditionAction newElse)
+  public void setElse(RuleBody newElse)
   {
     if (newElse != else_)
     {
@@ -178,9 +179,7 @@ public class ConditionActionImpl extends MinimalEObjectImpl.Container implements
     switch (featureID)
     {
       case AdaptationModelDSLPackage.CONDITION_ACTION__CONDITION:
-        return ((InternalEList<?>)getCondition()).basicRemove(otherEnd, msgs);
-      case AdaptationModelDSLPackage.CONDITION_ACTION__ATOMIC_ACTIONS:
-        return ((InternalEList<?>)getAtomicActions()).basicRemove(otherEnd, msgs);
+        return basicSetCondition(null, msgs);
       case AdaptationModelDSLPackage.CONDITION_ACTION__ELSE:
         return basicSetElse(null, msgs);
     }
@@ -199,8 +198,6 @@ public class ConditionActionImpl extends MinimalEObjectImpl.Container implements
     {
       case AdaptationModelDSLPackage.CONDITION_ACTION__CONDITION:
         return getCondition();
-      case AdaptationModelDSLPackage.CONDITION_ACTION__ATOMIC_ACTIONS:
-        return getAtomicActions();
       case AdaptationModelDSLPackage.CONDITION_ACTION__ELSE:
         return getElse();
     }
@@ -212,22 +209,16 @@ public class ConditionActionImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case AdaptationModelDSLPackage.CONDITION_ACTION__CONDITION:
-        getCondition().clear();
-        getCondition().addAll((Collection<? extends Condition>)newValue);
-        return;
-      case AdaptationModelDSLPackage.CONDITION_ACTION__ATOMIC_ACTIONS:
-        getAtomicActions().clear();
-        getAtomicActions().addAll((Collection<? extends AtomicAction>)newValue);
+        setCondition((Condition)newValue);
         return;
       case AdaptationModelDSLPackage.CONDITION_ACTION__ELSE:
-        setElse((ConditionAction)newValue);
+        setElse((RuleBody)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -244,13 +235,10 @@ public class ConditionActionImpl extends MinimalEObjectImpl.Container implements
     switch (featureID)
     {
       case AdaptationModelDSLPackage.CONDITION_ACTION__CONDITION:
-        getCondition().clear();
-        return;
-      case AdaptationModelDSLPackage.CONDITION_ACTION__ATOMIC_ACTIONS:
-        getAtomicActions().clear();
+        setCondition((Condition)null);
         return;
       case AdaptationModelDSLPackage.CONDITION_ACTION__ELSE:
-        setElse((ConditionAction)null);
+        setElse((RuleBody)null);
         return;
     }
     super.eUnset(featureID);
@@ -267,9 +255,7 @@ public class ConditionActionImpl extends MinimalEObjectImpl.Container implements
     switch (featureID)
     {
       case AdaptationModelDSLPackage.CONDITION_ACTION__CONDITION:
-        return condition != null && !condition.isEmpty();
-      case AdaptationModelDSLPackage.CONDITION_ACTION__ATOMIC_ACTIONS:
-        return atomicActions != null && !atomicActions.isEmpty();
+        return condition != null;
       case AdaptationModelDSLPackage.CONDITION_ACTION__ELSE:
         return else_ != null;
     }

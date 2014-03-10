@@ -68,6 +68,15 @@ public interface AdaptationModelDSLFactory extends EFactory
   RuleSet createRuleSet();
 
   /**
+   * Returns a new object of class '<em>Atomic Rule With Priority</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Atomic Rule With Priority</em>'.
+   * @generated
+   */
+  AtomicRuleWithPriority createAtomicRuleWithPriority();
+
+  /**
    * Returns a new object of class '<em>Atomic Action</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -75,6 +84,24 @@ public interface AdaptationModelDSLFactory extends EFactory
    * @generated
    */
   AtomicAction createAtomicAction();
+
+  /**
+   * Returns a new object of class '<em>Rule Body</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Rule Body</em>'.
+   * @generated
+   */
+  RuleBody createRuleBody();
+
+  /**
+   * Returns a new object of class '<em>Pure Action</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pure Action</em>'.
+   * @generated
+   */
+  PureAction createPureAction();
 
   /**
    * Returns a new object of class '<em>Condition Action</em>'.
@@ -86,15 +113,6 @@ public interface AdaptationModelDSLFactory extends EFactory
   ConditionAction createConditionAction();
 
   /**
-   * Returns a new object of class '<em>Atomic Action With Priority</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Atomic Action With Priority</em>'.
-   * @generated
-   */
-  AtomicActionWithPriority createAtomicActionWithPriority();
-
-  /**
    * Returns a new object of class '<em>Condition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -104,49 +122,40 @@ public interface AdaptationModelDSLFactory extends EFactory
   Condition createCondition();
 
   /**
-   * Returns a new object of class '<em>Measurement Comparison</em>'.
+   * Returns a new object of class '<em>Atomic Action Select Feature</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Measurement Comparison</em>'.
+   * @return a new object of class '<em>Atomic Action Select Feature</em>'.
    * @generated
    */
-  MeasurementComparison createMeasurementComparison();
+  AtomicActionSelectFeature createAtomicActionSelectFeature();
 
   /**
-   * Returns a new object of class '<em>Query Action</em>'.
+   * Returns a new object of class '<em>Atomic Action Deselect Feature</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Query Action</em>'.
+   * @return a new object of class '<em>Atomic Action Deselect Feature</em>'.
    * @generated
    */
-  QueryAction createQueryAction();
+  AtomicActionDeselectFeature createAtomicActionDeselectFeature();
 
   /**
-   * Returns a new object of class '<em>Select Action</em>'.
+   * Returns a new object of class '<em>Atomic Action Modify Attribute</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Select Action</em>'.
+   * @return a new object of class '<em>Atomic Action Modify Attribute</em>'.
    * @generated
    */
-  SelectAction createSelectAction();
+  AtomicActionModifyAttribute createAtomicActionModifyAttribute();
 
   /**
-   * Returns a new object of class '<em>Deselect Action</em>'.
+   * Returns a new object of class '<em>Atomic Action Query</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Deselect Action</em>'.
+   * @return a new object of class '<em>Atomic Action Query</em>'.
    * @generated
    */
-  DeselectAction createDeselectAction();
-
-  /**
-   * Returns a new object of class '<em>Modify Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Modify Attribute</em>'.
-   * @generated
-   */
-  ModifyAttribute createModifyAttribute();
+  AtomicActionQuery createAtomicActionQuery();
 
   /**
    * Returns a new object of class '<em>Attribute Value</em>'.

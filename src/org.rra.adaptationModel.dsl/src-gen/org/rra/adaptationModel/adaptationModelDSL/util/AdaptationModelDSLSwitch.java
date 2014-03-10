@@ -109,6 +109,13 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AdaptationModelDSLPackage.ATOMIC_RULE_WITH_PRIORITY:
+      {
+        AtomicRuleWithPriority atomicRuleWithPriority = (AtomicRuleWithPriority)theEObject;
+        T result = caseAtomicRuleWithPriority(atomicRuleWithPriority);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AdaptationModelDSLPackage.ATOMIC_ACTION:
       {
         AtomicAction atomicAction = (AtomicAction)theEObject;
@@ -116,17 +123,26 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AdaptationModelDSLPackage.RULE_BODY:
+      {
+        RuleBody ruleBody = (RuleBody)theEObject;
+        T result = caseRuleBody(ruleBody);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AdaptationModelDSLPackage.PURE_ACTION:
+      {
+        PureAction pureAction = (PureAction)theEObject;
+        T result = casePureAction(pureAction);
+        if (result == null) result = caseRuleBody(pureAction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AdaptationModelDSLPackage.CONDITION_ACTION:
       {
         ConditionAction conditionAction = (ConditionAction)theEObject;
         T result = caseConditionAction(conditionAction);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AdaptationModelDSLPackage.ATOMIC_ACTION_WITH_PRIORITY:
-      {
-        AtomicActionWithPriority atomicActionWithPriority = (AtomicActionWithPriority)theEObject;
-        T result = caseAtomicActionWithPriority(atomicActionWithPriority);
+        if (result == null) result = caseRuleBody(conditionAction);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -137,42 +153,35 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AdaptationModelDSLPackage.MEASUREMENT_COMPARISON:
+      case AdaptationModelDSLPackage.ATOMIC_ACTION_SELECT_FEATURE:
       {
-        MeasurementComparison measurementComparison = (MeasurementComparison)theEObject;
-        T result = caseMeasurementComparison(measurementComparison);
+        AtomicActionSelectFeature atomicActionSelectFeature = (AtomicActionSelectFeature)theEObject;
+        T result = caseAtomicActionSelectFeature(atomicActionSelectFeature);
+        if (result == null) result = caseAtomicAction(atomicActionSelectFeature);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AdaptationModelDSLPackage.QUERY_ACTION:
+      case AdaptationModelDSLPackage.ATOMIC_ACTION_DESELECT_FEATURE:
       {
-        QueryAction queryAction = (QueryAction)theEObject;
-        T result = caseQueryAction(queryAction);
-        if (result == null) result = caseAtomicAction(queryAction);
+        AtomicActionDeselectFeature atomicActionDeselectFeature = (AtomicActionDeselectFeature)theEObject;
+        T result = caseAtomicActionDeselectFeature(atomicActionDeselectFeature);
+        if (result == null) result = caseAtomicAction(atomicActionDeselectFeature);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AdaptationModelDSLPackage.SELECT_ACTION:
+      case AdaptationModelDSLPackage.ATOMIC_ACTION_MODIFY_ATTRIBUTE:
       {
-        SelectAction selectAction = (SelectAction)theEObject;
-        T result = caseSelectAction(selectAction);
-        if (result == null) result = caseAtomicAction(selectAction);
+        AtomicActionModifyAttribute atomicActionModifyAttribute = (AtomicActionModifyAttribute)theEObject;
+        T result = caseAtomicActionModifyAttribute(atomicActionModifyAttribute);
+        if (result == null) result = caseAtomicAction(atomicActionModifyAttribute);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AdaptationModelDSLPackage.DESELECT_ACTION:
+      case AdaptationModelDSLPackage.ATOMIC_ACTION_QUERY:
       {
-        DeselectAction deselectAction = (DeselectAction)theEObject;
-        T result = caseDeselectAction(deselectAction);
-        if (result == null) result = caseAtomicAction(deselectAction);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AdaptationModelDSLPackage.MODIFY_ATTRIBUTE:
-      {
-        ModifyAttribute modifyAttribute = (ModifyAttribute)theEObject;
-        T result = caseModifyAttribute(modifyAttribute);
-        if (result == null) result = caseAtomicAction(modifyAttribute);
+        AtomicActionQuery atomicActionQuery = (AtomicActionQuery)theEObject;
+        T result = caseAtomicActionQuery(atomicActionQuery);
+        if (result == null) result = caseAtomicAction(atomicActionQuery);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -284,6 +293,22 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Atomic Rule With Priority</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Atomic Rule With Priority</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAtomicRuleWithPriority(AtomicRuleWithPriority object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Atomic Action</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -295,6 +320,38 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAtomicAction(AtomicAction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Rule Body</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Rule Body</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRuleBody(RuleBody object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Pure Action</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Pure Action</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePureAction(PureAction object)
   {
     return null;
   }
@@ -316,22 +373,6 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Atomic Action With Priority</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Atomic Action With Priority</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAtomicActionWithPriority(AtomicActionWithPriority object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Condition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -348,81 +389,65 @@ public class AdaptationModelDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Measurement Comparison</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Atomic Action Select Feature</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Measurement Comparison</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Atomic Action Select Feature</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseMeasurementComparison(MeasurementComparison object)
+  public T caseAtomicActionSelectFeature(AtomicActionSelectFeature object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Query Action</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Atomic Action Deselect Feature</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Query Action</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Atomic Action Deselect Feature</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseQueryAction(QueryAction object)
+  public T caseAtomicActionDeselectFeature(AtomicActionDeselectFeature object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Select Action</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Atomic Action Modify Attribute</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Select Action</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Atomic Action Modify Attribute</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSelectAction(SelectAction object)
+  public T caseAtomicActionModifyAttribute(AtomicActionModifyAttribute object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Deselect Action</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Atomic Action Query</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Deselect Action</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Atomic Action Query</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDeselectAction(DeselectAction object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Modify Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Modify Attribute</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseModifyAttribute(ModifyAttribute object)
+  public T caseAtomicActionQuery(AtomicActionQuery object)
   {
     return null;
   }
