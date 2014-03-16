@@ -23,8 +23,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="ROSMsgDataType" eSuperTypes="#//DataType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="msgs_package" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" lowerBound="1"
-        upperBound="-1" eType="#//ROSMsgField" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+        eType="#//ROSMsgField" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Enumerator" eSuperTypes="#//DataType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" lowerBound="1"

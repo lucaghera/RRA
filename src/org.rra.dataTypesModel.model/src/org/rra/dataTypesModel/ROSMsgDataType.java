@@ -88,7 +88,7 @@ public interface ROSMsgDataType extends DataType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fields</em>' containment reference list.
 	 * @see org.rra.dataTypesModel.DataTypesModelPackage#getROSMsgDataType_Fields()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<ROSMsgField> getFields();

@@ -687,7 +687,7 @@ public class DataTypesModelPackageImpl extends EPackageImpl implements DataTypes
 
 		initEClass(rosMsgDataTypeEClass, ROSMsgDataType.class, "ROSMsgDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getROSMsgDataType_Msgs_package(), ecorePackage.getEString(), "msgs_package", null, 1, 1, ROSMsgDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getROSMsgDataType_Fields(), this.getROSMsgField(), null, "fields", null, 1, -1, ROSMsgDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getROSMsgDataType_Fields(), this.getROSMsgField(), null, "fields", null, 0, -1, ROSMsgDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(enumeratorEClass, Enumerator.class, "Enumerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEnumerator_Elements(), this.getEnumElement(), null, "elements", null, 1, -1, Enumerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
