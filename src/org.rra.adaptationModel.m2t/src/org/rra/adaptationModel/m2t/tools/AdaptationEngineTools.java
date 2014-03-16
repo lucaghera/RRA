@@ -127,7 +127,7 @@ public class AdaptationEngineTools {
 
 		if(condition.getMeasurement() != null && condition.getMeasurement() instanceof ROSContextDependentMeasurement){
 			if(cdms.add((ROSContextDependentMeasurement)condition.getMeasurement())){
-				System.out.println(condition.getMeasurement().getName());
+				System.out.println("CDM inserted: " + condition.getMeasurement().getName());
 			}
 		}
 

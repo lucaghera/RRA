@@ -115,17 +115,23 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 		loadFeatureModel(featureModelPath);
 		loadCDMModel(cdmModelPath);
-		loadAdaptationModel(adaptationModelPath);
 		loadDataTypeModel(dataTypesModelPath);
+		loadAdaptationModel(adaptationModelPath);
 
-		System.out.println(featureModel.getName());
+		System.out.println("FeatureModel Name: " + featureModel.getName());
 
-		System.out.println(((ConditionAction)((AtomicRule)adaptationModel.getAdaptationRules().get(0)).getRuleBody())
-				.getCondition().getMeasurement().getName());
+		ROSContextDependentMeasurement cdm = (ROSContextDependentMeasurement)((ConditionAction)((AtomicRule)adaptationModel.getAdaptationRules().get(0)).getRuleBody())
+				.getCondition().getMeasurement();
+		
+		System.out.println(cdm.getName());
+		System.out.println(cdm.getInputDataType());
+		System.out.println(cdm.getInputDataType().getName());
+		
+		System.out.println("** " + dataTypesModel.getTypes().get(0).getName());
+		
+		
 
-		System.out.println(adaptationModel.getImports().get(0).getImportURI());
-
-		initCMDsVariables();
+		//initCMDsVariables();
 
 
 		//this.featureModel = featureModel;
@@ -198,7 +204,7 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 		Resource dataTypesModelResource = resourceSet.getResource(URI.createURI(dataTypesModelPath), true);
 		dataTypesModel = (DataTypesModel) dataTypesModelResource.getContents().get(0);
-
+		
 	}
 
 	@Override
@@ -284,7 +290,7 @@ public class AdaptationEngine extends AbstractNodeMain{
 		}
 
 		for (Iterator iterator = cdms.iterator(); iterator.hasNext();) {
-			System.out.println(iterator.next().getClass());
+			System.out.println("HashIter - Class:  " + iterator.next().getClass());
 
 		}
 

@@ -4,8 +4,8 @@
    <extension
          point="org.eclipse.xtext.extension_resourceServiceProvider">
       <resourceServiceProvider
-            class="org.rra.cdmModel.xtext.ui.ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.generic.EmfResourceUIServiceProvider"
-            uriExtension="cdmmodel">
+            class="org.rra.dataTypesModel.xtext.ui.ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.generic.EmfResourceUIServiceProvider"
+            uriExtension="datatypesmodel">
       </resourceServiceProvider>
    </extension>
 
