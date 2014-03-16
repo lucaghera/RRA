@@ -11,7 +11,11 @@ Require-Bundle: org.eclipse.ui,
  org.rra.adaptationModel.dsl;bundle-version="1.0.0",
  org.rra.cdmModel.model;bundle-version="1.0.0",
  org.rra.dataTypesModel.model;bundle-version="1.0.0",
- org.rra.runtimeFeatureModel.model;bundle-version="1.0.0"
+ org.rra.runtimeFeatureModel.model;bundle-version="1.0.0",
+ org.rra.cdmModel.xtext;bundle-version="1.0.0",
+ org.rra.runtimeFeatureModel.xtext;bundle-version="1.0.0",
+ org.rra.adaptationModel.m2t;bundle-version="1.0.0",
+ org.rra.dataTypesModel.xtext;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.rra.adaptationEngine.api

@@ -20,6 +20,9 @@ Require-Bundle: org.eclipse.ui,
  org.best_of_robotics.transform.service;bundle-version="1.0.0",
  org.hyperflex.m2t;bundle-version="1.0.0",
  org.rra.adaptationModel.dsl;bundle-version="1.0.0",
- org.rra.cdmModel.model;bundle-version="1.0.0"
+ org.rra.cdmModel.model;bundle-version="1.0.0",
+ org.rra.cdmModel.xtext;bundle-version="1.0.0",
+ org.rra.runtimeFeatureModel.xtext;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
+Export-Package: org.rra.adaptationModel.m2t.tools

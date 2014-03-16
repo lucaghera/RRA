@@ -58,7 +58,7 @@ public class AdaptationEngineTools {
 	 * (directly and inderectly contained)
 	 * @generated NOT
 	 */
-	public HashSet<ROSContextDependentMeasurement> getROSRequiredCDMs(AdaptationModel adaptationModel){
+	public static HashSet<ROSContextDependentMeasurement> getROSRequiredCDMs(AdaptationModel adaptationModel){
 
 		HashSet<ROSContextDependentMeasurement> cdms = new HashSet<ROSContextDependentMeasurement>();
 
@@ -99,7 +99,7 @@ public class AdaptationEngineTools {
 
 	}
 
-	public HashSet<ROSContextDependentMeasurement> getRequiredCDMsFromAtomicRule(AtomicRule atomicRule){
+	private static HashSet<ROSContextDependentMeasurement> getRequiredCDMsFromAtomicRule(AtomicRule atomicRule){
 
 		HashSet<ROSContextDependentMeasurement> cdms = new HashSet<ROSContextDependentMeasurement>();
 
@@ -121,7 +121,7 @@ public class AdaptationEngineTools {
 
 	}
 
-	public HashSet<ROSContextDependentMeasurement> getRequiredCDMsFromCondition(Condition condition){
+	private static HashSet<ROSContextDependentMeasurement> getRequiredCDMsFromCondition(Condition condition){
 
 		HashSet<ROSContextDependentMeasurement> cdms = new HashSet<ROSContextDependentMeasurement>();
 

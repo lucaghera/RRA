@@ -30,22 +30,26 @@
  */
 package org.rra.adaptationEngine.api;
 
-import java.io.File;
+import java.awt.TrayIcon.MessageType;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeSet;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.hyperflex.featuremodels.FeatureModel;
 import org.hyperflex.featuremodels.Instance;
-import org.hyperflex.featuremodels.featuremodelsFactory;
 import org.hyperflex.featuremodels.featuremodelsPackage;
+import org.ros.message.MessageListener;
+import org.ros.namespace.GraphName;
+import org.ros.node.AbstractNodeMain;
+import org.ros.node.ConnectedNode;
+import org.ros.node.topic.Subscriber;
 import org.rra.adaptationModel.AdaptationModelDSLStandaloneSetup;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModel;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
@@ -62,76 +66,66 @@ import org.rra.adaptationModel.adaptationModelDSL.ConditionAction;
 import org.rra.adaptationModel.adaptationModelDSL.PureAction;
 import org.rra.adaptationModel.adaptationModelDSL.RuleBody;
 import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
+import org.rra.adaptationModel.m2t.tools.AdaptationEngineTools;
 import org.rra.cdmModel.CDMModelPackage;
 import org.rra.cdmModel.ContextDependentMeasurementsModel;
+import org.rra.cdmModel.ROSContextDependentMeasurement;
+import org.rra.cdmModel.xtext.utils.CDMModelSupport;
+import org.rra.dataTypesModel.DataTypesModel;
+import org.rra.dataTypesModel.DataTypesModelPackage;
+import org.rra.dataTypesModel.xtext.utils.DataTypesModelSupport;
 import org.rra.runtimeFeatureModel.RuntimeFeatureModelPackage;
+import org.rra.runtimeFeatureModel.xtext.utils.RuntimeFeatureModelSupport;
 
 
-public class AdaptationEngine{
+public class AdaptationEngine extends AbstractNodeMain{
 
 	private FeatureModel featureModel;
 	private Instance initialFeatureModelInstance;
 	private Instance currentFeatureModelInstance;
 
-	AdaptationModel adptationModel;
+	private ContextDependentMeasurementsModel cdmModel;
+	private DataTypesModel dataTypesModel;
+
+	private ResourceSet resourceSet;
+
+	private HashSet<ROSContextDependentMeasurement> cdms;
+
+	private HashMap<ROSContextDependentMeasurement, Object> cdmsVariables;
+
+	private AdaptationModel adaptationModel;
 
 	public static void main(String [ ] args){
 
 		AdaptationEngine ae = new AdaptationEngine(
 				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.adaptationModel", 
-				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.featuremodel", 
-				null);
+				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.featuremodel",
+				null,
+				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.cdmmodel",
+				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.datatypesmodel");
+
 
 	}
 
-	public AdaptationEngine(String adptationModelPath, String featureModelPath, Instance initialFeatureModelInstance){
+	public AdaptationEngine(String adaptationModelPath, String featureModelPath, 
+			Instance initialFeatureModelInstance, String cdmModelPath,
+			String dataTypesModelPath){
 
-		// Initialize the model
-	    featuremodelsPackage.eINSTANCE.eClass();
-	    RuntimeFeatureModelPackage.eINSTANCE.eClass();
-	    CDMModelPackage.eINSTANCE.eClass();
-	    
-	    AdaptationModelDSLPackage.eINSTANCE.eClass();
-	    
-	    // Register the XMI resource factory for the .website extension
+		resourceSet = new ResourceSetImpl();
 
-	    Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
-	    Map<String, Object> m = reg.getExtensionToFactoryMap();
-	    m.put("featuremodel", new XMIResourceFactoryImpl());
-	    m.put("adaptationModel", new XMIResourceFactoryImpl());
-	    m.put("cdmmodel", new XMIResourceFactoryImpl());
+		loadFeatureModel(featureModelPath);
+		loadCDMModel(cdmModelPath);
+		loadAdaptationModel(adaptationModelPath);
+		loadDataTypeModel(dataTypesModelPath);
 
-	    // Obtain a new resource set
-	    ResourceSet resSet = new ResourceSetImpl();
+		System.out.println(featureModel.getName());
 
-	    
-	    // Get the resource
-	    Resource featureModelResource = resSet.getResource(URI
-	        .createURI(featureModelPath), true);
-	    // Get the first model element and cast it to the right type, in my
-	    // example everything is hierarchical included in this first node
-	    this.featureModel = (FeatureModel) featureModelResource.getContents().get(0);
-	    System.out.println(featureModel.getName());
-	    
-	    String cdmModelPath = "/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.cdmmodel";
-	    // Get the resource
-	    Resource cdmModelResource = resSet.getResource(URI
-	        .createURI(cdmModelPath), true);
-	    // Get the first model element and cast it to the right type, in my
-	    // example everything is hierarchical included in this first node
-	    ContextDependentMeasurementsModel cdmModel = (ContextDependentMeasurementsModel) cdmModelResource.getContents().get(0);
-	  //  System.out.println(featureModel.getName());
+		System.out.println(((ConditionAction)((AtomicRule)adaptationModel.getAdaptationRules().get(0)).getRuleBody())
+				.getCondition().getMeasurement().getName());
 
-	    new AdaptationModelDSLStandaloneSetup().createInjectorAndDoEMFRegistration();
-	    Resource adaptationModelResource = resSet.getResource(URI
-		        .createURI(adptationModelPath), true);
-	    this.adptationModel = (AdaptationModel) adaptationModelResource.getContents().get(0);
-	    System.out.println(//adptationModel.getName());
-	    
-	    ((ConditionAction)((AtomicRule)adptationModel.getAdaptationRules().get(0)).getRuleBody())
-	    .getCondition().getMeasurement().getName());
+		System.out.println(adaptationModel.getImports().get(0).getImportURI());
 
-	    System.out.println(adptationModel.getImports().get(0).getImportURI());
+		initCMDsVariables();
 
 
 		//this.featureModel = featureModel;
@@ -141,6 +135,163 @@ public class AdaptationEngine{
 
 	}
 
+	private void loadAdaptationModel(String adaptationModelPath){
+
+		AdaptationModelDSLPackage.eINSTANCE.eClass();
+
+		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> m = reg.getExtensionToFactoryMap();
+		m.put("adaptationModel", new XMIResourceFactoryImpl());
+
+		new AdaptationModelDSLStandaloneSetup().createInjectorAndDoEMFRegistration();
+
+		Resource adaptationModelResource = resourceSet.getResource(URI.createURI(adaptationModelPath), true);
+		adaptationModel = (AdaptationModel) adaptationModelResource.getContents().get(0);
+
+
+	}
+
+	private void loadFeatureModel(String featureModelPath){
+
+		featuremodelsPackage.eINSTANCE.eClass();
+		RuntimeFeatureModelPackage.eINSTANCE.eClass();
+
+		RuntimeFeatureModelSupport featureModelSupport = new RuntimeFeatureModelSupport();
+		featureModelSupport.registerServices(true);
+
+		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> m = reg.getExtensionToFactoryMap();
+		m.put("featuremodel", new XMIResourceFactoryImpl());
+
+		Resource featureModelResource = resourceSet.getResource(URI
+				.createURI(featureModelPath), true);
+		featureModel = (FeatureModel) featureModelResource.getContents().get(0);
+
+	}
+
+	private void loadCDMModel(String cdmModelPath){
+
+		CDMModelPackage.eINSTANCE.eClass();
+
+		CDMModelSupport cdmModelSupport = new CDMModelSupport();
+		cdmModelSupport.registerServices(true);
+
+		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> m = reg.getExtensionToFactoryMap();
+		m.put("cdmmodel", new XMIResourceFactoryImpl());
+
+		Resource cdmModelResource = resourceSet.getResource(URI.createURI(cdmModelPath), true);
+		cdmModel = (ContextDependentMeasurementsModel) cdmModelResource.getContents().get(0);
+
+	}
+
+	private void loadDataTypeModel(String dataTypesModelPath){
+
+		DataTypesModelPackage.eINSTANCE.eClass();
+
+		DataTypesModelSupport dataTypesModelSupport = new DataTypesModelSupport();
+		dataTypesModelSupport.registerServices(true);
+
+		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> m = reg.getExtensionToFactoryMap();
+		m.put("datatypesmodel", new XMIResourceFactoryImpl());
+
+		Resource dataTypesModelResource = resourceSet.getResource(URI.createURI(dataTypesModelPath), true);
+		dataTypesModel = (DataTypesModel) dataTypesModelResource.getContents().get(0);
+
+	}
+
+	@Override
+	public GraphName getDefaultNodeName() {
+
+		return GraphName.of("rosjava/" + adaptationModel.getName());
+
+	}
+
+	@Override
+	public void onStart(ConnectedNode connectedNode) {
+
+		for(ROSContextDependentMeasurement cdm : cdms){
+
+			try {
+
+				String className = cdm.getInputDataType().getMsgs_package() + "." + cdm.getInputDataType().getName();
+				Class<?> MessageType = Class.forName(className);
+
+				String a = std_msgs.String._TYPE;
+
+				Subscriber<MessageType> subscriber = connectedNode.newSubscriber(cdm.getName(), 
+						(String)MessageType.getField("_TYPE").get(null));
+
+
+				subscriber.addMessageListener(new MessageListener<MessageType>() {
+					@Override
+					public void onNewMessage(MessageType message) {
+						//[%=subName%]Variable.setData(message.getData());
+					}
+				});
+
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IllegalArgumentException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SecurityException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (NoSuchFieldException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+
+
+		}
+
+	}
+
+	private void initCMDsVariables(){
+
+		cdmsVariables = new HashMap<ROSContextDependentMeasurement, Object>();
+		cdms = AdaptationEngineTools.getROSRequiredCDMs(adaptationModel);
+
+		for(ROSContextDependentMeasurement cdm : cdms){
+
+			try {
+
+				String className = cdm.getInputDataType().getMsgs_package() + "." + cdm.getInputDataType().getName();
+				System.out.println(" - CDM: " + cdm.getName() + ", type:" + className);
+
+				Class<?> MessageType = Class.forName(className);
+
+				cdmsVariables.put(cdm, MessageType.newInstance());
+
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (InstantiationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+
+		for (Iterator iterator = cdms.iterator(); iterator.hasNext();) {
+			System.out.println(iterator.next().getClass());
+
+		}
+
+
+	}
+
+
 	/*
 	 * This method should be executed periodically. 
 	 * It receives as input the measurements and based on the rules defined in the Adaptation Model,
@@ -148,7 +299,7 @@ public class AdaptationEngine{
 	 */
 	private void update(){
 
-		for( AdaptationRule rule : adptationModel.getAdaptationRules() ){
+		for( AdaptationRule rule : adaptationModel.getAdaptationRules() ){
 
 			evaluateAndExecuteAdaptationRule(rule);
 
@@ -255,5 +406,7 @@ public class AdaptationEngine{
 		}
 
 	}
+
+
 
 }
