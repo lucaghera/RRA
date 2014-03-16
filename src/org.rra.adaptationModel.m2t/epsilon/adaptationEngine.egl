@@ -28,21 +28,86 @@
  * 
  * 
  *]
+[%
+var amHelper = new Native("org.rra.adaptationModel.m2t.tools.AdaptationEngineTools");
+%]	
 package [%=adaptationModel.outputPackage%];
 
 import org.ros.concurrent.CancellableLoop;
+import org.apache.commons.logging.Log;
+import org.ros.message.MessageListener;
 import org.ros.namespace.GraphName;
 import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
 import org.ros.node.NodeMain;
-import org.ros.node.topic.Publisher;
-[%
-var amHelper = new Native("org.rra.adaptationModel.m2t.tools.AdaptationEngineTools");
-var cdms : Set := amHelper.getRequiredCDMs(adaptationModel);
+import org.ros.node.topic.Subscriber;
 
-for(measurement in cdms) {
-%]
-cdm "[%=measurement.name%]"
-[%
+import org.rra.adaptationEngine.api.*;
+
+
+public class [%=adaptationModel.name%] extends AbstractNodeMain {
+
+  final AdaptationEngine adaptationEngine;
+
+  [%  
+  var cdms : Set := amHelper.getROSRequiredCDMs(adaptationModel);
+
+  for(measurement in cdms) {
+  var subName : String := measurement.name;
+  var subMsg : String := measurement.inputDataType /*.msgs_package*/ + "." + measurement.inputDataType /*.name*/ ;
+  %]
+  final [%=subMsg%] [%=subName%]Variable;
+  [%
+  }
+  %]
+
+  @Override
+  public GraphName getDefaultNodeName() {
+    return GraphName.of("rosjava/[%=adaptationModel.name%]");
+  }
+
+  @Override
+  public void onStart(ConnectedNode connectedNode) {
+    
+    final Log log = connectedNode.getLog();
+    
+    [%
+    var cdms : Set := amHelper.getROSRequiredCDMs(adaptationModel);
+
+	for(measurement in cdms) {
+	var subName : String := measurement.name;
+	var subMsg : String := measurement.inputDataType /*.msgs_package*/ + "." + measurement.inputDataType /*.name*/ ;
+	%]
+	Subscriber<std_msgs.String> [%=subName%]Subscriber = connectedNode.newSubscriber("[%=subName%]", [%=subMsg%]._TYPE);
+    [%=subName%]Subscriber.addMessageListener(new MessageListener<[%=subMsg%]>() {
+      @Override
+      public void onNewMessage([%=subMsg%] message) {
+        [%=subName%]Variable.setData(message.getData());
+      }
+    });
+    
+	[%
+	}
+	%]
+    
+    connectedNode.executeCancellableLoop(new CancellableLoop() {
+      private int loopCount;
+
+      @Override
+      protected void setup() {
+        loopCount = 0;
+      }
+
+      @Override
+      protected void loop() throws InterruptedException {
+        loopCount ++;
+        log.info("Adaptation Engine - Loop:"  + loopCount");
+        Thread.sleep([%=adaptationModel.period%]);
+      }
+    });
+
+  }
+
 }
-%]
+
+

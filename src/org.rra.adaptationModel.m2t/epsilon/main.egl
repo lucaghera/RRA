@@ -35,7 +35,7 @@
 	// context monitor
 	var launchTemplate := TemplateFactory.load('adaptationEngine.egl');
 	launchTemplate.populate('adaptationModel', adaptationModel);
-	var fileName := 'adaptationModel.cpp';
+	var fileName := 'adaptationEngine.java';
 	launchTemplate.generate(fileName);
 	
 	//manifest

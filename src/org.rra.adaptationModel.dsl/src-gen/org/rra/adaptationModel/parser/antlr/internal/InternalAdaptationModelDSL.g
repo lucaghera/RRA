@@ -101,35 +101,9 @@ ruleAdaptationModel returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getAdaptationModelAccess().getNameQualifiedNameParserRuleCall_2_0()); 
-	    }
-		lv_name_2_0=ruleQualifiedName		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getAdaptationModelRule());
-	        }
-       		set(
-       			$current, 
-       			"name",
-        		lv_name_2_0, 
-        		"QualifiedName");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)	otherlv_3=';' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getAdaptationModelAccess().getSemicolonKeyword_3());
-    }
-	otherlv_4='frequency[ms]' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getAdaptationModelAccess().getFrequencyMsKeyword_4());
-    }
-(
-(
-		lv_frequency_5_0=RULE_INT
+		lv_name_2_0=RULE_ID
 		{
-			newLeafNode(lv_frequency_5_0, grammarAccess.getAdaptationModelAccess().getFrequencyINTTerminalRuleCall_5_0()); 
+			newLeafNode(lv_name_2_0, grammarAccess.getAdaptationModelAccess().getNameIDTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -137,8 +111,34 @@ ruleAdaptationModel returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"frequency",
-        		lv_frequency_5_0, 
+       			"name",
+        		lv_name_2_0, 
+        		"ID");
+	    }
+
+)
+)	otherlv_3=';' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getAdaptationModelAccess().getSemicolonKeyword_3());
+    }
+	otherlv_4='period[ms]' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getAdaptationModelAccess().getPeriodMsKeyword_4());
+    }
+(
+(
+		lv_period_5_0=RULE_INT
+		{
+			newLeafNode(lv_period_5_0, grammarAccess.getAdaptationModelAccess().getPeriodINTTerminalRuleCall_5_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAdaptationModelRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"period",
+        		lv_period_5_0, 
         		"INT");
 	    }
 

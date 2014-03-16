@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAdaptationModelDSLParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'<'", "'>'", "'=='", "'<>'", "'AND'", "'OR'", "'max'", "'min'", "'is'", "'name'", "';'", "'frequency[ms]'", "'java output package'", "'import'", "'.'", "'rule'", "'{'", "'}'", "'rule_set'", "'priority'", "'if'", "'('", "')'", "'else'", "'activate_feature'", "'deactivate_feature'", "'set_attribute'", "'with_value'", "'select_feature_*'", "'from_variants_of_feature'", "'where_attribue'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'<'", "'>'", "'=='", "'<>'", "'AND'", "'OR'", "'max'", "'min'", "'is'", "'name'", "';'", "'period[ms]'", "'java output package'", "'import'", "'.'", "'rule'", "'{'", "'}'", "'rule_set'", "'priority'", "'if'", "'('", "')'", "'else'", "'activate_feature'", "'deactivate_feature'", "'set_attribute'", "'with_value'", "'select_feature_*'", "'from_variants_of_feature'", "'where_attribue'"
     };
     public static final int RULE_ID=4;
     public static final int T__40=40;
@@ -2821,21 +2821,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AdaptationModel__Group__4__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1014:1: rule__AdaptationModel__Group__4__Impl : ( 'frequency[ms]' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1014:1: rule__AdaptationModel__Group__4__Impl : ( 'period[ms]' ) ;
     public final void rule__AdaptationModel__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1018:1: ( ( 'frequency[ms]' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1019:1: ( 'frequency[ms]' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1018:1: ( ( 'period[ms]' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1019:1: ( 'period[ms]' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1019:1: ( 'frequency[ms]' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1020:1: 'frequency[ms]'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1019:1: ( 'period[ms]' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1020:1: 'period[ms]'
             {
-             before(grammarAccess.getAdaptationModelAccess().getFrequencyMsKeyword_4()); 
+             before(grammarAccess.getAdaptationModelAccess().getPeriodMsKeyword_4()); 
             match(input,22,FOLLOW_22_in_rule__AdaptationModel__Group__4__Impl2121); 
-             after(grammarAccess.getAdaptationModelAccess().getFrequencyMsKeyword_4()); 
+             after(grammarAccess.getAdaptationModelAccess().getPeriodMsKeyword_4()); 
 
             }
 
@@ -2896,31 +2896,31 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AdaptationModel__Group__5__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1045:1: rule__AdaptationModel__Group__5__Impl : ( ( rule__AdaptationModel__FrequencyAssignment_5 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1045:1: rule__AdaptationModel__Group__5__Impl : ( ( rule__AdaptationModel__PeriodAssignment_5 ) ) ;
     public final void rule__AdaptationModel__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1049:1: ( ( ( rule__AdaptationModel__FrequencyAssignment_5 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1050:1: ( ( rule__AdaptationModel__FrequencyAssignment_5 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1049:1: ( ( ( rule__AdaptationModel__PeriodAssignment_5 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1050:1: ( ( rule__AdaptationModel__PeriodAssignment_5 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1050:1: ( ( rule__AdaptationModel__FrequencyAssignment_5 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1051:1: ( rule__AdaptationModel__FrequencyAssignment_5 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1050:1: ( ( rule__AdaptationModel__PeriodAssignment_5 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1051:1: ( rule__AdaptationModel__PeriodAssignment_5 )
             {
-             before(grammarAccess.getAdaptationModelAccess().getFrequencyAssignment_5()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1052:1: ( rule__AdaptationModel__FrequencyAssignment_5 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1052:2: rule__AdaptationModel__FrequencyAssignment_5
+             before(grammarAccess.getAdaptationModelAccess().getPeriodAssignment_5()); 
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1052:1: ( rule__AdaptationModel__PeriodAssignment_5 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1052:2: rule__AdaptationModel__PeriodAssignment_5
             {
-            pushFollow(FOLLOW_rule__AdaptationModel__FrequencyAssignment_5_in_rule__AdaptationModel__Group__5__Impl2182);
-            rule__AdaptationModel__FrequencyAssignment_5();
+            pushFollow(FOLLOW_rule__AdaptationModel__PeriodAssignment_5_in_rule__AdaptationModel__Group__5__Impl2182);
+            rule__AdaptationModel__PeriodAssignment_5();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAdaptationModelAccess().getFrequencyAssignment_5()); 
+             after(grammarAccess.getAdaptationModelAccess().getPeriodAssignment_5()); 
 
             }
 
@@ -9020,25 +9020,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AdaptationModel__NameAssignment_2"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3520:1: rule__AdaptationModel__NameAssignment_2 : ( ruleQualifiedName ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3520:1: rule__AdaptationModel__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__AdaptationModel__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3524:1: ( ( ruleQualifiedName ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3525:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3524:1: ( ( RULE_ID ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3525:1: ( RULE_ID )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3525:1: ( ruleQualifiedName )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3526:1: ruleQualifiedName
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3525:1: ( RULE_ID )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3526:1: RULE_ID
             {
-             before(grammarAccess.getAdaptationModelAccess().getNameQualifiedNameParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__AdaptationModel__NameAssignment_27022);
-            ruleQualifiedName();
-
-            state._fsp--;
-
-             after(grammarAccess.getAdaptationModelAccess().getNameQualifiedNameParserRuleCall_2_0()); 
+             before(grammarAccess.getAdaptationModelAccess().getNameIDTerminalRuleCall_2_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__AdaptationModel__NameAssignment_27022); 
+             after(grammarAccess.getAdaptationModelAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
 
@@ -9060,9 +9056,9 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
     // $ANTLR end "rule__AdaptationModel__NameAssignment_2"
 
 
-    // $ANTLR start "rule__AdaptationModel__FrequencyAssignment_5"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3535:1: rule__AdaptationModel__FrequencyAssignment_5 : ( RULE_INT ) ;
-    public final void rule__AdaptationModel__FrequencyAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__AdaptationModel__PeriodAssignment_5"
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3535:1: rule__AdaptationModel__PeriodAssignment_5 : ( RULE_INT ) ;
+    public final void rule__AdaptationModel__PeriodAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -9073,9 +9069,9 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
             // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3540:1: ( RULE_INT )
             // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3541:1: RULE_INT
             {
-             before(grammarAccess.getAdaptationModelAccess().getFrequencyINTTerminalRuleCall_5_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__AdaptationModel__FrequencyAssignment_57053); 
-             after(grammarAccess.getAdaptationModelAccess().getFrequencyINTTerminalRuleCall_5_0()); 
+             before(grammarAccess.getAdaptationModelAccess().getPeriodINTTerminalRuleCall_5_0()); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__AdaptationModel__PeriodAssignment_57053); 
+             after(grammarAccess.getAdaptationModelAccess().getPeriodINTTerminalRuleCall_5_0()); 
 
             }
 
@@ -9094,7 +9090,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
         }
         return ;
     }
-    // $ANTLR end "rule__AdaptationModel__FrequencyAssignment_5"
+    // $ANTLR end "rule__AdaptationModel__PeriodAssignment_5"
 
 
     // $ANTLR start "rule__AdaptationModel__OutputPackageAssignment_8"
@@ -10367,7 +10363,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
     public static final BitSet FOLLOW_22_in_rule__AdaptationModel__Group__4__Impl2121 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AdaptationModel__Group__5__Impl_in_rule__AdaptationModel__Group__52152 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_rule__AdaptationModel__Group__6_in_rule__AdaptationModel__Group__52155 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AdaptationModel__FrequencyAssignment_5_in_rule__AdaptationModel__Group__5__Impl2182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AdaptationModel__PeriodAssignment_5_in_rule__AdaptationModel__Group__5__Impl2182 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AdaptationModel__Group__6__Impl_in_rule__AdaptationModel__Group__62212 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_rule__AdaptationModel__Group__7_in_rule__AdaptationModel__Group__62215 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_21_in_rule__AdaptationModel__Group__6__Impl2243 = new BitSet(new long[]{0x0000000000000002L});
@@ -10580,8 +10576,8 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
     public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__9__Impl_in_rule__AtomicActionQuery__Group__96907 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_33_in_rule__AtomicActionQuery__Group__9__Impl6935 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleImport_in_rule__AdaptationModel__ImportsAssignment_06991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__AdaptationModel__NameAssignment_27022 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__AdaptationModel__FrequencyAssignment_57053 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__AdaptationModel__NameAssignment_27022 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__AdaptationModel__PeriodAssignment_57053 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_rule__AdaptationModel__OutputPackageAssignment_87084 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAdaptationRule_in_rule__AdaptationModel__AdaptationRulesAssignment_107115 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__Import__ImportURIAssignment_17146 = new BitSet(new long[]{0x0000000000000002L});

@@ -85,13 +85,13 @@ public interface AdaptationModelDSLPackage extends EPackage
   int ADAPTATION_MODEL__NAME = 1;
 
   /**
-   * The feature id for the '<em><b>Frequency</b></em>' attribute.
+   * The feature id for the '<em><b>Period</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ADAPTATION_MODEL__FREQUENCY = 2;
+  int ADAPTATION_MODEL__PERIOD = 2;
 
   /**
    * The feature id for the '<em><b>Output Package</b></em>' attribute.
@@ -765,15 +765,15 @@ public interface AdaptationModelDSLPackage extends EPackage
   EAttribute getAdaptationModel_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getFrequency <em>Frequency</em>}'.
+   * Returns the meta object for the attribute '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getPeriod <em>Period</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Frequency</em>'.
-   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getFrequency()
+   * @return the meta object for the attribute '<em>Period</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getPeriod()
    * @see #getAdaptationModel()
    * @generated
    */
-  EAttribute getAdaptationModel_Frequency();
+  EAttribute getAdaptationModel_Period();
 
   /**
    * Returns the meta object for the attribute '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getOutputPackage <em>Output Package</em>}'.
@@ -1281,12 +1281,12 @@ public interface AdaptationModelDSLPackage extends EPackage
     EAttribute ADAPTATION_MODEL__NAME = eINSTANCE.getAdaptationModel_Name();
 
     /**
-     * The meta object literal for the '<em><b>Frequency</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Period</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ADAPTATION_MODEL__FREQUENCY = eINSTANCE.getAdaptationModel_Frequency();
+    EAttribute ADAPTATION_MODEL__PERIOD = eINSTANCE.getAdaptationModel_Period();
 
     /**
      * The meta object literal for the '<em><b>Output Package</b></em>' attribute feature.

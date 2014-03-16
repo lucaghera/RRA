@@ -43,7 +43,7 @@ import org.rra.adaptationModel.adaptationModelDSL.ConditionAction;
 import org.rra.adaptationModel.adaptationModelDSL.PureAction;
 import org.rra.adaptationModel.adaptationModelDSL.RuleBody;
 import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
-import org.rra.cdmModel.ContextDependentMeasurement;
+import org.rra.cdmModel.ROSContextDependentMeasurement;
 
 
 
@@ -58,9 +58,9 @@ public class AdaptationEngineTools {
 	 * (directly and inderectly contained)
 	 * @generated NOT
 	 */
-	public HashSet<ContextDependentMeasurement> getRequiredCDMs(AdaptationModel adaptationModel){
+	public HashSet<ROSContextDependentMeasurement> getROSRequiredCDMs(AdaptationModel adaptationModel){
 
-		HashSet<ContextDependentMeasurement> cdms = new HashSet<ContextDependentMeasurement>();
+		HashSet<ROSContextDependentMeasurement> cdms = new HashSet<ROSContextDependentMeasurement>();
 
 		for(AdaptationRule rule : adaptationModel.getAdaptationRules()){
 
@@ -99,9 +99,9 @@ public class AdaptationEngineTools {
 
 	}
 
-	public HashSet<ContextDependentMeasurement> getRequiredCDMsFromAtomicRule(AtomicRule atomicRule){
+	public HashSet<ROSContextDependentMeasurement> getRequiredCDMsFromAtomicRule(AtomicRule atomicRule){
 
-		HashSet<ContextDependentMeasurement> cdms = new HashSet<ContextDependentMeasurement>();
+		HashSet<ROSContextDependentMeasurement> cdms = new HashSet<ROSContextDependentMeasurement>();
 
 		RuleBody ruleBody = atomicRule.getRuleBody();
 
@@ -121,12 +121,12 @@ public class AdaptationEngineTools {
 
 	}
 
-	public HashSet<ContextDependentMeasurement> getRequiredCDMsFromCondition(Condition condition){
+	public HashSet<ROSContextDependentMeasurement> getRequiredCDMsFromCondition(Condition condition){
 
-		HashSet<ContextDependentMeasurement> cdms = new HashSet<ContextDependentMeasurement>();
+		HashSet<ROSContextDependentMeasurement> cdms = new HashSet<ROSContextDependentMeasurement>();
 
-		if(condition.getMeasurement() != null){
-			if(cdms.add(condition.getMeasurement())){
+		if(condition.getMeasurement() != null && condition.getMeasurement() instanceof ROSContextDependentMeasurement){
+			if(cdms.add((ROSContextDependentMeasurement)condition.getMeasurement())){
 				System.out.println(condition.getMeasurement().getName());
 			}
 		}

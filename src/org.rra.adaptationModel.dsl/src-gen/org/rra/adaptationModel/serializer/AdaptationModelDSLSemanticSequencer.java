@@ -150,7 +150,7 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Constraint:
-	 *     (imports+=Import* name=QualifiedName frequency=INT outputPackage=QualifiedName adaptationRules+=AdaptationRule*)
+	 *     (imports+=Import* name=ID period=INT outputPackage=QualifiedName adaptationRules+=AdaptationRule*)
 	 */
 	protected void sequence_AdaptationModel(EObject context, AdaptationModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

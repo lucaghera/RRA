@@ -1017,11 +1017,11 @@ rule__AdaptationModel__Group__4__Impl
     }
 :
 (
-{ before(grammarAccess.getAdaptationModelAccess().getFrequencyMsKeyword_4()); }
+{ before(grammarAccess.getAdaptationModelAccess().getPeriodMsKeyword_4()); }
 
-	'frequency[ms]' 
+	'period[ms]' 
 
-{ after(grammarAccess.getAdaptationModelAccess().getFrequencyMsKeyword_4()); }
+{ after(grammarAccess.getAdaptationModelAccess().getPeriodMsKeyword_4()); }
 )
 
 ;
@@ -1048,9 +1048,9 @@ rule__AdaptationModel__Group__5__Impl
     }
 :
 (
-{ before(grammarAccess.getAdaptationModelAccess().getFrequencyAssignment_5()); }
-(rule__AdaptationModel__FrequencyAssignment_5)
-{ after(grammarAccess.getAdaptationModelAccess().getFrequencyAssignment_5()); }
+{ before(grammarAccess.getAdaptationModelAccess().getPeriodAssignment_5()); }
+(rule__AdaptationModel__PeriodAssignment_5)
+{ after(grammarAccess.getAdaptationModelAccess().getPeriodAssignment_5()); }
 )
 
 ;
@@ -3523,8 +3523,8 @@ rule__AdaptationModel__NameAssignment_2
     }
 :
 (
-{ before(grammarAccess.getAdaptationModelAccess().getNameQualifiedNameParserRuleCall_2_0()); }
-	ruleQualifiedName{ after(grammarAccess.getAdaptationModelAccess().getNameQualifiedNameParserRuleCall_2_0()); }
+{ before(grammarAccess.getAdaptationModelAccess().getNameIDTerminalRuleCall_2_0()); }
+	RULE_ID{ after(grammarAccess.getAdaptationModelAccess().getNameIDTerminalRuleCall_2_0()); }
 )
 
 ;
@@ -3532,14 +3532,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AdaptationModel__FrequencyAssignment_5
+rule__AdaptationModel__PeriodAssignment_5
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getAdaptationModelAccess().getFrequencyINTTerminalRuleCall_5_0()); }
-	RULE_INT{ after(grammarAccess.getAdaptationModelAccess().getFrequencyINTTerminalRuleCall_5_0()); }
+{ before(grammarAccess.getAdaptationModelAccess().getPeriodINTTerminalRuleCall_5_0()); }
+	RULE_INT{ after(grammarAccess.getAdaptationModelAccess().getPeriodINTTerminalRuleCall_5_0()); }
 )
 
 ;

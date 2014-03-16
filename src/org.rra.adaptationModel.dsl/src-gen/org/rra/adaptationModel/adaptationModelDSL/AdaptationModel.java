@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getImports <em>Imports</em>}</li>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getName <em>Name</em>}</li>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getFrequency <em>Frequency</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getPeriod <em>Period</em>}</li>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getOutputPackage <em>Output Package</em>}</li>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getAdaptationRules <em>Adaptation Rules</em>}</li>
  * </ul>
@@ -71,30 +71,30 @@ public interface AdaptationModel extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Frequency</b></em>' attribute.
+   * Returns the value of the '<em><b>Period</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Frequency</em>' attribute isn't clear,
+   * If the meaning of the '<em>Period</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Frequency</em>' attribute.
-   * @see #setFrequency(int)
-   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getAdaptationModel_Frequency()
+   * @return the value of the '<em>Period</em>' attribute.
+   * @see #setPeriod(int)
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getAdaptationModel_Period()
    * @model
    * @generated
    */
-  int getFrequency();
+  int getPeriod();
 
   /**
-   * Sets the value of the '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getFrequency <em>Frequency</em>}' attribute.
+   * Sets the value of the '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getPeriod <em>Period</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Frequency</em>' attribute.
-   * @see #getFrequency()
+   * @param value the new value of the '<em>Period</em>' attribute.
+   * @see #getPeriod()
    * @generated
    */
-  void setFrequency(int value);
+  void setPeriod(int value);
 
   /**
    * Returns the value of the '<em><b>Output Package</b></em>' attribute.

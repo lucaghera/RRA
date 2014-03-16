@@ -25,11 +25,11 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final RuleCall cImportsImportParserRuleCall_0_0 = (RuleCall)cImportsAssignment_0.eContents().get(0);
 		private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameQualifiedNameParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cFrequencyMsKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cFrequencyAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cFrequencyINTTerminalRuleCall_5_0 = (RuleCall)cFrequencyAssignment_5.eContents().get(0);
+		private final Keyword cPeriodMsKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cPeriodAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPeriodINTTerminalRuleCall_5_0 = (RuleCall)cPeriodAssignment_5.eContents().get(0);
 		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cJavaOutputPackageKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cOutputPackageAssignment_8 = (Assignment)cGroup.eContents().get(8);
@@ -39,12 +39,12 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final RuleCall cAdaptationRulesAdaptationRuleParserRuleCall_10_0 = (RuleCall)cAdaptationRulesAssignment_10.eContents().get(0);
 		
 		//AdaptationModel:
-		//	imports+=Import* "name" name=QualifiedName ";" "frequency[ms]" frequency=INT ";" "java output package"
-		//	outputPackage=QualifiedName ";" adaptationRules+=AdaptationRule*;
+		//	imports+=Import* "name" name=ID ";" "period[ms]" period=INT ";" "java output package" outputPackage=QualifiedName ";"
+		//	adaptationRules+=AdaptationRule*;
 		public ParserRule getRule() { return rule; }
 
-		//imports+=Import* "name" name=QualifiedName ";" "frequency[ms]" frequency=INT ";" "java output package"
-		//outputPackage=QualifiedName ";" adaptationRules+=AdaptationRule*
+		//imports+=Import* "name" name=ID ";" "period[ms]" period=INT ";" "java output package" outputPackage=QualifiedName ";"
+		//adaptationRules+=AdaptationRule*
 		public Group getGroup() { return cGroup; }
 
 		//imports+=Import*
@@ -56,23 +56,23 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		//"name"
 		public Keyword getNameKeyword_1() { return cNameKeyword_1; }
 
-		//name=QualifiedName
+		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 
-		//QualifiedName
-		public RuleCall getNameQualifiedNameParserRuleCall_2_0() { return cNameQualifiedNameParserRuleCall_2_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
 		//";"
 		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 
-		//"frequency[ms]"
-		public Keyword getFrequencyMsKeyword_4() { return cFrequencyMsKeyword_4; }
+		//"period[ms]"
+		public Keyword getPeriodMsKeyword_4() { return cPeriodMsKeyword_4; }
 
-		//frequency=INT
-		public Assignment getFrequencyAssignment_5() { return cFrequencyAssignment_5; }
+		//period=INT
+		public Assignment getPeriodAssignment_5() { return cPeriodAssignment_5; }
 
 		//INT
-		public RuleCall getFrequencyINTTerminalRuleCall_5_0() { return cFrequencyINTTerminalRuleCall_5_0; }
+		public RuleCall getPeriodINTTerminalRuleCall_5_0() { return cPeriodINTTerminalRuleCall_5_0; }
 
 		//";"
 		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
@@ -957,8 +957,8 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 
 	
 	//AdaptationModel:
-	//	imports+=Import* "name" name=QualifiedName ";" "frequency[ms]" frequency=INT ";" "java output package"
-	//	outputPackage=QualifiedName ";" adaptationRules+=AdaptationRule*;
+	//	imports+=Import* "name" name=ID ";" "period[ms]" period=INT ";" "java output package" outputPackage=QualifiedName ";"
+	//	adaptationRules+=AdaptationRule*;
 	public AdaptationModelElements getAdaptationModelAccess() {
 		return (pAdaptationModel != null) ? pAdaptationModel : (pAdaptationModel = new AdaptationModelElements());
 	}

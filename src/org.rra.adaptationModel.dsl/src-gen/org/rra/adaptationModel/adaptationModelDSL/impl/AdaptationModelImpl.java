@@ -32,7 +32,7 @@ import org.rra.adaptationModel.adaptationModelDSL.Import;
  * <ul>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getFrequency <em>Frequency</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getPeriod <em>Period</em>}</li>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getOutputPackage <em>Output Package</em>}</li>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getAdaptationRules <em>Adaptation Rules</em>}</li>
  * </ul>
@@ -73,24 +73,24 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getFrequency() <em>Frequency</em>}' attribute.
+   * The default value of the '{@link #getPeriod() <em>Period</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFrequency()
+   * @see #getPeriod()
    * @generated
    * @ordered
    */
-  protected static final int FREQUENCY_EDEFAULT = 0;
+  protected static final int PERIOD_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getFrequency() <em>Frequency</em>}' attribute.
+   * The cached value of the '{@link #getPeriod() <em>Period</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFrequency()
+   * @see #getPeriod()
    * @generated
    * @ordered
    */
-  protected int frequency = FREQUENCY_EDEFAULT;
+  protected int period = PERIOD_EDEFAULT;
 
   /**
    * The default value of the '{@link #getOutputPackage() <em>Output Package</em>}' attribute.
@@ -185,9 +185,9 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getFrequency()
+  public int getPeriod()
   {
-    return frequency;
+    return period;
   }
 
   /**
@@ -195,12 +195,12 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFrequency(int newFrequency)
+  public void setPeriod(int newPeriod)
   {
-    int oldFrequency = frequency;
-    frequency = newFrequency;
+    int oldPeriod = period;
+    period = newPeriod;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.ADAPTATION_MODEL__FREQUENCY, oldFrequency, frequency));
+      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.ADAPTATION_MODEL__PERIOD, oldPeriod, period));
   }
 
   /**
@@ -272,8 +272,8 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
         return getImports();
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__NAME:
         return getName();
-      case AdaptationModelDSLPackage.ADAPTATION_MODEL__FREQUENCY:
-        return getFrequency();
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__PERIOD:
+        return getPeriod();
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__OUTPUT_PACKAGE:
         return getOutputPackage();
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__ADAPTATION_RULES:
@@ -300,8 +300,8 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__NAME:
         setName((String)newValue);
         return;
-      case AdaptationModelDSLPackage.ADAPTATION_MODEL__FREQUENCY:
-        setFrequency((Integer)newValue);
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__PERIOD:
+        setPeriod((Integer)newValue);
         return;
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__OUTPUT_PACKAGE:
         setOutputPackage((String)newValue);
@@ -330,8 +330,8 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AdaptationModelDSLPackage.ADAPTATION_MODEL__FREQUENCY:
-        setFrequency(FREQUENCY_EDEFAULT);
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__PERIOD:
+        setPeriod(PERIOD_EDEFAULT);
         return;
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__OUTPUT_PACKAGE:
         setOutputPackage(OUTPUT_PACKAGE_EDEFAULT);
@@ -357,8 +357,8 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
         return imports != null && !imports.isEmpty();
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AdaptationModelDSLPackage.ADAPTATION_MODEL__FREQUENCY:
-        return frequency != FREQUENCY_EDEFAULT;
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__PERIOD:
+        return period != PERIOD_EDEFAULT;
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__OUTPUT_PACKAGE:
         return OUTPUT_PACKAGE_EDEFAULT == null ? outputPackage != null : !OUTPUT_PACKAGE_EDEFAULT.equals(outputPackage);
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__ADAPTATION_RULES:
@@ -380,8 +380,8 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", frequency: ");
-    result.append(frequency);
+    result.append(", period: ");
+    result.append(period);
     result.append(", outputPackage: ");
     result.append(outputPackage);
     result.append(')');

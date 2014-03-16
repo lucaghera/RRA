@@ -11,8 +11,8 @@ generate adaptationModelDSL "http://www.rra.org/adaptationModel/AdaptationModelD
 
 AdaptationModel:
 	(imports+=Import*)
-	'name' name=QualifiedName ';' 
-	'frequency[ms]' frequency=INT ';' 
+	'name' name=ID ';' 
+	'period[ms]' period=INT ';' 
 	'java output package' outputPackage=QualifiedName ';'
 	(adaptationRules+=AdaptationRule*)
 ;

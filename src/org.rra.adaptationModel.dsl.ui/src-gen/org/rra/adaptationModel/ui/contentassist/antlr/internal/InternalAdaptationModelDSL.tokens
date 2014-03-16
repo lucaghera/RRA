@@ -38,8 +38,8 @@ RULE_INT=5
 RULE_WS=9
 '=='=13
 '>'=12
+'period[ms]'=22
 ';'=21
-'frequency[ms]'=22
 '<>'=14
 'activate_feature'=35
 'priority'=30
