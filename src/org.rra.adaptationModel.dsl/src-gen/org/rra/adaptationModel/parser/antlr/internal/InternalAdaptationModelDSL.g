@@ -121,9 +121,9 @@ ruleAdaptationModel returns [EObject current=null]
     {
     	newLeafNode(otherlv_3, grammarAccess.getAdaptationModelAccess().getSemicolonKeyword_3());
     }
-	otherlv_4='frequency' 
+	otherlv_4='frequency[ms]' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getAdaptationModelAccess().getFrequencyKeyword_4());
+    	newLeafNode(otherlv_4, grammarAccess.getAdaptationModelAccess().getFrequencyMsKeyword_4());
     }
 (
 (
@@ -147,19 +147,45 @@ ruleAdaptationModel returns [EObject current=null]
     {
     	newLeafNode(otherlv_6, grammarAccess.getAdaptationModelAccess().getSemicolonKeyword_6());
     }
+	otherlv_7='java output package' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getAdaptationModelAccess().getJavaOutputPackageKeyword_7());
+    }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAdaptationModelAccess().getAdaptationRulesAdaptationRuleParserRuleCall_7_0()); 
+	        newCompositeNode(grammarAccess.getAdaptationModelAccess().getOutputPackageQualifiedNameParserRuleCall_8_0()); 
 	    }
-		lv_adaptationRules_7_0=ruleAdaptationRule		{
+		lv_outputPackage_8_0=ruleQualifiedName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAdaptationModelRule());
+	        }
+       		set(
+       			$current, 
+       			"outputPackage",
+        		lv_outputPackage_8_0, 
+        		"QualifiedName");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_9=';' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getAdaptationModelAccess().getSemicolonKeyword_9());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getAdaptationModelAccess().getAdaptationRulesAdaptationRuleParserRuleCall_10_0()); 
+	    }
+		lv_adaptationRules_10_0=ruleAdaptationRule		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAdaptationModelRule());
 	        }
        		add(
        			$current, 
        			"adaptationRules",
-        		lv_adaptationRules_7_0, 
+        		lv_adaptationRules_10_0, 
         		"AdaptationRule");
 	        afterParserOrEnumRuleCall();
 	    }

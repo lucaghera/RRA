@@ -28,15 +28,21 @@
  * 
  * 
  *]
+package [%=adaptationModel.outputPackage%];
 
-#include "ros/ros.h"
+import org.ros.concurrent.CancellableLoop;
+import org.ros.namespace.GraphName;
+import org.ros.node.AbstractNodeMain;
+import org.ros.node.ConnectedNode;
+import org.ros.node.NodeMain;
+import org.ros.node.topic.Publisher;
 [%
 var amHelper = new Native("org.rra.adaptationModel.m2t.tools.AdaptationEngineTools");
-var rules : Sequence := amHelper.getRules(adaptationModel);
+var cdms : Set := amHelper.getRequiredCDMs(adaptationModel);
 
-for(rule in adaptationModel.rules) {
+for(measurement in cdms) {
 %]
-rule "[%=rule.name%]"
+cdm "[%=measurement.name%]"
 [%
 }
 %]

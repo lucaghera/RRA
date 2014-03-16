@@ -66,7 +66,8 @@ public class AdaptationModelDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAdaptationModelAccess().getImportsAssignment_0(), "rule__AdaptationModel__ImportsAssignment_0");
 					put(grammarAccess.getAdaptationModelAccess().getNameAssignment_2(), "rule__AdaptationModel__NameAssignment_2");
 					put(grammarAccess.getAdaptationModelAccess().getFrequencyAssignment_5(), "rule__AdaptationModel__FrequencyAssignment_5");
-					put(grammarAccess.getAdaptationModelAccess().getAdaptationRulesAssignment_7(), "rule__AdaptationModel__AdaptationRulesAssignment_7");
+					put(grammarAccess.getAdaptationModelAccess().getOutputPackageAssignment_8(), "rule__AdaptationModel__OutputPackageAssignment_8");
+					put(grammarAccess.getAdaptationModelAccess().getAdaptationRulesAssignment_10(), "rule__AdaptationModel__AdaptationRulesAssignment_10");
 					put(grammarAccess.getImportAccess().getImportURIAssignment_1(), "rule__Import__ImportURIAssignment_1");
 					put(grammarAccess.getAtomicRuleAccess().getNameAssignment_1(), "rule__AtomicRule__NameAssignment_1");
 					put(grammarAccess.getAtomicRuleAccess().getRuleBodyAssignment_3(), "rule__AtomicRule__RuleBodyAssignment_3");

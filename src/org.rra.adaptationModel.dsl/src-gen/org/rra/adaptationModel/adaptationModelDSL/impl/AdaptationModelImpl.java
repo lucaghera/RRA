@@ -33,6 +33,7 @@ import org.rra.adaptationModel.adaptationModelDSL.Import;
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getFrequency <em>Frequency</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getOutputPackage <em>Output Package</em>}</li>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelImpl#getAdaptationRules <em>Adaptation Rules</em>}</li>
  * </ul>
  * </p>
@@ -90,6 +91,26 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
    * @ordered
    */
   protected int frequency = FREQUENCY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getOutputPackage() <em>Output Package</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOutputPackage()
+   * @generated
+   * @ordered
+   */
+  protected static final String OUTPUT_PACKAGE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOutputPackage() <em>Output Package</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOutputPackage()
+   * @generated
+   * @ordered
+   */
+  protected String outputPackage = OUTPUT_PACKAGE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getAdaptationRules() <em>Adaptation Rules</em>}' containment reference list.
@@ -187,6 +208,29 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getOutputPackage()
+  {
+    return outputPackage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOutputPackage(String newOutputPackage)
+  {
+    String oldOutputPackage = outputPackage;
+    outputPackage = newOutputPackage;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.ADAPTATION_MODEL__OUTPUT_PACKAGE, oldOutputPackage, outputPackage));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<AdaptationRule> getAdaptationRules()
   {
     if (adaptationRules == null)
@@ -230,6 +274,8 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
         return getName();
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__FREQUENCY:
         return getFrequency();
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__OUTPUT_PACKAGE:
+        return getOutputPackage();
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__ADAPTATION_RULES:
         return getAdaptationRules();
     }
@@ -256,6 +302,9 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
         return;
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__FREQUENCY:
         setFrequency((Integer)newValue);
+        return;
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__OUTPUT_PACKAGE:
+        setOutputPackage((String)newValue);
         return;
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__ADAPTATION_RULES:
         getAdaptationRules().clear();
@@ -284,6 +333,9 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__FREQUENCY:
         setFrequency(FREQUENCY_EDEFAULT);
         return;
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__OUTPUT_PACKAGE:
+        setOutputPackage(OUTPUT_PACKAGE_EDEFAULT);
+        return;
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__ADAPTATION_RULES:
         getAdaptationRules().clear();
         return;
@@ -307,6 +359,8 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__FREQUENCY:
         return frequency != FREQUENCY_EDEFAULT;
+      case AdaptationModelDSLPackage.ADAPTATION_MODEL__OUTPUT_PACKAGE:
+        return OUTPUT_PACKAGE_EDEFAULT == null ? outputPackage != null : !OUTPUT_PACKAGE_EDEFAULT.equals(outputPackage);
       case AdaptationModelDSLPackage.ADAPTATION_MODEL__ADAPTATION_RULES:
         return adaptationRules != null && !adaptationRules.isEmpty();
     }
@@ -328,6 +382,8 @@ public class AdaptationModelImpl extends MinimalEObjectImpl.Container implements
     result.append(name);
     result.append(", frequency: ");
     result.append(frequency);
+    result.append(", outputPackage: ");
+    result.append(outputPackage);
     result.append(')');
     return result.toString();
   }

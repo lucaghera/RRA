@@ -32,11 +32,18 @@ package org.rra.adaptationModel.m2t.tools;
 
 
 
-import java.util.ArrayList;
+import java.util.HashSet;
 
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModel;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationRule;
 import org.rra.adaptationModel.adaptationModelDSL.AtomicRule;
+import org.rra.adaptationModel.adaptationModelDSL.AtomicRuleWithPriority;
+import org.rra.adaptationModel.adaptationModelDSL.Condition;
+import org.rra.adaptationModel.adaptationModelDSL.ConditionAction;
+import org.rra.adaptationModel.adaptationModelDSL.PureAction;
+import org.rra.adaptationModel.adaptationModelDSL.RuleBody;
+import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
+import org.rra.cdmModel.ContextDependentMeasurement;
 
 
 
@@ -46,29 +53,92 @@ public class AdaptationEngineTools {
 
 	}
 
-		/**
-	 * Returns the list of all the nodes of a certain composite
+	/**
+	 * Returns the list of all the CMDs required for evaluating the adaptationModel
 	 * (directly and inderectly contained)
 	 * @generated NOT
 	 */
-	public ArrayList<AtomicRule> getAtomicRules(AdaptationModel adaptationModel){
+	public HashSet<ContextDependentMeasurement> getRequiredCDMs(AdaptationModel adaptationModel){
 
-		ArrayList<AtomicRule> atomicRules = new ArrayList<AtomicRule>();
+		HashSet<ContextDependentMeasurement> cdms = new HashSet<ContextDependentMeasurement>();
 
 		for(AdaptationRule rule : adaptationModel.getAdaptationRules()){
-			
+
 			if(rule instanceof AtomicRule){
-				atomicRules.add((AtomicRule)rule);
+
+				AtomicRule atomicRule = (AtomicRule)rule;
+
+				cdms.addAll(getRequiredCDMsFromAtomicRule(atomicRule));
+
+			}else if(rule instanceof RuleSet){
+
+				RuleSet ruleSet = (RuleSet)rule;
+				
+				for(AtomicRuleWithPriority atomicRule : ruleSet.getAtomicRules()){
+					
+					if(atomicRule.getRuleBody() instanceof PureAction){
+						
+						continue;
+						
+					}else if(atomicRule.getRuleBody() instanceof ConditionAction){
+
+						ConditionAction conditionAction = (ConditionAction) atomicRule.getRuleBody();
+
+						cdms.addAll(getRequiredCDMsFromCondition(conditionAction.getCondition()));
+
+					}
+					
+				}
+
+
 			}
-			
+
 		}
 
-		return atomicRules;
+		return cdms;
 
 	}
-	
-	
 
-	
+	public HashSet<ContextDependentMeasurement> getRequiredCDMsFromAtomicRule(AtomicRule atomicRule){
+
+		HashSet<ContextDependentMeasurement> cdms = new HashSet<ContextDependentMeasurement>();
+
+		RuleBody ruleBody = atomicRule.getRuleBody();
+
+		if(ruleBody instanceof PureAction){
+
+			return cdms;
+
+		}else if(ruleBody instanceof ConditionAction){
+
+			ConditionAction conditionAction = (ConditionAction) ruleBody;
+
+			cdms.addAll(getRequiredCDMsFromCondition(conditionAction.getCondition()));
+
+		}
+
+		return cdms;
+
+	}
+
+	public HashSet<ContextDependentMeasurement> getRequiredCDMsFromCondition(Condition condition){
+
+		HashSet<ContextDependentMeasurement> cdms = new HashSet<ContextDependentMeasurement>();
+
+		if(condition.getMeasurement() != null){
+			if(cdms.add(condition.getMeasurement())){
+				System.out.println(condition.getMeasurement().getName());
+			}
+		}
+
+		if(condition.getSecondTerm() != null){
+
+			cdms.addAll(getRequiredCDMsFromCondition(condition.getSecondTerm()));
+
+		}
+
+		return cdms;
+
+	}
 
 }

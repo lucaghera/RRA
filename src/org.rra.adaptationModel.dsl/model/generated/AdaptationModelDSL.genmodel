@@ -11,6 +11,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AdaptationModel/imports"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//AdaptationModel/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//AdaptationModel/frequency"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//AdaptationModel/outputPackage"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AdaptationModel/adaptationRules"/>
     </genClasses>
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//Import">

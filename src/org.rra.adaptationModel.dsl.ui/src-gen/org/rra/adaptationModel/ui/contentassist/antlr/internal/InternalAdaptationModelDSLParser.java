@@ -22,10 +22,11 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAdaptationModelDSLParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'<'", "'>'", "'=='", "'<>'", "'AND'", "'OR'", "'max'", "'min'", "'is'", "'name'", "';'", "'frequency'", "'import'", "'.'", "'rule'", "'{'", "'}'", "'rule_set'", "'priority'", "'if'", "'('", "')'", "'else'", "'activate_feature'", "'deactivate_feature'", "'set_attribute'", "'with_value'", "'select_feature_*'", "'from_variants_of_feature'", "'where_attribue'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'<'", "'>'", "'=='", "'<>'", "'AND'", "'OR'", "'max'", "'min'", "'is'", "'name'", "';'", "'frequency[ms]'", "'java output package'", "'import'", "'.'", "'rule'", "'{'", "'}'", "'rule_set'", "'priority'", "'if'", "'('", "')'", "'else'", "'activate_feature'", "'deactivate_feature'", "'set_attribute'", "'with_value'", "'select_feature_*'", "'from_variants_of_feature'", "'where_attribue'"
     };
     public static final int RULE_ID=4;
     public static final int T__40=40;
+    public static final int T__41=41;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
@@ -1805,10 +1806,10 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==25) ) {
+            if ( (LA1_0==26) ) {
                 alt1=1;
             }
-            else if ( (LA1_0==28) ) {
+            else if ( (LA1_0==29) ) {
                 alt1=2;
             }
             else {
@@ -1883,22 +1884,22 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
             // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:704:1: ( ( ruleAtomicActionSelectFeature ) | ( ruleAtomicActionDeselectFeature ) | ( ruleAtomicActionModifyAttribute ) | ( ruleAtomicActionQuery ) )
             int alt2=4;
             switch ( input.LA(1) ) {
-            case 34:
+            case 35:
                 {
                 alt2=1;
                 }
                 break;
-            case 35:
+            case 36:
                 {
                 alt2=2;
                 }
                 break;
-            case 36:
+            case 37:
                 {
                 alt2=3;
                 }
                 break;
-            case 38:
+            case 39:
                 {
                 alt2=4;
                 }
@@ -2015,10 +2016,10 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( ((LA3_0>=34 && LA3_0<=36)||LA3_0==38) ) {
+            if ( ((LA3_0>=35 && LA3_0<=37)||LA3_0==39) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==30) ) {
+            else if ( (LA3_0==31) ) {
                 alt3=2;
             }
             else {
@@ -2501,7 +2502,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==23) ) {
+                if ( (LA8_0==24) ) {
                     alt8=1;
                 }
 
@@ -2820,21 +2821,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AdaptationModel__Group__4__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1014:1: rule__AdaptationModel__Group__4__Impl : ( 'frequency' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1014:1: rule__AdaptationModel__Group__4__Impl : ( 'frequency[ms]' ) ;
     public final void rule__AdaptationModel__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1018:1: ( ( 'frequency' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1019:1: ( 'frequency' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1018:1: ( ( 'frequency[ms]' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1019:1: ( 'frequency[ms]' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1019:1: ( 'frequency' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1020:1: 'frequency'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1019:1: ( 'frequency[ms]' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1020:1: 'frequency[ms]'
             {
-             before(grammarAccess.getAdaptationModelAccess().getFrequencyKeyword_4()); 
+             before(grammarAccess.getAdaptationModelAccess().getFrequencyMsKeyword_4()); 
             match(input,22,FOLLOW_22_in_rule__AdaptationModel__Group__4__Impl2121); 
-             after(grammarAccess.getAdaptationModelAccess().getFrequencyKeyword_4()); 
+             after(grammarAccess.getAdaptationModelAccess().getFrequencyMsKeyword_4()); 
 
             }
 
@@ -3017,17 +3018,22 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AdaptationModel__Group__7"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1093:1: rule__AdaptationModel__Group__7 : rule__AdaptationModel__Group__7__Impl ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1093:1: rule__AdaptationModel__Group__7 : rule__AdaptationModel__Group__7__Impl rule__AdaptationModel__Group__8 ;
     public final void rule__AdaptationModel__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1097:1: ( rule__AdaptationModel__Group__7__Impl )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1098:2: rule__AdaptationModel__Group__7__Impl
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1097:1: ( rule__AdaptationModel__Group__7__Impl rule__AdaptationModel__Group__8 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1098:2: rule__AdaptationModel__Group__7__Impl rule__AdaptationModel__Group__8
             {
             pushFollow(FOLLOW_rule__AdaptationModel__Group__7__Impl_in_rule__AdaptationModel__Group__72274);
             rule__AdaptationModel__Group__7__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__AdaptationModel__Group__8_in_rule__AdaptationModel__Group__72277);
+            rule__AdaptationModel__Group__8();
 
             state._fsp--;
 
@@ -3050,49 +3056,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AdaptationModel__Group__7__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1104:1: rule__AdaptationModel__Group__7__Impl : ( ( rule__AdaptationModel__AdaptationRulesAssignment_7 )* ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1105:1: rule__AdaptationModel__Group__7__Impl : ( 'java output package' ) ;
     public final void rule__AdaptationModel__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1108:1: ( ( ( rule__AdaptationModel__AdaptationRulesAssignment_7 )* ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1109:1: ( ( rule__AdaptationModel__AdaptationRulesAssignment_7 )* )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1109:1: ( ( 'java output package' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1110:1: ( 'java output package' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1109:1: ( ( rule__AdaptationModel__AdaptationRulesAssignment_7 )* )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1110:1: ( rule__AdaptationModel__AdaptationRulesAssignment_7 )*
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1110:1: ( 'java output package' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1111:1: 'java output package'
             {
-             before(grammarAccess.getAdaptationModelAccess().getAdaptationRulesAssignment_7()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1111:1: ( rule__AdaptationModel__AdaptationRulesAssignment_7 )*
-            loop9:
-            do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
-
-                if ( (LA9_0==25||LA9_0==28) ) {
-                    alt9=1;
-                }
-
-
-                switch (alt9) {
-            	case 1 :
-            	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1111:2: rule__AdaptationModel__AdaptationRulesAssignment_7
-            	    {
-            	    pushFollow(FOLLOW_rule__AdaptationModel__AdaptationRulesAssignment_7_in_rule__AdaptationModel__Group__7__Impl2301);
-            	    rule__AdaptationModel__AdaptationRulesAssignment_7();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop9;
-                }
-            } while (true);
-
-             after(grammarAccess.getAdaptationModelAccess().getAdaptationRulesAssignment_7()); 
+             before(grammarAccess.getAdaptationModelAccess().getJavaOutputPackageKeyword_7()); 
+            match(input,23,FOLLOW_23_in_rule__AdaptationModel__Group__7__Impl2305); 
+             after(grammarAccess.getAdaptationModelAccess().getJavaOutputPackageKeyword_7()); 
 
             }
 
@@ -3114,22 +3092,280 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
     // $ANTLR end "rule__AdaptationModel__Group__7__Impl"
 
 
+    // $ANTLR start "rule__AdaptationModel__Group__8"
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1124:1: rule__AdaptationModel__Group__8 : rule__AdaptationModel__Group__8__Impl rule__AdaptationModel__Group__9 ;
+    public final void rule__AdaptationModel__Group__8() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1128:1: ( rule__AdaptationModel__Group__8__Impl rule__AdaptationModel__Group__9 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1129:2: rule__AdaptationModel__Group__8__Impl rule__AdaptationModel__Group__9
+            {
+            pushFollow(FOLLOW_rule__AdaptationModel__Group__8__Impl_in_rule__AdaptationModel__Group__82336);
+            rule__AdaptationModel__Group__8__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__AdaptationModel__Group__9_in_rule__AdaptationModel__Group__82339);
+            rule__AdaptationModel__Group__9();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AdaptationModel__Group__8"
+
+
+    // $ANTLR start "rule__AdaptationModel__Group__8__Impl"
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1136:1: rule__AdaptationModel__Group__8__Impl : ( ( rule__AdaptationModel__OutputPackageAssignment_8 ) ) ;
+    public final void rule__AdaptationModel__Group__8__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1140:1: ( ( ( rule__AdaptationModel__OutputPackageAssignment_8 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1141:1: ( ( rule__AdaptationModel__OutputPackageAssignment_8 ) )
+            {
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1141:1: ( ( rule__AdaptationModel__OutputPackageAssignment_8 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1142:1: ( rule__AdaptationModel__OutputPackageAssignment_8 )
+            {
+             before(grammarAccess.getAdaptationModelAccess().getOutputPackageAssignment_8()); 
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1143:1: ( rule__AdaptationModel__OutputPackageAssignment_8 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1143:2: rule__AdaptationModel__OutputPackageAssignment_8
+            {
+            pushFollow(FOLLOW_rule__AdaptationModel__OutputPackageAssignment_8_in_rule__AdaptationModel__Group__8__Impl2366);
+            rule__AdaptationModel__OutputPackageAssignment_8();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getAdaptationModelAccess().getOutputPackageAssignment_8()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AdaptationModel__Group__8__Impl"
+
+
+    // $ANTLR start "rule__AdaptationModel__Group__9"
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1153:1: rule__AdaptationModel__Group__9 : rule__AdaptationModel__Group__9__Impl rule__AdaptationModel__Group__10 ;
+    public final void rule__AdaptationModel__Group__9() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1157:1: ( rule__AdaptationModel__Group__9__Impl rule__AdaptationModel__Group__10 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1158:2: rule__AdaptationModel__Group__9__Impl rule__AdaptationModel__Group__10
+            {
+            pushFollow(FOLLOW_rule__AdaptationModel__Group__9__Impl_in_rule__AdaptationModel__Group__92396);
+            rule__AdaptationModel__Group__9__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__AdaptationModel__Group__10_in_rule__AdaptationModel__Group__92399);
+            rule__AdaptationModel__Group__10();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AdaptationModel__Group__9"
+
+
+    // $ANTLR start "rule__AdaptationModel__Group__9__Impl"
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1165:1: rule__AdaptationModel__Group__9__Impl : ( ';' ) ;
+    public final void rule__AdaptationModel__Group__9__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1169:1: ( ( ';' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1170:1: ( ';' )
+            {
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1170:1: ( ';' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1171:1: ';'
+            {
+             before(grammarAccess.getAdaptationModelAccess().getSemicolonKeyword_9()); 
+            match(input,21,FOLLOW_21_in_rule__AdaptationModel__Group__9__Impl2427); 
+             after(grammarAccess.getAdaptationModelAccess().getSemicolonKeyword_9()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AdaptationModel__Group__9__Impl"
+
+
+    // $ANTLR start "rule__AdaptationModel__Group__10"
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1184:1: rule__AdaptationModel__Group__10 : rule__AdaptationModel__Group__10__Impl ;
+    public final void rule__AdaptationModel__Group__10() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1188:1: ( rule__AdaptationModel__Group__10__Impl )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1189:2: rule__AdaptationModel__Group__10__Impl
+            {
+            pushFollow(FOLLOW_rule__AdaptationModel__Group__10__Impl_in_rule__AdaptationModel__Group__102458);
+            rule__AdaptationModel__Group__10__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AdaptationModel__Group__10"
+
+
+    // $ANTLR start "rule__AdaptationModel__Group__10__Impl"
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1195:1: rule__AdaptationModel__Group__10__Impl : ( ( rule__AdaptationModel__AdaptationRulesAssignment_10 )* ) ;
+    public final void rule__AdaptationModel__Group__10__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1199:1: ( ( ( rule__AdaptationModel__AdaptationRulesAssignment_10 )* ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1200:1: ( ( rule__AdaptationModel__AdaptationRulesAssignment_10 )* )
+            {
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1200:1: ( ( rule__AdaptationModel__AdaptationRulesAssignment_10 )* )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1201:1: ( rule__AdaptationModel__AdaptationRulesAssignment_10 )*
+            {
+             before(grammarAccess.getAdaptationModelAccess().getAdaptationRulesAssignment_10()); 
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1202:1: ( rule__AdaptationModel__AdaptationRulesAssignment_10 )*
+            loop9:
+            do {
+                int alt9=2;
+                int LA9_0 = input.LA(1);
+
+                if ( (LA9_0==26||LA9_0==29) ) {
+                    alt9=1;
+                }
+
+
+                switch (alt9) {
+            	case 1 :
+            	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1202:2: rule__AdaptationModel__AdaptationRulesAssignment_10
+            	    {
+            	    pushFollow(FOLLOW_rule__AdaptationModel__AdaptationRulesAssignment_10_in_rule__AdaptationModel__Group__10__Impl2485);
+            	    rule__AdaptationModel__AdaptationRulesAssignment_10();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop9;
+                }
+            } while (true);
+
+             after(grammarAccess.getAdaptationModelAccess().getAdaptationRulesAssignment_10()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AdaptationModel__Group__10__Impl"
+
+
     // $ANTLR start "rule__Import__Group__0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1137:1: rule__Import__Group__0 : rule__Import__Group__0__Impl rule__Import__Group__1 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1234:1: rule__Import__Group__0 : rule__Import__Group__0__Impl rule__Import__Group__1 ;
     public final void rule__Import__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1141:1: ( rule__Import__Group__0__Impl rule__Import__Group__1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1142:2: rule__Import__Group__0__Impl rule__Import__Group__1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1238:1: ( rule__Import__Group__0__Impl rule__Import__Group__1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1239:2: rule__Import__Group__0__Impl rule__Import__Group__1
             {
-            pushFollow(FOLLOW_rule__Import__Group__0__Impl_in_rule__Import__Group__02348);
+            pushFollow(FOLLOW_rule__Import__Group__0__Impl_in_rule__Import__Group__02538);
             rule__Import__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Import__Group__1_in_rule__Import__Group__02351);
+            pushFollow(FOLLOW_rule__Import__Group__1_in_rule__Import__Group__02541);
             rule__Import__Group__1();
 
             state._fsp--;
@@ -3153,20 +3389,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Import__Group__0__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1149:1: rule__Import__Group__0__Impl : ( 'import' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1246:1: rule__Import__Group__0__Impl : ( 'import' ) ;
     public final void rule__Import__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1153:1: ( ( 'import' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1154:1: ( 'import' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1250:1: ( ( 'import' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1251:1: ( 'import' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1154:1: ( 'import' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1155:1: 'import'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1251:1: ( 'import' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1252:1: 'import'
             {
              before(grammarAccess.getImportAccess().getImportKeyword_0()); 
-            match(input,23,FOLLOW_23_in_rule__Import__Group__0__Impl2379); 
+            match(input,24,FOLLOW_24_in_rule__Import__Group__0__Impl2569); 
              after(grammarAccess.getImportAccess().getImportKeyword_0()); 
 
             }
@@ -3190,21 +3426,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Import__Group__1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1168:1: rule__Import__Group__1 : rule__Import__Group__1__Impl rule__Import__Group__2 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1265:1: rule__Import__Group__1 : rule__Import__Group__1__Impl rule__Import__Group__2 ;
     public final void rule__Import__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1172:1: ( rule__Import__Group__1__Impl rule__Import__Group__2 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1173:2: rule__Import__Group__1__Impl rule__Import__Group__2
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1269:1: ( rule__Import__Group__1__Impl rule__Import__Group__2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1270:2: rule__Import__Group__1__Impl rule__Import__Group__2
             {
-            pushFollow(FOLLOW_rule__Import__Group__1__Impl_in_rule__Import__Group__12410);
+            pushFollow(FOLLOW_rule__Import__Group__1__Impl_in_rule__Import__Group__12600);
             rule__Import__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Import__Group__2_in_rule__Import__Group__12413);
+            pushFollow(FOLLOW_rule__Import__Group__2_in_rule__Import__Group__12603);
             rule__Import__Group__2();
 
             state._fsp--;
@@ -3228,23 +3464,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Import__Group__1__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1180:1: rule__Import__Group__1__Impl : ( ( rule__Import__ImportURIAssignment_1 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1277:1: rule__Import__Group__1__Impl : ( ( rule__Import__ImportURIAssignment_1 ) ) ;
     public final void rule__Import__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1184:1: ( ( ( rule__Import__ImportURIAssignment_1 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1185:1: ( ( rule__Import__ImportURIAssignment_1 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1281:1: ( ( ( rule__Import__ImportURIAssignment_1 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1282:1: ( ( rule__Import__ImportURIAssignment_1 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1185:1: ( ( rule__Import__ImportURIAssignment_1 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1186:1: ( rule__Import__ImportURIAssignment_1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1282:1: ( ( rule__Import__ImportURIAssignment_1 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1283:1: ( rule__Import__ImportURIAssignment_1 )
             {
              before(grammarAccess.getImportAccess().getImportURIAssignment_1()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1187:1: ( rule__Import__ImportURIAssignment_1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1187:2: rule__Import__ImportURIAssignment_1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1284:1: ( rule__Import__ImportURIAssignment_1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1284:2: rule__Import__ImportURIAssignment_1
             {
-            pushFollow(FOLLOW_rule__Import__ImportURIAssignment_1_in_rule__Import__Group__1__Impl2440);
+            pushFollow(FOLLOW_rule__Import__ImportURIAssignment_1_in_rule__Import__Group__1__Impl2630);
             rule__Import__ImportURIAssignment_1();
 
             state._fsp--;
@@ -3275,16 +3511,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Import__Group__2"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1197:1: rule__Import__Group__2 : rule__Import__Group__2__Impl ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1294:1: rule__Import__Group__2 : rule__Import__Group__2__Impl ;
     public final void rule__Import__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1201:1: ( rule__Import__Group__2__Impl )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1202:2: rule__Import__Group__2__Impl
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1298:1: ( rule__Import__Group__2__Impl )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1299:2: rule__Import__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__Import__Group__2__Impl_in_rule__Import__Group__22470);
+            pushFollow(FOLLOW_rule__Import__Group__2__Impl_in_rule__Import__Group__22660);
             rule__Import__Group__2__Impl();
 
             state._fsp--;
@@ -3308,20 +3544,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Import__Group__2__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1208:1: rule__Import__Group__2__Impl : ( ';' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1305:1: rule__Import__Group__2__Impl : ( ';' ) ;
     public final void rule__Import__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1212:1: ( ( ';' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1213:1: ( ';' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1309:1: ( ( ';' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1310:1: ( ';' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1213:1: ( ';' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1214:1: ';'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1310:1: ( ';' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1311:1: ';'
             {
              before(grammarAccess.getImportAccess().getSemicolonKeyword_2()); 
-            match(input,21,FOLLOW_21_in_rule__Import__Group__2__Impl2498); 
+            match(input,21,FOLLOW_21_in_rule__Import__Group__2__Impl2688); 
              after(grammarAccess.getImportAccess().getSemicolonKeyword_2()); 
 
             }
@@ -3345,21 +3581,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__QualifiedName__Group__0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1234:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1331:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
     public final void rule__QualifiedName__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1238:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1239:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1335:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1336:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__02536);
+            pushFollow(FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__02726);
             rule__QualifiedName__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__02539);
+            pushFollow(FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__02729);
             rule__QualifiedName__Group__1();
 
             state._fsp--;
@@ -3383,20 +3619,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__QualifiedName__Group__0__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1246:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1343:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1250:1: ( ( RULE_ID ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1251:1: ( RULE_ID )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1347:1: ( ( RULE_ID ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1348:1: ( RULE_ID )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1251:1: ( RULE_ID )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1252:1: RULE_ID
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1348:1: ( RULE_ID )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1349:1: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl2566); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl2756); 
              after(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
 
             }
@@ -3420,16 +3656,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__QualifiedName__Group__1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1263:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1360:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
     public final void rule__QualifiedName__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1267:1: ( rule__QualifiedName__Group__1__Impl )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1268:2: rule__QualifiedName__Group__1__Impl
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1364:1: ( rule__QualifiedName__Group__1__Impl )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1365:2: rule__QualifiedName__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__12595);
+            pushFollow(FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__12785);
             rule__QualifiedName__Group__1__Impl();
 
             state._fsp--;
@@ -3453,35 +3689,35 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__QualifiedName__Group__1__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1274:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1371:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
     public final void rule__QualifiedName__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1278:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1279:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1375:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1376:1: ( ( rule__QualifiedName__Group_1__0 )* )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1279:1: ( ( rule__QualifiedName__Group_1__0 )* )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1280:1: ( rule__QualifiedName__Group_1__0 )*
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1376:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1377:1: ( rule__QualifiedName__Group_1__0 )*
             {
              before(grammarAccess.getQualifiedNameAccess().getGroup_1()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1281:1: ( rule__QualifiedName__Group_1__0 )*
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1378:1: ( rule__QualifiedName__Group_1__0 )*
             loop10:
             do {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( (LA10_0==24) ) {
+                if ( (LA10_0==25) ) {
                     alt10=1;
                 }
 
 
                 switch (alt10) {
             	case 1 :
-            	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1281:2: rule__QualifiedName__Group_1__0
+            	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1378:2: rule__QualifiedName__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl2622);
+            	    pushFollow(FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl2812);
             	    rule__QualifiedName__Group_1__0();
 
             	    state._fsp--;
@@ -3518,21 +3754,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1295:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1392:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
     public final void rule__QualifiedName__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1299:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1300:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1396:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1397:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__02657);
+            pushFollow(FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__02847);
             rule__QualifiedName__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__02660);
+            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__02850);
             rule__QualifiedName__Group_1__1();
 
             state._fsp--;
@@ -3556,20 +3792,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1307:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1404:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
     public final void rule__QualifiedName__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1311:1: ( ( '.' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1312:1: ( '.' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1408:1: ( ( '.' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1409:1: ( '.' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1312:1: ( '.' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1313:1: '.'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1409:1: ( '.' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1410:1: '.'
             {
              before(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
-            match(input,24,FOLLOW_24_in_rule__QualifiedName__Group_1__0__Impl2688); 
+            match(input,25,FOLLOW_25_in_rule__QualifiedName__Group_1__0__Impl2878); 
              after(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
 
             }
@@ -3593,16 +3829,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1326:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1423:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
     public final void rule__QualifiedName__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1330:1: ( rule__QualifiedName__Group_1__1__Impl )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1331:2: rule__QualifiedName__Group_1__1__Impl
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1427:1: ( rule__QualifiedName__Group_1__1__Impl )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1428:2: rule__QualifiedName__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__12719);
+            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__12909);
             rule__QualifiedName__Group_1__1__Impl();
 
             state._fsp--;
@@ -3626,20 +3862,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1337:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1434:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1341:1: ( ( RULE_ID ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1342:1: ( RULE_ID )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1438:1: ( ( RULE_ID ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1439:1: ( RULE_ID )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1342:1: ( RULE_ID )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1343:1: RULE_ID
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1439:1: ( RULE_ID )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1440:1: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl2746); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl2936); 
              after(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
 
             }
@@ -3663,21 +3899,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRule__Group__0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1358:1: rule__AtomicRule__Group__0 : rule__AtomicRule__Group__0__Impl rule__AtomicRule__Group__1 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1455:1: rule__AtomicRule__Group__0 : rule__AtomicRule__Group__0__Impl rule__AtomicRule__Group__1 ;
     public final void rule__AtomicRule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1362:1: ( rule__AtomicRule__Group__0__Impl rule__AtomicRule__Group__1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1363:2: rule__AtomicRule__Group__0__Impl rule__AtomicRule__Group__1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1459:1: ( rule__AtomicRule__Group__0__Impl rule__AtomicRule__Group__1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1460:2: rule__AtomicRule__Group__0__Impl rule__AtomicRule__Group__1
             {
-            pushFollow(FOLLOW_rule__AtomicRule__Group__0__Impl_in_rule__AtomicRule__Group__02779);
+            pushFollow(FOLLOW_rule__AtomicRule__Group__0__Impl_in_rule__AtomicRule__Group__02969);
             rule__AtomicRule__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicRule__Group__1_in_rule__AtomicRule__Group__02782);
+            pushFollow(FOLLOW_rule__AtomicRule__Group__1_in_rule__AtomicRule__Group__02972);
             rule__AtomicRule__Group__1();
 
             state._fsp--;
@@ -3701,20 +3937,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRule__Group__0__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1370:1: rule__AtomicRule__Group__0__Impl : ( 'rule' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1467:1: rule__AtomicRule__Group__0__Impl : ( 'rule' ) ;
     public final void rule__AtomicRule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1374:1: ( ( 'rule' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1375:1: ( 'rule' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1471:1: ( ( 'rule' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1472:1: ( 'rule' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1375:1: ( 'rule' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1376:1: 'rule'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1472:1: ( 'rule' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1473:1: 'rule'
             {
              before(grammarAccess.getAtomicRuleAccess().getRuleKeyword_0()); 
-            match(input,25,FOLLOW_25_in_rule__AtomicRule__Group__0__Impl2810); 
+            match(input,26,FOLLOW_26_in_rule__AtomicRule__Group__0__Impl3000); 
              after(grammarAccess.getAtomicRuleAccess().getRuleKeyword_0()); 
 
             }
@@ -3738,21 +3974,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRule__Group__1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1389:1: rule__AtomicRule__Group__1 : rule__AtomicRule__Group__1__Impl rule__AtomicRule__Group__2 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1486:1: rule__AtomicRule__Group__1 : rule__AtomicRule__Group__1__Impl rule__AtomicRule__Group__2 ;
     public final void rule__AtomicRule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1393:1: ( rule__AtomicRule__Group__1__Impl rule__AtomicRule__Group__2 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1394:2: rule__AtomicRule__Group__1__Impl rule__AtomicRule__Group__2
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1490:1: ( rule__AtomicRule__Group__1__Impl rule__AtomicRule__Group__2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1491:2: rule__AtomicRule__Group__1__Impl rule__AtomicRule__Group__2
             {
-            pushFollow(FOLLOW_rule__AtomicRule__Group__1__Impl_in_rule__AtomicRule__Group__12841);
+            pushFollow(FOLLOW_rule__AtomicRule__Group__1__Impl_in_rule__AtomicRule__Group__13031);
             rule__AtomicRule__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicRule__Group__2_in_rule__AtomicRule__Group__12844);
+            pushFollow(FOLLOW_rule__AtomicRule__Group__2_in_rule__AtomicRule__Group__13034);
             rule__AtomicRule__Group__2();
 
             state._fsp--;
@@ -3776,23 +4012,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRule__Group__1__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1401:1: rule__AtomicRule__Group__1__Impl : ( ( rule__AtomicRule__NameAssignment_1 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1498:1: rule__AtomicRule__Group__1__Impl : ( ( rule__AtomicRule__NameAssignment_1 ) ) ;
     public final void rule__AtomicRule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1405:1: ( ( ( rule__AtomicRule__NameAssignment_1 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1406:1: ( ( rule__AtomicRule__NameAssignment_1 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1502:1: ( ( ( rule__AtomicRule__NameAssignment_1 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1503:1: ( ( rule__AtomicRule__NameAssignment_1 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1406:1: ( ( rule__AtomicRule__NameAssignment_1 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1407:1: ( rule__AtomicRule__NameAssignment_1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1503:1: ( ( rule__AtomicRule__NameAssignment_1 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1504:1: ( rule__AtomicRule__NameAssignment_1 )
             {
              before(grammarAccess.getAtomicRuleAccess().getNameAssignment_1()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1408:1: ( rule__AtomicRule__NameAssignment_1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1408:2: rule__AtomicRule__NameAssignment_1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1505:1: ( rule__AtomicRule__NameAssignment_1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1505:2: rule__AtomicRule__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__AtomicRule__NameAssignment_1_in_rule__AtomicRule__Group__1__Impl2871);
+            pushFollow(FOLLOW_rule__AtomicRule__NameAssignment_1_in_rule__AtomicRule__Group__1__Impl3061);
             rule__AtomicRule__NameAssignment_1();
 
             state._fsp--;
@@ -3823,21 +4059,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRule__Group__2"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1418:1: rule__AtomicRule__Group__2 : rule__AtomicRule__Group__2__Impl rule__AtomicRule__Group__3 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1515:1: rule__AtomicRule__Group__2 : rule__AtomicRule__Group__2__Impl rule__AtomicRule__Group__3 ;
     public final void rule__AtomicRule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1422:1: ( rule__AtomicRule__Group__2__Impl rule__AtomicRule__Group__3 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1423:2: rule__AtomicRule__Group__2__Impl rule__AtomicRule__Group__3
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1519:1: ( rule__AtomicRule__Group__2__Impl rule__AtomicRule__Group__3 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1520:2: rule__AtomicRule__Group__2__Impl rule__AtomicRule__Group__3
             {
-            pushFollow(FOLLOW_rule__AtomicRule__Group__2__Impl_in_rule__AtomicRule__Group__22901);
+            pushFollow(FOLLOW_rule__AtomicRule__Group__2__Impl_in_rule__AtomicRule__Group__23091);
             rule__AtomicRule__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicRule__Group__3_in_rule__AtomicRule__Group__22904);
+            pushFollow(FOLLOW_rule__AtomicRule__Group__3_in_rule__AtomicRule__Group__23094);
             rule__AtomicRule__Group__3();
 
             state._fsp--;
@@ -3861,20 +4097,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRule__Group__2__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1430:1: rule__AtomicRule__Group__2__Impl : ( '{' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1527:1: rule__AtomicRule__Group__2__Impl : ( '{' ) ;
     public final void rule__AtomicRule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1434:1: ( ( '{' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1435:1: ( '{' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1531:1: ( ( '{' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1532:1: ( '{' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1435:1: ( '{' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1436:1: '{'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1532:1: ( '{' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1533:1: '{'
             {
              before(grammarAccess.getAtomicRuleAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,26,FOLLOW_26_in_rule__AtomicRule__Group__2__Impl2932); 
+            match(input,27,FOLLOW_27_in_rule__AtomicRule__Group__2__Impl3122); 
              after(grammarAccess.getAtomicRuleAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -3898,21 +4134,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRule__Group__3"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1449:1: rule__AtomicRule__Group__3 : rule__AtomicRule__Group__3__Impl rule__AtomicRule__Group__4 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1546:1: rule__AtomicRule__Group__3 : rule__AtomicRule__Group__3__Impl rule__AtomicRule__Group__4 ;
     public final void rule__AtomicRule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1453:1: ( rule__AtomicRule__Group__3__Impl rule__AtomicRule__Group__4 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1454:2: rule__AtomicRule__Group__3__Impl rule__AtomicRule__Group__4
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1550:1: ( rule__AtomicRule__Group__3__Impl rule__AtomicRule__Group__4 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1551:2: rule__AtomicRule__Group__3__Impl rule__AtomicRule__Group__4
             {
-            pushFollow(FOLLOW_rule__AtomicRule__Group__3__Impl_in_rule__AtomicRule__Group__32963);
+            pushFollow(FOLLOW_rule__AtomicRule__Group__3__Impl_in_rule__AtomicRule__Group__33153);
             rule__AtomicRule__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicRule__Group__4_in_rule__AtomicRule__Group__32966);
+            pushFollow(FOLLOW_rule__AtomicRule__Group__4_in_rule__AtomicRule__Group__33156);
             rule__AtomicRule__Group__4();
 
             state._fsp--;
@@ -3936,23 +4172,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRule__Group__3__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1461:1: rule__AtomicRule__Group__3__Impl : ( ( rule__AtomicRule__RuleBodyAssignment_3 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1558:1: rule__AtomicRule__Group__3__Impl : ( ( rule__AtomicRule__RuleBodyAssignment_3 ) ) ;
     public final void rule__AtomicRule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1465:1: ( ( ( rule__AtomicRule__RuleBodyAssignment_3 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1466:1: ( ( rule__AtomicRule__RuleBodyAssignment_3 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1562:1: ( ( ( rule__AtomicRule__RuleBodyAssignment_3 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1563:1: ( ( rule__AtomicRule__RuleBodyAssignment_3 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1466:1: ( ( rule__AtomicRule__RuleBodyAssignment_3 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1467:1: ( rule__AtomicRule__RuleBodyAssignment_3 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1563:1: ( ( rule__AtomicRule__RuleBodyAssignment_3 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1564:1: ( rule__AtomicRule__RuleBodyAssignment_3 )
             {
              before(grammarAccess.getAtomicRuleAccess().getRuleBodyAssignment_3()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1468:1: ( rule__AtomicRule__RuleBodyAssignment_3 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1468:2: rule__AtomicRule__RuleBodyAssignment_3
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1565:1: ( rule__AtomicRule__RuleBodyAssignment_3 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1565:2: rule__AtomicRule__RuleBodyAssignment_3
             {
-            pushFollow(FOLLOW_rule__AtomicRule__RuleBodyAssignment_3_in_rule__AtomicRule__Group__3__Impl2993);
+            pushFollow(FOLLOW_rule__AtomicRule__RuleBodyAssignment_3_in_rule__AtomicRule__Group__3__Impl3183);
             rule__AtomicRule__RuleBodyAssignment_3();
 
             state._fsp--;
@@ -3983,21 +4219,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRule__Group__4"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1478:1: rule__AtomicRule__Group__4 : rule__AtomicRule__Group__4__Impl rule__AtomicRule__Group__5 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1575:1: rule__AtomicRule__Group__4 : rule__AtomicRule__Group__4__Impl rule__AtomicRule__Group__5 ;
     public final void rule__AtomicRule__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1482:1: ( rule__AtomicRule__Group__4__Impl rule__AtomicRule__Group__5 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1483:2: rule__AtomicRule__Group__4__Impl rule__AtomicRule__Group__5
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1579:1: ( rule__AtomicRule__Group__4__Impl rule__AtomicRule__Group__5 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1580:2: rule__AtomicRule__Group__4__Impl rule__AtomicRule__Group__5
             {
-            pushFollow(FOLLOW_rule__AtomicRule__Group__4__Impl_in_rule__AtomicRule__Group__43023);
+            pushFollow(FOLLOW_rule__AtomicRule__Group__4__Impl_in_rule__AtomicRule__Group__43213);
             rule__AtomicRule__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicRule__Group__5_in_rule__AtomicRule__Group__43026);
+            pushFollow(FOLLOW_rule__AtomicRule__Group__5_in_rule__AtomicRule__Group__43216);
             rule__AtomicRule__Group__5();
 
             state._fsp--;
@@ -4021,20 +4257,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRule__Group__4__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1490:1: rule__AtomicRule__Group__4__Impl : ( '}' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1587:1: rule__AtomicRule__Group__4__Impl : ( '}' ) ;
     public final void rule__AtomicRule__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1494:1: ( ( '}' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1495:1: ( '}' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1591:1: ( ( '}' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1592:1: ( '}' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1495:1: ( '}' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1496:1: '}'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1592:1: ( '}' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1593:1: '}'
             {
              before(grammarAccess.getAtomicRuleAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,27,FOLLOW_27_in_rule__AtomicRule__Group__4__Impl3054); 
+            match(input,28,FOLLOW_28_in_rule__AtomicRule__Group__4__Impl3244); 
              after(grammarAccess.getAtomicRuleAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -4058,16 +4294,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRule__Group__5"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1509:1: rule__AtomicRule__Group__5 : rule__AtomicRule__Group__5__Impl ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1606:1: rule__AtomicRule__Group__5 : rule__AtomicRule__Group__5__Impl ;
     public final void rule__AtomicRule__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1513:1: ( rule__AtomicRule__Group__5__Impl )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1514:2: rule__AtomicRule__Group__5__Impl
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1610:1: ( rule__AtomicRule__Group__5__Impl )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1611:2: rule__AtomicRule__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__AtomicRule__Group__5__Impl_in_rule__AtomicRule__Group__53085);
+            pushFollow(FOLLOW_rule__AtomicRule__Group__5__Impl_in_rule__AtomicRule__Group__53275);
             rule__AtomicRule__Group__5__Impl();
 
             state._fsp--;
@@ -4091,20 +4327,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRule__Group__5__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1520:1: rule__AtomicRule__Group__5__Impl : ( ';' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1617:1: rule__AtomicRule__Group__5__Impl : ( ';' ) ;
     public final void rule__AtomicRule__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1524:1: ( ( ';' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1525:1: ( ';' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1621:1: ( ( ';' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1622:1: ( ';' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1525:1: ( ';' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1526:1: ';'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1622:1: ( ';' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1623:1: ';'
             {
              before(grammarAccess.getAtomicRuleAccess().getSemicolonKeyword_5()); 
-            match(input,21,FOLLOW_21_in_rule__AtomicRule__Group__5__Impl3113); 
+            match(input,21,FOLLOW_21_in_rule__AtomicRule__Group__5__Impl3303); 
              after(grammarAccess.getAtomicRuleAccess().getSemicolonKeyword_5()); 
 
             }
@@ -4128,21 +4364,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__RuleSet__Group__0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1551:1: rule__RuleSet__Group__0 : rule__RuleSet__Group__0__Impl rule__RuleSet__Group__1 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1648:1: rule__RuleSet__Group__0 : rule__RuleSet__Group__0__Impl rule__RuleSet__Group__1 ;
     public final void rule__RuleSet__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1555:1: ( rule__RuleSet__Group__0__Impl rule__RuleSet__Group__1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1556:2: rule__RuleSet__Group__0__Impl rule__RuleSet__Group__1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1652:1: ( rule__RuleSet__Group__0__Impl rule__RuleSet__Group__1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1653:2: rule__RuleSet__Group__0__Impl rule__RuleSet__Group__1
             {
-            pushFollow(FOLLOW_rule__RuleSet__Group__0__Impl_in_rule__RuleSet__Group__03156);
+            pushFollow(FOLLOW_rule__RuleSet__Group__0__Impl_in_rule__RuleSet__Group__03346);
             rule__RuleSet__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__RuleSet__Group__1_in_rule__RuleSet__Group__03159);
+            pushFollow(FOLLOW_rule__RuleSet__Group__1_in_rule__RuleSet__Group__03349);
             rule__RuleSet__Group__1();
 
             state._fsp--;
@@ -4166,20 +4402,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__RuleSet__Group__0__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1563:1: rule__RuleSet__Group__0__Impl : ( 'rule_set' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1660:1: rule__RuleSet__Group__0__Impl : ( 'rule_set' ) ;
     public final void rule__RuleSet__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1567:1: ( ( 'rule_set' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1568:1: ( 'rule_set' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1664:1: ( ( 'rule_set' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1665:1: ( 'rule_set' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1568:1: ( 'rule_set' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1569:1: 'rule_set'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1665:1: ( 'rule_set' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1666:1: 'rule_set'
             {
              before(grammarAccess.getRuleSetAccess().getRule_setKeyword_0()); 
-            match(input,28,FOLLOW_28_in_rule__RuleSet__Group__0__Impl3187); 
+            match(input,29,FOLLOW_29_in_rule__RuleSet__Group__0__Impl3377); 
              after(grammarAccess.getRuleSetAccess().getRule_setKeyword_0()); 
 
             }
@@ -4203,21 +4439,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__RuleSet__Group__1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1582:1: rule__RuleSet__Group__1 : rule__RuleSet__Group__1__Impl rule__RuleSet__Group__2 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1679:1: rule__RuleSet__Group__1 : rule__RuleSet__Group__1__Impl rule__RuleSet__Group__2 ;
     public final void rule__RuleSet__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1586:1: ( rule__RuleSet__Group__1__Impl rule__RuleSet__Group__2 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1587:2: rule__RuleSet__Group__1__Impl rule__RuleSet__Group__2
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1683:1: ( rule__RuleSet__Group__1__Impl rule__RuleSet__Group__2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1684:2: rule__RuleSet__Group__1__Impl rule__RuleSet__Group__2
             {
-            pushFollow(FOLLOW_rule__RuleSet__Group__1__Impl_in_rule__RuleSet__Group__13218);
+            pushFollow(FOLLOW_rule__RuleSet__Group__1__Impl_in_rule__RuleSet__Group__13408);
             rule__RuleSet__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__RuleSet__Group__2_in_rule__RuleSet__Group__13221);
+            pushFollow(FOLLOW_rule__RuleSet__Group__2_in_rule__RuleSet__Group__13411);
             rule__RuleSet__Group__2();
 
             state._fsp--;
@@ -4241,23 +4477,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__RuleSet__Group__1__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1594:1: rule__RuleSet__Group__1__Impl : ( ( rule__RuleSet__NameAssignment_1 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1691:1: rule__RuleSet__Group__1__Impl : ( ( rule__RuleSet__NameAssignment_1 ) ) ;
     public final void rule__RuleSet__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1598:1: ( ( ( rule__RuleSet__NameAssignment_1 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1599:1: ( ( rule__RuleSet__NameAssignment_1 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1695:1: ( ( ( rule__RuleSet__NameAssignment_1 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1696:1: ( ( rule__RuleSet__NameAssignment_1 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1599:1: ( ( rule__RuleSet__NameAssignment_1 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1600:1: ( rule__RuleSet__NameAssignment_1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1696:1: ( ( rule__RuleSet__NameAssignment_1 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1697:1: ( rule__RuleSet__NameAssignment_1 )
             {
              before(grammarAccess.getRuleSetAccess().getNameAssignment_1()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1601:1: ( rule__RuleSet__NameAssignment_1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1601:2: rule__RuleSet__NameAssignment_1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1698:1: ( rule__RuleSet__NameAssignment_1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1698:2: rule__RuleSet__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__RuleSet__NameAssignment_1_in_rule__RuleSet__Group__1__Impl3248);
+            pushFollow(FOLLOW_rule__RuleSet__NameAssignment_1_in_rule__RuleSet__Group__1__Impl3438);
             rule__RuleSet__NameAssignment_1();
 
             state._fsp--;
@@ -4288,21 +4524,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__RuleSet__Group__2"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1611:1: rule__RuleSet__Group__2 : rule__RuleSet__Group__2__Impl rule__RuleSet__Group__3 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1708:1: rule__RuleSet__Group__2 : rule__RuleSet__Group__2__Impl rule__RuleSet__Group__3 ;
     public final void rule__RuleSet__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1615:1: ( rule__RuleSet__Group__2__Impl rule__RuleSet__Group__3 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1616:2: rule__RuleSet__Group__2__Impl rule__RuleSet__Group__3
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1712:1: ( rule__RuleSet__Group__2__Impl rule__RuleSet__Group__3 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1713:2: rule__RuleSet__Group__2__Impl rule__RuleSet__Group__3
             {
-            pushFollow(FOLLOW_rule__RuleSet__Group__2__Impl_in_rule__RuleSet__Group__23278);
+            pushFollow(FOLLOW_rule__RuleSet__Group__2__Impl_in_rule__RuleSet__Group__23468);
             rule__RuleSet__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__RuleSet__Group__3_in_rule__RuleSet__Group__23281);
+            pushFollow(FOLLOW_rule__RuleSet__Group__3_in_rule__RuleSet__Group__23471);
             rule__RuleSet__Group__3();
 
             state._fsp--;
@@ -4326,20 +4562,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__RuleSet__Group__2__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1623:1: rule__RuleSet__Group__2__Impl : ( '{' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1720:1: rule__RuleSet__Group__2__Impl : ( '{' ) ;
     public final void rule__RuleSet__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1627:1: ( ( '{' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1628:1: ( '{' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1724:1: ( ( '{' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1725:1: ( '{' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1628:1: ( '{' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1629:1: '{'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1725:1: ( '{' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1726:1: '{'
             {
              before(grammarAccess.getRuleSetAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,26,FOLLOW_26_in_rule__RuleSet__Group__2__Impl3309); 
+            match(input,27,FOLLOW_27_in_rule__RuleSet__Group__2__Impl3499); 
              after(grammarAccess.getRuleSetAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -4363,21 +4599,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__RuleSet__Group__3"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1642:1: rule__RuleSet__Group__3 : rule__RuleSet__Group__3__Impl rule__RuleSet__Group__4 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1739:1: rule__RuleSet__Group__3 : rule__RuleSet__Group__3__Impl rule__RuleSet__Group__4 ;
     public final void rule__RuleSet__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1646:1: ( rule__RuleSet__Group__3__Impl rule__RuleSet__Group__4 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1647:2: rule__RuleSet__Group__3__Impl rule__RuleSet__Group__4
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1743:1: ( rule__RuleSet__Group__3__Impl rule__RuleSet__Group__4 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1744:2: rule__RuleSet__Group__3__Impl rule__RuleSet__Group__4
             {
-            pushFollow(FOLLOW_rule__RuleSet__Group__3__Impl_in_rule__RuleSet__Group__33340);
+            pushFollow(FOLLOW_rule__RuleSet__Group__3__Impl_in_rule__RuleSet__Group__33530);
             rule__RuleSet__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__RuleSet__Group__4_in_rule__RuleSet__Group__33343);
+            pushFollow(FOLLOW_rule__RuleSet__Group__4_in_rule__RuleSet__Group__33533);
             rule__RuleSet__Group__4();
 
             state._fsp--;
@@ -4401,26 +4637,26 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__RuleSet__Group__3__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1654:1: rule__RuleSet__Group__3__Impl : ( ( ( rule__RuleSet__AtomicRulesAssignment_3 ) ) ( ( rule__RuleSet__AtomicRulesAssignment_3 )* ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1751:1: rule__RuleSet__Group__3__Impl : ( ( ( rule__RuleSet__AtomicRulesAssignment_3 ) ) ( ( rule__RuleSet__AtomicRulesAssignment_3 )* ) ) ;
     public final void rule__RuleSet__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1658:1: ( ( ( ( rule__RuleSet__AtomicRulesAssignment_3 ) ) ( ( rule__RuleSet__AtomicRulesAssignment_3 )* ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1659:1: ( ( ( rule__RuleSet__AtomicRulesAssignment_3 ) ) ( ( rule__RuleSet__AtomicRulesAssignment_3 )* ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1755:1: ( ( ( ( rule__RuleSet__AtomicRulesAssignment_3 ) ) ( ( rule__RuleSet__AtomicRulesAssignment_3 )* ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1756:1: ( ( ( rule__RuleSet__AtomicRulesAssignment_3 ) ) ( ( rule__RuleSet__AtomicRulesAssignment_3 )* ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1659:1: ( ( ( rule__RuleSet__AtomicRulesAssignment_3 ) ) ( ( rule__RuleSet__AtomicRulesAssignment_3 )* ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1660:1: ( ( rule__RuleSet__AtomicRulesAssignment_3 ) ) ( ( rule__RuleSet__AtomicRulesAssignment_3 )* )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1756:1: ( ( ( rule__RuleSet__AtomicRulesAssignment_3 ) ) ( ( rule__RuleSet__AtomicRulesAssignment_3 )* ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1757:1: ( ( rule__RuleSet__AtomicRulesAssignment_3 ) ) ( ( rule__RuleSet__AtomicRulesAssignment_3 )* )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1660:1: ( ( rule__RuleSet__AtomicRulesAssignment_3 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1661:1: ( rule__RuleSet__AtomicRulesAssignment_3 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1757:1: ( ( rule__RuleSet__AtomicRulesAssignment_3 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1758:1: ( rule__RuleSet__AtomicRulesAssignment_3 )
             {
              before(grammarAccess.getRuleSetAccess().getAtomicRulesAssignment_3()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1662:1: ( rule__RuleSet__AtomicRulesAssignment_3 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1662:2: rule__RuleSet__AtomicRulesAssignment_3
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1759:1: ( rule__RuleSet__AtomicRulesAssignment_3 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1759:2: rule__RuleSet__AtomicRulesAssignment_3
             {
-            pushFollow(FOLLOW_rule__RuleSet__AtomicRulesAssignment_3_in_rule__RuleSet__Group__3__Impl3372);
+            pushFollow(FOLLOW_rule__RuleSet__AtomicRulesAssignment_3_in_rule__RuleSet__Group__3__Impl3562);
             rule__RuleSet__AtomicRulesAssignment_3();
 
             state._fsp--;
@@ -4432,26 +4668,26 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
             }
 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1665:1: ( ( rule__RuleSet__AtomicRulesAssignment_3 )* )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1666:1: ( rule__RuleSet__AtomicRulesAssignment_3 )*
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1762:1: ( ( rule__RuleSet__AtomicRulesAssignment_3 )* )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1763:1: ( rule__RuleSet__AtomicRulesAssignment_3 )*
             {
              before(grammarAccess.getRuleSetAccess().getAtomicRulesAssignment_3()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1667:1: ( rule__RuleSet__AtomicRulesAssignment_3 )*
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1764:1: ( rule__RuleSet__AtomicRulesAssignment_3 )*
             loop11:
             do {
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
-                if ( (LA11_0==25) ) {
+                if ( (LA11_0==26) ) {
                     alt11=1;
                 }
 
 
                 switch (alt11) {
             	case 1 :
-            	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1667:2: rule__RuleSet__AtomicRulesAssignment_3
+            	    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1764:2: rule__RuleSet__AtomicRulesAssignment_3
             	    {
-            	    pushFollow(FOLLOW_rule__RuleSet__AtomicRulesAssignment_3_in_rule__RuleSet__Group__3__Impl3384);
+            	    pushFollow(FOLLOW_rule__RuleSet__AtomicRulesAssignment_3_in_rule__RuleSet__Group__3__Impl3574);
             	    rule__RuleSet__AtomicRulesAssignment_3();
 
             	    state._fsp--;
@@ -4491,21 +4727,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__RuleSet__Group__4"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1678:1: rule__RuleSet__Group__4 : rule__RuleSet__Group__4__Impl rule__RuleSet__Group__5 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1775:1: rule__RuleSet__Group__4 : rule__RuleSet__Group__4__Impl rule__RuleSet__Group__5 ;
     public final void rule__RuleSet__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1682:1: ( rule__RuleSet__Group__4__Impl rule__RuleSet__Group__5 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1683:2: rule__RuleSet__Group__4__Impl rule__RuleSet__Group__5
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1779:1: ( rule__RuleSet__Group__4__Impl rule__RuleSet__Group__5 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1780:2: rule__RuleSet__Group__4__Impl rule__RuleSet__Group__5
             {
-            pushFollow(FOLLOW_rule__RuleSet__Group__4__Impl_in_rule__RuleSet__Group__43417);
+            pushFollow(FOLLOW_rule__RuleSet__Group__4__Impl_in_rule__RuleSet__Group__43607);
             rule__RuleSet__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__RuleSet__Group__5_in_rule__RuleSet__Group__43420);
+            pushFollow(FOLLOW_rule__RuleSet__Group__5_in_rule__RuleSet__Group__43610);
             rule__RuleSet__Group__5();
 
             state._fsp--;
@@ -4529,20 +4765,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__RuleSet__Group__4__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1690:1: rule__RuleSet__Group__4__Impl : ( '}' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1787:1: rule__RuleSet__Group__4__Impl : ( '}' ) ;
     public final void rule__RuleSet__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1694:1: ( ( '}' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1695:1: ( '}' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1791:1: ( ( '}' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1792:1: ( '}' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1695:1: ( '}' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1696:1: '}'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1792:1: ( '}' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1793:1: '}'
             {
              before(grammarAccess.getRuleSetAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,27,FOLLOW_27_in_rule__RuleSet__Group__4__Impl3448); 
+            match(input,28,FOLLOW_28_in_rule__RuleSet__Group__4__Impl3638); 
              after(grammarAccess.getRuleSetAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -4566,16 +4802,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__RuleSet__Group__5"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1709:1: rule__RuleSet__Group__5 : rule__RuleSet__Group__5__Impl ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1806:1: rule__RuleSet__Group__5 : rule__RuleSet__Group__5__Impl ;
     public final void rule__RuleSet__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1713:1: ( rule__RuleSet__Group__5__Impl )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1714:2: rule__RuleSet__Group__5__Impl
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1810:1: ( rule__RuleSet__Group__5__Impl )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1811:2: rule__RuleSet__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__RuleSet__Group__5__Impl_in_rule__RuleSet__Group__53479);
+            pushFollow(FOLLOW_rule__RuleSet__Group__5__Impl_in_rule__RuleSet__Group__53669);
             rule__RuleSet__Group__5__Impl();
 
             state._fsp--;
@@ -4599,20 +4835,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__RuleSet__Group__5__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1720:1: rule__RuleSet__Group__5__Impl : ( ';' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1817:1: rule__RuleSet__Group__5__Impl : ( ';' ) ;
     public final void rule__RuleSet__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1724:1: ( ( ';' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1725:1: ( ';' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1821:1: ( ( ';' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1822:1: ( ';' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1725:1: ( ';' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1726:1: ';'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1822:1: ( ';' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1823:1: ';'
             {
              before(grammarAccess.getRuleSetAccess().getSemicolonKeyword_5()); 
-            match(input,21,FOLLOW_21_in_rule__RuleSet__Group__5__Impl3507); 
+            match(input,21,FOLLOW_21_in_rule__RuleSet__Group__5__Impl3697); 
              after(grammarAccess.getRuleSetAccess().getSemicolonKeyword_5()); 
 
             }
@@ -4636,21 +4872,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRuleWithPriority__Group__0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1751:1: rule__AtomicRuleWithPriority__Group__0 : rule__AtomicRuleWithPriority__Group__0__Impl rule__AtomicRuleWithPriority__Group__1 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1848:1: rule__AtomicRuleWithPriority__Group__0 : rule__AtomicRuleWithPriority__Group__0__Impl rule__AtomicRuleWithPriority__Group__1 ;
     public final void rule__AtomicRuleWithPriority__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1755:1: ( rule__AtomicRuleWithPriority__Group__0__Impl rule__AtomicRuleWithPriority__Group__1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1756:2: rule__AtomicRuleWithPriority__Group__0__Impl rule__AtomicRuleWithPriority__Group__1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1852:1: ( rule__AtomicRuleWithPriority__Group__0__Impl rule__AtomicRuleWithPriority__Group__1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1853:2: rule__AtomicRuleWithPriority__Group__0__Impl rule__AtomicRuleWithPriority__Group__1
             {
-            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__0__Impl_in_rule__AtomicRuleWithPriority__Group__03550);
+            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__0__Impl_in_rule__AtomicRuleWithPriority__Group__03740);
             rule__AtomicRuleWithPriority__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__1_in_rule__AtomicRuleWithPriority__Group__03553);
+            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__1_in_rule__AtomicRuleWithPriority__Group__03743);
             rule__AtomicRuleWithPriority__Group__1();
 
             state._fsp--;
@@ -4674,20 +4910,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRuleWithPriority__Group__0__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1763:1: rule__AtomicRuleWithPriority__Group__0__Impl : ( 'rule' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1860:1: rule__AtomicRuleWithPriority__Group__0__Impl : ( 'rule' ) ;
     public final void rule__AtomicRuleWithPriority__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1767:1: ( ( 'rule' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1768:1: ( 'rule' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1864:1: ( ( 'rule' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1865:1: ( 'rule' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1768:1: ( 'rule' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1769:1: 'rule'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1865:1: ( 'rule' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1866:1: 'rule'
             {
              before(grammarAccess.getAtomicRuleWithPriorityAccess().getRuleKeyword_0()); 
-            match(input,25,FOLLOW_25_in_rule__AtomicRuleWithPriority__Group__0__Impl3581); 
+            match(input,26,FOLLOW_26_in_rule__AtomicRuleWithPriority__Group__0__Impl3771); 
              after(grammarAccess.getAtomicRuleWithPriorityAccess().getRuleKeyword_0()); 
 
             }
@@ -4711,21 +4947,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRuleWithPriority__Group__1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1782:1: rule__AtomicRuleWithPriority__Group__1 : rule__AtomicRuleWithPriority__Group__1__Impl rule__AtomicRuleWithPriority__Group__2 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1879:1: rule__AtomicRuleWithPriority__Group__1 : rule__AtomicRuleWithPriority__Group__1__Impl rule__AtomicRuleWithPriority__Group__2 ;
     public final void rule__AtomicRuleWithPriority__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1786:1: ( rule__AtomicRuleWithPriority__Group__1__Impl rule__AtomicRuleWithPriority__Group__2 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1787:2: rule__AtomicRuleWithPriority__Group__1__Impl rule__AtomicRuleWithPriority__Group__2
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1883:1: ( rule__AtomicRuleWithPriority__Group__1__Impl rule__AtomicRuleWithPriority__Group__2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1884:2: rule__AtomicRuleWithPriority__Group__1__Impl rule__AtomicRuleWithPriority__Group__2
             {
-            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__1__Impl_in_rule__AtomicRuleWithPriority__Group__13612);
+            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__1__Impl_in_rule__AtomicRuleWithPriority__Group__13802);
             rule__AtomicRuleWithPriority__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__2_in_rule__AtomicRuleWithPriority__Group__13615);
+            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__2_in_rule__AtomicRuleWithPriority__Group__13805);
             rule__AtomicRuleWithPriority__Group__2();
 
             state._fsp--;
@@ -4749,23 +4985,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRuleWithPriority__Group__1__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1794:1: rule__AtomicRuleWithPriority__Group__1__Impl : ( ( rule__AtomicRuleWithPriority__NameAssignment_1 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1891:1: rule__AtomicRuleWithPriority__Group__1__Impl : ( ( rule__AtomicRuleWithPriority__NameAssignment_1 ) ) ;
     public final void rule__AtomicRuleWithPriority__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1798:1: ( ( ( rule__AtomicRuleWithPriority__NameAssignment_1 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1799:1: ( ( rule__AtomicRuleWithPriority__NameAssignment_1 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1895:1: ( ( ( rule__AtomicRuleWithPriority__NameAssignment_1 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1896:1: ( ( rule__AtomicRuleWithPriority__NameAssignment_1 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1799:1: ( ( rule__AtomicRuleWithPriority__NameAssignment_1 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1800:1: ( rule__AtomicRuleWithPriority__NameAssignment_1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1896:1: ( ( rule__AtomicRuleWithPriority__NameAssignment_1 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1897:1: ( rule__AtomicRuleWithPriority__NameAssignment_1 )
             {
              before(grammarAccess.getAtomicRuleWithPriorityAccess().getNameAssignment_1()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1801:1: ( rule__AtomicRuleWithPriority__NameAssignment_1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1801:2: rule__AtomicRuleWithPriority__NameAssignment_1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1898:1: ( rule__AtomicRuleWithPriority__NameAssignment_1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1898:2: rule__AtomicRuleWithPriority__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__NameAssignment_1_in_rule__AtomicRuleWithPriority__Group__1__Impl3642);
+            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__NameAssignment_1_in_rule__AtomicRuleWithPriority__Group__1__Impl3832);
             rule__AtomicRuleWithPriority__NameAssignment_1();
 
             state._fsp--;
@@ -4796,21 +5032,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRuleWithPriority__Group__2"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1811:1: rule__AtomicRuleWithPriority__Group__2 : rule__AtomicRuleWithPriority__Group__2__Impl rule__AtomicRuleWithPriority__Group__3 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1908:1: rule__AtomicRuleWithPriority__Group__2 : rule__AtomicRuleWithPriority__Group__2__Impl rule__AtomicRuleWithPriority__Group__3 ;
     public final void rule__AtomicRuleWithPriority__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1815:1: ( rule__AtomicRuleWithPriority__Group__2__Impl rule__AtomicRuleWithPriority__Group__3 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1816:2: rule__AtomicRuleWithPriority__Group__2__Impl rule__AtomicRuleWithPriority__Group__3
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1912:1: ( rule__AtomicRuleWithPriority__Group__2__Impl rule__AtomicRuleWithPriority__Group__3 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1913:2: rule__AtomicRuleWithPriority__Group__2__Impl rule__AtomicRuleWithPriority__Group__3
             {
-            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__2__Impl_in_rule__AtomicRuleWithPriority__Group__23672);
+            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__2__Impl_in_rule__AtomicRuleWithPriority__Group__23862);
             rule__AtomicRuleWithPriority__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__3_in_rule__AtomicRuleWithPriority__Group__23675);
+            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__3_in_rule__AtomicRuleWithPriority__Group__23865);
             rule__AtomicRuleWithPriority__Group__3();
 
             state._fsp--;
@@ -4834,20 +5070,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRuleWithPriority__Group__2__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1823:1: rule__AtomicRuleWithPriority__Group__2__Impl : ( 'priority' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1920:1: rule__AtomicRuleWithPriority__Group__2__Impl : ( 'priority' ) ;
     public final void rule__AtomicRuleWithPriority__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1827:1: ( ( 'priority' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1828:1: ( 'priority' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1924:1: ( ( 'priority' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1925:1: ( 'priority' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1828:1: ( 'priority' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1829:1: 'priority'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1925:1: ( 'priority' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1926:1: 'priority'
             {
              before(grammarAccess.getAtomicRuleWithPriorityAccess().getPriorityKeyword_2()); 
-            match(input,29,FOLLOW_29_in_rule__AtomicRuleWithPriority__Group__2__Impl3703); 
+            match(input,30,FOLLOW_30_in_rule__AtomicRuleWithPriority__Group__2__Impl3893); 
              after(grammarAccess.getAtomicRuleWithPriorityAccess().getPriorityKeyword_2()); 
 
             }
@@ -4871,21 +5107,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRuleWithPriority__Group__3"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1842:1: rule__AtomicRuleWithPriority__Group__3 : rule__AtomicRuleWithPriority__Group__3__Impl rule__AtomicRuleWithPriority__Group__4 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1939:1: rule__AtomicRuleWithPriority__Group__3 : rule__AtomicRuleWithPriority__Group__3__Impl rule__AtomicRuleWithPriority__Group__4 ;
     public final void rule__AtomicRuleWithPriority__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1846:1: ( rule__AtomicRuleWithPriority__Group__3__Impl rule__AtomicRuleWithPriority__Group__4 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1847:2: rule__AtomicRuleWithPriority__Group__3__Impl rule__AtomicRuleWithPriority__Group__4
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1943:1: ( rule__AtomicRuleWithPriority__Group__3__Impl rule__AtomicRuleWithPriority__Group__4 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1944:2: rule__AtomicRuleWithPriority__Group__3__Impl rule__AtomicRuleWithPriority__Group__4
             {
-            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__3__Impl_in_rule__AtomicRuleWithPriority__Group__33734);
+            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__3__Impl_in_rule__AtomicRuleWithPriority__Group__33924);
             rule__AtomicRuleWithPriority__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__4_in_rule__AtomicRuleWithPriority__Group__33737);
+            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__4_in_rule__AtomicRuleWithPriority__Group__33927);
             rule__AtomicRuleWithPriority__Group__4();
 
             state._fsp--;
@@ -4909,23 +5145,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRuleWithPriority__Group__3__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1854:1: rule__AtomicRuleWithPriority__Group__3__Impl : ( ( rule__AtomicRuleWithPriority__PriorityValueAssignment_3 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1951:1: rule__AtomicRuleWithPriority__Group__3__Impl : ( ( rule__AtomicRuleWithPriority__PriorityValueAssignment_3 ) ) ;
     public final void rule__AtomicRuleWithPriority__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1858:1: ( ( ( rule__AtomicRuleWithPriority__PriorityValueAssignment_3 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1859:1: ( ( rule__AtomicRuleWithPriority__PriorityValueAssignment_3 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1955:1: ( ( ( rule__AtomicRuleWithPriority__PriorityValueAssignment_3 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1956:1: ( ( rule__AtomicRuleWithPriority__PriorityValueAssignment_3 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1859:1: ( ( rule__AtomicRuleWithPriority__PriorityValueAssignment_3 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1860:1: ( rule__AtomicRuleWithPriority__PriorityValueAssignment_3 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1956:1: ( ( rule__AtomicRuleWithPriority__PriorityValueAssignment_3 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1957:1: ( rule__AtomicRuleWithPriority__PriorityValueAssignment_3 )
             {
              before(grammarAccess.getAtomicRuleWithPriorityAccess().getPriorityValueAssignment_3()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1861:1: ( rule__AtomicRuleWithPriority__PriorityValueAssignment_3 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1861:2: rule__AtomicRuleWithPriority__PriorityValueAssignment_3
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1958:1: ( rule__AtomicRuleWithPriority__PriorityValueAssignment_3 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1958:2: rule__AtomicRuleWithPriority__PriorityValueAssignment_3
             {
-            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__PriorityValueAssignment_3_in_rule__AtomicRuleWithPriority__Group__3__Impl3764);
+            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__PriorityValueAssignment_3_in_rule__AtomicRuleWithPriority__Group__3__Impl3954);
             rule__AtomicRuleWithPriority__PriorityValueAssignment_3();
 
             state._fsp--;
@@ -4956,21 +5192,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRuleWithPriority__Group__4"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1871:1: rule__AtomicRuleWithPriority__Group__4 : rule__AtomicRuleWithPriority__Group__4__Impl rule__AtomicRuleWithPriority__Group__5 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1968:1: rule__AtomicRuleWithPriority__Group__4 : rule__AtomicRuleWithPriority__Group__4__Impl rule__AtomicRuleWithPriority__Group__5 ;
     public final void rule__AtomicRuleWithPriority__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1875:1: ( rule__AtomicRuleWithPriority__Group__4__Impl rule__AtomicRuleWithPriority__Group__5 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1876:2: rule__AtomicRuleWithPriority__Group__4__Impl rule__AtomicRuleWithPriority__Group__5
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1972:1: ( rule__AtomicRuleWithPriority__Group__4__Impl rule__AtomicRuleWithPriority__Group__5 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1973:2: rule__AtomicRuleWithPriority__Group__4__Impl rule__AtomicRuleWithPriority__Group__5
             {
-            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__4__Impl_in_rule__AtomicRuleWithPriority__Group__43794);
+            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__4__Impl_in_rule__AtomicRuleWithPriority__Group__43984);
             rule__AtomicRuleWithPriority__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__5_in_rule__AtomicRuleWithPriority__Group__43797);
+            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__5_in_rule__AtomicRuleWithPriority__Group__43987);
             rule__AtomicRuleWithPriority__Group__5();
 
             state._fsp--;
@@ -4994,20 +5230,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRuleWithPriority__Group__4__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1883:1: rule__AtomicRuleWithPriority__Group__4__Impl : ( '{' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1980:1: rule__AtomicRuleWithPriority__Group__4__Impl : ( '{' ) ;
     public final void rule__AtomicRuleWithPriority__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1887:1: ( ( '{' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1888:1: ( '{' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1984:1: ( ( '{' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1985:1: ( '{' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1888:1: ( '{' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1889:1: '{'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1985:1: ( '{' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1986:1: '{'
             {
              before(grammarAccess.getAtomicRuleWithPriorityAccess().getLeftCurlyBracketKeyword_4()); 
-            match(input,26,FOLLOW_26_in_rule__AtomicRuleWithPriority__Group__4__Impl3825); 
+            match(input,27,FOLLOW_27_in_rule__AtomicRuleWithPriority__Group__4__Impl4015); 
              after(grammarAccess.getAtomicRuleWithPriorityAccess().getLeftCurlyBracketKeyword_4()); 
 
             }
@@ -5031,21 +5267,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRuleWithPriority__Group__5"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1902:1: rule__AtomicRuleWithPriority__Group__5 : rule__AtomicRuleWithPriority__Group__5__Impl rule__AtomicRuleWithPriority__Group__6 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1999:1: rule__AtomicRuleWithPriority__Group__5 : rule__AtomicRuleWithPriority__Group__5__Impl rule__AtomicRuleWithPriority__Group__6 ;
     public final void rule__AtomicRuleWithPriority__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1906:1: ( rule__AtomicRuleWithPriority__Group__5__Impl rule__AtomicRuleWithPriority__Group__6 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1907:2: rule__AtomicRuleWithPriority__Group__5__Impl rule__AtomicRuleWithPriority__Group__6
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2003:1: ( rule__AtomicRuleWithPriority__Group__5__Impl rule__AtomicRuleWithPriority__Group__6 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2004:2: rule__AtomicRuleWithPriority__Group__5__Impl rule__AtomicRuleWithPriority__Group__6
             {
-            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__5__Impl_in_rule__AtomicRuleWithPriority__Group__53856);
+            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__5__Impl_in_rule__AtomicRuleWithPriority__Group__54046);
             rule__AtomicRuleWithPriority__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__6_in_rule__AtomicRuleWithPriority__Group__53859);
+            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__6_in_rule__AtomicRuleWithPriority__Group__54049);
             rule__AtomicRuleWithPriority__Group__6();
 
             state._fsp--;
@@ -5069,23 +5305,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRuleWithPriority__Group__5__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1914:1: rule__AtomicRuleWithPriority__Group__5__Impl : ( ( rule__AtomicRuleWithPriority__RuleBodyAssignment_5 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2011:1: rule__AtomicRuleWithPriority__Group__5__Impl : ( ( rule__AtomicRuleWithPriority__RuleBodyAssignment_5 ) ) ;
     public final void rule__AtomicRuleWithPriority__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1918:1: ( ( ( rule__AtomicRuleWithPriority__RuleBodyAssignment_5 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1919:1: ( ( rule__AtomicRuleWithPriority__RuleBodyAssignment_5 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2015:1: ( ( ( rule__AtomicRuleWithPriority__RuleBodyAssignment_5 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2016:1: ( ( rule__AtomicRuleWithPriority__RuleBodyAssignment_5 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1919:1: ( ( rule__AtomicRuleWithPriority__RuleBodyAssignment_5 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1920:1: ( rule__AtomicRuleWithPriority__RuleBodyAssignment_5 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2016:1: ( ( rule__AtomicRuleWithPriority__RuleBodyAssignment_5 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2017:1: ( rule__AtomicRuleWithPriority__RuleBodyAssignment_5 )
             {
              before(grammarAccess.getAtomicRuleWithPriorityAccess().getRuleBodyAssignment_5()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1921:1: ( rule__AtomicRuleWithPriority__RuleBodyAssignment_5 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1921:2: rule__AtomicRuleWithPriority__RuleBodyAssignment_5
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2018:1: ( rule__AtomicRuleWithPriority__RuleBodyAssignment_5 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2018:2: rule__AtomicRuleWithPriority__RuleBodyAssignment_5
             {
-            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__RuleBodyAssignment_5_in_rule__AtomicRuleWithPriority__Group__5__Impl3886);
+            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__RuleBodyAssignment_5_in_rule__AtomicRuleWithPriority__Group__5__Impl4076);
             rule__AtomicRuleWithPriority__RuleBodyAssignment_5();
 
             state._fsp--;
@@ -5116,16 +5352,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRuleWithPriority__Group__6"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1931:1: rule__AtomicRuleWithPriority__Group__6 : rule__AtomicRuleWithPriority__Group__6__Impl ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2028:1: rule__AtomicRuleWithPriority__Group__6 : rule__AtomicRuleWithPriority__Group__6__Impl ;
     public final void rule__AtomicRuleWithPriority__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1935:1: ( rule__AtomicRuleWithPriority__Group__6__Impl )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1936:2: rule__AtomicRuleWithPriority__Group__6__Impl
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2032:1: ( rule__AtomicRuleWithPriority__Group__6__Impl )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2033:2: rule__AtomicRuleWithPriority__Group__6__Impl
             {
-            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__6__Impl_in_rule__AtomicRuleWithPriority__Group__63916);
+            pushFollow(FOLLOW_rule__AtomicRuleWithPriority__Group__6__Impl_in_rule__AtomicRuleWithPriority__Group__64106);
             rule__AtomicRuleWithPriority__Group__6__Impl();
 
             state._fsp--;
@@ -5149,20 +5385,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRuleWithPriority__Group__6__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1942:1: rule__AtomicRuleWithPriority__Group__6__Impl : ( '}' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2039:1: rule__AtomicRuleWithPriority__Group__6__Impl : ( '}' ) ;
     public final void rule__AtomicRuleWithPriority__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1946:1: ( ( '}' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1947:1: ( '}' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2043:1: ( ( '}' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2044:1: ( '}' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1947:1: ( '}' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1948:1: '}'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2044:1: ( '}' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2045:1: '}'
             {
              before(grammarAccess.getAtomicRuleWithPriorityAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,27,FOLLOW_27_in_rule__AtomicRuleWithPriority__Group__6__Impl3944); 
+            match(input,28,FOLLOW_28_in_rule__AtomicRuleWithPriority__Group__6__Impl4134); 
              after(grammarAccess.getAtomicRuleWithPriorityAccess().getRightCurlyBracketKeyword_6()); 
 
             }
@@ -5186,21 +5422,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicAction__Group__0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1975:1: rule__AtomicAction__Group__0 : rule__AtomicAction__Group__0__Impl rule__AtomicAction__Group__1 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2072:1: rule__AtomicAction__Group__0 : rule__AtomicAction__Group__0__Impl rule__AtomicAction__Group__1 ;
     public final void rule__AtomicAction__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1979:1: ( rule__AtomicAction__Group__0__Impl rule__AtomicAction__Group__1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1980:2: rule__AtomicAction__Group__0__Impl rule__AtomicAction__Group__1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2076:1: ( rule__AtomicAction__Group__0__Impl rule__AtomicAction__Group__1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2077:2: rule__AtomicAction__Group__0__Impl rule__AtomicAction__Group__1
             {
-            pushFollow(FOLLOW_rule__AtomicAction__Group__0__Impl_in_rule__AtomicAction__Group__03989);
+            pushFollow(FOLLOW_rule__AtomicAction__Group__0__Impl_in_rule__AtomicAction__Group__04179);
             rule__AtomicAction__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicAction__Group__1_in_rule__AtomicAction__Group__03992);
+            pushFollow(FOLLOW_rule__AtomicAction__Group__1_in_rule__AtomicAction__Group__04182);
             rule__AtomicAction__Group__1();
 
             state._fsp--;
@@ -5224,23 +5460,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicAction__Group__0__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1987:1: rule__AtomicAction__Group__0__Impl : ( ( rule__AtomicAction__Alternatives_0 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2084:1: rule__AtomicAction__Group__0__Impl : ( ( rule__AtomicAction__Alternatives_0 ) ) ;
     public final void rule__AtomicAction__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1991:1: ( ( ( rule__AtomicAction__Alternatives_0 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1992:1: ( ( rule__AtomicAction__Alternatives_0 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2088:1: ( ( ( rule__AtomicAction__Alternatives_0 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2089:1: ( ( rule__AtomicAction__Alternatives_0 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1992:1: ( ( rule__AtomicAction__Alternatives_0 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1993:1: ( rule__AtomicAction__Alternatives_0 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2089:1: ( ( rule__AtomicAction__Alternatives_0 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2090:1: ( rule__AtomicAction__Alternatives_0 )
             {
              before(grammarAccess.getAtomicActionAccess().getAlternatives_0()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1994:1: ( rule__AtomicAction__Alternatives_0 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:1994:2: rule__AtomicAction__Alternatives_0
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2091:1: ( rule__AtomicAction__Alternatives_0 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2091:2: rule__AtomicAction__Alternatives_0
             {
-            pushFollow(FOLLOW_rule__AtomicAction__Alternatives_0_in_rule__AtomicAction__Group__0__Impl4019);
+            pushFollow(FOLLOW_rule__AtomicAction__Alternatives_0_in_rule__AtomicAction__Group__0__Impl4209);
             rule__AtomicAction__Alternatives_0();
 
             state._fsp--;
@@ -5271,16 +5507,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicAction__Group__1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2004:1: rule__AtomicAction__Group__1 : rule__AtomicAction__Group__1__Impl ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2101:1: rule__AtomicAction__Group__1 : rule__AtomicAction__Group__1__Impl ;
     public final void rule__AtomicAction__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2008:1: ( rule__AtomicAction__Group__1__Impl )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2009:2: rule__AtomicAction__Group__1__Impl
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2105:1: ( rule__AtomicAction__Group__1__Impl )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2106:2: rule__AtomicAction__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__AtomicAction__Group__1__Impl_in_rule__AtomicAction__Group__14049);
+            pushFollow(FOLLOW_rule__AtomicAction__Group__1__Impl_in_rule__AtomicAction__Group__14239);
             rule__AtomicAction__Group__1__Impl();
 
             state._fsp--;
@@ -5304,20 +5540,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicAction__Group__1__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2015:1: rule__AtomicAction__Group__1__Impl : ( ( rule__AtomicAction__Group_1__0 )? ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2112:1: rule__AtomicAction__Group__1__Impl : ( ( rule__AtomicAction__Group_1__0 )? ) ;
     public final void rule__AtomicAction__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2019:1: ( ( ( rule__AtomicAction__Group_1__0 )? ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2020:1: ( ( rule__AtomicAction__Group_1__0 )? )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2116:1: ( ( ( rule__AtomicAction__Group_1__0 )? ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2117:1: ( ( rule__AtomicAction__Group_1__0 )? )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2020:1: ( ( rule__AtomicAction__Group_1__0 )? )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2021:1: ( rule__AtomicAction__Group_1__0 )?
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2117:1: ( ( rule__AtomicAction__Group_1__0 )? )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2118:1: ( rule__AtomicAction__Group_1__0 )?
             {
              before(grammarAccess.getAtomicActionAccess().getGroup_1()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2022:1: ( rule__AtomicAction__Group_1__0 )?
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2119:1: ( rule__AtomicAction__Group_1__0 )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -5326,9 +5562,9 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
             }
             switch (alt12) {
                 case 1 :
-                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2022:2: rule__AtomicAction__Group_1__0
+                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2119:2: rule__AtomicAction__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__AtomicAction__Group_1__0_in_rule__AtomicAction__Group__1__Impl4076);
+                    pushFollow(FOLLOW_rule__AtomicAction__Group_1__0_in_rule__AtomicAction__Group__1__Impl4266);
                     rule__AtomicAction__Group_1__0();
 
                     state._fsp--;
@@ -5362,21 +5598,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicAction__Group_1__0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2036:1: rule__AtomicAction__Group_1__0 : rule__AtomicAction__Group_1__0__Impl rule__AtomicAction__Group_1__1 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2133:1: rule__AtomicAction__Group_1__0 : rule__AtomicAction__Group_1__0__Impl rule__AtomicAction__Group_1__1 ;
     public final void rule__AtomicAction__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2040:1: ( rule__AtomicAction__Group_1__0__Impl rule__AtomicAction__Group_1__1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2041:2: rule__AtomicAction__Group_1__0__Impl rule__AtomicAction__Group_1__1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2137:1: ( rule__AtomicAction__Group_1__0__Impl rule__AtomicAction__Group_1__1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2138:2: rule__AtomicAction__Group_1__0__Impl rule__AtomicAction__Group_1__1
             {
-            pushFollow(FOLLOW_rule__AtomicAction__Group_1__0__Impl_in_rule__AtomicAction__Group_1__04111);
+            pushFollow(FOLLOW_rule__AtomicAction__Group_1__0__Impl_in_rule__AtomicAction__Group_1__04301);
             rule__AtomicAction__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicAction__Group_1__1_in_rule__AtomicAction__Group_1__04114);
+            pushFollow(FOLLOW_rule__AtomicAction__Group_1__1_in_rule__AtomicAction__Group_1__04304);
             rule__AtomicAction__Group_1__1();
 
             state._fsp--;
@@ -5400,20 +5636,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicAction__Group_1__0__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2048:1: rule__AtomicAction__Group_1__0__Impl : ( 'AND' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2145:1: rule__AtomicAction__Group_1__0__Impl : ( 'AND' ) ;
     public final void rule__AtomicAction__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2052:1: ( ( 'AND' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2053:1: ( 'AND' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2149:1: ( ( 'AND' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2150:1: ( 'AND' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2053:1: ( 'AND' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2054:1: 'AND'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2150:1: ( 'AND' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2151:1: 'AND'
             {
              before(grammarAccess.getAtomicActionAccess().getANDKeyword_1_0()); 
-            match(input,15,FOLLOW_15_in_rule__AtomicAction__Group_1__0__Impl4142); 
+            match(input,15,FOLLOW_15_in_rule__AtomicAction__Group_1__0__Impl4332); 
              after(grammarAccess.getAtomicActionAccess().getANDKeyword_1_0()); 
 
             }
@@ -5437,16 +5673,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicAction__Group_1__1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2067:1: rule__AtomicAction__Group_1__1 : rule__AtomicAction__Group_1__1__Impl ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2164:1: rule__AtomicAction__Group_1__1 : rule__AtomicAction__Group_1__1__Impl ;
     public final void rule__AtomicAction__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2071:1: ( rule__AtomicAction__Group_1__1__Impl )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2072:2: rule__AtomicAction__Group_1__1__Impl
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2168:1: ( rule__AtomicAction__Group_1__1__Impl )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2169:2: rule__AtomicAction__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__AtomicAction__Group_1__1__Impl_in_rule__AtomicAction__Group_1__14173);
+            pushFollow(FOLLOW_rule__AtomicAction__Group_1__1__Impl_in_rule__AtomicAction__Group_1__14363);
             rule__AtomicAction__Group_1__1__Impl();
 
             state._fsp--;
@@ -5470,23 +5706,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicAction__Group_1__1__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2078:1: rule__AtomicAction__Group_1__1__Impl : ( ( rule__AtomicAction__SecondActionAssignment_1_1 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2175:1: rule__AtomicAction__Group_1__1__Impl : ( ( rule__AtomicAction__SecondActionAssignment_1_1 ) ) ;
     public final void rule__AtomicAction__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2082:1: ( ( ( rule__AtomicAction__SecondActionAssignment_1_1 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2083:1: ( ( rule__AtomicAction__SecondActionAssignment_1_1 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2179:1: ( ( ( rule__AtomicAction__SecondActionAssignment_1_1 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2180:1: ( ( rule__AtomicAction__SecondActionAssignment_1_1 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2083:1: ( ( rule__AtomicAction__SecondActionAssignment_1_1 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2084:1: ( rule__AtomicAction__SecondActionAssignment_1_1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2180:1: ( ( rule__AtomicAction__SecondActionAssignment_1_1 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2181:1: ( rule__AtomicAction__SecondActionAssignment_1_1 )
             {
              before(grammarAccess.getAtomicActionAccess().getSecondActionAssignment_1_1()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2085:1: ( rule__AtomicAction__SecondActionAssignment_1_1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2085:2: rule__AtomicAction__SecondActionAssignment_1_1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2182:1: ( rule__AtomicAction__SecondActionAssignment_1_1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2182:2: rule__AtomicAction__SecondActionAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__AtomicAction__SecondActionAssignment_1_1_in_rule__AtomicAction__Group_1__1__Impl4200);
+            pushFollow(FOLLOW_rule__AtomicAction__SecondActionAssignment_1_1_in_rule__AtomicAction__Group_1__1__Impl4390);
             rule__AtomicAction__SecondActionAssignment_1_1();
 
             state._fsp--;
@@ -5517,21 +5753,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__Group__0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2099:1: rule__ConditionAction__Group__0 : rule__ConditionAction__Group__0__Impl rule__ConditionAction__Group__1 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2196:1: rule__ConditionAction__Group__0 : rule__ConditionAction__Group__0__Impl rule__ConditionAction__Group__1 ;
     public final void rule__ConditionAction__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2103:1: ( rule__ConditionAction__Group__0__Impl rule__ConditionAction__Group__1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2104:2: rule__ConditionAction__Group__0__Impl rule__ConditionAction__Group__1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2200:1: ( rule__ConditionAction__Group__0__Impl rule__ConditionAction__Group__1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2201:2: rule__ConditionAction__Group__0__Impl rule__ConditionAction__Group__1
             {
-            pushFollow(FOLLOW_rule__ConditionAction__Group__0__Impl_in_rule__ConditionAction__Group__04234);
+            pushFollow(FOLLOW_rule__ConditionAction__Group__0__Impl_in_rule__ConditionAction__Group__04424);
             rule__ConditionAction__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ConditionAction__Group__1_in_rule__ConditionAction__Group__04237);
+            pushFollow(FOLLOW_rule__ConditionAction__Group__1_in_rule__ConditionAction__Group__04427);
             rule__ConditionAction__Group__1();
 
             state._fsp--;
@@ -5555,23 +5791,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__Group__0__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2111:1: rule__ConditionAction__Group__0__Impl : ( ( rule__ConditionAction__Group_0__0 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2208:1: rule__ConditionAction__Group__0__Impl : ( ( rule__ConditionAction__Group_0__0 ) ) ;
     public final void rule__ConditionAction__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2115:1: ( ( ( rule__ConditionAction__Group_0__0 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2116:1: ( ( rule__ConditionAction__Group_0__0 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2212:1: ( ( ( rule__ConditionAction__Group_0__0 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2213:1: ( ( rule__ConditionAction__Group_0__0 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2116:1: ( ( rule__ConditionAction__Group_0__0 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2117:1: ( rule__ConditionAction__Group_0__0 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2213:1: ( ( rule__ConditionAction__Group_0__0 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2214:1: ( rule__ConditionAction__Group_0__0 )
             {
              before(grammarAccess.getConditionActionAccess().getGroup_0()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2118:1: ( rule__ConditionAction__Group_0__0 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2118:2: rule__ConditionAction__Group_0__0
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2215:1: ( rule__ConditionAction__Group_0__0 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2215:2: rule__ConditionAction__Group_0__0
             {
-            pushFollow(FOLLOW_rule__ConditionAction__Group_0__0_in_rule__ConditionAction__Group__0__Impl4264);
+            pushFollow(FOLLOW_rule__ConditionAction__Group_0__0_in_rule__ConditionAction__Group__0__Impl4454);
             rule__ConditionAction__Group_0__0();
 
             state._fsp--;
@@ -5602,21 +5838,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__Group__1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2128:1: rule__ConditionAction__Group__1 : rule__ConditionAction__Group__1__Impl rule__ConditionAction__Group__2 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2225:1: rule__ConditionAction__Group__1 : rule__ConditionAction__Group__1__Impl rule__ConditionAction__Group__2 ;
     public final void rule__ConditionAction__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2132:1: ( rule__ConditionAction__Group__1__Impl rule__ConditionAction__Group__2 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2133:2: rule__ConditionAction__Group__1__Impl rule__ConditionAction__Group__2
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2229:1: ( rule__ConditionAction__Group__1__Impl rule__ConditionAction__Group__2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2230:2: rule__ConditionAction__Group__1__Impl rule__ConditionAction__Group__2
             {
-            pushFollow(FOLLOW_rule__ConditionAction__Group__1__Impl_in_rule__ConditionAction__Group__14294);
+            pushFollow(FOLLOW_rule__ConditionAction__Group__1__Impl_in_rule__ConditionAction__Group__14484);
             rule__ConditionAction__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ConditionAction__Group__2_in_rule__ConditionAction__Group__14297);
+            pushFollow(FOLLOW_rule__ConditionAction__Group__2_in_rule__ConditionAction__Group__14487);
             rule__ConditionAction__Group__2();
 
             state._fsp--;
@@ -5640,23 +5876,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__Group__1__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2140:1: rule__ConditionAction__Group__1__Impl : ( ( rule__ConditionAction__AtomicActionAssignment_1 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2237:1: rule__ConditionAction__Group__1__Impl : ( ( rule__ConditionAction__AtomicActionAssignment_1 ) ) ;
     public final void rule__ConditionAction__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2144:1: ( ( ( rule__ConditionAction__AtomicActionAssignment_1 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2145:1: ( ( rule__ConditionAction__AtomicActionAssignment_1 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2241:1: ( ( ( rule__ConditionAction__AtomicActionAssignment_1 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2242:1: ( ( rule__ConditionAction__AtomicActionAssignment_1 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2145:1: ( ( rule__ConditionAction__AtomicActionAssignment_1 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2146:1: ( rule__ConditionAction__AtomicActionAssignment_1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2242:1: ( ( rule__ConditionAction__AtomicActionAssignment_1 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2243:1: ( rule__ConditionAction__AtomicActionAssignment_1 )
             {
              before(grammarAccess.getConditionActionAccess().getAtomicActionAssignment_1()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2147:1: ( rule__ConditionAction__AtomicActionAssignment_1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2147:2: rule__ConditionAction__AtomicActionAssignment_1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2244:1: ( rule__ConditionAction__AtomicActionAssignment_1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2244:2: rule__ConditionAction__AtomicActionAssignment_1
             {
-            pushFollow(FOLLOW_rule__ConditionAction__AtomicActionAssignment_1_in_rule__ConditionAction__Group__1__Impl4324);
+            pushFollow(FOLLOW_rule__ConditionAction__AtomicActionAssignment_1_in_rule__ConditionAction__Group__1__Impl4514);
             rule__ConditionAction__AtomicActionAssignment_1();
 
             state._fsp--;
@@ -5687,16 +5923,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__Group__2"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2157:1: rule__ConditionAction__Group__2 : rule__ConditionAction__Group__2__Impl ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2254:1: rule__ConditionAction__Group__2 : rule__ConditionAction__Group__2__Impl ;
     public final void rule__ConditionAction__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2161:1: ( rule__ConditionAction__Group__2__Impl )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2162:2: rule__ConditionAction__Group__2__Impl
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2258:1: ( rule__ConditionAction__Group__2__Impl )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2259:2: rule__ConditionAction__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__ConditionAction__Group__2__Impl_in_rule__ConditionAction__Group__24354);
+            pushFollow(FOLLOW_rule__ConditionAction__Group__2__Impl_in_rule__ConditionAction__Group__24544);
             rule__ConditionAction__Group__2__Impl();
 
             state._fsp--;
@@ -5720,31 +5956,31 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__Group__2__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2168:1: rule__ConditionAction__Group__2__Impl : ( ( rule__ConditionAction__Group_2__0 )? ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2265:1: rule__ConditionAction__Group__2__Impl : ( ( rule__ConditionAction__Group_2__0 )? ) ;
     public final void rule__ConditionAction__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2172:1: ( ( ( rule__ConditionAction__Group_2__0 )? ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2173:1: ( ( rule__ConditionAction__Group_2__0 )? )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2269:1: ( ( ( rule__ConditionAction__Group_2__0 )? ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2270:1: ( ( rule__ConditionAction__Group_2__0 )? )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2173:1: ( ( rule__ConditionAction__Group_2__0 )? )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2174:1: ( rule__ConditionAction__Group_2__0 )?
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2270:1: ( ( rule__ConditionAction__Group_2__0 )? )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2271:1: ( rule__ConditionAction__Group_2__0 )?
             {
              before(grammarAccess.getConditionActionAccess().getGroup_2()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2175:1: ( rule__ConditionAction__Group_2__0 )?
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2272:1: ( rule__ConditionAction__Group_2__0 )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
-            if ( (LA13_0==33) ) {
+            if ( (LA13_0==34) ) {
                 alt13=1;
             }
             switch (alt13) {
                 case 1 :
-                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2175:2: rule__ConditionAction__Group_2__0
+                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2272:2: rule__ConditionAction__Group_2__0
                     {
-                    pushFollow(FOLLOW_rule__ConditionAction__Group_2__0_in_rule__ConditionAction__Group__2__Impl4381);
+                    pushFollow(FOLLOW_rule__ConditionAction__Group_2__0_in_rule__ConditionAction__Group__2__Impl4571);
                     rule__ConditionAction__Group_2__0();
 
                     state._fsp--;
@@ -5778,21 +6014,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__Group_0__0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2191:1: rule__ConditionAction__Group_0__0 : rule__ConditionAction__Group_0__0__Impl rule__ConditionAction__Group_0__1 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2288:1: rule__ConditionAction__Group_0__0 : rule__ConditionAction__Group_0__0__Impl rule__ConditionAction__Group_0__1 ;
     public final void rule__ConditionAction__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2195:1: ( rule__ConditionAction__Group_0__0__Impl rule__ConditionAction__Group_0__1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2196:2: rule__ConditionAction__Group_0__0__Impl rule__ConditionAction__Group_0__1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2292:1: ( rule__ConditionAction__Group_0__0__Impl rule__ConditionAction__Group_0__1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2293:2: rule__ConditionAction__Group_0__0__Impl rule__ConditionAction__Group_0__1
             {
-            pushFollow(FOLLOW_rule__ConditionAction__Group_0__0__Impl_in_rule__ConditionAction__Group_0__04418);
+            pushFollow(FOLLOW_rule__ConditionAction__Group_0__0__Impl_in_rule__ConditionAction__Group_0__04608);
             rule__ConditionAction__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ConditionAction__Group_0__1_in_rule__ConditionAction__Group_0__04421);
+            pushFollow(FOLLOW_rule__ConditionAction__Group_0__1_in_rule__ConditionAction__Group_0__04611);
             rule__ConditionAction__Group_0__1();
 
             state._fsp--;
@@ -5816,20 +6052,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__Group_0__0__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2203:1: rule__ConditionAction__Group_0__0__Impl : ( 'if' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2300:1: rule__ConditionAction__Group_0__0__Impl : ( 'if' ) ;
     public final void rule__ConditionAction__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2207:1: ( ( 'if' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2208:1: ( 'if' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2304:1: ( ( 'if' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2305:1: ( 'if' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2208:1: ( 'if' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2209:1: 'if'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2305:1: ( 'if' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2306:1: 'if'
             {
              before(grammarAccess.getConditionActionAccess().getIfKeyword_0_0()); 
-            match(input,30,FOLLOW_30_in_rule__ConditionAction__Group_0__0__Impl4449); 
+            match(input,31,FOLLOW_31_in_rule__ConditionAction__Group_0__0__Impl4639); 
              after(grammarAccess.getConditionActionAccess().getIfKeyword_0_0()); 
 
             }
@@ -5853,21 +6089,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__Group_0__1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2222:1: rule__ConditionAction__Group_0__1 : rule__ConditionAction__Group_0__1__Impl rule__ConditionAction__Group_0__2 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2319:1: rule__ConditionAction__Group_0__1 : rule__ConditionAction__Group_0__1__Impl rule__ConditionAction__Group_0__2 ;
     public final void rule__ConditionAction__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2226:1: ( rule__ConditionAction__Group_0__1__Impl rule__ConditionAction__Group_0__2 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2227:2: rule__ConditionAction__Group_0__1__Impl rule__ConditionAction__Group_0__2
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2323:1: ( rule__ConditionAction__Group_0__1__Impl rule__ConditionAction__Group_0__2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2324:2: rule__ConditionAction__Group_0__1__Impl rule__ConditionAction__Group_0__2
             {
-            pushFollow(FOLLOW_rule__ConditionAction__Group_0__1__Impl_in_rule__ConditionAction__Group_0__14480);
+            pushFollow(FOLLOW_rule__ConditionAction__Group_0__1__Impl_in_rule__ConditionAction__Group_0__14670);
             rule__ConditionAction__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ConditionAction__Group_0__2_in_rule__ConditionAction__Group_0__14483);
+            pushFollow(FOLLOW_rule__ConditionAction__Group_0__2_in_rule__ConditionAction__Group_0__14673);
             rule__ConditionAction__Group_0__2();
 
             state._fsp--;
@@ -5891,20 +6127,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__Group_0__1__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2234:1: rule__ConditionAction__Group_0__1__Impl : ( '(' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2331:1: rule__ConditionAction__Group_0__1__Impl : ( '(' ) ;
     public final void rule__ConditionAction__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2238:1: ( ( '(' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2239:1: ( '(' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2335:1: ( ( '(' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2336:1: ( '(' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2239:1: ( '(' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2240:1: '('
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2336:1: ( '(' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2337:1: '('
             {
              before(grammarAccess.getConditionActionAccess().getLeftParenthesisKeyword_0_1()); 
-            match(input,31,FOLLOW_31_in_rule__ConditionAction__Group_0__1__Impl4511); 
+            match(input,32,FOLLOW_32_in_rule__ConditionAction__Group_0__1__Impl4701); 
              after(grammarAccess.getConditionActionAccess().getLeftParenthesisKeyword_0_1()); 
 
             }
@@ -5928,21 +6164,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__Group_0__2"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2253:1: rule__ConditionAction__Group_0__2 : rule__ConditionAction__Group_0__2__Impl rule__ConditionAction__Group_0__3 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2350:1: rule__ConditionAction__Group_0__2 : rule__ConditionAction__Group_0__2__Impl rule__ConditionAction__Group_0__3 ;
     public final void rule__ConditionAction__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2257:1: ( rule__ConditionAction__Group_0__2__Impl rule__ConditionAction__Group_0__3 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2258:2: rule__ConditionAction__Group_0__2__Impl rule__ConditionAction__Group_0__3
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2354:1: ( rule__ConditionAction__Group_0__2__Impl rule__ConditionAction__Group_0__3 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2355:2: rule__ConditionAction__Group_0__2__Impl rule__ConditionAction__Group_0__3
             {
-            pushFollow(FOLLOW_rule__ConditionAction__Group_0__2__Impl_in_rule__ConditionAction__Group_0__24542);
+            pushFollow(FOLLOW_rule__ConditionAction__Group_0__2__Impl_in_rule__ConditionAction__Group_0__24732);
             rule__ConditionAction__Group_0__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ConditionAction__Group_0__3_in_rule__ConditionAction__Group_0__24545);
+            pushFollow(FOLLOW_rule__ConditionAction__Group_0__3_in_rule__ConditionAction__Group_0__24735);
             rule__ConditionAction__Group_0__3();
 
             state._fsp--;
@@ -5966,23 +6202,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__Group_0__2__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2265:1: rule__ConditionAction__Group_0__2__Impl : ( ( rule__ConditionAction__ConditionAssignment_0_2 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2362:1: rule__ConditionAction__Group_0__2__Impl : ( ( rule__ConditionAction__ConditionAssignment_0_2 ) ) ;
     public final void rule__ConditionAction__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2269:1: ( ( ( rule__ConditionAction__ConditionAssignment_0_2 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2270:1: ( ( rule__ConditionAction__ConditionAssignment_0_2 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2366:1: ( ( ( rule__ConditionAction__ConditionAssignment_0_2 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2367:1: ( ( rule__ConditionAction__ConditionAssignment_0_2 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2270:1: ( ( rule__ConditionAction__ConditionAssignment_0_2 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2271:1: ( rule__ConditionAction__ConditionAssignment_0_2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2367:1: ( ( rule__ConditionAction__ConditionAssignment_0_2 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2368:1: ( rule__ConditionAction__ConditionAssignment_0_2 )
             {
              before(grammarAccess.getConditionActionAccess().getConditionAssignment_0_2()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2272:1: ( rule__ConditionAction__ConditionAssignment_0_2 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2272:2: rule__ConditionAction__ConditionAssignment_0_2
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2369:1: ( rule__ConditionAction__ConditionAssignment_0_2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2369:2: rule__ConditionAction__ConditionAssignment_0_2
             {
-            pushFollow(FOLLOW_rule__ConditionAction__ConditionAssignment_0_2_in_rule__ConditionAction__Group_0__2__Impl4572);
+            pushFollow(FOLLOW_rule__ConditionAction__ConditionAssignment_0_2_in_rule__ConditionAction__Group_0__2__Impl4762);
             rule__ConditionAction__ConditionAssignment_0_2();
 
             state._fsp--;
@@ -6013,16 +6249,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__Group_0__3"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2282:1: rule__ConditionAction__Group_0__3 : rule__ConditionAction__Group_0__3__Impl ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2379:1: rule__ConditionAction__Group_0__3 : rule__ConditionAction__Group_0__3__Impl ;
     public final void rule__ConditionAction__Group_0__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2286:1: ( rule__ConditionAction__Group_0__3__Impl )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2287:2: rule__ConditionAction__Group_0__3__Impl
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2383:1: ( rule__ConditionAction__Group_0__3__Impl )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2384:2: rule__ConditionAction__Group_0__3__Impl
             {
-            pushFollow(FOLLOW_rule__ConditionAction__Group_0__3__Impl_in_rule__ConditionAction__Group_0__34602);
+            pushFollow(FOLLOW_rule__ConditionAction__Group_0__3__Impl_in_rule__ConditionAction__Group_0__34792);
             rule__ConditionAction__Group_0__3__Impl();
 
             state._fsp--;
@@ -6046,20 +6282,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__Group_0__3__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2293:1: rule__ConditionAction__Group_0__3__Impl : ( ')' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2390:1: rule__ConditionAction__Group_0__3__Impl : ( ')' ) ;
     public final void rule__ConditionAction__Group_0__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2297:1: ( ( ')' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2298:1: ( ')' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2394:1: ( ( ')' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2395:1: ( ')' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2298:1: ( ')' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2299:1: ')'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2395:1: ( ')' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2396:1: ')'
             {
              before(grammarAccess.getConditionActionAccess().getRightParenthesisKeyword_0_3()); 
-            match(input,32,FOLLOW_32_in_rule__ConditionAction__Group_0__3__Impl4630); 
+            match(input,33,FOLLOW_33_in_rule__ConditionAction__Group_0__3__Impl4820); 
              after(grammarAccess.getConditionActionAccess().getRightParenthesisKeyword_0_3()); 
 
             }
@@ -6083,21 +6319,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__Group_2__0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2320:1: rule__ConditionAction__Group_2__0 : rule__ConditionAction__Group_2__0__Impl rule__ConditionAction__Group_2__1 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2417:1: rule__ConditionAction__Group_2__0 : rule__ConditionAction__Group_2__0__Impl rule__ConditionAction__Group_2__1 ;
     public final void rule__ConditionAction__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2324:1: ( rule__ConditionAction__Group_2__0__Impl rule__ConditionAction__Group_2__1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2325:2: rule__ConditionAction__Group_2__0__Impl rule__ConditionAction__Group_2__1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2421:1: ( rule__ConditionAction__Group_2__0__Impl rule__ConditionAction__Group_2__1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2422:2: rule__ConditionAction__Group_2__0__Impl rule__ConditionAction__Group_2__1
             {
-            pushFollow(FOLLOW_rule__ConditionAction__Group_2__0__Impl_in_rule__ConditionAction__Group_2__04669);
+            pushFollow(FOLLOW_rule__ConditionAction__Group_2__0__Impl_in_rule__ConditionAction__Group_2__04859);
             rule__ConditionAction__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ConditionAction__Group_2__1_in_rule__ConditionAction__Group_2__04672);
+            pushFollow(FOLLOW_rule__ConditionAction__Group_2__1_in_rule__ConditionAction__Group_2__04862);
             rule__ConditionAction__Group_2__1();
 
             state._fsp--;
@@ -6121,20 +6357,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__Group_2__0__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2332:1: rule__ConditionAction__Group_2__0__Impl : ( 'else' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2429:1: rule__ConditionAction__Group_2__0__Impl : ( 'else' ) ;
     public final void rule__ConditionAction__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2336:1: ( ( 'else' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2337:1: ( 'else' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2433:1: ( ( 'else' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2434:1: ( 'else' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2337:1: ( 'else' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2338:1: 'else'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2434:1: ( 'else' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2435:1: 'else'
             {
              before(grammarAccess.getConditionActionAccess().getElseKeyword_2_0()); 
-            match(input,33,FOLLOW_33_in_rule__ConditionAction__Group_2__0__Impl4700); 
+            match(input,34,FOLLOW_34_in_rule__ConditionAction__Group_2__0__Impl4890); 
              after(grammarAccess.getConditionActionAccess().getElseKeyword_2_0()); 
 
             }
@@ -6158,16 +6394,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__Group_2__1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2351:1: rule__ConditionAction__Group_2__1 : rule__ConditionAction__Group_2__1__Impl ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2448:1: rule__ConditionAction__Group_2__1 : rule__ConditionAction__Group_2__1__Impl ;
     public final void rule__ConditionAction__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2355:1: ( rule__ConditionAction__Group_2__1__Impl )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2356:2: rule__ConditionAction__Group_2__1__Impl
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2452:1: ( rule__ConditionAction__Group_2__1__Impl )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2453:2: rule__ConditionAction__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__ConditionAction__Group_2__1__Impl_in_rule__ConditionAction__Group_2__14731);
+            pushFollow(FOLLOW_rule__ConditionAction__Group_2__1__Impl_in_rule__ConditionAction__Group_2__14921);
             rule__ConditionAction__Group_2__1__Impl();
 
             state._fsp--;
@@ -6191,23 +6427,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__Group_2__1__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2362:1: rule__ConditionAction__Group_2__1__Impl : ( ( rule__ConditionAction__ElseAssignment_2_1 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2459:1: rule__ConditionAction__Group_2__1__Impl : ( ( rule__ConditionAction__ElseAssignment_2_1 ) ) ;
     public final void rule__ConditionAction__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2366:1: ( ( ( rule__ConditionAction__ElseAssignment_2_1 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2367:1: ( ( rule__ConditionAction__ElseAssignment_2_1 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2463:1: ( ( ( rule__ConditionAction__ElseAssignment_2_1 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2464:1: ( ( rule__ConditionAction__ElseAssignment_2_1 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2367:1: ( ( rule__ConditionAction__ElseAssignment_2_1 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2368:1: ( rule__ConditionAction__ElseAssignment_2_1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2464:1: ( ( rule__ConditionAction__ElseAssignment_2_1 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2465:1: ( rule__ConditionAction__ElseAssignment_2_1 )
             {
              before(grammarAccess.getConditionActionAccess().getElseAssignment_2_1()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2369:1: ( rule__ConditionAction__ElseAssignment_2_1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2369:2: rule__ConditionAction__ElseAssignment_2_1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2466:1: ( rule__ConditionAction__ElseAssignment_2_1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2466:2: rule__ConditionAction__ElseAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__ConditionAction__ElseAssignment_2_1_in_rule__ConditionAction__Group_2__1__Impl4758);
+            pushFollow(FOLLOW_rule__ConditionAction__ElseAssignment_2_1_in_rule__ConditionAction__Group_2__1__Impl4948);
             rule__ConditionAction__ElseAssignment_2_1();
 
             state._fsp--;
@@ -6238,21 +6474,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Condition__Group__0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2383:1: rule__Condition__Group__0 : rule__Condition__Group__0__Impl rule__Condition__Group__1 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2480:1: rule__Condition__Group__0 : rule__Condition__Group__0__Impl rule__Condition__Group__1 ;
     public final void rule__Condition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2387:1: ( rule__Condition__Group__0__Impl rule__Condition__Group__1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2388:2: rule__Condition__Group__0__Impl rule__Condition__Group__1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2484:1: ( rule__Condition__Group__0__Impl rule__Condition__Group__1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2485:2: rule__Condition__Group__0__Impl rule__Condition__Group__1
             {
-            pushFollow(FOLLOW_rule__Condition__Group__0__Impl_in_rule__Condition__Group__04792);
+            pushFollow(FOLLOW_rule__Condition__Group__0__Impl_in_rule__Condition__Group__04982);
             rule__Condition__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Condition__Group__1_in_rule__Condition__Group__04795);
+            pushFollow(FOLLOW_rule__Condition__Group__1_in_rule__Condition__Group__04985);
             rule__Condition__Group__1();
 
             state._fsp--;
@@ -6276,23 +6512,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Condition__Group__0__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2395:1: rule__Condition__Group__0__Impl : ( ( rule__Condition__MeasurementAssignment_0 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2492:1: rule__Condition__Group__0__Impl : ( ( rule__Condition__MeasurementAssignment_0 ) ) ;
     public final void rule__Condition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2399:1: ( ( ( rule__Condition__MeasurementAssignment_0 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2400:1: ( ( rule__Condition__MeasurementAssignment_0 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2496:1: ( ( ( rule__Condition__MeasurementAssignment_0 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2497:1: ( ( rule__Condition__MeasurementAssignment_0 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2400:1: ( ( rule__Condition__MeasurementAssignment_0 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2401:1: ( rule__Condition__MeasurementAssignment_0 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2497:1: ( ( rule__Condition__MeasurementAssignment_0 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2498:1: ( rule__Condition__MeasurementAssignment_0 )
             {
              before(grammarAccess.getConditionAccess().getMeasurementAssignment_0()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2402:1: ( rule__Condition__MeasurementAssignment_0 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2402:2: rule__Condition__MeasurementAssignment_0
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2499:1: ( rule__Condition__MeasurementAssignment_0 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2499:2: rule__Condition__MeasurementAssignment_0
             {
-            pushFollow(FOLLOW_rule__Condition__MeasurementAssignment_0_in_rule__Condition__Group__0__Impl4822);
+            pushFollow(FOLLOW_rule__Condition__MeasurementAssignment_0_in_rule__Condition__Group__0__Impl5012);
             rule__Condition__MeasurementAssignment_0();
 
             state._fsp--;
@@ -6323,21 +6559,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Condition__Group__1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2412:1: rule__Condition__Group__1 : rule__Condition__Group__1__Impl rule__Condition__Group__2 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2509:1: rule__Condition__Group__1 : rule__Condition__Group__1__Impl rule__Condition__Group__2 ;
     public final void rule__Condition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2416:1: ( rule__Condition__Group__1__Impl rule__Condition__Group__2 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2417:2: rule__Condition__Group__1__Impl rule__Condition__Group__2
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2513:1: ( rule__Condition__Group__1__Impl rule__Condition__Group__2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2514:2: rule__Condition__Group__1__Impl rule__Condition__Group__2
             {
-            pushFollow(FOLLOW_rule__Condition__Group__1__Impl_in_rule__Condition__Group__14852);
+            pushFollow(FOLLOW_rule__Condition__Group__1__Impl_in_rule__Condition__Group__15042);
             rule__Condition__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Condition__Group__2_in_rule__Condition__Group__14855);
+            pushFollow(FOLLOW_rule__Condition__Group__2_in_rule__Condition__Group__15045);
             rule__Condition__Group__2();
 
             state._fsp--;
@@ -6361,23 +6597,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Condition__Group__1__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2424:1: rule__Condition__Group__1__Impl : ( ( rule__Condition__OperatorAssignment_1 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2521:1: rule__Condition__Group__1__Impl : ( ( rule__Condition__OperatorAssignment_1 ) ) ;
     public final void rule__Condition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2428:1: ( ( ( rule__Condition__OperatorAssignment_1 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2429:1: ( ( rule__Condition__OperatorAssignment_1 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2525:1: ( ( ( rule__Condition__OperatorAssignment_1 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2526:1: ( ( rule__Condition__OperatorAssignment_1 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2429:1: ( ( rule__Condition__OperatorAssignment_1 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2430:1: ( rule__Condition__OperatorAssignment_1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2526:1: ( ( rule__Condition__OperatorAssignment_1 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2527:1: ( rule__Condition__OperatorAssignment_1 )
             {
              before(grammarAccess.getConditionAccess().getOperatorAssignment_1()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2431:1: ( rule__Condition__OperatorAssignment_1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2431:2: rule__Condition__OperatorAssignment_1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2528:1: ( rule__Condition__OperatorAssignment_1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2528:2: rule__Condition__OperatorAssignment_1
             {
-            pushFollow(FOLLOW_rule__Condition__OperatorAssignment_1_in_rule__Condition__Group__1__Impl4882);
+            pushFollow(FOLLOW_rule__Condition__OperatorAssignment_1_in_rule__Condition__Group__1__Impl5072);
             rule__Condition__OperatorAssignment_1();
 
             state._fsp--;
@@ -6408,21 +6644,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Condition__Group__2"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2441:1: rule__Condition__Group__2 : rule__Condition__Group__2__Impl rule__Condition__Group__3 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2538:1: rule__Condition__Group__2 : rule__Condition__Group__2__Impl rule__Condition__Group__3 ;
     public final void rule__Condition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2445:1: ( rule__Condition__Group__2__Impl rule__Condition__Group__3 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2446:2: rule__Condition__Group__2__Impl rule__Condition__Group__3
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2542:1: ( rule__Condition__Group__2__Impl rule__Condition__Group__3 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2543:2: rule__Condition__Group__2__Impl rule__Condition__Group__3
             {
-            pushFollow(FOLLOW_rule__Condition__Group__2__Impl_in_rule__Condition__Group__24912);
+            pushFollow(FOLLOW_rule__Condition__Group__2__Impl_in_rule__Condition__Group__25102);
             rule__Condition__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Condition__Group__3_in_rule__Condition__Group__24915);
+            pushFollow(FOLLOW_rule__Condition__Group__3_in_rule__Condition__Group__25105);
             rule__Condition__Group__3();
 
             state._fsp--;
@@ -6446,23 +6682,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Condition__Group__2__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2453:1: rule__Condition__Group__2__Impl : ( ( rule__Condition__ValueAssignment_2 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2550:1: rule__Condition__Group__2__Impl : ( ( rule__Condition__ValueAssignment_2 ) ) ;
     public final void rule__Condition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2457:1: ( ( ( rule__Condition__ValueAssignment_2 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2458:1: ( ( rule__Condition__ValueAssignment_2 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2554:1: ( ( ( rule__Condition__ValueAssignment_2 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2555:1: ( ( rule__Condition__ValueAssignment_2 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2458:1: ( ( rule__Condition__ValueAssignment_2 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2459:1: ( rule__Condition__ValueAssignment_2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2555:1: ( ( rule__Condition__ValueAssignment_2 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2556:1: ( rule__Condition__ValueAssignment_2 )
             {
              before(grammarAccess.getConditionAccess().getValueAssignment_2()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2460:1: ( rule__Condition__ValueAssignment_2 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2460:2: rule__Condition__ValueAssignment_2
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2557:1: ( rule__Condition__ValueAssignment_2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2557:2: rule__Condition__ValueAssignment_2
             {
-            pushFollow(FOLLOW_rule__Condition__ValueAssignment_2_in_rule__Condition__Group__2__Impl4942);
+            pushFollow(FOLLOW_rule__Condition__ValueAssignment_2_in_rule__Condition__Group__2__Impl5132);
             rule__Condition__ValueAssignment_2();
 
             state._fsp--;
@@ -6493,16 +6729,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Condition__Group__3"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2470:1: rule__Condition__Group__3 : rule__Condition__Group__3__Impl ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2567:1: rule__Condition__Group__3 : rule__Condition__Group__3__Impl ;
     public final void rule__Condition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2474:1: ( rule__Condition__Group__3__Impl )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2475:2: rule__Condition__Group__3__Impl
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2571:1: ( rule__Condition__Group__3__Impl )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2572:2: rule__Condition__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Condition__Group__3__Impl_in_rule__Condition__Group__34972);
+            pushFollow(FOLLOW_rule__Condition__Group__3__Impl_in_rule__Condition__Group__35162);
             rule__Condition__Group__3__Impl();
 
             state._fsp--;
@@ -6526,20 +6762,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Condition__Group__3__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2481:1: rule__Condition__Group__3__Impl : ( ( rule__Condition__Group_3__0 )? ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2578:1: rule__Condition__Group__3__Impl : ( ( rule__Condition__Group_3__0 )? ) ;
     public final void rule__Condition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2485:1: ( ( ( rule__Condition__Group_3__0 )? ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2486:1: ( ( rule__Condition__Group_3__0 )? )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2582:1: ( ( ( rule__Condition__Group_3__0 )? ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2583:1: ( ( rule__Condition__Group_3__0 )? )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2486:1: ( ( rule__Condition__Group_3__0 )? )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2487:1: ( rule__Condition__Group_3__0 )?
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2583:1: ( ( rule__Condition__Group_3__0 )? )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2584:1: ( rule__Condition__Group_3__0 )?
             {
              before(grammarAccess.getConditionAccess().getGroup_3()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2488:1: ( rule__Condition__Group_3__0 )?
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2585:1: ( rule__Condition__Group_3__0 )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -6548,9 +6784,9 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
             }
             switch (alt14) {
                 case 1 :
-                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2488:2: rule__Condition__Group_3__0
+                    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2585:2: rule__Condition__Group_3__0
                     {
-                    pushFollow(FOLLOW_rule__Condition__Group_3__0_in_rule__Condition__Group__3__Impl4999);
+                    pushFollow(FOLLOW_rule__Condition__Group_3__0_in_rule__Condition__Group__3__Impl5189);
                     rule__Condition__Group_3__0();
 
                     state._fsp--;
@@ -6584,21 +6820,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Condition__Group_3__0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2506:1: rule__Condition__Group_3__0 : rule__Condition__Group_3__0__Impl rule__Condition__Group_3__1 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2603:1: rule__Condition__Group_3__0 : rule__Condition__Group_3__0__Impl rule__Condition__Group_3__1 ;
     public final void rule__Condition__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2510:1: ( rule__Condition__Group_3__0__Impl rule__Condition__Group_3__1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2511:2: rule__Condition__Group_3__0__Impl rule__Condition__Group_3__1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2607:1: ( rule__Condition__Group_3__0__Impl rule__Condition__Group_3__1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2608:2: rule__Condition__Group_3__0__Impl rule__Condition__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Condition__Group_3__0__Impl_in_rule__Condition__Group_3__05038);
+            pushFollow(FOLLOW_rule__Condition__Group_3__0__Impl_in_rule__Condition__Group_3__05228);
             rule__Condition__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Condition__Group_3__1_in_rule__Condition__Group_3__05041);
+            pushFollow(FOLLOW_rule__Condition__Group_3__1_in_rule__Condition__Group_3__05231);
             rule__Condition__Group_3__1();
 
             state._fsp--;
@@ -6622,23 +6858,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Condition__Group_3__0__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2518:1: rule__Condition__Group_3__0__Impl : ( ( rule__Condition__LogicalOpAssignment_3_0 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2615:1: rule__Condition__Group_3__0__Impl : ( ( rule__Condition__LogicalOpAssignment_3_0 ) ) ;
     public final void rule__Condition__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2522:1: ( ( ( rule__Condition__LogicalOpAssignment_3_0 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2523:1: ( ( rule__Condition__LogicalOpAssignment_3_0 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2619:1: ( ( ( rule__Condition__LogicalOpAssignment_3_0 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2620:1: ( ( rule__Condition__LogicalOpAssignment_3_0 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2523:1: ( ( rule__Condition__LogicalOpAssignment_3_0 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2524:1: ( rule__Condition__LogicalOpAssignment_3_0 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2620:1: ( ( rule__Condition__LogicalOpAssignment_3_0 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2621:1: ( rule__Condition__LogicalOpAssignment_3_0 )
             {
              before(grammarAccess.getConditionAccess().getLogicalOpAssignment_3_0()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2525:1: ( rule__Condition__LogicalOpAssignment_3_0 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2525:2: rule__Condition__LogicalOpAssignment_3_0
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2622:1: ( rule__Condition__LogicalOpAssignment_3_0 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2622:2: rule__Condition__LogicalOpAssignment_3_0
             {
-            pushFollow(FOLLOW_rule__Condition__LogicalOpAssignment_3_0_in_rule__Condition__Group_3__0__Impl5068);
+            pushFollow(FOLLOW_rule__Condition__LogicalOpAssignment_3_0_in_rule__Condition__Group_3__0__Impl5258);
             rule__Condition__LogicalOpAssignment_3_0();
 
             state._fsp--;
@@ -6669,16 +6905,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Condition__Group_3__1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2535:1: rule__Condition__Group_3__1 : rule__Condition__Group_3__1__Impl ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2632:1: rule__Condition__Group_3__1 : rule__Condition__Group_3__1__Impl ;
     public final void rule__Condition__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2539:1: ( rule__Condition__Group_3__1__Impl )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2540:2: rule__Condition__Group_3__1__Impl
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2636:1: ( rule__Condition__Group_3__1__Impl )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2637:2: rule__Condition__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__Condition__Group_3__1__Impl_in_rule__Condition__Group_3__15098);
+            pushFollow(FOLLOW_rule__Condition__Group_3__1__Impl_in_rule__Condition__Group_3__15288);
             rule__Condition__Group_3__1__Impl();
 
             state._fsp--;
@@ -6702,23 +6938,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Condition__Group_3__1__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2546:1: rule__Condition__Group_3__1__Impl : ( ( rule__Condition__SecondTermAssignment_3_1 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2643:1: rule__Condition__Group_3__1__Impl : ( ( rule__Condition__SecondTermAssignment_3_1 ) ) ;
     public final void rule__Condition__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2550:1: ( ( ( rule__Condition__SecondTermAssignment_3_1 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2551:1: ( ( rule__Condition__SecondTermAssignment_3_1 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2647:1: ( ( ( rule__Condition__SecondTermAssignment_3_1 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2648:1: ( ( rule__Condition__SecondTermAssignment_3_1 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2551:1: ( ( rule__Condition__SecondTermAssignment_3_1 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2552:1: ( rule__Condition__SecondTermAssignment_3_1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2648:1: ( ( rule__Condition__SecondTermAssignment_3_1 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2649:1: ( rule__Condition__SecondTermAssignment_3_1 )
             {
              before(grammarAccess.getConditionAccess().getSecondTermAssignment_3_1()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2553:1: ( rule__Condition__SecondTermAssignment_3_1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2553:2: rule__Condition__SecondTermAssignment_3_1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2650:1: ( rule__Condition__SecondTermAssignment_3_1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2650:2: rule__Condition__SecondTermAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__Condition__SecondTermAssignment_3_1_in_rule__Condition__Group_3__1__Impl5125);
+            pushFollow(FOLLOW_rule__Condition__SecondTermAssignment_3_1_in_rule__Condition__Group_3__1__Impl5315);
             rule__Condition__SecondTermAssignment_3_1();
 
             state._fsp--;
@@ -6749,21 +6985,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionSelectFeature__Group__0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2567:1: rule__AtomicActionSelectFeature__Group__0 : rule__AtomicActionSelectFeature__Group__0__Impl rule__AtomicActionSelectFeature__Group__1 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2664:1: rule__AtomicActionSelectFeature__Group__0 : rule__AtomicActionSelectFeature__Group__0__Impl rule__AtomicActionSelectFeature__Group__1 ;
     public final void rule__AtomicActionSelectFeature__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2571:1: ( rule__AtomicActionSelectFeature__Group__0__Impl rule__AtomicActionSelectFeature__Group__1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2572:2: rule__AtomicActionSelectFeature__Group__0__Impl rule__AtomicActionSelectFeature__Group__1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2668:1: ( rule__AtomicActionSelectFeature__Group__0__Impl rule__AtomicActionSelectFeature__Group__1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2669:2: rule__AtomicActionSelectFeature__Group__0__Impl rule__AtomicActionSelectFeature__Group__1
             {
-            pushFollow(FOLLOW_rule__AtomicActionSelectFeature__Group__0__Impl_in_rule__AtomicActionSelectFeature__Group__05159);
+            pushFollow(FOLLOW_rule__AtomicActionSelectFeature__Group__0__Impl_in_rule__AtomicActionSelectFeature__Group__05349);
             rule__AtomicActionSelectFeature__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionSelectFeature__Group__1_in_rule__AtomicActionSelectFeature__Group__05162);
+            pushFollow(FOLLOW_rule__AtomicActionSelectFeature__Group__1_in_rule__AtomicActionSelectFeature__Group__05352);
             rule__AtomicActionSelectFeature__Group__1();
 
             state._fsp--;
@@ -6787,20 +7023,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionSelectFeature__Group__0__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2579:1: rule__AtomicActionSelectFeature__Group__0__Impl : ( 'activate_feature' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2676:1: rule__AtomicActionSelectFeature__Group__0__Impl : ( 'activate_feature' ) ;
     public final void rule__AtomicActionSelectFeature__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2583:1: ( ( 'activate_feature' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2584:1: ( 'activate_feature' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2680:1: ( ( 'activate_feature' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2681:1: ( 'activate_feature' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2584:1: ( 'activate_feature' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2585:1: 'activate_feature'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2681:1: ( 'activate_feature' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2682:1: 'activate_feature'
             {
              before(grammarAccess.getAtomicActionSelectFeatureAccess().getActivate_featureKeyword_0()); 
-            match(input,34,FOLLOW_34_in_rule__AtomicActionSelectFeature__Group__0__Impl5190); 
+            match(input,35,FOLLOW_35_in_rule__AtomicActionSelectFeature__Group__0__Impl5380); 
              after(grammarAccess.getAtomicActionSelectFeatureAccess().getActivate_featureKeyword_0()); 
 
             }
@@ -6824,21 +7060,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionSelectFeature__Group__1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2598:1: rule__AtomicActionSelectFeature__Group__1 : rule__AtomicActionSelectFeature__Group__1__Impl rule__AtomicActionSelectFeature__Group__2 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2695:1: rule__AtomicActionSelectFeature__Group__1 : rule__AtomicActionSelectFeature__Group__1__Impl rule__AtomicActionSelectFeature__Group__2 ;
     public final void rule__AtomicActionSelectFeature__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2602:1: ( rule__AtomicActionSelectFeature__Group__1__Impl rule__AtomicActionSelectFeature__Group__2 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2603:2: rule__AtomicActionSelectFeature__Group__1__Impl rule__AtomicActionSelectFeature__Group__2
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2699:1: ( rule__AtomicActionSelectFeature__Group__1__Impl rule__AtomicActionSelectFeature__Group__2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2700:2: rule__AtomicActionSelectFeature__Group__1__Impl rule__AtomicActionSelectFeature__Group__2
             {
-            pushFollow(FOLLOW_rule__AtomicActionSelectFeature__Group__1__Impl_in_rule__AtomicActionSelectFeature__Group__15221);
+            pushFollow(FOLLOW_rule__AtomicActionSelectFeature__Group__1__Impl_in_rule__AtomicActionSelectFeature__Group__15411);
             rule__AtomicActionSelectFeature__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionSelectFeature__Group__2_in_rule__AtomicActionSelectFeature__Group__15224);
+            pushFollow(FOLLOW_rule__AtomicActionSelectFeature__Group__2_in_rule__AtomicActionSelectFeature__Group__15414);
             rule__AtomicActionSelectFeature__Group__2();
 
             state._fsp--;
@@ -6862,20 +7098,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionSelectFeature__Group__1__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2610:1: rule__AtomicActionSelectFeature__Group__1__Impl : ( '(' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2707:1: rule__AtomicActionSelectFeature__Group__1__Impl : ( '(' ) ;
     public final void rule__AtomicActionSelectFeature__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2614:1: ( ( '(' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2615:1: ( '(' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2711:1: ( ( '(' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2712:1: ( '(' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2615:1: ( '(' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2616:1: '('
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2712:1: ( '(' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2713:1: '('
             {
              before(grammarAccess.getAtomicActionSelectFeatureAccess().getLeftParenthesisKeyword_1()); 
-            match(input,31,FOLLOW_31_in_rule__AtomicActionSelectFeature__Group__1__Impl5252); 
+            match(input,32,FOLLOW_32_in_rule__AtomicActionSelectFeature__Group__1__Impl5442); 
              after(grammarAccess.getAtomicActionSelectFeatureAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -6899,21 +7135,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionSelectFeature__Group__2"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2629:1: rule__AtomicActionSelectFeature__Group__2 : rule__AtomicActionSelectFeature__Group__2__Impl rule__AtomicActionSelectFeature__Group__3 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2726:1: rule__AtomicActionSelectFeature__Group__2 : rule__AtomicActionSelectFeature__Group__2__Impl rule__AtomicActionSelectFeature__Group__3 ;
     public final void rule__AtomicActionSelectFeature__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2633:1: ( rule__AtomicActionSelectFeature__Group__2__Impl rule__AtomicActionSelectFeature__Group__3 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2634:2: rule__AtomicActionSelectFeature__Group__2__Impl rule__AtomicActionSelectFeature__Group__3
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2730:1: ( rule__AtomicActionSelectFeature__Group__2__Impl rule__AtomicActionSelectFeature__Group__3 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2731:2: rule__AtomicActionSelectFeature__Group__2__Impl rule__AtomicActionSelectFeature__Group__3
             {
-            pushFollow(FOLLOW_rule__AtomicActionSelectFeature__Group__2__Impl_in_rule__AtomicActionSelectFeature__Group__25283);
+            pushFollow(FOLLOW_rule__AtomicActionSelectFeature__Group__2__Impl_in_rule__AtomicActionSelectFeature__Group__25473);
             rule__AtomicActionSelectFeature__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionSelectFeature__Group__3_in_rule__AtomicActionSelectFeature__Group__25286);
+            pushFollow(FOLLOW_rule__AtomicActionSelectFeature__Group__3_in_rule__AtomicActionSelectFeature__Group__25476);
             rule__AtomicActionSelectFeature__Group__3();
 
             state._fsp--;
@@ -6937,23 +7173,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionSelectFeature__Group__2__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2641:1: rule__AtomicActionSelectFeature__Group__2__Impl : ( ( rule__AtomicActionSelectFeature__FeatureAssignment_2 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2738:1: rule__AtomicActionSelectFeature__Group__2__Impl : ( ( rule__AtomicActionSelectFeature__FeatureAssignment_2 ) ) ;
     public final void rule__AtomicActionSelectFeature__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2645:1: ( ( ( rule__AtomicActionSelectFeature__FeatureAssignment_2 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2646:1: ( ( rule__AtomicActionSelectFeature__FeatureAssignment_2 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2742:1: ( ( ( rule__AtomicActionSelectFeature__FeatureAssignment_2 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2743:1: ( ( rule__AtomicActionSelectFeature__FeatureAssignment_2 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2646:1: ( ( rule__AtomicActionSelectFeature__FeatureAssignment_2 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2647:1: ( rule__AtomicActionSelectFeature__FeatureAssignment_2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2743:1: ( ( rule__AtomicActionSelectFeature__FeatureAssignment_2 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2744:1: ( rule__AtomicActionSelectFeature__FeatureAssignment_2 )
             {
              before(grammarAccess.getAtomicActionSelectFeatureAccess().getFeatureAssignment_2()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2648:1: ( rule__AtomicActionSelectFeature__FeatureAssignment_2 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2648:2: rule__AtomicActionSelectFeature__FeatureAssignment_2
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2745:1: ( rule__AtomicActionSelectFeature__FeatureAssignment_2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2745:2: rule__AtomicActionSelectFeature__FeatureAssignment_2
             {
-            pushFollow(FOLLOW_rule__AtomicActionSelectFeature__FeatureAssignment_2_in_rule__AtomicActionSelectFeature__Group__2__Impl5313);
+            pushFollow(FOLLOW_rule__AtomicActionSelectFeature__FeatureAssignment_2_in_rule__AtomicActionSelectFeature__Group__2__Impl5503);
             rule__AtomicActionSelectFeature__FeatureAssignment_2();
 
             state._fsp--;
@@ -6984,16 +7220,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionSelectFeature__Group__3"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2658:1: rule__AtomicActionSelectFeature__Group__3 : rule__AtomicActionSelectFeature__Group__3__Impl ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2755:1: rule__AtomicActionSelectFeature__Group__3 : rule__AtomicActionSelectFeature__Group__3__Impl ;
     public final void rule__AtomicActionSelectFeature__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2662:1: ( rule__AtomicActionSelectFeature__Group__3__Impl )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2663:2: rule__AtomicActionSelectFeature__Group__3__Impl
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2759:1: ( rule__AtomicActionSelectFeature__Group__3__Impl )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2760:2: rule__AtomicActionSelectFeature__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__AtomicActionSelectFeature__Group__3__Impl_in_rule__AtomicActionSelectFeature__Group__35343);
+            pushFollow(FOLLOW_rule__AtomicActionSelectFeature__Group__3__Impl_in_rule__AtomicActionSelectFeature__Group__35533);
             rule__AtomicActionSelectFeature__Group__3__Impl();
 
             state._fsp--;
@@ -7017,20 +7253,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionSelectFeature__Group__3__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2669:1: rule__AtomicActionSelectFeature__Group__3__Impl : ( ')' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2766:1: rule__AtomicActionSelectFeature__Group__3__Impl : ( ')' ) ;
     public final void rule__AtomicActionSelectFeature__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2673:1: ( ( ')' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2674:1: ( ')' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2770:1: ( ( ')' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2771:1: ( ')' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2674:1: ( ')' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2675:1: ')'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2771:1: ( ')' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2772:1: ')'
             {
              before(grammarAccess.getAtomicActionSelectFeatureAccess().getRightParenthesisKeyword_3()); 
-            match(input,32,FOLLOW_32_in_rule__AtomicActionSelectFeature__Group__3__Impl5371); 
+            match(input,33,FOLLOW_33_in_rule__AtomicActionSelectFeature__Group__3__Impl5561); 
              after(grammarAccess.getAtomicActionSelectFeatureAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -7054,21 +7290,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionDeselectFeature__Group__0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2696:1: rule__AtomicActionDeselectFeature__Group__0 : rule__AtomicActionDeselectFeature__Group__0__Impl rule__AtomicActionDeselectFeature__Group__1 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2793:1: rule__AtomicActionDeselectFeature__Group__0 : rule__AtomicActionDeselectFeature__Group__0__Impl rule__AtomicActionDeselectFeature__Group__1 ;
     public final void rule__AtomicActionDeselectFeature__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2700:1: ( rule__AtomicActionDeselectFeature__Group__0__Impl rule__AtomicActionDeselectFeature__Group__1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2701:2: rule__AtomicActionDeselectFeature__Group__0__Impl rule__AtomicActionDeselectFeature__Group__1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2797:1: ( rule__AtomicActionDeselectFeature__Group__0__Impl rule__AtomicActionDeselectFeature__Group__1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2798:2: rule__AtomicActionDeselectFeature__Group__0__Impl rule__AtomicActionDeselectFeature__Group__1
             {
-            pushFollow(FOLLOW_rule__AtomicActionDeselectFeature__Group__0__Impl_in_rule__AtomicActionDeselectFeature__Group__05410);
+            pushFollow(FOLLOW_rule__AtomicActionDeselectFeature__Group__0__Impl_in_rule__AtomicActionDeselectFeature__Group__05600);
             rule__AtomicActionDeselectFeature__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionDeselectFeature__Group__1_in_rule__AtomicActionDeselectFeature__Group__05413);
+            pushFollow(FOLLOW_rule__AtomicActionDeselectFeature__Group__1_in_rule__AtomicActionDeselectFeature__Group__05603);
             rule__AtomicActionDeselectFeature__Group__1();
 
             state._fsp--;
@@ -7092,20 +7328,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionDeselectFeature__Group__0__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2708:1: rule__AtomicActionDeselectFeature__Group__0__Impl : ( 'deactivate_feature' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2805:1: rule__AtomicActionDeselectFeature__Group__0__Impl : ( 'deactivate_feature' ) ;
     public final void rule__AtomicActionDeselectFeature__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2712:1: ( ( 'deactivate_feature' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2713:1: ( 'deactivate_feature' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2809:1: ( ( 'deactivate_feature' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2810:1: ( 'deactivate_feature' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2713:1: ( 'deactivate_feature' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2714:1: 'deactivate_feature'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2810:1: ( 'deactivate_feature' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2811:1: 'deactivate_feature'
             {
              before(grammarAccess.getAtomicActionDeselectFeatureAccess().getDeactivate_featureKeyword_0()); 
-            match(input,35,FOLLOW_35_in_rule__AtomicActionDeselectFeature__Group__0__Impl5441); 
+            match(input,36,FOLLOW_36_in_rule__AtomicActionDeselectFeature__Group__0__Impl5631); 
              after(grammarAccess.getAtomicActionDeselectFeatureAccess().getDeactivate_featureKeyword_0()); 
 
             }
@@ -7129,21 +7365,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionDeselectFeature__Group__1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2727:1: rule__AtomicActionDeselectFeature__Group__1 : rule__AtomicActionDeselectFeature__Group__1__Impl rule__AtomicActionDeselectFeature__Group__2 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2824:1: rule__AtomicActionDeselectFeature__Group__1 : rule__AtomicActionDeselectFeature__Group__1__Impl rule__AtomicActionDeselectFeature__Group__2 ;
     public final void rule__AtomicActionDeselectFeature__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2731:1: ( rule__AtomicActionDeselectFeature__Group__1__Impl rule__AtomicActionDeselectFeature__Group__2 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2732:2: rule__AtomicActionDeselectFeature__Group__1__Impl rule__AtomicActionDeselectFeature__Group__2
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2828:1: ( rule__AtomicActionDeselectFeature__Group__1__Impl rule__AtomicActionDeselectFeature__Group__2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2829:2: rule__AtomicActionDeselectFeature__Group__1__Impl rule__AtomicActionDeselectFeature__Group__2
             {
-            pushFollow(FOLLOW_rule__AtomicActionDeselectFeature__Group__1__Impl_in_rule__AtomicActionDeselectFeature__Group__15472);
+            pushFollow(FOLLOW_rule__AtomicActionDeselectFeature__Group__1__Impl_in_rule__AtomicActionDeselectFeature__Group__15662);
             rule__AtomicActionDeselectFeature__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionDeselectFeature__Group__2_in_rule__AtomicActionDeselectFeature__Group__15475);
+            pushFollow(FOLLOW_rule__AtomicActionDeselectFeature__Group__2_in_rule__AtomicActionDeselectFeature__Group__15665);
             rule__AtomicActionDeselectFeature__Group__2();
 
             state._fsp--;
@@ -7167,20 +7403,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionDeselectFeature__Group__1__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2739:1: rule__AtomicActionDeselectFeature__Group__1__Impl : ( '(' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2836:1: rule__AtomicActionDeselectFeature__Group__1__Impl : ( '(' ) ;
     public final void rule__AtomicActionDeselectFeature__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2743:1: ( ( '(' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2744:1: ( '(' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2840:1: ( ( '(' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2841:1: ( '(' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2744:1: ( '(' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2745:1: '('
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2841:1: ( '(' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2842:1: '('
             {
              before(grammarAccess.getAtomicActionDeselectFeatureAccess().getLeftParenthesisKeyword_1()); 
-            match(input,31,FOLLOW_31_in_rule__AtomicActionDeselectFeature__Group__1__Impl5503); 
+            match(input,32,FOLLOW_32_in_rule__AtomicActionDeselectFeature__Group__1__Impl5693); 
              after(grammarAccess.getAtomicActionDeselectFeatureAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -7204,21 +7440,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionDeselectFeature__Group__2"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2758:1: rule__AtomicActionDeselectFeature__Group__2 : rule__AtomicActionDeselectFeature__Group__2__Impl rule__AtomicActionDeselectFeature__Group__3 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2855:1: rule__AtomicActionDeselectFeature__Group__2 : rule__AtomicActionDeselectFeature__Group__2__Impl rule__AtomicActionDeselectFeature__Group__3 ;
     public final void rule__AtomicActionDeselectFeature__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2762:1: ( rule__AtomicActionDeselectFeature__Group__2__Impl rule__AtomicActionDeselectFeature__Group__3 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2763:2: rule__AtomicActionDeselectFeature__Group__2__Impl rule__AtomicActionDeselectFeature__Group__3
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2859:1: ( rule__AtomicActionDeselectFeature__Group__2__Impl rule__AtomicActionDeselectFeature__Group__3 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2860:2: rule__AtomicActionDeselectFeature__Group__2__Impl rule__AtomicActionDeselectFeature__Group__3
             {
-            pushFollow(FOLLOW_rule__AtomicActionDeselectFeature__Group__2__Impl_in_rule__AtomicActionDeselectFeature__Group__25534);
+            pushFollow(FOLLOW_rule__AtomicActionDeselectFeature__Group__2__Impl_in_rule__AtomicActionDeselectFeature__Group__25724);
             rule__AtomicActionDeselectFeature__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionDeselectFeature__Group__3_in_rule__AtomicActionDeselectFeature__Group__25537);
+            pushFollow(FOLLOW_rule__AtomicActionDeselectFeature__Group__3_in_rule__AtomicActionDeselectFeature__Group__25727);
             rule__AtomicActionDeselectFeature__Group__3();
 
             state._fsp--;
@@ -7242,23 +7478,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionDeselectFeature__Group__2__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2770:1: rule__AtomicActionDeselectFeature__Group__2__Impl : ( ( rule__AtomicActionDeselectFeature__FeatureAssignment_2 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2867:1: rule__AtomicActionDeselectFeature__Group__2__Impl : ( ( rule__AtomicActionDeselectFeature__FeatureAssignment_2 ) ) ;
     public final void rule__AtomicActionDeselectFeature__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2774:1: ( ( ( rule__AtomicActionDeselectFeature__FeatureAssignment_2 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2775:1: ( ( rule__AtomicActionDeselectFeature__FeatureAssignment_2 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2871:1: ( ( ( rule__AtomicActionDeselectFeature__FeatureAssignment_2 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2872:1: ( ( rule__AtomicActionDeselectFeature__FeatureAssignment_2 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2775:1: ( ( rule__AtomicActionDeselectFeature__FeatureAssignment_2 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2776:1: ( rule__AtomicActionDeselectFeature__FeatureAssignment_2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2872:1: ( ( rule__AtomicActionDeselectFeature__FeatureAssignment_2 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2873:1: ( rule__AtomicActionDeselectFeature__FeatureAssignment_2 )
             {
              before(grammarAccess.getAtomicActionDeselectFeatureAccess().getFeatureAssignment_2()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2777:1: ( rule__AtomicActionDeselectFeature__FeatureAssignment_2 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2777:2: rule__AtomicActionDeselectFeature__FeatureAssignment_2
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2874:1: ( rule__AtomicActionDeselectFeature__FeatureAssignment_2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2874:2: rule__AtomicActionDeselectFeature__FeatureAssignment_2
             {
-            pushFollow(FOLLOW_rule__AtomicActionDeselectFeature__FeatureAssignment_2_in_rule__AtomicActionDeselectFeature__Group__2__Impl5564);
+            pushFollow(FOLLOW_rule__AtomicActionDeselectFeature__FeatureAssignment_2_in_rule__AtomicActionDeselectFeature__Group__2__Impl5754);
             rule__AtomicActionDeselectFeature__FeatureAssignment_2();
 
             state._fsp--;
@@ -7289,16 +7525,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionDeselectFeature__Group__3"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2787:1: rule__AtomicActionDeselectFeature__Group__3 : rule__AtomicActionDeselectFeature__Group__3__Impl ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2884:1: rule__AtomicActionDeselectFeature__Group__3 : rule__AtomicActionDeselectFeature__Group__3__Impl ;
     public final void rule__AtomicActionDeselectFeature__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2791:1: ( rule__AtomicActionDeselectFeature__Group__3__Impl )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2792:2: rule__AtomicActionDeselectFeature__Group__3__Impl
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2888:1: ( rule__AtomicActionDeselectFeature__Group__3__Impl )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2889:2: rule__AtomicActionDeselectFeature__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__AtomicActionDeselectFeature__Group__3__Impl_in_rule__AtomicActionDeselectFeature__Group__35594);
+            pushFollow(FOLLOW_rule__AtomicActionDeselectFeature__Group__3__Impl_in_rule__AtomicActionDeselectFeature__Group__35784);
             rule__AtomicActionDeselectFeature__Group__3__Impl();
 
             state._fsp--;
@@ -7322,20 +7558,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionDeselectFeature__Group__3__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2798:1: rule__AtomicActionDeselectFeature__Group__3__Impl : ( ')' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2895:1: rule__AtomicActionDeselectFeature__Group__3__Impl : ( ')' ) ;
     public final void rule__AtomicActionDeselectFeature__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2802:1: ( ( ')' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2803:1: ( ')' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2899:1: ( ( ')' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2900:1: ( ')' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2803:1: ( ')' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2804:1: ')'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2900:1: ( ')' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2901:1: ')'
             {
              before(grammarAccess.getAtomicActionDeselectFeatureAccess().getRightParenthesisKeyword_3()); 
-            match(input,32,FOLLOW_32_in_rule__AtomicActionDeselectFeature__Group__3__Impl5622); 
+            match(input,33,FOLLOW_33_in_rule__AtomicActionDeselectFeature__Group__3__Impl5812); 
              after(grammarAccess.getAtomicActionDeselectFeatureAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -7359,21 +7595,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionModifyAttribute__Group__0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2825:1: rule__AtomicActionModifyAttribute__Group__0 : rule__AtomicActionModifyAttribute__Group__0__Impl rule__AtomicActionModifyAttribute__Group__1 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2922:1: rule__AtomicActionModifyAttribute__Group__0 : rule__AtomicActionModifyAttribute__Group__0__Impl rule__AtomicActionModifyAttribute__Group__1 ;
     public final void rule__AtomicActionModifyAttribute__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2829:1: ( rule__AtomicActionModifyAttribute__Group__0__Impl rule__AtomicActionModifyAttribute__Group__1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2830:2: rule__AtomicActionModifyAttribute__Group__0__Impl rule__AtomicActionModifyAttribute__Group__1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2926:1: ( rule__AtomicActionModifyAttribute__Group__0__Impl rule__AtomicActionModifyAttribute__Group__1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2927:2: rule__AtomicActionModifyAttribute__Group__0__Impl rule__AtomicActionModifyAttribute__Group__1
             {
-            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__0__Impl_in_rule__AtomicActionModifyAttribute__Group__05661);
+            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__0__Impl_in_rule__AtomicActionModifyAttribute__Group__05851);
             rule__AtomicActionModifyAttribute__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__1_in_rule__AtomicActionModifyAttribute__Group__05664);
+            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__1_in_rule__AtomicActionModifyAttribute__Group__05854);
             rule__AtomicActionModifyAttribute__Group__1();
 
             state._fsp--;
@@ -7397,20 +7633,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionModifyAttribute__Group__0__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2837:1: rule__AtomicActionModifyAttribute__Group__0__Impl : ( 'set_attribute' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2934:1: rule__AtomicActionModifyAttribute__Group__0__Impl : ( 'set_attribute' ) ;
     public final void rule__AtomicActionModifyAttribute__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2841:1: ( ( 'set_attribute' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2842:1: ( 'set_attribute' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2938:1: ( ( 'set_attribute' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2939:1: ( 'set_attribute' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2842:1: ( 'set_attribute' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2843:1: 'set_attribute'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2939:1: ( 'set_attribute' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2940:1: 'set_attribute'
             {
              before(grammarAccess.getAtomicActionModifyAttributeAccess().getSet_attributeKeyword_0()); 
-            match(input,36,FOLLOW_36_in_rule__AtomicActionModifyAttribute__Group__0__Impl5692); 
+            match(input,37,FOLLOW_37_in_rule__AtomicActionModifyAttribute__Group__0__Impl5882); 
              after(grammarAccess.getAtomicActionModifyAttributeAccess().getSet_attributeKeyword_0()); 
 
             }
@@ -7434,21 +7670,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionModifyAttribute__Group__1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2856:1: rule__AtomicActionModifyAttribute__Group__1 : rule__AtomicActionModifyAttribute__Group__1__Impl rule__AtomicActionModifyAttribute__Group__2 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2953:1: rule__AtomicActionModifyAttribute__Group__1 : rule__AtomicActionModifyAttribute__Group__1__Impl rule__AtomicActionModifyAttribute__Group__2 ;
     public final void rule__AtomicActionModifyAttribute__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2860:1: ( rule__AtomicActionModifyAttribute__Group__1__Impl rule__AtomicActionModifyAttribute__Group__2 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2861:2: rule__AtomicActionModifyAttribute__Group__1__Impl rule__AtomicActionModifyAttribute__Group__2
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2957:1: ( rule__AtomicActionModifyAttribute__Group__1__Impl rule__AtomicActionModifyAttribute__Group__2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2958:2: rule__AtomicActionModifyAttribute__Group__1__Impl rule__AtomicActionModifyAttribute__Group__2
             {
-            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__1__Impl_in_rule__AtomicActionModifyAttribute__Group__15723);
+            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__1__Impl_in_rule__AtomicActionModifyAttribute__Group__15913);
             rule__AtomicActionModifyAttribute__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__2_in_rule__AtomicActionModifyAttribute__Group__15726);
+            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__2_in_rule__AtomicActionModifyAttribute__Group__15916);
             rule__AtomicActionModifyAttribute__Group__2();
 
             state._fsp--;
@@ -7472,20 +7708,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionModifyAttribute__Group__1__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2868:1: rule__AtomicActionModifyAttribute__Group__1__Impl : ( '(' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2965:1: rule__AtomicActionModifyAttribute__Group__1__Impl : ( '(' ) ;
     public final void rule__AtomicActionModifyAttribute__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2872:1: ( ( '(' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2873:1: ( '(' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2969:1: ( ( '(' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2970:1: ( '(' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2873:1: ( '(' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2874:1: '('
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2970:1: ( '(' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2971:1: '('
             {
              before(grammarAccess.getAtomicActionModifyAttributeAccess().getLeftParenthesisKeyword_1()); 
-            match(input,31,FOLLOW_31_in_rule__AtomicActionModifyAttribute__Group__1__Impl5754); 
+            match(input,32,FOLLOW_32_in_rule__AtomicActionModifyAttribute__Group__1__Impl5944); 
              after(grammarAccess.getAtomicActionModifyAttributeAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -7509,21 +7745,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionModifyAttribute__Group__2"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2887:1: rule__AtomicActionModifyAttribute__Group__2 : rule__AtomicActionModifyAttribute__Group__2__Impl rule__AtomicActionModifyAttribute__Group__3 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2984:1: rule__AtomicActionModifyAttribute__Group__2 : rule__AtomicActionModifyAttribute__Group__2__Impl rule__AtomicActionModifyAttribute__Group__3 ;
     public final void rule__AtomicActionModifyAttribute__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2891:1: ( rule__AtomicActionModifyAttribute__Group__2__Impl rule__AtomicActionModifyAttribute__Group__3 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2892:2: rule__AtomicActionModifyAttribute__Group__2__Impl rule__AtomicActionModifyAttribute__Group__3
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2988:1: ( rule__AtomicActionModifyAttribute__Group__2__Impl rule__AtomicActionModifyAttribute__Group__3 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2989:2: rule__AtomicActionModifyAttribute__Group__2__Impl rule__AtomicActionModifyAttribute__Group__3
             {
-            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__2__Impl_in_rule__AtomicActionModifyAttribute__Group__25785);
+            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__2__Impl_in_rule__AtomicActionModifyAttribute__Group__25975);
             rule__AtomicActionModifyAttribute__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__3_in_rule__AtomicActionModifyAttribute__Group__25788);
+            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__3_in_rule__AtomicActionModifyAttribute__Group__25978);
             rule__AtomicActionModifyAttribute__Group__3();
 
             state._fsp--;
@@ -7547,23 +7783,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionModifyAttribute__Group__2__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2899:1: rule__AtomicActionModifyAttribute__Group__2__Impl : ( ( rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2996:1: rule__AtomicActionModifyAttribute__Group__2__Impl : ( ( rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2 ) ) ;
     public final void rule__AtomicActionModifyAttribute__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2903:1: ( ( ( rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2904:1: ( ( rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3000:1: ( ( ( rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3001:1: ( ( rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2904:1: ( ( rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2905:1: ( rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3001:1: ( ( rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3002:1: ( rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2 )
             {
              before(grammarAccess.getAtomicActionModifyAttributeAccess().getFeatureAttributeAssignment_2()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2906:1: ( rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2906:2: rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3003:1: ( rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3003:2: rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2
             {
-            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2_in_rule__AtomicActionModifyAttribute__Group__2__Impl5815);
+            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2_in_rule__AtomicActionModifyAttribute__Group__2__Impl6005);
             rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2();
 
             state._fsp--;
@@ -7594,21 +7830,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionModifyAttribute__Group__3"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2916:1: rule__AtomicActionModifyAttribute__Group__3 : rule__AtomicActionModifyAttribute__Group__3__Impl rule__AtomicActionModifyAttribute__Group__4 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3013:1: rule__AtomicActionModifyAttribute__Group__3 : rule__AtomicActionModifyAttribute__Group__3__Impl rule__AtomicActionModifyAttribute__Group__4 ;
     public final void rule__AtomicActionModifyAttribute__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2920:1: ( rule__AtomicActionModifyAttribute__Group__3__Impl rule__AtomicActionModifyAttribute__Group__4 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2921:2: rule__AtomicActionModifyAttribute__Group__3__Impl rule__AtomicActionModifyAttribute__Group__4
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3017:1: ( rule__AtomicActionModifyAttribute__Group__3__Impl rule__AtomicActionModifyAttribute__Group__4 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3018:2: rule__AtomicActionModifyAttribute__Group__3__Impl rule__AtomicActionModifyAttribute__Group__4
             {
-            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__3__Impl_in_rule__AtomicActionModifyAttribute__Group__35845);
+            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__3__Impl_in_rule__AtomicActionModifyAttribute__Group__36035);
             rule__AtomicActionModifyAttribute__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__4_in_rule__AtomicActionModifyAttribute__Group__35848);
+            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__4_in_rule__AtomicActionModifyAttribute__Group__36038);
             rule__AtomicActionModifyAttribute__Group__4();
 
             state._fsp--;
@@ -7632,20 +7868,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionModifyAttribute__Group__3__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2928:1: rule__AtomicActionModifyAttribute__Group__3__Impl : ( ')' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3025:1: rule__AtomicActionModifyAttribute__Group__3__Impl : ( ')' ) ;
     public final void rule__AtomicActionModifyAttribute__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2932:1: ( ( ')' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2933:1: ( ')' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3029:1: ( ( ')' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3030:1: ( ')' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2933:1: ( ')' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2934:1: ')'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3030:1: ( ')' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3031:1: ')'
             {
              before(grammarAccess.getAtomicActionModifyAttributeAccess().getRightParenthesisKeyword_3()); 
-            match(input,32,FOLLOW_32_in_rule__AtomicActionModifyAttribute__Group__3__Impl5876); 
+            match(input,33,FOLLOW_33_in_rule__AtomicActionModifyAttribute__Group__3__Impl6066); 
              after(grammarAccess.getAtomicActionModifyAttributeAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -7669,21 +7905,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionModifyAttribute__Group__4"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2947:1: rule__AtomicActionModifyAttribute__Group__4 : rule__AtomicActionModifyAttribute__Group__4__Impl rule__AtomicActionModifyAttribute__Group__5 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3044:1: rule__AtomicActionModifyAttribute__Group__4 : rule__AtomicActionModifyAttribute__Group__4__Impl rule__AtomicActionModifyAttribute__Group__5 ;
     public final void rule__AtomicActionModifyAttribute__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2951:1: ( rule__AtomicActionModifyAttribute__Group__4__Impl rule__AtomicActionModifyAttribute__Group__5 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2952:2: rule__AtomicActionModifyAttribute__Group__4__Impl rule__AtomicActionModifyAttribute__Group__5
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3048:1: ( rule__AtomicActionModifyAttribute__Group__4__Impl rule__AtomicActionModifyAttribute__Group__5 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3049:2: rule__AtomicActionModifyAttribute__Group__4__Impl rule__AtomicActionModifyAttribute__Group__5
             {
-            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__4__Impl_in_rule__AtomicActionModifyAttribute__Group__45907);
+            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__4__Impl_in_rule__AtomicActionModifyAttribute__Group__46097);
             rule__AtomicActionModifyAttribute__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__5_in_rule__AtomicActionModifyAttribute__Group__45910);
+            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__5_in_rule__AtomicActionModifyAttribute__Group__46100);
             rule__AtomicActionModifyAttribute__Group__5();
 
             state._fsp--;
@@ -7707,20 +7943,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionModifyAttribute__Group__4__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2959:1: rule__AtomicActionModifyAttribute__Group__4__Impl : ( 'with_value' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3056:1: rule__AtomicActionModifyAttribute__Group__4__Impl : ( 'with_value' ) ;
     public final void rule__AtomicActionModifyAttribute__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2963:1: ( ( 'with_value' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2964:1: ( 'with_value' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3060:1: ( ( 'with_value' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3061:1: ( 'with_value' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2964:1: ( 'with_value' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2965:1: 'with_value'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3061:1: ( 'with_value' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3062:1: 'with_value'
             {
              before(grammarAccess.getAtomicActionModifyAttributeAccess().getWith_valueKeyword_4()); 
-            match(input,37,FOLLOW_37_in_rule__AtomicActionModifyAttribute__Group__4__Impl5938); 
+            match(input,38,FOLLOW_38_in_rule__AtomicActionModifyAttribute__Group__4__Impl6128); 
              after(grammarAccess.getAtomicActionModifyAttributeAccess().getWith_valueKeyword_4()); 
 
             }
@@ -7744,21 +7980,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionModifyAttribute__Group__5"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2978:1: rule__AtomicActionModifyAttribute__Group__5 : rule__AtomicActionModifyAttribute__Group__5__Impl rule__AtomicActionModifyAttribute__Group__6 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3075:1: rule__AtomicActionModifyAttribute__Group__5 : rule__AtomicActionModifyAttribute__Group__5__Impl rule__AtomicActionModifyAttribute__Group__6 ;
     public final void rule__AtomicActionModifyAttribute__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2982:1: ( rule__AtomicActionModifyAttribute__Group__5__Impl rule__AtomicActionModifyAttribute__Group__6 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2983:2: rule__AtomicActionModifyAttribute__Group__5__Impl rule__AtomicActionModifyAttribute__Group__6
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3079:1: ( rule__AtomicActionModifyAttribute__Group__5__Impl rule__AtomicActionModifyAttribute__Group__6 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3080:2: rule__AtomicActionModifyAttribute__Group__5__Impl rule__AtomicActionModifyAttribute__Group__6
             {
-            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__5__Impl_in_rule__AtomicActionModifyAttribute__Group__55969);
+            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__5__Impl_in_rule__AtomicActionModifyAttribute__Group__56159);
             rule__AtomicActionModifyAttribute__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__6_in_rule__AtomicActionModifyAttribute__Group__55972);
+            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__6_in_rule__AtomicActionModifyAttribute__Group__56162);
             rule__AtomicActionModifyAttribute__Group__6();
 
             state._fsp--;
@@ -7782,20 +8018,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionModifyAttribute__Group__5__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2990:1: rule__AtomicActionModifyAttribute__Group__5__Impl : ( '(' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3087:1: rule__AtomicActionModifyAttribute__Group__5__Impl : ( '(' ) ;
     public final void rule__AtomicActionModifyAttribute__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2994:1: ( ( '(' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2995:1: ( '(' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3091:1: ( ( '(' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3092:1: ( '(' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2995:1: ( '(' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:2996:1: '('
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3092:1: ( '(' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3093:1: '('
             {
              before(grammarAccess.getAtomicActionModifyAttributeAccess().getLeftParenthesisKeyword_5()); 
-            match(input,31,FOLLOW_31_in_rule__AtomicActionModifyAttribute__Group__5__Impl6000); 
+            match(input,32,FOLLOW_32_in_rule__AtomicActionModifyAttribute__Group__5__Impl6190); 
              after(grammarAccess.getAtomicActionModifyAttributeAccess().getLeftParenthesisKeyword_5()); 
 
             }
@@ -7819,21 +8055,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionModifyAttribute__Group__6"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3009:1: rule__AtomicActionModifyAttribute__Group__6 : rule__AtomicActionModifyAttribute__Group__6__Impl rule__AtomicActionModifyAttribute__Group__7 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3106:1: rule__AtomicActionModifyAttribute__Group__6 : rule__AtomicActionModifyAttribute__Group__6__Impl rule__AtomicActionModifyAttribute__Group__7 ;
     public final void rule__AtomicActionModifyAttribute__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3013:1: ( rule__AtomicActionModifyAttribute__Group__6__Impl rule__AtomicActionModifyAttribute__Group__7 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3014:2: rule__AtomicActionModifyAttribute__Group__6__Impl rule__AtomicActionModifyAttribute__Group__7
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3110:1: ( rule__AtomicActionModifyAttribute__Group__6__Impl rule__AtomicActionModifyAttribute__Group__7 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3111:2: rule__AtomicActionModifyAttribute__Group__6__Impl rule__AtomicActionModifyAttribute__Group__7
             {
-            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__6__Impl_in_rule__AtomicActionModifyAttribute__Group__66031);
+            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__6__Impl_in_rule__AtomicActionModifyAttribute__Group__66221);
             rule__AtomicActionModifyAttribute__Group__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__7_in_rule__AtomicActionModifyAttribute__Group__66034);
+            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__7_in_rule__AtomicActionModifyAttribute__Group__66224);
             rule__AtomicActionModifyAttribute__Group__7();
 
             state._fsp--;
@@ -7857,23 +8093,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionModifyAttribute__Group__6__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3021:1: rule__AtomicActionModifyAttribute__Group__6__Impl : ( ( rule__AtomicActionModifyAttribute__AttributeValueAssignment_6 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3118:1: rule__AtomicActionModifyAttribute__Group__6__Impl : ( ( rule__AtomicActionModifyAttribute__AttributeValueAssignment_6 ) ) ;
     public final void rule__AtomicActionModifyAttribute__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3025:1: ( ( ( rule__AtomicActionModifyAttribute__AttributeValueAssignment_6 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3026:1: ( ( rule__AtomicActionModifyAttribute__AttributeValueAssignment_6 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3122:1: ( ( ( rule__AtomicActionModifyAttribute__AttributeValueAssignment_6 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3123:1: ( ( rule__AtomicActionModifyAttribute__AttributeValueAssignment_6 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3026:1: ( ( rule__AtomicActionModifyAttribute__AttributeValueAssignment_6 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3027:1: ( rule__AtomicActionModifyAttribute__AttributeValueAssignment_6 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3123:1: ( ( rule__AtomicActionModifyAttribute__AttributeValueAssignment_6 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3124:1: ( rule__AtomicActionModifyAttribute__AttributeValueAssignment_6 )
             {
              before(grammarAccess.getAtomicActionModifyAttributeAccess().getAttributeValueAssignment_6()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3028:1: ( rule__AtomicActionModifyAttribute__AttributeValueAssignment_6 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3028:2: rule__AtomicActionModifyAttribute__AttributeValueAssignment_6
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3125:1: ( rule__AtomicActionModifyAttribute__AttributeValueAssignment_6 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3125:2: rule__AtomicActionModifyAttribute__AttributeValueAssignment_6
             {
-            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__AttributeValueAssignment_6_in_rule__AtomicActionModifyAttribute__Group__6__Impl6061);
+            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__AttributeValueAssignment_6_in_rule__AtomicActionModifyAttribute__Group__6__Impl6251);
             rule__AtomicActionModifyAttribute__AttributeValueAssignment_6();
 
             state._fsp--;
@@ -7904,16 +8140,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionModifyAttribute__Group__7"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3038:1: rule__AtomicActionModifyAttribute__Group__7 : rule__AtomicActionModifyAttribute__Group__7__Impl ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3135:1: rule__AtomicActionModifyAttribute__Group__7 : rule__AtomicActionModifyAttribute__Group__7__Impl ;
     public final void rule__AtomicActionModifyAttribute__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3042:1: ( rule__AtomicActionModifyAttribute__Group__7__Impl )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3043:2: rule__AtomicActionModifyAttribute__Group__7__Impl
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3139:1: ( rule__AtomicActionModifyAttribute__Group__7__Impl )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3140:2: rule__AtomicActionModifyAttribute__Group__7__Impl
             {
-            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__7__Impl_in_rule__AtomicActionModifyAttribute__Group__76091);
+            pushFollow(FOLLOW_rule__AtomicActionModifyAttribute__Group__7__Impl_in_rule__AtomicActionModifyAttribute__Group__76281);
             rule__AtomicActionModifyAttribute__Group__7__Impl();
 
             state._fsp--;
@@ -7937,20 +8173,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionModifyAttribute__Group__7__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3049:1: rule__AtomicActionModifyAttribute__Group__7__Impl : ( ')' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3146:1: rule__AtomicActionModifyAttribute__Group__7__Impl : ( ')' ) ;
     public final void rule__AtomicActionModifyAttribute__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3053:1: ( ( ')' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3054:1: ( ')' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3150:1: ( ( ')' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3151:1: ( ')' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3054:1: ( ')' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3055:1: ')'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3151:1: ( ')' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3152:1: ')'
             {
              before(grammarAccess.getAtomicActionModifyAttributeAccess().getRightParenthesisKeyword_7()); 
-            match(input,32,FOLLOW_32_in_rule__AtomicActionModifyAttribute__Group__7__Impl6119); 
+            match(input,33,FOLLOW_33_in_rule__AtomicActionModifyAttribute__Group__7__Impl6309); 
              after(grammarAccess.getAtomicActionModifyAttributeAccess().getRightParenthesisKeyword_7()); 
 
             }
@@ -7974,21 +8210,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3084:1: rule__AtomicActionQuery__Group__0 : rule__AtomicActionQuery__Group__0__Impl rule__AtomicActionQuery__Group__1 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3181:1: rule__AtomicActionQuery__Group__0 : rule__AtomicActionQuery__Group__0__Impl rule__AtomicActionQuery__Group__1 ;
     public final void rule__AtomicActionQuery__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3088:1: ( rule__AtomicActionQuery__Group__0__Impl rule__AtomicActionQuery__Group__1 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3089:2: rule__AtomicActionQuery__Group__0__Impl rule__AtomicActionQuery__Group__1
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3185:1: ( rule__AtomicActionQuery__Group__0__Impl rule__AtomicActionQuery__Group__1 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3186:2: rule__AtomicActionQuery__Group__0__Impl rule__AtomicActionQuery__Group__1
             {
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__0__Impl_in_rule__AtomicActionQuery__Group__06166);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__0__Impl_in_rule__AtomicActionQuery__Group__06356);
             rule__AtomicActionQuery__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__1_in_rule__AtomicActionQuery__Group__06169);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__1_in_rule__AtomicActionQuery__Group__06359);
             rule__AtomicActionQuery__Group__1();
 
             state._fsp--;
@@ -8012,20 +8248,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__0__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3096:1: rule__AtomicActionQuery__Group__0__Impl : ( 'select_feature_*' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3193:1: rule__AtomicActionQuery__Group__0__Impl : ( 'select_feature_*' ) ;
     public final void rule__AtomicActionQuery__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3100:1: ( ( 'select_feature_*' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3101:1: ( 'select_feature_*' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3197:1: ( ( 'select_feature_*' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3198:1: ( 'select_feature_*' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3101:1: ( 'select_feature_*' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3102:1: 'select_feature_*'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3198:1: ( 'select_feature_*' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3199:1: 'select_feature_*'
             {
              before(grammarAccess.getAtomicActionQueryAccess().getSelect_feature_Keyword_0()); 
-            match(input,38,FOLLOW_38_in_rule__AtomicActionQuery__Group__0__Impl6197); 
+            match(input,39,FOLLOW_39_in_rule__AtomicActionQuery__Group__0__Impl6387); 
              after(grammarAccess.getAtomicActionQueryAccess().getSelect_feature_Keyword_0()); 
 
             }
@@ -8049,21 +8285,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3115:1: rule__AtomicActionQuery__Group__1 : rule__AtomicActionQuery__Group__1__Impl rule__AtomicActionQuery__Group__2 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3212:1: rule__AtomicActionQuery__Group__1 : rule__AtomicActionQuery__Group__1__Impl rule__AtomicActionQuery__Group__2 ;
     public final void rule__AtomicActionQuery__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3119:1: ( rule__AtomicActionQuery__Group__1__Impl rule__AtomicActionQuery__Group__2 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3120:2: rule__AtomicActionQuery__Group__1__Impl rule__AtomicActionQuery__Group__2
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3216:1: ( rule__AtomicActionQuery__Group__1__Impl rule__AtomicActionQuery__Group__2 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3217:2: rule__AtomicActionQuery__Group__1__Impl rule__AtomicActionQuery__Group__2
             {
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__1__Impl_in_rule__AtomicActionQuery__Group__16228);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__1__Impl_in_rule__AtomicActionQuery__Group__16418);
             rule__AtomicActionQuery__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__2_in_rule__AtomicActionQuery__Group__16231);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__2_in_rule__AtomicActionQuery__Group__16421);
             rule__AtomicActionQuery__Group__2();
 
             state._fsp--;
@@ -8087,20 +8323,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__1__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3127:1: rule__AtomicActionQuery__Group__1__Impl : ( 'from_variants_of_feature' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3224:1: rule__AtomicActionQuery__Group__1__Impl : ( 'from_variants_of_feature' ) ;
     public final void rule__AtomicActionQuery__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3131:1: ( ( 'from_variants_of_feature' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3132:1: ( 'from_variants_of_feature' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3228:1: ( ( 'from_variants_of_feature' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3229:1: ( 'from_variants_of_feature' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3132:1: ( 'from_variants_of_feature' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3133:1: 'from_variants_of_feature'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3229:1: ( 'from_variants_of_feature' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3230:1: 'from_variants_of_feature'
             {
              before(grammarAccess.getAtomicActionQueryAccess().getFrom_variants_of_featureKeyword_1()); 
-            match(input,39,FOLLOW_39_in_rule__AtomicActionQuery__Group__1__Impl6259); 
+            match(input,40,FOLLOW_40_in_rule__AtomicActionQuery__Group__1__Impl6449); 
              after(grammarAccess.getAtomicActionQueryAccess().getFrom_variants_of_featureKeyword_1()); 
 
             }
@@ -8124,21 +8360,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__2"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3146:1: rule__AtomicActionQuery__Group__2 : rule__AtomicActionQuery__Group__2__Impl rule__AtomicActionQuery__Group__3 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3243:1: rule__AtomicActionQuery__Group__2 : rule__AtomicActionQuery__Group__2__Impl rule__AtomicActionQuery__Group__3 ;
     public final void rule__AtomicActionQuery__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3150:1: ( rule__AtomicActionQuery__Group__2__Impl rule__AtomicActionQuery__Group__3 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3151:2: rule__AtomicActionQuery__Group__2__Impl rule__AtomicActionQuery__Group__3
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3247:1: ( rule__AtomicActionQuery__Group__2__Impl rule__AtomicActionQuery__Group__3 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3248:2: rule__AtomicActionQuery__Group__2__Impl rule__AtomicActionQuery__Group__3
             {
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__2__Impl_in_rule__AtomicActionQuery__Group__26290);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__2__Impl_in_rule__AtomicActionQuery__Group__26480);
             rule__AtomicActionQuery__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__3_in_rule__AtomicActionQuery__Group__26293);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__3_in_rule__AtomicActionQuery__Group__26483);
             rule__AtomicActionQuery__Group__3();
 
             state._fsp--;
@@ -8162,20 +8398,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__2__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3158:1: rule__AtomicActionQuery__Group__2__Impl : ( '(' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3255:1: rule__AtomicActionQuery__Group__2__Impl : ( '(' ) ;
     public final void rule__AtomicActionQuery__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3162:1: ( ( '(' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3163:1: ( '(' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3259:1: ( ( '(' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3260:1: ( '(' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3163:1: ( '(' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3164:1: '('
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3260:1: ( '(' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3261:1: '('
             {
              before(grammarAccess.getAtomicActionQueryAccess().getLeftParenthesisKeyword_2()); 
-            match(input,31,FOLLOW_31_in_rule__AtomicActionQuery__Group__2__Impl6321); 
+            match(input,32,FOLLOW_32_in_rule__AtomicActionQuery__Group__2__Impl6511); 
              after(grammarAccess.getAtomicActionQueryAccess().getLeftParenthesisKeyword_2()); 
 
             }
@@ -8199,21 +8435,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__3"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3177:1: rule__AtomicActionQuery__Group__3 : rule__AtomicActionQuery__Group__3__Impl rule__AtomicActionQuery__Group__4 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3274:1: rule__AtomicActionQuery__Group__3 : rule__AtomicActionQuery__Group__3__Impl rule__AtomicActionQuery__Group__4 ;
     public final void rule__AtomicActionQuery__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3181:1: ( rule__AtomicActionQuery__Group__3__Impl rule__AtomicActionQuery__Group__4 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3182:2: rule__AtomicActionQuery__Group__3__Impl rule__AtomicActionQuery__Group__4
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3278:1: ( rule__AtomicActionQuery__Group__3__Impl rule__AtomicActionQuery__Group__4 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3279:2: rule__AtomicActionQuery__Group__3__Impl rule__AtomicActionQuery__Group__4
             {
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__3__Impl_in_rule__AtomicActionQuery__Group__36352);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__3__Impl_in_rule__AtomicActionQuery__Group__36542);
             rule__AtomicActionQuery__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__4_in_rule__AtomicActionQuery__Group__36355);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__4_in_rule__AtomicActionQuery__Group__36545);
             rule__AtomicActionQuery__Group__4();
 
             state._fsp--;
@@ -8237,23 +8473,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__3__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3189:1: rule__AtomicActionQuery__Group__3__Impl : ( ( rule__AtomicActionQuery__FeatureAssignment_3 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3286:1: rule__AtomicActionQuery__Group__3__Impl : ( ( rule__AtomicActionQuery__FeatureAssignment_3 ) ) ;
     public final void rule__AtomicActionQuery__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3193:1: ( ( ( rule__AtomicActionQuery__FeatureAssignment_3 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3194:1: ( ( rule__AtomicActionQuery__FeatureAssignment_3 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3290:1: ( ( ( rule__AtomicActionQuery__FeatureAssignment_3 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3291:1: ( ( rule__AtomicActionQuery__FeatureAssignment_3 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3194:1: ( ( rule__AtomicActionQuery__FeatureAssignment_3 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3195:1: ( rule__AtomicActionQuery__FeatureAssignment_3 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3291:1: ( ( rule__AtomicActionQuery__FeatureAssignment_3 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3292:1: ( rule__AtomicActionQuery__FeatureAssignment_3 )
             {
              before(grammarAccess.getAtomicActionQueryAccess().getFeatureAssignment_3()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3196:1: ( rule__AtomicActionQuery__FeatureAssignment_3 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3196:2: rule__AtomicActionQuery__FeatureAssignment_3
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3293:1: ( rule__AtomicActionQuery__FeatureAssignment_3 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3293:2: rule__AtomicActionQuery__FeatureAssignment_3
             {
-            pushFollow(FOLLOW_rule__AtomicActionQuery__FeatureAssignment_3_in_rule__AtomicActionQuery__Group__3__Impl6382);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__FeatureAssignment_3_in_rule__AtomicActionQuery__Group__3__Impl6572);
             rule__AtomicActionQuery__FeatureAssignment_3();
 
             state._fsp--;
@@ -8284,21 +8520,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__4"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3206:1: rule__AtomicActionQuery__Group__4 : rule__AtomicActionQuery__Group__4__Impl rule__AtomicActionQuery__Group__5 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3303:1: rule__AtomicActionQuery__Group__4 : rule__AtomicActionQuery__Group__4__Impl rule__AtomicActionQuery__Group__5 ;
     public final void rule__AtomicActionQuery__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3210:1: ( rule__AtomicActionQuery__Group__4__Impl rule__AtomicActionQuery__Group__5 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3211:2: rule__AtomicActionQuery__Group__4__Impl rule__AtomicActionQuery__Group__5
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3307:1: ( rule__AtomicActionQuery__Group__4__Impl rule__AtomicActionQuery__Group__5 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3308:2: rule__AtomicActionQuery__Group__4__Impl rule__AtomicActionQuery__Group__5
             {
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__4__Impl_in_rule__AtomicActionQuery__Group__46412);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__4__Impl_in_rule__AtomicActionQuery__Group__46602);
             rule__AtomicActionQuery__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__5_in_rule__AtomicActionQuery__Group__46415);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__5_in_rule__AtomicActionQuery__Group__46605);
             rule__AtomicActionQuery__Group__5();
 
             state._fsp--;
@@ -8322,20 +8558,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__4__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3218:1: rule__AtomicActionQuery__Group__4__Impl : ( ')' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3315:1: rule__AtomicActionQuery__Group__4__Impl : ( ')' ) ;
     public final void rule__AtomicActionQuery__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3222:1: ( ( ')' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3223:1: ( ')' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3319:1: ( ( ')' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3320:1: ( ')' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3223:1: ( ')' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3224:1: ')'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3320:1: ( ')' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3321:1: ')'
             {
              before(grammarAccess.getAtomicActionQueryAccess().getRightParenthesisKeyword_4()); 
-            match(input,32,FOLLOW_32_in_rule__AtomicActionQuery__Group__4__Impl6443); 
+            match(input,33,FOLLOW_33_in_rule__AtomicActionQuery__Group__4__Impl6633); 
              after(grammarAccess.getAtomicActionQueryAccess().getRightParenthesisKeyword_4()); 
 
             }
@@ -8359,21 +8595,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__5"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3237:1: rule__AtomicActionQuery__Group__5 : rule__AtomicActionQuery__Group__5__Impl rule__AtomicActionQuery__Group__6 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3334:1: rule__AtomicActionQuery__Group__5 : rule__AtomicActionQuery__Group__5__Impl rule__AtomicActionQuery__Group__6 ;
     public final void rule__AtomicActionQuery__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3241:1: ( rule__AtomicActionQuery__Group__5__Impl rule__AtomicActionQuery__Group__6 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3242:2: rule__AtomicActionQuery__Group__5__Impl rule__AtomicActionQuery__Group__6
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3338:1: ( rule__AtomicActionQuery__Group__5__Impl rule__AtomicActionQuery__Group__6 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3339:2: rule__AtomicActionQuery__Group__5__Impl rule__AtomicActionQuery__Group__6
             {
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__5__Impl_in_rule__AtomicActionQuery__Group__56474);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__5__Impl_in_rule__AtomicActionQuery__Group__56664);
             rule__AtomicActionQuery__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__6_in_rule__AtomicActionQuery__Group__56477);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__6_in_rule__AtomicActionQuery__Group__56667);
             rule__AtomicActionQuery__Group__6();
 
             state._fsp--;
@@ -8397,20 +8633,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__5__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3249:1: rule__AtomicActionQuery__Group__5__Impl : ( 'where_attribue' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3346:1: rule__AtomicActionQuery__Group__5__Impl : ( 'where_attribue' ) ;
     public final void rule__AtomicActionQuery__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3253:1: ( ( 'where_attribue' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3254:1: ( 'where_attribue' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3350:1: ( ( 'where_attribue' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3351:1: ( 'where_attribue' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3254:1: ( 'where_attribue' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3255:1: 'where_attribue'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3351:1: ( 'where_attribue' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3352:1: 'where_attribue'
             {
              before(grammarAccess.getAtomicActionQueryAccess().getWhere_attribueKeyword_5()); 
-            match(input,40,FOLLOW_40_in_rule__AtomicActionQuery__Group__5__Impl6505); 
+            match(input,41,FOLLOW_41_in_rule__AtomicActionQuery__Group__5__Impl6695); 
              after(grammarAccess.getAtomicActionQueryAccess().getWhere_attribueKeyword_5()); 
 
             }
@@ -8434,21 +8670,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__6"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3268:1: rule__AtomicActionQuery__Group__6 : rule__AtomicActionQuery__Group__6__Impl rule__AtomicActionQuery__Group__7 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3365:1: rule__AtomicActionQuery__Group__6 : rule__AtomicActionQuery__Group__6__Impl rule__AtomicActionQuery__Group__7 ;
     public final void rule__AtomicActionQuery__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3272:1: ( rule__AtomicActionQuery__Group__6__Impl rule__AtomicActionQuery__Group__7 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3273:2: rule__AtomicActionQuery__Group__6__Impl rule__AtomicActionQuery__Group__7
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3369:1: ( rule__AtomicActionQuery__Group__6__Impl rule__AtomicActionQuery__Group__7 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3370:2: rule__AtomicActionQuery__Group__6__Impl rule__AtomicActionQuery__Group__7
             {
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__6__Impl_in_rule__AtomicActionQuery__Group__66536);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__6__Impl_in_rule__AtomicActionQuery__Group__66726);
             rule__AtomicActionQuery__Group__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__7_in_rule__AtomicActionQuery__Group__66539);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__7_in_rule__AtomicActionQuery__Group__66729);
             rule__AtomicActionQuery__Group__7();
 
             state._fsp--;
@@ -8472,20 +8708,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__6__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3280:1: rule__AtomicActionQuery__Group__6__Impl : ( ruleQueryOperator ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3377:1: rule__AtomicActionQuery__Group__6__Impl : ( ruleQueryOperator ) ;
     public final void rule__AtomicActionQuery__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3284:1: ( ( ruleQueryOperator ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3285:1: ( ruleQueryOperator )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3381:1: ( ( ruleQueryOperator ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3382:1: ( ruleQueryOperator )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3285:1: ( ruleQueryOperator )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3286:1: ruleQueryOperator
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3382:1: ( ruleQueryOperator )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3383:1: ruleQueryOperator
             {
              before(grammarAccess.getAtomicActionQueryAccess().getQueryOperatorParserRuleCall_6()); 
-            pushFollow(FOLLOW_ruleQueryOperator_in_rule__AtomicActionQuery__Group__6__Impl6566);
+            pushFollow(FOLLOW_ruleQueryOperator_in_rule__AtomicActionQuery__Group__6__Impl6756);
             ruleQueryOperator();
 
             state._fsp--;
@@ -8513,21 +8749,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__7"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3297:1: rule__AtomicActionQuery__Group__7 : rule__AtomicActionQuery__Group__7__Impl rule__AtomicActionQuery__Group__8 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3394:1: rule__AtomicActionQuery__Group__7 : rule__AtomicActionQuery__Group__7__Impl rule__AtomicActionQuery__Group__8 ;
     public final void rule__AtomicActionQuery__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3301:1: ( rule__AtomicActionQuery__Group__7__Impl rule__AtomicActionQuery__Group__8 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3302:2: rule__AtomicActionQuery__Group__7__Impl rule__AtomicActionQuery__Group__8
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3398:1: ( rule__AtomicActionQuery__Group__7__Impl rule__AtomicActionQuery__Group__8 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3399:2: rule__AtomicActionQuery__Group__7__Impl rule__AtomicActionQuery__Group__8
             {
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__7__Impl_in_rule__AtomicActionQuery__Group__76595);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__7__Impl_in_rule__AtomicActionQuery__Group__76785);
             rule__AtomicActionQuery__Group__7__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__8_in_rule__AtomicActionQuery__Group__76598);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__8_in_rule__AtomicActionQuery__Group__76788);
             rule__AtomicActionQuery__Group__8();
 
             state._fsp--;
@@ -8551,20 +8787,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__7__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3309:1: rule__AtomicActionQuery__Group__7__Impl : ( '(' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3406:1: rule__AtomicActionQuery__Group__7__Impl : ( '(' ) ;
     public final void rule__AtomicActionQuery__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3313:1: ( ( '(' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3314:1: ( '(' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3410:1: ( ( '(' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3411:1: ( '(' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3314:1: ( '(' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3315:1: '('
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3411:1: ( '(' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3412:1: '('
             {
              before(grammarAccess.getAtomicActionQueryAccess().getLeftParenthesisKeyword_7()); 
-            match(input,31,FOLLOW_31_in_rule__AtomicActionQuery__Group__7__Impl6626); 
+            match(input,32,FOLLOW_32_in_rule__AtomicActionQuery__Group__7__Impl6816); 
              after(grammarAccess.getAtomicActionQueryAccess().getLeftParenthesisKeyword_7()); 
 
             }
@@ -8588,21 +8824,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__8"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3328:1: rule__AtomicActionQuery__Group__8 : rule__AtomicActionQuery__Group__8__Impl rule__AtomicActionQuery__Group__9 ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3425:1: rule__AtomicActionQuery__Group__8 : rule__AtomicActionQuery__Group__8__Impl rule__AtomicActionQuery__Group__9 ;
     public final void rule__AtomicActionQuery__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3332:1: ( rule__AtomicActionQuery__Group__8__Impl rule__AtomicActionQuery__Group__9 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3333:2: rule__AtomicActionQuery__Group__8__Impl rule__AtomicActionQuery__Group__9
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3429:1: ( rule__AtomicActionQuery__Group__8__Impl rule__AtomicActionQuery__Group__9 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3430:2: rule__AtomicActionQuery__Group__8__Impl rule__AtomicActionQuery__Group__9
             {
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__8__Impl_in_rule__AtomicActionQuery__Group__86657);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__8__Impl_in_rule__AtomicActionQuery__Group__86847);
             rule__AtomicActionQuery__Group__8__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__9_in_rule__AtomicActionQuery__Group__86660);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__9_in_rule__AtomicActionQuery__Group__86850);
             rule__AtomicActionQuery__Group__9();
 
             state._fsp--;
@@ -8626,23 +8862,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__8__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3340:1: rule__AtomicActionQuery__Group__8__Impl : ( ( rule__AtomicActionQuery__ValueAssignment_8 ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3437:1: rule__AtomicActionQuery__Group__8__Impl : ( ( rule__AtomicActionQuery__ValueAssignment_8 ) ) ;
     public final void rule__AtomicActionQuery__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3344:1: ( ( ( rule__AtomicActionQuery__ValueAssignment_8 ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3345:1: ( ( rule__AtomicActionQuery__ValueAssignment_8 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3441:1: ( ( ( rule__AtomicActionQuery__ValueAssignment_8 ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3442:1: ( ( rule__AtomicActionQuery__ValueAssignment_8 ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3345:1: ( ( rule__AtomicActionQuery__ValueAssignment_8 ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3346:1: ( rule__AtomicActionQuery__ValueAssignment_8 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3442:1: ( ( rule__AtomicActionQuery__ValueAssignment_8 ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3443:1: ( rule__AtomicActionQuery__ValueAssignment_8 )
             {
              before(grammarAccess.getAtomicActionQueryAccess().getValueAssignment_8()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3347:1: ( rule__AtomicActionQuery__ValueAssignment_8 )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3347:2: rule__AtomicActionQuery__ValueAssignment_8
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3444:1: ( rule__AtomicActionQuery__ValueAssignment_8 )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3444:2: rule__AtomicActionQuery__ValueAssignment_8
             {
-            pushFollow(FOLLOW_rule__AtomicActionQuery__ValueAssignment_8_in_rule__AtomicActionQuery__Group__8__Impl6687);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__ValueAssignment_8_in_rule__AtomicActionQuery__Group__8__Impl6877);
             rule__AtomicActionQuery__ValueAssignment_8();
 
             state._fsp--;
@@ -8673,16 +8909,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__9"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3357:1: rule__AtomicActionQuery__Group__9 : rule__AtomicActionQuery__Group__9__Impl ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3454:1: rule__AtomicActionQuery__Group__9 : rule__AtomicActionQuery__Group__9__Impl ;
     public final void rule__AtomicActionQuery__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3361:1: ( rule__AtomicActionQuery__Group__9__Impl )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3362:2: rule__AtomicActionQuery__Group__9__Impl
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3458:1: ( rule__AtomicActionQuery__Group__9__Impl )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3459:2: rule__AtomicActionQuery__Group__9__Impl
             {
-            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__9__Impl_in_rule__AtomicActionQuery__Group__96717);
+            pushFollow(FOLLOW_rule__AtomicActionQuery__Group__9__Impl_in_rule__AtomicActionQuery__Group__96907);
             rule__AtomicActionQuery__Group__9__Impl();
 
             state._fsp--;
@@ -8706,20 +8942,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__Group__9__Impl"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3368:1: rule__AtomicActionQuery__Group__9__Impl : ( ')' ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3465:1: rule__AtomicActionQuery__Group__9__Impl : ( ')' ) ;
     public final void rule__AtomicActionQuery__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3372:1: ( ( ')' ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3373:1: ( ')' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3469:1: ( ( ')' ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3470:1: ( ')' )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3373:1: ( ')' )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3374:1: ')'
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3470:1: ( ')' )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3471:1: ')'
             {
              before(grammarAccess.getAtomicActionQueryAccess().getRightParenthesisKeyword_9()); 
-            match(input,32,FOLLOW_32_in_rule__AtomicActionQuery__Group__9__Impl6745); 
+            match(input,33,FOLLOW_33_in_rule__AtomicActionQuery__Group__9__Impl6935); 
              after(grammarAccess.getAtomicActionQueryAccess().getRightParenthesisKeyword_9()); 
 
             }
@@ -8743,20 +8979,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AdaptationModel__ImportsAssignment_0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3408:1: rule__AdaptationModel__ImportsAssignment_0 : ( ruleImport ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3505:1: rule__AdaptationModel__ImportsAssignment_0 : ( ruleImport ) ;
     public final void rule__AdaptationModel__ImportsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3412:1: ( ( ruleImport ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3413:1: ( ruleImport )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3509:1: ( ( ruleImport ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3510:1: ( ruleImport )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3413:1: ( ruleImport )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3414:1: ruleImport
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3510:1: ( ruleImport )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3511:1: ruleImport
             {
              before(grammarAccess.getAdaptationModelAccess().getImportsImportParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleImport_in_rule__AdaptationModel__ImportsAssignment_06801);
+            pushFollow(FOLLOW_ruleImport_in_rule__AdaptationModel__ImportsAssignment_06991);
             ruleImport();
 
             state._fsp--;
@@ -8784,20 +9020,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AdaptationModel__NameAssignment_2"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3423:1: rule__AdaptationModel__NameAssignment_2 : ( ruleQualifiedName ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3520:1: rule__AdaptationModel__NameAssignment_2 : ( ruleQualifiedName ) ;
     public final void rule__AdaptationModel__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3427:1: ( ( ruleQualifiedName ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3428:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3524:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3525:1: ( ruleQualifiedName )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3428:1: ( ruleQualifiedName )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3429:1: ruleQualifiedName
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3525:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3526:1: ruleQualifiedName
             {
              before(grammarAccess.getAdaptationModelAccess().getNameQualifiedNameParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__AdaptationModel__NameAssignment_26832);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__AdaptationModel__NameAssignment_27022);
             ruleQualifiedName();
 
             state._fsp--;
@@ -8825,20 +9061,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AdaptationModel__FrequencyAssignment_5"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3438:1: rule__AdaptationModel__FrequencyAssignment_5 : ( RULE_INT ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3535:1: rule__AdaptationModel__FrequencyAssignment_5 : ( RULE_INT ) ;
     public final void rule__AdaptationModel__FrequencyAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3442:1: ( ( RULE_INT ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3443:1: ( RULE_INT )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3539:1: ( ( RULE_INT ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3540:1: ( RULE_INT )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3443:1: ( RULE_INT )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3444:1: RULE_INT
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3540:1: ( RULE_INT )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3541:1: RULE_INT
             {
              before(grammarAccess.getAdaptationModelAccess().getFrequencyINTTerminalRuleCall_5_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__AdaptationModel__FrequencyAssignment_56863); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__AdaptationModel__FrequencyAssignment_57053); 
              after(grammarAccess.getAdaptationModelAccess().getFrequencyINTTerminalRuleCall_5_0()); 
 
             }
@@ -8861,26 +9097,26 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
     // $ANTLR end "rule__AdaptationModel__FrequencyAssignment_5"
 
 
-    // $ANTLR start "rule__AdaptationModel__AdaptationRulesAssignment_7"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3453:1: rule__AdaptationModel__AdaptationRulesAssignment_7 : ( ruleAdaptationRule ) ;
-    public final void rule__AdaptationModel__AdaptationRulesAssignment_7() throws RecognitionException {
+    // $ANTLR start "rule__AdaptationModel__OutputPackageAssignment_8"
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3550:1: rule__AdaptationModel__OutputPackageAssignment_8 : ( ruleQualifiedName ) ;
+    public final void rule__AdaptationModel__OutputPackageAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3457:1: ( ( ruleAdaptationRule ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3458:1: ( ruleAdaptationRule )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3554:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3555:1: ( ruleQualifiedName )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3458:1: ( ruleAdaptationRule )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3459:1: ruleAdaptationRule
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3555:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3556:1: ruleQualifiedName
             {
-             before(grammarAccess.getAdaptationModelAccess().getAdaptationRulesAdaptationRuleParserRuleCall_7_0()); 
-            pushFollow(FOLLOW_ruleAdaptationRule_in_rule__AdaptationModel__AdaptationRulesAssignment_76894);
-            ruleAdaptationRule();
+             before(grammarAccess.getAdaptationModelAccess().getOutputPackageQualifiedNameParserRuleCall_8_0()); 
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__AdaptationModel__OutputPackageAssignment_87084);
+            ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getAdaptationModelAccess().getAdaptationRulesAdaptationRuleParserRuleCall_7_0()); 
+             after(grammarAccess.getAdaptationModelAccess().getOutputPackageQualifiedNameParserRuleCall_8_0()); 
 
             }
 
@@ -8899,24 +9135,65 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
         }
         return ;
     }
-    // $ANTLR end "rule__AdaptationModel__AdaptationRulesAssignment_7"
+    // $ANTLR end "rule__AdaptationModel__OutputPackageAssignment_8"
+
+
+    // $ANTLR start "rule__AdaptationModel__AdaptationRulesAssignment_10"
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3565:1: rule__AdaptationModel__AdaptationRulesAssignment_10 : ( ruleAdaptationRule ) ;
+    public final void rule__AdaptationModel__AdaptationRulesAssignment_10() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3569:1: ( ( ruleAdaptationRule ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3570:1: ( ruleAdaptationRule )
+            {
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3570:1: ( ruleAdaptationRule )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3571:1: ruleAdaptationRule
+            {
+             before(grammarAccess.getAdaptationModelAccess().getAdaptationRulesAdaptationRuleParserRuleCall_10_0()); 
+            pushFollow(FOLLOW_ruleAdaptationRule_in_rule__AdaptationModel__AdaptationRulesAssignment_107115);
+            ruleAdaptationRule();
+
+            state._fsp--;
+
+             after(grammarAccess.getAdaptationModelAccess().getAdaptationRulesAdaptationRuleParserRuleCall_10_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AdaptationModel__AdaptationRulesAssignment_10"
 
 
     // $ANTLR start "rule__Import__ImportURIAssignment_1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3468:1: rule__Import__ImportURIAssignment_1 : ( RULE_STRING ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3580:1: rule__Import__ImportURIAssignment_1 : ( RULE_STRING ) ;
     public final void rule__Import__ImportURIAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3472:1: ( ( RULE_STRING ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3473:1: ( RULE_STRING )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3584:1: ( ( RULE_STRING ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3585:1: ( RULE_STRING )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3473:1: ( RULE_STRING )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3474:1: RULE_STRING
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3585:1: ( RULE_STRING )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3586:1: RULE_STRING
             {
              before(grammarAccess.getImportAccess().getImportURISTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Import__ImportURIAssignment_16925); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Import__ImportURIAssignment_17146); 
              after(grammarAccess.getImportAccess().getImportURISTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -8940,20 +9217,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRule__NameAssignment_1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3483:1: rule__AtomicRule__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3595:1: rule__AtomicRule__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__AtomicRule__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3487:1: ( ( RULE_ID ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3488:1: ( RULE_ID )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3599:1: ( ( RULE_ID ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3600:1: ( RULE_ID )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3488:1: ( RULE_ID )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3489:1: RULE_ID
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3600:1: ( RULE_ID )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3601:1: RULE_ID
             {
              before(grammarAccess.getAtomicRuleAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__AtomicRule__NameAssignment_16956); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__AtomicRule__NameAssignment_17177); 
              after(grammarAccess.getAtomicRuleAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -8977,20 +9254,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRule__RuleBodyAssignment_3"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3498:1: rule__AtomicRule__RuleBodyAssignment_3 : ( ruleRuleBody ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3610:1: rule__AtomicRule__RuleBodyAssignment_3 : ( ruleRuleBody ) ;
     public final void rule__AtomicRule__RuleBodyAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3502:1: ( ( ruleRuleBody ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3503:1: ( ruleRuleBody )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3614:1: ( ( ruleRuleBody ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3615:1: ( ruleRuleBody )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3503:1: ( ruleRuleBody )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3504:1: ruleRuleBody
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3615:1: ( ruleRuleBody )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3616:1: ruleRuleBody
             {
              before(grammarAccess.getAtomicRuleAccess().getRuleBodyRuleBodyParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleRuleBody_in_rule__AtomicRule__RuleBodyAssignment_36987);
+            pushFollow(FOLLOW_ruleRuleBody_in_rule__AtomicRule__RuleBodyAssignment_37208);
             ruleRuleBody();
 
             state._fsp--;
@@ -9018,20 +9295,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__RuleSet__NameAssignment_1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3513:1: rule__RuleSet__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3625:1: rule__RuleSet__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__RuleSet__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3517:1: ( ( RULE_ID ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3518:1: ( RULE_ID )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3629:1: ( ( RULE_ID ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3630:1: ( RULE_ID )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3518:1: ( RULE_ID )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3519:1: RULE_ID
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3630:1: ( RULE_ID )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3631:1: RULE_ID
             {
              before(grammarAccess.getRuleSetAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__RuleSet__NameAssignment_17018); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__RuleSet__NameAssignment_17239); 
              after(grammarAccess.getRuleSetAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -9055,20 +9332,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__RuleSet__AtomicRulesAssignment_3"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3528:1: rule__RuleSet__AtomicRulesAssignment_3 : ( ruleAtomicRuleWithPriority ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3640:1: rule__RuleSet__AtomicRulesAssignment_3 : ( ruleAtomicRuleWithPriority ) ;
     public final void rule__RuleSet__AtomicRulesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3532:1: ( ( ruleAtomicRuleWithPriority ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3533:1: ( ruleAtomicRuleWithPriority )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3644:1: ( ( ruleAtomicRuleWithPriority ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3645:1: ( ruleAtomicRuleWithPriority )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3533:1: ( ruleAtomicRuleWithPriority )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3534:1: ruleAtomicRuleWithPriority
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3645:1: ( ruleAtomicRuleWithPriority )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3646:1: ruleAtomicRuleWithPriority
             {
              before(grammarAccess.getRuleSetAccess().getAtomicRulesAtomicRuleWithPriorityParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleAtomicRuleWithPriority_in_rule__RuleSet__AtomicRulesAssignment_37049);
+            pushFollow(FOLLOW_ruleAtomicRuleWithPriority_in_rule__RuleSet__AtomicRulesAssignment_37270);
             ruleAtomicRuleWithPriority();
 
             state._fsp--;
@@ -9096,20 +9373,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRuleWithPriority__NameAssignment_1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3543:1: rule__AtomicRuleWithPriority__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3655:1: rule__AtomicRuleWithPriority__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__AtomicRuleWithPriority__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3547:1: ( ( RULE_ID ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3548:1: ( RULE_ID )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3659:1: ( ( RULE_ID ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3660:1: ( RULE_ID )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3548:1: ( RULE_ID )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3549:1: RULE_ID
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3660:1: ( RULE_ID )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3661:1: RULE_ID
             {
              before(grammarAccess.getAtomicRuleWithPriorityAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__AtomicRuleWithPriority__NameAssignment_17080); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__AtomicRuleWithPriority__NameAssignment_17301); 
              after(grammarAccess.getAtomicRuleWithPriorityAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -9133,20 +9410,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRuleWithPriority__PriorityValueAssignment_3"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3558:1: rule__AtomicRuleWithPriority__PriorityValueAssignment_3 : ( RULE_INT ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3670:1: rule__AtomicRuleWithPriority__PriorityValueAssignment_3 : ( RULE_INT ) ;
     public final void rule__AtomicRuleWithPriority__PriorityValueAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3562:1: ( ( RULE_INT ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3563:1: ( RULE_INT )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3674:1: ( ( RULE_INT ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3675:1: ( RULE_INT )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3563:1: ( RULE_INT )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3564:1: RULE_INT
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3675:1: ( RULE_INT )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3676:1: RULE_INT
             {
              before(grammarAccess.getAtomicRuleWithPriorityAccess().getPriorityValueINTTerminalRuleCall_3_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__AtomicRuleWithPriority__PriorityValueAssignment_37111); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__AtomicRuleWithPriority__PriorityValueAssignment_37332); 
              after(grammarAccess.getAtomicRuleWithPriorityAccess().getPriorityValueINTTerminalRuleCall_3_0()); 
 
             }
@@ -9170,20 +9447,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicRuleWithPriority__RuleBodyAssignment_5"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3573:1: rule__AtomicRuleWithPriority__RuleBodyAssignment_5 : ( ruleRuleBody ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3685:1: rule__AtomicRuleWithPriority__RuleBodyAssignment_5 : ( ruleRuleBody ) ;
     public final void rule__AtomicRuleWithPriority__RuleBodyAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3577:1: ( ( ruleRuleBody ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3578:1: ( ruleRuleBody )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3689:1: ( ( ruleRuleBody ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3690:1: ( ruleRuleBody )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3578:1: ( ruleRuleBody )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3579:1: ruleRuleBody
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3690:1: ( ruleRuleBody )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3691:1: ruleRuleBody
             {
              before(grammarAccess.getAtomicRuleWithPriorityAccess().getRuleBodyRuleBodyParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_ruleRuleBody_in_rule__AtomicRuleWithPriority__RuleBodyAssignment_57142);
+            pushFollow(FOLLOW_ruleRuleBody_in_rule__AtomicRuleWithPriority__RuleBodyAssignment_57363);
             ruleRuleBody();
 
             state._fsp--;
@@ -9211,20 +9488,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicAction__SecondActionAssignment_1_1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3588:1: rule__AtomicAction__SecondActionAssignment_1_1 : ( ruleAtomicAction ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3700:1: rule__AtomicAction__SecondActionAssignment_1_1 : ( ruleAtomicAction ) ;
     public final void rule__AtomicAction__SecondActionAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3592:1: ( ( ruleAtomicAction ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3593:1: ( ruleAtomicAction )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3704:1: ( ( ruleAtomicAction ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3705:1: ( ruleAtomicAction )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3593:1: ( ruleAtomicAction )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3594:1: ruleAtomicAction
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3705:1: ( ruleAtomicAction )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3706:1: ruleAtomicAction
             {
              before(grammarAccess.getAtomicActionAccess().getSecondActionAtomicActionParserRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_ruleAtomicAction_in_rule__AtomicAction__SecondActionAssignment_1_17173);
+            pushFollow(FOLLOW_ruleAtomicAction_in_rule__AtomicAction__SecondActionAssignment_1_17394);
             ruleAtomicAction();
 
             state._fsp--;
@@ -9252,20 +9529,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__PureAction__AtomicActionAssignment"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3603:1: rule__PureAction__AtomicActionAssignment : ( ruleAtomicAction ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3715:1: rule__PureAction__AtomicActionAssignment : ( ruleAtomicAction ) ;
     public final void rule__PureAction__AtomicActionAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3607:1: ( ( ruleAtomicAction ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3608:1: ( ruleAtomicAction )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3719:1: ( ( ruleAtomicAction ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3720:1: ( ruleAtomicAction )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3608:1: ( ruleAtomicAction )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3609:1: ruleAtomicAction
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3720:1: ( ruleAtomicAction )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3721:1: ruleAtomicAction
             {
              before(grammarAccess.getPureActionAccess().getAtomicActionAtomicActionParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleAtomicAction_in_rule__PureAction__AtomicActionAssignment7204);
+            pushFollow(FOLLOW_ruleAtomicAction_in_rule__PureAction__AtomicActionAssignment7425);
             ruleAtomicAction();
 
             state._fsp--;
@@ -9293,20 +9570,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__ConditionAssignment_0_2"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3618:1: rule__ConditionAction__ConditionAssignment_0_2 : ( ruleCondition ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3730:1: rule__ConditionAction__ConditionAssignment_0_2 : ( ruleCondition ) ;
     public final void rule__ConditionAction__ConditionAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3622:1: ( ( ruleCondition ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3623:1: ( ruleCondition )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3734:1: ( ( ruleCondition ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3735:1: ( ruleCondition )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3623:1: ( ruleCondition )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3624:1: ruleCondition
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3735:1: ( ruleCondition )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3736:1: ruleCondition
             {
              before(grammarAccess.getConditionActionAccess().getConditionConditionParserRuleCall_0_2_0()); 
-            pushFollow(FOLLOW_ruleCondition_in_rule__ConditionAction__ConditionAssignment_0_27235);
+            pushFollow(FOLLOW_ruleCondition_in_rule__ConditionAction__ConditionAssignment_0_27456);
             ruleCondition();
 
             state._fsp--;
@@ -9334,20 +9611,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__AtomicActionAssignment_1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3633:1: rule__ConditionAction__AtomicActionAssignment_1 : ( ruleAtomicAction ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3745:1: rule__ConditionAction__AtomicActionAssignment_1 : ( ruleAtomicAction ) ;
     public final void rule__ConditionAction__AtomicActionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3637:1: ( ( ruleAtomicAction ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3638:1: ( ruleAtomicAction )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3749:1: ( ( ruleAtomicAction ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3750:1: ( ruleAtomicAction )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3638:1: ( ruleAtomicAction )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3639:1: ruleAtomicAction
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3750:1: ( ruleAtomicAction )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3751:1: ruleAtomicAction
             {
              before(grammarAccess.getConditionActionAccess().getAtomicActionAtomicActionParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleAtomicAction_in_rule__ConditionAction__AtomicActionAssignment_17266);
+            pushFollow(FOLLOW_ruleAtomicAction_in_rule__ConditionAction__AtomicActionAssignment_17487);
             ruleAtomicAction();
 
             state._fsp--;
@@ -9375,20 +9652,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__ConditionAction__ElseAssignment_2_1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3648:1: rule__ConditionAction__ElseAssignment_2_1 : ( ruleRuleBody ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3760:1: rule__ConditionAction__ElseAssignment_2_1 : ( ruleRuleBody ) ;
     public final void rule__ConditionAction__ElseAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3652:1: ( ( ruleRuleBody ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3653:1: ( ruleRuleBody )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3764:1: ( ( ruleRuleBody ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3765:1: ( ruleRuleBody )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3653:1: ( ruleRuleBody )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3654:1: ruleRuleBody
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3765:1: ( ruleRuleBody )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3766:1: ruleRuleBody
             {
              before(grammarAccess.getConditionActionAccess().getElseRuleBodyParserRuleCall_2_1_0()); 
-            pushFollow(FOLLOW_ruleRuleBody_in_rule__ConditionAction__ElseAssignment_2_17297);
+            pushFollow(FOLLOW_ruleRuleBody_in_rule__ConditionAction__ElseAssignment_2_17518);
             ruleRuleBody();
 
             state._fsp--;
@@ -9416,24 +9693,24 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Condition__MeasurementAssignment_0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3663:1: rule__Condition__MeasurementAssignment_0 : ( ( ruleQualifiedName ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3775:1: rule__Condition__MeasurementAssignment_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Condition__MeasurementAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3667:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3668:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3779:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3780:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3668:1: ( ( ruleQualifiedName ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3669:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3780:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3781:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getConditionAccess().getMeasurementContextDependentMeasurementCrossReference_0_0()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3670:1: ( ruleQualifiedName )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3671:1: ruleQualifiedName
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3782:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3783:1: ruleQualifiedName
             {
              before(grammarAccess.getConditionAccess().getMeasurementContextDependentMeasurementQualifiedNameParserRuleCall_0_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Condition__MeasurementAssignment_07332);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Condition__MeasurementAssignment_07553);
             ruleQualifiedName();
 
             state._fsp--;
@@ -9465,20 +9742,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Condition__OperatorAssignment_1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3682:1: rule__Condition__OperatorAssignment_1 : ( ruleOPERATOR ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3794:1: rule__Condition__OperatorAssignment_1 : ( ruleOPERATOR ) ;
     public final void rule__Condition__OperatorAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3686:1: ( ( ruleOPERATOR ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3687:1: ( ruleOPERATOR )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3798:1: ( ( ruleOPERATOR ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3799:1: ( ruleOPERATOR )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3687:1: ( ruleOPERATOR )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3688:1: ruleOPERATOR
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3799:1: ( ruleOPERATOR )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3800:1: ruleOPERATOR
             {
              before(grammarAccess.getConditionAccess().getOperatorOPERATORParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleOPERATOR_in_rule__Condition__OperatorAssignment_17367);
+            pushFollow(FOLLOW_ruleOPERATOR_in_rule__Condition__OperatorAssignment_17588);
             ruleOPERATOR();
 
             state._fsp--;
@@ -9506,20 +9783,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Condition__ValueAssignment_2"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3697:1: rule__Condition__ValueAssignment_2 : ( RULE_STRING ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3809:1: rule__Condition__ValueAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Condition__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3701:1: ( ( RULE_STRING ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3702:1: ( RULE_STRING )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3813:1: ( ( RULE_STRING ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3814:1: ( RULE_STRING )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3702:1: ( RULE_STRING )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3703:1: RULE_STRING
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3814:1: ( RULE_STRING )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3815:1: RULE_STRING
             {
              before(grammarAccess.getConditionAccess().getValueSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Condition__ValueAssignment_27398); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Condition__ValueAssignment_27619); 
              after(grammarAccess.getConditionAccess().getValueSTRINGTerminalRuleCall_2_0()); 
 
             }
@@ -9543,20 +9820,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Condition__LogicalOpAssignment_3_0"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3712:1: rule__Condition__LogicalOpAssignment_3_0 : ( ruleLOGICAL_OPERATOR ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3824:1: rule__Condition__LogicalOpAssignment_3_0 : ( ruleLOGICAL_OPERATOR ) ;
     public final void rule__Condition__LogicalOpAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3716:1: ( ( ruleLOGICAL_OPERATOR ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3717:1: ( ruleLOGICAL_OPERATOR )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3828:1: ( ( ruleLOGICAL_OPERATOR ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3829:1: ( ruleLOGICAL_OPERATOR )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3717:1: ( ruleLOGICAL_OPERATOR )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3718:1: ruleLOGICAL_OPERATOR
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3829:1: ( ruleLOGICAL_OPERATOR )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3830:1: ruleLOGICAL_OPERATOR
             {
              before(grammarAccess.getConditionAccess().getLogicalOpLOGICAL_OPERATORParserRuleCall_3_0_0()); 
-            pushFollow(FOLLOW_ruleLOGICAL_OPERATOR_in_rule__Condition__LogicalOpAssignment_3_07429);
+            pushFollow(FOLLOW_ruleLOGICAL_OPERATOR_in_rule__Condition__LogicalOpAssignment_3_07650);
             ruleLOGICAL_OPERATOR();
 
             state._fsp--;
@@ -9584,20 +9861,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__Condition__SecondTermAssignment_3_1"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3727:1: rule__Condition__SecondTermAssignment_3_1 : ( ruleCondition ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3839:1: rule__Condition__SecondTermAssignment_3_1 : ( ruleCondition ) ;
     public final void rule__Condition__SecondTermAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3731:1: ( ( ruleCondition ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3732:1: ( ruleCondition )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3843:1: ( ( ruleCondition ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3844:1: ( ruleCondition )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3732:1: ( ruleCondition )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3733:1: ruleCondition
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3844:1: ( ruleCondition )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3845:1: ruleCondition
             {
              before(grammarAccess.getConditionAccess().getSecondTermConditionParserRuleCall_3_1_0()); 
-            pushFollow(FOLLOW_ruleCondition_in_rule__Condition__SecondTermAssignment_3_17460);
+            pushFollow(FOLLOW_ruleCondition_in_rule__Condition__SecondTermAssignment_3_17681);
             ruleCondition();
 
             state._fsp--;
@@ -9625,24 +9902,24 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionSelectFeature__FeatureAssignment_2"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3742:1: rule__AtomicActionSelectFeature__FeatureAssignment_2 : ( ( ruleQualifiedName ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3854:1: rule__AtomicActionSelectFeature__FeatureAssignment_2 : ( ( ruleQualifiedName ) ) ;
     public final void rule__AtomicActionSelectFeature__FeatureAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3746:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3747:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3858:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3859:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3747:1: ( ( ruleQualifiedName ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3748:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3859:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3860:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getAtomicActionSelectFeatureAccess().getFeatureFeatureCrossReference_2_0()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3749:1: ( ruleQualifiedName )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3750:1: ruleQualifiedName
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3861:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3862:1: ruleQualifiedName
             {
              before(grammarAccess.getAtomicActionSelectFeatureAccess().getFeatureFeatureQualifiedNameParserRuleCall_2_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__AtomicActionSelectFeature__FeatureAssignment_27495);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__AtomicActionSelectFeature__FeatureAssignment_27716);
             ruleQualifiedName();
 
             state._fsp--;
@@ -9674,24 +9951,24 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionDeselectFeature__FeatureAssignment_2"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3761:1: rule__AtomicActionDeselectFeature__FeatureAssignment_2 : ( ( ruleQualifiedName ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3873:1: rule__AtomicActionDeselectFeature__FeatureAssignment_2 : ( ( ruleQualifiedName ) ) ;
     public final void rule__AtomicActionDeselectFeature__FeatureAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3765:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3766:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3877:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3878:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3766:1: ( ( ruleQualifiedName ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3767:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3878:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3879:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getAtomicActionDeselectFeatureAccess().getFeatureFeatureCrossReference_2_0()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3768:1: ( ruleQualifiedName )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3769:1: ruleQualifiedName
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3880:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3881:1: ruleQualifiedName
             {
              before(grammarAccess.getAtomicActionDeselectFeatureAccess().getFeatureFeatureQualifiedNameParserRuleCall_2_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__AtomicActionDeselectFeature__FeatureAssignment_27534);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__AtomicActionDeselectFeature__FeatureAssignment_27755);
             ruleQualifiedName();
 
             state._fsp--;
@@ -9723,24 +10000,24 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3780:1: rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2 : ( ( ruleQualifiedName ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3892:1: rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2 : ( ( ruleQualifiedName ) ) ;
     public final void rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3784:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3785:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3896:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3897:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3785:1: ( ( ruleQualifiedName ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3786:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3897:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3898:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getAtomicActionModifyAttributeAccess().getFeatureAttributeCVAttributeCrossReference_2_0()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3787:1: ( ruleQualifiedName )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3788:1: ruleQualifiedName
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3899:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3900:1: ruleQualifiedName
             {
              before(grammarAccess.getAtomicActionModifyAttributeAccess().getFeatureAttributeCVAttributeQualifiedNameParserRuleCall_2_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_27573);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_27794);
             ruleQualifiedName();
 
             state._fsp--;
@@ -9772,20 +10049,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionModifyAttribute__AttributeValueAssignment_6"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3799:1: rule__AtomicActionModifyAttribute__AttributeValueAssignment_6 : ( ruleAttributeValue ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3911:1: rule__AtomicActionModifyAttribute__AttributeValueAssignment_6 : ( ruleAttributeValue ) ;
     public final void rule__AtomicActionModifyAttribute__AttributeValueAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3803:1: ( ( ruleAttributeValue ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3804:1: ( ruleAttributeValue )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3915:1: ( ( ruleAttributeValue ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3916:1: ( ruleAttributeValue )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3804:1: ( ruleAttributeValue )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3805:1: ruleAttributeValue
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3916:1: ( ruleAttributeValue )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3917:1: ruleAttributeValue
             {
              before(grammarAccess.getAtomicActionModifyAttributeAccess().getAttributeValueAttributeValueParserRuleCall_6_0()); 
-            pushFollow(FOLLOW_ruleAttributeValue_in_rule__AtomicActionModifyAttribute__AttributeValueAssignment_67608);
+            pushFollow(FOLLOW_ruleAttributeValue_in_rule__AtomicActionModifyAttribute__AttributeValueAssignment_67829);
             ruleAttributeValue();
 
             state._fsp--;
@@ -9813,24 +10090,24 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__FeatureAssignment_3"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3814:1: rule__AtomicActionQuery__FeatureAssignment_3 : ( ( ruleQualifiedName ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3926:1: rule__AtomicActionQuery__FeatureAssignment_3 : ( ( ruleQualifiedName ) ) ;
     public final void rule__AtomicActionQuery__FeatureAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3818:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3819:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3930:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3931:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3819:1: ( ( ruleQualifiedName ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3820:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3931:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3932:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getAtomicActionQueryAccess().getFeatureFeatureCrossReference_3_0()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3821:1: ( ruleQualifiedName )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3822:1: ruleQualifiedName
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3933:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3934:1: ruleQualifiedName
             {
              before(grammarAccess.getAtomicActionQueryAccess().getFeatureFeatureQualifiedNameParserRuleCall_3_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__AtomicActionQuery__FeatureAssignment_37643);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__AtomicActionQuery__FeatureAssignment_37864);
             ruleQualifiedName();
 
             state._fsp--;
@@ -9862,20 +10139,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__AtomicActionQuery__ValueAssignment_8"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3833:1: rule__AtomicActionQuery__ValueAssignment_8 : ( RULE_STRING ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3945:1: rule__AtomicActionQuery__ValueAssignment_8 : ( RULE_STRING ) ;
     public final void rule__AtomicActionQuery__ValueAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3837:1: ( ( RULE_STRING ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3838:1: ( RULE_STRING )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3949:1: ( ( RULE_STRING ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3950:1: ( RULE_STRING )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3838:1: ( RULE_STRING )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3839:1: RULE_STRING
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3950:1: ( RULE_STRING )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3951:1: RULE_STRING
             {
              before(grammarAccess.getAtomicActionQueryAccess().getValueSTRINGTerminalRuleCall_8_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__AtomicActionQuery__ValueAssignment_87678); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__AtomicActionQuery__ValueAssignment_87899); 
              after(grammarAccess.getAtomicActionQueryAccess().getValueSTRINGTerminalRuleCall_8_0()); 
 
             }
@@ -9899,20 +10176,20 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__StringAttributeValue__ValueAssignment"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3848:1: rule__StringAttributeValue__ValueAssignment : ( RULE_STRING ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3960:1: rule__StringAttributeValue__ValueAssignment : ( RULE_STRING ) ;
     public final void rule__StringAttributeValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3852:1: ( ( RULE_STRING ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3853:1: ( RULE_STRING )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3964:1: ( ( RULE_STRING ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3965:1: ( RULE_STRING )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3853:1: ( RULE_STRING )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3854:1: RULE_STRING
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3965:1: ( RULE_STRING )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3966:1: RULE_STRING
             {
              before(grammarAccess.getStringAttributeValueAccess().getValueSTRINGTerminalRuleCall_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__StringAttributeValue__ValueAssignment7709); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__StringAttributeValue__ValueAssignment7930); 
              after(grammarAccess.getStringAttributeValueAccess().getValueSTRINGTerminalRuleCall_0()); 
 
             }
@@ -9936,24 +10213,24 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
 
 
     // $ANTLR start "rule__NFRAttributeValue__ValueAssignment"
-    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3863:1: rule__NFRAttributeValue__ValueAssignment : ( ( ruleQualifiedName ) ) ;
+    // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3975:1: rule__NFRAttributeValue__ValueAssignment : ( ( ruleQualifiedName ) ) ;
     public final void rule__NFRAttributeValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3867:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3868:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3979:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3980:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3868:1: ( ( ruleQualifiedName ) )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3869:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3980:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3981:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getNFRAttributeValueAccess().getValueNFRAttributeCrossReference_0()); 
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3870:1: ( ruleQualifiedName )
-            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3871:1: ruleQualifiedName
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3982:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl.ui/src-gen/org/rra/adaptationModel/ui/contentassist/antlr/internal/InternalAdaptationModelDSL.g:3983:1: ruleQualifiedName
             {
              before(grammarAccess.getNFRAttributeValueAccess().getValueNFRAttributeQualifiedNameParserRuleCall_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__NFRAttributeValue__ValueAssignment7744);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__NFRAttributeValue__ValueAssignment7965);
             ruleQualifiedName();
 
             state._fsp--;
@@ -10075,7 +10352,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
     public static final BitSet FOLLOW_ruleNFRAttributeValue_in_rule__AttributeValue__Alternatives1815 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AdaptationModel__Group__0__Impl_in_rule__AdaptationModel__Group__01845 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_rule__AdaptationModel__Group__1_in_rule__AdaptationModel__Group__01848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AdaptationModel__ImportsAssignment_0_in_rule__AdaptationModel__Group__0__Impl1875 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_rule__AdaptationModel__ImportsAssignment_0_in_rule__AdaptationModel__Group__0__Impl1875 = new BitSet(new long[]{0x0000000001000002L});
     public static final BitSet FOLLOW_rule__AdaptationModel__Group__1__Impl_in_rule__AdaptationModel__Group__11906 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__AdaptationModel__Group__2_in_rule__AdaptationModel__Group__11909 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_20_in_rule__AdaptationModel__Group__1__Impl1937 = new BitSet(new long[]{0x0000000000000002L});
@@ -10091,237 +10368,247 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalContentAss
     public static final BitSet FOLLOW_rule__AdaptationModel__Group__5__Impl_in_rule__AdaptationModel__Group__52152 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_rule__AdaptationModel__Group__6_in_rule__AdaptationModel__Group__52155 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AdaptationModel__FrequencyAssignment_5_in_rule__AdaptationModel__Group__5__Impl2182 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AdaptationModel__Group__6__Impl_in_rule__AdaptationModel__Group__62212 = new BitSet(new long[]{0x0000000012000000L});
+    public static final BitSet FOLLOW_rule__AdaptationModel__Group__6__Impl_in_rule__AdaptationModel__Group__62212 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_rule__AdaptationModel__Group__7_in_rule__AdaptationModel__Group__62215 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_21_in_rule__AdaptationModel__Group__6__Impl2243 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AdaptationModel__Group__7__Impl_in_rule__AdaptationModel__Group__72274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AdaptationModel__AdaptationRulesAssignment_7_in_rule__AdaptationModel__Group__7__Impl2301 = new BitSet(new long[]{0x0000000012000002L});
-    public static final BitSet FOLLOW_rule__Import__Group__0__Impl_in_rule__Import__Group__02348 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Import__Group__1_in_rule__Import__Group__02351 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__Import__Group__0__Impl2379 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Import__Group__1__Impl_in_rule__Import__Group__12410 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_rule__Import__Group__2_in_rule__Import__Group__12413 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Import__ImportURIAssignment_1_in_rule__Import__Group__1__Impl2440 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Import__Group__2__Impl_in_rule__Import__Group__22470 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__Import__Group__2__Impl2498 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__02536 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__02539 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl2566 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__12595 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl2622 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__02657 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__02660 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__QualifiedName__Group_1__0__Impl2688 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__12719 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl2746 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicRule__Group__0__Impl_in_rule__AtomicRule__Group__02779 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__AtomicRule__Group__1_in_rule__AtomicRule__Group__02782 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__AtomicRule__Group__0__Impl2810 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicRule__Group__1__Impl_in_rule__AtomicRule__Group__12841 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__AtomicRule__Group__2_in_rule__AtomicRule__Group__12844 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicRule__NameAssignment_1_in_rule__AtomicRule__Group__1__Impl2871 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicRule__Group__2__Impl_in_rule__AtomicRule__Group__22901 = new BitSet(new long[]{0x0000005C40000000L});
-    public static final BitSet FOLLOW_rule__AtomicRule__Group__3_in_rule__AtomicRule__Group__22904 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__AtomicRule__Group__2__Impl2932 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicRule__Group__3__Impl_in_rule__AtomicRule__Group__32963 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__AtomicRule__Group__4_in_rule__AtomicRule__Group__32966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicRule__RuleBodyAssignment_3_in_rule__AtomicRule__Group__3__Impl2993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicRule__Group__4__Impl_in_rule__AtomicRule__Group__43023 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_rule__AtomicRule__Group__5_in_rule__AtomicRule__Group__43026 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__AtomicRule__Group__4__Impl3054 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicRule__Group__5__Impl_in_rule__AtomicRule__Group__53085 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__AtomicRule__Group__5__Impl3113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RuleSet__Group__0__Impl_in_rule__RuleSet__Group__03156 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__RuleSet__Group__1_in_rule__RuleSet__Group__03159 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__RuleSet__Group__0__Impl3187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RuleSet__Group__1__Impl_in_rule__RuleSet__Group__13218 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__RuleSet__Group__2_in_rule__RuleSet__Group__13221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RuleSet__NameAssignment_1_in_rule__RuleSet__Group__1__Impl3248 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RuleSet__Group__2__Impl_in_rule__RuleSet__Group__23278 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__RuleSet__Group__3_in_rule__RuleSet__Group__23281 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__RuleSet__Group__2__Impl3309 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RuleSet__Group__3__Impl_in_rule__RuleSet__Group__33340 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__RuleSet__Group__4_in_rule__RuleSet__Group__33343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RuleSet__AtomicRulesAssignment_3_in_rule__RuleSet__Group__3__Impl3372 = new BitSet(new long[]{0x0000000002000002L});
-    public static final BitSet FOLLOW_rule__RuleSet__AtomicRulesAssignment_3_in_rule__RuleSet__Group__3__Impl3384 = new BitSet(new long[]{0x0000000002000002L});
-    public static final BitSet FOLLOW_rule__RuleSet__Group__4__Impl_in_rule__RuleSet__Group__43417 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_rule__RuleSet__Group__5_in_rule__RuleSet__Group__43420 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__RuleSet__Group__4__Impl3448 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RuleSet__Group__5__Impl_in_rule__RuleSet__Group__53479 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__RuleSet__Group__5__Impl3507 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__0__Impl_in_rule__AtomicRuleWithPriority__Group__03550 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__1_in_rule__AtomicRuleWithPriority__Group__03553 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__AtomicRuleWithPriority__Group__0__Impl3581 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__1__Impl_in_rule__AtomicRuleWithPriority__Group__13612 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__2_in_rule__AtomicRuleWithPriority__Group__13615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__NameAssignment_1_in_rule__AtomicRuleWithPriority__Group__1__Impl3642 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__2__Impl_in_rule__AtomicRuleWithPriority__Group__23672 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__3_in_rule__AtomicRuleWithPriority__Group__23675 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__AtomicRuleWithPriority__Group__2__Impl3703 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__3__Impl_in_rule__AtomicRuleWithPriority__Group__33734 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__4_in_rule__AtomicRuleWithPriority__Group__33737 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__PriorityValueAssignment_3_in_rule__AtomicRuleWithPriority__Group__3__Impl3764 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__4__Impl_in_rule__AtomicRuleWithPriority__Group__43794 = new BitSet(new long[]{0x0000005C40000000L});
-    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__5_in_rule__AtomicRuleWithPriority__Group__43797 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__AtomicRuleWithPriority__Group__4__Impl3825 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__5__Impl_in_rule__AtomicRuleWithPriority__Group__53856 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__6_in_rule__AtomicRuleWithPriority__Group__53859 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__RuleBodyAssignment_5_in_rule__AtomicRuleWithPriority__Group__5__Impl3886 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__6__Impl_in_rule__AtomicRuleWithPriority__Group__63916 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__AtomicRuleWithPriority__Group__6__Impl3944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicAction__Group__0__Impl_in_rule__AtomicAction__Group__03989 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__AtomicAction__Group__1_in_rule__AtomicAction__Group__03992 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicAction__Alternatives_0_in_rule__AtomicAction__Group__0__Impl4019 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicAction__Group__1__Impl_in_rule__AtomicAction__Group__14049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicAction__Group_1__0_in_rule__AtomicAction__Group__1__Impl4076 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicAction__Group_1__0__Impl_in_rule__AtomicAction__Group_1__04111 = new BitSet(new long[]{0x0000005C00000000L});
-    public static final BitSet FOLLOW_rule__AtomicAction__Group_1__1_in_rule__AtomicAction__Group_1__04114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__AtomicAction__Group_1__0__Impl4142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicAction__Group_1__1__Impl_in_rule__AtomicAction__Group_1__14173 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicAction__SecondActionAssignment_1_1_in_rule__AtomicAction__Group_1__1__Impl4200 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConditionAction__Group__0__Impl_in_rule__ConditionAction__Group__04234 = new BitSet(new long[]{0x0000005C00000000L});
-    public static final BitSet FOLLOW_rule__ConditionAction__Group__1_in_rule__ConditionAction__Group__04237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConditionAction__Group_0__0_in_rule__ConditionAction__Group__0__Impl4264 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConditionAction__Group__1__Impl_in_rule__ConditionAction__Group__14294 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_rule__ConditionAction__Group__2_in_rule__ConditionAction__Group__14297 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConditionAction__AtomicActionAssignment_1_in_rule__ConditionAction__Group__1__Impl4324 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConditionAction__Group__2__Impl_in_rule__ConditionAction__Group__24354 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConditionAction__Group_2__0_in_rule__ConditionAction__Group__2__Impl4381 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConditionAction__Group_0__0__Impl_in_rule__ConditionAction__Group_0__04418 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__ConditionAction__Group_0__1_in_rule__ConditionAction__Group_0__04421 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__ConditionAction__Group_0__0__Impl4449 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConditionAction__Group_0__1__Impl_in_rule__ConditionAction__Group_0__14480 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__ConditionAction__Group_0__2_in_rule__ConditionAction__Group_0__14483 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__ConditionAction__Group_0__1__Impl4511 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConditionAction__Group_0__2__Impl_in_rule__ConditionAction__Group_0__24542 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__ConditionAction__Group_0__3_in_rule__ConditionAction__Group_0__24545 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConditionAction__ConditionAssignment_0_2_in_rule__ConditionAction__Group_0__2__Impl4572 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConditionAction__Group_0__3__Impl_in_rule__ConditionAction__Group_0__34602 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__ConditionAction__Group_0__3__Impl4630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConditionAction__Group_2__0__Impl_in_rule__ConditionAction__Group_2__04669 = new BitSet(new long[]{0x0000005C40000000L});
-    public static final BitSet FOLLOW_rule__ConditionAction__Group_2__1_in_rule__ConditionAction__Group_2__04672 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__ConditionAction__Group_2__0__Impl4700 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConditionAction__Group_2__1__Impl_in_rule__ConditionAction__Group_2__14731 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConditionAction__ElseAssignment_2_1_in_rule__ConditionAction__Group_2__1__Impl4758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Condition__Group__0__Impl_in_rule__Condition__Group__04792 = new BitSet(new long[]{0x0000000000007800L});
-    public static final BitSet FOLLOW_rule__Condition__Group__1_in_rule__Condition__Group__04795 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Condition__MeasurementAssignment_0_in_rule__Condition__Group__0__Impl4822 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Condition__Group__1__Impl_in_rule__Condition__Group__14852 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Condition__Group__2_in_rule__Condition__Group__14855 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Condition__OperatorAssignment_1_in_rule__Condition__Group__1__Impl4882 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Condition__Group__2__Impl_in_rule__Condition__Group__24912 = new BitSet(new long[]{0x0000000000018000L});
-    public static final BitSet FOLLOW_rule__Condition__Group__3_in_rule__Condition__Group__24915 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Condition__ValueAssignment_2_in_rule__Condition__Group__2__Impl4942 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Condition__Group__3__Impl_in_rule__Condition__Group__34972 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Condition__Group_3__0_in_rule__Condition__Group__3__Impl4999 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Condition__Group_3__0__Impl_in_rule__Condition__Group_3__05038 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Condition__Group_3__1_in_rule__Condition__Group_3__05041 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Condition__LogicalOpAssignment_3_0_in_rule__Condition__Group_3__0__Impl5068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Condition__Group_3__1__Impl_in_rule__Condition__Group_3__15098 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Condition__SecondTermAssignment_3_1_in_rule__Condition__Group_3__1__Impl5125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionSelectFeature__Group__0__Impl_in_rule__AtomicActionSelectFeature__Group__05159 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__AtomicActionSelectFeature__Group__1_in_rule__AtomicActionSelectFeature__Group__05162 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__AtomicActionSelectFeature__Group__0__Impl5190 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionSelectFeature__Group__1__Impl_in_rule__AtomicActionSelectFeature__Group__15221 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__AtomicActionSelectFeature__Group__2_in_rule__AtomicActionSelectFeature__Group__15224 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__AtomicActionSelectFeature__Group__1__Impl5252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionSelectFeature__Group__2__Impl_in_rule__AtomicActionSelectFeature__Group__25283 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__AtomicActionSelectFeature__Group__3_in_rule__AtomicActionSelectFeature__Group__25286 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionSelectFeature__FeatureAssignment_2_in_rule__AtomicActionSelectFeature__Group__2__Impl5313 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionSelectFeature__Group__3__Impl_in_rule__AtomicActionSelectFeature__Group__35343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__AtomicActionSelectFeature__Group__3__Impl5371 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionDeselectFeature__Group__0__Impl_in_rule__AtomicActionDeselectFeature__Group__05410 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__AtomicActionDeselectFeature__Group__1_in_rule__AtomicActionDeselectFeature__Group__05413 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__AtomicActionDeselectFeature__Group__0__Impl5441 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionDeselectFeature__Group__1__Impl_in_rule__AtomicActionDeselectFeature__Group__15472 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__AtomicActionDeselectFeature__Group__2_in_rule__AtomicActionDeselectFeature__Group__15475 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__AtomicActionDeselectFeature__Group__1__Impl5503 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionDeselectFeature__Group__2__Impl_in_rule__AtomicActionDeselectFeature__Group__25534 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__AtomicActionDeselectFeature__Group__3_in_rule__AtomicActionDeselectFeature__Group__25537 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionDeselectFeature__FeatureAssignment_2_in_rule__AtomicActionDeselectFeature__Group__2__Impl5564 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionDeselectFeature__Group__3__Impl_in_rule__AtomicActionDeselectFeature__Group__35594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__AtomicActionDeselectFeature__Group__3__Impl5622 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__0__Impl_in_rule__AtomicActionModifyAttribute__Group__05661 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__1_in_rule__AtomicActionModifyAttribute__Group__05664 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__AtomicActionModifyAttribute__Group__0__Impl5692 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__1__Impl_in_rule__AtomicActionModifyAttribute__Group__15723 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__2_in_rule__AtomicActionModifyAttribute__Group__15726 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__AtomicActionModifyAttribute__Group__1__Impl5754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__2__Impl_in_rule__AtomicActionModifyAttribute__Group__25785 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__3_in_rule__AtomicActionModifyAttribute__Group__25788 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2_in_rule__AtomicActionModifyAttribute__Group__2__Impl5815 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__3__Impl_in_rule__AtomicActionModifyAttribute__Group__35845 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__4_in_rule__AtomicActionModifyAttribute__Group__35848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__AtomicActionModifyAttribute__Group__3__Impl5876 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__4__Impl_in_rule__AtomicActionModifyAttribute__Group__45907 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__5_in_rule__AtomicActionModifyAttribute__Group__45910 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__AtomicActionModifyAttribute__Group__4__Impl5938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__5__Impl_in_rule__AtomicActionModifyAttribute__Group__55969 = new BitSet(new long[]{0x0000000000000050L});
-    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__6_in_rule__AtomicActionModifyAttribute__Group__55972 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__AtomicActionModifyAttribute__Group__5__Impl6000 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__6__Impl_in_rule__AtomicActionModifyAttribute__Group__66031 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__7_in_rule__AtomicActionModifyAttribute__Group__66034 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__AttributeValueAssignment_6_in_rule__AtomicActionModifyAttribute__Group__6__Impl6061 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__7__Impl_in_rule__AtomicActionModifyAttribute__Group__76091 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__AtomicActionModifyAttribute__Group__7__Impl6119 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__0__Impl_in_rule__AtomicActionQuery__Group__06166 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__1_in_rule__AtomicActionQuery__Group__06169 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__AtomicActionQuery__Group__0__Impl6197 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__1__Impl_in_rule__AtomicActionQuery__Group__16228 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__2_in_rule__AtomicActionQuery__Group__16231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__AtomicActionQuery__Group__1__Impl6259 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__2__Impl_in_rule__AtomicActionQuery__Group__26290 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__3_in_rule__AtomicActionQuery__Group__26293 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__AtomicActionQuery__Group__2__Impl6321 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__3__Impl_in_rule__AtomicActionQuery__Group__36352 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__4_in_rule__AtomicActionQuery__Group__36355 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__FeatureAssignment_3_in_rule__AtomicActionQuery__Group__3__Impl6382 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__4__Impl_in_rule__AtomicActionQuery__Group__46412 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__5_in_rule__AtomicActionQuery__Group__46415 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__AtomicActionQuery__Group__4__Impl6443 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__5__Impl_in_rule__AtomicActionQuery__Group__56474 = new BitSet(new long[]{0x00000000000E0000L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__6_in_rule__AtomicActionQuery__Group__56477 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_rule__AtomicActionQuery__Group__5__Impl6505 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__6__Impl_in_rule__AtomicActionQuery__Group__66536 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__7_in_rule__AtomicActionQuery__Group__66539 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQueryOperator_in_rule__AtomicActionQuery__Group__6__Impl6566 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__7__Impl_in_rule__AtomicActionQuery__Group__76595 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__8_in_rule__AtomicActionQuery__Group__76598 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__AtomicActionQuery__Group__7__Impl6626 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__8__Impl_in_rule__AtomicActionQuery__Group__86657 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__9_in_rule__AtomicActionQuery__Group__86660 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__ValueAssignment_8_in_rule__AtomicActionQuery__Group__8__Impl6687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__9__Impl_in_rule__AtomicActionQuery__Group__96717 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__AtomicActionQuery__Group__9__Impl6745 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleImport_in_rule__AdaptationModel__ImportsAssignment_06801 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__AdaptationModel__NameAssignment_26832 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__AdaptationModel__FrequencyAssignment_56863 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAdaptationRule_in_rule__AdaptationModel__AdaptationRulesAssignment_76894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Import__ImportURIAssignment_16925 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__AtomicRule__NameAssignment_16956 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRuleBody_in_rule__AtomicRule__RuleBodyAssignment_36987 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__RuleSet__NameAssignment_17018 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomicRuleWithPriority_in_rule__RuleSet__AtomicRulesAssignment_37049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__AtomicRuleWithPriority__NameAssignment_17080 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__AtomicRuleWithPriority__PriorityValueAssignment_37111 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRuleBody_in_rule__AtomicRuleWithPriority__RuleBodyAssignment_57142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomicAction_in_rule__AtomicAction__SecondActionAssignment_1_17173 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomicAction_in_rule__PureAction__AtomicActionAssignment7204 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCondition_in_rule__ConditionAction__ConditionAssignment_0_27235 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAtomicAction_in_rule__ConditionAction__AtomicActionAssignment_17266 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRuleBody_in_rule__ConditionAction__ElseAssignment_2_17297 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Condition__MeasurementAssignment_07332 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOPERATOR_in_rule__Condition__OperatorAssignment_17367 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Condition__ValueAssignment_27398 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLOGICAL_OPERATOR_in_rule__Condition__LogicalOpAssignment_3_07429 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCondition_in_rule__Condition__SecondTermAssignment_3_17460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__AtomicActionSelectFeature__FeatureAssignment_27495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__AtomicActionDeselectFeature__FeatureAssignment_27534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_27573 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributeValue_in_rule__AtomicActionModifyAttribute__AttributeValueAssignment_67608 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__AtomicActionQuery__FeatureAssignment_37643 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__AtomicActionQuery__ValueAssignment_87678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__StringAttributeValue__ValueAssignment7709 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__NFRAttributeValue__ValueAssignment7744 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AdaptationModel__Group__7__Impl_in_rule__AdaptationModel__Group__72274 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__AdaptationModel__Group__8_in_rule__AdaptationModel__Group__72277 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__AdaptationModel__Group__7__Impl2305 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AdaptationModel__Group__8__Impl_in_rule__AdaptationModel__Group__82336 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_rule__AdaptationModel__Group__9_in_rule__AdaptationModel__Group__82339 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AdaptationModel__OutputPackageAssignment_8_in_rule__AdaptationModel__Group__8__Impl2366 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AdaptationModel__Group__9__Impl_in_rule__AdaptationModel__Group__92396 = new BitSet(new long[]{0x0000000024000000L});
+    public static final BitSet FOLLOW_rule__AdaptationModel__Group__10_in_rule__AdaptationModel__Group__92399 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__AdaptationModel__Group__9__Impl2427 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AdaptationModel__Group__10__Impl_in_rule__AdaptationModel__Group__102458 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AdaptationModel__AdaptationRulesAssignment_10_in_rule__AdaptationModel__Group__10__Impl2485 = new BitSet(new long[]{0x0000000024000002L});
+    public static final BitSet FOLLOW_rule__Import__Group__0__Impl_in_rule__Import__Group__02538 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Import__Group__1_in_rule__Import__Group__02541 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Import__Group__0__Impl2569 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Import__Group__1__Impl_in_rule__Import__Group__12600 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_rule__Import__Group__2_in_rule__Import__Group__12603 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Import__ImportURIAssignment_1_in_rule__Import__Group__1__Impl2630 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Import__Group__2__Impl_in_rule__Import__Group__22660 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__Import__Group__2__Impl2688 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__02726 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__02729 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl2756 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__12785 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl2812 = new BitSet(new long[]{0x0000000002000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__02847 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__02850 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__QualifiedName__Group_1__0__Impl2878 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__12909 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl2936 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicRule__Group__0__Impl_in_rule__AtomicRule__Group__02969 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__AtomicRule__Group__1_in_rule__AtomicRule__Group__02972 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__AtomicRule__Group__0__Impl3000 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicRule__Group__1__Impl_in_rule__AtomicRule__Group__13031 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__AtomicRule__Group__2_in_rule__AtomicRule__Group__13034 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicRule__NameAssignment_1_in_rule__AtomicRule__Group__1__Impl3061 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicRule__Group__2__Impl_in_rule__AtomicRule__Group__23091 = new BitSet(new long[]{0x000000B880000000L});
+    public static final BitSet FOLLOW_rule__AtomicRule__Group__3_in_rule__AtomicRule__Group__23094 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__AtomicRule__Group__2__Impl3122 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicRule__Group__3__Impl_in_rule__AtomicRule__Group__33153 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__AtomicRule__Group__4_in_rule__AtomicRule__Group__33156 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicRule__RuleBodyAssignment_3_in_rule__AtomicRule__Group__3__Impl3183 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicRule__Group__4__Impl_in_rule__AtomicRule__Group__43213 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_rule__AtomicRule__Group__5_in_rule__AtomicRule__Group__43216 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__AtomicRule__Group__4__Impl3244 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicRule__Group__5__Impl_in_rule__AtomicRule__Group__53275 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__AtomicRule__Group__5__Impl3303 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RuleSet__Group__0__Impl_in_rule__RuleSet__Group__03346 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__RuleSet__Group__1_in_rule__RuleSet__Group__03349 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__RuleSet__Group__0__Impl3377 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RuleSet__Group__1__Impl_in_rule__RuleSet__Group__13408 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__RuleSet__Group__2_in_rule__RuleSet__Group__13411 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RuleSet__NameAssignment_1_in_rule__RuleSet__Group__1__Impl3438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RuleSet__Group__2__Impl_in_rule__RuleSet__Group__23468 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_rule__RuleSet__Group__3_in_rule__RuleSet__Group__23471 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__RuleSet__Group__2__Impl3499 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RuleSet__Group__3__Impl_in_rule__RuleSet__Group__33530 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__RuleSet__Group__4_in_rule__RuleSet__Group__33533 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RuleSet__AtomicRulesAssignment_3_in_rule__RuleSet__Group__3__Impl3562 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_rule__RuleSet__AtomicRulesAssignment_3_in_rule__RuleSet__Group__3__Impl3574 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_rule__RuleSet__Group__4__Impl_in_rule__RuleSet__Group__43607 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_rule__RuleSet__Group__5_in_rule__RuleSet__Group__43610 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__RuleSet__Group__4__Impl3638 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RuleSet__Group__5__Impl_in_rule__RuleSet__Group__53669 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__RuleSet__Group__5__Impl3697 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__0__Impl_in_rule__AtomicRuleWithPriority__Group__03740 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__1_in_rule__AtomicRuleWithPriority__Group__03743 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__AtomicRuleWithPriority__Group__0__Impl3771 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__1__Impl_in_rule__AtomicRuleWithPriority__Group__13802 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__2_in_rule__AtomicRuleWithPriority__Group__13805 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__NameAssignment_1_in_rule__AtomicRuleWithPriority__Group__1__Impl3832 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__2__Impl_in_rule__AtomicRuleWithPriority__Group__23862 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__3_in_rule__AtomicRuleWithPriority__Group__23865 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__AtomicRuleWithPriority__Group__2__Impl3893 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__3__Impl_in_rule__AtomicRuleWithPriority__Group__33924 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__4_in_rule__AtomicRuleWithPriority__Group__33927 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__PriorityValueAssignment_3_in_rule__AtomicRuleWithPriority__Group__3__Impl3954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__4__Impl_in_rule__AtomicRuleWithPriority__Group__43984 = new BitSet(new long[]{0x000000B880000000L});
+    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__5_in_rule__AtomicRuleWithPriority__Group__43987 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__AtomicRuleWithPriority__Group__4__Impl4015 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__5__Impl_in_rule__AtomicRuleWithPriority__Group__54046 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__6_in_rule__AtomicRuleWithPriority__Group__54049 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__RuleBodyAssignment_5_in_rule__AtomicRuleWithPriority__Group__5__Impl4076 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicRuleWithPriority__Group__6__Impl_in_rule__AtomicRuleWithPriority__Group__64106 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__AtomicRuleWithPriority__Group__6__Impl4134 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicAction__Group__0__Impl_in_rule__AtomicAction__Group__04179 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__AtomicAction__Group__1_in_rule__AtomicAction__Group__04182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicAction__Alternatives_0_in_rule__AtomicAction__Group__0__Impl4209 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicAction__Group__1__Impl_in_rule__AtomicAction__Group__14239 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicAction__Group_1__0_in_rule__AtomicAction__Group__1__Impl4266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicAction__Group_1__0__Impl_in_rule__AtomicAction__Group_1__04301 = new BitSet(new long[]{0x000000B800000000L});
+    public static final BitSet FOLLOW_rule__AtomicAction__Group_1__1_in_rule__AtomicAction__Group_1__04304 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__AtomicAction__Group_1__0__Impl4332 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicAction__Group_1__1__Impl_in_rule__AtomicAction__Group_1__14363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicAction__SecondActionAssignment_1_1_in_rule__AtomicAction__Group_1__1__Impl4390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConditionAction__Group__0__Impl_in_rule__ConditionAction__Group__04424 = new BitSet(new long[]{0x000000B800000000L});
+    public static final BitSet FOLLOW_rule__ConditionAction__Group__1_in_rule__ConditionAction__Group__04427 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConditionAction__Group_0__0_in_rule__ConditionAction__Group__0__Impl4454 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConditionAction__Group__1__Impl_in_rule__ConditionAction__Group__14484 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__ConditionAction__Group__2_in_rule__ConditionAction__Group__14487 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConditionAction__AtomicActionAssignment_1_in_rule__ConditionAction__Group__1__Impl4514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConditionAction__Group__2__Impl_in_rule__ConditionAction__Group__24544 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConditionAction__Group_2__0_in_rule__ConditionAction__Group__2__Impl4571 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConditionAction__Group_0__0__Impl_in_rule__ConditionAction__Group_0__04608 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__ConditionAction__Group_0__1_in_rule__ConditionAction__Group_0__04611 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__ConditionAction__Group_0__0__Impl4639 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConditionAction__Group_0__1__Impl_in_rule__ConditionAction__Group_0__14670 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__ConditionAction__Group_0__2_in_rule__ConditionAction__Group_0__14673 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__ConditionAction__Group_0__1__Impl4701 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConditionAction__Group_0__2__Impl_in_rule__ConditionAction__Group_0__24732 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_rule__ConditionAction__Group_0__3_in_rule__ConditionAction__Group_0__24735 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConditionAction__ConditionAssignment_0_2_in_rule__ConditionAction__Group_0__2__Impl4762 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConditionAction__Group_0__3__Impl_in_rule__ConditionAction__Group_0__34792 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__ConditionAction__Group_0__3__Impl4820 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConditionAction__Group_2__0__Impl_in_rule__ConditionAction__Group_2__04859 = new BitSet(new long[]{0x000000B880000000L});
+    public static final BitSet FOLLOW_rule__ConditionAction__Group_2__1_in_rule__ConditionAction__Group_2__04862 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__ConditionAction__Group_2__0__Impl4890 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConditionAction__Group_2__1__Impl_in_rule__ConditionAction__Group_2__14921 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConditionAction__ElseAssignment_2_1_in_rule__ConditionAction__Group_2__1__Impl4948 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Condition__Group__0__Impl_in_rule__Condition__Group__04982 = new BitSet(new long[]{0x0000000000007800L});
+    public static final BitSet FOLLOW_rule__Condition__Group__1_in_rule__Condition__Group__04985 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Condition__MeasurementAssignment_0_in_rule__Condition__Group__0__Impl5012 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Condition__Group__1__Impl_in_rule__Condition__Group__15042 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Condition__Group__2_in_rule__Condition__Group__15045 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Condition__OperatorAssignment_1_in_rule__Condition__Group__1__Impl5072 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Condition__Group__2__Impl_in_rule__Condition__Group__25102 = new BitSet(new long[]{0x0000000000018000L});
+    public static final BitSet FOLLOW_rule__Condition__Group__3_in_rule__Condition__Group__25105 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Condition__ValueAssignment_2_in_rule__Condition__Group__2__Impl5132 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Condition__Group__3__Impl_in_rule__Condition__Group__35162 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Condition__Group_3__0_in_rule__Condition__Group__3__Impl5189 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Condition__Group_3__0__Impl_in_rule__Condition__Group_3__05228 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Condition__Group_3__1_in_rule__Condition__Group_3__05231 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Condition__LogicalOpAssignment_3_0_in_rule__Condition__Group_3__0__Impl5258 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Condition__Group_3__1__Impl_in_rule__Condition__Group_3__15288 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Condition__SecondTermAssignment_3_1_in_rule__Condition__Group_3__1__Impl5315 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionSelectFeature__Group__0__Impl_in_rule__AtomicActionSelectFeature__Group__05349 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__AtomicActionSelectFeature__Group__1_in_rule__AtomicActionSelectFeature__Group__05352 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__AtomicActionSelectFeature__Group__0__Impl5380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionSelectFeature__Group__1__Impl_in_rule__AtomicActionSelectFeature__Group__15411 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__AtomicActionSelectFeature__Group__2_in_rule__AtomicActionSelectFeature__Group__15414 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__AtomicActionSelectFeature__Group__1__Impl5442 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionSelectFeature__Group__2__Impl_in_rule__AtomicActionSelectFeature__Group__25473 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_rule__AtomicActionSelectFeature__Group__3_in_rule__AtomicActionSelectFeature__Group__25476 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionSelectFeature__FeatureAssignment_2_in_rule__AtomicActionSelectFeature__Group__2__Impl5503 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionSelectFeature__Group__3__Impl_in_rule__AtomicActionSelectFeature__Group__35533 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__AtomicActionSelectFeature__Group__3__Impl5561 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionDeselectFeature__Group__0__Impl_in_rule__AtomicActionDeselectFeature__Group__05600 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__AtomicActionDeselectFeature__Group__1_in_rule__AtomicActionDeselectFeature__Group__05603 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__AtomicActionDeselectFeature__Group__0__Impl5631 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionDeselectFeature__Group__1__Impl_in_rule__AtomicActionDeselectFeature__Group__15662 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__AtomicActionDeselectFeature__Group__2_in_rule__AtomicActionDeselectFeature__Group__15665 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__AtomicActionDeselectFeature__Group__1__Impl5693 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionDeselectFeature__Group__2__Impl_in_rule__AtomicActionDeselectFeature__Group__25724 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_rule__AtomicActionDeselectFeature__Group__3_in_rule__AtomicActionDeselectFeature__Group__25727 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionDeselectFeature__FeatureAssignment_2_in_rule__AtomicActionDeselectFeature__Group__2__Impl5754 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionDeselectFeature__Group__3__Impl_in_rule__AtomicActionDeselectFeature__Group__35784 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__AtomicActionDeselectFeature__Group__3__Impl5812 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__0__Impl_in_rule__AtomicActionModifyAttribute__Group__05851 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__1_in_rule__AtomicActionModifyAttribute__Group__05854 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__AtomicActionModifyAttribute__Group__0__Impl5882 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__1__Impl_in_rule__AtomicActionModifyAttribute__Group__15913 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__2_in_rule__AtomicActionModifyAttribute__Group__15916 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__AtomicActionModifyAttribute__Group__1__Impl5944 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__2__Impl_in_rule__AtomicActionModifyAttribute__Group__25975 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__3_in_rule__AtomicActionModifyAttribute__Group__25978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2_in_rule__AtomicActionModifyAttribute__Group__2__Impl6005 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__3__Impl_in_rule__AtomicActionModifyAttribute__Group__36035 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__4_in_rule__AtomicActionModifyAttribute__Group__36038 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__AtomicActionModifyAttribute__Group__3__Impl6066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__4__Impl_in_rule__AtomicActionModifyAttribute__Group__46097 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__5_in_rule__AtomicActionModifyAttribute__Group__46100 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_rule__AtomicActionModifyAttribute__Group__4__Impl6128 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__5__Impl_in_rule__AtomicActionModifyAttribute__Group__56159 = new BitSet(new long[]{0x0000000000000050L});
+    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__6_in_rule__AtomicActionModifyAttribute__Group__56162 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__AtomicActionModifyAttribute__Group__5__Impl6190 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__6__Impl_in_rule__AtomicActionModifyAttribute__Group__66221 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__7_in_rule__AtomicActionModifyAttribute__Group__66224 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__AttributeValueAssignment_6_in_rule__AtomicActionModifyAttribute__Group__6__Impl6251 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionModifyAttribute__Group__7__Impl_in_rule__AtomicActionModifyAttribute__Group__76281 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__AtomicActionModifyAttribute__Group__7__Impl6309 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__0__Impl_in_rule__AtomicActionQuery__Group__06356 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__1_in_rule__AtomicActionQuery__Group__06359 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_rule__AtomicActionQuery__Group__0__Impl6387 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__1__Impl_in_rule__AtomicActionQuery__Group__16418 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__2_in_rule__AtomicActionQuery__Group__16421 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_rule__AtomicActionQuery__Group__1__Impl6449 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__2__Impl_in_rule__AtomicActionQuery__Group__26480 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__3_in_rule__AtomicActionQuery__Group__26483 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__AtomicActionQuery__Group__2__Impl6511 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__3__Impl_in_rule__AtomicActionQuery__Group__36542 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__4_in_rule__AtomicActionQuery__Group__36545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__FeatureAssignment_3_in_rule__AtomicActionQuery__Group__3__Impl6572 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__4__Impl_in_rule__AtomicActionQuery__Group__46602 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__5_in_rule__AtomicActionQuery__Group__46605 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__AtomicActionQuery__Group__4__Impl6633 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__5__Impl_in_rule__AtomicActionQuery__Group__56664 = new BitSet(new long[]{0x00000000000E0000L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__6_in_rule__AtomicActionQuery__Group__56667 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_rule__AtomicActionQuery__Group__5__Impl6695 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__6__Impl_in_rule__AtomicActionQuery__Group__66726 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__7_in_rule__AtomicActionQuery__Group__66729 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQueryOperator_in_rule__AtomicActionQuery__Group__6__Impl6756 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__7__Impl_in_rule__AtomicActionQuery__Group__76785 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__8_in_rule__AtomicActionQuery__Group__76788 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__AtomicActionQuery__Group__7__Impl6816 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__8__Impl_in_rule__AtomicActionQuery__Group__86847 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__9_in_rule__AtomicActionQuery__Group__86850 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__ValueAssignment_8_in_rule__AtomicActionQuery__Group__8__Impl6877 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AtomicActionQuery__Group__9__Impl_in_rule__AtomicActionQuery__Group__96907 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__AtomicActionQuery__Group__9__Impl6935 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleImport_in_rule__AdaptationModel__ImportsAssignment_06991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__AdaptationModel__NameAssignment_27022 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__AdaptationModel__FrequencyAssignment_57053 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__AdaptationModel__OutputPackageAssignment_87084 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAdaptationRule_in_rule__AdaptationModel__AdaptationRulesAssignment_107115 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Import__ImportURIAssignment_17146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__AtomicRule__NameAssignment_17177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRuleBody_in_rule__AtomicRule__RuleBodyAssignment_37208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__RuleSet__NameAssignment_17239 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtomicRuleWithPriority_in_rule__RuleSet__AtomicRulesAssignment_37270 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__AtomicRuleWithPriority__NameAssignment_17301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__AtomicRuleWithPriority__PriorityValueAssignment_37332 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRuleBody_in_rule__AtomicRuleWithPriority__RuleBodyAssignment_57363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtomicAction_in_rule__AtomicAction__SecondActionAssignment_1_17394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtomicAction_in_rule__PureAction__AtomicActionAssignment7425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCondition_in_rule__ConditionAction__ConditionAssignment_0_27456 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAtomicAction_in_rule__ConditionAction__AtomicActionAssignment_17487 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRuleBody_in_rule__ConditionAction__ElseAssignment_2_17518 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Condition__MeasurementAssignment_07553 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOPERATOR_in_rule__Condition__OperatorAssignment_17588 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Condition__ValueAssignment_27619 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLOGICAL_OPERATOR_in_rule__Condition__LogicalOpAssignment_3_07650 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCondition_in_rule__Condition__SecondTermAssignment_3_17681 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__AtomicActionSelectFeature__FeatureAssignment_27716 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__AtomicActionDeselectFeature__FeatureAssignment_27755 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_27794 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributeValue_in_rule__AtomicActionModifyAttribute__AttributeValueAssignment_67829 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__AtomicActionQuery__FeatureAssignment_37864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__AtomicActionQuery__ValueAssignment_87899 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__StringAttributeValue__ValueAssignment7930 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__NFRAttributeValue__ValueAssignment7965 = new BitSet(new long[]{0x0000000000000002L});
 
 }
