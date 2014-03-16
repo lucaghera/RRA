@@ -30,11 +30,25 @@
  */
 package org.rra.adaptationEngine.api;
 
+import java.io.File;
+import java.util.Map;
 import java.util.TreeSet;
 
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.XMIResource;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.hyperflex.featuremodels.FeatureModel;
 import org.hyperflex.featuremodels.Instance;
+import org.hyperflex.featuremodels.featuremodelsFactory;
+import org.hyperflex.featuremodels.featuremodelsPackage;
+import org.rra.adaptationModel.AdaptationModelDSLStandaloneSetup;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModel;
+import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationRule;
 import org.rra.adaptationModel.adaptationModelDSL.AtomicAction;
 import org.rra.adaptationModel.adaptationModelDSL.AtomicActionDeselectFeature;
@@ -48,6 +62,9 @@ import org.rra.adaptationModel.adaptationModelDSL.ConditionAction;
 import org.rra.adaptationModel.adaptationModelDSL.PureAction;
 import org.rra.adaptationModel.adaptationModelDSL.RuleBody;
 import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
+import org.rra.cdmModel.CDMModelPackage;
+import org.rra.cdmModel.ContextDependentMeasurementsModel;
+import org.rra.runtimeFeatureModel.RuntimeFeatureModelPackage;
 
 
 public class AdaptationEngine{
@@ -58,11 +75,66 @@ public class AdaptationEngine{
 
 	AdaptationModel adptationModel;
 
-	public AdaptationEngine(AdaptationModel adptationModel, FeatureModel featureModel, Instance initialFeatureModelInstance){
+	public static void main(String [ ] args){
 
-		this.adptationModel = adptationModel;
+		AdaptationEngine ae = new AdaptationEngine(
+				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.adaptationModel", 
+				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.featuremodel", 
+				null);
 
-		this.featureModel = featureModel;
+	}
+
+	public AdaptationEngine(String adptationModelPath, String featureModelPath, Instance initialFeatureModelInstance){
+
+		// Initialize the model
+	    featuremodelsPackage.eINSTANCE.eClass();
+	    RuntimeFeatureModelPackage.eINSTANCE.eClass();
+	    CDMModelPackage.eINSTANCE.eClass();
+	    
+	    AdaptationModelDSLPackage.eINSTANCE.eClass();
+	    
+	    // Register the XMI resource factory for the .website extension
+
+	    Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+	    Map<String, Object> m = reg.getExtensionToFactoryMap();
+	    m.put("featuremodel", new XMIResourceFactoryImpl());
+	    m.put("adaptationModel", new XMIResourceFactoryImpl());
+	    m.put("cdmmodel", new XMIResourceFactoryImpl());
+
+	    // Obtain a new resource set
+	    ResourceSet resSet = new ResourceSetImpl();
+
+	    
+	    // Get the resource
+	    Resource featureModelResource = resSet.getResource(URI
+	        .createURI(featureModelPath), true);
+	    // Get the first model element and cast it to the right type, in my
+	    // example everything is hierarchical included in this first node
+	    this.featureModel = (FeatureModel) featureModelResource.getContents().get(0);
+	    System.out.println(featureModel.getName());
+	    
+	    String cdmModelPath = "/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.cdmmodel";
+	    // Get the resource
+	    Resource cdmModelResource = resSet.getResource(URI
+	        .createURI(cdmModelPath), true);
+	    // Get the first model element and cast it to the right type, in my
+	    // example everything is hierarchical included in this first node
+	    ContextDependentMeasurementsModel cdmModel = (ContextDependentMeasurementsModel) cdmModelResource.getContents().get(0);
+	  //  System.out.println(featureModel.getName());
+
+	    new AdaptationModelDSLStandaloneSetup().createInjectorAndDoEMFRegistration();
+	    Resource adaptationModelResource = resSet.getResource(URI
+		        .createURI(adptationModelPath), true);
+	    this.adptationModel = (AdaptationModel) adaptationModelResource.getContents().get(0);
+	    System.out.println(//adptationModel.getName());
+	    
+	    ((ConditionAction)((AtomicRule)adptationModel.getAdaptationRules().get(0)).getRuleBody())
+	    .getCondition().getMeasurement().getName());
+
+	    System.out.println(adptationModel.getImports().get(0).getImportURI());
+
+
+		//this.featureModel = featureModel;
 		this.initialFeatureModelInstance = initialFeatureModelInstance;
 		this.currentFeatureModelInstance = initialFeatureModelInstance;
 
@@ -99,9 +171,9 @@ public class AdaptationEngine{
 	private void evaluateAndExecuteAtomicRule(RuleBody ruleBody){
 
 		if(ruleBody instanceof PureAction){
-			
+
 			executeAtomicAction(ruleBody.getAtomicAction());
-			
+
 		}else if(ruleBody instanceof ConditionAction){
 			evaluateAndExecuteConditionAction((ConditionAction)ruleBody);
 		}
@@ -124,7 +196,7 @@ public class AdaptationEngine{
 	}
 
 	private boolean evaluateCondition(Condition condition){
-		
+
 		// To be implemented
 
 		return true;
@@ -137,11 +209,11 @@ public class AdaptationEngine{
 		// As soon as the DLS grammar will be stable the comparator should be moved
 		// in the class AtomicRuleWithPriority
 		TreeSet<AtomicRuleWithPriority> rules = new TreeSet<AtomicRuleWithPriority>(new AtomicRuleWithPriorityComparator());
-		
+
 		rules.addAll(ruleSet.getAtomicRules());
-		
+
 		// 2) Execute the actions starting form max priority to min priority 
-		
+
 		for(AtomicRuleWithPriority action : rules){
 
 			evaluateAndExecuteAtomicRule(action.getRuleBody());
@@ -149,39 +221,39 @@ public class AdaptationEngine{
 		}
 
 	}
-	
+
 	private void executeAtomicAction(AtomicAction atomicAction){
-		
+
 		if(atomicAction instanceof AtomicActionSelectFeature){
-			
+
 			AtomicActionSelectFeature currentAction = (AtomicActionSelectFeature)atomicAction;
-			
+
 			currentFeatureModelInstance.getSelectedFeatures().add(currentAction.getFeature());
-			
+
 		}else if(atomicAction instanceof AtomicActionDeselectFeature){
-			
+
 			AtomicActionDeselectFeature currentAction = (AtomicActionDeselectFeature)atomicAction;
-			
+
 			currentFeatureModelInstance.getSelectedFeatures().remove(currentAction.getFeature());
-			
+
 		}else if(atomicAction instanceof AtomicActionModifyAttribute){
-			
+
 			AtomicActionModifyAttribute currentAction = (AtomicActionModifyAttribute)atomicAction;
-			
-			
-			
+
+
+
 		}else if(atomicAction instanceof AtomicActionQuery){
-			
+
 			AtomicActionQuery currentAction = (AtomicActionQuery)atomicAction;
-			
-			
-			
+
+
+
 		}
-		
+
 		if(atomicAction.getSecondAction() != null){
 			executeAtomicAction(atomicAction.getSecondAction());
 		}
-		
+
 	}
 
 }
