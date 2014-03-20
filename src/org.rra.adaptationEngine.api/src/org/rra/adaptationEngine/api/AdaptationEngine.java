@@ -28,12 +28,14 @@
  * 
  * 
  */
+
 package org.rra.adaptationEngine.api;
 
-import java.awt.TrayIcon.MessageType;
+import java.io.File;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeSet;
 
@@ -45,10 +47,14 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.hyperflex.featuremodels.FeatureModel;
 import org.hyperflex.featuremodels.Instance;
 import org.hyperflex.featuremodels.featuremodelsPackage;
+import org.ros.internal.message.Message;
 import org.ros.message.MessageListener;
 import org.ros.namespace.GraphName;
 import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
+import org.ros.node.DefaultNodeMainExecutor;
+import org.ros.node.NodeConfiguration;
+import org.ros.node.NodeMainExecutor;
 import org.ros.node.topic.Subscriber;
 import org.rra.adaptationModel.AdaptationModelDSLStandaloneSetup;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModel;
@@ -91,7 +97,7 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 	private HashSet<ROSContextDependentMeasurement> cdms;
 
-	private HashMap<ROSContextDependentMeasurement, Object> cdmsVariables;
+	private HashMap<Subscriber<?>, Object> lastReceivedMessages;
 
 	private AdaptationModel adaptationModel;
 
@@ -104,6 +110,26 @@ public class AdaptationEngine extends AbstractNodeMain{
 				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.cdmmodel",
 				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.datatypesmodel");
 
+		//		RosCore rosCore;
+		//		rosCore = RosCore.newPublic(13111);
+		//		rosCore.start();
+		//	    try {
+		//        rosCore.awaitStart();
+		//    } catch (Exception e) {
+		//        throw new RuntimeException(e);
+		//    }
+
+		NodeMainExecutor nodeMainExecutor = DefaultNodeMainExecutor.newDefault();
+
+		NodeConfiguration nodeConfig = NodeConfiguration.newPrivate();
+		nodeMainExecutor.execute(ae, nodeConfig);
+
+ 
+		//	    NodeConfiguration talkerConfig = NodeConfiguration.newPrivate();
+		//	    talkerConfig.setMasterUri(rosCore.getUri());
+		//	    talkerConfig.setNodeName("Adaptation Engine");
+		//	    NodeMain talker = ae;
+		//	    nodeMainExecutor.execute(talker, talkerConfig);
 
 	}
 
@@ -118,21 +144,21 @@ public class AdaptationEngine extends AbstractNodeMain{
 		loadDataTypeModel(dataTypesModelPath);
 		loadAdaptationModel(adaptationModelPath);
 
-		System.out.println("FeatureModel Name: " + featureModel.getName());
+		//		System.out.println("FeatureModel Name: " + featureModel.getName());
+		//
+		//		ROSContextDependentMeasurement cdm = (ROSContextDependentMeasurement)((ConditionAction)((AtomicRule)adaptationModel.getAdaptationRules().get(0)).getRuleBody())
+		//				.getCondition().getMeasurement();
+		//		
+		//		System.out.println(cdm.getName());
+		//		System.out.println(cdm.eIsProxy());
+		//		System.out.println(cdm.getInputDataType());
+		//		System.out.println(cdm.getInputDataType().getName());
+		//		
+		//		System.out.println("** " + dataTypesModel.getTypes().get(0).getName());
+		//		System.out.println("** " + ((ROSContextDependentMeasurement)cdmModel.getCdms().get(0)).getInputDataType());
 
-		ROSContextDependentMeasurement cdm = (ROSContextDependentMeasurement)((ConditionAction)((AtomicRule)adaptationModel.getAdaptationRules().get(0)).getRuleBody())
-				.getCondition().getMeasurement();
-		
-		System.out.println(cdm.getName());
-		System.out.println(cdm.getInputDataType());
-		System.out.println(cdm.getInputDataType().getName());
-		
-		System.out.println("** " + dataTypesModel.getTypes().get(0).getName());
-		
-		
 
-		//initCMDsVariables();
-
+		cdms = AdaptationEngineTools.getROSRequiredCDMs(adaptationModel);
 
 		//this.featureModel = featureModel;
 		this.initialFeatureModelInstance = initialFeatureModelInstance;
@@ -151,7 +177,8 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 		new AdaptationModelDSLStandaloneSetup().createInjectorAndDoEMFRegistration();
 
-		Resource adaptationModelResource = resourceSet.getResource(URI.createURI(adaptationModelPath), true);
+		File file = new File(adaptationModelPath);
+		Resource adaptationModelResource = resourceSet.getResource(URI.createFileURI(file.getAbsolutePath()), true);
 		adaptationModel = (AdaptationModel) adaptationModelResource.getContents().get(0);
 
 
@@ -169,8 +196,8 @@ public class AdaptationEngine extends AbstractNodeMain{
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
 		m.put("featuremodel", new XMIResourceFactoryImpl());
 
-		Resource featureModelResource = resourceSet.getResource(URI
-				.createURI(featureModelPath), true);
+		File file = new File(featureModelPath);
+		Resource featureModelResource = resourceSet.getResource(URI.createFileURI(file.getAbsolutePath()), true);
 		featureModel = (FeatureModel) featureModelResource.getContents().get(0);
 
 	}
@@ -186,7 +213,8 @@ public class AdaptationEngine extends AbstractNodeMain{
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
 		m.put("cdmmodel", new XMIResourceFactoryImpl());
 
-		Resource cdmModelResource = resourceSet.getResource(URI.createURI(cdmModelPath), true);
+		File file = new File(cdmModelPath);
+		Resource cdmModelResource = resourceSet.getResource(URI.createFileURI(file.getAbsolutePath()), true);
 		cdmModel = (ContextDependentMeasurementsModel) cdmModelResource.getContents().get(0);
 
 	}
@@ -202,9 +230,10 @@ public class AdaptationEngine extends AbstractNodeMain{
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
 		m.put("datatypesmodel", new XMIResourceFactoryImpl());
 
-		Resource dataTypesModelResource = resourceSet.getResource(URI.createURI(dataTypesModelPath), true);
+		File file = new File(dataTypesModelPath);
+		Resource dataTypesModelResource = resourceSet.getResource(URI.createFileURI(file.getAbsolutePath()), true);
 		dataTypesModel = (DataTypesModel) dataTypesModelResource.getContents().get(0);
-		
+
 	}
 
 	@Override
@@ -214,28 +243,66 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 	}
 
+	private <T> void addMessageListener(final Subscriber<T> subscriber){
+
+		subscriber.addMessageListener(new MessageListener<T>() {
+			@Override
+			public void onNewMessage(T message) {
+				
+				String className = message.getClass().getCanonicalName();
+
+				try {
+					Class<?> msgClass = Class.forName(className);
+					Method getData = msgClass.getMethod("getData");
+					lastReceivedMessages.put(subscriber, getData.invoke(message));			
+					
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				} catch (SecurityException e) {
+					e.printStackTrace();
+				} catch (NoSuchMethodException e) {
+					e.printStackTrace();
+				} catch (IllegalArgumentException e) {
+					e.printStackTrace();
+				} catch (IllegalAccessException e) {
+					e.printStackTrace();
+				} catch (InvocationTargetException e) {
+					e.printStackTrace();
+				}
+				
+			}
+		});
+
+
+	}
+
 	@Override
 	public void onStart(ConnectedNode connectedNode) {
+
+		lastReceivedMessages = new HashMap<Subscriber<?>, Object>();
 
 		for(ROSContextDependentMeasurement cdm : cdms){
 
 			try {
 
 				String className = cdm.getInputDataType().getMsgs_package() + "." + cdm.getInputDataType().getName();
-				Class<?> MessageType = Class.forName(className);
+				final Class<?> messageType = Class.forName(className);
 
-				String a = std_msgs.String._TYPE;
+				Subscriber<?> subscriber = connectedNode.newSubscriber(cdm.getName(), 
+						(String)messageType.getField("_TYPE").get(null));
 
-				Subscriber<MessageType> subscriber = connectedNode.newSubscriber(cdm.getName(), 
-						(String)MessageType.getField("_TYPE").get(null));
+				lastReceivedMessages.put(subscriber, null);
 
+				addMessageListener(subscriber);
 
-				subscriber.addMessageListener(new MessageListener<MessageType>() {
-					@Override
-					public void onNewMessage(MessageType message) {
-						//[%=subName%]Variable.setData(message.getData());
-					}
-				});
+				//				subscriber.addMessageListener(new MessageListener<?>() {
+				//					@Override
+				//					public void onNewMessage(messageType message) {
+				//						//[%=subName%]Variable.setData(message.getData());
+				//						Method getData = messageType.getMethod("getData()");
+				//						lastReceivedMessages.put(this, getData.invoke(message));
+				//					}
+				//				});
 
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
@@ -259,44 +326,6 @@ public class AdaptationEngine extends AbstractNodeMain{
 		}
 
 	}
-
-	private void initCMDsVariables(){
-
-		cdmsVariables = new HashMap<ROSContextDependentMeasurement, Object>();
-		cdms = AdaptationEngineTools.getROSRequiredCDMs(adaptationModel);
-
-		for(ROSContextDependentMeasurement cdm : cdms){
-
-			try {
-
-				String className = cdm.getInputDataType().getMsgs_package() + "." + cdm.getInputDataType().getName();
-				System.out.println(" - CDM: " + cdm.getName() + ", type:" + className);
-
-				Class<?> MessageType = Class.forName(className);
-
-				cdmsVariables.put(cdm, MessageType.newInstance());
-
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (InstantiationException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IllegalAccessException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-		}
-
-		for (Iterator iterator = cdms.iterator(); iterator.hasNext();) {
-			System.out.println("HashIter - Class:  " + iterator.next().getClass());
-
-		}
-
-
-	}
-
 
 	/*
 	 * This method should be executed periodically. 
