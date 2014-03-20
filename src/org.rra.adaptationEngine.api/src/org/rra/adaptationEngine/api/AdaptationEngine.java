@@ -44,6 +44,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.hyperflex.featuremodels.ContainmentAssociation;
 import org.hyperflex.featuremodels.Feature;
 import org.hyperflex.featuremodels.FeatureModel;
 import org.hyperflex.featuremodels.Instance;
@@ -425,22 +426,22 @@ public class AdaptationEngine extends AbstractNodeMain{
 		}else{
 			return false;
 		}
-		
+
 		Object value = lastReceivedMessages.get(cdm);
-		
+
 		if(value == null){
 			return false;
 		}
-		
+
 		String val = "";
 		if(value instanceof String){
 			val = (String)value;
 		}else{
 			val = String.valueOf(value);
 		}
-		
+
 		val.compareTo(condition.getValue());
-		
+
 		if(condition.getOperator() == MathOperator.LESS){
 			return val.compareTo(condition.getValue()) == -1;
 		}else if(condition.getOperator() == MathOperator.GREATER){
@@ -480,12 +481,13 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 			AtomicActionSelectFeature currentAction = (AtomicActionSelectFeature)atomicAction;
 
-			currentFeatureModelInstance.getSelectedFeatures().add(currentAction.getFeature());
+			selectFeature(currentAction.getFeature());
 
 		}else if(atomicAction instanceof AtomicActionDeselectFeature){
 
 			AtomicActionDeselectFeature currentAction = (AtomicActionDeselectFeature)atomicAction;
 
+			// to be improved, see select feature
 			currentFeatureModelInstance.getSelectedFeatures().remove(currentAction.getFeature());
 
 		}else if(atomicAction instanceof AtomicActionModifyAttribute){
@@ -504,6 +506,47 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 		if(atomicAction.getSecondAction() != null){
 			executeAtomicAction(atomicAction.getSecondAction());
+		}
+
+	}
+
+	private void selectFeature(Feature feature){
+
+		if(currentFeatureModelInstance.getSelectedFeatures().contains(feature)){
+			return;
+		}
+
+		if(feature.eContainer() instanceof Feature){
+			currentFeatureModelInstance.getSelectedFeatures().add(feature);
+		}else if(feature.eContainer() instanceof ContainmentAssociation){
+
+			ContainmentAssociation ca = (ContainmentAssociation)feature.eContainer();
+
+			if(ca.getLowerBound() == 1 && ca.getUpperBound() == 1){
+
+				currentFeatureModelInstance.getSelectedFeatures().removeAll(ca.getSubFeatures());
+				currentFeatureModelInstance.getSelectedFeatures().add(feature);
+
+			}else if(ca.getLowerBound() == 1 && ca.getUpperBound() > 1){
+
+				// to be improved e.g. if there is no space, which feature should we remove
+
+				int count = 0;
+				for(Feature caFeature : ca.getSubFeatures()){
+
+					if(currentFeatureModelInstance.getSelectedFeatures().contains(caFeature)){
+						count ++;
+					}
+
+				}
+
+				if(count < ca.getUpperBound()){
+					currentFeatureModelInstance.getSelectedFeatures().add(feature);
+				}
+
+
+			}
+
 		}
 
 	}
