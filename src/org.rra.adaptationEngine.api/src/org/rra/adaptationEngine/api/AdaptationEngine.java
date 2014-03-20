@@ -44,9 +44,11 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.hyperflex.featuremodels.Feature;
 import org.hyperflex.featuremodels.FeatureModel;
 import org.hyperflex.featuremodels.Instance;
 import org.hyperflex.featuremodels.featuremodelsPackage;
+import org.ros.concurrent.CancellableLoop;
 import org.ros.internal.message.Message;
 import org.ros.message.MessageListener;
 import org.ros.namespace.GraphName;
@@ -69,6 +71,7 @@ import org.rra.adaptationModel.adaptationModelDSL.AtomicRule;
 import org.rra.adaptationModel.adaptationModelDSL.AtomicRuleWithPriority;
 import org.rra.adaptationModel.adaptationModelDSL.Condition;
 import org.rra.adaptationModel.adaptationModelDSL.ConditionAction;
+import org.rra.adaptationModel.adaptationModelDSL.MathOperator;
 import org.rra.adaptationModel.adaptationModelDSL.PureAction;
 import org.rra.adaptationModel.adaptationModelDSL.RuleBody;
 import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
@@ -97,16 +100,18 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 	private HashSet<ROSContextDependentMeasurement> cdms;
 
-	private HashMap<Subscriber<?>, Object> lastReceivedMessages;
+	private HashMap<ROSContextDependentMeasurement, Object> lastReceivedMessages;
 
 	private AdaptationModel adaptationModel;
+
+	private int iteration = 0;
 
 	public static void main(String [ ] args){
 
 		AdaptationEngine ae = new AdaptationEngine(
 				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.adaptationModel", 
 				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.featuremodel",
-				null,
+				"Test",
 				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.cdmmodel",
 				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.datatypesmodel");
 
@@ -124,17 +129,10 @@ public class AdaptationEngine extends AbstractNodeMain{
 		NodeConfiguration nodeConfig = NodeConfiguration.newPrivate();
 		nodeMainExecutor.execute(ae, nodeConfig);
 
- 
-		//	    NodeConfiguration talkerConfig = NodeConfiguration.newPrivate();
-		//	    talkerConfig.setMasterUri(rosCore.getUri());
-		//	    talkerConfig.setNodeName("Adaptation Engine");
-		//	    NodeMain talker = ae;
-		//	    nodeMainExecutor.execute(talker, talkerConfig);
-
 	}
 
 	public AdaptationEngine(String adaptationModelPath, String featureModelPath, 
-			Instance initialFeatureModelInstance, String cdmModelPath,
+			String instanceName, String cdmModelPath,
 			String dataTypesModelPath){
 
 		resourceSet = new ResourceSetImpl();
@@ -161,9 +159,22 @@ public class AdaptationEngine extends AbstractNodeMain{
 		cdms = AdaptationEngineTools.getROSRequiredCDMs(adaptationModel);
 
 		//this.featureModel = featureModel;
-		this.initialFeatureModelInstance = initialFeatureModelInstance;
-		this.currentFeatureModelInstance = initialFeatureModelInstance;
+		for(Instance instance : featureModel.getInstances()){
 
+			if(instance.getId().equals(instanceName)){
+				this.initialFeatureModelInstance = instance;
+				this.currentFeatureModelInstance = instance;
+
+				System.out.println("Initial instace - Selected features: ");
+
+				for(Feature feature : currentFeatureModelInstance.getSelectedFeatures()){
+					System.out.println(" - " + feature.getName());
+				}
+
+				System.out.println("------------------------------------------");
+
+			}
+		}
 
 	}
 
@@ -243,19 +254,19 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 	}
 
-	private <T> void addMessageListener(final Subscriber<T> subscriber){
+	private <T> void addMessageListener(final Subscriber<T> subscriber, final ROSContextDependentMeasurement cdm){
 
 		subscriber.addMessageListener(new MessageListener<T>() {
 			@Override
 			public void onNewMessage(T message) {
-				
+
 				String className = message.getClass().getCanonicalName();
 
 				try {
 					Class<?> msgClass = Class.forName(className);
 					Method getData = msgClass.getMethod("getData");
-					lastReceivedMessages.put(subscriber, getData.invoke(message));			
-					
+					lastReceivedMessages.put(cdm, getData.invoke(message));			
+
 				} catch (ClassNotFoundException e) {
 					e.printStackTrace();
 				} catch (SecurityException e) {
@@ -269,7 +280,7 @@ public class AdaptationEngine extends AbstractNodeMain{
 				} catch (InvocationTargetException e) {
 					e.printStackTrace();
 				}
-				
+
 			}
 		});
 
@@ -279,7 +290,9 @@ public class AdaptationEngine extends AbstractNodeMain{
 	@Override
 	public void onStart(ConnectedNode connectedNode) {
 
-		lastReceivedMessages = new HashMap<Subscriber<?>, Object>();
+		lastReceivedMessages = new HashMap<ROSContextDependentMeasurement, Object>();
+
+		// Register all the subscribers
 
 		for(ROSContextDependentMeasurement cdm : cdms){
 
@@ -291,9 +304,9 @@ public class AdaptationEngine extends AbstractNodeMain{
 				Subscriber<?> subscriber = connectedNode.newSubscriber(cdm.getName(), 
 						(String)messageType.getField("_TYPE").get(null));
 
-				lastReceivedMessages.put(subscriber, null);
+				lastReceivedMessages.put(cdm, null);
 
-				addMessageListener(subscriber);
+				addMessageListener(subscriber, cdm);
 
 				//				subscriber.addMessageListener(new MessageListener<?>() {
 				//					@Override
@@ -321,9 +334,23 @@ public class AdaptationEngine extends AbstractNodeMain{
 				e.printStackTrace();
 			}
 
-
-
 		}
+
+		// Register the loop callback
+
+		connectedNode.executeCancellableLoop(new CancellableLoop(){
+
+			@Override
+			protected void setup() {
+
+			}
+
+			@Override
+			protected void loop() throws InterruptedException {
+				update();
+				Thread.sleep(adaptationModel.getPeriod());
+			}
+		});
 
 	}
 
@@ -340,6 +367,13 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 		}
 
+		System.out.println("Iteration " + iteration + "- Selected features: ");
+
+		for(Feature feature : currentFeatureModelInstance.getSelectedFeatures()){
+			System.out.println(" - " + feature.getName());
+		}
+
+		System.out.println("------------------------------------------");
 
 	}
 
@@ -384,6 +418,38 @@ public class AdaptationEngine extends AbstractNodeMain{
 	private boolean evaluateCondition(Condition condition){
 
 		// To be implemented
+		ROSContextDependentMeasurement cdm = null;
+
+		if(condition.getMeasurement() instanceof ROSContextDependentMeasurement){
+			cdm = (ROSContextDependentMeasurement) condition.getMeasurement();
+		}else{
+			return false;
+		}
+		
+		Object value = lastReceivedMessages.get(cdm);
+		
+		if(value == null){
+			return false;
+		}
+		
+		String val = "";
+		if(value instanceof String){
+			val = (String)value;
+		}else{
+			val = String.valueOf(value);
+		}
+		
+		val.compareTo(condition.getValue());
+		
+		if(condition.getOperator() == MathOperator.LESS){
+			return val.compareTo(condition.getValue()) == -1;
+		}else if(condition.getOperator() == MathOperator.GREATER){
+			return val.compareTo(condition.getValue()) == 1;
+		}else if(condition.getOperator() == MathOperator.EQUAL){
+			return val.compareTo(condition.getValue()) == 0;
+		}else if(condition.getOperator() == MathOperator.DIFFERENT){
+			return val.compareTo(condition.getValue()) != 0;
+		}
 
 		return true;
 	}
