@@ -24,6 +24,7 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -849,9 +850,9 @@ ruleCondition returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getConditionAccess().getOperatorOPERATORParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getConditionAccess().getOperatorMathOperatorEnumRuleCall_1_0()); 
 	    }
-		lv_operator_1_0=ruleOPERATOR		{
+		lv_operator_1_0=ruleMathOperator		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getConditionRule());
 	        }
@@ -859,7 +860,7 @@ ruleCondition returns [EObject current=null]
        			$current, 
        			"operator",
         		lv_operator_1_0, 
-        		"OPERATOR");
+        		"MathOperator");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -885,9 +886,9 @@ ruleCondition returns [EObject current=null]
 )((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getConditionAccess().getLogicalOpLOGICAL_OPERATORParserRuleCall_3_0_0()); 
+	        newCompositeNode(grammarAccess.getConditionAccess().getLogicalOpLogicalOperatorEnumRuleCall_3_0_0()); 
 	    }
-		lv_logicalOp_3_0=ruleLOGICAL_OPERATOR		{
+		lv_logicalOp_3_0=ruleLogicalOperator		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getConditionRule());
 	        }
@@ -895,7 +896,7 @@ ruleCondition returns [EObject current=null]
        			$current, 
        			"logicalOp",
         		lv_logicalOp_3_0, 
-        		"LOGICAL_OPERATOR");
+        		"LogicalOperator");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -920,88 +921,6 @@ ruleCondition returns [EObject current=null]
 )
 ))?)
 ;
-
-
-
-
-
-// Entry rule entryRuleOPERATOR
-entryRuleOPERATOR returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getOPERATORRule()); } 
-	 iv_ruleOPERATOR=ruleOPERATOR 
-	 { $current=$iv_ruleOPERATOR.current.getText(); }  
-	 EOF 
-;
-
-// Rule OPERATOR
-ruleOPERATOR returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-	kw='<' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getOPERATORAccess().getLessThanSignKeyword_0()); 
-    }
-
-    |
-	kw='>' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getOPERATORAccess().getGreaterThanSignKeyword_1()); 
-    }
-
-    |
-	kw='==' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getOPERATORAccess().getEqualsSignEqualsSignKeyword_2()); 
-    }
-
-    |
-	kw='<>' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getOPERATORAccess().getLessThanSignGreaterThanSignKeyword_3()); 
-    }
-)
-    ;
-
-
-
-
-
-// Entry rule entryRuleLOGICAL_OPERATOR
-entryRuleLOGICAL_OPERATOR returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getLOGICAL_OPERATORRule()); } 
-	 iv_ruleLOGICAL_OPERATOR=ruleLOGICAL_OPERATOR 
-	 { $current=$iv_ruleLOGICAL_OPERATOR.current.getText(); }  
-	 EOF 
-;
-
-// Rule LOGICAL_OPERATOR
-ruleLOGICAL_OPERATOR returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-	kw='AND' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getLOGICAL_OPERATORAccess().getANDKeyword_0()); 
-    }
-
-    |
-	kw='OR' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getLOGICAL_OPERATORAccess().getORKeyword_1()); 
-    }
-)
-    ;
 
 
 
@@ -1230,15 +1149,25 @@ ruleAtomicActionQuery returns [EObject current=null]
     {
     	newLeafNode(otherlv_5, grammarAccess.getAtomicActionQueryAccess().getWhere_attribueKeyword_5());
     }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getAtomicActionQueryAccess().getQueryOperatorQueryOperatorEnumRuleCall_6_0()); 
+	    }
+		lv_queryOperator_6_0=ruleQueryOperator		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAtomicActionQueryRule());
+	        }
+       		set(
+       			$current, 
+       			"queryOperator",
+        		lv_queryOperator_6_0, 
+        		"QueryOperator");
+	        afterParserOrEnumRuleCall();
+	    }
 
-    { 
-        newCompositeNode(grammarAccess.getAtomicActionQueryAccess().getQueryOperatorParserRuleCall_6()); 
-    }
-ruleQueryOperator
-    { 
-        afterParserOrEnumRuleCall();
-    }
-	otherlv_7='(' 
+)
+)	otherlv_7='(' 
     {
     	newLeafNode(otherlv_7, grammarAccess.getAtomicActionQueryAccess().getLeftParenthesisKeyword_7());
     }
@@ -1266,47 +1195,6 @@ ruleQueryOperator
     }
 )
 ;
-
-
-
-
-
-// Entry rule entryRuleQueryOperator
-entryRuleQueryOperator returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getQueryOperatorRule()); } 
-	 iv_ruleQueryOperator=ruleQueryOperator 
-	 { $current=$iv_ruleQueryOperator.current.getText(); }  
-	 EOF 
-;
-
-// Rule QueryOperator
-ruleQueryOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-	kw='max' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getQueryOperatorAccess().getMaxKeyword_0()); 
-    }
-
-    |
-	kw='min' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getQueryOperatorAccess().getMinKeyword_1()); 
-    }
-
-    |
-	kw='is' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getQueryOperatorAccess().getIsKeyword_2()); 
-    }
-)
-    ;
 
 
 
@@ -1424,6 +1312,81 @@ ruleNFRAttributeValue returns [EObject current=null]
 ;
 
 
+
+
+
+// Rule MathOperator
+ruleMathOperator returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='<' 
+	{
+        $current = grammarAccess.getMathOperatorAccess().getLESSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getMathOperatorAccess().getLESSEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='>' 
+	{
+        $current = grammarAccess.getMathOperatorAccess().getGREATEREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getMathOperatorAccess().getGREATEREnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='==' 
+	{
+        $current = grammarAccess.getMathOperatorAccess().getEQUALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getMathOperatorAccess().getEQUALEnumLiteralDeclaration_2()); 
+    }
+)
+    |(	enumLiteral_3='<>' 
+	{
+        $current = grammarAccess.getMathOperatorAccess().getDIFFERENTEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_3, grammarAccess.getMathOperatorAccess().getDIFFERENTEnumLiteralDeclaration_3()); 
+    }
+));
+
+
+
+// Rule LogicalOperator
+ruleLogicalOperator returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='AND' 
+	{
+        $current = grammarAccess.getLogicalOperatorAccess().getANDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getLogicalOperatorAccess().getANDEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='OR' 
+	{
+        $current = grammarAccess.getLogicalOperatorAccess().getOREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getLogicalOperatorAccess().getOREnumLiteralDeclaration_1()); 
+    }
+));
+
+
+
+// Rule QueryOperator
+ruleQueryOperator returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='max' 
+	{
+        $current = grammarAccess.getQueryOperatorAccess().getMAXEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getQueryOperatorAccess().getMAXEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='min' 
+	{
+        $current = grammarAccess.getQueryOperatorAccess().getMINEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getQueryOperatorAccess().getMINEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='is' 
+	{
+        $current = grammarAccess.getQueryOperatorAccess().getISEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getQueryOperatorAccess().getISEnumLiteralDeclaration_2()); 
+    }
+));
 
 
 

@@ -13,6 +13,7 @@ import org.hyperflex.featuremodels.Feature;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AtomicActionQuery#getFeature <em>Feature</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AtomicActionQuery#getQueryOperator <em>Query Operator</em>}</li>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.AtomicActionQuery#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
@@ -48,6 +49,35 @@ public interface AtomicActionQuery extends AtomicAction
    * @generated
    */
   void setFeature(Feature value);
+
+  /**
+   * Returns the value of the '<em><b>Query Operator</b></em>' attribute.
+   * The literals are from the enumeration {@link org.rra.adaptationModel.adaptationModelDSL.QueryOperator}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Query Operator</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Query Operator</em>' attribute.
+   * @see org.rra.adaptationModel.adaptationModelDSL.QueryOperator
+   * @see #setQueryOperator(QueryOperator)
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getAtomicActionQuery_QueryOperator()
+   * @model
+   * @generated
+   */
+  QueryOperator getQueryOperator();
+
+  /**
+   * Sets the value of the '{@link org.rra.adaptationModel.adaptationModelDSL.AtomicActionQuery#getQueryOperator <em>Query Operator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Query Operator</em>' attribute.
+   * @see org.rra.adaptationModel.adaptationModelDSL.QueryOperator
+   * @see #getQueryOperator()
+   * @generated
+   */
+  void setQueryOperator(QueryOperator value);
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

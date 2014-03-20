@@ -56,6 +56,7 @@ public interface Condition extends EObject
 
   /**
    * Returns the value of the '<em><b>Operator</b></em>' attribute.
+   * The literals are from the enumeration {@link org.rra.adaptationModel.adaptationModelDSL.MathOperator}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Operator</em>' attribute isn't clear,
@@ -63,22 +64,24 @@ public interface Condition extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Operator</em>' attribute.
-   * @see #setOperator(String)
+   * @see org.rra.adaptationModel.adaptationModelDSL.MathOperator
+   * @see #setOperator(MathOperator)
    * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getCondition_Operator()
    * @model
    * @generated
    */
-  String getOperator();
+  MathOperator getOperator();
 
   /**
    * Sets the value of the '{@link org.rra.adaptationModel.adaptationModelDSL.Condition#getOperator <em>Operator</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Operator</em>' attribute.
+   * @see org.rra.adaptationModel.adaptationModelDSL.MathOperator
    * @see #getOperator()
    * @generated
    */
-  void setOperator(String value);
+  void setOperator(MathOperator value);
 
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.
@@ -108,6 +111,7 @@ public interface Condition extends EObject
 
   /**
    * Returns the value of the '<em><b>Logical Op</b></em>' attribute.
+   * The literals are from the enumeration {@link org.rra.adaptationModel.adaptationModelDSL.LogicalOperator}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Logical Op</em>' attribute isn't clear,
@@ -115,22 +119,24 @@ public interface Condition extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Logical Op</em>' attribute.
-   * @see #setLogicalOp(String)
+   * @see org.rra.adaptationModel.adaptationModelDSL.LogicalOperator
+   * @see #setLogicalOp(LogicalOperator)
    * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage#getCondition_LogicalOp()
    * @model
    * @generated
    */
-  String getLogicalOp();
+  LogicalOperator getLogicalOp();
 
   /**
    * Sets the value of the '{@link org.rra.adaptationModel.adaptationModelDSL.Condition#getLogicalOp <em>Logical Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Logical Op</em>' attribute.
+   * @see org.rra.adaptationModel.adaptationModelDSL.LogicalOperator
    * @see #getLogicalOp()
    * @generated
    */
-  void setLogicalOp(String value);
+  void setLogicalOp(LogicalOperator value);
 
   /**
    * Returns the value of the '<em><b>Second Term</b></em>' containment reference.

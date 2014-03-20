@@ -177,7 +177,7 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Constraint:
-	 *     (feature=[Feature|QualifiedName] value=STRING)
+	 *     (feature=[Feature|QualifiedName] queryOperator=QueryOperator value=STRING)
 	 */
 	protected void sequence_AtomicActionQuery(EObject context, AtomicActionQuery semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -213,7 +213,7 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Constraint:
-	 *     (feature=[Feature|QualifiedName] value=STRING secondAction=AtomicAction?)
+	 *     (feature=[Feature|QualifiedName] queryOperator=QueryOperator value=STRING secondAction=AtomicAction?)
 	 */
 	protected void sequence_AtomicAction_AtomicActionQuery(EObject context, AtomicActionQuery semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -281,7 +281,7 @@ public class AdaptationModelDSLSemanticSequencer extends AbstractDelegatingSeman
 	
 	/**
 	 * Constraint:
-	 *     (measurement=[ContextDependentMeasurement|QualifiedName] operator=OPERATOR value=STRING (logicalOp=LOGICAL_OPERATOR secondTerm=Condition)?)
+	 *     (measurement=[ContextDependentMeasurement|QualifiedName] operator=MathOperator value=STRING (logicalOp=LogicalOperator secondTerm=Condition)?)
 	 */
 	protected void sequence_Condition(EObject context, Condition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

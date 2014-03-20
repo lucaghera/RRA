@@ -7,6 +7,21 @@
     editorPluginID="org.rra.adaptationModel.dsl.editor" runtimeVersion="2.9" usedGenPackages="../../../org.hyperflex.featuremodels.model/models/featureModel.genmodel#//featuremodels ../../../org.rra.cdmModel.model/models/cdmModel.genmodel#//cdmModel ../../../org.rra.runtimeFeatureModel.model/models/runtimeFeatureModel.genmodel#//runtimeFeatureModel">
   <genPackages prefix="AdaptationModelDSL" basePackage="org.rra.adaptationModel" disposableProviderFactory="true"
       fileExtensions="adaptationModel" ecorePackage="AdaptationModelDSL.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="AdaptationModelDSL.ecore#//MathOperator">
+      <genEnumLiterals ecoreEnumLiteral="AdaptationModelDSL.ecore#//MathOperator/LESS"/>
+      <genEnumLiterals ecoreEnumLiteral="AdaptationModelDSL.ecore#//MathOperator/GREATER"/>
+      <genEnumLiterals ecoreEnumLiteral="AdaptationModelDSL.ecore#//MathOperator/EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="AdaptationModelDSL.ecore#//MathOperator/DIFFERENT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="AdaptationModelDSL.ecore#//LogicalOperator">
+      <genEnumLiterals ecoreEnumLiteral="AdaptationModelDSL.ecore#//LogicalOperator/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="AdaptationModelDSL.ecore#//LogicalOperator/OR"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="AdaptationModelDSL.ecore#//QueryOperator">
+      <genEnumLiterals ecoreEnumLiteral="AdaptationModelDSL.ecore#//QueryOperator/MAX"/>
+      <genEnumLiterals ecoreEnumLiteral="AdaptationModelDSL.ecore#//QueryOperator/MIN"/>
+      <genEnumLiterals ecoreEnumLiteral="AdaptationModelDSL.ecore#//QueryOperator/IS"/>
+    </genEnums>
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//AdaptationModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AdaptationModel/imports"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//AdaptationModel/name"/>
@@ -61,6 +76,7 @@
     </genClasses>
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//AtomicActionQuery">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AtomicActionQuery/feature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//AtomicActionQuery/queryOperator"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//AtomicActionQuery/value"/>
     </genClasses>
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//AttributeValue"/>

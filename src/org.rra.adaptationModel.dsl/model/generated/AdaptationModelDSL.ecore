@@ -48,11 +48,21 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Condition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="measurement" eType="ecore:EClass ../../../org.rra.cdmModel.model/models/cdmModel.ecore#//ContextDependentMeasurement"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//MathOperator"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logicalOp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logicalOp" eType="#//LogicalOperator"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="secondTerm" eType="#//Condition"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MathOperator">
+    <eLiterals name="LESS" literal="&lt;"/>
+    <eLiterals name="GREATER" value="1" literal=">"/>
+    <eLiterals name="EQUAL" value="2" literal="=="/>
+    <eLiterals name="DIFFERENT" value="3" literal="&lt;>"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LogicalOperator">
+    <eLiterals name="AND" literal="AND"/>
+    <eLiterals name="OR" value="1" literal="OR"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AtomicActionSelectFeature" eSuperTypes="#//AtomicAction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="ecore:EClass ../../../org.hyperflex.featuremodels.model/models/featureModel.ecore#//Feature"/>
@@ -67,7 +77,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AtomicActionQuery" eSuperTypes="#//AtomicAction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="ecore:EClass ../../../org.hyperflex.featuremodels.model/models/featureModel.ecore#//Feature"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="queryOperator" eType="#//QueryOperator"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="QueryOperator">
+    <eLiterals name="MAX" literal="max"/>
+    <eLiterals name="MIN" value="1" literal="min"/>
+    <eLiterals name="IS" value="2" literal="is"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="StringAttributeValue" eSuperTypes="#//AttributeValue">

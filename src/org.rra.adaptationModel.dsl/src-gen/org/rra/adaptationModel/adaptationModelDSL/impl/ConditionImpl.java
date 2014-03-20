@@ -13,6 +13,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
 import org.rra.adaptationModel.adaptationModelDSL.Condition;
+import org.rra.adaptationModel.adaptationModelDSL.LogicalOperator;
+import org.rra.adaptationModel.adaptationModelDSL.MathOperator;
 
 import org.rra.cdmModel.ContextDependentMeasurement;
 
@@ -53,7 +55,7 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * @generated
    * @ordered
    */
-  protected static final String OPERATOR_EDEFAULT = null;
+  protected static final MathOperator OPERATOR_EDEFAULT = MathOperator.LESS;
 
   /**
    * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
@@ -63,7 +65,7 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * @generated
    * @ordered
    */
-  protected String operator = OPERATOR_EDEFAULT;
+  protected MathOperator operator = OPERATOR_EDEFAULT;
 
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -93,7 +95,7 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * @generated
    * @ordered
    */
-  protected static final String LOGICAL_OP_EDEFAULT = null;
+  protected static final LogicalOperator LOGICAL_OP_EDEFAULT = LogicalOperator.AND;
 
   /**
    * The cached value of the '{@link #getLogicalOp() <em>Logical Op</em>}' attribute.
@@ -103,7 +105,7 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * @generated
    * @ordered
    */
-  protected String logicalOp = LOGICAL_OP_EDEFAULT;
+  protected LogicalOperator logicalOp = LOGICAL_OP_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getSecondTerm() <em>Second Term</em>}' containment reference.
@@ -184,7 +186,7 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getOperator()
+  public MathOperator getOperator()
   {
     return operator;
   }
@@ -194,10 +196,10 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOperator(String newOperator)
+  public void setOperator(MathOperator newOperator)
   {
-    String oldOperator = operator;
-    operator = newOperator;
+    MathOperator oldOperator = operator;
+    operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.CONDITION__OPERATOR, oldOperator, operator));
   }
@@ -230,7 +232,7 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getLogicalOp()
+  public LogicalOperator getLogicalOp()
   {
     return logicalOp;
   }
@@ -240,10 +242,10 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLogicalOp(String newLogicalOp)
+  public void setLogicalOp(LogicalOperator newLogicalOp)
   {
-    String oldLogicalOp = logicalOp;
-    logicalOp = newLogicalOp;
+    LogicalOperator oldLogicalOp = logicalOp;
+    logicalOp = newLogicalOp == null ? LOGICAL_OP_EDEFAULT : newLogicalOp;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.CONDITION__LOGICAL_OP, oldLogicalOp, logicalOp));
   }
@@ -351,13 +353,13 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
         setMeasurement((ContextDependentMeasurement)newValue);
         return;
       case AdaptationModelDSLPackage.CONDITION__OPERATOR:
-        setOperator((String)newValue);
+        setOperator((MathOperator)newValue);
         return;
       case AdaptationModelDSLPackage.CONDITION__VALUE:
         setValue((String)newValue);
         return;
       case AdaptationModelDSLPackage.CONDITION__LOGICAL_OP:
-        setLogicalOp((String)newValue);
+        setLogicalOp((LogicalOperator)newValue);
         return;
       case AdaptationModelDSLPackage.CONDITION__SECOND_TERM:
         setSecondTerm((Condition)newValue);
@@ -408,11 +410,11 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
       case AdaptationModelDSLPackage.CONDITION__MEASUREMENT:
         return measurement != null;
       case AdaptationModelDSLPackage.CONDITION__OPERATOR:
-        return OPERATOR_EDEFAULT == null ? operator != null : !OPERATOR_EDEFAULT.equals(operator);
+        return operator != OPERATOR_EDEFAULT;
       case AdaptationModelDSLPackage.CONDITION__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
       case AdaptationModelDSLPackage.CONDITION__LOGICAL_OP:
-        return LOGICAL_OP_EDEFAULT == null ? logicalOp != null : !LOGICAL_OP_EDEFAULT.equals(logicalOp);
+        return logicalOp != LOGICAL_OP_EDEFAULT;
       case AdaptationModelDSLPackage.CONDITION__SECOND_TERM:
         return secondTerm != null;
     }

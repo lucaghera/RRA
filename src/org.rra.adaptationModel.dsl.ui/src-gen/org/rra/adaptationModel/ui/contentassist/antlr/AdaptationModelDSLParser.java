@@ -40,10 +40,10 @@ public class AdaptationModelDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAdaptationRuleAccess().getAlternatives(), "rule__AdaptationRule__Alternatives");
 					put(grammarAccess.getAtomicActionAccess().getAlternatives_0(), "rule__AtomicAction__Alternatives_0");
 					put(grammarAccess.getRuleBodyAccess().getAlternatives(), "rule__RuleBody__Alternatives");
-					put(grammarAccess.getOPERATORAccess().getAlternatives(), "rule__OPERATOR__Alternatives");
-					put(grammarAccess.getLOGICAL_OPERATORAccess().getAlternatives(), "rule__LOGICAL_OPERATOR__Alternatives");
-					put(grammarAccess.getQueryOperatorAccess().getAlternatives(), "rule__QueryOperator__Alternatives");
 					put(grammarAccess.getAttributeValueAccess().getAlternatives(), "rule__AttributeValue__Alternatives");
+					put(grammarAccess.getMathOperatorAccess().getAlternatives(), "rule__MathOperator__Alternatives");
+					put(grammarAccess.getLogicalOperatorAccess().getAlternatives(), "rule__LogicalOperator__Alternatives");
+					put(grammarAccess.getQueryOperatorAccess().getAlternatives(), "rule__QueryOperator__Alternatives");
 					put(grammarAccess.getAdaptationModelAccess().getGroup(), "rule__AdaptationModel__Group__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 					put(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup(), "rule__QualifiedNameWithWildcard__Group__0");
@@ -91,6 +91,7 @@ public class AdaptationModelDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtomicActionModifyAttributeAccess().getFeatureAttributeAssignment_2(), "rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2");
 					put(grammarAccess.getAtomicActionModifyAttributeAccess().getAttributeValueAssignment_6(), "rule__AtomicActionModifyAttribute__AttributeValueAssignment_6");
 					put(grammarAccess.getAtomicActionQueryAccess().getFeatureAssignment_3(), "rule__AtomicActionQuery__FeatureAssignment_3");
+					put(grammarAccess.getAtomicActionQueryAccess().getQueryOperatorAssignment_6(), "rule__AtomicActionQuery__QueryOperatorAssignment_6");
 					put(grammarAccess.getAtomicActionQueryAccess().getValueAssignment_8(), "rule__AtomicActionQuery__ValueAssignment_8");
 					put(grammarAccess.getStringAttributeValueAccess().getValueAssignment(), "rule__StringAttributeValue__ValueAssignment");
 					put(grammarAccess.getNFRAttributeValueAccess().getValueAssignment(), "rule__NFRAttributeValue__ValueAssignment");

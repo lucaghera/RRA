@@ -23,21 +23,9 @@ public class AdaptationModelDSLSyntacticSequencer extends AbstractSyntacticSeque
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if(ruleCall.getRule() == grammarAccess.getQueryOperatorRule())
-			return getQueryOperatorToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * QueryOperator:
-	 * 	'max' | 'min' | 'is'
-	 * ;
-	 */
-	protected String getQueryOperatorToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "max";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

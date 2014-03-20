@@ -4,6 +4,7 @@ package org.rra.adaptationModel.adaptationModelDSL;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -639,13 +640,22 @@ public interface AdaptationModelDSLPackage extends EPackage
   int ATOMIC_ACTION_QUERY__FEATURE = ATOMIC_ACTION_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Query Operator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATOMIC_ACTION_QUERY__QUERY_OPERATOR = ATOMIC_ACTION_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATOMIC_ACTION_QUERY__VALUE = ATOMIC_ACTION_FEATURE_COUNT + 1;
+  int ATOMIC_ACTION_QUERY__VALUE = ATOMIC_ACTION_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Atomic Action Query</em>' class.
@@ -654,7 +664,7 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATOMIC_ACTION_QUERY_FEATURE_COUNT = ATOMIC_ACTION_FEATURE_COUNT + 2;
+  int ATOMIC_ACTION_QUERY_FEATURE_COUNT = ATOMIC_ACTION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.AttributeValueImpl <em>Attribute Value</em>}' class.
@@ -730,6 +740,36 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @ordered
    */
   int NFR_ATTRIBUTE_VALUE_FEATURE_COUNT = ATTRIBUTE_VALUE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.rra.adaptationModel.adaptationModelDSL.MathOperator <em>Math Operator</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.rra.adaptationModel.adaptationModelDSL.MathOperator
+   * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getMathOperator()
+   * @generated
+   */
+  int MATH_OPERATOR = 18;
+
+  /**
+   * The meta object id for the '{@link org.rra.adaptationModel.adaptationModelDSL.LogicalOperator <em>Logical Operator</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.rra.adaptationModel.adaptationModelDSL.LogicalOperator
+   * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getLogicalOperator()
+   * @generated
+   */
+  int LOGICAL_OPERATOR = 19;
+
+  /**
+   * The meta object id for the '{@link org.rra.adaptationModel.adaptationModelDSL.QueryOperator <em>Query Operator</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.rra.adaptationModel.adaptationModelDSL.QueryOperator
+   * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getQueryOperator()
+   * @generated
+   */
+  int QUERY_OPERATOR = 20;
 
 
   /**
@@ -1169,6 +1209,17 @@ public interface AdaptationModelDSLPackage extends EPackage
   EReference getAtomicActionQuery_Feature();
 
   /**
+   * Returns the meta object for the attribute '{@link org.rra.adaptationModel.adaptationModelDSL.AtomicActionQuery#getQueryOperator <em>Query Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Query Operator</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.AtomicActionQuery#getQueryOperator()
+   * @see #getAtomicActionQuery()
+   * @generated
+   */
+  EAttribute getAtomicActionQuery_QueryOperator();
+
+  /**
    * Returns the meta object for the attribute '{@link org.rra.adaptationModel.adaptationModelDSL.AtomicActionQuery#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1230,6 +1281,36 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @generated
    */
   EReference getNFRAttributeValue_Value();
+
+  /**
+   * Returns the meta object for enum '{@link org.rra.adaptationModel.adaptationModelDSL.MathOperator <em>Math Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Math Operator</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.MathOperator
+   * @generated
+   */
+  EEnum getMathOperator();
+
+  /**
+   * Returns the meta object for enum '{@link org.rra.adaptationModel.adaptationModelDSL.LogicalOperator <em>Logical Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Logical Operator</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.LogicalOperator
+   * @generated
+   */
+  EEnum getLogicalOperator();
+
+  /**
+   * Returns the meta object for enum '{@link org.rra.adaptationModel.adaptationModelDSL.QueryOperator <em>Query Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Query Operator</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.QueryOperator
+   * @generated
+   */
+  EEnum getQueryOperator();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1613,6 +1694,14 @@ public interface AdaptationModelDSLPackage extends EPackage
     EReference ATOMIC_ACTION_QUERY__FEATURE = eINSTANCE.getAtomicActionQuery_Feature();
 
     /**
+     * The meta object literal for the '<em><b>Query Operator</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATOMIC_ACTION_QUERY__QUERY_OPERATOR = eINSTANCE.getAtomicActionQuery_QueryOperator();
+
+    /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1665,6 +1754,36 @@ public interface AdaptationModelDSLPackage extends EPackage
      * @generated
      */
     EReference NFR_ATTRIBUTE_VALUE__VALUE = eINSTANCE.getNFRAttributeValue_Value();
+
+    /**
+     * The meta object literal for the '{@link org.rra.adaptationModel.adaptationModelDSL.MathOperator <em>Math Operator</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.rra.adaptationModel.adaptationModelDSL.MathOperator
+     * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getMathOperator()
+     * @generated
+     */
+    EEnum MATH_OPERATOR = eINSTANCE.getMathOperator();
+
+    /**
+     * The meta object literal for the '{@link org.rra.adaptationModel.adaptationModelDSL.LogicalOperator <em>Logical Operator</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.rra.adaptationModel.adaptationModelDSL.LogicalOperator
+     * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getLogicalOperator()
+     * @generated
+     */
+    EEnum LOGICAL_OPERATOR = eINSTANCE.getLogicalOperator();
+
+    /**
+     * The meta object literal for the '{@link org.rra.adaptationModel.adaptationModelDSL.QueryOperator <em>Query Operator</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.rra.adaptationModel.adaptationModelDSL.QueryOperator
+     * @see org.rra.adaptationModel.adaptationModelDSL.impl.AdaptationModelDSLPackageImpl#getQueryOperator()
+     * @generated
+     */
+    EEnum QUERY_OPERATOR = eINSTANCE.getQueryOperator();
 
   }
 

@@ -102,16 +102,16 @@ ConditionAction:
 // Find a way of expressing complex conditions, with operators priorities
 Condition:
 	measurement=[ cdmModel::ContextDependentMeasurement|QualifiedName ] 
-	operator=OPERATOR value=STRING 
-	( logicalOp=LOGICAL_OPERATOR secondTerm=Condition )? 
+	operator=MathOperator value=STRING 
+	( logicalOp=LogicalOperator secondTerm=Condition )? 
 ;
 
-OPERATOR:
-	'<' | '>' | '==' | '<>'	
+enum MathOperator:
+	LESS='<' | GREATER='>' | EQUAL='==' | DIFFERENT='<>'	
 ;
 
-LOGICAL_OPERATOR:
-	'AND' | 'OR' 
+enum LogicalOperator:
+	AND='AND' | OR='OR' 
 ;
 
 AtomicActionSelectFeature:
@@ -130,11 +130,11 @@ AtomicActionModifyAttribute:
 AtomicActionQuery:
 	'select_feature_*' 
 	'from_variants_of_feature' '(' feature=[ featureModel::Feature|QualifiedName ] ')'
-	'where_attribue' QueryOperator '(' value=STRING ')'  
+	'where_attribue' queryOperator=QueryOperator '(' value=STRING ')'  
 ;
 
-QueryOperator:
-	'max' | 'min' | 'is'
+enum QueryOperator:
+	MAX='max' | MIN='min' | IS='is'
 ;
 
 AttributeValue:

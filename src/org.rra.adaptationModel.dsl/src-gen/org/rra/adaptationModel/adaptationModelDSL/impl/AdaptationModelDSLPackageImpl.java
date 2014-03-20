@@ -4,6 +4,7 @@ package org.rra.adaptationModel.adaptationModelDSL.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -26,8 +27,11 @@ import org.rra.adaptationModel.adaptationModelDSL.AttributeValue;
 import org.rra.adaptationModel.adaptationModelDSL.Condition;
 import org.rra.adaptationModel.adaptationModelDSL.ConditionAction;
 import org.rra.adaptationModel.adaptationModelDSL.Import;
+import org.rra.adaptationModel.adaptationModelDSL.LogicalOperator;
+import org.rra.adaptationModel.adaptationModelDSL.MathOperator;
 import org.rra.adaptationModel.adaptationModelDSL.NFRAttributeValue;
 import org.rra.adaptationModel.adaptationModelDSL.PureAction;
+import org.rra.adaptationModel.adaptationModelDSL.QueryOperator;
 import org.rra.adaptationModel.adaptationModelDSL.RuleBody;
 import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
 import org.rra.adaptationModel.adaptationModelDSL.StringAttributeValue;
@@ -169,6 +173,27 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * @generated
    */
   private EClass nfrAttributeValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum mathOperatorEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum logicalOperatorEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum queryOperatorEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -652,9 +677,19 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAtomicActionQuery_Value()
+  public EAttribute getAtomicActionQuery_QueryOperator()
   {
     return (EAttribute)atomicActionQueryEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAtomicActionQuery_Value()
+  {
+    return (EAttribute)atomicActionQueryEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -705,6 +740,36 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
   public EReference getNFRAttributeValue_Value()
   {
     return (EReference)nfrAttributeValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getMathOperator()
+  {
+    return mathOperatorEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getLogicalOperator()
+  {
+    return logicalOperatorEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getQueryOperator()
+  {
+    return queryOperatorEEnum;
   }
 
   /**
@@ -792,6 +857,7 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
 
     atomicActionQueryEClass = createEClass(ATOMIC_ACTION_QUERY);
     createEReference(atomicActionQueryEClass, ATOMIC_ACTION_QUERY__FEATURE);
+    createEAttribute(atomicActionQueryEClass, ATOMIC_ACTION_QUERY__QUERY_OPERATOR);
     createEAttribute(atomicActionQueryEClass, ATOMIC_ACTION_QUERY__VALUE);
 
     attributeValueEClass = createEClass(ATTRIBUTE_VALUE);
@@ -801,6 +867,11 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
 
     nfrAttributeValueEClass = createEClass(NFR_ATTRIBUTE_VALUE);
     createEReference(nfrAttributeValueEClass, NFR_ATTRIBUTE_VALUE__VALUE);
+
+    // Create enums
+    mathOperatorEEnum = createEEnum(MATH_OPERATOR);
+    logicalOperatorEEnum = createEEnum(LOGICAL_OPERATOR);
+    queryOperatorEEnum = createEEnum(QUERY_OPERATOR);
   }
 
   /**
@@ -887,9 +958,9 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
 
     initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCondition_Measurement(), theCDMModelPackage.getContextDependentMeasurement(), null, "measurement", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCondition_Operator(), ecorePackage.getEString(), "operator", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCondition_Operator(), this.getMathOperator(), "operator", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCondition_Value(), ecorePackage.getEString(), "value", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCondition_LogicalOp(), ecorePackage.getEString(), "logicalOp", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCondition_LogicalOp(), this.getLogicalOperator(), "logicalOp", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCondition_SecondTerm(), this.getCondition(), null, "secondTerm", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(atomicActionSelectFeatureEClass, AtomicActionSelectFeature.class, "AtomicActionSelectFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -904,6 +975,7 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
 
     initEClass(atomicActionQueryEClass, AtomicActionQuery.class, "AtomicActionQuery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAtomicActionQuery_Feature(), thefeaturemodelsPackage.getFeature(), null, "feature", null, 0, 1, AtomicActionQuery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAtomicActionQuery_QueryOperator(), this.getQueryOperator(), "queryOperator", null, 0, 1, AtomicActionQuery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAtomicActionQuery_Value(), ecorePackage.getEString(), "value", null, 0, 1, AtomicActionQuery.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeValueEClass, AttributeValue.class, "AttributeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -913,6 +985,22 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
 
     initEClass(nfrAttributeValueEClass, NFRAttributeValue.class, "NFRAttributeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getNFRAttributeValue_Value(), theRuntimeFeatureModelPackage.getNFRAttribute(), null, "value", null, 0, 1, NFRAttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    // Initialize enums and add enum literals
+    initEEnum(mathOperatorEEnum, MathOperator.class, "MathOperator");
+    addEEnumLiteral(mathOperatorEEnum, MathOperator.LESS);
+    addEEnumLiteral(mathOperatorEEnum, MathOperator.GREATER);
+    addEEnumLiteral(mathOperatorEEnum, MathOperator.EQUAL);
+    addEEnumLiteral(mathOperatorEEnum, MathOperator.DIFFERENT);
+
+    initEEnum(logicalOperatorEEnum, LogicalOperator.class, "LogicalOperator");
+    addEEnumLiteral(logicalOperatorEEnum, LogicalOperator.AND);
+    addEEnumLiteral(logicalOperatorEEnum, LogicalOperator.OR);
+
+    initEEnum(queryOperatorEEnum, QueryOperator.class, "QueryOperator");
+    addEEnumLiteral(queryOperatorEEnum, QueryOperator.MAX);
+    addEEnumLiteral(queryOperatorEEnum, QueryOperator.MIN);
+    addEEnumLiteral(queryOperatorEEnum, QueryOperator.IS);
 
     // Create resource
     createResource(eNS_URI);

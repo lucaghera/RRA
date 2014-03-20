@@ -13,6 +13,7 @@ import org.hyperflex.featuremodels.Feature;
 
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
 import org.rra.adaptationModel.adaptationModelDSL.AtomicActionQuery;
+import org.rra.adaptationModel.adaptationModelDSL.QueryOperator;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +23,7 @@ import org.rra.adaptationModel.adaptationModelDSL.AtomicActionQuery;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AtomicActionQueryImpl#getFeature <em>Feature</em>}</li>
+ *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AtomicActionQueryImpl#getQueryOperator <em>Query Operator</em>}</li>
  *   <li>{@link org.rra.adaptationModel.adaptationModelDSL.impl.AtomicActionQueryImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
@@ -39,6 +41,26 @@ public class AtomicActionQueryImpl extends AtomicActionImpl implements AtomicAct
    * @ordered
    */
   protected Feature feature;
+
+  /**
+   * The default value of the '{@link #getQueryOperator() <em>Query Operator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQueryOperator()
+   * @generated
+   * @ordered
+   */
+  protected static final QueryOperator QUERY_OPERATOR_EDEFAULT = QueryOperator.MAX;
+
+  /**
+   * The cached value of the '{@link #getQueryOperator() <em>Query Operator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQueryOperator()
+   * @generated
+   * @ordered
+   */
+  protected QueryOperator queryOperator = QUERY_OPERATOR_EDEFAULT;
 
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -129,6 +151,29 @@ public class AtomicActionQueryImpl extends AtomicActionImpl implements AtomicAct
    * <!-- end-user-doc -->
    * @generated
    */
+  public QueryOperator getQueryOperator()
+  {
+    return queryOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setQueryOperator(QueryOperator newQueryOperator)
+  {
+    QueryOperator oldQueryOperator = queryOperator;
+    queryOperator = newQueryOperator == null ? QUERY_OPERATOR_EDEFAULT : newQueryOperator;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AdaptationModelDSLPackage.ATOMIC_ACTION_QUERY__QUERY_OPERATOR, oldQueryOperator, queryOperator));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getValue()
   {
     return value;
@@ -160,6 +205,8 @@ public class AtomicActionQueryImpl extends AtomicActionImpl implements AtomicAct
       case AdaptationModelDSLPackage.ATOMIC_ACTION_QUERY__FEATURE:
         if (resolve) return getFeature();
         return basicGetFeature();
+      case AdaptationModelDSLPackage.ATOMIC_ACTION_QUERY__QUERY_OPERATOR:
+        return getQueryOperator();
       case AdaptationModelDSLPackage.ATOMIC_ACTION_QUERY__VALUE:
         return getValue();
     }
@@ -178,6 +225,9 @@ public class AtomicActionQueryImpl extends AtomicActionImpl implements AtomicAct
     {
       case AdaptationModelDSLPackage.ATOMIC_ACTION_QUERY__FEATURE:
         setFeature((Feature)newValue);
+        return;
+      case AdaptationModelDSLPackage.ATOMIC_ACTION_QUERY__QUERY_OPERATOR:
+        setQueryOperator((QueryOperator)newValue);
         return;
       case AdaptationModelDSLPackage.ATOMIC_ACTION_QUERY__VALUE:
         setValue((String)newValue);
@@ -199,6 +249,9 @@ public class AtomicActionQueryImpl extends AtomicActionImpl implements AtomicAct
       case AdaptationModelDSLPackage.ATOMIC_ACTION_QUERY__FEATURE:
         setFeature((Feature)null);
         return;
+      case AdaptationModelDSLPackage.ATOMIC_ACTION_QUERY__QUERY_OPERATOR:
+        setQueryOperator(QUERY_OPERATOR_EDEFAULT);
+        return;
       case AdaptationModelDSLPackage.ATOMIC_ACTION_QUERY__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
@@ -218,6 +271,8 @@ public class AtomicActionQueryImpl extends AtomicActionImpl implements AtomicAct
     {
       case AdaptationModelDSLPackage.ATOMIC_ACTION_QUERY__FEATURE:
         return feature != null;
+      case AdaptationModelDSLPackage.ATOMIC_ACTION_QUERY__QUERY_OPERATOR:
+        return queryOperator != QUERY_OPERATOR_EDEFAULT;
       case AdaptationModelDSLPackage.ATOMIC_ACTION_QUERY__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
@@ -235,7 +290,9 @@ public class AtomicActionQueryImpl extends AtomicActionImpl implements AtomicAct
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (value: ");
+    result.append(" (queryOperator: ");
+    result.append(queryOperator);
+    result.append(", value: ");
     result.append(value);
     result.append(')');
     return result.toString();

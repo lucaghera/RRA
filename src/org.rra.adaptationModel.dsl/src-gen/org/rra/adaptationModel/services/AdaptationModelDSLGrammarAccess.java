@@ -511,12 +511,12 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final CrossReference cMeasurementContextDependentMeasurementCrossReference_0_0 = (CrossReference)cMeasurementAssignment_0.eContents().get(0);
 		private final RuleCall cMeasurementContextDependentMeasurementQualifiedNameParserRuleCall_0_0_1 = (RuleCall)cMeasurementContextDependentMeasurementCrossReference_0_0.eContents().get(1);
 		private final Assignment cOperatorAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cOperatorOPERATORParserRuleCall_1_0 = (RuleCall)cOperatorAssignment_1.eContents().get(0);
+		private final RuleCall cOperatorMathOperatorEnumRuleCall_1_0 = (RuleCall)cOperatorAssignment_1.eContents().get(0);
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Assignment cLogicalOpAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final RuleCall cLogicalOpLOGICAL_OPERATORParserRuleCall_3_0_0 = (RuleCall)cLogicalOpAssignment_3_0.eContents().get(0);
+		private final RuleCall cLogicalOpLogicalOperatorEnumRuleCall_3_0_0 = (RuleCall)cLogicalOpAssignment_3_0.eContents().get(0);
 		private final Assignment cSecondTermAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cSecondTermConditionParserRuleCall_3_1_0 = (RuleCall)cSecondTermAssignment_3_1.eContents().get(0);
 		
@@ -524,12 +524,12 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		//// Find a way for using parenthesis for priority between operators
 		//// Find a way of expressing complex conditions, with operators priorities
 		//Condition:
-		//	measurement=[cdmModel::ContextDependentMeasurement|QualifiedName] operator=OPERATOR value=STRING
-		//	(logicalOp=LOGICAL_OPERATOR secondTerm=Condition)?;
+		//	measurement=[cdmModel::ContextDependentMeasurement|QualifiedName] operator=MathOperator value=STRING
+		//	(logicalOp=LogicalOperator secondTerm=Condition)?;
 		public ParserRule getRule() { return rule; }
 
-		//measurement=[cdmModel::ContextDependentMeasurement|QualifiedName] operator=OPERATOR value=STRING
-		//(logicalOp=LOGICAL_OPERATOR secondTerm=Condition)?
+		//measurement=[cdmModel::ContextDependentMeasurement|QualifiedName] operator=MathOperator value=STRING
+		//(logicalOp=LogicalOperator secondTerm=Condition)?
 		public Group getGroup() { return cGroup; }
 
 		//measurement=[cdmModel::ContextDependentMeasurement|QualifiedName]
@@ -541,11 +541,11 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		//QualifiedName
 		public RuleCall getMeasurementContextDependentMeasurementQualifiedNameParserRuleCall_0_0_1() { return cMeasurementContextDependentMeasurementQualifiedNameParserRuleCall_0_0_1; }
 
-		//operator=OPERATOR
+		//operator=MathOperator
 		public Assignment getOperatorAssignment_1() { return cOperatorAssignment_1; }
 
-		//OPERATOR
-		public RuleCall getOperatorOPERATORParserRuleCall_1_0() { return cOperatorOPERATORParserRuleCall_1_0; }
+		//MathOperator
+		public RuleCall getOperatorMathOperatorEnumRuleCall_1_0() { return cOperatorMathOperatorEnumRuleCall_1_0; }
 
 		//value=STRING
 		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
@@ -553,68 +553,20 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_2_0() { return cValueSTRINGTerminalRuleCall_2_0; }
 
-		//(logicalOp=LOGICAL_OPERATOR secondTerm=Condition)?
+		//(logicalOp=LogicalOperator secondTerm=Condition)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//logicalOp=LOGICAL_OPERATOR
+		//logicalOp=LogicalOperator
 		public Assignment getLogicalOpAssignment_3_0() { return cLogicalOpAssignment_3_0; }
 
-		//LOGICAL_OPERATOR
-		public RuleCall getLogicalOpLOGICAL_OPERATORParserRuleCall_3_0_0() { return cLogicalOpLOGICAL_OPERATORParserRuleCall_3_0_0; }
+		//LogicalOperator
+		public RuleCall getLogicalOpLogicalOperatorEnumRuleCall_3_0_0() { return cLogicalOpLogicalOperatorEnumRuleCall_3_0_0; }
 
 		//secondTerm=Condition
 		public Assignment getSecondTermAssignment_3_1() { return cSecondTermAssignment_3_1; }
 
 		//Condition
 		public RuleCall getSecondTermConditionParserRuleCall_3_1_0() { return cSecondTermConditionParserRuleCall_3_1_0; }
-	}
-
-	public class OPERATORElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OPERATOR");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cLessThanSignKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cGreaterThanSignKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cEqualsSignEqualsSignKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cLessThanSignGreaterThanSignKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		
-		//OPERATOR:
-		//	"<" | ">" | "==" | "<>";
-		public ParserRule getRule() { return rule; }
-
-		//"<" | ">" | "==" | "<>"
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//"<"
-		public Keyword getLessThanSignKeyword_0() { return cLessThanSignKeyword_0; }
-
-		//">"
-		public Keyword getGreaterThanSignKeyword_1() { return cGreaterThanSignKeyword_1; }
-
-		//"=="
-		public Keyword getEqualsSignEqualsSignKeyword_2() { return cEqualsSignEqualsSignKeyword_2; }
-
-		//"<>"
-		public Keyword getLessThanSignGreaterThanSignKeyword_3() { return cLessThanSignGreaterThanSignKeyword_3; }
-	}
-
-	public class LOGICAL_OPERATORElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LOGICAL_OPERATOR");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cANDKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cORKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		
-		//LOGICAL_OPERATOR:
-		//	"AND" | "OR";
-		public ParserRule getRule() { return rule; }
-
-		//"AND" | "OR"
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//"AND"
-		public Keyword getANDKeyword_0() { return cANDKeyword_0; }
-
-		//"OR"
-		public Keyword getORKeyword_1() { return cORKeyword_1; }
 	}
 
 	public class AtomicActionSelectFeatureElements extends AbstractParserRuleElementFinder {
@@ -758,7 +710,8 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final RuleCall cFeatureFeatureQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cFeatureFeatureCrossReference_3_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Keyword cWhere_attribueKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final RuleCall cQueryOperatorParserRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		private final Assignment cQueryOperatorAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cQueryOperatorQueryOperatorEnumRuleCall_6_0 = (RuleCall)cQueryOperatorAssignment_6.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cValueAssignment_8 = (Assignment)cGroup.eContents().get(8);
 		private final RuleCall cValueSTRINGTerminalRuleCall_8_0 = (RuleCall)cValueAssignment_8.eContents().get(0);
@@ -766,11 +719,11 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		
 		//AtomicActionQuery:
 		//	"select_feature_*" "from_variants_of_feature" "(" feature=[featureModel::Feature|QualifiedName] ")" "where_attribue"
-		//	QueryOperator "(" value=STRING ")";
+		//	queryOperator=QueryOperator "(" value=STRING ")";
 		public ParserRule getRule() { return rule; }
 
 		//"select_feature_*" "from_variants_of_feature" "(" feature=[featureModel::Feature|QualifiedName] ")" "where_attribue"
-		//QueryOperator "(" value=STRING ")"
+		//queryOperator=QueryOperator "(" value=STRING ")"
 		public Group getGroup() { return cGroup; }
 
 		//"select_feature_*"
@@ -797,8 +750,11 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		//"where_attribue"
 		public Keyword getWhere_attribueKeyword_5() { return cWhere_attribueKeyword_5; }
 
+		//queryOperator=QueryOperator
+		public Assignment getQueryOperatorAssignment_6() { return cQueryOperatorAssignment_6; }
+
 		//QueryOperator
-		public RuleCall getQueryOperatorParserRuleCall_6() { return cQueryOperatorParserRuleCall_6; }
+		public RuleCall getQueryOperatorQueryOperatorEnumRuleCall_6_0() { return cQueryOperatorQueryOperatorEnumRuleCall_6_0; }
 
 		//"("
 		public Keyword getLeftParenthesisKeyword_7() { return cLeftParenthesisKeyword_7; }
@@ -811,30 +767,6 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 
 		//")"
 		public Keyword getRightParenthesisKeyword_9() { return cRightParenthesisKeyword_9; }
-	}
-
-	public class QueryOperatorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QueryOperator");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cMaxKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cMinKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cIsKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		
-		//QueryOperator:
-		//	"max" | "min" | "is";
-		public ParserRule getRule() { return rule; }
-
-		//"max" | "min" | "is"
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//"max"
-		public Keyword getMaxKeyword_0() { return cMaxKeyword_0; }
-
-		//"min"
-		public Keyword getMinKeyword_1() { return cMinKeyword_1; }
-
-		//"is"
-		public Keyword getIsKeyword_2() { return cIsKeyword_2; }
 	}
 
 	public class AttributeValueElements extends AbstractParserRuleElementFinder {
@@ -894,6 +826,114 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 	
 	
+	public class MathOperatorElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "MathOperator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cLESSEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cLESSLessThanSignKeyword_0_0 = (Keyword)cLESSEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cGREATEREnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cGREATERGreaterThanSignKeyword_1_0 = (Keyword)cGREATEREnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cEQUALEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cEQUALEqualsSignEqualsSignKeyword_2_0 = (Keyword)cEQUALEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cDIFFERENTEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cDIFFERENTLessThanSignGreaterThanSignKeyword_3_0 = (Keyword)cDIFFERENTEnumLiteralDeclaration_3.eContents().get(0);
+		
+		//enum MathOperator:
+		//	LESS="<" | GREATER=">" | EQUAL="==" | DIFFERENT="<>";
+		public EnumRule getRule() { return rule; }
+
+		//LESS="<" | GREATER=">" | EQUAL="==" | DIFFERENT="<>"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//LESS="<"
+		public EnumLiteralDeclaration getLESSEnumLiteralDeclaration_0() { return cLESSEnumLiteralDeclaration_0; }
+
+		//"<"
+		public Keyword getLESSLessThanSignKeyword_0_0() { return cLESSLessThanSignKeyword_0_0; }
+
+		//GREATER=">"
+		public EnumLiteralDeclaration getGREATEREnumLiteralDeclaration_1() { return cGREATEREnumLiteralDeclaration_1; }
+
+		//">"
+		public Keyword getGREATERGreaterThanSignKeyword_1_0() { return cGREATERGreaterThanSignKeyword_1_0; }
+
+		//EQUAL="=="
+		public EnumLiteralDeclaration getEQUALEnumLiteralDeclaration_2() { return cEQUALEnumLiteralDeclaration_2; }
+
+		//"=="
+		public Keyword getEQUALEqualsSignEqualsSignKeyword_2_0() { return cEQUALEqualsSignEqualsSignKeyword_2_0; }
+
+		//DIFFERENT="<>"
+		public EnumLiteralDeclaration getDIFFERENTEnumLiteralDeclaration_3() { return cDIFFERENTEnumLiteralDeclaration_3; }
+
+		//"<>"
+		public Keyword getDIFFERENTLessThanSignGreaterThanSignKeyword_3_0() { return cDIFFERENTLessThanSignGreaterThanSignKeyword_3_0; }
+	}
+
+	public class LogicalOperatorElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "LogicalOperator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cANDEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cANDANDKeyword_0_0 = (Keyword)cANDEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cOREnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cORORKeyword_1_0 = (Keyword)cOREnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum LogicalOperator:
+		//	AND | OR;
+		public EnumRule getRule() { return rule; }
+
+		//AND | OR
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//AND
+		public EnumLiteralDeclaration getANDEnumLiteralDeclaration_0() { return cANDEnumLiteralDeclaration_0; }
+
+		//"AND"
+		public Keyword getANDANDKeyword_0_0() { return cANDANDKeyword_0_0; }
+
+		//OR
+		public EnumLiteralDeclaration getOREnumLiteralDeclaration_1() { return cOREnumLiteralDeclaration_1; }
+
+		//"OR"
+		public Keyword getORORKeyword_1_0() { return cORORKeyword_1_0; }
+	}
+
+	public class QueryOperatorElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "QueryOperator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cMAXEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cMAXMaxKeyword_0_0 = (Keyword)cMAXEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cMINEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cMINMinKeyword_1_0 = (Keyword)cMINEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cISEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cISIsKeyword_2_0 = (Keyword)cISEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum QueryOperator:
+		//	MAX="max" | MIN="min" | IS="is";
+		public EnumRule getRule() { return rule; }
+
+		//MAX="max" | MIN="min" | IS="is"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//MAX="max"
+		public EnumLiteralDeclaration getMAXEnumLiteralDeclaration_0() { return cMAXEnumLiteralDeclaration_0; }
+
+		//"max"
+		public Keyword getMAXMaxKeyword_0_0() { return cMAXMaxKeyword_0_0; }
+
+		//MIN="min"
+		public EnumLiteralDeclaration getMINEnumLiteralDeclaration_1() { return cMINEnumLiteralDeclaration_1; }
+
+		//"min"
+		public Keyword getMINMinKeyword_1_0() { return cMINMinKeyword_1_0; }
+
+		//IS="is"
+		public EnumLiteralDeclaration getISEnumLiteralDeclaration_2() { return cISEnumLiteralDeclaration_2; }
+
+		//"is"
+		public Keyword getISIsKeyword_2_0() { return cISIsKeyword_2_0; }
+	}
+	
 	private AdaptationModelElements pAdaptationModel;
 	private ImportElements pImport;
 	private QualifiedNameWithWildcardElements pQualifiedNameWithWildcard;
@@ -907,13 +947,13 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	private PureActionElements pPureAction;
 	private ConditionActionElements pConditionAction;
 	private ConditionElements pCondition;
-	private OPERATORElements pOPERATOR;
-	private LOGICAL_OPERATORElements pLOGICAL_OPERATOR;
+	private MathOperatorElements unknownRuleMathOperator;
+	private LogicalOperatorElements unknownRuleLogicalOperator;
 	private AtomicActionSelectFeatureElements pAtomicActionSelectFeature;
 	private AtomicActionDeselectFeatureElements pAtomicActionDeselectFeature;
 	private AtomicActionModifyAttributeElements pAtomicActionModifyAttribute;
 	private AtomicActionQueryElements pAtomicActionQuery;
-	private QueryOperatorElements pQueryOperator;
+	private QueryOperatorElements unknownRuleQueryOperator;
 	private AttributeValueElements pAttributeValue;
 	private StringAttributeValueElements pStringAttributeValue;
 	private NFRAttributeValueElements pNFRAttributeValue;
@@ -1106,8 +1146,8 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	//// Find a way for using parenthesis for priority between operators
 	//// Find a way of expressing complex conditions, with operators priorities
 	//Condition:
-	//	measurement=[cdmModel::ContextDependentMeasurement|QualifiedName] operator=OPERATOR value=STRING
-	//	(logicalOp=LOGICAL_OPERATOR secondTerm=Condition)?;
+	//	measurement=[cdmModel::ContextDependentMeasurement|QualifiedName] operator=MathOperator value=STRING
+	//	(logicalOp=LogicalOperator secondTerm=Condition)?;
 	public ConditionElements getConditionAccess() {
 		return (pCondition != null) ? pCondition : (pCondition = new ConditionElements());
 	}
@@ -1116,24 +1156,24 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		return getConditionAccess().getRule();
 	}
 
-	//OPERATOR:
-	//	"<" | ">" | "==" | "<>";
-	public OPERATORElements getOPERATORAccess() {
-		return (pOPERATOR != null) ? pOPERATOR : (pOPERATOR = new OPERATORElements());
+	//enum MathOperator:
+	//	LESS="<" | GREATER=">" | EQUAL="==" | DIFFERENT="<>";
+	public MathOperatorElements getMathOperatorAccess() {
+		return (unknownRuleMathOperator != null) ? unknownRuleMathOperator : (unknownRuleMathOperator = new MathOperatorElements());
 	}
 	
-	public ParserRule getOPERATORRule() {
-		return getOPERATORAccess().getRule();
+	public EnumRule getMathOperatorRule() {
+		return getMathOperatorAccess().getRule();
 	}
 
-	//LOGICAL_OPERATOR:
-	//	"AND" | "OR";
-	public LOGICAL_OPERATORElements getLOGICAL_OPERATORAccess() {
-		return (pLOGICAL_OPERATOR != null) ? pLOGICAL_OPERATOR : (pLOGICAL_OPERATOR = new LOGICAL_OPERATORElements());
+	//enum LogicalOperator:
+	//	AND | OR;
+	public LogicalOperatorElements getLogicalOperatorAccess() {
+		return (unknownRuleLogicalOperator != null) ? unknownRuleLogicalOperator : (unknownRuleLogicalOperator = new LogicalOperatorElements());
 	}
 	
-	public ParserRule getLOGICAL_OPERATORRule() {
-		return getLOGICAL_OPERATORAccess().getRule();
+	public EnumRule getLogicalOperatorRule() {
+		return getLogicalOperatorAccess().getRule();
 	}
 
 	//AtomicActionSelectFeature:
@@ -1169,7 +1209,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 
 	//AtomicActionQuery:
 	//	"select_feature_*" "from_variants_of_feature" "(" feature=[featureModel::Feature|QualifiedName] ")" "where_attribue"
-	//	QueryOperator "(" value=STRING ")";
+	//	queryOperator=QueryOperator "(" value=STRING ")";
 	public AtomicActionQueryElements getAtomicActionQueryAccess() {
 		return (pAtomicActionQuery != null) ? pAtomicActionQuery : (pAtomicActionQuery = new AtomicActionQueryElements());
 	}
@@ -1178,13 +1218,13 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		return getAtomicActionQueryAccess().getRule();
 	}
 
-	//QueryOperator:
-	//	"max" | "min" | "is";
+	//enum QueryOperator:
+	//	MAX="max" | MIN="min" | IS="is";
 	public QueryOperatorElements getQueryOperatorAccess() {
-		return (pQueryOperator != null) ? pQueryOperator : (pQueryOperator = new QueryOperatorElements());
+		return (unknownRuleQueryOperator != null) ? unknownRuleQueryOperator : (unknownRuleQueryOperator = new QueryOperatorElements());
 	}
 	
-	public ParserRule getQueryOperatorRule() {
+	public EnumRule getQueryOperatorRule() {
 		return getQueryOperatorAccess().getRule();
 	}
 
