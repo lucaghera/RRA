@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="RRA Runtime Execution Commands"
+            id="org.rra.componentExecutionCommands.category">
+      </category>
+      <command
+            categoryId="org.rra.componentExecutionCommands.category"
+            id="org.rra.componentExecutionCommands.startAdaptationEngine"
+            name="Start Adaptation Engine">
+      </command>
+      <command
+            categoryId="org.rra.componentExecutionCommands.category"
+            id="org.rra.componentExecutionCommands.stopAdaptationEngine"
+            name="Stop Adaptation Engine">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.rra.componentExecutionCommands.handlers.StartAdaptationEngineHandler"
+            commandId="org.rra.componentExecutionCommands.startAdaptationEngine">
+      </handler>
+      <handler
+            class="org.rra.componentExecutionCommands.handlers.StopAdaptationEngineHandler"
+            commandId="org.rra.componentExecutionCommands.stopAdaptationEngine">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="org.rra.componentExecutionCommands.startAdaptationEngine"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+8"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+      <key
+            commandId="org.rra.componentExecutionCommands.stopAdaptationEngine"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+9">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.rra.menu">
+         <menu
+               id="RuntimeExecution"
+               label="Runtime Execution">
+            <command
+                  commandId="org.rra.componentExecutionCommands.startAdaptationEngine"
+                  icon="icons/start_task.gif"
+                  label="Start Adaptation Engine"
+                  style="push"
+                  tooltip="Start the Adaptation Engine ROSJava node">
+            </command>
+            <command
+                  commandId="org.rra.componentExecutionCommands.stopAdaptationEngine"
+                  icon="icons/stop_task.gif"
+                  label="Stop Adaptation Engine"
+                  style="push"
+                  tooltip="Stop the Adaptation Engine ROSJava node">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar">
+         <toolbar
+               id="org.rra.componentExecutionCommands.toolbar">
+            <command
+                  commandId="org.rra.componentExecutionCommands.startAdaptationEngine"
+                  icon="icons/start_task.gif"
+                  id="StartAdaptationEngine"
+                  label="Start Adaptation Engine"
+                  style="push"
+                  tooltip="Start the Adaptation Engine ROSJava node">
+            </command>
+            <command
+                  commandId="org.rra.componentExecutionCommands.stopAdaptationEngine"
+                  icon="icons/stop_task.gif"
+                  id="StopAdaptationEngine"
+                  label="Stop Adaptation Engine"
+                  style="push"
+                  tooltip="Stop the Adaptation Engine ROSJava node">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>

@@ -28,7 +28,6 @@
  * 
  * 
  */
-
 package org.rra.adaptationEngine.api;
 
 import java.io.File;
@@ -50,7 +49,6 @@ import org.hyperflex.featuremodels.FeatureModel;
 import org.hyperflex.featuremodels.Instance;
 import org.hyperflex.featuremodels.featuremodelsPackage;
 import org.ros.concurrent.CancellableLoop;
-import org.ros.internal.message.Message;
 import org.ros.message.MessageListener;
 import org.ros.namespace.GraphName;
 import org.ros.node.AbstractNodeMain;
@@ -78,10 +76,8 @@ import org.rra.adaptationModel.adaptationModelDSL.RuleBody;
 import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
 import org.rra.adaptationModel.m2t.tools.AdaptationEngineTools;
 import org.rra.cdmModel.CDMModelPackage;
-import org.rra.cdmModel.ContextDependentMeasurementsModel;
 import org.rra.cdmModel.ROSContextDependentMeasurement;
 import org.rra.cdmModel.xtext.utils.CDMModelSupport;
-import org.rra.dataTypesModel.DataTypesModel;
 import org.rra.dataTypesModel.DataTypesModelPackage;
 import org.rra.dataTypesModel.xtext.utils.DataTypesModelSupport;
 import org.rra.runtimeFeatureModel.RuntimeFeatureModelPackage;
@@ -90,12 +86,12 @@ import org.rra.runtimeFeatureModel.xtext.utils.RuntimeFeatureModelSupport;
 
 public class AdaptationEngine extends AbstractNodeMain{
 
+	private static AdaptationEngine adaptationEngineInstance = null;
+	private static boolean isRunning = false;	
+
 	private FeatureModel featureModel;
 	private Instance initialFeatureModelInstance;
 	private Instance currentFeatureModelInstance;
-
-	private ContextDependentMeasurementsModel cdmModel;
-	private DataTypesModel dataTypesModel;
 
 	private ResourceSet resourceSet;
 
@@ -104,35 +100,90 @@ public class AdaptationEngine extends AbstractNodeMain{
 	private HashMap<ROSContextDependentMeasurement, Object> lastReceivedMessages;
 
 	private AdaptationModel adaptationModel;
+	
+	private NodeMainExecutor nodeMainExecutor;
 
 	private int iteration = 0;
 
-	public static void main(String [ ] args){
+	//	public static void main(String [ ] args){
+	//
+	//		AdaptationEngine ae = new AdaptationEngine(
+	//				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.adaptationModel", 
+	//				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.featuremodel",
+	//				"Test",
+	//				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.cdmmodel",
+	//				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.datatypesmodel");
+	//
+	////		RosCore rosCore;
+	////		rosCore = RosCore.newPublic(13111);		
+	////
+	////		rosCore.start();
+	////		try {
+	////			rosCore.awaitStart();
+	////		} catch (Exception e) {
+	////			throw new RuntimeException(e);
+	////		}
+	////
+	//		
+	//		NodeMainExecutor nodeMainExecutor = DefaultNodeMainExecutor.newDefault();
+	//
+	//		NodeConfiguration nodeConfig = NodeConfiguration.newPrivate();
+	//		nodeMainExecutor.execute(ae, nodeConfig);
+	//		
+	//		
+	//	}
 
-		AdaptationEngine ae = new AdaptationEngine(
-				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.adaptationModel", 
-				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.featuremodel",
-				"Test",
-				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.cdmmodel",
-				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.datatypesmodel");
+	private AdaptationEngine(AdaptationModel adaptationModel,
+			FeatureModel featureModel, Instance instance){
 
-		//		RosCore rosCore;
-		//		rosCore = RosCore.newPublic(13111);
-		//		rosCore.start();
-		//	    try {
-		//        rosCore.awaitStart();
-		//    } catch (Exception e) {
-		//        throw new RuntimeException(e);
-		//    }
+		this.adaptationModel = adaptationModel;
+		this.featureModel = featureModel;
+		this.initialFeatureModelInstance = instance;
+		this.currentFeatureModelInstance = instance;
 
-		NodeMainExecutor nodeMainExecutor = DefaultNodeMainExecutor.newDefault();
+		cdms = AdaptationEngineTools.getROSRequiredCDMs(adaptationModel);
 
-		NodeConfiguration nodeConfig = NodeConfiguration.newPrivate();
-		nodeMainExecutor.execute(ae, nodeConfig);
+		nodeMainExecutor = DefaultNodeMainExecutor.newDefault();
+		
+	}
+
+	public static AdaptationEngine getInstance(AdaptationModel adaptationModel,
+			FeatureModel featureModel, Instance instance){
+
+		if(adaptationEngineInstance == null){
+			adaptationEngineInstance = new AdaptationEngine(adaptationModel,
+					featureModel, instance);
+		}
+
+		return adaptationEngineInstance;
+
 
 	}
 
-	public AdaptationEngine(String adaptationModelPath, String featureModelPath, 
+	public static AdaptationEngine getInstance(){
+
+		if(adaptationEngineInstance == null){
+			return null;
+		}
+
+		return adaptationEngineInstance;
+
+
+	}
+
+	public static boolean hasBeenLoaded(){
+
+		return adaptationEngineInstance != null;
+
+	}
+
+	public static boolean isRunning(){
+
+		return isRunning;
+
+	}
+
+	private AdaptationEngine(String adaptationModelPath, String featureModelPath, 
 			String instanceName, String cdmModelPath,
 			String dataTypesModelPath){
 
@@ -156,26 +207,40 @@ public class AdaptationEngine extends AbstractNodeMain{
 		//		System.out.println("** " + dataTypesModel.getTypes().get(0).getName());
 		//		System.out.println("** " + ((ROSContextDependentMeasurement)cdmModel.getCdms().get(0)).getInputDataType());
 
-
 		cdms = AdaptationEngineTools.getROSRequiredCDMs(adaptationModel);
 
-		//this.featureModel = featureModel;
 		for(Instance instance : featureModel.getInstances()){
 
 			if(instance.getId().equals(instanceName)){
 				this.initialFeatureModelInstance = instance;
 				this.currentFeatureModelInstance = instance;
 
-				System.out.println("Initial instace - Selected features: ");
-
-				for(Feature feature : currentFeatureModelInstance.getSelectedFeatures()){
-					System.out.println(" - " + feature.getName());
-				}
-
-				System.out.println("------------------------------------------");
-
 			}
 		}
+		
+		nodeMainExecutor =  DefaultNodeMainExecutor.newDefault();
+
+	}
+
+	public boolean start(){
+
+		NodeConfiguration nodeConfig = NodeConfiguration.newPrivate();
+		nodeMainExecutor.execute(this, nodeConfig);
+
+		isRunning = true;
+
+		return true;
+
+	}
+
+	public boolean stop(){
+
+//		NodeMainExecutor nodeMainExecutor = DefaultNodeMainExecutor.newDefault();
+		nodeMainExecutor.shutdownNodeMain(this);
+		
+		isRunning = false;
+
+		return true;
 
 	}
 
@@ -226,8 +291,11 @@ public class AdaptationEngine extends AbstractNodeMain{
 		m.put("cdmmodel", new XMIResourceFactoryImpl());
 
 		File file = new File(cdmModelPath);
-		Resource cdmModelResource = resourceSet.getResource(URI.createFileURI(file.getAbsolutePath()), true);
-		cdmModel = (ContextDependentMeasurementsModel) cdmModelResource.getContents().get(0);
+
+		resourceSet.getResource(URI.createFileURI(file.getAbsolutePath()), true);
+
+		//Resource cdmModelResource = resourceSet.getResource(URI.createFileURI(file.getAbsolutePath()), true);
+		//cdmModel = (ContextDependentMeasurementsModel) cdmModelResource.getContents().get(0);
 
 	}
 
@@ -243,8 +311,11 @@ public class AdaptationEngine extends AbstractNodeMain{
 		m.put("datatypesmodel", new XMIResourceFactoryImpl());
 
 		File file = new File(dataTypesModelPath);
-		Resource dataTypesModelResource = resourceSet.getResource(URI.createFileURI(file.getAbsolutePath()), true);
-		dataTypesModel = (DataTypesModel) dataTypesModelResource.getContents().get(0);
+
+		resourceSet.getResource(URI.createFileURI(file.getAbsolutePath()), true);
+
+		//Resource dataTypesModelResource = resourceSet.getResource(URI.createFileURI(file.getAbsolutePath()), true);
+		//dataTypesModel = (DataTypesModel) dataTypesModelResource.getContents().get(0);
 
 	}
 
@@ -292,7 +363,7 @@ public class AdaptationEngine extends AbstractNodeMain{
 	public void onStart(ConnectedNode connectedNode) {
 
 		lastReceivedMessages = new HashMap<ROSContextDependentMeasurement, Object>();
-
+		
 		// Register all the subscribers
 
 		for(ROSContextDependentMeasurement cdm : cdms){
@@ -348,8 +419,11 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 			@Override
 			protected void loop() throws InterruptedException {
-				update();
-				Thread.sleep(adaptationModel.getPeriod());
+
+				while(isRunning == true){
+					update();
+					Thread.sleep(adaptationModel.getPeriod());
+				}
 			}
 		});
 
@@ -368,13 +442,15 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 		}
 
-		System.out.println("Iteration " + iteration + "- Selected features: ");
+		//		System.out.println("Iteration " + iteration + " - Selected features: ");
+		//
+		//		for(Feature feature : currentFeatureModelInstance.getSelectedFeatures()){
+		//			System.out.println(" - " + feature.getName());
+		//		}
+		//
+		//		System.out.println("------------------------------------------");
 
-		for(Feature feature : currentFeatureModelInstance.getSelectedFeatures()){
-			System.out.println(" - " + feature.getName());
-		}
-
-		System.out.println("------------------------------------------");
+		iteration ++;
 
 	}
 

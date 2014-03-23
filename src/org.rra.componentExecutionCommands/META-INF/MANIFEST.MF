@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RRA Runtime Execution Commands
+Bundle-SymbolicName: org.rra.componentExecutionCommands;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.rra.componentExecutionCommands.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.expressions;bundle-version="3.4.200",
+ org.eclipse.ui.ide,
+ org.eclipse.gmf.runtime.emf.core,
+ org.eclipse.gmf.runtime.diagram.ui,
+ org.eclipse.gmf.runtime.diagram.ui.resources.editor,
+ org.rra.adaptationEngine.api;bundle-version="1.0.0",
+ org.rra.adaptationModel.dsl;bundle-version="1.0.0",
+ org.rra.cdmModel.model;bundle-version="1.0.0",
+ org.rra.dataTypesModel.model;bundle-version="1.0.0",
+ org.rra.runtimeFeatureModel.model;bundle-version="1.0.0",
+ org.rra.ui;bundle-version="1.0.0",
+ org.hyperflex.featuremodels.diagram;bundle-version="1.0.0",
+ org.eclipse.xtext.ui;bundle-version="2.5.3",
+ org.ros.java.libraries;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: Luca Gherardi

@@ -126,9 +126,7 @@ public class AdaptationEngineTools {
 		HashSet<ROSContextDependentMeasurement> cdms = new HashSet<ROSContextDependentMeasurement>();
 
 		if(condition.getMeasurement() != null && condition.getMeasurement() instanceof ROSContextDependentMeasurement){
-			if(cdms.add((ROSContextDependentMeasurement)condition.getMeasurement())){
-				System.out.println("CDM inserted: " + condition.getMeasurement().getName());
-			}
+			cdms.add((ROSContextDependentMeasurement)condition.getMeasurement());
 		}
 
 		if(condition.getSecondTerm() != null){
