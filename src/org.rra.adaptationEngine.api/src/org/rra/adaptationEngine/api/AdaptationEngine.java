@@ -57,6 +57,7 @@ import org.ros.node.DefaultNodeMainExecutor;
 import org.ros.node.NodeConfiguration;
 import org.ros.node.NodeMainExecutor;
 import org.ros.node.topic.Subscriber;
+import org.rra.adaptationEngine.api.utils.AtomicRuleWithPriorityComparator;
 import org.rra.adaptationModel.AdaptationModelDSLStandaloneSetup;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModel;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
@@ -70,6 +71,7 @@ import org.rra.adaptationModel.adaptationModelDSL.AtomicRule;
 import org.rra.adaptationModel.adaptationModelDSL.AtomicRuleWithPriority;
 import org.rra.adaptationModel.adaptationModelDSL.Condition;
 import org.rra.adaptationModel.adaptationModelDSL.ConditionAction;
+import org.rra.adaptationModel.adaptationModelDSL.LogicalOperator;
 import org.rra.adaptationModel.adaptationModelDSL.MathOperator;
 import org.rra.adaptationModel.adaptationModelDSL.PureAction;
 import org.rra.adaptationModel.adaptationModelDSL.RuleBody;
@@ -98,9 +100,11 @@ public class AdaptationEngine extends AbstractNodeMain{
 	private HashSet<ROSContextDependentMeasurement> cdms;
 
 	private HashMap<ROSContextDependentMeasurement, Object> lastReceivedMessages;
+	//private 
+
 
 	private AdaptationModel adaptationModel;
-	
+
 	private NodeMainExecutor nodeMainExecutor;
 
 	private int iteration = 0;
@@ -144,7 +148,7 @@ public class AdaptationEngine extends AbstractNodeMain{
 		cdms = AdaptationEngineTools.getROSRequiredCDMs(adaptationModel);
 
 		nodeMainExecutor = DefaultNodeMainExecutor.newDefault();
-		
+
 	}
 
 	public static AdaptationEngine getInstance(AdaptationModel adaptationModel,
@@ -217,7 +221,7 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 			}
 		}
-		
+
 		nodeMainExecutor =  DefaultNodeMainExecutor.newDefault();
 
 	}
@@ -235,9 +239,9 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 	public boolean stop(){
 
-//		NodeMainExecutor nodeMainExecutor = DefaultNodeMainExecutor.newDefault();
+		//		NodeMainExecutor nodeMainExecutor = DefaultNodeMainExecutor.newDefault();
 		nodeMainExecutor.shutdownNodeMain(this);
-		
+
 		isRunning = false;
 
 		return true;
@@ -363,7 +367,7 @@ public class AdaptationEngine extends AbstractNodeMain{
 	public void onStart(ConnectedNode connectedNode) {
 
 		lastReceivedMessages = new HashMap<ROSContextDependentMeasurement, Object>();
-		
+
 		// Register all the subscribers
 
 		for(ROSContextDependentMeasurement cdm : cdms){
@@ -442,13 +446,17 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 		}
 
-		//		System.out.println("Iteration " + iteration + " - Selected features: ");
-		//
-		//		for(Feature feature : currentFeatureModelInstance.getSelectedFeatures()){
-		//			System.out.println(" - " + feature.getName());
-		//		}
-		//
-		//		System.out.println("------------------------------------------");
+		System.out.println("Iteration " + iteration + " - Selected features: ");
+
+		for(Feature feature : currentFeatureModelInstance.getSelectedFeatures()){
+			System.out.println(" - " + feature.getName());
+		}
+
+		System.out.println("------------------------------------------");
+
+		for(ROSContextDependentMeasurement cdm : cdms){
+			lastReceivedMessages.put(cdm,null);
+		}
 
 		iteration ++;
 
@@ -479,7 +487,7 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 	private void evaluateAndExecuteConditionAction(ConditionAction conditionAction){
 
-		if(evaluateCondition(conditionAction.getCondition()) == false){
+		if(evaluateConditionChain(conditionAction.getCondition()) == false){
 
 			if(conditionAction.getElse() != null){
 				evaluateAndExecuteAtomicRule(conditionAction.getElse());
@@ -492,9 +500,25 @@ public class AdaptationEngine extends AbstractNodeMain{
 		}
 	}
 
+	private boolean evaluateConditionChain(Condition condition){
+		
+		if(condition.getSecondTerm() == null){
+			return evaluateCondition(condition);
+		}
+		
+		if(condition.getLogicalOp() == LogicalOperator.AND){
+			return evaluateCondition(condition) && evaluateConditionChain(condition.getSecondTerm());
+		}else if (condition.getLogicalOp() == LogicalOperator.OR){
+			return evaluateCondition(condition) || evaluateConditionChain(condition.getSecondTerm());
+		}
+		
+		return false;
+		
+		
+	}
+	
 	private boolean evaluateCondition(Condition condition){
 
-		// To be implemented
 		ROSContextDependentMeasurement cdm = null;
 
 		if(condition.getMeasurement() instanceof ROSContextDependentMeasurement){
@@ -558,13 +582,16 @@ public class AdaptationEngine extends AbstractNodeMain{
 			AtomicActionSelectFeature currentAction = (AtomicActionSelectFeature)atomicAction;
 
 			selectFeature(currentAction.getFeature());
+			//System.out.println("Select Feature: " + currentAction.getFeature().getName());
 
 		}else if(atomicAction instanceof AtomicActionDeselectFeature){
 
 			AtomicActionDeselectFeature currentAction = (AtomicActionDeselectFeature)atomicAction;
 
 			// to be improved, see select feature
-			currentFeatureModelInstance.getSelectedFeatures().remove(currentAction.getFeature());
+			featureModel.removeSubFeatureFromInstance(currentFeatureModelInstance, currentAction.getFeature());
+			//currentFeatureModelInstance.getSelectedFeatures().remove(currentAction.getFeature());
+			//System.out.println("Deselect Feature: " + currentAction.getFeature().getName());
 
 		}else if(atomicAction instanceof AtomicActionModifyAttribute){
 
@@ -593,15 +620,19 @@ public class AdaptationEngine extends AbstractNodeMain{
 		}
 
 		if(feature.eContainer() instanceof Feature){
-			currentFeatureModelInstance.getSelectedFeatures().add(feature);
+			featureModel.addFeatureToInstance(currentFeatureModelInstance, feature);
+			//			currentFeatureModelInstance.getSelectedFeatures().add(feature);
 		}else if(feature.eContainer() instanceof ContainmentAssociation){
 
 			ContainmentAssociation ca = (ContainmentAssociation)feature.eContainer();
 
 			if(ca.getLowerBound() == 1 && ca.getUpperBound() == 1){
 
-				currentFeatureModelInstance.getSelectedFeatures().removeAll(ca.getSubFeatures());
-				currentFeatureModelInstance.getSelectedFeatures().add(feature);
+				featureModel.removeSubFeatureFromInstance(currentFeatureModelInstance, ca);
+				featureModel.addFeatureToInstance(currentFeatureModelInstance, feature);
+
+				//currentFeatureModelInstance.getSelectedFeatures().removeAll(ca.getSubFeatures());
+				//currentFeatureModelInstance.getSelectedFeatures().add(feature);
 
 			}else if(ca.getLowerBound() == 1 && ca.getUpperBound() > 1){
 
@@ -617,7 +648,8 @@ public class AdaptationEngine extends AbstractNodeMain{
 				}
 
 				if(count < ca.getUpperBound()){
-					currentFeatureModelInstance.getSelectedFeatures().add(feature);
+					featureModel.addFeatureToInstance(currentFeatureModelInstance, feature);
+					//currentFeatureModelInstance.getSelectedFeatures().add(feature);
 				}
 
 

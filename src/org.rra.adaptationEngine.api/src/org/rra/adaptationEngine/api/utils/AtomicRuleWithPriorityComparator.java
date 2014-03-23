@@ -28,7 +28,7 @@
  * 
  * 
  */
-package org.rra.adaptationEngine.api;
+package org.rra.adaptationEngine.api.utils;
 
 import java.util.Comparator;
 

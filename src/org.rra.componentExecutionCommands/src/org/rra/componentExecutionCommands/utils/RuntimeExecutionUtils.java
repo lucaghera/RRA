@@ -71,6 +71,8 @@ public class RuntimeExecutionUtils {
 
 		IEditorPart editor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 
+		AdaptationModel adaptationModel = null;
+		
 		if(editor instanceof XtextEditor){
 
 			// retrieve the adaptation model
@@ -78,7 +80,7 @@ public class RuntimeExecutionUtils {
 			XtextEditor dslEditor = (XtextEditor) editor;
 			IXtextDocument currentDocument = dslEditor.getDocument();
 
-			AdaptationModel adaptationModel =  currentDocument.readOnly(
+			adaptationModel =  currentDocument.readOnly(
 					new IUnitOfWork<AdaptationModel,XtextResource>() {
 
 						@Override
@@ -90,19 +92,17 @@ public class RuntimeExecutionUtils {
 						}
 					});
 
-			if(adaptationModel == null){
-				MessageDialog.openError(null, "Error", 
-						"It was not possible to load the Adaptation Model!!!");
-				return null;
-
-			}
-
-			return adaptationModel;
-
+		}
+		
+		if(adaptationModel == null){
+			MessageDialog.openError(null, "Error", 
+					"It was not possible to load the Adaptation Model!!!");
+			return null;
 
 		}
 
-		return null;
+		return adaptationModel;
+		
 	}
 
 
