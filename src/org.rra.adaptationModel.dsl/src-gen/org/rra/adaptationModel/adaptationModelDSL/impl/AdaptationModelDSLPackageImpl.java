@@ -307,19 +307,9 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAdaptationModel_OutputPackage()
-  {
-    return (EAttribute)adaptationModelEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getAdaptationModel_AdaptationRules()
   {
-    return (EReference)adaptationModelEClass.getEStructuralFeatures().get(4);
+    return (EReference)adaptationModelEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -806,7 +796,6 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
     createEReference(adaptationModelEClass, ADAPTATION_MODEL__IMPORTS);
     createEAttribute(adaptationModelEClass, ADAPTATION_MODEL__NAME);
     createEAttribute(adaptationModelEClass, ADAPTATION_MODEL__PERIOD);
-    createEAttribute(adaptationModelEClass, ADAPTATION_MODEL__OUTPUT_PACKAGE);
     createEReference(adaptationModelEClass, ADAPTATION_MODEL__ADAPTATION_RULES);
 
     importEClass = createEClass(IMPORT);
@@ -924,7 +913,6 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
     initEReference(getAdaptationModel_Imports(), this.getImport(), null, "imports", null, 0, -1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAdaptationModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAdaptationModel_Period(), ecorePackage.getEInt(), "period", null, 0, 1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAdaptationModel_OutputPackage(), ecorePackage.getEString(), "outputPackage", null, 0, 1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAdaptationModel_AdaptationRules(), this.getAdaptationRule(), null, "adaptationRules", null, 0, -1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

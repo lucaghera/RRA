@@ -31,20 +31,14 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final Assignment cPeriodAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cPeriodINTTerminalRuleCall_5_0 = (RuleCall)cPeriodAssignment_5.eContents().get(0);
 		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cJavaOutputPackageKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cOutputPackageAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cOutputPackageQualifiedNameParserRuleCall_8_0 = (RuleCall)cOutputPackageAssignment_8.eContents().get(0);
-		private final Keyword cSemicolonKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cAdaptationRulesAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cAdaptationRulesAdaptationRuleParserRuleCall_10_0 = (RuleCall)cAdaptationRulesAssignment_10.eContents().get(0);
+		private final Assignment cAdaptationRulesAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cAdaptationRulesAdaptationRuleParserRuleCall_7_0 = (RuleCall)cAdaptationRulesAssignment_7.eContents().get(0);
 		
 		//AdaptationModel:
-		//	imports+=Import* "name" name=ID ";" "period[ms]" period=INT ";" "java output package" outputPackage=QualifiedName ";"
-		//	adaptationRules+=AdaptationRule*;
+		//	imports+=Import* "name" name=ID ";" "period[ms]" period=INT ";" adaptationRules+=AdaptationRule*;
 		public ParserRule getRule() { return rule; }
 
-		//imports+=Import* "name" name=ID ";" "period[ms]" period=INT ";" "java output package" outputPackage=QualifiedName ";"
-		//adaptationRules+=AdaptationRule*
+		//imports+=Import* "name" name=ID ";" "period[ms]" period=INT ";" adaptationRules+=AdaptationRule*
 		public Group getGroup() { return cGroup; }
 
 		//imports+=Import*
@@ -77,23 +71,11 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		//";"
 		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
 
-		//"java output package"
-		public Keyword getJavaOutputPackageKeyword_7() { return cJavaOutputPackageKeyword_7; }
-
-		//outputPackage=QualifiedName
-		public Assignment getOutputPackageAssignment_8() { return cOutputPackageAssignment_8; }
-
-		//QualifiedName
-		public RuleCall getOutputPackageQualifiedNameParserRuleCall_8_0() { return cOutputPackageQualifiedNameParserRuleCall_8_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_9() { return cSemicolonKeyword_9; }
-
 		//adaptationRules+=AdaptationRule*
-		public Assignment getAdaptationRulesAssignment_10() { return cAdaptationRulesAssignment_10; }
+		public Assignment getAdaptationRulesAssignment_7() { return cAdaptationRulesAssignment_7; }
 
 		//AdaptationRule
-		public RuleCall getAdaptationRulesAdaptationRuleParserRuleCall_10_0() { return cAdaptationRulesAdaptationRuleParserRuleCall_10_0; }
+		public RuleCall getAdaptationRulesAdaptationRuleParserRuleCall_7_0() { return cAdaptationRulesAdaptationRuleParserRuleCall_7_0; }
 	}
 
 	public class ImportElements extends AbstractParserRuleElementFinder {
@@ -838,6 +820,17 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final EnumLiteralDeclaration cDIFFERENTEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
 		private final Keyword cDIFFERENTLessThanSignGreaterThanSignKeyword_3_0 = (Keyword)cDIFFERENTEnumLiteralDeclaration_3.eContents().get(0);
 		
+		////ConditionExpression: 
+		////	firstTerm=Primary logicalOp=LogicalOperator secondTerm=Primary
+		////;
+		////
+		////SingleCondition:
+		////	measurement=[ cdmModel::ContextDependentMeasurement|QualifiedName ] 
+		////	operator=MathOperator value=STRING
+		////;
+		////
+		////Primary:
+		//// SingleCondition | '(' ConditionExpression ')';
 		//enum MathOperator:
 		//	LESS="<" | GREATER=">" | EQUAL="==" | DIFFERENT="<>";
 		public EnumRule getRule() { return rule; }
@@ -997,8 +990,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 
 	
 	//AdaptationModel:
-	//	imports+=Import* "name" name=ID ";" "period[ms]" period=INT ";" "java output package" outputPackage=QualifiedName ";"
-	//	adaptationRules+=AdaptationRule*;
+	//	imports+=Import* "name" name=ID ";" "period[ms]" period=INT ";" adaptationRules+=AdaptationRule*;
 	public AdaptationModelElements getAdaptationModelAccess() {
 		return (pAdaptationModel != null) ? pAdaptationModel : (pAdaptationModel = new AdaptationModelElements());
 	}
@@ -1156,6 +1148,17 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		return getConditionAccess().getRule();
 	}
 
+	////ConditionExpression: 
+	////	firstTerm=Primary logicalOp=LogicalOperator secondTerm=Primary
+	////;
+	////
+	////SingleCondition:
+	////	measurement=[ cdmModel::ContextDependentMeasurement|QualifiedName ] 
+	////	operator=MathOperator value=STRING
+	////;
+	////
+	////Primary:
+	//// SingleCondition | '(' ConditionExpression ')';
 	//enum MathOperator:
 	//	LESS="<" | GREATER=">" | EQUAL="==" | DIFFERENT="<>";
 	public MathOperatorElements getMathOperatorAccess() {

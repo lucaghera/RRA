@@ -118,7 +118,8 @@
             locationURI="menu:org.eclipse.ui.main.menu">
          <menu
                id="org.rra.menu"
-               label="Robotics Runtime Adaptation">
+               label="RRA"
+               mnemonic="R">
          </menu>
       </menuContribution>
    </extension>

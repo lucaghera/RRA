@@ -13,7 +13,6 @@ AdaptationModel:
 	(imports+=Import*)
 	'name' name=ID ';' 
 	'period[ms]' period=INT ';' 
-	'java output package' outputPackage=QualifiedName ';'
 	(adaptationRules+=AdaptationRule*)
 ;
 
@@ -105,6 +104,18 @@ Condition:
 	operator=MathOperator value=STRING 
 	( logicalOp=LogicalOperator secondTerm=Condition )? 
 ;
+
+//ConditionExpression: 
+//	firstTerm=Primary logicalOp=LogicalOperator secondTerm=Primary
+//;
+//
+//SingleCondition:
+//	measurement=[ cdmModel::ContextDependentMeasurement|QualifiedName ] 
+//	operator=MathOperator value=STRING
+//;
+//
+//Primary:
+// SingleCondition | '(' ConditionExpression ')';
 
 enum MathOperator:
 	LESS='<' | GREATER='>' | EQUAL='==' | DIFFERENT='<>'	

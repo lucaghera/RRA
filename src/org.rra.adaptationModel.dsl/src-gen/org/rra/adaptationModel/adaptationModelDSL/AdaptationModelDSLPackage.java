@@ -95,22 +95,13 @@ public interface AdaptationModelDSLPackage extends EPackage
   int ADAPTATION_MODEL__PERIOD = 2;
 
   /**
-   * The feature id for the '<em><b>Output Package</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADAPTATION_MODEL__OUTPUT_PACKAGE = 3;
-
-  /**
    * The feature id for the '<em><b>Adaptation Rules</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ADAPTATION_MODEL__ADAPTATION_RULES = 4;
+  int ADAPTATION_MODEL__ADAPTATION_RULES = 3;
 
   /**
    * The number of structural features of the '<em>Adaptation Model</em>' class.
@@ -119,7 +110,7 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ADAPTATION_MODEL_FEATURE_COUNT = 5;
+  int ADAPTATION_MODEL_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.ImportImpl <em>Import</em>}' class.
@@ -816,17 +807,6 @@ public interface AdaptationModelDSLPackage extends EPackage
   EAttribute getAdaptationModel_Period();
 
   /**
-   * Returns the meta object for the attribute '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getOutputPackage <em>Output Package</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Output Package</em>'.
-   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getOutputPackage()
-   * @see #getAdaptationModel()
-   * @generated
-   */
-  EAttribute getAdaptationModel_OutputPackage();
-
-  /**
    * Returns the meta object for the containment reference list '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getAdaptationRules <em>Adaptation Rules</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1368,14 +1348,6 @@ public interface AdaptationModelDSLPackage extends EPackage
      * @generated
      */
     EAttribute ADAPTATION_MODEL__PERIOD = eINSTANCE.getAdaptationModel_Period();
-
-    /**
-     * The meta object literal for the '<em><b>Output Package</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ADAPTATION_MODEL__OUTPUT_PACKAGE = eINSTANCE.getAdaptationModel_OutputPackage();
 
     /**
      * The meta object literal for the '<em><b>Adaptation Rules</b></em>' containment reference list feature.
