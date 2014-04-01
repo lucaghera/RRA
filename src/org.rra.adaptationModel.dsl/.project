@@ -3,6 +3,9 @@
 	<name>org.rra.adaptationModel.dsl</name>
 	<comment></comment>
 	<projects>
+		<project>org.rra.cdmModel.model</project>
+		<project>org.rra.dataTypesModel.model</project>
+		<project>org.rra.runtimeFeatureModel.model</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
