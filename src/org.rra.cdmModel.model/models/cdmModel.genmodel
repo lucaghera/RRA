@@ -14,6 +14,8 @@
     <genClasses ecoreClass="cdmModel.ecore#//ContextDependentMeasurementsModel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdmModel.ecore#//ContextDependentMeasurementsModel/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cdmModel.ecore#//ContextDependentMeasurementsModel/cdms"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdmModel.ecore#//ContextDependentMeasurementsModel/path"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdmModel.ecore#//ContextDependentMeasurementsModel/deps"/>
     </genClasses>
     <genClasses image="false" ecoreClass="cdmModel.ecore#//ContextDependentMeasurement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdmModel.ecore#//ContextDependentMeasurement/name"/>

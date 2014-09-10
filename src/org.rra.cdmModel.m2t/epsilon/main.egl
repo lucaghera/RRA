@@ -33,10 +33,24 @@
 	var cdmModel : ContextDependentMeasurementsModel := ContextDependentMeasurementsModel.allInstances().at(0);
 	
 	// context monitor
-	var launchTemplate := TemplateFactory.load('contextMonitor.egl');
-	launchTemplate.populate('cdmModel', cdmModel);
-	var fileName := cdmModel.name + '.cpp';
-	launchTemplate.generate(fileName);
+	var mainTemplate := TemplateFactory.load('contextMonitor.egl');
+	mainTemplate.populate('cdmModel', cdmModel);
+	var mainFileName := cdmModel.path + '/' + cdmModel.name + '/src/main.cpp';
+	mainTemplate.generate(mainFileName);
+	
+	// package
+	var packageTemplate := TemplateFactory.load('package.egl');
+	packageTemplate.populate('cdmModel', cdmModel);
+	packageTemplate.populate('modelName', cdmModel.name);
+	var packageFileName := cdmModel.path + '/' + cdmModel.name + '/package.xml';
+	packageTemplate.generate(packageFileName);
+	
+	// CMakeLists
+	var cmakeTemplate := TemplateFactory.load('cmakelists.egl');
+	cmakeTemplate.populate('cdmModel', cdmModel);
+	cmakeTemplate.populate('modelName', cdmModel.name);
+	var cmakeFileName := cdmModel.path + '/' + cdmModel.name + '/CMakeLists.txt';
+	cmakeTemplate.generate(cmakeFileName);
 	
 	//manifest
 	//var manifestTemplate := TemplateFactory.load('manifest.egl');

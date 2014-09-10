@@ -88,6 +88,8 @@ public class ContextDependentMeasurementsModelItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addPathPropertyDescriptor(object);
+			addDepsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -106,6 +108,50 @@ public class ContextDependentMeasurementsModelItemProvider
 				 getString("_UI_ContextDependentMeasurementsModel_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ContextDependentMeasurementsModel_name_feature", "_UI_ContextDependentMeasurementsModel_type"),
 				 CDMModelPackage.Literals.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContextDependentMeasurementsModel_path_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContextDependentMeasurementsModel_path_feature", "_UI_ContextDependentMeasurementsModel_type"),
+				 CDMModelPackage.Literals.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__PATH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Deps feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDepsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContextDependentMeasurementsModel_deps_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContextDependentMeasurementsModel_deps_feature", "_UI_ContextDependentMeasurementsModel_type"),
+				 CDMModelPackage.Literals.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__DEPS,
 				 true,
 				 false,
 				 false,
@@ -182,6 +228,8 @@ public class ContextDependentMeasurementsModelItemProvider
 
 		switch (notification.getFeatureID(ContextDependentMeasurementsModel.class)) {
 			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__NAME:
+			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__PATH:
+			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__DEPS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__CDMS:

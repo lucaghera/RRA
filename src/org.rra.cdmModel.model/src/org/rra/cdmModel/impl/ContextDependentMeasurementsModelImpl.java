@@ -39,6 +39,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.rra.cdmModel.CDMModelPackage;
@@ -54,6 +55,8 @@ import org.rra.cdmModel.ContextDependentMeasurementsModel;
  * <ul>
  *   <li>{@link org.rra.cdmModel.impl.ContextDependentMeasurementsModelImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.rra.cdmModel.impl.ContextDependentMeasurementsModelImpl#getCdms <em>Cdms</em>}</li>
+ *   <li>{@link org.rra.cdmModel.impl.ContextDependentMeasurementsModelImpl#getPath <em>Path</em>}</li>
+ *   <li>{@link org.rra.cdmModel.impl.ContextDependentMeasurementsModelImpl#getDeps <em>Deps</em>}</li>
  * </ul>
  * </p>
  *
@@ -89,6 +92,36 @@ public class ContextDependentMeasurementsModelImpl extends MinimalEObjectImpl.Co
 	 * @ordered
 	 */
 	protected EList<ContextDependentMeasurement> cdms;
+
+	/**
+	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PATH_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String path = PATH_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDeps() <em>Deps</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeps()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> deps;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,6 +180,39 @@ public class ContextDependentMeasurementsModelImpl extends MinimalEObjectImpl.Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPath() {
+		return path;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPath(String newPath) {
+		String oldPath = path;
+		path = newPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__PATH, oldPath, path));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<String> getDeps() {
+		if (deps == null) {
+			deps = new EDataTypeUniqueEList<String>(String.class, this, CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__DEPS);
+		}
+		return deps;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -168,6 +234,10 @@ public class ContextDependentMeasurementsModelImpl extends MinimalEObjectImpl.Co
 				return getName();
 			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__CDMS:
 				return getCdms();
+			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__PATH:
+				return getPath();
+			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__DEPS:
+				return getDeps();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -188,6 +258,13 @@ public class ContextDependentMeasurementsModelImpl extends MinimalEObjectImpl.Co
 				getCdms().clear();
 				getCdms().addAll((Collection<? extends ContextDependentMeasurement>)newValue);
 				return;
+			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__PATH:
+				setPath((String)newValue);
+				return;
+			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__DEPS:
+				getDeps().clear();
+				getDeps().addAll((Collection<? extends String>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -206,6 +283,12 @@ public class ContextDependentMeasurementsModelImpl extends MinimalEObjectImpl.Co
 			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__CDMS:
 				getCdms().clear();
 				return;
+			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__PATH:
+				setPath(PATH_EDEFAULT);
+				return;
+			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__DEPS:
+				getDeps().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -222,6 +305,10 @@ public class ContextDependentMeasurementsModelImpl extends MinimalEObjectImpl.Co
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__CDMS:
 				return cdms != null && !cdms.isEmpty();
+			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__PATH:
+				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
+			case CDMModelPackage.CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__DEPS:
+				return deps != null && !deps.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -238,6 +325,10 @@ public class ContextDependentMeasurementsModelImpl extends MinimalEObjectImpl.Co
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", path: ");
+		result.append(path);
+		result.append(", deps: ");
+		result.append(deps);
 		result.append(')');
 		return result.toString();
 	}

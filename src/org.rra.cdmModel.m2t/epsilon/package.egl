@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package>
+  <name>[%=modelName%]</name>
+  <version>0.0.0</version>
+  <description>The icra2015_cdm package</description>
+
+  <maintainer email="luca@todo.todo">luca</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+[%
+for(dep in cdmModel.deps) {
+%]
+  <build_depend>[%=dep%]</build_depend>
+[%
+}
+%]
+
+  <run_depend>roscpp</run_depend>
+[%
+for(dep in cdmModel.deps) {
+%]
+  <run_depend>[%=dep%]</run_depend>
+[%
+}
+%]
+
+  <export>  </export>
+
+</package>

@@ -3,7 +3,6 @@
 package org.rra.adaptationModel.adaptationModelDSL;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.rra.runtimeFeatureModel.CVAttribute;
 
 /**

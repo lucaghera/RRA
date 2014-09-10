@@ -5,10 +5,9 @@ package org.rra.adaptationModel.ui;
 
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
+import org.rra.adaptationModel.ui.internal.AdaptationModelDSLActivator;
 
 import com.google.inject.Injector;
-
-import org.rra.adaptationModel.ui.internal.AdaptationModelDSLActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly

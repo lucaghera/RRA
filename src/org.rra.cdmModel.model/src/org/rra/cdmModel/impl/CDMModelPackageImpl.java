@@ -178,6 +178,24 @@ public class CDMModelPackageImpl extends EPackageImpl implements CDMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getContextDependentMeasurementsModel_Path() {
+		return (EAttribute)contextDependentMeasurementsModelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getContextDependentMeasurementsModel_Deps() {
+		return (EAttribute)contextDependentMeasurementsModelEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getContextDependentMeasurement() {
 		return contextDependentMeasurementEClass;
 	}
@@ -276,6 +294,8 @@ public class CDMModelPackageImpl extends EPackageImpl implements CDMModelPackage
 		contextDependentMeasurementsModelEClass = createEClass(CONTEXT_DEPENDENT_MEASUREMENTS_MODEL);
 		createEAttribute(contextDependentMeasurementsModelEClass, CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__NAME);
 		createEReference(contextDependentMeasurementsModelEClass, CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__CDMS);
+		createEAttribute(contextDependentMeasurementsModelEClass, CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__PATH);
+		createEAttribute(contextDependentMeasurementsModelEClass, CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__DEPS);
 
 		contextDependentMeasurementEClass = createEClass(CONTEXT_DEPENDENT_MEASUREMENT);
 		createEAttribute(contextDependentMeasurementEClass, CONTEXT_DEPENDENT_MEASUREMENT__NAME);
@@ -329,6 +349,8 @@ public class CDMModelPackageImpl extends EPackageImpl implements CDMModelPackage
 		initEClass(contextDependentMeasurementsModelEClass, ContextDependentMeasurementsModel.class, "ContextDependentMeasurementsModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContextDependentMeasurementsModel_Name(), ecorePackage.getEString(), "name", null, 1, 1, ContextDependentMeasurementsModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContextDependentMeasurementsModel_Cdms(), this.getContextDependentMeasurement(), null, "cdms", null, 1, -1, ContextDependentMeasurementsModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContextDependentMeasurementsModel_Path(), ecorePackage.getEString(), "path", null, 0, 1, ContextDependentMeasurementsModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContextDependentMeasurementsModel_Deps(), ecorePackage.getEString(), "deps", null, 0, -1, ContextDependentMeasurementsModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(contextDependentMeasurementEClass, ContextDependentMeasurement.class, "ContextDependentMeasurement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContextDependentMeasurement_Name(), ecorePackage.getEString(), "name", null, 1, 1, ContextDependentMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

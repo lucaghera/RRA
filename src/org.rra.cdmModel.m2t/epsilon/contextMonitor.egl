@@ -51,6 +51,10 @@ ros::Subscriber [%=cdm.name%]_sub;
 }
 %]
 
+// Define global variables
+[%=out.startPreserve("/*", "*/", "user implementation of globale variables", true)%]
+[%=out.stopPreserve()%]
+
 [%
 var functions : Sequence := cdmHelper.getRosMsgFunctions(cdmModel);
 
@@ -83,6 +87,11 @@ for(cdm in cdmModel.cdms) {
 void [%=cdm.name%]_callback(const [%=inputDataType.msgs_package%]::[%=inputDataType.name%]::ConstPtr& input){
 
 	[%=outputDataType.msgs_package%]::[%=outputDataType.name%] output;
+	
+	// User code
+	[%=out.startPreserve("/*", "*/", "user code", true)%]
+	[%=out.stopPreserve()%]
+
 [%
 		if(cdm.cdmFunction.isDefined()){
 %]
@@ -94,6 +103,11 @@ void [%=cdm.name%]_callback(const [%=inputDataType.msgs_package%]::[%=inputDataT
 [%	
 	}
 %]
+	
+	// User code
+	[%=out.startPreserve("/*", "*/", "user code", true)%]
+	[%=out.stopPreserve()%]
+	
 	[%=cdm.name%]_pub.publish(output);	
 
 }

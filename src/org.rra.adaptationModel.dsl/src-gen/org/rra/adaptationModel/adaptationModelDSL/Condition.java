@@ -3,7 +3,6 @@
 package org.rra.adaptationModel.adaptationModelDSL;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.rra.cdmModel.ContextDependentMeasurement;
 
 /**

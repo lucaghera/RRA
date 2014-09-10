@@ -113,13 +113,31 @@ public interface CDMModelPackage extends EPackage {
 	int CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__CDMS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__PATH = 2;
+
+	/**
+	 * The feature id for the '<em><b>Deps</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__DEPS = 3;
+
+	/**
 	 * The number of structural features of the '<em>Context Dependent Measurements Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_DEPENDENT_MEASUREMENTS_MODEL_FEATURE_COUNT = 2;
+	int CONTEXT_DEPENDENT_MEASUREMENTS_MODEL_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Context Dependent Measurements Model</em>' class.
@@ -311,6 +329,28 @@ public interface CDMModelPackage extends EPackage {
 	EReference getContextDependentMeasurementsModel_Cdms();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.rra.cdmModel.ContextDependentMeasurementsModel#getPath <em>Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Path</em>'.
+	 * @see org.rra.cdmModel.ContextDependentMeasurementsModel#getPath()
+	 * @see #getContextDependentMeasurementsModel()
+	 * @generated
+	 */
+	EAttribute getContextDependentMeasurementsModel_Path();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.rra.cdmModel.ContextDependentMeasurementsModel#getDeps <em>Deps</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Deps</em>'.
+	 * @see org.rra.cdmModel.ContextDependentMeasurementsModel#getDeps()
+	 * @see #getContextDependentMeasurementsModel()
+	 * @generated
+	 */
+	EAttribute getContextDependentMeasurementsModel_Deps();
+
+	/**
 	 * Returns the meta object for class '{@link org.rra.cdmModel.ContextDependentMeasurement <em>Context Dependent Measurement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -443,6 +483,22 @@ public interface CDMModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__CDMS = eINSTANCE.getContextDependentMeasurementsModel_Cdms();
+
+		/**
+		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__PATH = eINSTANCE.getContextDependentMeasurementsModel_Path();
+
+		/**
+		 * The meta object literal for the '<em><b>Deps</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTEXT_DEPENDENT_MEASUREMENTS_MODEL__DEPS = eINSTANCE.getContextDependentMeasurementsModel_Deps();
 
 		/**
 		 * The meta object literal for the '{@link org.rra.cdmModel.impl.ContextDependentMeasurementImpl <em>Context Dependent Measurement</em>}' class.

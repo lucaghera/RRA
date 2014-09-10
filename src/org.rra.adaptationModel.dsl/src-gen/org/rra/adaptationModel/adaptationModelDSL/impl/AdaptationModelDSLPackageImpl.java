@@ -7,11 +7,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.hyperflex.featuremodels.featuremodelsPackage;
-
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModel;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLFactory;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
@@ -35,9 +32,7 @@ import org.rra.adaptationModel.adaptationModelDSL.QueryOperator;
 import org.rra.adaptationModel.adaptationModelDSL.RuleBody;
 import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
 import org.rra.adaptationModel.adaptationModelDSL.StringAttributeValue;
-
 import org.rra.cdmModel.CDMModelPackage;
-
 import org.rra.runtimeFeatureModel.RuntimeFeatureModelPackage;
 
 /**

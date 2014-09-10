@@ -36,11 +36,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.rra.runtimeFeatureModel.*;
 import org.rra.runtimeFeatureModel.CIMAttribute;
 import org.rra.runtimeFeatureModel.CVAttribute;
 import org.rra.runtimeFeatureModel.NFRAttribute;
 import org.rra.runtimeFeatureModel.NFRAttributeTag;
+import org.rra.runtimeFeatureModel.RuntimeAdaptationAttributeTypes;
 import org.rra.runtimeFeatureModel.RuntimeFeatureModelFactory;
 import org.rra.runtimeFeatureModel.RuntimeFeatureModelPackage;
 

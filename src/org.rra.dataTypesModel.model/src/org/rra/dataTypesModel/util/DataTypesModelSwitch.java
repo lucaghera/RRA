@@ -33,14 +33,22 @@ package org.rra.dataTypesModel.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.rra.dataTypesModel.*;
 import org.rra.dataTypesModel.CompositeDataType;
+import org.rra.dataTypesModel.CompositeTypeField;
 import org.rra.dataTypesModel.ContainerDataType;
 import org.rra.dataTypesModel.DataType;
 import org.rra.dataTypesModel.DataTypesModel;
 import org.rra.dataTypesModel.DataTypesModelPackage;
+import org.rra.dataTypesModel.EnumElement;
+import org.rra.dataTypesModel.Enumerator;
+import org.rra.dataTypesModel.Field;
 import org.rra.dataTypesModel.Function;
+import org.rra.dataTypesModel.MemberFunction;
+import org.rra.dataTypesModel.NonMemberFunction;
 import org.rra.dataTypesModel.PrimitiveDataType;
+import org.rra.dataTypesModel.ROSMsgDataType;
+import org.rra.dataTypesModel.ROSMsgField;
+import org.rra.dataTypesModel.ROSMsgFunction;
 
 /**
  * <!-- begin-user-doc -->
