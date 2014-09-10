@@ -4,26 +4,10 @@ package org.rra.adaptationModel.adaptationModelDSL.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.util.Switch;
-import org.rra.adaptationModel.adaptationModelDSL.AdaptationModel;
-import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
-import org.rra.adaptationModel.adaptationModelDSL.AdaptationRule;
-import org.rra.adaptationModel.adaptationModelDSL.AtomicAction;
-import org.rra.adaptationModel.adaptationModelDSL.AtomicActionDeselectFeature;
-import org.rra.adaptationModel.adaptationModelDSL.AtomicActionModifyAttribute;
-import org.rra.adaptationModel.adaptationModelDSL.AtomicActionQuery;
-import org.rra.adaptationModel.adaptationModelDSL.AtomicActionSelectFeature;
-import org.rra.adaptationModel.adaptationModelDSL.AtomicRule;
-import org.rra.adaptationModel.adaptationModelDSL.AtomicRuleWithPriority;
-import org.rra.adaptationModel.adaptationModelDSL.AttributeValue;
-import org.rra.adaptationModel.adaptationModelDSL.Condition;
-import org.rra.adaptationModel.adaptationModelDSL.ConditionAction;
-import org.rra.adaptationModel.adaptationModelDSL.Import;
-import org.rra.adaptationModel.adaptationModelDSL.NFRAttributeValue;
-import org.rra.adaptationModel.adaptationModelDSL.PureAction;
-import org.rra.adaptationModel.adaptationModelDSL.RuleBody;
-import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
-import org.rra.adaptationModel.adaptationModelDSL.StringAttributeValue;
+
+import org.rra.adaptationModel.adaptationModelDSL.*;
 
 /**
  * <!-- begin-user-doc -->

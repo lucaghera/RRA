@@ -96,15 +96,120 @@ ruleAdaptationModel returns [EObject current=null]
 	    }
 
 )
-)*	otherlv_1='name' 
+)*	otherlv_1='feature model' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getAdaptationModelAccess().getNameKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getAdaptationModelAccess().getFeatureModelKeyword_1());
     }
 (
 (
-		lv_name_2_0=RULE_ID
 		{
-			newLeafNode(lv_name_2_0, grammarAccess.getAdaptationModelAccess().getNameIDTerminalRuleCall_2_0()); 
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAdaptationModelRule());
+	        }
+        }
+	otherlv_2=RULE_ID
+	{
+		newLeafNode(otherlv_2, grammarAccess.getAdaptationModelAccess().getFeatureModelFeatureModelCrossReference_2_0()); 
+	}
+
+)
+)	otherlv_3=';' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getAdaptationModelAccess().getSemicolonKeyword_3());
+    }
+	otherlv_4='template system model' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getAdaptationModelAccess().getTemplateSystemModelKeyword_4());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAdaptationModelRule());
+	        }
+        }
+	otherlv_5=RULE_ID
+	{
+		newLeafNode(otherlv_5, grammarAccess.getAdaptationModelAccess().getTempalteSystemModelSystemCrossReference_5_0()); 
+	}
+
+)
+)	otherlv_6=';' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getAdaptationModelAccess().getSemicolonKeyword_6());
+    }
+	otherlv_7='resolution model' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getAdaptationModelAccess().getResolutionModelKeyword_7());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAdaptationModelRule());
+	        }
+        }
+	otherlv_8=RULE_ID
+	{
+		newLeafNode(otherlv_8, grammarAccess.getAdaptationModelAccess().getResolutionModelResolutionModelCrossReference_8_0()); 
+	}
+
+)
+)	otherlv_9=';' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getAdaptationModelAccess().getSemicolonKeyword_9());
+    }
+	otherlv_10='cdm model' 
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getAdaptationModelAccess().getCdmModelKeyword_10());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAdaptationModelRule());
+	        }
+        }
+	otherlv_11=RULE_ID
+	{
+		newLeafNode(otherlv_11, grammarAccess.getAdaptationModelAccess().getCdmModelContextDependentMeasurementsModelCrossReference_11_0()); 
+	}
+
+)
+)	otherlv_12=';' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getAdaptationModelAccess().getSemicolonKeyword_12());
+    }
+	otherlv_13='data types model' 
+    {
+    	newLeafNode(otherlv_13, grammarAccess.getAdaptationModelAccess().getDataTypesModelKeyword_13());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAdaptationModelRule());
+	        }
+        }
+	otherlv_14=RULE_ID
+	{
+		newLeafNode(otherlv_14, grammarAccess.getAdaptationModelAccess().getDataTypesModelDataTypesModelCrossReference_14_0()); 
+	}
+
+)
+)	otherlv_15=';' 
+    {
+    	newLeafNode(otherlv_15, grammarAccess.getAdaptationModelAccess().getSemicolonKeyword_15());
+    }
+	otherlv_16='name' 
+    {
+    	newLeafNode(otherlv_16, grammarAccess.getAdaptationModelAccess().getNameKeyword_16());
+    }
+(
+(
+		lv_name_17_0=RULE_ID
+		{
+			newLeafNode(lv_name_17_0, grammarAccess.getAdaptationModelAccess().getNameIDTerminalRuleCall_17_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -113,24 +218,24 @@ ruleAdaptationModel returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_2_0, 
+        		lv_name_17_0, 
         		"ID");
 	    }
 
 )
-)	otherlv_3=';' 
+)	otherlv_18=';' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getAdaptationModelAccess().getSemicolonKeyword_3());
+    	newLeafNode(otherlv_18, grammarAccess.getAdaptationModelAccess().getSemicolonKeyword_18());
     }
-	otherlv_4='period[ms]' 
+	otherlv_19='period[ms]' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getAdaptationModelAccess().getPeriodMsKeyword_4());
+    	newLeafNode(otherlv_19, grammarAccess.getAdaptationModelAccess().getPeriodMsKeyword_19());
     }
 (
 (
-		lv_period_5_0=RULE_INT
+		lv_period_20_0=RULE_INT
 		{
-			newLeafNode(lv_period_5_0, grammarAccess.getAdaptationModelAccess().getPeriodINTTerminalRuleCall_5_0()); 
+			newLeafNode(lv_period_20_0, grammarAccess.getAdaptationModelAccess().getPeriodINTTerminalRuleCall_20_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -139,28 +244,28 @@ ruleAdaptationModel returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"period",
-        		lv_period_5_0, 
+        		lv_period_20_0, 
         		"INT");
 	    }
 
 )
-)	otherlv_6=';' 
+)	otherlv_21=';' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getAdaptationModelAccess().getSemicolonKeyword_6());
+    	newLeafNode(otherlv_21, grammarAccess.getAdaptationModelAccess().getSemicolonKeyword_21());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAdaptationModelAccess().getAdaptationRulesAdaptationRuleParserRuleCall_7_0()); 
+	        newCompositeNode(grammarAccess.getAdaptationModelAccess().getAdaptationRulesAdaptationRuleParserRuleCall_22_0()); 
 	    }
-		lv_adaptationRules_7_0=ruleAdaptationRule		{
+		lv_adaptationRules_22_0=ruleAdaptationRule		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAdaptationModelRule());
 	        }
        		add(
        			$current, 
        			"adaptationRules",
-        		lv_adaptationRules_7_0, 
+        		lv_adaptationRules_22_0, 
         		"AdaptationRule");
 	        afterParserOrEnumRuleCall();
 	    }

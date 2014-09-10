@@ -4,6 +4,8 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "http://www.rra.org/cdmmodel" as cdmModel
 import "http://www.rra.org/datatypesmodel" as dtModel
 import "http://www.hyperflex.org/featuremodels" as featureModel
+import "http://www.hyperflex.org/resolutionmodels" as resolutionModel
+import "http://www.hyperflex.org/componentmodels.ros" as rosComponentModel
 //import "platform:/resource/org.hyperflex.featuremodels.model/models/featureModel.ecore" as featuremModel
 import "http://www.rra.org/runtimeFeatureModel" as rtFeatureModel
 
@@ -11,6 +13,11 @@ generate adaptationModelDSL "http://www.rra.org/adaptationModel/AdaptationModelD
 
 AdaptationModel:
 	(imports+=Import*)
+	'feature model' featureModel=[featureModel::FeatureModel]';'
+	'template system model' tempalteSystemModel=[rosComponentModel::System]';'
+	'resolution model' resolutionModel=[resolutionModel::ResolutionModel]';'
+	'cdm model' cdmModel=[cdmModel::ContextDependentMeasurementsModel]';'
+	'data types model' dataTypesModel=[dtModel::DataTypesModel]';'
 	'name' name=ID ';' 
 	'period[ms]' period=INT ';' 
 	(adaptationRules+=AdaptationRule*)

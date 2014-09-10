@@ -35,7 +35,14 @@ Workflow {
     	registerGeneratedEPackage = "org.rra.runtimeFeatureModel.RuntimeFeatureModelPackage"
     	registerEcoreFile = "platform:/resource/org.rra.runtimeFeatureModel.model/models/runtimeFeatureModel.ecore"
     	registerGenModelFile = "platform:/resource/org.rra.runtimeFeatureModel.model/models/runtimeFeatureModel.genmodel"
-    
+    	
+    	registerGeneratedEPackage = "org.hyperflex.resolutionmodels.resolutionmodelsPackage"
+    	registerEcoreFile = "platform:/resource/org.hyperflex.resolutionmodels.model/models/resolutionModel.ecore"
+    	registerGenModelFile = "platform:/resource/org.hyperflex.resolutionmodels.model/models/resolutionModel.genmodel"
+    	
+    	registerGeneratedEPackage = "org.hyperflex.roscomponentmodel.roscomponentmodelPackage"
+    	registerEcoreFile = "platform:/resource/org.hyperflex.componentmodels.ros.model/models/rosComponentModel.ecore"
+    	registerGenModelFile = "platform:/resource/org.hyperflex.componentmodels.ros.model/models/rosComponentModel.genmodel"
     }
     
     component = DirectoryCleaner {

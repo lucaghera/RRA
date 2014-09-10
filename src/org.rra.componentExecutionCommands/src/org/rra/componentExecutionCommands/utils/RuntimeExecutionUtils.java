@@ -41,6 +41,7 @@ import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import org.hyperflex.featuremodels.Feature;
 import org.hyperflex.featuremodels.FeatureModel;
+import org.hyperflex.roscomponentmodel.Topic;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModel;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationRule;
 import org.rra.adaptationModel.adaptationModelDSL.AtomicAction;
@@ -164,7 +165,7 @@ public class RuntimeExecutionUtils {
 			if(rule instanceof AtomicRule){
 
 				RuleBody ruleBody = (RuleBody)((AtomicRule)rule).getRuleBody();
-				getFeatureModel(ruleBody.getAtomicAction());
+				result = getFeatureModel(ruleBody.getAtomicAction());
 				if(result != null){
 					return result;
 				}

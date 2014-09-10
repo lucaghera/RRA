@@ -4,7 +4,7 @@
     editorDirectory="/org.rra.adaptationModel.dsl.editor/src" modelPluginID="org.rra.adaptationModel.dsl"
     forceOverwrite="true" modelName="AdaptationModelDSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.rra.adaptationModel.dsl.edit"
-    editorPluginID="org.rra.adaptationModel.dsl.editor" runtimeVersion="2.9" usedGenPackages="../../../org.hyperflex.featuremodels.model/models/featureModel.genmodel#//featuremodels ../../../org.rra.cdmModel.model/models/cdmModel.genmodel#//cdmModel ../../../org.rra.runtimeFeatureModel.model/models/runtimeFeatureModel.genmodel#//runtimeFeatureModel">
+    editorPluginID="org.rra.adaptationModel.dsl.editor" runtimeVersion="2.9" usedGenPackages="../../../org.hyperflex.componentmodels.ros.model/models/rosComponentModel.genmodel#//roscomponentmodel ../../../org.hyperflex.featuremodels.model/models/featureModel.genmodel#//featuremodels ../../../org.hyperflex.resolutionmodels.model/models/resolutionModel.genmodel#//resolutionmodels ../../../org.rra.cdmModel.model/models/cdmModel.genmodel#//cdmModel ../../../org.rra.dataTypesModel.model/models/dataTypesModel.genmodel#//dataTypesModel ../../../org.rra.runtimeFeatureModel.model/models/runtimeFeatureModel.genmodel#//runtimeFeatureModel">
   <genPackages prefix="AdaptationModelDSL" basePackage="org.rra.adaptationModel" disposableProviderFactory="true"
       fileExtensions="adaptationModel" ecorePackage="AdaptationModelDSL.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="AdaptationModelDSL.ecore#//MathOperator">
@@ -24,6 +24,11 @@
     </genEnums>
     <genClasses ecoreClass="AdaptationModelDSL.ecore#//AdaptationModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AdaptationModel/imports"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AdaptationModel/featureModel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AdaptationModel/tempalteSystemModel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AdaptationModel/resolutionModel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AdaptationModel/cdmModel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AdaptationModel/dataTypesModel"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//AdaptationModel/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AdaptationModelDSL.ecore#//AdaptationModel/period"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AdaptationModelDSL.ecore#//AdaptationModel/adaptationRules"/>

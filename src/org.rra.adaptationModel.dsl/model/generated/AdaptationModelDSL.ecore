@@ -5,6 +5,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="AdaptationModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
         eType="#//Import" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featureModel" eType="ecore:EClass ../../../org.hyperflex.featuremodels.model/models/featureModel.ecore#//FeatureModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tempalteSystemModel" eType="ecore:EClass ../../../org.hyperflex.componentmodels.ros.model/models/rosComponentModel.ecore#//System"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resolutionModel" eType="ecore:EClass ../../../org.hyperflex.resolutionmodels.model/models/resolutionModel.ecore#//ResolutionModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cdmModel" eType="ecore:EClass ../../../org.rra.cdmModel.model/models/cdmModel.ecore#//ContextDependentMeasurementsModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataTypesModel" eType="ecore:EClass ../../../org.rra.dataTypesModel.model/models/dataTypesModel.ecore#//DataTypesModel"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="period" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationRules" upperBound="-1"

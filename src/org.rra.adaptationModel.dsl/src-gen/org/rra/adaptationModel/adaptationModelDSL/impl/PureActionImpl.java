@@ -3,6 +3,7 @@
 package org.rra.adaptationModel.adaptationModelDSL.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
 import org.rra.adaptationModel.adaptationModelDSL.PureAction;
 

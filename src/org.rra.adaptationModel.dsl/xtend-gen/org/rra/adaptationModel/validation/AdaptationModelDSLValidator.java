@@ -3,6 +3,7 @@
  */
 package org.rra.adaptationModel.validation;
 
+import org.rra.adaptationModel.validation.AbstractAdaptationModelDSLValidator;
 
 /**
  * Custom validation rules.

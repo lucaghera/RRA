@@ -77,13 +77,58 @@ public interface AdaptationModelDSLPackage extends EPackage
   int ADAPTATION_MODEL__IMPORTS = 0;
 
   /**
+   * The feature id for the '<em><b>Feature Model</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADAPTATION_MODEL__FEATURE_MODEL = 1;
+
+  /**
+   * The feature id for the '<em><b>Tempalte System Model</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADAPTATION_MODEL__TEMPALTE_SYSTEM_MODEL = 2;
+
+  /**
+   * The feature id for the '<em><b>Resolution Model</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADAPTATION_MODEL__RESOLUTION_MODEL = 3;
+
+  /**
+   * The feature id for the '<em><b>Cdm Model</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADAPTATION_MODEL__CDM_MODEL = 4;
+
+  /**
+   * The feature id for the '<em><b>Data Types Model</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADAPTATION_MODEL__DATA_TYPES_MODEL = 5;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ADAPTATION_MODEL__NAME = 1;
+  int ADAPTATION_MODEL__NAME = 6;
 
   /**
    * The feature id for the '<em><b>Period</b></em>' attribute.
@@ -92,7 +137,7 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ADAPTATION_MODEL__PERIOD = 2;
+  int ADAPTATION_MODEL__PERIOD = 7;
 
   /**
    * The feature id for the '<em><b>Adaptation Rules</b></em>' containment reference list.
@@ -101,7 +146,7 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ADAPTATION_MODEL__ADAPTATION_RULES = 3;
+  int ADAPTATION_MODEL__ADAPTATION_RULES = 8;
 
   /**
    * The number of structural features of the '<em>Adaptation Model</em>' class.
@@ -110,7 +155,7 @@ public interface AdaptationModelDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ADAPTATION_MODEL_FEATURE_COUNT = 4;
+  int ADAPTATION_MODEL_FEATURE_COUNT = 9;
 
   /**
    * The meta object id for the '{@link org.rra.adaptationModel.adaptationModelDSL.impl.ImportImpl <em>Import</em>}' class.
@@ -785,6 +830,61 @@ public interface AdaptationModelDSLPackage extends EPackage
   EReference getAdaptationModel_Imports();
 
   /**
+   * Returns the meta object for the reference '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getFeatureModel <em>Feature Model</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Feature Model</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getFeatureModel()
+   * @see #getAdaptationModel()
+   * @generated
+   */
+  EReference getAdaptationModel_FeatureModel();
+
+  /**
+   * Returns the meta object for the reference '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getTempalteSystemModel <em>Tempalte System Model</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Tempalte System Model</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getTempalteSystemModel()
+   * @see #getAdaptationModel()
+   * @generated
+   */
+  EReference getAdaptationModel_TempalteSystemModel();
+
+  /**
+   * Returns the meta object for the reference '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getResolutionModel <em>Resolution Model</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Resolution Model</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getResolutionModel()
+   * @see #getAdaptationModel()
+   * @generated
+   */
+  EReference getAdaptationModel_ResolutionModel();
+
+  /**
+   * Returns the meta object for the reference '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getCdmModel <em>Cdm Model</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Cdm Model</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getCdmModel()
+   * @see #getAdaptationModel()
+   * @generated
+   */
+  EReference getAdaptationModel_CdmModel();
+
+  /**
+   * Returns the meta object for the reference '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getDataTypesModel <em>Data Types Model</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Data Types Model</em>'.
+   * @see org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getDataTypesModel()
+   * @see #getAdaptationModel()
+   * @generated
+   */
+  EReference getAdaptationModel_DataTypesModel();
+
+  /**
    * Returns the meta object for the attribute '{@link org.rra.adaptationModel.adaptationModelDSL.AdaptationModel#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1332,6 +1432,46 @@ public interface AdaptationModelDSLPackage extends EPackage
      * @generated
      */
     EReference ADAPTATION_MODEL__IMPORTS = eINSTANCE.getAdaptationModel_Imports();
+
+    /**
+     * The meta object literal for the '<em><b>Feature Model</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADAPTATION_MODEL__FEATURE_MODEL = eINSTANCE.getAdaptationModel_FeatureModel();
+
+    /**
+     * The meta object literal for the '<em><b>Tempalte System Model</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADAPTATION_MODEL__TEMPALTE_SYSTEM_MODEL = eINSTANCE.getAdaptationModel_TempalteSystemModel();
+
+    /**
+     * The meta object literal for the '<em><b>Resolution Model</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADAPTATION_MODEL__RESOLUTION_MODEL = eINSTANCE.getAdaptationModel_ResolutionModel();
+
+    /**
+     * The meta object literal for the '<em><b>Cdm Model</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADAPTATION_MODEL__CDM_MODEL = eINSTANCE.getAdaptationModel_CdmModel();
+
+    /**
+     * The meta object literal for the '<em><b>Data Types Model</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADAPTATION_MODEL__DATA_TYPES_MODEL = eINSTANCE.getAdaptationModel_DataTypesModel();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

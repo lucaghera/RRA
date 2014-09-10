@@ -3,6 +3,7 @@
  */
 package org.rra.adaptationModel.ui.contentassist;
 
+import org.rra.adaptationModel.ui.contentassist.AbstractAdaptationModelDSLProposalProvider;
 
 /**
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant

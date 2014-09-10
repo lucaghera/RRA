@@ -7,8 +7,15 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import org.hyperflex.featuremodels.featuremodelsPackage;
+
+import org.hyperflex.resolutionmodels.resolutionmodelsPackage;
+
+import org.hyperflex.roscomponentmodel.roscomponentmodelPackage;
+
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModel;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLFactory;
 import org.rra.adaptationModel.adaptationModelDSL.AdaptationModelDSLPackage;
@@ -32,7 +39,11 @@ import org.rra.adaptationModel.adaptationModelDSL.QueryOperator;
 import org.rra.adaptationModel.adaptationModelDSL.RuleBody;
 import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
 import org.rra.adaptationModel.adaptationModelDSL.StringAttributeValue;
+
 import org.rra.cdmModel.CDMModelPackage;
+
+import org.rra.dataTypesModel.DataTypesModelPackage;
+
 import org.rra.runtimeFeatureModel.RuntimeFeatureModelPackage;
 
 /**
@@ -239,6 +250,7 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
     isInited = true;
 
     // Initialize simple dependencies
+    resolutionmodelsPackage.eINSTANCE.eClass();
     CDMModelPackage.eINSTANCE.eClass();
     RuntimeFeatureModelPackage.eINSTANCE.eClass();
 
@@ -282,9 +294,59 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getAdaptationModel_FeatureModel()
+  {
+    return (EReference)adaptationModelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAdaptationModel_TempalteSystemModel()
+  {
+    return (EReference)adaptationModelEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAdaptationModel_ResolutionModel()
+  {
+    return (EReference)adaptationModelEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAdaptationModel_CdmModel()
+  {
+    return (EReference)adaptationModelEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAdaptationModel_DataTypesModel()
+  {
+    return (EReference)adaptationModelEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getAdaptationModel_Name()
   {
-    return (EAttribute)adaptationModelEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)adaptationModelEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -294,7 +356,7 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    */
   public EAttribute getAdaptationModel_Period()
   {
-    return (EAttribute)adaptationModelEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)adaptationModelEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -304,7 +366,7 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
    */
   public EReference getAdaptationModel_AdaptationRules()
   {
-    return (EReference)adaptationModelEClass.getEStructuralFeatures().get(3);
+    return (EReference)adaptationModelEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -789,6 +851,11 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
     // Create classes and their features
     adaptationModelEClass = createEClass(ADAPTATION_MODEL);
     createEReference(adaptationModelEClass, ADAPTATION_MODEL__IMPORTS);
+    createEReference(adaptationModelEClass, ADAPTATION_MODEL__FEATURE_MODEL);
+    createEReference(adaptationModelEClass, ADAPTATION_MODEL__TEMPALTE_SYSTEM_MODEL);
+    createEReference(adaptationModelEClass, ADAPTATION_MODEL__RESOLUTION_MODEL);
+    createEReference(adaptationModelEClass, ADAPTATION_MODEL__CDM_MODEL);
+    createEReference(adaptationModelEClass, ADAPTATION_MODEL__DATA_TYPES_MODEL);
     createEAttribute(adaptationModelEClass, ADAPTATION_MODEL__NAME);
     createEAttribute(adaptationModelEClass, ADAPTATION_MODEL__PERIOD);
     createEReference(adaptationModelEClass, ADAPTATION_MODEL__ADAPTATION_RULES);
@@ -883,8 +950,11 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
     setNsURI(eNS_URI);
 
     // Obtain other dependent packages
-    CDMModelPackage theCDMModelPackage = (CDMModelPackage)EPackage.Registry.INSTANCE.getEPackage(CDMModelPackage.eNS_URI);
     featuremodelsPackage thefeaturemodelsPackage = (featuremodelsPackage)EPackage.Registry.INSTANCE.getEPackage(featuremodelsPackage.eNS_URI);
+    roscomponentmodelPackage theroscomponentmodelPackage = (roscomponentmodelPackage)EPackage.Registry.INSTANCE.getEPackage(roscomponentmodelPackage.eNS_URI);
+    resolutionmodelsPackage theresolutionmodelsPackage = (resolutionmodelsPackage)EPackage.Registry.INSTANCE.getEPackage(resolutionmodelsPackage.eNS_URI);
+    CDMModelPackage theCDMModelPackage = (CDMModelPackage)EPackage.Registry.INSTANCE.getEPackage(CDMModelPackage.eNS_URI);
+    DataTypesModelPackage theDataTypesModelPackage = (DataTypesModelPackage)EPackage.Registry.INSTANCE.getEPackage(DataTypesModelPackage.eNS_URI);
     RuntimeFeatureModelPackage theRuntimeFeatureModelPackage = (RuntimeFeatureModelPackage)EPackage.Registry.INSTANCE.getEPackage(RuntimeFeatureModelPackage.eNS_URI);
 
     // Create type parameters
@@ -906,6 +976,11 @@ public class AdaptationModelDSLPackageImpl extends EPackageImpl implements Adapt
     // Initialize classes and features; add operations and parameters
     initEClass(adaptationModelEClass, AdaptationModel.class, "AdaptationModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAdaptationModel_Imports(), this.getImport(), null, "imports", null, 0, -1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAdaptationModel_FeatureModel(), thefeaturemodelsPackage.getFeatureModel(), null, "featureModel", null, 0, 1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAdaptationModel_TempalteSystemModel(), theroscomponentmodelPackage.getSystem(), null, "tempalteSystemModel", null, 0, 1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAdaptationModel_ResolutionModel(), theresolutionmodelsPackage.getResolutionModel(), null, "resolutionModel", null, 0, 1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAdaptationModel_CdmModel(), theCDMModelPackage.getContextDependentMeasurementsModel(), null, "cdmModel", null, 0, 1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAdaptationModel_DataTypesModel(), theDataTypesModelPackage.getDataTypesModel(), null, "dataTypesModel", null, 0, 1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAdaptationModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAdaptationModel_Period(), ecorePackage.getEInt(), "period", null, 0, 1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAdaptationModel_AdaptationRules(), this.getAdaptationRule(), null, "adaptationRules", null, 0, -1, AdaptationModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

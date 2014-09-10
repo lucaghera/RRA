@@ -4,17 +4,18 @@
 package org.rra.adaptationModel.ui.contentassist.antlr;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 import org.antlr.runtime.RecognitionException;
 import org.eclipse.xtext.AbstractElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.AbstractContentAssistParser;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
-import org.rra.adaptationModel.services.AdaptationModelDSLGrammarAccess;
 
 import com.google.inject.Inject;
+
+import org.rra.adaptationModel.services.AdaptationModelDSLGrammarAccess;
 
 public class AdaptationModelDSLParser extends AbstractContentAssistParser {
 	
@@ -63,9 +64,14 @@ public class AdaptationModelDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtomicActionModifyAttributeAccess().getGroup(), "rule__AtomicActionModifyAttribute__Group__0");
 					put(grammarAccess.getAtomicActionQueryAccess().getGroup(), "rule__AtomicActionQuery__Group__0");
 					put(grammarAccess.getAdaptationModelAccess().getImportsAssignment_0(), "rule__AdaptationModel__ImportsAssignment_0");
-					put(grammarAccess.getAdaptationModelAccess().getNameAssignment_2(), "rule__AdaptationModel__NameAssignment_2");
-					put(grammarAccess.getAdaptationModelAccess().getPeriodAssignment_5(), "rule__AdaptationModel__PeriodAssignment_5");
-					put(grammarAccess.getAdaptationModelAccess().getAdaptationRulesAssignment_7(), "rule__AdaptationModel__AdaptationRulesAssignment_7");
+					put(grammarAccess.getAdaptationModelAccess().getFeatureModelAssignment_2(), "rule__AdaptationModel__FeatureModelAssignment_2");
+					put(grammarAccess.getAdaptationModelAccess().getTempalteSystemModelAssignment_5(), "rule__AdaptationModel__TempalteSystemModelAssignment_5");
+					put(grammarAccess.getAdaptationModelAccess().getResolutionModelAssignment_8(), "rule__AdaptationModel__ResolutionModelAssignment_8");
+					put(grammarAccess.getAdaptationModelAccess().getCdmModelAssignment_11(), "rule__AdaptationModel__CdmModelAssignment_11");
+					put(grammarAccess.getAdaptationModelAccess().getDataTypesModelAssignment_14(), "rule__AdaptationModel__DataTypesModelAssignment_14");
+					put(grammarAccess.getAdaptationModelAccess().getNameAssignment_17(), "rule__AdaptationModel__NameAssignment_17");
+					put(grammarAccess.getAdaptationModelAccess().getPeriodAssignment_20(), "rule__AdaptationModel__PeriodAssignment_20");
+					put(grammarAccess.getAdaptationModelAccess().getAdaptationRulesAssignment_22(), "rule__AdaptationModel__AdaptationRulesAssignment_22");
 					put(grammarAccess.getImportAccess().getImportURIAssignment_1(), "rule__Import__ImportURIAssignment_1");
 					put(grammarAccess.getAtomicRuleAccess().getNameAssignment_1(), "rule__AtomicRule__NameAssignment_1");
 					put(grammarAccess.getAtomicRuleAccess().getRuleBodyAssignment_3(), "rule__AtomicRule__RuleBodyAssignment_3");

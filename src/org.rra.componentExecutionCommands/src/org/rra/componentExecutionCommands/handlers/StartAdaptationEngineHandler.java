@@ -83,8 +83,10 @@ public class StartAdaptationEngineHandler extends AbstractHandler {
 		
 		AdaptationModel adaptationModel = RuntimeExecutionUtils.retrieveAdaptationModel(event);
 		
-		FeatureModel featureModel = RuntimeExecutionUtils.getFeatureModel(adaptationModel);
+//		FeatureModel featureModel = RuntimeExecutionUtils.getFeatureModel(adaptationModel);
 
+		FeatureModel featureModel = adaptationModel.getFeatureModel();
+		
 		// retrieve the isntace
 		if(featureModel.getInstances().size() < 1){
 			MessageDialog.openError(null, "Error", 
@@ -104,7 +106,9 @@ public class StartAdaptationEngineHandler extends AbstractHandler {
 		Instance instance = (Instance)instanceDialog.getResult()[0];
 
 		AdaptationEngine adaptationEngine = AdaptationEngine.getInstance(
-				adaptationModel, featureModel, instance);
+				adaptationModel, featureModel, instance,
+				adaptationModel.getResolutionModel(),
+				adaptationModel.getTempalteSystemModel());
 		
 		adaptationEngine.start();
 		

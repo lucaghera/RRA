@@ -3,26 +3,16 @@
 */
 package org.rra.adaptationModel.services;
 
+import com.google.inject.Singleton;
+import com.google.inject.Inject;
+
 import java.util.List;
 
-import org.eclipse.xtext.Alternatives;
-import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.CrossReference;
-import org.eclipse.xtext.EnumLiteralDeclaration;
-import org.eclipse.xtext.EnumRule;
-import org.eclipse.xtext.Grammar;
-import org.eclipse.xtext.GrammarUtil;
-import org.eclipse.xtext.Group;
-import org.eclipse.xtext.Keyword;
-import org.eclipse.xtext.ParserRule;
-import org.eclipse.xtext.RuleCall;
-import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
-import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
+import org.eclipse.xtext.*;
 import org.eclipse.xtext.service.GrammarProvider;
+import org.eclipse.xtext.service.AbstractElementFinder.*;
 
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
+import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 
 @Singleton
 public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinder {
@@ -33,22 +23,55 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cImportsAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cImportsImportParserRuleCall_0_0 = (RuleCall)cImportsAssignment_0.eContents().get(0);
-		private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cFeatureModelKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cFeatureModelAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cFeatureModelFeatureModelCrossReference_2_0 = (CrossReference)cFeatureModelAssignment_2.eContents().get(0);
+		private final RuleCall cFeatureModelFeatureModelIDTerminalRuleCall_2_0_1 = (RuleCall)cFeatureModelFeatureModelCrossReference_2_0.eContents().get(1);
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cPeriodMsKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cPeriodAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cPeriodINTTerminalRuleCall_5_0 = (RuleCall)cPeriodAssignment_5.eContents().get(0);
+		private final Keyword cTemplateSystemModelKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cTempalteSystemModelAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cTempalteSystemModelSystemCrossReference_5_0 = (CrossReference)cTempalteSystemModelAssignment_5.eContents().get(0);
+		private final RuleCall cTempalteSystemModelSystemIDTerminalRuleCall_5_0_1 = (RuleCall)cTempalteSystemModelSystemCrossReference_5_0.eContents().get(1);
 		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cAdaptationRulesAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cAdaptationRulesAdaptationRuleParserRuleCall_7_0 = (RuleCall)cAdaptationRulesAssignment_7.eContents().get(0);
+		private final Keyword cResolutionModelKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cResolutionModelAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final CrossReference cResolutionModelResolutionModelCrossReference_8_0 = (CrossReference)cResolutionModelAssignment_8.eContents().get(0);
+		private final RuleCall cResolutionModelResolutionModelIDTerminalRuleCall_8_0_1 = (RuleCall)cResolutionModelResolutionModelCrossReference_8_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cCdmModelKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cCdmModelAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final CrossReference cCdmModelContextDependentMeasurementsModelCrossReference_11_0 = (CrossReference)cCdmModelAssignment_11.eContents().get(0);
+		private final RuleCall cCdmModelContextDependentMeasurementsModelIDTerminalRuleCall_11_0_1 = (RuleCall)cCdmModelContextDependentMeasurementsModelCrossReference_11_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cDataTypesModelKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Assignment cDataTypesModelAssignment_14 = (Assignment)cGroup.eContents().get(14);
+		private final CrossReference cDataTypesModelDataTypesModelCrossReference_14_0 = (CrossReference)cDataTypesModelAssignment_14.eContents().get(0);
+		private final RuleCall cDataTypesModelDataTypesModelIDTerminalRuleCall_14_0_1 = (RuleCall)cDataTypesModelDataTypesModelCrossReference_14_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Keyword cNameKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		private final Assignment cNameAssignment_17 = (Assignment)cGroup.eContents().get(17);
+		private final RuleCall cNameIDTerminalRuleCall_17_0 = (RuleCall)cNameAssignment_17.eContents().get(0);
+		private final Keyword cSemicolonKeyword_18 = (Keyword)cGroup.eContents().get(18);
+		private final Keyword cPeriodMsKeyword_19 = (Keyword)cGroup.eContents().get(19);
+		private final Assignment cPeriodAssignment_20 = (Assignment)cGroup.eContents().get(20);
+		private final RuleCall cPeriodINTTerminalRuleCall_20_0 = (RuleCall)cPeriodAssignment_20.eContents().get(0);
+		private final Keyword cSemicolonKeyword_21 = (Keyword)cGroup.eContents().get(21);
+		private final Assignment cAdaptationRulesAssignment_22 = (Assignment)cGroup.eContents().get(22);
+		private final RuleCall cAdaptationRulesAdaptationRuleParserRuleCall_22_0 = (RuleCall)cAdaptationRulesAssignment_22.eContents().get(0);
 		
 		//AdaptationModel:
-		//	imports+=Import* "name" name=ID ";" "period[ms]" period=INT ";" adaptationRules+=AdaptationRule*;
+		//	imports+=Import* "feature model" featureModel=[featureModel::FeatureModel] ";" "template system model"
+		//	tempalteSystemModel=[rosComponentModel::System] ";" "resolution model"
+		//	resolutionModel=[resolutionModel::ResolutionModel] ";" "cdm model"
+		//	cdmModel=[cdmModel::ContextDependentMeasurementsModel] ";" "data types model" dataTypesModel=[dtModel::DataTypesModel]
+		//	";" "name" name=ID ";" "period[ms]" period=INT ";" adaptationRules+=AdaptationRule*;
 		public ParserRule getRule() { return rule; }
 
-		//imports+=Import* "name" name=ID ";" "period[ms]" period=INT ";" adaptationRules+=AdaptationRule*
+		//imports+=Import* "feature model" featureModel=[featureModel::FeatureModel] ";" "template system model"
+		//tempalteSystemModel=[rosComponentModel::System] ";" "resolution model"
+		//resolutionModel=[resolutionModel::ResolutionModel] ";" "cdm model"
+		//cdmModel=[cdmModel::ContextDependentMeasurementsModel] ";" "data types model" dataTypesModel=[dtModel::DataTypesModel]
+		//";" "name" name=ID ";" "period[ms]" period=INT ";" adaptationRules+=AdaptationRule*
 		public Group getGroup() { return cGroup; }
 
 		//imports+=Import*
@@ -57,35 +80,110 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 		//Import
 		public RuleCall getImportsImportParserRuleCall_0_0() { return cImportsImportParserRuleCall_0_0; }
 
-		//"name"
-		public Keyword getNameKeyword_1() { return cNameKeyword_1; }
+		//"feature model"
+		public Keyword getFeatureModelKeyword_1() { return cFeatureModelKeyword_1; }
 
-		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		//featureModel=[featureModel::FeatureModel]
+		public Assignment getFeatureModelAssignment_2() { return cFeatureModelAssignment_2; }
+
+		//[featureModel::FeatureModel]
+		public CrossReference getFeatureModelFeatureModelCrossReference_2_0() { return cFeatureModelFeatureModelCrossReference_2_0; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		public RuleCall getFeatureModelFeatureModelIDTerminalRuleCall_2_0_1() { return cFeatureModelFeatureModelIDTerminalRuleCall_2_0_1; }
 
 		//";"
 		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 
-		//"period[ms]"
-		public Keyword getPeriodMsKeyword_4() { return cPeriodMsKeyword_4; }
+		//"template system model"
+		public Keyword getTemplateSystemModelKeyword_4() { return cTemplateSystemModelKeyword_4; }
 
-		//period=INT
-		public Assignment getPeriodAssignment_5() { return cPeriodAssignment_5; }
+		//tempalteSystemModel=[rosComponentModel::System]
+		public Assignment getTempalteSystemModelAssignment_5() { return cTempalteSystemModelAssignment_5; }
 
-		//INT
-		public RuleCall getPeriodINTTerminalRuleCall_5_0() { return cPeriodINTTerminalRuleCall_5_0; }
+		//[rosComponentModel::System]
+		public CrossReference getTempalteSystemModelSystemCrossReference_5_0() { return cTempalteSystemModelSystemCrossReference_5_0; }
+
+		//ID
+		public RuleCall getTempalteSystemModelSystemIDTerminalRuleCall_5_0_1() { return cTempalteSystemModelSystemIDTerminalRuleCall_5_0_1; }
 
 		//";"
 		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
 
+		//"resolution model"
+		public Keyword getResolutionModelKeyword_7() { return cResolutionModelKeyword_7; }
+
+		//resolutionModel=[resolutionModel::ResolutionModel]
+		public Assignment getResolutionModelAssignment_8() { return cResolutionModelAssignment_8; }
+
+		//[resolutionModel::ResolutionModel]
+		public CrossReference getResolutionModelResolutionModelCrossReference_8_0() { return cResolutionModelResolutionModelCrossReference_8_0; }
+
+		//ID
+		public RuleCall getResolutionModelResolutionModelIDTerminalRuleCall_8_0_1() { return cResolutionModelResolutionModelIDTerminalRuleCall_8_0_1; }
+
+		//";"
+		public Keyword getSemicolonKeyword_9() { return cSemicolonKeyword_9; }
+
+		//"cdm model"
+		public Keyword getCdmModelKeyword_10() { return cCdmModelKeyword_10; }
+
+		//cdmModel=[cdmModel::ContextDependentMeasurementsModel]
+		public Assignment getCdmModelAssignment_11() { return cCdmModelAssignment_11; }
+
+		//[cdmModel::ContextDependentMeasurementsModel]
+		public CrossReference getCdmModelContextDependentMeasurementsModelCrossReference_11_0() { return cCdmModelContextDependentMeasurementsModelCrossReference_11_0; }
+
+		//ID
+		public RuleCall getCdmModelContextDependentMeasurementsModelIDTerminalRuleCall_11_0_1() { return cCdmModelContextDependentMeasurementsModelIDTerminalRuleCall_11_0_1; }
+
+		//";"
+		public Keyword getSemicolonKeyword_12() { return cSemicolonKeyword_12; }
+
+		//"data types model"
+		public Keyword getDataTypesModelKeyword_13() { return cDataTypesModelKeyword_13; }
+
+		//dataTypesModel=[dtModel::DataTypesModel]
+		public Assignment getDataTypesModelAssignment_14() { return cDataTypesModelAssignment_14; }
+
+		//[dtModel::DataTypesModel]
+		public CrossReference getDataTypesModelDataTypesModelCrossReference_14_0() { return cDataTypesModelDataTypesModelCrossReference_14_0; }
+
+		//ID
+		public RuleCall getDataTypesModelDataTypesModelIDTerminalRuleCall_14_0_1() { return cDataTypesModelDataTypesModelIDTerminalRuleCall_14_0_1; }
+
+		//";"
+		public Keyword getSemicolonKeyword_15() { return cSemicolonKeyword_15; }
+
+		//"name"
+		public Keyword getNameKeyword_16() { return cNameKeyword_16; }
+
+		//name=ID
+		public Assignment getNameAssignment_17() { return cNameAssignment_17; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_17_0() { return cNameIDTerminalRuleCall_17_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_18() { return cSemicolonKeyword_18; }
+
+		//"period[ms]"
+		public Keyword getPeriodMsKeyword_19() { return cPeriodMsKeyword_19; }
+
+		//period=INT
+		public Assignment getPeriodAssignment_20() { return cPeriodAssignment_20; }
+
+		//INT
+		public RuleCall getPeriodINTTerminalRuleCall_20_0() { return cPeriodINTTerminalRuleCall_20_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_21() { return cSemicolonKeyword_21; }
+
 		//adaptationRules+=AdaptationRule*
-		public Assignment getAdaptationRulesAssignment_7() { return cAdaptationRulesAssignment_7; }
+		public Assignment getAdaptationRulesAssignment_22() { return cAdaptationRulesAssignment_22; }
 
 		//AdaptationRule
-		public RuleCall getAdaptationRulesAdaptationRuleParserRuleCall_7_0() { return cAdaptationRulesAdaptationRuleParserRuleCall_7_0; }
+		public RuleCall getAdaptationRulesAdaptationRuleParserRuleCall_22_0() { return cAdaptationRulesAdaptationRuleParserRuleCall_22_0; }
 	}
 
 	public class ImportElements extends AbstractParserRuleElementFinder {
@@ -1000,7 +1098,11 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 
 	
 	//AdaptationModel:
-	//	imports+=Import* "name" name=ID ";" "period[ms]" period=INT ";" adaptationRules+=AdaptationRule*;
+	//	imports+=Import* "feature model" featureModel=[featureModel::FeatureModel] ";" "template system model"
+	//	tempalteSystemModel=[rosComponentModel::System] ";" "resolution model"
+	//	resolutionModel=[resolutionModel::ResolutionModel] ";" "cdm model"
+	//	cdmModel=[cdmModel::ContextDependentMeasurementsModel] ";" "data types model" dataTypesModel=[dtModel::DataTypesModel]
+	//	";" "name" name=ID ";" "period[ms]" period=INT ";" adaptationRules+=AdaptationRule*;
 	public AdaptationModelElements getAdaptationModelAccess() {
 		return (pAdaptationModel != null) ? pAdaptationModel : (pAdaptationModel = new AdaptationModelElements());
 	}

@@ -16,7 +16,10 @@ Require-Bundle: org.eclipse.ui,
  org.rra.runtimeFeatureModel.model;bundle-version="1.0.0",
  org.rra.runtimeFeatureModel.xtext;bundle-version="1.0.0",
  org.rra.adaptationModel.m2t;bundle-version="1.0.0",
- org.ros.java.libraries;bundle-version="1.0.0"
+ org.ros.java.libraries;bundle-version="1.0.0",
+ org.hyperflex.resolutionmodels.model;bundle-version="1.0.0",
+ org.hyperflex.resolutionmodels.ros.commands.resolution;bundle-version="1.0.0",
+ org.hyperflex.resolutionmodels.ros.model;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.rra.adaptationEngine.api
