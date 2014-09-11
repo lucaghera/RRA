@@ -34,6 +34,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -51,9 +52,10 @@ import org.hyperflex.featuremodels.FeatureModel;
 import org.hyperflex.featuremodels.Instance;
 import org.hyperflex.featuremodels.featuremodelsPackage;
 import org.hyperflex.resolutionmodels.ResolutionModel;
-import org.hyperflex.roscomponentmodel.AbstractComponent;
+import org.hyperflex.resolutionmodels.ros.commands.resolution.handlers.ROSResolutionTools;
 import org.hyperflex.roscomponentmodel.Node;
 import org.ros.concurrent.CancellableLoop;
+import org.ros.exception.ServiceNotFoundException;
 import org.ros.message.MessageListener;
 import org.ros.namespace.GraphName;
 import org.ros.node.AbstractNodeMain;
@@ -100,7 +102,6 @@ public class AdaptationEngine extends AbstractNodeMain{
 	private FeatureModel featureModel;
 	private Instance initialFeatureModelInstance;
 	private Instance currentFeatureModelInstance;
-	private Instance previousStepFeatureModelInstance;
 
 	private org.hyperflex.roscomponentmodel.System ROSTemplateSystemModel;
 
@@ -122,35 +123,15 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 	private int iteration = 0;
 
-	private HashMap<String, Process> runningNodes;
+	HashSet<String> runningNodeKeys;
 
-	//	public static void main(String [ ] args){
-	//
-	//		AdaptationEngine ae = new AdaptationEngine(
-	//				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.adaptationModel", 
-	//				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.featuremodel",
-	//				"Test",
-	//				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.cdmmodel",
-	//				"/home/luca/Projects/RRA-Examples/IROS-2014/models/iros2014.datatypesmodel");
-	//
-	////		RosCore rosCore;
-	////		rosCore = RosCore.newPublic(13111);		
-	////
-	////		rosCore.start();
-	////		try {
-	////			rosCore.awaitStart();
-	////		} catch (Exception e) {
-	////			throw new RuntimeException(e);
-	////		}
-	////
-	//		
-	//		NodeMainExecutor nodeMainExecutor = DefaultNodeMainExecutor.newDefault();
-	//
-	//		NodeConfiguration nodeConfig = NodeConfiguration.newPrivate();
-	//		nodeMainExecutor.execute(ae, nodeConfig);
-	//		
-	//		
-	//	}
+
+	// Resolution stuff
+	private ROSResolutionTools rosResolutionTool;
+	private ArrayList<Node> currentRunningNodes;
+	private ArrayList<Node> previousRunningNodes;
+
+
 
 	private AdaptationEngine(AdaptationModel adaptationModel,
 			FeatureModel featureModel, Instance instance,
@@ -167,6 +148,8 @@ public class AdaptationEngine extends AbstractNodeMain{
 		this.cdmModel = cdmModel;
 
 		cdms = AdaptationEngineTools.getROSRequiredCDMs(adaptationModel);
+
+		rosResolutionTool = new ROSResolutionTools();
 
 		nodeMainExecutor = DefaultNodeMainExecutor.newDefault();
 
@@ -252,36 +235,58 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 	public boolean start(){
 
-		NodeConfiguration nodeConfig = NodeConfiguration.newPrivate();
-		nodeMainExecutor.execute(this, nodeConfig);
+		rosResolutionTool.resolveVariability(resolutionModel, initialFeatureModelInstance);
+		currentRunningNodes = rosResolutionTool.getRequiredComponents();
+		previousRunningNodes = currentRunningNodes;
 
-		runningNodes = new HashMap<String, Process>();
+		System.out.println("Running nodes:");
+		for(Node n : currentRunningNodes){
+			System.out.println(" - " + n.getPackageName() + "/" + n.getType());
+		}
+
+
+		runningNodeKeys = new HashSet<String>();
 
 		try {
-			runningNodes.put(cdmModel.getName(), 
-					Runtime.getRuntime().exec("rosrun " + cdmModel.getName() + " " + cdmModel.getName()));
-//			if(! ROSTemplateSystemModel.eIsProxy()){
-//				for(AbstractComponent component : ROSTemplateSystemModel.getComposite().getComponents()){
-//
-//					if(component instanceof Node){
-//						Node node = (Node)component;
-//						runningNodes.put(cdmModel.getName(), 
-//								Runtime.getRuntime().exec("rosrun " + node.getPackageName() + " " + node.getType()));
-//					}
-//
-//				}
-//			}
 
-		
+			runningNodeKeys.add(cdmModel.getName()); 
+			Runtime.getRuntime().exec("rosrun " + cdmModel.getName() + " " + cdmModel.getName());
+
+			for(Node node: currentRunningNodes){
+
+
+				runningNodeKeys.add(node.getName()); 
+				Runtime.getRuntime().exec("rosrun " + node.getPackageName() + " " + node.getType()
+						+ " __name:=" + node.getName());
+
+			}
+
+
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		NodeConfiguration nodeConfig = NodeConfiguration.newPrivate();
+		nodeMainExecutor.execute(this, nodeConfig);
+
+
 		MessageDialog.openInformation(null, "Running", 
 				"The application is running!!!");
 
 		isRunning = true;
+
+		System.out.println();
+		System.out.println("Adaptation Engine running");
+		System.out.println("------------------------------------------");
 
 		return true;
 
@@ -293,19 +298,23 @@ public class AdaptationEngine extends AbstractNodeMain{
 		nodeMainExecutor.shutdownNodeMain(this);
 
 		isRunning = false;
-		
-		for(Process p : runningNodes.values()){
-			
-			p.destroy();
+
+		for(String key : runningNodeKeys){
+
 			try {
-				p.waitFor();
-			} catch (InterruptedException e) {
+				Runtime.getRuntime().exec("rosnode kill /" + key);
+
+				System.out.print("Stopping node " + key);
+				//runningNodeProcesses.get(key).destroy();
+				//runningNodeProcesses.get(key).waitFor();
+			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+			System.out.println(" - DONE");
+
 		}
-		
+
 		MessageDialog.openInformation(null, "Stop", 
 				"The application has been stoped!!!");
 
@@ -508,13 +517,13 @@ public class AdaptationEngine extends AbstractNodeMain{
 					if(periodMs == 0){
 
 						Thread.sleep(1000);
-						
+
 					}else{
 
 						update();
 						Thread.sleep(periodMs);
 					}
-				
+
 				}
 			}
 		});
@@ -542,6 +551,102 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 			for(Feature feature : currentFeatureModelInstance.getSelectedFeatures()){
 				System.out.println(" - " + feature.getName());
+
+				//				if(feature.getName().equals("Proploss")){
+				//
+				//					try {
+				//						Runtime.getRuntime().exec("rosservice call /fma_switch_controller");
+				//					} catch (IOException e) {
+				//						// TODO Auto-generated catch block
+				//						e.printStackTrace();
+				//					}
+				//
+				//				}
+
+
+
+			}
+
+			rosResolutionTool.resolveVariability(resolutionModel, currentFeatureModelInstance);
+			currentRunningNodes = rosResolutionTool.getRequiredComponents();
+
+			//			System.out.println("Previous: ");
+			//			for(Node n : previousRunningNodes){
+			//				System.out.println(" - " + n.getName());
+			//			}
+			//			System.out.println("Current: ");
+			//			for(Node n : currentRunningNodes){
+			//				System.out.println(" - " + n.getName());
+			//			}
+
+			System.out.println();
+			ArrayList<Node> startNodes = new ArrayList<Node>(currentRunningNodes);
+			startNodes.removeAll(previousRunningNodes);
+			for(Node n : startNodes){
+
+				try {
+					Runtime.getRuntime().exec("rosrun " + n.getPackageName() + " " + n.getType()
+							+ " __name:=" + n.getName());
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				System.out.println("** Start " + n.getName());
+				runningNodeKeys.add(n.getName());
+
+			}
+
+			//			System.out.println("Previous: ");
+			//			for(Node n : previousRunningNodes){
+			//				System.out.println(" - " + n.getName());
+			//			}
+			//			System.out.println("Current: ");
+			//			for(Node n : currentRunningNodes){
+			//				System.out.println(" - " + n.getName());
+			//			}
+
+
+
+			ArrayList<Node> stopNodes = new ArrayList<Node>(previousRunningNodes);
+			stopNodes.removeAll(currentRunningNodes);
+			for(Node n : stopNodes){
+
+				try {
+					Runtime.getRuntime().exec("rosnode kill " + n.getName());
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				System.out.println("** Stop " + n.getName());
+				runningNodeKeys.remove(n.getName());
+
+			}
+
+			previousRunningNodes = currentRunningNodes;
+
+			System.out.println();
+			System.out.println("Iteration " + iteration + " - Running nodes:");
+			for(Node n : currentRunningNodes){
+				//				if(n.getType().equals("fma_prop_loss")){
+				//
+				//					try {
+				//						String cmd = "rosrun " + n.getPackageName() + " " + 
+				//								n.getType();
+				//						Runtime.getRuntime().exec(cmd);
+				//						//						runningNodeProcesses.put(n.getType(),
+				//						//								Runtime.getRuntime().exec("rosservice call /fma_switch_controller"));
+				//						runningNodeProcesses.put(n.getType(),
+				//								Runtime.getRuntime().exec("rosnode kill /fma_low_level_controller"));
+				//
+				//					} catch (IOException e) {
+				//						// TODO Auto-generated catch block
+				//						e.printStackTrace();
+				//					}
+				//
+				//				}
+				System.out.println(" - " + n.getPackageName() + "/" + n.getType());
 			}
 
 			System.out.println("------------------------------------------");

@@ -112,8 +112,6 @@ public class StartAdaptationEngineHandler extends AbstractHandler {
 				adaptationModel.getCdmModel());
 		
 		adaptationEngine.start();
-		
-		System.out.println("Adaptation Engine Started");
 			
 		return null;
 			
