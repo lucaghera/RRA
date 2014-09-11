@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Api
+Bundle-SymbolicName: org.rra.runtimeResolutionEngine.api
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.rra.runtimeresolutionengine.api.Activator
+Bundle-Vendor: Nico Hochgeschwender
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.ros.java.libraries,
+ org.hyperflex.featuremodels.model
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Import-Package: org.ros.node

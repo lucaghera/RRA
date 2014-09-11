@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>org.rra.adaptationModel.dsl</name>
+	<name>org.rra.runtimeResolutionEngine.api</name>
 	<comment></comment>
 	<projects>
-		<project>org.rra.cdmModel.model</project>
-		<project>org.rra.dataTypesModel.model</project>
-		<project>org.rra.runtimeFeatureModel.model</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -23,15 +20,9 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
-		<buildCommand>
-			<name>org.eclipse.xtext.ui.shared.xtextBuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
 	</buildSpec>
 	<natures>
-		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.pde.PluginNature</nature>
-		<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
 </projectDescription>
