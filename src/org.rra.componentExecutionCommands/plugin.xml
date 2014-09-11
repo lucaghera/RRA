@@ -35,14 +35,14 @@
       <key
             commandId="org.rra.componentExecutionCommands.startAdaptationEngine"
             contextId="org.eclipse.ui.contexts.window"
-            sequence="M1+8"
+            sequence="M1+9"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
       </key>
       <key
             commandId="org.rra.componentExecutionCommands.stopAdaptationEngine"
             contextId="org.eclipse.ui.contexts.window"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="M1+9">
+            sequence="M1+0">
       </key>
    </extension>
    <extension

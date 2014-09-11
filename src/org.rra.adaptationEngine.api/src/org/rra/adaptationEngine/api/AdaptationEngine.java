@@ -31,6 +31,7 @@
 package org.rra.adaptationEngine.api;
 
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -38,15 +39,12 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.TreeSet;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.hyperflex.featuremodels.ContainmentAssociation;
 import org.hyperflex.featuremodels.Feature;
 import org.hyperflex.featuremodels.FeatureModel;
@@ -63,7 +61,6 @@ import org.ros.node.ConnectedNode;
 import org.ros.node.DefaultNodeMainExecutor;
 import org.ros.node.NodeConfiguration;
 import org.ros.node.NodeMainExecutor;
-import org.ros.node.service.ServiceServer;
 import org.ros.node.topic.Subscriber;
 import org.rra.adaptationEngine.api.utils.AtomicRuleWithPriorityComparator;
 import org.rra.adaptationModel.AdaptationModelDSLStandaloneSetup;
@@ -86,15 +83,13 @@ import org.rra.adaptationModel.adaptationModelDSL.RuleBody;
 import org.rra.adaptationModel.adaptationModelDSL.RuleSet;
 import org.rra.adaptationModel.m2t.tools.AdaptationEngineTools;
 import org.rra.cdmModel.CDMModelPackage;
+import org.rra.cdmModel.ContextDependentMeasurementsModel;
 import org.rra.cdmModel.ROSContextDependentMeasurement;
 import org.rra.cdmModel.xtext.utils.CDMModelSupport;
 import org.rra.dataTypesModel.DataTypesModelPackage;
 import org.rra.dataTypesModel.xtext.utils.DataTypesModelSupport;
 import org.rra.runtimeFeatureModel.RuntimeFeatureModelPackage;
 import org.rra.runtimeFeatureModel.xtext.utils.RuntimeFeatureModelSupport;
-
-import std_msgs.Empty;
-import std_msgs.UInt8;
 
 
 public class AdaptationEngine extends AbstractNodeMain{
@@ -106,10 +101,12 @@ public class AdaptationEngine extends AbstractNodeMain{
 	private Instance initialFeatureModelInstance;
 	private Instance currentFeatureModelInstance;
 	private Instance previousStepFeatureModelInstance;
-	
+
 	private org.hyperflex.roscomponentmodel.System ROSTemplateSystemModel;
-	
+
 	private ResolutionModel resolutionModel;
+
+	private ContextDependentMeasurementsModel cdmModel;
 
 	private ResourceSet resourceSet;
 
@@ -124,6 +121,8 @@ public class AdaptationEngine extends AbstractNodeMain{
 	private NodeMainExecutor nodeMainExecutor;
 
 	private int iteration = 0;
+
+	private HashMap<String, Process> runningNodes;
 
 	//	public static void main(String [ ] args){
 	//
@@ -156,7 +155,8 @@ public class AdaptationEngine extends AbstractNodeMain{
 	private AdaptationEngine(AdaptationModel adaptationModel,
 			FeatureModel featureModel, Instance instance,
 			ResolutionModel resolutionModel, 
-			org.hyperflex.roscomponentmodel.System ROSTemplateSysteModel){
+			org.hyperflex.roscomponentmodel.System ROSTemplateSysteModel,
+			ContextDependentMeasurementsModel cdmModel){
 
 		this.adaptationModel = adaptationModel;
 		this.featureModel = featureModel;
@@ -164,6 +164,7 @@ public class AdaptationEngine extends AbstractNodeMain{
 		this.currentFeatureModelInstance = instance;
 		this.resolutionModel = resolutionModel;
 		this.ROSTemplateSystemModel = ROSTemplateSysteModel;
+		this.cdmModel = cdmModel;
 
 		cdms = AdaptationEngineTools.getROSRequiredCDMs(adaptationModel);
 
@@ -174,11 +175,12 @@ public class AdaptationEngine extends AbstractNodeMain{
 	public static AdaptationEngine getInstance(AdaptationModel adaptationModel,
 			FeatureModel featureModel, Instance instance,
 			ResolutionModel resolutionModel, 
-			org.hyperflex.roscomponentmodel.System ROSTemplateSysteModel){
+			org.hyperflex.roscomponentmodel.System ROSTemplateSysteModel,
+			ContextDependentMeasurementsModel cdmModel){
 
 		if(adaptationEngineInstance == null){
 			adaptationEngineInstance = new AdaptationEngine(adaptationModel,
-					featureModel, instance, resolutionModel, ROSTemplateSysteModel);
+					featureModel, instance, resolutionModel, ROSTemplateSysteModel, cdmModel);
 		}
 
 		return adaptationEngineInstance;
@@ -253,6 +255,32 @@ public class AdaptationEngine extends AbstractNodeMain{
 		NodeConfiguration nodeConfig = NodeConfiguration.newPrivate();
 		nodeMainExecutor.execute(this, nodeConfig);
 
+		runningNodes = new HashMap<String, Process>();
+
+		try {
+			runningNodes.put(cdmModel.getName(), 
+					Runtime.getRuntime().exec("rosrun " + cdmModel.getName() + " " + cdmModel.getName()));
+//			if(! ROSTemplateSystemModel.eIsProxy()){
+//				for(AbstractComponent component : ROSTemplateSystemModel.getComposite().getComponents()){
+//
+//					if(component instanceof Node){
+//						Node node = (Node)component;
+//						runningNodes.put(cdmModel.getName(), 
+//								Runtime.getRuntime().exec("rosrun " + node.getPackageName() + " " + node.getType()));
+//					}
+//
+//				}
+//			}
+
+		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		MessageDialog.openInformation(null, "Running", 
+				"The application is running!!!");
+
 		isRunning = true;
 
 		return true;
@@ -265,6 +293,21 @@ public class AdaptationEngine extends AbstractNodeMain{
 		nodeMainExecutor.shutdownNodeMain(this);
 
 		isRunning = false;
+		
+		for(Process p : runningNodes.values()){
+			
+			p.destroy();
+			try {
+				p.waitFor();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		
+		MessageDialog.openInformation(null, "Stop", 
+				"The application has been stoped!!!");
 
 		return true;
 
@@ -365,6 +408,9 @@ public class AdaptationEngine extends AbstractNodeMain{
 					Method getData = msgClass.getMethod("getData");
 					lastReceivedMessages.put(cdm, getData.invoke(message));
 					isThereANewCmd = true;
+					if(adaptationModel.getPeriod() == 0){
+						update();
+					}
 
 				} catch (ClassNotFoundException e) {
 					e.printStackTrace();
@@ -455,9 +501,20 @@ public class AdaptationEngine extends AbstractNodeMain{
 			@Override
 			protected void loop() throws InterruptedException {
 
+				int periodMs = adaptationModel.getPeriod();
+
 				while(isRunning == true){
-					update();
-					Thread.sleep(adaptationModel.getPeriod());
+
+					if(periodMs == 0){
+
+						Thread.sleep(1000);
+						
+					}else{
+
+						update();
+						Thread.sleep(periodMs);
+					}
+				
 				}
 			}
 		});
@@ -481,19 +538,19 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 			//if(currentFeatureModelInstance.equals(previousStepFeatureModelInstance) == false){
 
-				System.out.println("Iteration " + iteration + " - Selected features: ");
+			System.out.println("Iteration " + iteration + " - Selected features: ");
 
-				for(Feature feature : currentFeatureModelInstance.getSelectedFeatures()){
-					System.out.println(" - " + feature.getName());
-				}
+			for(Feature feature : currentFeatureModelInstance.getSelectedFeatures()){
+				System.out.println(" - " + feature.getName());
+			}
 
-				System.out.println("------------------------------------------");
-				
-				
-				// execution runtime architecture adaptation
+			System.out.println("------------------------------------------");
+
+
+			// execution runtime architecture adaptation
 
 			//	previousStepFeatureModelInstance = currentFeatureModelInstance;
-				
+
 			//}
 
 			isThereANewCmd = false;

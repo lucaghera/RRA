@@ -108,7 +108,8 @@ public class StartAdaptationEngineHandler extends AbstractHandler {
 		AdaptationEngine adaptationEngine = AdaptationEngine.getInstance(
 				adaptationModel, featureModel, instance,
 				adaptationModel.getResolutionModel(),
-				adaptationModel.getTempalteSystemModel());
+				adaptationModel.getTempalteSystemModel(),
+				adaptationModel.getCdmModel());
 		
 		adaptationEngine.start();
 		
