@@ -7,12 +7,12 @@ The content of this repository is a work in progress, and the model and tools ar
 
 In order to be used they need some of the plugins provided by the [HyperFlex toolchain](https://github.com/Robotics-UniBG/HyperFlex)
 
-Please see the wiki for more information.
+Please see the [wiki](https://github.com/lucaghera/RRA/wiki) for more information.
 
 
 ## Examples
 
-Examples of the different models can be found in [this repository(https://github.com/lucaghera/RRA-Examples)
+Examples of the different models can be found in [this repository](https://github.com/lucaghera/RRA-Examples)
 
 ## Developers
 
