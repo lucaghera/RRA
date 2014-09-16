@@ -261,15 +261,18 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 			}
 
+//			runningNodeKeys.add("Proploss"); 
+//			Runtime.getRuntime().exec("rosrun fma_prop_loss_node fma_prop_loss_node __name:=Proploss");
+			
+			//Thread.sleep(1000);
+			
+			//Runtime.getRuntime().exec("rosservice call /fma_low_level_controller_node_start");
 
-
+			Thread.sleep(1000);
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-
-		try {
-			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -587,6 +590,7 @@ public class AdaptationEngine extends AbstractNodeMain{
 				try {
 					Runtime.getRuntime().exec("rosrun " + n.getPackageName() + " " + n.getType()
 							+ " __name:=" + n.getName());
+//					Runtime.getRuntime().exec("rosservice call /" + n.getType() + "_start");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -614,6 +618,7 @@ public class AdaptationEngine extends AbstractNodeMain{
 
 				try {
 					Runtime.getRuntime().exec("rosnode kill " + n.getName());
+//					Runtime.getRuntime().exec("rosservice call /" + n.getType() + "_stop");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
