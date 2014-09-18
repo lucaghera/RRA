@@ -146,8 +146,7 @@ AtomicActionModifyAttribute:
 ;
 
 AtomicActionQuery:
-	'select_feature_*' 
-	'from_variants_of_feature' '(' feature=[ featureModel::Feature|QualifiedName ] ')'
+	'select_feature_from_variants_of' '(' feature=[ featureModel::Feature|QualifiedName ] ')'
 	'where_attribue' queryOperator=QueryOperator '(' value=STRING ')'  
 ;
 

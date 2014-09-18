@@ -1193,17 +1193,13 @@ ruleAtomicActionQuery returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='select_feature_*' 
+(	otherlv_0='select_feature_from_variants_of' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getAtomicActionQueryAccess().getSelect_feature_Keyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getAtomicActionQueryAccess().getSelect_feature_from_variants_ofKeyword_0());
     }
-	otherlv_1='from_variants_of_feature' 
+	otherlv_1='(' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getAtomicActionQueryAccess().getFrom_variants_of_featureKeyword_1());
-    }
-	otherlv_2='(' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getAtomicActionQueryAccess().getLeftParenthesisKeyword_2());
+    	newLeafNode(otherlv_1, grammarAccess.getAtomicActionQueryAccess().getLeftParenthesisKeyword_1());
     }
 (
 (
@@ -1213,48 +1209,48 @@ ruleAtomicActionQuery returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getAtomicActionQueryAccess().getFeatureFeatureCrossReference_3_0()); 
+	        newCompositeNode(grammarAccess.getAtomicActionQueryAccess().getFeatureFeatureCrossReference_2_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_4=')' 
+)	otherlv_3=')' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getAtomicActionQueryAccess().getRightParenthesisKeyword_4());
+    	newLeafNode(otherlv_3, grammarAccess.getAtomicActionQueryAccess().getRightParenthesisKeyword_3());
     }
-	otherlv_5='where_attribue' 
+	otherlv_4='where_attribue' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getAtomicActionQueryAccess().getWhere_attribueKeyword_5());
+    	newLeafNode(otherlv_4, grammarAccess.getAtomicActionQueryAccess().getWhere_attribueKeyword_4());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAtomicActionQueryAccess().getQueryOperatorQueryOperatorEnumRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getAtomicActionQueryAccess().getQueryOperatorQueryOperatorEnumRuleCall_5_0()); 
 	    }
-		lv_queryOperator_6_0=ruleQueryOperator		{
+		lv_queryOperator_5_0=ruleQueryOperator		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAtomicActionQueryRule());
 	        }
        		set(
        			$current, 
        			"queryOperator",
-        		lv_queryOperator_6_0, 
+        		lv_queryOperator_5_0, 
         		"QueryOperator");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_7='(' 
+)	otherlv_6='(' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getAtomicActionQueryAccess().getLeftParenthesisKeyword_7());
+    	newLeafNode(otherlv_6, grammarAccess.getAtomicActionQueryAccess().getLeftParenthesisKeyword_6());
     }
 (
 (
-		lv_value_8_0=RULE_STRING
+		lv_value_7_0=RULE_STRING
 		{
-			newLeafNode(lv_value_8_0, grammarAccess.getAtomicActionQueryAccess().getValueSTRINGTerminalRuleCall_8_0()); 
+			newLeafNode(lv_value_7_0, grammarAccess.getAtomicActionQueryAccess().getValueSTRINGTerminalRuleCall_7_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1263,14 +1259,14 @@ ruleAtomicActionQuery returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"value",
-        		lv_value_8_0, 
+        		lv_value_7_0, 
         		"STRING");
 	    }
 
 )
-)	otherlv_9=')' 
+)	otherlv_8=')' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getAtomicActionQueryAccess().getRightParenthesisKeyword_9());
+    	newLeafNode(otherlv_8, grammarAccess.getAtomicActionQueryAccess().getRightParenthesisKeyword_8());
     }
 )
 ;

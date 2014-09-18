@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'feature model'", "';'", "'template system model'", "'resolution model'", "'cdm model'", "'data types model'", "'name'", "'period[ms]'", "'import'", "'.'", "'rule'", "'{'", "'}'", "'rule_set'", "'priority'", "'AND'", "'if'", "'('", "')'", "'else'", "'activate_feature'", "'deactivate_feature'", "'set_attribute'", "'with_value'", "'select_feature_*'", "'from_variants_of_feature'", "'where_attribue'", "'<'", "'>'", "'=='", "'<>'", "'OR'", "'max'", "'min'", "'is'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'feature model'", "';'", "'template system model'", "'resolution model'", "'cdm model'", "'data types model'", "'name'", "'period[ms]'", "'import'", "'.'", "'rule'", "'{'", "'}'", "'rule_set'", "'priority'", "'AND'", "'if'", "'('", "')'", "'else'", "'activate_feature'", "'deactivate_feature'", "'set_attribute'", "'with_value'", "'select_feature_from_variants_of'", "'where_attribue'", "'<'", "'>'", "'=='", "'<>'", "'OR'", "'max'", "'min'", "'is'"
     };
     public static final int RULE_ID=4;
     public static final int T__29=29;
@@ -52,7 +52,6 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
     public static final int T__40=40;
     public static final int T__41=41;
     public static final int T__44=44;
-    public static final int T__45=45;
     public static final int RULE_SL_COMMENT=8;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__30=30;
@@ -2189,7 +2188,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==26||LA10_0==42) ) {
+            if ( (LA10_0==26||LA10_0==41) ) {
                 alt10=1;
             }
             switch (alt10) {
@@ -2711,47 +2710,42 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleAtomicActionQuery"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1192:1: ruleAtomicActionQuery returns [EObject current=null] : (otherlv_0= 'select_feature_*' otherlv_1= 'from_variants_of_feature' otherlv_2= '(' ( ( ruleQualifiedName ) ) otherlv_4= ')' otherlv_5= 'where_attribue' ( (lv_queryOperator_6_0= ruleQueryOperator ) ) otherlv_7= '(' ( (lv_value_8_0= RULE_STRING ) ) otherlv_9= ')' ) ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1192:1: ruleAtomicActionQuery returns [EObject current=null] : (otherlv_0= 'select_feature_from_variants_of' otherlv_1= '(' ( ( ruleQualifiedName ) ) otherlv_3= ')' otherlv_4= 'where_attribue' ( (lv_queryOperator_5_0= ruleQueryOperator ) ) otherlv_6= '(' ( (lv_value_7_0= RULE_STRING ) ) otherlv_8= ')' ) ;
     public final EObject ruleAtomicActionQuery() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token otherlv_2=null;
+        Token otherlv_3=null;
         Token otherlv_4=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
-        Token lv_value_8_0=null;
-        Token otherlv_9=null;
-        Enumerator lv_queryOperator_6_0 = null;
+        Token otherlv_6=null;
+        Token lv_value_7_0=null;
+        Token otherlv_8=null;
+        Enumerator lv_queryOperator_5_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1195:28: ( (otherlv_0= 'select_feature_*' otherlv_1= 'from_variants_of_feature' otherlv_2= '(' ( ( ruleQualifiedName ) ) otherlv_4= ')' otherlv_5= 'where_attribue' ( (lv_queryOperator_6_0= ruleQueryOperator ) ) otherlv_7= '(' ( (lv_value_8_0= RULE_STRING ) ) otherlv_9= ')' ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1196:1: (otherlv_0= 'select_feature_*' otherlv_1= 'from_variants_of_feature' otherlv_2= '(' ( ( ruleQualifiedName ) ) otherlv_4= ')' otherlv_5= 'where_attribue' ( (lv_queryOperator_6_0= ruleQueryOperator ) ) otherlv_7= '(' ( (lv_value_8_0= RULE_STRING ) ) otherlv_9= ')' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1195:28: ( (otherlv_0= 'select_feature_from_variants_of' otherlv_1= '(' ( ( ruleQualifiedName ) ) otherlv_3= ')' otherlv_4= 'where_attribue' ( (lv_queryOperator_5_0= ruleQueryOperator ) ) otherlv_6= '(' ( (lv_value_7_0= RULE_STRING ) ) otherlv_8= ')' ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1196:1: (otherlv_0= 'select_feature_from_variants_of' otherlv_1= '(' ( ( ruleQualifiedName ) ) otherlv_3= ')' otherlv_4= 'where_attribue' ( (lv_queryOperator_5_0= ruleQueryOperator ) ) otherlv_6= '(' ( (lv_value_7_0= RULE_STRING ) ) otherlv_8= ')' )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1196:1: (otherlv_0= 'select_feature_*' otherlv_1= 'from_variants_of_feature' otherlv_2= '(' ( ( ruleQualifiedName ) ) otherlv_4= ')' otherlv_5= 'where_attribue' ( (lv_queryOperator_6_0= ruleQueryOperator ) ) otherlv_7= '(' ( (lv_value_8_0= RULE_STRING ) ) otherlv_9= ')' )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1196:3: otherlv_0= 'select_feature_*' otherlv_1= 'from_variants_of_feature' otherlv_2= '(' ( ( ruleQualifiedName ) ) otherlv_4= ')' otherlv_5= 'where_attribue' ( (lv_queryOperator_6_0= ruleQueryOperator ) ) otherlv_7= '(' ( (lv_value_8_0= RULE_STRING ) ) otherlv_9= ')'
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1196:1: (otherlv_0= 'select_feature_from_variants_of' otherlv_1= '(' ( ( ruleQualifiedName ) ) otherlv_3= ')' otherlv_4= 'where_attribue' ( (lv_queryOperator_5_0= ruleQueryOperator ) ) otherlv_6= '(' ( (lv_value_7_0= RULE_STRING ) ) otherlv_8= ')' )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1196:3: otherlv_0= 'select_feature_from_variants_of' otherlv_1= '(' ( ( ruleQualifiedName ) ) otherlv_3= ')' otherlv_4= 'where_attribue' ( (lv_queryOperator_5_0= ruleQueryOperator ) ) otherlv_6= '(' ( (lv_value_7_0= RULE_STRING ) ) otherlv_8= ')'
             {
             otherlv_0=(Token)match(input,35,FOLLOW_35_in_ruleAtomicActionQuery2665); 
 
-                	newLeafNode(otherlv_0, grammarAccess.getAtomicActionQueryAccess().getSelect_feature_Keyword_0());
+                	newLeafNode(otherlv_0, grammarAccess.getAtomicActionQueryAccess().getSelect_feature_from_variants_ofKeyword_0());
                 
-            otherlv_1=(Token)match(input,36,FOLLOW_36_in_ruleAtomicActionQuery2677); 
+            otherlv_1=(Token)match(input,28,FOLLOW_28_in_ruleAtomicActionQuery2677); 
 
-                	newLeafNode(otherlv_1, grammarAccess.getAtomicActionQueryAccess().getFrom_variants_of_featureKeyword_1());
+                	newLeafNode(otherlv_1, grammarAccess.getAtomicActionQueryAccess().getLeftParenthesisKeyword_1());
                 
-            otherlv_2=(Token)match(input,28,FOLLOW_28_in_ruleAtomicActionQuery2689); 
-
-                	newLeafNode(otherlv_2, grammarAccess.getAtomicActionQueryAccess().getLeftParenthesisKeyword_2());
-                
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1208:1: ( ( ruleQualifiedName ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1209:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1204:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1205:1: ( ruleQualifiedName )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1209:1: ( ruleQualifiedName )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1210:3: ruleQualifiedName
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1205:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1206:3: ruleQualifiedName
             {
 
             			if (current==null) {
@@ -2759,9 +2753,9 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
             	        }
                     
              
-            	        newCompositeNode(grammarAccess.getAtomicActionQueryAccess().getFeatureFeatureCrossReference_3_0()); 
+            	        newCompositeNode(grammarAccess.getAtomicActionQueryAccess().getFeatureFeatureCrossReference_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleAtomicActionQuery2712);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleAtomicActionQuery2700);
             ruleQualifiedName();
 
             state._fsp--;
@@ -2775,25 +2769,25 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_4=(Token)match(input,29,FOLLOW_29_in_ruleAtomicActionQuery2724); 
+            otherlv_3=(Token)match(input,29,FOLLOW_29_in_ruleAtomicActionQuery2712); 
 
-                	newLeafNode(otherlv_4, grammarAccess.getAtomicActionQueryAccess().getRightParenthesisKeyword_4());
+                	newLeafNode(otherlv_3, grammarAccess.getAtomicActionQueryAccess().getRightParenthesisKeyword_3());
                 
-            otherlv_5=(Token)match(input,37,FOLLOW_37_in_ruleAtomicActionQuery2736); 
+            otherlv_4=(Token)match(input,36,FOLLOW_36_in_ruleAtomicActionQuery2724); 
 
-                	newLeafNode(otherlv_5, grammarAccess.getAtomicActionQueryAccess().getWhere_attribueKeyword_5());
+                	newLeafNode(otherlv_4, grammarAccess.getAtomicActionQueryAccess().getWhere_attribueKeyword_4());
                 
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1231:1: ( (lv_queryOperator_6_0= ruleQueryOperator ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1232:1: (lv_queryOperator_6_0= ruleQueryOperator )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1227:1: ( (lv_queryOperator_5_0= ruleQueryOperator ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1228:1: (lv_queryOperator_5_0= ruleQueryOperator )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1232:1: (lv_queryOperator_6_0= ruleQueryOperator )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1233:3: lv_queryOperator_6_0= ruleQueryOperator
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1228:1: (lv_queryOperator_5_0= ruleQueryOperator )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1229:3: lv_queryOperator_5_0= ruleQueryOperator
             {
              
-            	        newCompositeNode(grammarAccess.getAtomicActionQueryAccess().getQueryOperatorQueryOperatorEnumRuleCall_6_0()); 
+            	        newCompositeNode(grammarAccess.getAtomicActionQueryAccess().getQueryOperatorQueryOperatorEnumRuleCall_5_0()); 
             	    
-            pushFollow(FOLLOW_ruleQueryOperator_in_ruleAtomicActionQuery2757);
-            lv_queryOperator_6_0=ruleQueryOperator();
+            pushFollow(FOLLOW_ruleQueryOperator_in_ruleAtomicActionQuery2745);
+            lv_queryOperator_5_0=ruleQueryOperator();
 
             state._fsp--;
 
@@ -2804,7 +2798,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
                    		set(
                    			current, 
                    			"queryOperator",
-                    		lv_queryOperator_6_0, 
+                    		lv_queryOperator_5_0, 
                     		"QueryOperator");
             	        afterParserOrEnumRuleCall();
             	    
@@ -2814,19 +2808,19 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_7=(Token)match(input,28,FOLLOW_28_in_ruleAtomicActionQuery2769); 
+            otherlv_6=(Token)match(input,28,FOLLOW_28_in_ruleAtomicActionQuery2757); 
 
-                	newLeafNode(otherlv_7, grammarAccess.getAtomicActionQueryAccess().getLeftParenthesisKeyword_7());
+                	newLeafNode(otherlv_6, grammarAccess.getAtomicActionQueryAccess().getLeftParenthesisKeyword_6());
                 
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1253:1: ( (lv_value_8_0= RULE_STRING ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1254:1: (lv_value_8_0= RULE_STRING )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1249:1: ( (lv_value_7_0= RULE_STRING ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1250:1: (lv_value_7_0= RULE_STRING )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1254:1: (lv_value_8_0= RULE_STRING )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1255:3: lv_value_8_0= RULE_STRING
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1250:1: (lv_value_7_0= RULE_STRING )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1251:3: lv_value_7_0= RULE_STRING
             {
-            lv_value_8_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleAtomicActionQuery2786); 
+            lv_value_7_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleAtomicActionQuery2774); 
 
-            			newLeafNode(lv_value_8_0, grammarAccess.getAtomicActionQueryAccess().getValueSTRINGTerminalRuleCall_8_0()); 
+            			newLeafNode(lv_value_7_0, grammarAccess.getAtomicActionQueryAccess().getValueSTRINGTerminalRuleCall_7_0()); 
             		
 
             	        if (current==null) {
@@ -2835,7 +2829,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
                    		setWithLastConsumed(
                    			current, 
                    			"value",
-                    		lv_value_8_0, 
+                    		lv_value_7_0, 
                     		"STRING");
             	    
 
@@ -2844,9 +2838,9 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
             }
 
-            otherlv_9=(Token)match(input,29,FOLLOW_29_in_ruleAtomicActionQuery2803); 
+            otherlv_8=(Token)match(input,29,FOLLOW_29_in_ruleAtomicActionQuery2791); 
 
-                	newLeafNode(otherlv_9, grammarAccess.getAtomicActionQueryAccess().getRightParenthesisKeyword_9());
+                	newLeafNode(otherlv_8, grammarAccess.getAtomicActionQueryAccess().getRightParenthesisKeyword_8());
                 
 
             }
@@ -2869,7 +2863,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleAttributeValue"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1283:1: entryRuleAttributeValue returns [EObject current=null] : iv_ruleAttributeValue= ruleAttributeValue EOF ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1279:1: entryRuleAttributeValue returns [EObject current=null] : iv_ruleAttributeValue= ruleAttributeValue EOF ;
     public final EObject entryRuleAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -2877,17 +2871,17 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1284:2: (iv_ruleAttributeValue= ruleAttributeValue EOF )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1285:2: iv_ruleAttributeValue= ruleAttributeValue EOF
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1280:2: (iv_ruleAttributeValue= ruleAttributeValue EOF )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1281:2: iv_ruleAttributeValue= ruleAttributeValue EOF
             {
              newCompositeNode(grammarAccess.getAttributeValueRule()); 
-            pushFollow(FOLLOW_ruleAttributeValue_in_entryRuleAttributeValue2839);
+            pushFollow(FOLLOW_ruleAttributeValue_in_entryRuleAttributeValue2827);
             iv_ruleAttributeValue=ruleAttributeValue();
 
             state._fsp--;
 
              current =iv_ruleAttributeValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAttributeValue2849); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAttributeValue2837); 
 
             }
 
@@ -2905,7 +2899,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleAttributeValue"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1292:1: ruleAttributeValue returns [EObject current=null] : (this_StringAttributeValue_0= ruleStringAttributeValue | this_NFRAttributeValue_1= ruleNFRAttributeValue ) ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1288:1: ruleAttributeValue returns [EObject current=null] : (this_StringAttributeValue_0= ruleStringAttributeValue | this_NFRAttributeValue_1= ruleNFRAttributeValue ) ;
     public final EObject ruleAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -2917,10 +2911,10 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1295:28: ( (this_StringAttributeValue_0= ruleStringAttributeValue | this_NFRAttributeValue_1= ruleNFRAttributeValue ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1296:1: (this_StringAttributeValue_0= ruleStringAttributeValue | this_NFRAttributeValue_1= ruleNFRAttributeValue )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1291:28: ( (this_StringAttributeValue_0= ruleStringAttributeValue | this_NFRAttributeValue_1= ruleNFRAttributeValue ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1292:1: (this_StringAttributeValue_0= ruleStringAttributeValue | this_NFRAttributeValue_1= ruleNFRAttributeValue )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1296:1: (this_StringAttributeValue_0= ruleStringAttributeValue | this_NFRAttributeValue_1= ruleNFRAttributeValue )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1292:1: (this_StringAttributeValue_0= ruleStringAttributeValue | this_NFRAttributeValue_1= ruleNFRAttributeValue )
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -2938,12 +2932,12 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
             }
             switch (alt11) {
                 case 1 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1297:5: this_StringAttributeValue_0= ruleStringAttributeValue
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1293:5: this_StringAttributeValue_0= ruleStringAttributeValue
                     {
                      
                             newCompositeNode(grammarAccess.getAttributeValueAccess().getStringAttributeValueParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleStringAttributeValue_in_ruleAttributeValue2896);
+                    pushFollow(FOLLOW_ruleStringAttributeValue_in_ruleAttributeValue2884);
                     this_StringAttributeValue_0=ruleStringAttributeValue();
 
                     state._fsp--;
@@ -2956,12 +2950,12 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1307:5: this_NFRAttributeValue_1= ruleNFRAttributeValue
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1303:5: this_NFRAttributeValue_1= ruleNFRAttributeValue
                     {
                      
                             newCompositeNode(grammarAccess.getAttributeValueAccess().getNFRAttributeValueParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleNFRAttributeValue_in_ruleAttributeValue2923);
+                    pushFollow(FOLLOW_ruleNFRAttributeValue_in_ruleAttributeValue2911);
                     this_NFRAttributeValue_1=ruleNFRAttributeValue();
 
                     state._fsp--;
@@ -2994,7 +2988,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleStringAttributeValue"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1323:1: entryRuleStringAttributeValue returns [EObject current=null] : iv_ruleStringAttributeValue= ruleStringAttributeValue EOF ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1319:1: entryRuleStringAttributeValue returns [EObject current=null] : iv_ruleStringAttributeValue= ruleStringAttributeValue EOF ;
     public final EObject entryRuleStringAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -3002,17 +2996,17 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1324:2: (iv_ruleStringAttributeValue= ruleStringAttributeValue EOF )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1325:2: iv_ruleStringAttributeValue= ruleStringAttributeValue EOF
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1320:2: (iv_ruleStringAttributeValue= ruleStringAttributeValue EOF )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1321:2: iv_ruleStringAttributeValue= ruleStringAttributeValue EOF
             {
              newCompositeNode(grammarAccess.getStringAttributeValueRule()); 
-            pushFollow(FOLLOW_ruleStringAttributeValue_in_entryRuleStringAttributeValue2958);
+            pushFollow(FOLLOW_ruleStringAttributeValue_in_entryRuleStringAttributeValue2946);
             iv_ruleStringAttributeValue=ruleStringAttributeValue();
 
             state._fsp--;
 
              current =iv_ruleStringAttributeValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStringAttributeValue2968); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStringAttributeValue2956); 
 
             }
 
@@ -3030,7 +3024,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleStringAttributeValue"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1332:1: ruleStringAttributeValue returns [EObject current=null] : ( (lv_value_0_0= RULE_STRING ) ) ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1328:1: ruleStringAttributeValue returns [EObject current=null] : ( (lv_value_0_0= RULE_STRING ) ) ;
     public final EObject ruleStringAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -3039,16 +3033,16 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
          enterRule(); 
             
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1335:28: ( ( (lv_value_0_0= RULE_STRING ) ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1336:1: ( (lv_value_0_0= RULE_STRING ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1331:28: ( ( (lv_value_0_0= RULE_STRING ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1332:1: ( (lv_value_0_0= RULE_STRING ) )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1336:1: ( (lv_value_0_0= RULE_STRING ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1337:1: (lv_value_0_0= RULE_STRING )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1332:1: ( (lv_value_0_0= RULE_STRING ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1333:1: (lv_value_0_0= RULE_STRING )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1337:1: (lv_value_0_0= RULE_STRING )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1338:3: lv_value_0_0= RULE_STRING
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1333:1: (lv_value_0_0= RULE_STRING )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1334:3: lv_value_0_0= RULE_STRING
             {
-            lv_value_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringAttributeValue3009); 
+            lv_value_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringAttributeValue2997); 
 
             			newLeafNode(lv_value_0_0, grammarAccess.getStringAttributeValueAccess().getValueSTRINGTerminalRuleCall_0()); 
             		
@@ -3086,7 +3080,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "entryRuleNFRAttributeValue"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1362:1: entryRuleNFRAttributeValue returns [EObject current=null] : iv_ruleNFRAttributeValue= ruleNFRAttributeValue EOF ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1358:1: entryRuleNFRAttributeValue returns [EObject current=null] : iv_ruleNFRAttributeValue= ruleNFRAttributeValue EOF ;
     public final EObject entryRuleNFRAttributeValue() throws RecognitionException {
         EObject current = null;
 
@@ -3094,17 +3088,17 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1363:2: (iv_ruleNFRAttributeValue= ruleNFRAttributeValue EOF )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1364:2: iv_ruleNFRAttributeValue= ruleNFRAttributeValue EOF
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1359:2: (iv_ruleNFRAttributeValue= ruleNFRAttributeValue EOF )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1360:2: iv_ruleNFRAttributeValue= ruleNFRAttributeValue EOF
             {
              newCompositeNode(grammarAccess.getNFRAttributeValueRule()); 
-            pushFollow(FOLLOW_ruleNFRAttributeValue_in_entryRuleNFRAttributeValue3049);
+            pushFollow(FOLLOW_ruleNFRAttributeValue_in_entryRuleNFRAttributeValue3037);
             iv_ruleNFRAttributeValue=ruleNFRAttributeValue();
 
             state._fsp--;
 
              current =iv_ruleNFRAttributeValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNFRAttributeValue3059); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNFRAttributeValue3047); 
 
             }
 
@@ -3122,21 +3116,21 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleNFRAttributeValue"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1371:1: ruleNFRAttributeValue returns [EObject current=null] : ( ( ruleQualifiedName ) ) ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1367:1: ruleNFRAttributeValue returns [EObject current=null] : ( ( ruleQualifiedName ) ) ;
     public final EObject ruleNFRAttributeValue() throws RecognitionException {
         EObject current = null;
 
          enterRule(); 
             
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1374:28: ( ( ( ruleQualifiedName ) ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1375:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1370:28: ( ( ( ruleQualifiedName ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1371:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1375:1: ( ( ruleQualifiedName ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1376:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1371:1: ( ( ruleQualifiedName ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1372:1: ( ruleQualifiedName )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1376:1: ( ruleQualifiedName )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1377:3: ruleQualifiedName
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1372:1: ( ruleQualifiedName )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1373:3: ruleQualifiedName
             {
 
             			if (current==null) {
@@ -3146,7 +3140,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
              
             	        newCompositeNode(grammarAccess.getNFRAttributeValueAccess().getValueNFRAttributeCrossReference_0()); 
             	    
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleNFRAttributeValue3106);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleNFRAttributeValue3094);
             ruleQualifiedName();
 
             state._fsp--;
@@ -3178,7 +3172,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleMathOperator"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1398:1: ruleMathOperator returns [Enumerator current=null] : ( (enumLiteral_0= '<' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '==' ) | (enumLiteral_3= '<>' ) ) ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1394:1: ruleMathOperator returns [Enumerator current=null] : ( (enumLiteral_0= '<' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '==' ) | (enumLiteral_3= '<>' ) ) ;
     public final Enumerator ruleMathOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -3189,28 +3183,28 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
          enterRule(); 
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1400:28: ( ( (enumLiteral_0= '<' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '==' ) | (enumLiteral_3= '<>' ) ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1401:1: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '==' ) | (enumLiteral_3= '<>' ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1396:28: ( ( (enumLiteral_0= '<' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '==' ) | (enumLiteral_3= '<>' ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1397:1: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '==' ) | (enumLiteral_3= '<>' ) )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1401:1: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '==' ) | (enumLiteral_3= '<>' ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1397:1: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '==' ) | (enumLiteral_3= '<>' ) )
             int alt12=4;
             switch ( input.LA(1) ) {
-            case 38:
+            case 37:
                 {
                 alt12=1;
                 }
                 break;
-            case 39:
+            case 38:
                 {
                 alt12=2;
                 }
                 break;
-            case 40:
+            case 39:
                 {
                 alt12=3;
                 }
                 break;
-            case 41:
+            case 40:
                 {
                 alt12=4;
                 }
@@ -3224,12 +3218,12 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
             switch (alt12) {
                 case 1 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1401:2: (enumLiteral_0= '<' )
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1397:2: (enumLiteral_0= '<' )
                     {
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1401:2: (enumLiteral_0= '<' )
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1401:4: enumLiteral_0= '<'
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1397:2: (enumLiteral_0= '<' )
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1397:4: enumLiteral_0= '<'
                     {
-                    enumLiteral_0=(Token)match(input,38,FOLLOW_38_in_ruleMathOperator3155); 
+                    enumLiteral_0=(Token)match(input,37,FOLLOW_37_in_ruleMathOperator3143); 
 
                             current = grammarAccess.getMathOperatorAccess().getLESSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getMathOperatorAccess().getLESSEnumLiteralDeclaration_0()); 
@@ -3241,12 +3235,12 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1407:6: (enumLiteral_1= '>' )
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1403:6: (enumLiteral_1= '>' )
                     {
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1407:6: (enumLiteral_1= '>' )
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1407:8: enumLiteral_1= '>'
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1403:6: (enumLiteral_1= '>' )
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1403:8: enumLiteral_1= '>'
                     {
-                    enumLiteral_1=(Token)match(input,39,FOLLOW_39_in_ruleMathOperator3172); 
+                    enumLiteral_1=(Token)match(input,38,FOLLOW_38_in_ruleMathOperator3160); 
 
                             current = grammarAccess.getMathOperatorAccess().getGREATEREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getMathOperatorAccess().getGREATEREnumLiteralDeclaration_1()); 
@@ -3258,12 +3252,12 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 3 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1413:6: (enumLiteral_2= '==' )
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1409:6: (enumLiteral_2= '==' )
                     {
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1413:6: (enumLiteral_2= '==' )
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1413:8: enumLiteral_2= '=='
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1409:6: (enumLiteral_2= '==' )
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1409:8: enumLiteral_2= '=='
                     {
-                    enumLiteral_2=(Token)match(input,40,FOLLOW_40_in_ruleMathOperator3189); 
+                    enumLiteral_2=(Token)match(input,39,FOLLOW_39_in_ruleMathOperator3177); 
 
                             current = grammarAccess.getMathOperatorAccess().getEQUALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getMathOperatorAccess().getEQUALEnumLiteralDeclaration_2()); 
@@ -3275,12 +3269,12 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 4 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1419:6: (enumLiteral_3= '<>' )
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1415:6: (enumLiteral_3= '<>' )
                     {
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1419:6: (enumLiteral_3= '<>' )
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1419:8: enumLiteral_3= '<>'
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1415:6: (enumLiteral_3= '<>' )
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1415:8: enumLiteral_3= '<>'
                     {
-                    enumLiteral_3=(Token)match(input,41,FOLLOW_41_in_ruleMathOperator3206); 
+                    enumLiteral_3=(Token)match(input,40,FOLLOW_40_in_ruleMathOperator3194); 
 
                             current = grammarAccess.getMathOperatorAccess().getDIFFERENTEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getMathOperatorAccess().getDIFFERENTEnumLiteralDeclaration_3()); 
@@ -3312,7 +3306,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleLogicalOperator"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1429:1: ruleLogicalOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) ) ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1425:1: ruleLogicalOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) ) ;
     public final Enumerator ruleLogicalOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -3321,17 +3315,17 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
          enterRule(); 
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1431:28: ( ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1432:1: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1427:28: ( ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1428:1: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1432:1: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1428:1: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
             if ( (LA13_0==26) ) {
                 alt13=1;
             }
-            else if ( (LA13_0==42) ) {
+            else if ( (LA13_0==41) ) {
                 alt13=2;
             }
             else {
@@ -3342,12 +3336,12 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
             }
             switch (alt13) {
                 case 1 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1432:2: (enumLiteral_0= 'AND' )
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1428:2: (enumLiteral_0= 'AND' )
                     {
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1432:2: (enumLiteral_0= 'AND' )
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1432:4: enumLiteral_0= 'AND'
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1428:2: (enumLiteral_0= 'AND' )
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1428:4: enumLiteral_0= 'AND'
                     {
-                    enumLiteral_0=(Token)match(input,26,FOLLOW_26_in_ruleLogicalOperator3251); 
+                    enumLiteral_0=(Token)match(input,26,FOLLOW_26_in_ruleLogicalOperator3239); 
 
                             current = grammarAccess.getLogicalOperatorAccess().getANDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getLogicalOperatorAccess().getANDEnumLiteralDeclaration_0()); 
@@ -3359,12 +3353,12 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1438:6: (enumLiteral_1= 'OR' )
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1434:6: (enumLiteral_1= 'OR' )
                     {
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1438:6: (enumLiteral_1= 'OR' )
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1438:8: enumLiteral_1= 'OR'
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1434:6: (enumLiteral_1= 'OR' )
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1434:8: enumLiteral_1= 'OR'
                     {
-                    enumLiteral_1=(Token)match(input,42,FOLLOW_42_in_ruleLogicalOperator3268); 
+                    enumLiteral_1=(Token)match(input,41,FOLLOW_41_in_ruleLogicalOperator3256); 
 
                             current = grammarAccess.getLogicalOperatorAccess().getOREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getLogicalOperatorAccess().getOREnumLiteralDeclaration_1()); 
@@ -3396,7 +3390,7 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
 
     // $ANTLR start "ruleQueryOperator"
-    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1448:1: ruleQueryOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'max' ) | (enumLiteral_1= 'min' ) | (enumLiteral_2= 'is' ) ) ;
+    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1444:1: ruleQueryOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'max' ) | (enumLiteral_1= 'min' ) | (enumLiteral_2= 'is' ) ) ;
     public final Enumerator ruleQueryOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -3406,23 +3400,23 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
          enterRule(); 
         try {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1450:28: ( ( (enumLiteral_0= 'max' ) | (enumLiteral_1= 'min' ) | (enumLiteral_2= 'is' ) ) )
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1451:1: ( (enumLiteral_0= 'max' ) | (enumLiteral_1= 'min' ) | (enumLiteral_2= 'is' ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1446:28: ( ( (enumLiteral_0= 'max' ) | (enumLiteral_1= 'min' ) | (enumLiteral_2= 'is' ) ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1447:1: ( (enumLiteral_0= 'max' ) | (enumLiteral_1= 'min' ) | (enumLiteral_2= 'is' ) )
             {
-            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1451:1: ( (enumLiteral_0= 'max' ) | (enumLiteral_1= 'min' ) | (enumLiteral_2= 'is' ) )
+            // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1447:1: ( (enumLiteral_0= 'max' ) | (enumLiteral_1= 'min' ) | (enumLiteral_2= 'is' ) )
             int alt14=3;
             switch ( input.LA(1) ) {
-            case 43:
+            case 42:
                 {
                 alt14=1;
                 }
                 break;
-            case 44:
+            case 43:
                 {
                 alt14=2;
                 }
                 break;
-            case 45:
+            case 44:
                 {
                 alt14=3;
                 }
@@ -3436,12 +3430,12 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
 
             switch (alt14) {
                 case 1 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1451:2: (enumLiteral_0= 'max' )
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1447:2: (enumLiteral_0= 'max' )
                     {
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1451:2: (enumLiteral_0= 'max' )
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1451:4: enumLiteral_0= 'max'
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1447:2: (enumLiteral_0= 'max' )
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1447:4: enumLiteral_0= 'max'
                     {
-                    enumLiteral_0=(Token)match(input,43,FOLLOW_43_in_ruleQueryOperator3313); 
+                    enumLiteral_0=(Token)match(input,42,FOLLOW_42_in_ruleQueryOperator3301); 
 
                             current = grammarAccess.getQueryOperatorAccess().getMAXEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getQueryOperatorAccess().getMAXEnumLiteralDeclaration_0()); 
@@ -3453,12 +3447,12 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 2 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1457:6: (enumLiteral_1= 'min' )
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1453:6: (enumLiteral_1= 'min' )
                     {
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1457:6: (enumLiteral_1= 'min' )
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1457:8: enumLiteral_1= 'min'
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1453:6: (enumLiteral_1= 'min' )
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1453:8: enumLiteral_1= 'min'
                     {
-                    enumLiteral_1=(Token)match(input,44,FOLLOW_44_in_ruleQueryOperator3330); 
+                    enumLiteral_1=(Token)match(input,43,FOLLOW_43_in_ruleQueryOperator3318); 
 
                             current = grammarAccess.getQueryOperatorAccess().getMINEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getQueryOperatorAccess().getMINEnumLiteralDeclaration_1()); 
@@ -3470,12 +3464,12 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
                     }
                     break;
                 case 3 :
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1463:6: (enumLiteral_2= 'is' )
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1459:6: (enumLiteral_2= 'is' )
                     {
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1463:6: (enumLiteral_2= 'is' )
-                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1463:8: enumLiteral_2= 'is'
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1459:6: (enumLiteral_2= 'is' )
+                    // ../org.rra.adaptationModel.dsl/src-gen/org/rra/adaptationModel/parser/antlr/internal/InternalAdaptationModelDSL.g:1459:8: enumLiteral_2= 'is'
                     {
-                    enumLiteral_2=(Token)match(input,45,FOLLOW_45_in_ruleQueryOperator3347); 
+                    enumLiteral_2=(Token)match(input,44,FOLLOW_44_in_ruleQueryOperator3335); 
 
                             current = grammarAccess.getQueryOperatorAccess().getISEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getQueryOperatorAccess().getISEnumLiteralDeclaration_2()); 
@@ -3600,9 +3594,9 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
     public static final BitSet FOLLOW_ruleRuleBody_in_ruleConditionAction1951 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCondition_in_entryRuleCondition1989 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCondition1999 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleCondition2047 = new BitSet(new long[]{0x000003C000000000L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleCondition2047 = new BitSet(new long[]{0x000001E000000000L});
     public static final BitSet FOLLOW_ruleMathOperator_in_ruleCondition2068 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleCondition2085 = new BitSet(new long[]{0x0000040004000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleCondition2085 = new BitSet(new long[]{0x0000020004000002L});
     public static final BitSet FOLLOW_ruleLogicalOperator_in_ruleCondition2112 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_ruleCondition_in_ruleCondition2133 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAtomicActionSelectFeature_in_entryRuleAtomicActionSelectFeature2171 = new BitSet(new long[]{0x0000000000000000L});
@@ -3629,34 +3623,33 @@ public class InternalAdaptationModelDSLParser extends AbstractInternalAntlrParse
     public static final BitSet FOLLOW_29_in_ruleAtomicActionModifyAttribute2582 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAtomicActionQuery_in_entryRuleAtomicActionQuery2618 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAtomicActionQuery2628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_ruleAtomicActionQuery2665 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_36_in_ruleAtomicActionQuery2677 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleAtomicActionQuery2689 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleAtomicActionQuery2712 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleAtomicActionQuery2724 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_37_in_ruleAtomicActionQuery2736 = new BitSet(new long[]{0x0000380000000000L});
-    public static final BitSet FOLLOW_ruleQueryOperator_in_ruleAtomicActionQuery2757 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleAtomicActionQuery2769 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleAtomicActionQuery2786 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleAtomicActionQuery2803 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributeValue_in_entryRuleAttributeValue2839 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAttributeValue2849 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringAttributeValue_in_ruleAttributeValue2896 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNFRAttributeValue_in_ruleAttributeValue2923 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringAttributeValue_in_entryRuleStringAttributeValue2958 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStringAttributeValue2968 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringAttributeValue3009 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNFRAttributeValue_in_entryRuleNFRAttributeValue3049 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNFRAttributeValue3059 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleNFRAttributeValue3106 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_ruleMathOperator3155 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleMathOperator3172 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleMathOperator3189 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleMathOperator3206 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleLogicalOperator3251 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_ruleLogicalOperator3268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_ruleQueryOperator3313 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_ruleQueryOperator3330 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_ruleQueryOperator3347 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_ruleAtomicActionQuery2665 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleAtomicActionQuery2677 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleAtomicActionQuery2700 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleAtomicActionQuery2712 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_36_in_ruleAtomicActionQuery2724 = new BitSet(new long[]{0x00001C0000000000L});
+    public static final BitSet FOLLOW_ruleQueryOperator_in_ruleAtomicActionQuery2745 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleAtomicActionQuery2757 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleAtomicActionQuery2774 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleAtomicActionQuery2791 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributeValue_in_entryRuleAttributeValue2827 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAttributeValue2837 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringAttributeValue_in_ruleAttributeValue2884 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNFRAttributeValue_in_ruleAttributeValue2911 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringAttributeValue_in_entryRuleStringAttributeValue2946 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStringAttributeValue2956 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringAttributeValue2997 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNFRAttributeValue_in_entryRuleNFRAttributeValue3037 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNFRAttributeValue3047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleNFRAttributeValue3094 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_ruleMathOperator3143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_ruleMathOperator3160 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleMathOperator3177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_ruleMathOperator3194 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleLogicalOperator3239 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_41_in_ruleLogicalOperator3256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_ruleQueryOperator3301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_ruleQueryOperator3318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_ruleQueryOperator3335 = new BitSet(new long[]{0x0000000000000002L});
 
 }

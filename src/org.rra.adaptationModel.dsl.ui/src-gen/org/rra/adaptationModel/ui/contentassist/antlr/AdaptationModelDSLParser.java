@@ -94,9 +94,9 @@ public class AdaptationModelDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtomicActionDeselectFeatureAccess().getFeatureAssignment_2(), "rule__AtomicActionDeselectFeature__FeatureAssignment_2");
 					put(grammarAccess.getAtomicActionModifyAttributeAccess().getFeatureAttributeAssignment_2(), "rule__AtomicActionModifyAttribute__FeatureAttributeAssignment_2");
 					put(grammarAccess.getAtomicActionModifyAttributeAccess().getAttributeValueAssignment_6(), "rule__AtomicActionModifyAttribute__AttributeValueAssignment_6");
-					put(grammarAccess.getAtomicActionQueryAccess().getFeatureAssignment_3(), "rule__AtomicActionQuery__FeatureAssignment_3");
-					put(grammarAccess.getAtomicActionQueryAccess().getQueryOperatorAssignment_6(), "rule__AtomicActionQuery__QueryOperatorAssignment_6");
-					put(grammarAccess.getAtomicActionQueryAccess().getValueAssignment_8(), "rule__AtomicActionQuery__ValueAssignment_8");
+					put(grammarAccess.getAtomicActionQueryAccess().getFeatureAssignment_2(), "rule__AtomicActionQuery__FeatureAssignment_2");
+					put(grammarAccess.getAtomicActionQueryAccess().getQueryOperatorAssignment_5(), "rule__AtomicActionQuery__QueryOperatorAssignment_5");
+					put(grammarAccess.getAtomicActionQueryAccess().getValueAssignment_7(), "rule__AtomicActionQuery__ValueAssignment_7");
 					put(grammarAccess.getStringAttributeValueAccess().getValueAssignment(), "rule__StringAttributeValue__ValueAssignment");
 					put(grammarAccess.getNFRAttributeValueAccess().getValueAssignment(), "rule__NFRAttributeValue__ValueAssignment");
 				}

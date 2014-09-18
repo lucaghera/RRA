@@ -792,71 +792,67 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	public class AtomicActionQueryElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AtomicActionQuery");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSelect_feature_Keyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cFrom_variants_of_featureKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cFeatureAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cFeatureFeatureCrossReference_3_0 = (CrossReference)cFeatureAssignment_3.eContents().get(0);
-		private final RuleCall cFeatureFeatureQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cFeatureFeatureCrossReference_3_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cWhere_attribueKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cQueryOperatorAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cQueryOperatorQueryOperatorEnumRuleCall_6_0 = (RuleCall)cQueryOperatorAssignment_6.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cValueAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cValueSTRINGTerminalRuleCall_8_0 = (RuleCall)cValueAssignment_8.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cSelect_feature_from_variants_ofKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cFeatureAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cFeatureFeatureCrossReference_2_0 = (CrossReference)cFeatureAssignment_2.eContents().get(0);
+		private final RuleCall cFeatureFeatureQualifiedNameParserRuleCall_2_0_1 = (RuleCall)cFeatureFeatureCrossReference_2_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cWhere_attribueKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cQueryOperatorAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cQueryOperatorQueryOperatorEnumRuleCall_5_0 = (RuleCall)cQueryOperatorAssignment_5.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cValueAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cValueSTRINGTerminalRuleCall_7_0 = (RuleCall)cValueAssignment_7.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//AtomicActionQuery:
-		//	"select_feature_*" "from_variants_of_feature" "(" feature=[featureModel::Feature|QualifiedName] ")" "where_attribue"
+		//	"select_feature_from_variants_of" "(" feature=[featureModel::Feature|QualifiedName] ")" "where_attribue"
 		//	queryOperator=QueryOperator "(" value=STRING ")";
 		public ParserRule getRule() { return rule; }
 
-		//"select_feature_*" "from_variants_of_feature" "(" feature=[featureModel::Feature|QualifiedName] ")" "where_attribue"
+		//"select_feature_from_variants_of" "(" feature=[featureModel::Feature|QualifiedName] ")" "where_attribue"
 		//queryOperator=QueryOperator "(" value=STRING ")"
 		public Group getGroup() { return cGroup; }
 
-		//"select_feature_*"
-		public Keyword getSelect_feature_Keyword_0() { return cSelect_feature_Keyword_0; }
-
-		//"from_variants_of_feature"
-		public Keyword getFrom_variants_of_featureKeyword_1() { return cFrom_variants_of_featureKeyword_1; }
+		//"select_feature_from_variants_of"
+		public Keyword getSelect_feature_from_variants_ofKeyword_0() { return cSelect_feature_from_variants_ofKeyword_0; }
 
 		//"("
-		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
 		//feature=[featureModel::Feature|QualifiedName]
-		public Assignment getFeatureAssignment_3() { return cFeatureAssignment_3; }
+		public Assignment getFeatureAssignment_2() { return cFeatureAssignment_2; }
 
 		//[featureModel::Feature|QualifiedName]
-		public CrossReference getFeatureFeatureCrossReference_3_0() { return cFeatureFeatureCrossReference_3_0; }
+		public CrossReference getFeatureFeatureCrossReference_2_0() { return cFeatureFeatureCrossReference_2_0; }
 
 		//QualifiedName
-		public RuleCall getFeatureFeatureQualifiedNameParserRuleCall_3_0_1() { return cFeatureFeatureQualifiedNameParserRuleCall_3_0_1; }
+		public RuleCall getFeatureFeatureQualifiedNameParserRuleCall_2_0_1() { return cFeatureFeatureQualifiedNameParserRuleCall_2_0_1; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 
 		//"where_attribue"
-		public Keyword getWhere_attribueKeyword_5() { return cWhere_attribueKeyword_5; }
+		public Keyword getWhere_attribueKeyword_4() { return cWhere_attribueKeyword_4; }
 
 		//queryOperator=QueryOperator
-		public Assignment getQueryOperatorAssignment_6() { return cQueryOperatorAssignment_6; }
+		public Assignment getQueryOperatorAssignment_5() { return cQueryOperatorAssignment_5; }
 
 		//QueryOperator
-		public RuleCall getQueryOperatorQueryOperatorEnumRuleCall_6_0() { return cQueryOperatorQueryOperatorEnumRuleCall_6_0; }
+		public RuleCall getQueryOperatorQueryOperatorEnumRuleCall_5_0() { return cQueryOperatorQueryOperatorEnumRuleCall_5_0; }
 
 		//"("
-		public Keyword getLeftParenthesisKeyword_7() { return cLeftParenthesisKeyword_7; }
+		public Keyword getLeftParenthesisKeyword_6() { return cLeftParenthesisKeyword_6; }
 
 		//value=STRING
-		public Assignment getValueAssignment_8() { return cValueAssignment_8; }
+		public Assignment getValueAssignment_7() { return cValueAssignment_7; }
 
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_8_0() { return cValueSTRINGTerminalRuleCall_8_0; }
+		public RuleCall getValueSTRINGTerminalRuleCall_7_0() { return cValueSTRINGTerminalRuleCall_7_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_9() { return cRightParenthesisKeyword_9; }
+		public Keyword getRightParenthesisKeyword_8() { return cRightParenthesisKeyword_8; }
 	}
 
 	public class AttributeValueElements extends AbstractParserRuleElementFinder {
@@ -1323,7 +1319,7 @@ public class AdaptationModelDSLGrammarAccess extends AbstractGrammarElementFinde
 	}
 
 	//AtomicActionQuery:
-	//	"select_feature_*" "from_variants_of_feature" "(" feature=[featureModel::Feature|QualifiedName] ")" "where_attribue"
+	//	"select_feature_from_variants_of" "(" feature=[featureModel::Feature|QualifiedName] ")" "where_attribue"
 	//	queryOperator=QueryOperator "(" value=STRING ")";
 	public AtomicActionQueryElements getAtomicActionQueryAccess() {
 		return (pAtomicActionQuery != null) ? pAtomicActionQuery : (pAtomicActionQuery = new AtomicActionQueryElements());
